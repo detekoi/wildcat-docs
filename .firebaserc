@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "wildcat-docs"
+  },
+  "targets": {
+    "wildcat-docs": {
+      "hosting": {
+        "main": [
+          "wildcat-docs"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

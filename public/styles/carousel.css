@@ -1,0 +1,198 @@
+/**
+ * 3D Stacking Carousel Styles
+ * Elegant card stacking with depth and smooth transitions
+ */
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--spacing-medium);
+  gap: var(--spacing-small);
+}
+
+/* Toggle squares for navigation */
+.carousel-toggles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+  order: 2;
+  margin-top: var(--spacing-small);
+}
+
+.carousel-toggle {
+  height: 56px;
+  padding: 10px 12px;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: var(--font-size-small);
+  line-height: 1.4;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+.carousel-toggle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, var(--color-background));
+  pointer-events: none;
+}
+
+.carousel-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.carousel-toggle:hover::after {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.05));
+}
+
+.carousel-toggle.active {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  border-color: var(--color-text);
+}
+
+/* Container for mascot cards */
+.mascot-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  min-height: 500px;
+  perspective: 1000px;
+  order: 1;
+}
+
+/* Base mascot card styling */
+.mascot-card {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Active/visible card */
+.mascot-card.card-pos-0 {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+/* Hide all other cards */
+.mascot-card.card-pos-1,
+.mascot-card.card-pos-2,
+.mascot-card.card-pos-3,
+.mascot-card.card-pos-4 {
+  display: none;
+}
+
+/* Image container */
+.mascot-card .image,
+.mascot-card .loading-image-placeholder {
+  width: 100%;
+  position: relative;
+}
+
+.mascot-card .image img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+}
+
+/* Hide detail/caption elements (data stored in DOM for toggle buttons) */
+.mascot-card .detail,
+.mascot-card .loading-detail {
+  display: none !important;
+}
+
+/* Loading card specific styles */
+.mascot-card.loading-card {
+  pointer-events: none;
+}
+
+.loading-static-canvas {
+  width: 100%;
+  height: 480px;
+  display: block;
+  background-color: #000;
+}
+
+.loading-detail p {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .carousel-toggle {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .carousel-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .carousel-toggle.active {
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border-color: var(--color-text);
+  }
+
+  .carousel-toggle.active::after {
+    background: linear-gradient(to bottom, transparent, var(--color-text));
+  }
+
+  .mascot-card {
+    background-color: transparent;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .mascot-container {
+    max-width: 340px;
+    min-height: 450px;
+  }
+
+  .mascot-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .carousel-toggles {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 340px;
+  }
+
+  .carousel-toggle {
+    font-size: 0.75rem;
+    padding: 6px 8px;
+    min-height: 40px;
+  }
+}
