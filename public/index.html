@@ -11,6 +11,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <style>
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+            margin-bottom: 2rem;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin: 0 0 0.5rem 0;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .tagline {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin: 0;
+            font-weight: 400;
+        }
+    </style>
     <script
         src="https://app.rybbit.io/api/script.js"
         data-site-id="86f2e2886568"
@@ -20,10 +40,10 @@
 <body class="has-navbar">
     <canvas id="staticCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
     <div class="container">
-        <header>
-            <h1>🐱 Wildcat.chat Documentation</h1>
+        <div class="hero-section">
+            <h1 class="hero-title">🐱 Wildcat.chat Documentation</h1>
             <p class="tagline">AI-Powered Twitch Bot Platform</p>
-        </header>
+        </div>
 
         <!-- Unified Navigation Bar -->
         <nav class="site-navbar">
@@ -33,6 +53,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="botcommands.html">ChatSage Docs</a></li>
                 <li><a href="chatvibesdocs.html">ChatVibes Docs</a></li>
+                <li><a href="https://detekoi.github.io/index.html#contact-me">Contact</a></li>
             </ul>
         </nav>
 
