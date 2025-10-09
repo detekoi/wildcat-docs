@@ -17,16 +17,23 @@
         defer
     ></script>
 </head>
-<body>
+<body class="has-navbar">
+    <canvas id="staticCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
     <div class="container">
         <header>
             <h1>🐱 Wildcat.chat Documentation</h1>
             <p class="tagline">AI-Powered Twitch Bot Platform</p>
         </header>
 
-        <nav class="nav">
-            <a href="botcommands.html">ChatSage Docs</a>
-            <a href="chatvibesdocs.html">ChatVibes Docs</a>
+        <!-- Unified Navigation Bar -->
+        <nav class="site-navbar">
+            <a href="index.html" class="site-navbar-brand">🐱</a>
+            <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="site-navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="botcommands.html">ChatSage Docs</a></li>
+                <li><a href="chatvibesdocs.html">ChatVibes Docs</a></li>
+            </ul>
         </nav>
 
         <main>
@@ -65,8 +72,8 @@
                 <h2>Getting Started</h2>
                 <h3>Quick Start</h3>
                 <ol>
-                    <li>Visit <a href="https://app.wildcat.chat">app.wildcat.chat</a> to set up your ChatSage bot</li>
-                    <li>Visit <a href="https://tts.wildcat.chat/">tts.wildcat.chat</a> for ChatVibes TTS dashboard</li>
+                    <li>Visit <a href="https://app.wildcat.chat" class="default-link-style">app.wildcat.chat</a> to set up your ChatSage bot</li>
+                    <li>Visit <a href="https://tts.wildcat.chat/" class="default-link-style">tts.wildcat.chat</a> for ChatVibes TTS dashboard</li>
                     <li>Authenticate with your Twitch account</li>
                     <li>Configure your bot settings</li>
                     <li>Check the documentation pages for detailed command references</li>
@@ -78,5 +85,7 @@
             <p>&copy; 2025 Wildcat.chat. All rights reserved.</p>
         </footer>
     </div>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/static-background.js"></script>
 </body>
 </html>
