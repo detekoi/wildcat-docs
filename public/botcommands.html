@@ -43,6 +43,7 @@
             <li><a href="#general" data-i18n="sidebar.generalCommands">General Commands</a></li>
             <li><a href="#games" data-i18n="sidebar.games">Games</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config</a></li>
+            <li><a href="#web-dashboard">Web Dashboard</a></li>
         </ul>
     </nav>
 
@@ -69,11 +70,19 @@
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ask.name">!ask / !sage</td>
-                <td data-i18n-key="commands.ask.description"><span class="description-text">Ask Sage a question. Uses search intelligently.</span><span class="dropdown-toggle">&#x25BC;</span></td>
+                <td data-i18n-key="commands.ask.description"><span class="description-text">Ask Sage a question. Uses search intelligently. Supports multilingual time queries for locations worldwide.</span><span class="dropdown-toggle">&#x25BC;</span></td>
             </tr>
             <tr class="dropdown-details" style="display:none;">
                 <td colspan="2">
                     <code data-i18n-cmd="commands.ask.usage.question">!ask &lt;your question&gt;</code>
+                    <div style="margin-top: 8px;">
+                        <strong>Special Features:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+                            <li><strong>Multilingual Time Queries:</strong> Ask for current time in locations using your preferred language</li>
+                            <li><strong>Examples:</strong> "what time is it in Tokyo?", "quelle heure est-il à Paris?", "che ora è a Roma?", "東京は何時ですか？"</li>
+                            <li><strong>Supported Languages:</strong> English, Spanish, Portuguese, German, French, Italian, Russian, Japanese</li>
+                        </ul>
+                    </div>
                 </td>
             </tr>
         </tbody>
@@ -91,14 +100,28 @@
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.game.name">!game</td>
-                <td data-i18n-key="commands.game.description"><span class="description-text">Provides researched information about the game currently being played. Add "analyze" to use AI image recognition on the stream (uses Twitch thumbnail that updates every 5 minutes).</span><span class="dropdown-toggle">&#x25BC;</span></td>
+                <td data-i18n-key="commands.game.description"><span class="description-text">Provides researched information about the game currently being played. Supports multiple modes including AI image analysis and specific gameplay questions.</span><span class="dropdown-toggle">&#x25BC;</span></td>
             </tr>
             <tr class="dropdown-details" style="display:none;">
                 <td colspan="2">
-                    <code>!game</code>
-                    <code>!game analyze</code> <span data-i18n="commands.game.usage.analyzeText">Analyzes stream visuals with AI</span>
-                    <code data-i18n-cmd="commands.game.usage.question">!game &lt;your question&gt;</code> <span data-i18n="commands.game.usage.questionText">Answers specific gameplay questions</span>
-                    <code data-i18n-cmd="commands.game.usage.analyzeQuestion">!game analyze &lt;your question&gt;</code> <span data-i18n="commands.game.usage.analyzeQuestionText">Analyzes visuals and answers question</span>
+                    <div style="margin-bottom: 8px;">
+                        <strong>Modes:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+                            <li><code>!game</code> - Shows current game info and interesting facts</li>
+                            <li><code>!game analyze</code> - Uses AI to analyze stream visuals and describe gameplay</li>
+                            <li><code>!game &lt;question&gt;</code> - Answers specific questions about the current game</li>
+                            <li><code>!game analyze &lt;question&gt;</code> - Analyzes visuals and answers your specific question</li>
+                        </ul>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <strong>Image Analysis Features:</strong>
+                        <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+                            <li>Uses Twitch stream thumbnails (updates every 5 minutes)</li>
+                            <li>AI analyzes in-game elements and ignores overlays</li>
+                            <li>Search verification ensures accurate descriptions</li>
+                            <li>Automatic summarization for longer responses</li>
+                        </ul>
+                    </div>
                 </td>
             </tr>
         </tbody>
@@ -306,7 +329,44 @@
             </tr>
         </tbody>
     </table>
-    
+
+    <section id="web-dashboard" class="section">
+        <h2>Web Dashboard</h2>
+        <p>The <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">ChatSage Web Dashboard</a> provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.</p>
+
+        <h3>Available Dashboard Features</h3>
+        <ul>
+            <li><strong>Bot Management:</strong> Add or remove ChatSage from your channel</li>
+            <li><strong>Channel Configuration:</strong> Configure bot language, auto-chat settings, and command permissions</li>
+            <li><strong>Context Management:</strong> View and manage conversation context, summaries, and chat history</li>
+            <li><strong>Stream Integration:</strong> Monitor current game, title, and stream information</li>
+            <li><strong>Command Control:</strong> Enable/disable specific commands and set custom responses</li>
+            <li><strong>Analytics:</strong> View bot usage statistics and interaction patterns</li>
+            <li><strong>Settings Backup:</strong> Export/import your channel configuration</li>
+        </ul>
+
+        <h3>Getting Started</h3>
+        <ol>
+            <li><strong>Visit the Dashboard:</strong> Go to <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">https://app.wildcat.chat/</a></li>
+            <li><strong>Authorize:</strong> Click "Login with Twitch" and grant the required permissions</li>
+            <li><strong>Add the Bot:</strong> Use the "Add Bot to My Channel" button to invite ChatSage to your channel</li>
+            <li><strong>Configure:</strong> Customize settings through the dashboard interface</li>
+            <li><strong>Grant Permissions:</strong> In Twitch chat, type <code>/mod ChatSageBot</code> to give the bot moderator status</li>
+        </ol>
+
+        <h3>OAuth Permissions</h3>
+        <p>The dashboard requires the following Twitch OAuth scopes:</p>
+        <ul>
+            <li><code>chat:read</code> - Read chat messages</li>
+            <li><code>chat:edit</code> - Send chat messages</li>
+            <li><code>channel:read:subscriptions</code> - Access subscription information</li>
+            <li><code>channel:manage:redemptions</code> - Manage channel point redemptions</li>
+            <li><code>user:read:email</code> - Access your email address</li>
+        </ul>
+
+        <p><strong>Note:</strong> ChatSage is currently invite-only. If you don't see your channel in the dashboard, please <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">request access through the contact form</a>.</p>
+    </section>
+
         <div id="last-updated" style="text-align:center; margin-top:2rem; color:var(--color-border, #888); font-size:0.95em;">
         </div>
     </main>
