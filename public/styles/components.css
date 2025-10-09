@@ -493,6 +493,15 @@ header .tagline {
 }
 
 /* =====================================================
+   BOT CARDS BACKGROUND
+   ===================================================== */
+#bots > div > div {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* =====================================================
    DOCUMENTATION TABLES
    ===================================================== */
 table {
@@ -791,6 +800,11 @@ footer {
 
   .default-link-style {
     color: #eee !important;
+  }
+
+  /* Bot cards background for dark mode */
+  #bots > div > div {
+    background-color: rgba(30, 30, 30, 0.9);
   }
 }
 

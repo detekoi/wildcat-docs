@@ -21,14 +21,24 @@
             font-size: 2.5rem;
             font-weight: 300;
             margin: 0 0 0.5rem 0;
-            color: #fff;
+            color: #333;
             letter-spacing: -0.02em;
         }
         .tagline {
             font-size: 1.1rem;
-            color: #ccc;
+            color: #666;
             margin: 0;
             font-weight: 400;
+        }
+        
+        /* Dark mode support for hero content */
+        @media (prefers-color-scheme: dark) {
+            .hero-title {
+                color: #fff;
+            }
+            .tagline {
+                color: #ccc;
+            }
         }
     </style>
     <script
