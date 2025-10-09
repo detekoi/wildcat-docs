@@ -23,7 +23,7 @@ This guide walks you through setting up all custom domains for the Wildcat.chat 
 5. Firebase will provide a **CNAME record**. Example:
    ```
    Host: tts
-   Value: chatvibestts.web.app.
+   Value: tts.wildcat.chat.
    ```
 6. Add this CNAME record in Namecheap:
    - Go to Namecheap → Domain List → wildcat.chat → Advanced DNS
@@ -174,7 +174,7 @@ After all setup, your Namecheap DNS should have:
 Type      Host    Value                           TTL
 A         @       199.36.158.100                  30 min
 CNAME     app     streamsage-bot.web.app.        Automatic
-CNAME     tts     chatvibestts.web.app.          Automatic
+CNAME     tts     tts.wildcat.chat.          Automatic
 CNAME     docs    (from Firebase Console)         Automatic
 CNAME     api     (from Firebase Console)         Automatic
 CNAME     auth    (from Firebase Console)         Automatic
