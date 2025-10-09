@@ -23,6 +23,19 @@
             margin: 0 0 0.5rem 0;
             color: #333;
             letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .wildcat-svg {
+            width: 3rem;
+            height: 3rem;
+            fill: #333;
+        }
+        .site-navbar-brand .wildcat-svg {
+            width: 2rem;
+            height: 2rem;
         }
         .tagline {
             font-size: 1.1rem;
@@ -39,6 +52,12 @@
             .tagline {
                 color: #ccc;
             }
+            .wildcat-svg {
+                fill: #fff;
+            }
+            .site-navbar-brand .wildcat-svg {
+                fill: #fff;
+            }
         }
     </style>
     <script
@@ -51,13 +70,40 @@
     <canvas id="staticCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
     <div class="container">
         <div class="hero-section">
-            <h1 class="hero-title">🐱 Wildcat.chat Documentation</h1>
+            <h1 class="hero-title">
+                <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kaomoji reading '- ˕ •マ'">
+                    <style>
+                        .kaomoji {
+                            font-size: 250px;
+                            font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
+                            fill: currentColor;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                    </style>
+                    <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
+                </svg>
+                Wildcat.chat Documentation
+            </h1>
             <p class="tagline">AI-Powered Twitch Bot Platform</p>
         </div>
 
         <!-- Unified Navigation Bar -->
         <nav class="site-navbar">
-            <a href="index.html" class="site-navbar-brand">🐱</a>
+            <a href="index.html" class="site-navbar-brand">
+                <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kaomoji reading '- ˕ •マ'">
+                    <style>
+                        .kaomoji {
+                            font-size: 250px;
+                            font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
+                            fill: currentColor;
+                            text-anchor: middle;
+                            dominant-baseline: central;
+                        }
+                    </style>
+                    <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
+                </svg>
+            </a>
             <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="site-navbar-menu">
                 <li><a href="index.html">Home</a></li>

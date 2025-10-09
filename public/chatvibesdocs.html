@@ -11,6 +11,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <style>
+        .wildcat-svg {
+            width: 2rem;
+            height: 2rem;
+            fill: #333;
+        }
+        .site-navbar-brand .wildcat-svg {
+            width: 2rem;
+            height: 2rem;
+        }
+        
+        /* Dark mode support for SVG */
+        @media (prefers-color-scheme: dark) {
+            .wildcat-svg {
+                fill: #fff;
+            }
+            .site-navbar-brand .wildcat-svg {
+                fill: #fff;
+            }
+        }
+    </style>
     <script
     src="https://app.rybbit.io/api/script.js"
     data-site-id="86f2e2886568"
@@ -22,7 +43,20 @@
 
     <!-- Unified Navigation Bar -->
     <nav class="site-navbar">
-        <a href="index.html" class="site-navbar-brand">🐱</a>
+        <a href="index.html" class="site-navbar-brand">
+            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Kaomoji reading '- ˕ •マ'">
+                <style>
+                    .kaomoji {
+                        font-size: 250px;
+                        font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
+                        fill: currentColor;
+                        text-anchor: middle;
+                        dominant-baseline: central;
+                    }
+                </style>
+                <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
+            </svg>
+        </a>
         <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
         <ul class="site-navbar-menu">
             <li><a href="index.html">Home</a></li>
