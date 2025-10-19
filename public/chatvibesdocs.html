@@ -414,7 +414,7 @@
                             <code>!tts emotion happy</code>
                             <code>!tts emotion reset</code>
                             <code>!tts emotion</code> <span>(displays current personal preference)</span>
-                            <p><strong>Notes:</strong> Valid emotions: <span class="inline-code">auto</span>, <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the channel default.</p>
+                            <p><strong>Notes:</strong> Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for the channel default.</p>
                             <p><strong>Permission:</strong> Everyone (for their own preference)</p>
                         </td>
                     </tr>
@@ -430,7 +430,7 @@
                             <code>!tts lang Japanese</code>
                             <code>!tts language reset</code>
                             <code>!tts language</code> <span>(displays current personal preference)</span>
-                            <p><strong>Notes:</strong> Affects how speech is interpreted and generated. Use <span class="inline-code">reset</span>, <span class="inline-code">auto</span>, or <span class="inline-code">none</span> to use the channel's default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for available options.</p>
+                            <p><strong>Notes:</strong> Affects how speech is interpreted and generated. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> to use the channel's default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for available options.</p>
                             <p><strong>Permission:</strong> Everyone (for their own preference)</p>
                         </td>
                     </tr>
@@ -555,7 +555,7 @@
                             <code class="mod-command">!tts defaultemotion happy</code>
                             <code class="mod-command">!tts defaultemotion reset</code>
                             <code class="mod-command">!tts defaultemotion</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Valid emotions: <span class="inline-code">auto</span>, <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for system default (<span class="inline-code">auto</span>).</p>
+                            <p><strong>Notes:</strong> Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for system default (<span class="inline-code">neutral</span>).</p>
                             <p><strong>Permission:</strong> Moderator</p>
                         </td>
                     </tr>
@@ -570,7 +570,7 @@
                             <code class="mod-command">!tts defaultlanguage English</code>
                             <code class="mod-command">!tts defaultlanguage reset</code>
                             <code class="mod-command">!tts defaultlanguage</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Use <span class="inline-code">reset</span>, <span class="inline-code">auto</span>, or <span class="inline-code">none</span> to use the system default (usually 'Automatic' or 'None'). See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for options.</p>
+                            <p><strong>Notes:</strong> Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> to use the system default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for options.</p>
                             <p><strong>Permission:</strong> Moderator</p>
                         </td>
                     </tr>
@@ -799,10 +799,10 @@
 
         <section id="voices" class="section">
             <h2>Voices</h2>
-            <p>The following voices are available from the <span class="inline-code">minimax/speech-02-turbo</span> model on Replicate. The bot fetches this list periodically. The <span class="inline-code">voice_id</span> is used in commands like <span class="inline-code">!tts voice &lt;voice_id&gt;</span>.</p>
+            <p>The following voices are available from the <span class="inline-code">minimax/speech-02-turbo</span> model via <strong>Wavespeed AI</strong>. The bot uses a comprehensive hardcoded list of 472 voices with automatic language categorization across 45 languages. The <span class="inline-code">voice_id</span> is used in commands like <span class="inline-code">!tts voice &lt;voice_id&gt;</span>.</p>
             
-            <h3>Common Voice IDs</h3>
-            <p>Featured voices from the <span class="inline-code">minimax/speech-02-turbo</span> model. For any voide in this list, you can use the command <span class="inline-code">!tts voice &lt;voice_id&gt;</span> to use it.</p>
+            <h3>Popular Voice IDs</h3>
+            <p>Featured voices from the <span class="inline-code">minimax/speech-02-turbo</span> model via Wavespeed AI. For any voice in this list, you can use the command <span class="inline-code">!tts voice &lt;voice_id&gt;</span> to use it.</p>
             <ul>
                 <li>Wise_Woman</li>
                 <li>Friendly_Person</li>
@@ -821,325 +821,680 @@
                 <li>Abbess</li>
                 <li>Sweet_Girl_2</li>
                 <li>Exuberant_Girl</li>
+                <li>English_FriendlyPerson</li>
+                <li>English_CaptivatingStoryteller</li>
+                <li>English_Wiselady</li>
+                <li>English_Deep-VoicedGentleman</li>
+                <li>English_ConfidentWoman</li>
+                <li>English_Comedian</li>
+                <li>English_Jovialman</li>
+                <li>English_Kind-heartedGirl</li>
                 </ul>
 
-            <h3>Pre-trained Voice List (from <a href="https://replicate.com/minimax/speech-02-turbo/readme" target="_blank" class="default-link-style">minimax/speech-02-turbo README</a>)</h3>
-            <p>This is a more extensive list of all available voices.</p>
+            <h3>Complete Voice List (from <a href="https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo" target="_blank" class="default-link-style">Wavespeed AI minimax/speech-02-turbo Schema</a>)</h3>
+            <p>This is the complete list of all 472 available voices organized by language. The voices are automatically categorized by language prefix for easy identification.</p>
 
             <details class="voice-list-details">
                 <summary class="voice-list-summary">
-                    <span class="summary-text">Click to expand full voice list (300+ voices)</span>
+                    <span class="summary-text">Click to expand complete voice list (472 voices across 45 languages)</span>
                     <span class="summary-arrow">▼</span>
                 </summary>
                 <div class="voice-list-content">
+                    <h4>English (93 voices)</h4>
                     <ul class="extensive-voice-list">
-                <li>English_Trustworth_Man</li>
-                <li>English_Aussie_Bloke</li>
-                <li>English_CalmWoman</li>
-                <li>English_UpsetGirl</li>
-                <li>English_Gentle-voiced_man</li>
-                <li>English_Whispering_girl</li>
-                <li>English_Diligent_Man</li>
-                <li>English_Graceful_Lady</li>
-                <li>English_ReservedYoungMan</li>
-                <li>English_PlayfulGirl</li>
-                <li>English_ManWithDeepVoice</li>
-                <li>English_MaturePartner</li>
-                <li>English_FriendlyPerson</li>
-                <li>English_MatureBoss</li>
-                <li>English_Debator</li>
-                <li>English_LovelyGirl</li>
-                <li>English_Steadymentor</li>
-                <li>English_Deep-VoicedGentleman</li>
-                <li>English_Wiselady</li>
-                <li>English_CaptivatingStoryteller</li>
-                <li>English_DecentYoungMan</li>
-                <li>English_SentimentalLady</li>
-                <li>English_ImposingManner</li>
-                <li>English_SadTeen</li>
-                <li>English_PassionateWarrior</li>
-                <li>English_WiseScholar</li>
-                <li>English_Soft-spokenGirl</li>
-                <li>English_SereneWoman</li>
-                <li>English_ConfidentWoman</li>
-                <li>English_PatientMan</li>
-                <li>English_Comedian</li>
-                <li>English_BossyLeader</li>
-                <li>English_Strong-WilledBoy</li>
-                <li>English_StressedLady</li>
-                <li>English_AssertiveQueen</li>
-                <li>English_AnimeCharacter</li>
-                <li>English_Jovialman</li>
-                <li>English_WhimsicalGirl</li>
-                <li>English_Kind-heartedGirl</li>
-                <li>Chinese (Mandarin)_Reliable_Executive</li>
-                <li>Chinese (Mandarin)_News_Anchor</li>
-                <li>Chinese (Mandarin)_Unrestrained_Young_Man</li>
-                <li>Chinese (Mandarin)_Mature_Woman</li>
-                <li>Arrogant_Miss</li>
-                <li>Robot_Armor</li>
-                <li>Chinese (Mandarin)_Kind-hearted_Antie</li>
-                <li>Chinese (Mandarin)_Refreshing_Young_Man</li>
-                <li>Chinese (Mandarin)_HK_Flight_Attendant</li>
-                <li>Chinese (Mandarin)_Humorous_Elder</li>
-                <li>Chinese (Mandarin)_Gentleman</li>
-                <li>Chinese (Mandarin)_Warm_Bestie</li>
-                <li>Chinese (Mandarin)_Stubborn_Friend</li>
-                <li>Chinese (Mandarin)_Sweet_Lady</li>
-                <li>Chinese (Mandarin)_Southern_Young_Man</li>
-                <li>Chinese (Mandarin)_Wise_Women</li>
-                <li>Chinese (Mandarin)_Gentle_Youth</li>
-                <li>Chinese (Mandarin)_Warm_Girl</li>
-                <li>Chinese (Mandarin)_Male_Announcer</li>
-                <li>Chinese (Mandarin)_Kind-hearted_Elder</li>
-                <li>Chinese (Mandarin)_Cute_Spirit</li>
-                <li>Chinese (Mandarin)_Radio_Host</li>
-                <li>Chinese (Mandarin)_Lyrical_Voice</li>
-                <li>Chinese (Mandarin)_Straightforward_Boy</li>
-                <li>Chinese (Mandarin)_Sincere_Adult</li>
-                <li>Chinese (Mandarin)_Gentle_Senior</li>
-                <li>Chinese (Mandarin)_Crisp_Girl</li>
-                <li>Chinese (Mandarin)_Pure-hearted_Boy</li>
-                <li>Chinese (Mandarin)_Soft_Girl</li>
-                <li>Chinese (Mandarin)_IntellectualGirl</li>
-                <li>Chinese (Mandarin)_Warm_HeartedGirl</li>
-                <li>Chinese (Mandarin)_Laid_BackGirl</li>
-                <li>Chinese (Mandarin)_ExplorativeGirl</li>
-                <li>Chinese (Mandarin)_Warm-HeartedAunt</li>
-                <li>Chinese (Mandarin)_BashfulGirl</li>
-                <li>Japanese_IntellectualSenior</li>
-                <li>Japanese_DecisivePrincess</li>
-                <li>Japanese_LoyalKnight</li>
-                <li>Japanese_DominantMan</li>
-                <li>Japanese_SeriousCommander</li>
-                <li>Japanese_ColdQueen</li>
-                <li>Japanese_DependableWoman</li>
-                <li>Japanese_GentleButler</li>
-                <li>Japanese_KindLady</li>
-                <li>Japanese_CalmLady</li>
-                <li>Japanese_OptimisticYouth</li>
-                <li>Japanese_GenerousIzakayaOwner</li>
-                <li>Japanese_SportyStudent</li>
-                <li>Japanese_InnocentBoy</li>
-                <li>Japanese_GracefulMaiden</li>
-                <li>Cantonese_ProfessionalHost（F)</li>
-                <li>Cantonese_GentleLady</li>
-                <li>Cantonese_ProfessionalHost（M)</li>
-                <li>Cantonese_PlayfulMan</li>
-                <li>Cantonese_CuteGirl</li>
-                <li>Cantonese_KindWoman</li>
-                <li>Korean_SweetGirl</li>
-                <li>Korean_CheerfulBoyfriend</li>
-                <li>Korean_EnchantingSister</li>
-                <li>Korean_ShyGirl</li>
-                <li>Korean_ReliableSister</li>
-                <li>Korean_StrictBoss</li>
-                <li>Korean_SassyGirl</li>
-                <li>Korean_ChildhoodFriendGirl</li>
-                <li>Korean_PlayboyCharmer</li>
-                <li>Korean_ElegantPrincess</li>
-                <li>Korean_BraveFemaleWarrior</li>
-                <li>Korean_BraveYouth</li>
-                <li>Korean_CalmLady</li>
-                <li>Korean_EnthusiasticTeen</li>
-                <li>Korean_SoothingLady</li>
-                <li>Korean_IntellectualSenior</li>
-                <li>Korean_LonelyWarrior</li>
-                <li>Korean_MatureLady</li>
-                <li>Korean_InnocentBoy</li>
-                <li>Korean_CharmingSister</li>
-                <li>Korean_AthleticStudent</li>
-                <li>Korean_BraveAdventurer</li>
-                <li>Korean_CalmGentleman</li>
-                <li>Korean_WiseElf</li>
-                <li>Korean_CheerfulCoolJunior</li>
-                <li>Korean_DecisiveQueen</li>
-                <li>Korean_ColdYoungMan</li>
-                <li>Korean_MysteriousGirl</li>
-                <li>Korean_QuirkyGirl</li>
-                <li>Korean_ConsiderateSenior</li>
-                <li>Korean_CheerfulLittleSister</li>
-                <li>Korean_DominantMan</li>
-                <li>Korean_AirheadedGirl</li>
-                <li>Korean_ReliableYouth</li>
-                <li>Korean_FriendlyBigSister</li>
-                <li>Korean_GentleBoss</li>
-                <li>Korean_ColdGirl</li>
-                <li>Korean_HaughtyLady</li>
-                <li>Korean_CharmingElderSister</li>
-                <li>Korean_IntellectualMan</li>
-                <li>Korean_CaringWoman</li>
-                <li>Korean_WiseTeacher</li>
-                <li>Korean_ConfidentBoss</li>
-                <li>Korean_AthleticGirl</li>
-                <li>Korean_PossessiveMan</li>
-                <li>Korean_GentleWoman</li>
-                <li>Korean_CockyGuy</li>
-                <li>Korean_ThoughtfulWoman</li>
-                <li>Korean_OptimisticYouth</li>
-                <li>Spanish_SereneWoman</li>
-                <li>Spanish_MaturePartner</li>
-                <li>Spanish_CaptivatingStoryteller</li>
-                <li>Spanish_Narrator</li>
-                <li>Spanish_WiseScholar</li>
-                <li>Spanish_Kind-heartedGirl</li>
-                <li>Spanish_DeterminedManager</li>
-                <li>Spanish_BossyLeader</li>
-                <li>Spanish_ReservedYoungMan</li>
-                <li>Spanish_ConfidentWoman</li>
-                <li>Spanish_ThoughtfulMan</li>
-                <li>Spanish_Strong-WilledBoy</li>
-                <li>Spanish_SophisticatedLady</li>
-                <li>Spanish_RationalMan</li>
-                <li>Spanish_AnimeCharacter</li>
-                <li>Spanish_Deep-tonedMan</li>
-                <li>Spanish_Fussyhostess</li>
-                <li>Spanish_SincereTeen</li>
-                <li>Spanish_FrankLady</li>
-                <li>Spanish_Comedian</li>
-                <li>Spanish_Debator</li>
-                <li>Spanish_ToughBoss</li>
-                <li>Spanish_Wiselady</li>
-                <li>Spanish_Steadymentor</li>
-                <li>Spanish_Jovialman</li>
-                <li>Spanish_SantaClaus</li>
-                <li>Spanish_Rudolph</li>
-                <li>Spanish_Intonategirl</li>
-                <li>Spanish_Arnold</li>
-                <li>Spanish_Ghost</li>
-                <li>Spanish_HumorousElder</li>
-                <li>Spanish_EnergeticBoy</li>
-                <li>Spanish_WhimsicalGirl</li>
-                <li>Spanish_StrictBoss</li>
-                <li>Spanish_ReliableMan</li>
-                <li>Spanish_SereneElder</li>
-                <li>Spanish_AngryMan</li>
-                <li>Spanish_AssertiveQueen</li>
-                <li>Spanish_CaringGirlfriend</li>
-                <li>Spanish_PowerfulSoldier</li>
-                <li>Spanish_PassionateWarrior</li>
-                <li>Spanish_ChattyGirl</li>
-                <li>Spanish_RomanticHusband</li>
-                <li>Spanish_CompellingGirl</li>
-                <li>Spanish_PowerfulVeteran</li>
-                <li>Spanish_SensibleManager</li>
-                <li>Spanish_ThoughtfulLady</li>
-                <li>Portuguese_SentimentalLady</li>
-                <li>Portuguese_BossyLeader</li>
-                <li>Portuguese_Wiselady</li>
-                <li>Portuguese_Strong-WilledBoy</li>
-                <li>Portuguese_Deep-VoicedGentleman</li>
-                <li>Portuguese_UpsetGirl</li>
-                <li>Portuguese_PassionateWarrior</li>
-                <li>Portuguese_AnimeCharacter</li>
-                <li>Portuguese_ConfidentWoman</li>
-                <li>Portuguese_AngryMan</li>
-                <li>Portuguese_CaptivatingStoryteller</li>
-                <li>Portuguese_Godfather</li>
-                <li>Portuguese_ReservedYoungMan</li>
-                <li>Portuguese_SmartYoungGirl</li>
-                <li>Portuguese_Kind-heartedGirl</li>
-                <li>Portuguese_Pompouslady</li>
-                <li>Portuguese_Grinch</li>
-                <li>Portuguese_Debator</li>
-                <li>Portuguese_SweetGirl</li>
-                <li>Portuguese_AttractiveGirl</li>
-                <li>Portuguese_ThoughtfulMan</li>
-                <li>Portuguese_PlayfulGirl</li>
-                <li>Portuguese_GorgeousLady</li>
-                <li>Portuguese_LovelyLady</li>
-                <li>Portuguese_SereneWoman</li>
-                <li>Portuguese_SadTeen</li>
-                <li>Portuguese_MaturePartner</li>
-                <li>Portuguese_Comedian</li>
-                <li>Portuguese_NaughtySchoolgirl</li>
-                <li>Portuguese_Narrator</li>
-                <li>Portuguese_ToughBoss</li>
-                <li>Portuguese_Fussyhostess</li>
-                <li>Portuguese_Dramatist</li>
-                <li>Portuguese_Steadymentor</li>
-                <li>Portuguese_Jovialman</li>
-                <li>Portuguese_CharmingQueen</li>
-                <li>Portuguese_SantaClaus</li>
-                <li>Portuguese_Rudolph</li>
-                <li>Portuguese_Arnold</li>
-                <li>Portuguese_CharmingSanta</li>
-                <li>Portuguese_CharmingLady</li>
-                <li>Portuguese_Ghost</li>
-                <li>Portuguese_HumorousElder</li>
-                <li>Portuguese_CalmLeader</li>
-                <li>Portuguese_GentleTeacher</li>
-                <li>Portuguese_EnergeticBoy</li>
-                <li>Portuguese_ReliableMan</li>
-                <li>Portuguese_SereneElder</li>
-                <li>Portuguese_GrimReaper</li>
-                <li>Portuguese_AssertiveQueen</li>
-                <li>Portuguese_WhimsicalGirl</li>
-                <li>Portuguese_StressedLady</li>
-                <li>Portuguese_FriendlyNeighbor</li>
-                <li>Portuguese_CaringGirlfriend</li>
-                <li>Portuguese_PowerfulSoldier</li>
-                <li>Portuguese_FascinatingBoy</li>
-                <li>Portuguese_RomanticHusband</li>
-                <li>Portuguese_StrictBoss</li>
-                <li>Portuguese_InspiringLady</li>
-                <li>Portuguese_PlayfulSpirit</li>
-                <li>Portuguese_ElegantGirl</li>
-                <li>Portuguese_CompellingGirl</li>
-                <li>Portuguese_PowerfulVeteran</li>
-                <li>Portuguese_SensibleManager</li>
-                <li>Portuguese_ThoughtfulLady</li>
-                <li>Portuguese_TheatricalActor</li>
-                <li>Portuguese_FragileBoy</li>
-                <li>Portuguese_ChattyGirl</li>
-                <li>Portuguese_Conscientiousinstructor</li>
-                <li>Portuguese_RationalMan</li>
-                <li>Portuguese_WiseScholar</li>
-                <li>Portuguese_FrankLady</li>
-                <li>Portuguese_DeterminedManager</li>
-                <li>French_Male_Speech_New</li>
-                <li>French_Female_News Anchor</li>
-                <li>French_CasualMan</li>
-                <li>French_MovieLeadFemale</li>
-                <li>French_FemaleAnchor</li>
-                <li>French_MaleNarrator</li>
-                <li>Indonesian_SweetGirl</li>
-                <li>Indonesian_ReservedYoungMan</li>
-                <li>Indonesian_CharmingGirl</li>
-                <li>Indonesian_CalmWoman</li>
-                <li>Indonesian_ConfidentWoman</li>
-                <li>Indonesian_CaringMan</li>
-                <li>Indonesian_BossyLeader</li>
-                <li>Indonesian_DeterminedBoy</li>
-                <li>Indonesian_GentleGirl</li>
-                <li>German_FriendlyMan</li>
-                <li>German_SweetLady</li>
-                <li>German_PlayfulMan</li>
-                <li>Russian_HandsomeChildhoodFriend</li>
-                <li>Russian_BrightHeroine</li>
-                <li>Russian_AmbitiousWoman</li>
-                <li>Russian_ReliableMan</li>
-                <li>Russian_CrazyQueen</li>
-                <li>Russian_PessimisticGirl</li>
-                <li>Russian_AttractiveGuy</li>
-                <li>Russian_Bad-temperedBoy</li>
-                <li>Italian_BraveHeroine</li>
-                <li>Italian_Narrator</li>
-                <li>Italian_WanderingSorcerer</li>
-                <li>Italian_DiligentLeader</li>
-                <li>Dutch_kindhearted_girl</li>
-                <li>Dutch_bossy_leader</li>
-                <li>Vietnamese_kindhearted_girl</li>
-                <li>Arabic_CalmWoman</li>
-                <li>Arabic_FriendlyGuy</li>
-                <li>Turkish_CalmWoman</li>
-                <li>Turkish_Trustworthyman</li>
-                <li>Ukrainian_CalmWoman</li>
+                        <li>Wise_Woman</li>
+                        <li>Friendly_Person</li>
+                        <li>Inspirational_girl</li>
+                        <li>Deep_Voice_Man</li>
+                        <li>Calm_Woman</li>
+                        <li>Casual_Guy</li>
+                        <li>Lively_Girl</li>
+                        <li>Patient_Man</li>
+                        <li>Young_Knight</li>
+                        <li>Determined_Man</li>
+                        <li>Lovely_Girl</li>
+                        <li>Decent_Boy</li>
+                        <li>Imposing_Manner</li>
+                        <li>Elegant_Man</li>
+                        <li>Abbess</li>
+                        <li>Sweet_Girl_2</li>
+                        <li>Exuberant_Girl</li>
+                        <li>English_expressive_narrator</li>
+                        <li>English_radiant_girl</li>
+                        <li>English_magnetic_voiced_man</li>
+                        <li>English_compelling_lady1</li>
+                        <li>English_Aussie_Bloke</li>
+                        <li>English_captivating_female1</li>
+                        <li>English_Upbeat_Woman</li>
+                        <li>English_Trustworth_Man</li>
+                        <li>English_CalmWoman</li>
+                        <li>English_UpsetGirl</li>
+                        <li>English_Gentle-voiced_man</li>
+                        <li>English_Whispering_girl_v3</li>
+                        <li>English_Diligent_Man</li>
+                        <li>English_Graceful_Lady</li>
+                        <li>English_Husky_MetalHead</li>
+                        <li>English_ReservedYoungMan</li>
+                        <li>English_PlayfulGirl</li>
+                        <li>English_ManWithDeepVoice</li>
+                        <li>English_GentleTeacher</li>
+                        <li>English_MaturePartner</li>
+                        <li>English_FriendlyPerson</li>
+                        <li>English_MatureBoss</li>
+                        <li>English_Debator</li>
+                        <li>English_Abbess</li>
+                        <li>English_LovelyGirl</li>
+                        <li>English_Steadymentor</li>
+                        <li>English_Deep-VoicedGentleman</li>
+                        <li>English_DeterminedMan</li>
+                        <li>English_Wiselady</li>
+                        <li>English_CaptivatingStoryteller</li>
+                        <li>English_AttractiveGirl</li>
+                        <li>English_DecentYoungMan</li>
+                        <li>English_SentimentalLady</li>
+                        <li>English_ImposingManner</li>
+                        <li>English_SadTeen</li>
+                        <li>English_ThoughtfulMan</li>
+                        <li>English_PassionateWarrior</li>
+                        <li>English_DecentBoy</li>
+                        <li>English_WiseScholar</li>
+                        <li>English_Soft-spokenGirl</li>
+                        <li>English_SereneWoman</li>
+                        <li>English_ConfidentWoman</li>
+                        <li>English_PatientMan</li>
+                        <li>English_Comedian</li>
+                        <li>English_GorgeousLady</li>
+                        <li>English_BossyLeader</li>
+                        <li>English_LovelyLady</li>
+                        <li>English_Strong-WilledBoy</li>
+                        <li>English_Deep-tonedMan</li>
+                        <li>English_StressedLady</li>
+                        <li>English_AssertiveQueen</li>
+                        <li>English_AnimeCharacter</li>
+                        <li>English_Jovialman</li>
+                        <li>English_WhimsicalGirl</li>
+                        <li>English_CharmingQueen</li>
+                        <li>English_Kind-heartedGirl</li>
+                        <li>English_FriendlyNeighbor</li>
+                        <li>English_Sweet_Female_4</li>
+                        <li>English_Magnetic_Male_2</li>
+                        <li>English_Lively_Male_11</li>
+                        <li>English_Friendly_Female_3</li>
+                        <li>English_Steady_Female_1</li>
+                        <li>English_Lively_Male_10</li>
+                        <li>English_Magnetic_Male_12</li>
+                        <li>English_Steady_Female_5</li>
+                        <li>English_Insightful_Speaker</li>
+                        <li>English_patient_man_v1</li>
+                        <li>English_Persuasive_Man</li>
+                        <li>English_Explanatory_Man</li>
+                        <li>English_intellect_female_1</li>
+                        <li>English_energetic_male_1</li>
+                        <li>English_witty_female_1</li>
+                        <li>English_Lucky_Robot</li>
+                        <li>English_Cute_Girl</li>
+                        <li>English_Sharp_Commentator</li>
+                        <li>English_Honest_Man</li>
+                    </ul>
+
+                    <h4>Portuguese (81 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Portuguese_AnxiousMan</li>
+                        <li>Portuguese_Matureresearcher</li>
+                        <li>Portuguese_Optimisticyouth</li>
+                        <li>Portuguese_CuteElf</li>
+                        <li>Portuguese_EnergeticGirl</li>
+                        <li>Portuguese_FunnyGuy</li>
+                        <li>Portuguese_Nuttylady</li>
+                        <li>Portuguese_Deep-tonedMan</li>
+                        <li>Portuguese_SentimentalLady</li>
+                        <li>Portuguese_BossyLeader</li>
+                        <li>Portuguese_Wiselady</li>
+                        <li>Portuguese_Strong-WilledBoy</li>
+                        <li>Portuguese_Deep-VoicedGentleman</li>
+                        <li>Portuguese_UpsetGirl</li>
+                        <li>Portuguese_PassionateWarrior</li>
+                        <li>Portuguese_AnimeCharacter</li>
+                        <li>Portuguese_ConfidentWoman</li>
+                        <li>Portuguese_AngryMan</li>
+                        <li>Portuguese_CaptivatingStoryteller</li>
+                        <li>Portuguese_Godfather</li>
+                        <li>Portuguese_ReservedYoungMan</li>
+                        <li>Portuguese_SmartYoungGirl</li>
+                        <li>Portuguese_Kind-heartedGirl</li>
+                        <li>Portuguese_Pompouslady</li>
+                        <li>Portuguese_Grinch</li>
+                        <li>Portuguese_Debator</li>
+                        <li>Portuguese_SweetGirl</li>
+                        <li>Portuguese_AttractiveGirl</li>
+                        <li>Portuguese_ThoughtfulMan</li>
+                        <li>Portuguese_PlayfulGirl</li>
+                        <li>Portuguese_GorgeousLady</li>
+                        <li>Portuguese_LovelyLady</li>
+                        <li>Portuguese_SereneWoman</li>
+                        <li>Portuguese_SadTeen</li>
+                        <li>Portuguese_MaturePartner</li>
+                        <li>Portuguese_Comedian</li>
+                        <li>Portuguese_NaughtySchoolgirl</li>
+                        <li>Portuguese_Narrator</li>
+                        <li>Portuguese_ToughBoss</li>
+                        <li>Portuguese_Fussyhostess</li>
+                        <li>Portuguese_Dramatist</li>
+                        <li>Portuguese_Steadymentor</li>
+                        <li>Portuguese_Jovialman</li>
+                        <li>Portuguese_CharmingQueen</li>
+                        <li>Portuguese_SantaClaus</li>
+                        <li>Portuguese_Rudolph</li>
+                        <li>Portuguese_Arnold</li>
+                        <li>Portuguese_CharmingSanta</li>
+                        <li>Portuguese_Ghost</li>
+                        <li>Portuguese_HumorousElder</li>
+                        <li>Portuguese_CalmLeader</li>
+                        <li>Portuguese_GentleTeacher</li>
+                        <li>Portuguese_EnergeticBoy</li>
+                        <li>Portuguese_ReliableMan</li>
+                        <li>Portuguese_SereneElder</li>
+                        <li>Portuguese_GrimReaper</li>
+                        <li>Portuguese_AssertiveQueen</li>
+                        <li>Portuguese_WhimsicalGirl</li>
+                        <li>Portuguese_StressedLady</li>
+                        <li>Portuguese_FriendlyNeighbor</li>
+                        <li>Portuguese_CaringGirlfriend</li>
+                        <li>Portuguese_PowerfulSoldier</li>
+                        <li>Portuguese_FascinatingBoy</li>
+                        <li>Portuguese_RomanticHusband</li>
+                        <li>Portuguese_StrictBoss</li>
+                        <li>Portuguese_InspiringLady</li>
+                        <li>Portuguese_PlayfulSpirit</li>
+                        <li>Portuguese_ElegantGirl</li>
+                        <li>Portuguese_CompellingGirl</li>
+                        <li>Portuguese_PowerfulVeteran</li>
+                        <li>Portuguese_SensibleManager</li>
+                        <li>Portuguese_ThoughtfulLady</li>
+                        <li>Portuguese_TheatricalActor</li>
+                        <li>Portuguese_FragileBoy</li>
+                        <li>Portuguese_ChattyGirl</li>
+                        <li>Portuguese_Conscientiousinstructor</li>
+                        <li>Portuguese_RationalMan</li>
+                        <li>Portuguese_WiseScholar</li>
+                        <li>Portuguese_FrankLady</li>
+                        <li>Portuguese_DeterminedManager</li>
+                        <li>Portuguese_CharmingLady</li>
+                    </ul>
+
+                    <h4>Spanish (58 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Spanish_FriendlyNeighbor</li>
+                        <li>Spanish_FragileBoy</li>
+                        <li>Spanish_UpsetGirl</li>
+                        <li>Spanish_Soft-spokenGirl</li>
+                        <li>Spanish_CharmingQueen</li>
+                        <li>Spanish_Nuttylady</li>
+                        <li>Spanish_ElegantGirl</li>
+                        <li>Spanish_FascinatingBoy</li>
+                        <li>Spanish_FunnyGuy</li>
+                        <li>Spanish_PlayfulSpirit</li>
+                        <li>Spanish_TheatricalActor</li>
+                        <li>Spanish_SereneWoman</li>
+                        <li>Spanish_MaturePartner</li>
+                        <li>Spanish_CaptivatingStoryteller</li>
+                        <li>Spanish_Narrator</li>
+                        <li>Spanish_WiseScholar</li>
+                        <li>Spanish_Kind-heartedGirl</li>
+                        <li>Spanish_DeterminedManager</li>
+                        <li>Spanish_BossyLeader</li>
+                        <li>Spanish_ReservedYoungMan</li>
+                        <li>Spanish_ConfidentWoman</li>
+                        <li>Spanish_ThoughtfulMan</li>
+                        <li>Spanish_Strong-WilledBoy</li>
+                        <li>Spanish_SophisticatedLady</li>
+                        <li>Spanish_RationalMan</li>
+                        <li>Spanish_AnimeCharacter</li>
+                        <li>Spanish_Deep-tonedMan</li>
+                        <li>Spanish_Fussyhostess</li>
+                        <li>Spanish_SincereTeen</li>
+                        <li>Spanish_FrankLady</li>
+                        <li>Spanish_Comedian</li>
+                        <li>Spanish_Debator</li>
+                        <li>Spanish_ToughBoss</li>
+                        <li>Spanish_Wiselady</li>
+                        <li>Spanish_Steadymentor</li>
+                        <li>Spanish_Jovialman</li>
+                        <li>Spanish_SantaClaus</li>
+                        <li>Spanish_Rudolph</li>
+                        <li>Spanish_Intonategirl</li>
+                        <li>Spanish_Arnold</li>
+                        <li>Spanish_Ghost</li>
+                        <li>Spanish_HumorousElder</li>
+                        <li>Spanish_EnergeticBoy</li>
+                        <li>Spanish_WhimsicalGirl</li>
+                        <li>Spanish_StrictBoss</li>
+                        <li>Spanish_ReliableMan</li>
+                        <li>Spanish_SereneElder</li>
+                        <li>Spanish_AngryMan</li>
+                        <li>Spanish_AssertiveQueen</li>
+                        <li>Spanish_CaringGirlfriend</li>
+                        <li>Spanish_PowerfulSoldier</li>
+                        <li>Spanish_PassionateWarrior</li>
+                        <li>Spanish_ChattyGirl</li>
+                        <li>Spanish_RomanticHusband</li>
+                        <li>Spanish_CompellingGirl</li>
+                        <li>Spanish_PowerfulVeteran</li>
+                        <li>Spanish_SensibleManager</li>
+                        <li>Spanish_ThoughtfulLady</li>
+                    </ul>
+
+                    <h4>Korean (51 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Korean_PowerfulGirl</li>
+                        <li>Korean_BossyMan</li>
+                        <li>Korean_SweetGirl</li>
+                        <li>Korean_CheerfulBoyfriend</li>
+                        <li>Korean_EnchantingSister</li>
+                        <li>Korean_ShyGirl</li>
+                        <li>Korean_ReliableSister</li>
+                        <li>Korean_StrictBoss</li>
+                        <li>Korean_SassyGirl</li>
+                        <li>Korean_ChildhoodFriendGirl</li>
+                        <li>Korean_PlayboyCharmer</li>
+                        <li>Korean_ElegantPrincess</li>
+                        <li>Korean_BraveFemaleWarrior</li>
+                        <li>Korean_BraveYouth</li>
+                        <li>Korean_CalmLady</li>
+                        <li>Korean_EnthusiasticTeen</li>
+                        <li>Korean_SoothingLady</li>
+                        <li>Korean_IntellectualSenior</li>
+                        <li>Korean_LonelyWarrior</li>
+                        <li>Korean_MatureLady</li>
+                        <li>Korean_InnocentBoy</li>
+                        <li>Korean_CharmingSister</li>
+                        <li>Korean_AthleticStudent</li>
+                        <li>Korean_BraveAdventurer</li>
+                        <li>Korean_CalmGentleman</li>
+                        <li>Korean_WiseElf</li>
+                        <li>Korean_CheerfulCoolJunior</li>
+                        <li>Korean_DecisiveQueen</li>
+                        <li>Korean_ColdYoungMan</li>
+                        <li>Korean_MysteriousGirl</li>
+                        <li>Korean_QuirkyGirl</li>
+                        <li>Korean_ConsiderateSenior</li>
+                        <li>Korean_CheerfulLittleSister</li>
+                        <li>Korean_DominantMan</li>
+                        <li>Korean_AirheadedGirl</li>
+                        <li>Korean_ReliableYouth</li>
+                        <li>Korean_FriendlyBigSister</li>
+                        <li>Korean_GentleBoss</li>
+                        <li>Korean_ColdGirl</li>
+                        <li>Korean_HaughtyLady</li>
+                        <li>Korean_CharmingElderSister</li>
+                        <li>Korean_IntellectualMan</li>
+                        <li>Korean_CaringWoman</li>
+                        <li>Korean_WiseTeacher</li>
+                        <li>Korean_ConfidentBoss</li>
+                        <li>Korean_AthleticGirl</li>
+                        <li>Korean_PossessiveMan</li>
+                        <li>Korean_GentleWoman</li>
+                        <li>Korean_CockyGuy</li>
+                        <li>Korean_ThoughtfulWoman</li>
+                        <li>Korean_OptimisticYouth</li>
+                    </ul>
+
+                    <h4>Chinese (Mandarin) (32 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Chinese (Mandarin)_Reliable_Executive</li>
+                        <li>Chinese (Mandarin)_News_Anchor</li>
+                        <li>Chinese (Mandarin)_Unrestrained_Young_Man</li>
+                        <li>Chinese (Mandarin)_Mature_Woman</li>
+                        <li>Chinese (Mandarin)_Kind-hearted_Antie</li>
+                        <li>Chinese (Mandarin)_HK_Flight_Attendant</li>
+                        <li>Chinese (Mandarin)_Humorous_Elder</li>
+                        <li>Chinese (Mandarin)_Gentleman</li>
+                        <li>Chinese (Mandarin)_Warm_Bestie</li>
+                        <li>Chinese (Mandarin)_Stubborn_Friend</li>
+                        <li>Chinese (Mandarin)_Sweet_Lady</li>
+                        <li>Chinese (Mandarin)_Southern_Young_Man</li>
+                        <li>Chinese (Mandarin)_Wise_Women</li>
+                        <li>Chinese (Mandarin)_Gentle_Youth</li>
+                        <li>Chinese (Mandarin)_Warm_Girl</li>
+                        <li>Chinese (Mandarin)_Male_Announcer</li>
+                        <li>Chinese (Mandarin)_Kind-hearted_Elder</li>
+                        <li>Chinese (Mandarin)_Cute_Spirit</li>
+                        <li>Chinese (Mandarin)_Radio_Host</li>
+                        <li>Chinese (Mandarin)_Lyrical_Voice</li>
+                        <li>Chinese (Mandarin)_Straightforward_Boy</li>
+                        <li>Chinese (Mandarin)_Sincere_Adult</li>
+                        <li>Chinese (Mandarin)_Gentle_Senior</li>
+                        <li>Chinese (Mandarin)_Crisp_Girl</li>
+                        <li>Chinese (Mandarin)_Pure-hearted_Boy</li>
+                        <li>Chinese (Mandarin)_Soft_Girl</li>
+                        <li>Chinese (Mandarin)_IntellectualGirl</li>
+                        <li>Chinese (Mandarin)_Warm_HeartedGirl</li>
+                        <li>Chinese (Mandarin)_Laid_BackGirl</li>
+                        <li>Chinese (Mandarin)_ExplorativeGirl</li>
+                        <li>Chinese (Mandarin)_Warm-HeartedAunt</li>
+                        <li>Chinese (Mandarin)_BashfulGirl</li>
+                    </ul>
+
+                    <h4>Japanese (16 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Japanese_Whisper_Belle</li>
+                        <li>Japanese_IntellectualSenior</li>
+                        <li>Japanese_DecisivePrincess</li>
+                        <li>Japanese_LoyalKnight</li>
+                        <li>Japanese_DominantMan</li>
+                        <li>Japanese_SeriousCommander</li>
+                        <li>Japanese_ColdQueen</li>
+                        <li>Japanese_DependableWoman</li>
+                        <li>Japanese_GentleButler</li>
+                        <li>Japanese_KindLady</li>
+                        <li>Japanese_CalmLady</li>
+                        <li>Japanese_OptimisticYouth</li>
+                        <li>Japanese_GenerousIzakayaOwner</li>
+                        <li>Japanese_SportyStudent</li>
+                        <li>Japanese_InnocentBoy</li>
+                        <li>Japanese_GracefulMaiden</li>
+                    </ul>
+
+                    <h4>Cantonese (9 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Cantonese_ProfessionalHost（F)</li>
+                        <li>Cantonese_GentleLady</li>
+                        <li>Cantonese_ProfessionalHost（M)</li>
+                        <li>Cantonese_PlayfulMan</li>
+                        <li>Cantonese_CuteGirl</li>
+                        <li>Cantonese_KindWoman</li>
+                        <li>Cantonese_Narrator</li>
+                        <li>Cantonese_WiselProfessor</li>
+                        <li>Cantonese_IndifferentStaff</li>
+                    </ul>
+
+                    <h4>Indonesian (9 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Indonesian_SweetGirl</li>
+                        <li>Indonesian_ReservedYoungMan</li>
+                        <li>Indonesian_CharmingGirl</li>
+                        <li>Indonesian_CalmWoman</li>
+                        <li>Indonesian_ConfidentWoman</li>
+                        <li>Indonesian_CaringMan</li>
+                        <li>Indonesian_BossyLeader</li>
+                        <li>Indonesian_DeterminedBoy</li>
+                        <li>Indonesian_GentleGirl</li>
+                    </ul>
+
+                    <h4>Russian (8 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Russian_HandsomeChildhoodFriend</li>
+                        <li>Russian_BrightHeroine</li>
+                        <li>Russian_AmbitiousWoman</li>
+                        <li>Russian_ReliableMan</li>
+                        <li>Russian_CrazyQueen</li>
+                        <li>Russian_PessimisticGirl</li>
+                        <li>Russian_AttractiveGuy</li>
+                        <li>Russian_Bad-temperedBoy</li>
+                    </ul>
+
+                    <h4>French (8 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>French_Male_Speech_New</li>
+                        <li>French_Female_News Anchor</li>
+                        <li>French_CasualMan</li>
+                        <li>French_MovieLeadFemale</li>
+                        <li>French_FemaleAnchor</li>
+                        <li>French_MaleNarrator</li>
+                        <li>French_Female Journalist</li>
+                        <li>French_Female_Speech_New</li>
+                    </ul>
+
+                    <h4>Italian (7 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Italian_BraveHeroine</li>
+                        <li>Italian_Narrator</li>
+                        <li>Italian_WanderingSorcerer</li>
+                        <li>Italian_DiligentLeader</li>
+                        <li>Italian_ReliableMan</li>
+                        <li>Italian_AthleticStudent</li>
+                        <li>Italian_ArrogantPrincess</li>
+                    </ul>
+
+                    <h4>Thai (6 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Thai_Optimistic_girl</li>
+                        <li>Thai_male_1_sample8</li>
+                        <li>Thai_Tender_Woman</li>
+                        <li>Thai_male_2_sample2</li>
+                        <li>Thai_female_1_sample1</li>
+                        <li>Thai_female_2_sample2</li>
+                    </ul>
+
+                    <h4>Polish (4 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Polish_male_1_sample4</li>
+                        <li>Polish_male_2_sample3</li>
+                        <li>Polish_female_1_sample1</li>
+                        <li>Polish_female_2_sample3</li>
+                    </ul>
+
+                    <h4>Romanian (4 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Romanian_male_1_sample2</li>
+                        <li>Romanian_male_2_sample1</li>
+                        <li>Romanian_female_1_sample4</li>
+                        <li>Romanian_female_2_sample1</li>
+                    </ul>
+
+                    <h4>Vietnamese (4 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Vietnamese_Serene_Man</li>
+                        <li>Vietnamese_female_4_v1</li>
+                        <li>Vietnamese_male_1_v2</li>
+                        <li>Vietnamese_kindhearted_girl</li>
+                    </ul>
+
+                    <h4>German (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>German_FriendlyMan</li>
+                        <li>German_SweetLady</li>
+                        <li>German_PlayfulMan</li>
+                    </ul>
+
+                    <h4>Greek (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Greek_female_1_sample1</li>
+                        <li>greek_male_1a_v1</li>
+                        <li>Greek_female_2_sample3</li>
+                    </ul>
+
+                    <h4>Czech (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>czech_male_1_v1</li>
+                        <li>czech_female_5_v7</li>
+                        <li>czech_female_2_v2</li>
+                    </ul>
+
+                    <h4>Finnish (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>finnish_male_3_v1</li>
+                        <li>finnish_female_4_v1</li>
+                        <li>finnish_male_1_v2</li>
+                    </ul>
+
+                    <h4>Hindi (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>hindi_male_1_v2</li>
+                        <li>hindi_female_2_v1</li>
+                        <li>hindi_female_1_v2</li>
+                    </ul>
+
+                    <h4>Malay (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Malay_male_1_v1</li>
+                        <li>Malay_female_1_v1</li>
+                        <li>Malay_female_2_v1</li>
+                    </ul>
+
+                    <h4>English (British Child) (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>BritishChild_male_1_v1</li>
+                        <li>BritishChild_female_1_v1</li>
+                    </ul>
+
+                    <h4>English (Conversational) (3 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>conversational_female_1_v1</li>
+                        <li>conversational_female_2_v1</li>
+                        <li>socialmedia_female_1_v1</li>
+                    </ul>
+
+                    <h4>English (Whisper) (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>whisper_man</li>
+                        <li>whisper_woman_1</li>
+                    </ul>
+
+                    <h4>Afrikaans (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Afrikaans_male_1_v1</li>
+                        <li>Afrikaans_female_1_v1</li>
+                    </ul>
+
+                    <h4>Arabic (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Arabic_CalmWoman</li>
+                        <li>Arabic_FriendlyGuy</li>
+                    </ul>
+
+                    <h4>Bulgarian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Bulgarian_male_2_v1</li>
+                        <li>Bulgarian_female_1_v1</li>
+                    </ul>
+
+                    <h4>Catalan (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Catalan_male_1_v1</li>
+                        <li>Catalan_female_1_v1</li>
+                    </ul>
+
+                    <h4>Croatian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Croatian_male_1_v1</li>
+                        <li>Croatian_female_1_v1</li>
+                    </ul>
+
+                    <h4>Danish (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Danish_male_1_v1</li>
+                        <li>Danish_female_1_v1</li>
+                    </ul>
+
+                    <h4>Dutch (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Dutch_kindhearted_girl</li>
+                        <li>Dutch_bossy_leader</li>
+                    </ul>
+
+                    <h4>Filipino (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Filipino_male_1_v1</li>
+                        <li>Filipino_female_1_v1</li>
+                    </ul>
+
+                    <h4>Hebrew (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Hebrew_male_1_v1</li>
+                        <li>Hebrew_female_1_v1</li>
+                    </ul>
+
+                    <h4>Hungarian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Hungarian_male_1_v1</li>
+                        <li>Hungarian_female_1_v1</li>
+                    </ul>
+
+                    <h4>Norwegian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Norwegian_male_1_v1</li>
+                        <li>Norwegian_female_1_v1</li>
+                    </ul>
+
+                    <h4>Nynorsk (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Nynorsk_male_1_v1</li>
+                        <li>Nynorsk_female_1_v1</li>
+                    </ul>
+
+                    <h4>Persian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Persian_male_1_v1</li>
+                        <li>Persian_female_1_v1</li>
+                    </ul>
+
+                    <h4>Slovak (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Slovak_male_1_v1</li>
+                        <li>Slovak_female_1_v1</li>
+                    </ul>
+
+                    <h4>Slovenian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Slovenian_male_1_v1</li>
+                        <li>Slovenian_female_1_v2</li>
+                    </ul>
+
+                    <h4>Swedish (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Swedish_male_1_v1</li>
+                        <li>Swedish_female_1_v1</li>
+                    </ul>
+
+                    <h4>Tamil (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Tamil_male_1_v1</li>
+                        <li>Tamil_female_1_v1</li>
+                    </ul>
+
+                    <h4>Turkish (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Turkish_CalmWoman</li>
+                        <li>Turkish_Trustworthyman</li>
+                    </ul>
+
+                    <h4>Ukrainian (2 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>Ukrainian_CalmWoman</li>
+                        <li>Ukrainian_WiseScholar</li>
+                    </ul>
+
+                    <h4>Special Characters (7 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>angry_pirate_1</li>
+                        <li>massive_kind_troll</li>
+                        <li>movie_trailer_deep</li>
+                        <li>peace_and_ease</li>
+                        <li>Arrogant_Miss</li>
+                        <li>Robot_Armor</li>
+                        <li>hunyin_6</li>
+                    </ul>
+
+                    <h4>Special Effects (12 voices)</h4>
+                    <ul class="extensive-voice-list">
+                        <li>moss_audio_6dc281eb-713c-11f0-a447-9613c873494c</li>
+                        <li>moss_audio_c12a59b9-7115-11f0-a447-9613c873494c</li>
+                        <li>moss_audio_076697ad-7144-11f0-a447-9613c873494c</li>
+                        <li>moss_audio_737a299c-734a-11f0-918f-4e0486034804</li>
+                        <li>moss_audio_19dbb103-7350-11f0-ad20-f2bc95e89150</li>
+                        <li>moss_audio_7c7e7ae2-7356-11f0-9540-7ef9b4b62566</li>
+                        <li>moss_audio_570551b1-735c-11f0-b236-0adeeecad052</li>
+                        <li>moss_audio_ad5baf92-735f-11f0-8263-fe5a2fe98ec8</li>
+                        <li>moss_audio_cedfd4d2-736d-11f0-99be-fe40dd2a5fe8</li>
+                        <li>moss_audio_a0d611da-737c-11f0-ad20-f2bc95e89150</li>
+                        <li>moss_audio_4f4172f4-737b-11f0-9540-7ef9b4b62566</li>
+                        <li>moss_audio_62ca20b0-7380-11f0-99be-fe40dd2a5fe8</li>
                     </ul>
                 </div>
             </details>
 
-            <p><em>Note: The full list of pre-trained voices is extensive. The <span class="inline-code">!tts voices</span> command in chat links to here. For the most up-to-date list, refer to the source <span class="inline-code">llms.txt</span> file from Replicate or use the bot's capability to validate voices if a <span class="inline-code">!tts voice</span> command is implemented.</em></p>
+            <p><em>Note: The complete list includes all 472 voices across 45 languages, automatically categorized by language prefix. The <span class="inline-code">!tts voices</span> command in chat links to here. For the most up-to-date list, refer to the <a href="https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo" target="_blank" class="default-link-style">Wavespeed AI schema API</a> or use the bot's voice validation when setting preferences.</em></p>
         </section>
 
         <section id="language-boost" class="section">
@@ -1150,8 +1505,7 @@
             <h3>Available Language Boost Options</h3>
             <p>The following values are accepted:</p>
             <ul class="language-list">
-                <li>None</li>
-                <li>Automatic</li>
+                <li>auto</li>
                 <li>Arabic</li>
                 <li>Chinese</li>
                 <li>Chinese,Yue</li>
@@ -1177,7 +1531,7 @@
                 <li>Ukrainian</li>
                 <li>Vietnamese</li>
             </ul>
-            <p>Using <span class="inline-code">Automatic</span> or <span class="inline-code">None</span> will generally rely on the model's default language detection or no specific boost. <span class="inline-code">English</span> is often a good default for primarily English-speaking chats. Choosing a specific language can significantly improve pronunciation for that language.</p>
+            <p>Using <span class="inline-code">auto</span> will rely on the model's automatic language detection. <span class="inline-code">English</span> is often a good default for primarily English-speaking chats. Choosing a specific language can significantly improve pronunciation for that language.</p>
         </section>
 
         <section id="web-dashboard" class="section">
@@ -1235,6 +1589,9 @@
                 <li><strong>Bot not responding to commands?</strong> Make sure the bot is a moderator in your channel. You can do this by typing <span class="inline-code">/mod chatvibesbot</span> in your Twitch chat. In many cases, the bot may need moderator permissions to read messages and respond to commands.</li>
                 <li><strong>Bot not speaking?</strong> Make sure the bot is enabled in your channel. You can do this by typing <span class="inline-code">!tts on</span> in your Twitch chat. Also, check the current mode <span class="inline-code">!tts mode</span> and permissions <span class="inline-code">!tts permission</span>.</li>
                 <li><strong>Bot not speaking in a specific language, or reading numbers in Chinese?</strong> Make sure the language boost is set to the correct language. You can do this by typing <span class="inline-code">!tts language &lt;language_name&gt;</span> for yourself or <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel in your Twitch chat. You can check the current language boost using <span class="inline-code">!tts defaultlanguage</span>.</li>
+                <li><strong>TTS generation taking too long or failing?</strong> ChatVibes now uses Wavespeed AI with sync mode enabled for the lowest latency. If you experience delays, check your internet connection and try using <span class="inline-code">!tts stop</span> to cancel any stuck generation. The bot automatically retries failed requests.</li>
+                <li><strong>Voice not found error?</strong> Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly. Try <span class="inline-code">!tts voices</span> to get a link to available voices.</li>
+                <li><strong>Emotion not working?</strong> Note that "auto" emotion is no longer supported. Use <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, or <span class="inline-code">surprised</span> instead.</li>
                 <li><strong>Need help?</strong> Contact the developer via the <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">contact form</a> at Henry's portfolio website.</li>
             </ul>
         </section>
