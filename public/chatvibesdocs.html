@@ -1477,6 +1477,7 @@
                     </ul>
 
                     <h4>Special Effects (12 voices)</h4>
+                    <p><strong>⚠️ Note:</strong> Some Moss audio voices may require special access permissions. If you receive a "you don't have access to this voice_id" error, try a different voice from this list.</p>
                     <ul class="extensive-voice-list">
                         <li>moss_audio_6dc281eb-713c-11f0-a447-9613c873494c</li>
                         <li>moss_audio_c12a59b9-7115-11f0-a447-9613c873494c</li>
@@ -1591,6 +1592,8 @@
                 <li><strong>Bot not speaking in a specific language, or reading numbers in Chinese?</strong> Make sure the language boost is set to the correct language. You can do this by typing <span class="inline-code">!tts language &lt;language_name&gt;</span> for yourself or <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel in your Twitch chat. You can check the current language boost using <span class="inline-code">!tts defaultlanguage</span>.</li>
                 <li><strong>TTS generation taking too long or failing?</strong> ChatVibes now uses Wavespeed AI with sync mode enabled for the lowest latency. If you experience delays, check your internet connection and try using <span class="inline-code">!tts stop</span> to cancel any stuck generation. The bot automatically retries failed requests.</li>
                 <li><strong>Voice not found error?</strong> Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly. Try <span class="inline-code">!tts voices</span> to get a link to available voices.</li>
+                <li><strong>"Voice access denied" error?</strong> Some voices (particularly certain Moss audio effects) may require special access permissions on Wavespeed AI. If you receive this error, try using a different voice from the <a href="#voices" class="default-link-style">available voices list</a>. Most voices work with standard access.</li>
+                <li><strong>"Invalid voice" error?</strong> The voice ID you're using is not available or doesn't exist. Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly.</li>
                 <li><strong>Emotion not working?</strong> Note that "auto" emotion is no longer supported. Use <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, or <span class="inline-code">surprised</span> instead.</li>
                 <li><strong>Need help?</strong> Contact the developer via the <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">contact form</a> at Henry's portfolio website.</li>
             </ul>
