@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "Comandos del Bot"
+  },
+  "page": {
+    "title": "Comandos del Bot ChatSage",
+    "expandTip": "Haz clic en cualquier fila de comandos para expandir y ver detalles de uso.",
+    "lastUpdated": "Última actualización"
+  },
+  "table": {
+    "headers": {
+      "command": "Comando",
+      "description": "Descripción"
+    },
+    "categories": {
+      "general": "General",
+      "games": "Juegos",
+      "config": "Configuración"
+    }
+  },
+  "commands": {
+    "ask": {
+      "name": "!ask / !sage",
+      "description": "Hazle una pregunta a Sage. Utiliza búsqueda de forma inteligente.",
+      "usage": {
+        "question": "!ask <pregunta>",
+        "analyzeQuestion": "!game analyze <pregunta>"
+      }
+    },
+    "search": {
+      "name": "!search",
+      "description": "Busca información en la web sobre un tema.",
+      "usage": {
+        "query": "!search <búsqueda>"
+      }
+    },
+    "game": {
+      "name": "!game",
+      "description": "Proporciona información investigada sobre el juego que se está jugando actualmente. Añade \"analyze\" para usar reconocimiento de imágenes con IA en el stream (usa la miniatura de Twitch que se actualiza cada 5 minutos).",
+      "usage": {
+        "analyzeText": "Analiza visuales del stream con IA",
+        "questionText": "Responde preguntas específicas sobre el juego",
+        "analyzeQuestionText": "Analiza visuales y responde a la pregunta",
+        "question": "!game <pregunta>",
+        "analyzeQuestion": "!game analyze <pregunta>"
+      }
+    },
+    "translate": {
+      "name": "!translate",
+      "description": "Gestiona la traducción automática de mensajes para usuarios.",
+      "usage": {
+        "lang": "!translate <idioma>",
+        "stop": "!translate stop",
+        "modUser": "!translate <idioma|stop> [usuario]",
+        "modAll": "!translate stop all"
+      }
+    },
+    "help": {
+      "name": "!commands / !help",
+      "description": "Muestra dónde encontrar la lista de comandos disponibles.",
+      "usage": {
+        "basic": "!help o !commands"
+      }
+    },
+    "lurk": {
+      "name": "!lurk",
+      "description": "Hazle saber al chat que estás al acecho. Proporciona una razón opcional para una despedida personalizada."
+    },
+    "geo": {
+      "name": "!geo",
+      "description": "Inicia o gestiona Geo-Game, un juego de adivinanza geográfica para mundos reales o virtuales.",
+      "usage": {
+        "basic": "Inicia un juego global del mundo real",
+        "region": "Inicia un juego de una región específica, ej. !geo Japón",
+        "game": "Inicia un juego del mundo del juego usando el juego actual del stream",
+        "gameTitle": "Inicia un juego del mundo del juego con un título específico, ej. !geo game \"Metroid Prime\"",
+        "rounds": "Ejecuta cualquier comando de juego con N rondas, ej. !geo Japón 3",
+        "stop": "El iniciador del juego, moderadores o broadcaster pueden detenerlo",
+        "interval": "Establece el tiempo entre pistas de 30-300 segundos",
+        "duration": "Establece la duración de la ronda de 3-20 minutos",
+        "configRegion": "Establece regiones como Europa,Asia o EE.UU.,Canadá",
+        "configGame": "Establece títulos de juegos preferidos, separados por comas",
+        "pointsBase": "Establece puntos base de 1-100",
+        "maxRounds": "Establece rondas máximas de 1-10",
+        "clearLeaderboard": "O resetstats",
+        "report": "Reporta ubicaciones o pistas problemáticas",
+        "regionCmd": "!geo <región>",
+        "commandRounds": "!geo <comando> N",
+        "configRegionCmd": "!geo config region <regiones>",
+        "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
+        "intervalCmd": "!geo config interval <segundos>",
+        "durationCmd": "!geo config duration <minutos>",
+        "configGameCmd": "!geo config game <títulos>",
+        "pointsBaseCmd": "!geo config pointsbase <número>",
+        "maxRoundsCmd": "!geo config maxrounds <número>",
+        "reportCmd": "!geo report <motivo>",
+        "gameTitleCmd": "!geo game [Título de Juego]",
+        "japan": "Japón",
+        "metroidPrime": "Metroid Prime",
+        "europe": "Europa",
+        "asia": "Asia",
+        "usa": "EE.UU.",
+        "canada": "Canadá"
+      }
+    },
+    "riddle": {
+      "name": "!riddle",
+      "description": "Inicia o gestiona un juego de acertijos. Los acertijos pueden ser generales, sobre el juego actual del stream, o sobre un tema específico.",
+      "usage": {
+        "basic": "Inicia un acertijo de conocimiento general",
+        "subject": "Ejemplo: !riddle animales",
+        "rounds": "Ejemplo: !riddle 3 para 3 rondas generales",
+        "subjectRounds": "Ejemplo: !riddle historia 5",
+        "game": "Acertijo sobre el juego actual del stream",
+        "report": "Reporta acertijos problemáticos",
+        "stop": "El iniciador del juego, moderadores o broadcaster pueden detenerlo",
+        "questionTime": "Establece tiempo por acertijo de 15-120 segundos",
+        "pointsBase": "Establece puntos base de 1-100",
+        "maxRounds": "Establece rondas máximas de 1-20",
+        "keywordsLimit": "Establece palabras clave recientes a excluir, ej. 20-100",
+        "roundDelay": "Establece retraso entre rondas",
+        "clearLeaderboard": "O cleardata",
+        "subjectCmd": "!riddle <tema>",
+        "roundsCmd": "!riddle <rondas>",
+        "subjectRoundsCmd": "!riddle <tema> <rondas>",
+        "gameRoundsCmd": "!riddle game <rondas>",
+        "reportCmd": "!riddle report <motivo...>",
+        "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
+        "questionTimeCmd": "!riddle config questiontime <segundos>",
+        "pointsBaseCmd": "!riddle config pointsbase <número>",
+        "maxRoundsCmd": "!riddle config maxrounds <número>",
+        "keywordsLimitCmd": "!riddle config keywordslimit <número>",
+        "roundDelayCmd": "!riddle config rounddelay <milisegundos>",
+        "animals": "animales",
+        "history": "historia"
+      }
+    },
+    "trivia": {
+      "name": "!trivia",
+      "description": "Inicia o gestiona juegos de Trivia con preguntas sobre varios temas, incluyendo el juego actual del stream.",
+      "usage": {
+        "basic": "Inicia trivia de conocimiento general",
+        "topic": "Inicia trivia específica de un tema, ej. !trivia ciencia",
+        "game": "Inicia trivia sobre el juego actual del stream",
+        "rounds": "Especifica número de rondas, ej. !trivia 3",
+        "topicRounds": "Ejemplo: !trivia historia 5",
+        "report": "Reporta preguntas problemáticas",
+        "stop": "El iniciador del juego, moderadores o broadcaster pueden detenerlo",
+        "time": "Establece tiempo por pregunta de 10-120 segundos",
+        "pointsBase": "Establece puntos base de 1-100",
+        "configTopic": "Establece temas preferidos, separados por comas",
+        "maxRounds": "Establece rondas máximas de 1-10",
+        "topicCmd": "!trivia <tema>",
+        "roundsCmd": "!trivia <rondas>",
+        "topicRoundsCmd": "!trivia <tema> <rondas>",
+        "reportCmd": "!trivia report <motivo>",
+        "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
+        "timeCmd": "!trivia config time <segundos>",
+        "pointsBaseCmd": "!trivia config pointsbase <número>",
+        "configTopicCmd": "!trivia config topic <temas>",
+        "maxRoundsCmd": "!trivia config maxrounds <número>",
+        "science": "ciencia",
+        "history": "historia"
+      }
+    },
+    "auto": {
+      "name": "!auto",
+      "description": "Configura el modo de chat automático y opciones.",
+      "usage": {
+        "status": "Muestra el modo de chat automático actual, frecuencia y categorías",
+        "mode": "Establece la agresividad del chat automático (off desactiva)",
+        "freq": "Establece el intervalo mínimo entre mensajes automáticos (minutos)",
+        "greetings": "Habilita/deshabilita saludos",
+        "facts": "Habilita/deshabilita datos y consejos",
+        "questions": "Habilita/deshabilita preguntas de participación",
+        "multi": "Establece múltiples opciones a la vez",
+        "modeCmd": "!auto <off|low|medium|high>",
+        "freqCmd": "!auto config frequency:<minutos>",
+        "greetingsCmd": "!auto config greetings:<on|off>",
+        "factsCmd": "!auto config facts:<on|off>",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "Habilita/deshabilita notificaciones de pausas publicitarias",
+        "multiCmd": "!auto config frequency:<minutos> greetings:<on|off> facts:<on|off> questions:<on|off>"
+      }
+    },
+    "botlang": {
+      "name": "!botlang",
+      "description": "Configura el bot para hablar en un idioma específico para todo el canal.",
+      "usage": {
+        "status": "Verifica el idioma actual",
+        "off": "Restablece a inglés",
+        "default": "Restablece a inglés",
+        "langCmd": "!botlang <idioma>"
+      }
+    },
+    "disable": {
+      "name": "!disable",
+      "description": "Deshabilita un comando en este canal.",
+      "usage": {
+        "lurk": "Deshabilita el comando !lurk",
+        "trivia": "Deshabilita el comando !trivia"
+      }
+    },
+    "enable": {
+      "name": "!enable",
+      "description": "Habilita un comando previamente deshabilitado en este canal.",
+      "usage": {
+        "trivia": "Habilita el comando !trivia"
+      }
+    },
+    "ping": {
+      "name": "!ping",
+      "description": "Comprueba si el bot responde. Responde con ¡Pong!"
+    }
+  },
+  "ui": {
+    "languageSelector": "Idioma",
+    "mod": "Mod"
+  },
+  "sidebar": {
+    "generalCommands": "Comandos Generales",
+    "games": "Juegos",
+    "config": "Configuración"
+  }
+}

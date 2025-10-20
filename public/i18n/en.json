@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "Bot Commands"
+  },
+  "page": {
+    "title": "ChatSage Bot Commands",
+    "expandTip": "Click any command row below to expand and see usage details.",
+    "lastUpdated": "Last updated"
+  },
+  "table": {
+    "headers": {
+      "command": "Command",
+      "description": "Description"
+    },
+    "categories": {
+      "general": "General",
+      "games": "Games",
+      "config": "Config"
+    }
+  },
+  "commands": {
+    "ask": {
+      "name": "!ask / !sage",
+      "description": "Ask Sage a question. Uses search intelligently.",
+      "usage": {
+        "question": "!ask <your question>",
+        "analyzeQuestion": "!game analyze <your question>"
+      }
+    },
+    "search": {
+      "name": "!search",
+      "description": "Searches the web for information on a topic.",
+      "usage": {
+        "query": "!search <your query>"
+      }
+    },
+    "game": {
+      "name": "!game",
+      "description": "Provides researched information about the game currently being played. Add \"analyze\" to use AI image recognition on the stream (uses Twitch thumbnail that updates every 5 minutes).",
+      "usage": {
+        "analyzeText": "Analyzes stream visuals with AI",
+        "questionText": "Answers specific gameplay questions",
+        "analyzeQuestionText": "Analyzes visuals and answers question",
+        "question": "!game <your question>",
+        "analyzeQuestion": "!game analyze <your question>"
+      }
+    },
+    "translate": {
+      "name": "!translate",
+      "description": "Manage automatic message translation for users.",
+      "usage": {
+        "lang": "!translate <lang>",
+        "stop": "!translate stop",
+        "modUser": "!translate <lang|stop> [user]",
+        "modAll": "!translate stop all"
+      }
+    },
+    "help": {
+      "name": "!commands / !help",
+      "description": "Shows where to find the list of available commands.",
+      "usage": {
+        "basic": "!help or !commands"
+      }
+    },
+    "lurk": {
+      "name": "!lurk",
+      "description": "Let the chat know you are lurking. Provide an optional reason for a custom send-off."
+    },
+    "geo": {
+      "name": "!geo",
+      "description": "Starts or manages Geo-Game, a geography guessing game for IRL or virtual worlds.",
+      "usage": {
+        "basic": "Starts a global real-world game",
+        "region": "Starts a region-specific real-world game, e.g. !geo Japan",
+        "game": "Starts a game-world game using current stream's game",
+        "gameTitle": "Starts a game-world game with specified game, e.g. !geo game \"Metroid Prime\"",
+        "rounds": "Runs any game command with N rounds, e.g. !geo Japan 3",
+        "stop": "Game initiator, mods, or broadcaster can stop",
+        "interval": "Sets time between clues to 30-300 seconds",
+        "duration": "Sets round duration to 3-20 minutes",
+        "configRegion": "Sets regions like Europe,Asia or USA,Canada",
+        "configGame": "Sets preferred game titles, comma-separated",
+        "pointsBase": "Sets base points from 1-100",
+        "maxRounds": "Sets maximum rounds from 1-10",
+        "clearLeaderboard": "Or resetstats",
+        "report": "Reports problematic locations or clues",
+        "regionCmd": "!geo <region>",
+        "commandRounds": "!geo <command> N",
+        "configRegionCmd": "!geo config region <regions>",
+        "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
+        "intervalCmd": "!geo config interval <seconds>",
+        "durationCmd": "!geo config duration <minutes>",
+        "configGameCmd": "!geo config game <titles>",
+        "pointsBaseCmd": "!geo config pointsbase <number>",
+        "maxRoundsCmd": "!geo config maxrounds <number>",
+        "reportCmd": "!geo report <reason>",
+        "gameTitleCmd": "!geo game [Game Title]",
+        "japan": "Japan",
+        "metroidPrime": "Metroid Prime",
+        "europe": "Europe",
+        "asia": "Asia",
+        "usa": "USA",
+        "canada": "Canada"
+      }
+    },
+    "riddle": {
+      "name": "!riddle",
+      "description": "Starts or manages a Riddle game. Riddles can be general, about the current stream game, or a specific subject.",
+      "usage": {
+        "basic": "Starts a general knowledge riddle",
+        "subject": "Example: !riddle animals",
+        "rounds": "Example: !riddle 3 for 3 general rounds",
+        "subjectRounds": "Example: !riddle history 5",
+        "game": "Riddle about the current stream game",
+        "report": "Reports problematic riddles",
+        "stop": "Game initiator, mods, or broadcaster can stop",
+        "questionTime": "Sets time per riddle to 15-120 seconds",
+        "pointsBase": "Sets base points from 1-100",
+        "maxRounds": "Sets maximum rounds from 1-20",
+        "keywordsLimit": "Sets recent keywords to exclude, e.g. 20-100",
+        "roundDelay": "Sets delay between rounds",
+        "clearLeaderboard": "Or cleardata",
+        "subjectCmd": "!riddle <subject>",
+        "roundsCmd": "!riddle <rounds>",
+        "subjectRoundsCmd": "!riddle <subject> <rounds>",
+        "gameRoundsCmd": "!riddle game <rounds>",
+        "reportCmd": "!riddle report <reason...>",
+        "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
+        "questionTimeCmd": "!riddle config questiontime <seconds>",
+        "pointsBaseCmd": "!riddle config pointsbase <number>",
+        "maxRoundsCmd": "!riddle config maxrounds <number>",
+        "keywordsLimitCmd": "!riddle config keywordslimit <number>",
+        "roundDelayCmd": "!riddle config rounddelay <milliseconds>",
+        "animals": "animals",
+        "history": "history"
+      }
+    },
+    "trivia": {
+      "name": "!trivia",
+      "description": "Starts or manages Trivia games with factual questions on various topics, including the current stream game.",
+      "usage": {
+        "basic": "Starts general knowledge trivia",
+        "topic": "Starts topic-specific trivia, e.g. !trivia science",
+        "game": "Starts trivia about the current stream game",
+        "rounds": "Specifies number of rounds, e.g. !trivia 3",
+        "topicRounds": "Example: !trivia history 5",
+        "report": "Reports problematic questions",
+        "stop": "Game initiator, mods, or broadcaster can stop",
+        "time": "Sets time per question to 10-120 seconds",
+        "pointsBase": "Sets base points from 1-100",
+        "configTopic": "Sets preferred topics, comma-separated",
+        "maxRounds": "Sets maximum rounds from 1-10",
+        "topicCmd": "!trivia <topic>",
+        "roundsCmd": "!trivia <rounds>",
+        "topicRoundsCmd": "!trivia <topic> <rounds>",
+        "reportCmd": "!trivia report <reason>",
+        "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
+        "timeCmd": "!trivia config time <seconds>",
+        "pointsBaseCmd": "!trivia config pointsbase <number>",
+        "configTopicCmd": "!trivia config topic <topics>",
+        "maxRoundsCmd": "!trivia config maxrounds <number>",
+        "science": "science",
+        "history": "history"
+      }
+    },
+    "botlang": {
+      "name": "!botlang",
+      "description": "Configure the bot to speak in a specific language for the entire channel.",
+      "usage": {
+        "status": "Checks current language",
+        "off": "Resets to English",
+        "default": "Resets to English",
+        "langCmd": "!botlang <language>"
+      }
+    },
+    "auto": {
+      "name": "!auto",
+      "description": "Configure auto-chat mode and options.",
+      "usage": {
+        "status": "Shows current auto-chat mode, frequency, and categories",
+        "modeCmd": "!auto <off|low|medium|high>",
+        "mode": "Sets auto-chat aggressiveness (off disables)",
+        "freqCmd": "!auto config frequency:<minutes>",
+        "freq": "Sets minimum gap between auto messages (minutes)",
+        "greetingsCmd": "!auto config greetings:<on|off>",
+        "greetings": "Enable/disable greetings",
+        "factsCmd": "!auto config facts:<on|off>",
+        "facts": "Enable/disable facts and tips",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "questions": "Enable/disable engagement questions",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "Enable/disable ad break notifications",
+        "multiCmd": "!auto config frequency:<minutes> greetings:<on|off> facts:<on|off> questions:<on|off>",
+        "multi": "Set multiple options at once"
+      }
+    },
+    "disable": {
+      "name": "!disable",
+      "description": "Disables a command in this channel.",
+      "usage": {
+        "lurk": "Disables the !lurk command",
+        "trivia": "Disables the !trivia command"
+      }
+    },
+    "enable": {
+      "name": "!enable",
+      "description": "Enables a previously disabled command in this channel.",
+      "usage": {
+        "trivia": "Enables the !trivia command"
+      }
+    },
+    "ping": {
+      "name": "!ping",
+      "description": "Checks if the bot is responsive. Responds with Pong!"
+    }
+  },
+  "ui": {
+    "languageSelector": "Language",
+    "mod": "Mod"
+  },
+  "sidebar": {
+    "generalCommands": "General Commands",
+    "games": "Games",
+    "config": "Config"
+  }
+}

@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "Команды бота"
+  },
+  "page": {
+    "title": "Команды бота ChatSage",
+    "expandTip": "Нажмите на любую строку команды ниже, чтобы развернуть и увидеть детали использования.",
+    "lastUpdated": "Последнее обновление"
+  },
+  "table": {
+    "headers": {
+      "command": "Команда",
+      "description": "Описание"
+    },
+    "categories": {
+      "general": "Общие",
+      "games": "Игры",
+      "config": "Настройка"
+    }
+  },
+  "commands": {
+    "ask": {
+      "name": "!ask / !sage",
+      "description": "Задайте вопрос Sage. Использует поиск интеллектуально.",
+      "usage": {
+        "question": "!ask <ваш вопрос>",
+        "analyzeQuestion": "!game analyze <ваш вопрос>"
+      }
+    },
+    "search": {
+      "name": "!search",
+      "description": "Ищет в интернете информацию по теме.",
+      "usage": {
+        "query": "!search <ваш запрос>"
+      }
+    },
+    "game": {
+      "name": "!game",
+      "description": "Предоставляет исследованную информацию об игре, в которую сейчас играют. Добавьте \"analyze\" для использования ИИ-распознавания изображений на стриме (использует миниатюру Twitch, которая обновляется каждые 5 минут).",
+      "usage": {
+        "analyzeText": "Анализирует визуальные эффекты стрима с помощью ИИ",
+        "questionText": "Отвечает на конкретные вопросы по игровому процессу",
+        "analyzeQuestionText": "Анализирует визуальные эффекты и отвечает на вопрос",
+        "question": "!game <ваш вопрос>",
+        "analyzeQuestion": "!game analyze <ваш вопрос>"
+      }
+    },
+    "translate": {
+      "name": "!translate",
+      "description": "Управляет автоматическим переводом сообщений для пользователей.",
+      "usage": {
+        "lang": "!translate <язык>",
+        "stop": "!translate stop",
+        "modUser": "!translate <язык|stop> [пользователь]",
+        "modAll": "!translate stop all"
+      }
+    },
+    "help": {
+      "name": "!commands / !help",
+      "description": "Показывает, где найти список доступных команд.",
+      "usage": {
+        "basic": "!help или !commands"
+      }
+    },
+    "lurk": {
+      "name": "!lurk",
+      "description": "Сообщите чату, что вы находитесь в режиме скрытого наблюдения. Укажите необязательную причину для индивидуального прощания."
+    },
+    "geo": {
+      "name": "!geo",
+      "description": "Запускает или управляет Geo-Game, географической игрой-угадайкой для реального мира или виртуальных миров.",
+      "usage": {
+        "basic": "Запускает глобальную игру в реальном мире",
+        "region": "Запускает игру в реальном мире для определенного региона, например, !geo Япония",
+        "game": "Запускает игру в игровом мире, используя текущую игру стрима",
+        "gameTitle": "Запускает игру в игровом мире с указанной игрой, например, !geo game \"Metroid Prime\"",
+        "rounds": "Выполняет любую игровую команду с N раундами, например, !geo Япония 3",
+        "stop": "Инициатор игры, модераторы или стример могут остановить",
+        "interval": "Устанавливает время между подсказками от 30 до 300 секунд",
+        "duration": "Устанавливает продолжительность раунда от 3 до 20 минут",
+        "configRegion": "Устанавливает регионы, такие как Европа,Азия или США,Канада",
+        "configGame": "Устанавливает предпочитаемые названия игр, разделенные запятыми",
+        "pointsBase": "Устанавливает базовые очки от 1 до 100",
+        "maxRounds": "Устанавливает максимальное количество раундов от 1 до 10",
+        "clearLeaderboard": "Или resetstats",
+        "report": "Сообщает о проблемных местах или подсказках",
+        "regionCmd": "!geo <регион>",
+        "commandRounds": "!geo <команда> N",
+        "configRegionCmd": "!geo config region <регионы>",
+        "configDifficultyCmd": "!geo config difficulty <легко|нормально|сложно>",
+        "intervalCmd": "!geo config interval <секунды>",
+        "durationCmd": "!geo config duration <минуты>",
+        "configGameCmd": "!geo config game <названия>",
+        "pointsBaseCmd": "!geo config pointsbase <число>",
+        "maxRoundsCmd": "!geo config maxrounds <число>",
+        "reportCmd": "!geo report <причина>",
+        "gameTitleCmd": "!geo game [Название игры]",
+        "japan": "Япония",
+        "metroidPrime": "Metroid Prime",
+        "europe": "Европа",
+        "asia": "Азия",
+        "usa": "США",
+        "canada": "Канада"
+      }
+    },
+    "riddle": {
+      "name": "!riddle",
+      "description": "Запускает или управляет игрой в Загадки. Загадки могут быть общими, о текущей игре на стриме или на определенную тему.",
+      "usage": {
+        "basic": "Запускает загадку на общие знания",
+        "subject": "Пример: !riddle животные",
+        "rounds": "Пример: !riddle 3 для 3 общих раундов",
+        "subjectRounds": "Пример: !riddle история 5",
+        "game": "Загадка о текущей игре на стриме",
+        "report": "Сообщает о проблемных загадках",
+        "stop": "Инициатор игры, модераторы или стример могут остановить",
+        "questionTime": "Устанавливает время на загадку от 15 до 120 секунд",
+        "pointsBase": "Устанавливает базовые очки от 1 до 100",
+        "maxRounds": "Устанавливает максимальное количество раундов от 1 до 20",
+        "keywordsLimit": "Устанавливает количество недавних ключевых слов для исключения, например, 20-100",
+        "roundDelay": "Устанавливает задержку между раундами",
+        "clearLeaderboard": "Или cleardata",
+        "subjectCmd": "!riddle <тема>",
+        "roundsCmd": "!riddle <раунды>",
+        "subjectRoundsCmd": "!riddle <тема> <раунды>",
+        "gameRoundsCmd": "!riddle game <раунды>",
+        "reportCmd": "!riddle report <причина...>",
+        "configDifficultyCmd": "!riddle config difficulty <легко|нормально|сложно>",
+        "questionTimeCmd": "!riddle config questiontime <секунды>",
+        "pointsBaseCmd": "!riddle config pointsbase <число>",
+        "maxRoundsCmd": "!riddle config maxrounds <число>",
+        "keywordsLimitCmd": "!riddle config keywordslimit <число>",
+        "roundDelayCmd": "!riddle config rounddelay <миллисекунды>",
+        "animals": "животные",
+        "history": "история"
+      }
+    },
+    "trivia": {
+      "name": "!trivia",
+      "description": "Запускает или управляет играми Trivia с фактическими вопросами на различные темы, включая текущую игру на стриме.",
+      "usage": {
+        "basic": "Запускает викторину на общие знания",
+        "topic": "Запускает тематическую викторину, например, !trivia наука",
+        "game": "Запускает викторину о текущей игре на стриме",
+        "rounds": "Указывает количество раундов, например, !trivia 3",
+        "topicRounds": "Пример: !trivia история 5",
+        "report": "Сообщает о проблемных вопросах",
+        "stop": "Инициатор игры, модераторы или стример могут остановить",
+        "time": "Устанавливает время на вопрос от 10 до 120 секунд",
+        "pointsBase": "Устанавливает базовые очки от 1 до 100",
+        "configTopic": "Устанавливает предпочитаемые темы, разделенные запятыми",
+        "maxRounds": "Устанавливает максимальное количество раундов от 1 до 10",
+        "topicCmd": "!trivia <тема>",
+        "roundsCmd": "!trivia <раунды>",
+        "topicRoundsCmd": "!trivia <тема> <раунды>",
+        "reportCmd": "!trivia report <причина>",
+        "configDifficultyCmd": "!trivia config difficulty <легко|нормально|сложно>",
+        "timeCmd": "!trivia config time <секунды>",
+        "pointsBaseCmd": "!trivia config pointsbase <число>",
+        "configTopicCmd": "!trivia config topic <темы>",
+        "maxRoundsCmd": "!trivia config maxrounds <число>",
+        "science": "наука",
+        "history": "история"
+      }
+    },
+    "botlang": {
+      "name": "!botlang",
+      "description": "Настраивает бота на общение на определенном языке для всего канала.",
+      "usage": {
+        "status": "Проверяет текущий язык",
+        "off": "Сбрасывает на английский",
+        "default": "Сбрасывает на английский",
+        "langCmd": "!botlang <язык>"
+      }
+    },
+    "auto": {
+      "name": "!auto",
+      "description": "Настраивает режим автоматического чата и опции.",
+      "usage": {
+        "status": "Показывает текущий режим автоматического чата, частоту и категории",
+        "modeCmd": "!auto <off|low|medium|high>",
+        "mode": "Устанавливает агрессивность автоматического чата (off отключает)",
+        "freqCmd": "!auto config frequency:<минуты>",
+        "freq": "Устанавливает минимальный интервал между автосообщениями (минуты)",
+        "greetingsCmd": "!auto config greetings:<on|off>",
+        "greetings": "Включить/отключить приветствия",
+        "factsCmd": "!auto config facts:<on|off>",
+        "facts": "Включить/отключить факты и советы",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "questions": "Включить/отключить вопросы для вовлечения",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "Включить/отключить уведомления о рекламных паузах",
+        "multiCmd": "!auto config frequency:<минуты> greetings:<on|off> facts:<on|off> questions:<on|off>",
+        "multi": "Установить несколько опций одновременно"
+      }
+    },
+    "disable": {
+      "name": "!disable",
+      "description": "Отключает команду в этом канале.",
+      "usage": {
+        "lurk": "Отключает команду !lurk",
+        "trivia": "Отключает команду !trivia"
+      }
+    },
+    "enable": {
+      "name": "!enable",
+      "description": "Включает ранее отключенную команду в этом канале.",
+      "usage": {
+        "trivia": "Включает команду !trivia"
+      }
+    },
+    "ping": {
+      "name": "!ping",
+      "description": "Проверяет, отвечает ли бот. Отвечает Pong!"
+    }
+  },
+  "ui": {
+    "languageSelector": "Язык",
+    "mod": "Мод"
+  },
+  "sidebar": {
+    "generalCommands": "Общие команды",
+    "games": "Игры",
+    "config": "Настройки"
+  }
+}
