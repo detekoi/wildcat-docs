@@ -1,6 +1,6 @@
-# Wildcat.chat Documentation Site
+# Wildcat Documentation Site
 
-This is the documentation site for the Wildcat.chat platform, hosted at `docs.wildcat.chat`.
+This is the documentation site for the Wildcat platform.
 
 ## Structure
 
@@ -32,8 +32,8 @@ firebase deploy --only hosting
 
 1. Go to Firebase Console → Hosting
 2. Click "Add custom domain"
-3. Enter `docs.wildcat.chat`
-4. Follow instructions to add DNS records to Namecheap
+3. Enter your desired domain (e.g., `docs.yourdomain.com`)
+4. Follow instructions to add DNS records to your domain provider
 
 ## Adding Documentation
 
