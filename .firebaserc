@@ -9,6 +9,13 @@
           "wildcat-docs"
         ]
       }
+    },
+    "wildcat-home": {
+      "hosting": {
+        "main": [
+          "wildcat-home"
+        ]
+      }
     }
   },
   "etags": {}
