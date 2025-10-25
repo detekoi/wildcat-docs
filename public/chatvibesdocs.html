@@ -314,9 +314,16 @@
                             </ol>
                             <p><strong>Configuration Options:</strong></p>
                             <ul>
-                                <li><strong>Basic Settings:</strong> Reward title, cost (points), prompt text, auto-approve</li>
+                                <li><strong>Basic Settings:</strong> Reward title, cost (points), prompt text, skip queue option</li>
                                 <li><strong>Advanced Settings:</strong> Global cooldown, per-stream limit, per-user limit</li>
                                 <li><strong>Content Policy:</strong> Min/max message length, block links, banned words list</li>
+                            </ul>
+                            <p><strong>Skip the Reward Queue:</strong></p>
+                            <ul>
+                                <li><strong>Default Setting:</strong> This option is <strong>enabled by default</strong> for immediate TTS playback.</li>
+                                <li><strong>When Enabled:</strong> Redemptions are processed immediately and do not appear in your Twitch "Reward Requests" queue.</li>
+                                <li><strong>When Disabled:</strong> Redemptions appear in your Twitch dashboard for manual approval before TTS plays.</li>
+                                <li><strong>Use Case:</strong> Enable for instant TTS, disable for moderation control.</li>
                             </ul>
                             <p><strong>TTS Modes:</strong> Works with all TTS modes (All Messages, Commands Only, Bits/Points Only).</p>
                             <p><strong>Requirements:</strong> Must grant <span class="inline-code">channel:manage:redemptions</span> and <span class="inline-code">channel:read:redemptions</span> OAuth scopes during initial dashboard setup.</p>
