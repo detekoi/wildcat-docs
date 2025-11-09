@@ -196,6 +196,24 @@
                 </td>
             </tr>
         </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td>!quote</td>
+                <td><span class="description-text">Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.</span><span class="dropdown-toggle">&#x25BC;</span></td>
+            </tr>
+            <tr class="dropdown-details" style="display:none;">
+                <td colspan="2">
+                    <code>!quote</code> <span>Shows a random quote</span>
+                    <code>!quote &lt;id&gt;</code> <span>Shows quote by ID number, e.g. !quote 12</span>
+                    <code>!quote last</code> <span>Shows the most recently added quote</span>
+                    <code>!quote &lt;search term&gt;</code> <span>Searches quotes by text or author, e.g. !quote parfait</span>
+                    <code>!quote search &lt;term&gt;</code> <span>Explicit search command</span>
+                    <code>!quote add &lt;text [- author]&gt;</code> <span>Adds a new quote. Optional author after " - ", e.g. !quote add "hello world - parfait"</span>
+                    <code class="mod-command">!quote delete &lt;id&gt;</code> <span>Deletes a quote (mods/broadcaster only)</span>
+                    <code class="mod-command">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code> <span>Edits an existing quote (mods/broadcaster only)</span>
+                </td>
+            </tr>
+        </tbody>
         <tbody>
             <tr class="category-header" id="games">
                 <td colspan="2" data-i18n="table.categories.games">Games</td>
