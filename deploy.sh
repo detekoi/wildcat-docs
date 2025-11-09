@@ -3,7 +3,9 @@
 
 set -e
 
-echo "🐱 Deploying Wildcat.chat Documentation..."
+PROJECT_ID="wildcat-docs"
+
+echo "🐱 Deploying Wildcat.chat Documentation to ${PROJECT_ID}..."
 
 # Check if Firebase CLI is installed
 if ! command -v firebase &> /dev/null; then
@@ -17,9 +19,21 @@ if ! firebase projects:list &> /dev/null; then
     exit 1
 fi
 
+# Explicitly set the Firebase project
+echo "🔧 Setting Firebase project to ${PROJECT_ID}..."
+firebase use "${PROJECT_ID}"
+
+# Verify we're using the correct project
+CURRENT_PROJECT=$(firebase use 2>&1 | grep -E "Now using|Using" | grep -oE '[a-z0-9-]+' | tail -1)
+if [ "$CURRENT_PROJECT" != "$PROJECT_ID" ]; then
+    echo "❌ Error: Expected project ${PROJECT_ID}, but got ${CURRENT_PROJECT}"
+    exit 1
+fi
+echo "✅ Confirmed using project: ${CURRENT_PROJECT}"
+
 # Deploy to Firebase Hosting
 echo "📦 Deploying to Firebase Hosting..."
 firebase deploy --only hosting
 
 echo "✅ Deployment complete!"
-echo "📄 Visit your docs at: https://docs.wildcat.chat (after DNS setup)"
+echo "📄 Visit your docs at: https://wildcat-docs.web.app"
