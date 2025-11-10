@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "main",
+    "site": "wildcat-docs",
     "public": "public",
     "ignore": [
       "firebase.json",
