@@ -4,7 +4,7 @@
   },
   "page": {
     "title": "ChatSage Bot-Befehle",
-    "expandTip": "Klicke auf eine Befehlszeile unten, um sie zu erweitern und Nutzungsdetails anzuzeigen.",
+    "expandTip": "Klicken Sie auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails zu sehen.",
     "lastUpdated": "Zuletzt aktualisiert"
   },
   "table": {
@@ -21,7 +21,7 @@
   "commands": {
     "ask": {
       "name": "!ask / !sage",
-      "description": "Stelle Sage eine Frage. Nutzt die Suche intelligent.",
+      "description": "Stellen Sie Sage eine Frage. Nutzt intelligente Suche.",
       "usage": {
         "question": "!ask <deine Frage>",
         "analyzeQuestion": "!game analyze <deine Frage>"
@@ -29,25 +29,25 @@
     },
     "search": {
       "name": "!search",
-      "description": "Sucht im Web nach Informationen zu einem Thema.",
+      "description": "Sucht im Internet nach Informationen zu einem Thema.",
       "usage": {
-        "query": "!search <deine Suchanfrage>"
+        "query": "!search <deine Anfrage>"
       }
     },
     "game": {
       "name": "!game",
-      "description": "Liefert recherchierte Informationen über das aktuell gespielte Spiel. Füge \"analyze\" hinzu, um KI-Bilderkennung im Stream zu verwenden (nutzt das Twitch-Thumbnail, das alle 5 Minuten aktualisiert wird).",
+      "description": "Bietet recherchierte Informationen über das aktuell gespielte Spiel. Fügen Sie \"analyze\" hinzu, um KI-Bilderkennung im Stream zu nutzen (verwendet Twitch-Thumbnail, das sich alle 5 Minuten aktualisiert).",
       "usage": {
         "analyzeText": "Analysiert Stream-Visuals mit KI",
         "questionText": "Beantwortet spezifische Gameplay-Fragen",
-        "analyzeQuestionText": "Analysiert Visuals und beantwortet die Frage",
+        "analyzeQuestionText": "Analysiert Visuals und beantwortet Fragen",
         "question": "!game <deine Frage>",
         "analyzeQuestion": "!game analyze <deine Frage>"
       }
     },
     "translate": {
       "name": "!translate",
-      "description": "Verwaltet die automatische Nachrichtenübersetzung für Benutzer.",
+      "description": "Verwalten Sie die automatische Nachrichtenübersetzung für Benutzer.",
       "usage": {
         "lang": "!translate <Sprache>",
         "stop": "!translate stop",
@@ -57,139 +57,139 @@
     },
     "help": {
       "name": "!commands / !help",
-      "description": "Zeigt, wo die Liste der verfügbaren Befehle zu finden ist.",
+      "description": "Zeigt, wo man die Liste der verfügbaren Befehle findet.",
       "usage": {
         "basic": "!help oder !commands"
       }
     },
     "lurk": {
       "name": "!lurk",
-      "description": "Lass den Chat wissen, dass du lurkst. Gib optional einen Grund für eine individuelle Verabschiedung an."
+      "description": "Teilen Sie dem Chat mit, dass Sie lurken. Geben Sie einen optionalen Grund für eine benutzerdefinierte Verabschiedung an."
     },
     "quote": {
       "name": "!quote",
-      "description": "Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.",
+      "description": "Fügen Sie Zitate aus dem Kanal hinzu, sehen Sie sie an oder suchen Sie nach ihnen. Zitate werden pro Kanal gespeichert und können eine optionale Autorenangabe enthalten.",
       "usage": {
         "random": "!quote",
-        "randomDesc": "Shows a random quote",
+        "randomDesc": "Zeigt ein zufälliges Zitat",
         "id": "!quote <id>",
-        "idDesc": "Shows quote by ID number, e.g. !quote 12",
+        "idDesc": "Zeigt Zitat nach ID-Nummer, z. B. !quote 12",
         "last": "!quote last",
-        "lastDesc": "Shows the most recently added quote",
-        "search": "!quote <search term>",
-        "searchDesc": "Searches quotes by text or author, e.g. !quote parfait",
-        "searchExplicit": "!quote search <term>",
-        "searchExplicitDesc": "Explicit search command",
-        "add": "!quote add <text [- author]>",
-        "addDesc": "Adds a new quote. Optional author after \" - \", e.g. !quote add \"hello world - parfait\"",
+        "lastDesc": "Zeigt das zuletzt hinzugefügte Zitat",
+        "search": "!quote <Suchbegriff>",
+        "searchDesc": "Sucht Zitate nach Text oder Autor, z. B. !quote parfait",
+        "searchExplicit": "!quote search <Begriff>",
+        "searchExplicitDesc": "Expliziter Suchbefehl",
+        "add": "!quote add <Text [- Autor]>",
+        "addDesc": "Fügt ein neues Zitat hinzu. Optionaler Autor nach \" - \", z. B. !quote add \"hello world - parfait\"",
         "delete": "!quote delete <id>",
-        "deleteDesc": "Deletes a quote (mods/broadcaster only)",
-        "edit": "!quote edit <id> <text [- author]>",
-        "editDesc": "Edits an existing quote (mods/broadcaster only)"
+        "deleteDesc": "Löscht ein Zitat (nur Mods/Streamer)",
+        "edit": "!quote edit <id> <Text [- Autor]>",
+        "editDesc": "Bearbeitet ein vorhandenes Zitat (nur Mods/Streamer)"
       }
     },
     "geo": {
       "name": "!geo",
-      "description": "Startet oder verwaltet Geo-Game, ein Geografie-Ratespiel für IRL oder virtuelle Welten.",
+      "description": "Startet oder verwaltet Geo-Spiel, ein Geografiespiel für IRL oder virtuelle Welten.",
       "usage": {
-        "basic": "Startet ein globales Echtwelt-Spiel",
-        "region": "Startet ein regionsspezifisches Echtwelt-Spiel, z.B. !geo Japan",
-        "game": "Startet ein Spielwelt-Spiel mit dem aktuellen Spiel des Streams",
-        "gameTitle": "Startet ein Spielwelt-Spiel mit angegebenem Spiel, z.B. !geo game \"Metroid Prime\"",
-        "rounds": "Führt einen beliebigen Spielbefehl mit N Runden aus, z.B. !geo Japan 3",
-        "stop": "Spielinitiator, Mods oder Broadcaster können stoppen",
-        "interval": "Legt die Zeit zwischen Hinweisen auf 30-300 Sekunden fest",
-        "duration": "Legt die Rundendauer auf 3-20 Minuten fest",
-        "configRegion": "Legt Regionen wie Europa,Asien oder USA,Kanada fest",
-        "configGame": "Legt bevorzugte Spieltitel fest, kommagetrennt",
-        "pointsBase": "Legt Basispunkte von 1-100 fest",
-        "maxRounds": "Legt maximale Runden von 1-10 fest",
+        "basic": "Startet ein globales Echtzeit-Spiel",
+        "region": "Startet ein regionales Echtzeit-Spiel, z. B. !geo Japan",
+        "game": "Startet ein Spielwelt-Spiel mit dem aktuellen Stream-Spiel",
+        "gameTitle": "Startet ein Spielwelt-Spiel mit bestimmtem Spiel, z. B. !geo game \"Metroid Prime\"",
+        "rounds": "Führt einen beliebigen Spiel-Befehl mit N Runden aus, z. B. !geo Japan 3",
+        "stop": "Spielinitiator, Mods oder Streamer können stoppen",
+        "interval": "Stellt Zeit zwischen Hinweisen auf 30-300 Sekunden ein",
+        "duration": "Stellt Rundendauer auf 3-20 Minuten ein",
+        "configRegion": "Setzt Regionen wie Europe,Asia oder USA,Canada",
+        "configGame": "Setzt bevorzugte Spieltitel, kommagetrennt",
+        "pointsBase": "Setzt Basispunkte von 1-100",
+        "maxRounds": "Setzt maximale Runden von 1-10",
         "clearLeaderboard": "Oder resetstats",
         "report": "Meldet problematische Orte oder Hinweise",
         "regionCmd": "!geo <Region>",
         "commandRounds": "!geo <Befehl> N",
         "configRegionCmd": "!geo config region <Regionen>",
-        "configDifficultyCmd": "!geo config difficulty <einfach|normal|schwer>",
+        "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
         "intervalCmd": "!geo config interval <Sekunden>",
         "durationCmd": "!geo config duration <Minuten>",
         "configGameCmd": "!geo config game <Titel>",
-        "pointsBaseCmd": "!geo config pointsbase <Zahl>",
-        "maxRoundsCmd": "!geo config maxrounds <Zahl>",
+        "pointsBaseCmd": "!geo config pointsbase <Nummer>",
+        "maxRoundsCmd": "!geo config maxrounds <Nummer>",
         "reportCmd": "!geo report <Grund>",
         "gameTitleCmd": "!geo game [Spieltitel]",
         "japan": "Japan",
         "metroidPrime": "Metroid Prime",
-        "europe": "Europa",
-        "asia": "Asien",
+        "europe": "Europe",
+        "asia": "Asia",
         "usa": "USA",
-        "canada": "Kanada"
+        "canada": "Canada"
       }
     },
     "riddle": {
       "name": "!riddle",
-      "description": "Startet oder verwaltet ein Rätselspiel. Rätsel können allgemein sein, sich auf das aktuelle Stream-Spiel oder ein bestimmtes Thema beziehen.",
+      "description": "Startet oder verwaltet ein Rätselspiel. Rätsel können allgemein, über das aktuelle Stream-Spiel oder ein spezifisches Thema sein.",
       "usage": {
-        "basic": "Startet ein Allgemeinwissensrätsel",
-        "subject": "Beispiel: !riddle tiere",
+        "basic": "Startet ein allgemeines Wissensrätsel",
+        "subject": "Beispiel: !riddle animals",
         "rounds": "Beispiel: !riddle 3 für 3 allgemeine Runden",
-        "subjectRounds": "Beispiel: !riddle geschichte 5",
+        "subjectRounds": "Beispiel: !riddle history 5",
         "game": "Rätsel über das aktuelle Stream-Spiel",
         "report": "Meldet problematische Rätsel",
-        "stop": "Spielinitiator, Mods oder Broadcaster können stoppen",
-        "questionTime": "Legt die Zeit pro Rätsel auf 15-120 Sekunden fest",
-        "pointsBase": "Legt Basispunkte von 1-100 fest",
-        "maxRounds": "Legt maximale Runden von 1-20 fest",
-        "keywordsLimit": "Legt kürzlich verwendete Schlüsselwörter fest, die ausgeschlossen werden sollen, z.B. 20-100",
-        "roundDelay": "Legt die Verzögerung zwischen den Runden fest",
+        "stop": "Spielinitiator, Mods oder Streamer können stoppen",
+        "questionTime": "Stellt Zeit pro Rätsel auf 15-120 Sekunden ein",
+        "pointsBase": "Setzt Basispunkte von 1-100",
+        "maxRounds": "Setzt maximale Runden von 1-20",
+        "keywordsLimit": "Setzt aktuelle auszuschließende Schlüsselwörter, z. B. 20-100",
+        "roundDelay": "Stellt Verzögerung zwischen Runden ein",
         "clearLeaderboard": "Oder cleardata",
         "subjectCmd": "!riddle <Thema>",
         "roundsCmd": "!riddle <Runden>",
         "subjectRoundsCmd": "!riddle <Thema> <Runden>",
         "gameRoundsCmd": "!riddle game <Runden>",
         "reportCmd": "!riddle report <Grund...>",
-        "configDifficultyCmd": "!riddle config difficulty <einfach|normal|schwer>",
+        "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
         "questionTimeCmd": "!riddle config questiontime <Sekunden>",
-        "pointsBaseCmd": "!riddle config pointsbase <Zahl>",
-        "maxRoundsCmd": "!riddle config maxrounds <Zahl>",
-        "keywordsLimitCmd": "!riddle config keywordslimit <Zahl>",
+        "pointsBaseCmd": "!riddle config pointsbase <Nummer>",
+        "maxRoundsCmd": "!riddle config maxrounds <Nummer>",
+        "keywordsLimitCmd": "!riddle config keywordslimit <Nummer>",
         "roundDelayCmd": "!riddle config rounddelay <Millisekunden>",
-        "animals": "tiere",
-        "history": "geschichte"
+        "animals": "animals",
+        "history": "history"
       }
     },
     "trivia": {
       "name": "!trivia",
-      "description": "Startet oder verwaltet Trivia-Spiele mit Sachfragen zu verschiedenen Themen, einschließlich des aktuellen Stream-Spiels.",
+      "description": "Startet oder verwaltet Wissensquiz mit Fragen zu verschiedenen Themen, einschließlich des aktuellen Stream-Spiels.",
       "usage": {
-        "basic": "Startet Allgemeinwissens-Trivia",
-        "topic": "Startet themenspezifisches Trivia, z.B. !trivia wissenschaft",
-        "game": "Startet Trivia über das aktuelle Stream-Spiel",
-        "rounds": "Gibt die Anzahl der Runden an, z.B. !trivia 3",
-        "topicRounds": "Beispiel: !trivia geschichte 5",
+        "basic": "Startet allgemeines Wissensquiz",
+        "topic": "Startet themenbezogenes Wissensquiz, z. B. !trivia science",
+        "game": "Startet Wissensquiz über das aktuelle Stream-Spiel",
+        "rounds": "Gibt Anzahl der Runden an, z. B. !trivia 3",
+        "topicRounds": "Beispiel: !trivia history 5",
         "report": "Meldet problematische Fragen",
-        "stop": "Spielinitiator, Mods oder Broadcaster können stoppen",
-        "time": "Legt die Zeit pro Frage auf 10-120 Sekunden fest",
-        "pointsBase": "Legt Basispunkte von 1-100 fest",
-        "configTopic": "Legt bevorzugte Themen fest, kommagetrennt",
-        "maxRounds": "Legt maximale Runden von 1-10 fest",
+        "stop": "Spielinitiator, Mods oder Streamer können stoppen",
+        "time": "Stellt Zeit pro Frage auf 10-120 Sekunden ein",
+        "pointsBase": "Setzt Basispunkte von 1-100",
+        "configTopic": "Setzt bevorzugte Themen, kommagetrennt",
+        "maxRounds": "Setzt maximale Runden von 1-10",
         "topicCmd": "!trivia <Thema>",
         "roundsCmd": "!trivia <Runden>",
         "topicRoundsCmd": "!trivia <Thema> <Runden>",
         "reportCmd": "!trivia report <Grund>",
-        "configDifficultyCmd": "!trivia config difficulty <einfach|normal|schwer>",
+        "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
         "timeCmd": "!trivia config time <Sekunden>",
-        "pointsBaseCmd": "!trivia config pointsbase <Zahl>",
+        "pointsBaseCmd": "!trivia config pointsbase <Nummer>",
         "configTopicCmd": "!trivia config topic <Themen>",
-        "maxRoundsCmd": "!trivia config maxrounds <Zahl>",
-        "science": "wissenschaft",
-        "history": "geschichte"
+        "maxRoundsCmd": "!trivia config maxrounds <Nummer>",
+        "science": "science",
+        "history": "history"
       }
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Konfiguriert den Bot so, dass er für den gesamten Kanal in einer bestimmten Sprache spricht.",
+      "description": "Konfigurieren Sie den Bot so, dass er in einer bestimmten Sprache für den gesamten Kanal spricht.",
       "usage": {
-        "status": "Überprüft die aktuelle Sprache",
+        "status": "Überprüft aktuelle Sprache",
         "off": "Setzt auf Englisch zurück",
         "default": "Setzt auf Englisch zurück",
         "langCmd": "!botlang <Sprache>"
@@ -197,13 +197,13 @@
     },
     "auto": {
       "name": "!auto",
-      "description": "Konfiguriert den Auto-Chat-Modus und Optionen.",
+      "description": "Konfigurieren Sie den Auto-Chat-Modus und Optionen.",
       "usage": {
-        "status": "Zeigt den aktuellen Auto-Chat-Modus, Häufigkeit und Kategorien",
+        "status": "Zeigt aktuellen Auto-Chat-Modus, Häufigkeit und Kategorien",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "Setzt die Auto-Chat-Aggressivität (off deaktiviert)",
+        "mode": "Stellt Auto-Chat-Aggressivität ein (off deaktiviert)",
         "freqCmd": "!auto config frequency:<Minuten>",
-        "freq": "Setzt minimalen Abstand zwischen Auto-Nachrichten (Minuten)",
+        "freq": "Stellt minimalen Abstand zwischen Auto-Nachrichten ein (Minuten)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "Begrüßungen aktivieren/deaktivieren",
         "factsCmd": "!auto config facts:<on|off>",
@@ -211,108 +211,108 @@
         "questionsCmd": "!auto config questions:<on|off>",
         "questions": "Engagement-Fragen aktivieren/deaktivieren",
         "adsCmd": "!auto config ads:<on|off>",
-        "ads": "Benachrichtigungen zu Werbepausen aktivieren/deaktivieren",
+        "ads": "Werbepauset-Benachrichtigungen aktivieren/deaktivieren",
         "multiCmd": "!auto config frequency:<Minuten> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Mehrere Optionen auf einmal setzen"
+        "multi": "Mehrere Optionen auf einmal einstellen"
       }
     },
     "disable": {
       "name": "!disable",
       "description": "Deaktiviert einen Befehl in diesem Kanal.",
       "usage": {
-        "lurk": "Deaktiviert den !lurk Befehl",
-        "trivia": "Deaktiviert den !trivia Befehl"
+        "lurk": "Deaktiviert den Befehl !lurk",
+        "trivia": "Deaktiviert den Befehl !trivia"
       }
     },
     "enable": {
       "name": "!enable",
       "description": "Aktiviert einen zuvor deaktivierten Befehl in diesem Kanal.",
       "usage": {
-        "trivia": "Aktiviert den !trivia Befehl"
+        "trivia": "Aktiviert den Befehl !trivia"
       }
     },
     "ping": {
       "name": "!ping",
-      "description": "Überprüft, ob der Bot reagiert. Antwortet mit Pong!"
+      "description": "Überprüft, ob der Bot responsiv ist. Antwortet mit Pong!"
     }
   },
   "ui": {
     "languageSelector": "Sprache",
-    "mod": "Mod"
+    "mod": "Moderator"
   },
   "sidebar": {
     "generalCommands": "Allgemeine Befehle",
     "games": "Spiele",
     "config": "Konfiguration",
-    "webDashboard": "Web Dashboard"
+    "webDashboard": "Web-Schaltpult"
   },
   "webDashboard": {
-    "title": "Web Dashboard",
-    "intro": "The ChatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
-    "featuresTitle": "Available Dashboard Features",
+    "title": "Web-Schaltpult",
+    "intro": "Das ChatSage Web-Schaltpult bietet Streamern eine umfassende Schnittstelle, um den Bot in ihrem Kanal zu verwalten. Greifen Sie zu, indem Sie sich mit Ihrem Twitch-Konto anmelden.",
+    "featuresTitle": "Verfügbare Schaltpult-Funktionen",
     "features": {
       "botManagement": {
-        "title": "Bot Management:",
-        "desc": "Add or remove ChatSage from your channel"
+        "title": "Bot-Verwaltung:",
+        "desc": "Fügen Sie ChatSage zu Ihrem Kanal hinzu oder entfernen Sie ihn"
       },
       "channelConfig": {
-        "title": "Channel Configuration:",
-        "desc": "Configure bot language, auto-chat settings, and command permissions"
+        "title": "Kanaleinstellungen:",
+        "desc": "Konfigurieren Sie Bot-Sprache, Auto-Chat-Einstellungen und Befehlsberechtigungen"
       },
       "contextManagement": {
-        "title": "Context Management:",
-        "desc": "View and manage conversation context, summaries, and chat history"
+        "title": "Kontextverwaltung:",
+        "desc": "Ansicht und Verwaltung von Gesprächskontext, Zusammenfassungen und Chat-Verlauf"
       },
       "streamIntegration": {
-        "title": "Stream Integration:",
-        "desc": "Monitor current game, title, and stream information"
+        "title": "Stream-Integration:",
+        "desc": "Überwachen Sie aktuelles Spiel, Titel und Stream-Informationen"
       },
       "commandControl": {
-        "title": "Command Control:",
-        "desc": "Enable/disable specific commands and set custom responses"
+        "title": "Befehlskontrolle:",
+        "desc": "Aktivieren/deaktivieren Sie spezifische Befehle und legen Sie benutzerdefinierte Antworten fest"
       },
       "analytics": {
-        "title": "Analytics:",
-        "desc": "View bot usage statistics and interaction patterns"
+        "title": "Analytik:",
+        "desc": "Zeigen Sie Bot-Nutzungsstatistiken und Interaktionsmuster an"
       },
       "settingsBackup": {
-        "title": "Settings Backup:",
-        "desc": "Export/import your channel configuration"
+        "title": "Einstellungssicherung:",
+        "desc": "Exportieren/importieren Sie Ihre Kanaleinstellungen"
       }
     },
-    "gettingStartedTitle": "Getting Started",
+    "gettingStartedTitle": "Erste Schritte",
     "steps": {
       "visit": {
-        "title": "Visit the Dashboard:",
-        "desc": "Go to https://app.wildcat.chat/"
+        "title": "Besuchen Sie das Schaltpult:",
+        "desc": "Gehen Sie zu https://app.wildcat.chat/"
       },
       "authorize": {
-        "title": "Authorize:",
-        "desc": "Click \"Login with Twitch\" and grant the required permissions"
+        "title": "Genehmigen:",
+        "desc": "Klicken Sie auf \"Mit Twitch anmelden\" und gewähren Sie die erforderlichen Berechtigungen"
       },
       "addBot": {
-        "title": "Add the Bot:",
-        "desc": "Use the \"Add Bot to My Channel\" button to invite ChatSage to your channel"
+        "title": "Bot hinzufügen:",
+        "desc": "Verwenden Sie die Schaltfläche \"Bot zu meinem Kanal hinzufügen\", um ChatSage zu Ihrem Kanal einzuladen"
       },
       "configure": {
-        "title": "Configure:",
-        "desc": "Customize settings through the dashboard interface"
+        "title": "Konfigurieren:",
+        "desc": "Passen Sie die Einstellungen über die Schaltpult-Schnittstelle an"
       },
       "grantPerms": {
-        "title": "Grant Permissions:",
-        "desc": "In Twitch chat, type /mod ChatSageBot to give the bot moderator status"
+        "title": "Berechtigungen erteilen:",
+        "desc": "Geben Sie im Twitch-Chat /mod ChatSageBot ein, um dem Bot Moderatorstatus zu erteilen"
       }
     },
-    "oauthTitle": "OAuth Permissions",
-    "oauthIntro": "The dashboard requires the following Twitch OAuth scopes:",
+    "oauthTitle": "OAuth-Berechtigungen",
+    "oauthIntro": "Das Schaltpult erfordert die folgenden Twitch OAuth-Bereiche:",
     "oauth": {
-      "chatRead": "Read chat messages",
-      "chatEdit": "Send chat messages",
-      "readSubs": "Access subscription information",
-      "manageRedemptions": "Manage channel point redemptions",
-      "readEmail": "Access your email address"
+      "chatRead": "Chat-Nachrichten lesen",
+      "chatEdit": "Chat-Nachrichten senden",
+      "readSubs": "Zugriff auf Aboinformationen",
+      "manageRedemptions": "Verwaltung von Kanal-Punkt-Einlösungen",
+      "readEmail": "Zugriff auf Ihre E-Mail-Adresse"
     },
-    "noteLabel": "Note:",
-    "noteText": "ChatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
+    "noteLabel": "Hinweis:",
+    "noteText": "ChatSage ist derzeit nur auf Einladung verfügbar. Wenn Sie Ihren Kanal im Schaltpult nicht sehen, beantragen Sie Zugriff über das Kontaktformular."
   }
 }

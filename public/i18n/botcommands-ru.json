@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Команды бота"
+    "title": "Команды Бота"
   },
   "page": {
-    "title": "Команды бота ChatSage",
+    "title": "Команды ChatSage Бота",
     "expandTip": "Нажмите на любую строку команды ниже, чтобы развернуть и увидеть детали использования.",
     "lastUpdated": "Последнее обновление"
   },
@@ -13,7 +13,7 @@
       "description": "Описание"
     },
     "categories": {
-      "general": "Общие",
+      "general": "Основные",
       "games": "Игры",
       "config": "Настройка"
     }
@@ -21,7 +21,7 @@
   "commands": {
     "ask": {
       "name": "!ask / !sage",
-      "description": "Задайте вопрос Sage. Использует поиск интеллектуально.",
+      "description": "Задайте Sage вопрос. Использует интеллектуальный поиск.",
       "usage": {
         "question": "!ask <ваш вопрос>",
         "analyzeQuestion": "!game analyze <ваш вопрос>"
@@ -29,25 +29,25 @@
     },
     "search": {
       "name": "!search",
-      "description": "Ищет в интернете информацию по теме.",
+      "description": "Поиск в интернете информации по теме.",
       "usage": {
         "query": "!search <ваш запрос>"
       }
     },
     "game": {
       "name": "!game",
-      "description": "Предоставляет исследованную информацию об игре, в которую сейчас играют. Добавьте \"analyze\" для использования ИИ-распознавания изображений на стриме (использует миниатюру Twitch, которая обновляется каждые 5 минут).",
+      "description": "Предоставляет исследованную информацию об игре, в которую в данный момент играют. Добавьте \"analyze\", чтобы использовать распознавание изображений AI на трансляции (использует миниатюру Twitch, которая обновляется каждые 5 минут).",
       "usage": {
-        "analyzeText": "Анализирует визуальные эффекты стрима с помощью ИИ",
-        "questionText": "Отвечает на конкретные вопросы по игровому процессу",
-        "analyzeQuestionText": "Анализирует визуальные эффекты и отвечает на вопрос",
+        "analyzeText": "Анализирует визуальные элементы трансляции с помощью AI",
+        "questionText": "Отвечает на конкретные вопросы об игре",
+        "analyzeQuestionText": "Анализирует визуальные элементы и отвечает на вопрос",
         "question": "!game <ваш вопрос>",
         "analyzeQuestion": "!game analyze <ваш вопрос>"
       }
     },
     "translate": {
       "name": "!translate",
-      "description": "Управляет автоматическим переводом сообщений для пользователей.",
+      "description": "Управление автоматическим переводом сообщений для пользователей.",
       "usage": {
         "lang": "!translate <язык>",
         "stop": "!translate stop",
@@ -64,82 +64,82 @@
     },
     "lurk": {
       "name": "!lurk",
-      "description": "Сообщите чату, что вы находитесь в режиме скрытого наблюдения. Укажите необязательную причину для индивидуального прощания."
+      "description": "Дайте чату знать, что вы слушаете. Укажите необязательную причину для пользовательского сообщения."
     },
     "quote": {
       "name": "!quote",
-      "description": "Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.",
+      "description": "Добавляйте, просматривайте или ищите цитаты из канала. Цитаты хранятся для каждого канала и могут включать необязательное указание автора.",
       "usage": {
         "random": "!quote",
-        "randomDesc": "Shows a random quote",
+        "randomDesc": "Показывает случайную цитату",
         "id": "!quote <id>",
-        "idDesc": "Shows quote by ID number, e.g. !quote 12",
+        "idDesc": "Показывает цитату по номеру ID, напр. !quote 12",
         "last": "!quote last",
-        "lastDesc": "Shows the most recently added quote",
-        "search": "!quote <search term>",
-        "searchDesc": "Searches quotes by text or author, e.g. !quote parfait",
-        "searchExplicit": "!quote search <term>",
-        "searchExplicitDesc": "Explicit search command",
-        "add": "!quote add <text [- author]>",
-        "addDesc": "Adds a new quote. Optional author after \" - \", e.g. !quote add \"hello world - parfait\"",
+        "lastDesc": "Показывает последнюю добавленную цитату",
+        "search": "!quote <поисковый термин>",
+        "searchDesc": "Ищет цитаты по тексту или автору, напр. !quote parfait",
+        "searchExplicit": "!quote search <термин>",
+        "searchExplicitDesc": "Явная команда поиска",
+        "add": "!quote add <текст [- автор]>",
+        "addDesc": "Добавляет новую цитату. Необязательный автор после \" - \", напр. !quote add \"hello world - parfait\"",
         "delete": "!quote delete <id>",
-        "deleteDesc": "Deletes a quote (mods/broadcaster only)",
-        "edit": "!quote edit <id> <text [- author]>",
-        "editDesc": "Edits an existing quote (mods/broadcaster only)"
+        "deleteDesc": "Удаляет цитату (только модераторы/трансляция)",
+        "edit": "!quote edit <id> <текст [- автор]>",
+        "editDesc": "Редактирует существующую цитату (только модераторы/трансляция)"
       }
     },
     "geo": {
       "name": "!geo",
-      "description": "Запускает или управляет Geo-Game, географической игрой-угадайкой для реального мира или виртуальных миров.",
+      "description": "Запускает или управляет Geo-Game, игру в угадывание географических мест для реальной жизни или виртуальных миров.",
       "usage": {
-        "basic": "Запускает глобальную игру в реальном мире",
-        "region": "Запускает игру в реальном мире для определенного региона, например, !geo Япония",
-        "game": "Запускает игру в игровом мире, используя текущую игру стрима",
-        "gameTitle": "Запускает игру в игровом мире с указанной игрой, например, !geo game \"Metroid Prime\"",
-        "rounds": "Выполняет любую игровую команду с N раундами, например, !geo Япония 3",
-        "stop": "Инициатор игры, модераторы или стример могут остановить",
-        "interval": "Устанавливает время между подсказками от 30 до 300 секунд",
-        "duration": "Устанавливает продолжительность раунда от 3 до 20 минут",
-        "configRegion": "Устанавливает регионы, такие как Европа,Азия или США,Канада",
-        "configGame": "Устанавливает предпочитаемые названия игр, разделенные запятыми",
-        "pointsBase": "Устанавливает базовые очки от 1 до 100",
-        "maxRounds": "Устанавливает максимальное количество раундов от 1 до 10",
+        "basic": "Запускает глобальную игру реального мира",
+        "region": "Запускает региональную игру реального мира, напр. !geo Japan",
+        "game": "Запускает игру виртуального мира, используя игру текущей трансляции",
+        "gameTitle": "Запускает игру виртуального мира с указанной игрой, напр. !geo game \"Metroid Prime\"",
+        "rounds": "Запускает любую команду игры с N раундами, напр. !geo Japan 3",
+        "stop": "Инициатор игры, модераторы или транслятор могут остановить",
+        "interval": "Устанавливает время между подсказками на 30-300 секунд",
+        "duration": "Устанавливает продолжительность раунда на 3-20 минут",
+        "configRegion": "Устанавливает регионы, такие как Europe,Asia или USA,Canada",
+        "configGame": "Устанавливает предпочитаемые названия игр через запятую",
+        "pointsBase": "Устанавливает базовые очки от 1-100",
+        "maxRounds": "Устанавливает максимум раундов от 1-10",
         "clearLeaderboard": "Или resetstats",
-        "report": "Сообщает о проблемных местах или подсказках",
+        "report": "Сообщает о проблемных местоположениях или подсказках",
         "regionCmd": "!geo <регион>",
         "commandRounds": "!geo <команда> N",
         "configRegionCmd": "!geo config region <регионы>",
-        "configDifficultyCmd": "!geo config difficulty <легко|нормально|сложно>",
+        "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
         "intervalCmd": "!geo config interval <секунды>",
         "durationCmd": "!geo config duration <минуты>",
         "configGameCmd": "!geo config game <названия>",
         "pointsBaseCmd": "!geo config pointsbase <число>",
         "maxRoundsCmd": "!geo config maxrounds <число>",
         "reportCmd": "!geo report <причина>",
-        "gameTitleCmd": "!geo game [Название игры]",
-        "japan": "Япония",
+        "gameTitleCmd": "!geo game [Game Title]",
+        "japan": "Japan",
         "metroidPrime": "Metroid Prime",
-        "europe": "Европа",
-        "asia": "Азия",
-        "usa": "США",
-        "canada": "Канада"
+        "europe": "Europe",
+        "asia": "Asia",
+        "usa": "USA",
+        "canada": "Canada"
       }
     },
     "riddle": {
       "name": "!riddle",
-      "description": "Запускает или управляет игрой в Загадки. Загадки могут быть общими, о текущей игре на стриме или на определенную тему.",
+      "description": "Запускает или управляет игрой Riddle. Загадки могут быть на общие знания, об текущей игре трансляции или на определённую тему.",
       "usage": {
         "basic": "Запускает загадку на общие знания",
-        "subject": "Пример: !riddle животные",
-        "rounds": "Пример: !riddle 3 для 3 общих раундов",
-        "subjectRounds": "Пример: !riddle история 5",
-        "game": "Загадка о текущей игре на стриме",
+        "subject": "Пример: !riddle animals",
+        "rounds": "Пример: !riddle 3 для 3 раундов на общие знания",
+        "subjectRounds": "Пример: !riddle history 5",
+        "game": "Загадка об текущей игре трансляции",
         "report": "Сообщает о проблемных загадках",
-        "stop": "Инициатор игры, модераторы или стример могут остановить",
-        "questionTime": "Устанавливает время на загадку от 15 до 120 секунд",
-        "pointsBase": "Устанавливает базовые очки от 1 до 100",
-        "maxRounds": "Устанавливает максимальное количество раундов от 1 до 20",
-        "keywordsLimit": "Устанавливает количество недавних ключевых слов для исключения, например, 20-100",
+        "stop": "Инициатор игры, модераторы или транслятор могут остановить",
+        "questionTime": "Устанавливает время на загадку на 15-120 секунд",
+        "pointsBase": "Устанавливает базовые очки от 1-100",
+        "maxRounds": "Устанавливает максимум раундов от 1-20",
+        "keywordsLimit": "Устанавливает последние ключевые слова для исключения, напр. 20-100",
         "roundDelay": "Устанавливает задержку между раундами",
         "clearLeaderboard": "Или cleardata",
         "subjectCmd": "!riddle <тема>",
@@ -147,71 +147,71 @@
         "subjectRoundsCmd": "!riddle <тема> <раунды>",
         "gameRoundsCmd": "!riddle game <раунды>",
         "reportCmd": "!riddle report <причина...>",
-        "configDifficultyCmd": "!riddle config difficulty <легко|нормально|сложно>",
+        "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
         "questionTimeCmd": "!riddle config questiontime <секунды>",
         "pointsBaseCmd": "!riddle config pointsbase <число>",
         "maxRoundsCmd": "!riddle config maxrounds <число>",
         "keywordsLimitCmd": "!riddle config keywordslimit <число>",
         "roundDelayCmd": "!riddle config rounddelay <миллисекунды>",
-        "animals": "животные",
-        "history": "история"
+        "animals": "animals",
+        "history": "history"
       }
     },
     "trivia": {
       "name": "!trivia",
-      "description": "Запускает или управляет играми Trivia с фактическими вопросами на различные темы, включая текущую игру на стриме.",
+      "description": "Запускает или управляет играми Trivia с фактическими вопросами на различные темы, включая текущую игру трансляции.",
       "usage": {
         "basic": "Запускает викторину на общие знания",
-        "topic": "Запускает тематическую викторину, например, !trivia наука",
-        "game": "Запускает викторину о текущей игре на стриме",
-        "rounds": "Указывает количество раундов, например, !trivia 3",
-        "topicRounds": "Пример: !trivia история 5",
+        "topic": "Запускает викторину по теме, напр. !trivia science",
+        "game": "Запускает викторину об текущей игре трансляции",
+        "rounds": "Указывает количество раундов, напр. !trivia 3",
+        "topicRounds": "Пример: !trivia history 5",
         "report": "Сообщает о проблемных вопросах",
-        "stop": "Инициатор игры, модераторы или стример могут остановить",
-        "time": "Устанавливает время на вопрос от 10 до 120 секунд",
-        "pointsBase": "Устанавливает базовые очки от 1 до 100",
-        "configTopic": "Устанавливает предпочитаемые темы, разделенные запятыми",
-        "maxRounds": "Устанавливает максимальное количество раундов от 1 до 10",
+        "stop": "Инициатор игры, модераторы или транслятор могут остановить",
+        "time": "Устанавливает время на вопрос на 10-120 секунд",
+        "pointsBase": "Устанавливает базовые очки от 1-100",
+        "configTopic": "Устанавливает предпочитаемые темы через запятую",
+        "maxRounds": "Устанавливает максимум раундов от 1-10",
         "topicCmd": "!trivia <тема>",
         "roundsCmd": "!trivia <раунды>",
         "topicRoundsCmd": "!trivia <тема> <раунды>",
         "reportCmd": "!trivia report <причина>",
-        "configDifficultyCmd": "!trivia config difficulty <легко|нормально|сложно>",
+        "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
         "timeCmd": "!trivia config time <секунды>",
         "pointsBaseCmd": "!trivia config pointsbase <число>",
         "configTopicCmd": "!trivia config topic <темы>",
         "maxRoundsCmd": "!trivia config maxrounds <число>",
-        "science": "наука",
-        "history": "история"
+        "science": "science",
+        "history": "history"
       }
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Настраивает бота на общение на определенном языке для всего канала.",
+      "description": "Настройте Бота говорить на определённом языке для всего канала.",
       "usage": {
         "status": "Проверяет текущий язык",
-        "off": "Сбрасывает на английский",
-        "default": "Сбрасывает на английский",
+        "off": "Восстанавливает английский",
+        "default": "Восстанавливает английский",
         "langCmd": "!botlang <язык>"
       }
     },
     "auto": {
       "name": "!auto",
-      "description": "Настраивает режим автоматического чата и опции.",
+      "description": "Настройка режима автоматического чата и опций.",
       "usage": {
         "status": "Показывает текущий режим автоматического чата, частоту и категории",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "Устанавливает агрессивность автоматического чата (off отключает)",
         "freqCmd": "!auto config frequency:<минуты>",
-        "freq": "Устанавливает минимальный интервал между автосообщениями (минуты)",
+        "freq": "Устанавливает минимальный промежуток между автоматическими сообщениями (минуты)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "Включить/отключить приветствия",
         "factsCmd": "!auto config facts:<on|off>",
         "facts": "Включить/отключить факты и советы",
         "questionsCmd": "!auto config questions:<on|off>",
-        "questions": "Включить/отключить вопросы для вовлечения",
+        "questions": "Включить/отключить вопросы для взаимодействия",
         "adsCmd": "!auto config ads:<on|off>",
-        "ads": "Включить/отключить уведомления о рекламных паузах",
+        "ads": "Включить/отключить уведомления о перерывах на рекламу",
         "multiCmd": "!auto config frequency:<минуты> greetings:<on|off> facts:<on|off> questions:<on|off>",
         "multi": "Установить несколько опций одновременно"
       }
@@ -226,93 +226,93 @@
     },
     "enable": {
       "name": "!enable",
-      "description": "Включает ранее отключенную команду в этом канале.",
+      "description": "Включает ранее отключённую команду в этом канале.",
       "usage": {
         "trivia": "Включает команду !trivia"
       }
     },
     "ping": {
       "name": "!ping",
-      "description": "Проверяет, отвечает ли бот. Отвечает Pong!"
+      "description": "Проверяет отзывчивость Бота. Отвечает с Pong!"
     }
   },
   "ui": {
     "languageSelector": "Язык",
-    "mod": "Мод"
+    "mod": "Модератор"
   },
   "sidebar": {
-    "generalCommands": "Общие команды",
+    "generalCommands": "Основные Команды",
     "games": "Игры",
-    "config": "Настройки",
-    "webDashboard": "Web Dashboard"
+    "config": "Настройка",
+    "webDashboard": "Веб-Панель"
   },
   "webDashboard": {
-    "title": "Web Dashboard",
-    "intro": "The ChatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
-    "featuresTitle": "Available Dashboard Features",
+    "title": "Веб-Панель",
+    "intro": "Веб-Панель ChatSage предоставляет транслятерам комплексный интерфейс для управления ботом в их канале. Получите доступ, войдя через аккаунт Twitch.",
+    "featuresTitle": "Доступные Функции Панели",
     "features": {
       "botManagement": {
-        "title": "Bot Management:",
-        "desc": "Add or remove ChatSage from your channel"
+        "title": "Управление Ботом:",
+        "desc": "Добавляйте или удаляйте ChatSage из вашего канала"
       },
       "channelConfig": {
-        "title": "Channel Configuration:",
-        "desc": "Configure bot language, auto-chat settings, and command permissions"
+        "title": "Настройка Канала:",
+        "desc": "Настройте язык бота, параметры автоматического чата и разрешения команд"
       },
       "contextManagement": {
-        "title": "Context Management:",
-        "desc": "View and manage conversation context, summaries, and chat history"
+        "title": "Управление Контекстом:",
+        "desc": "Просматривайте и управляйте контекстом беседы, краткими сведениями и историей чата"
       },
       "streamIntegration": {
-        "title": "Stream Integration:",
-        "desc": "Monitor current game, title, and stream information"
+        "title": "Интеграция Трансляции:",
+        "desc": "Мониторьте текущую игру, заголовок и информацию трансляции"
       },
       "commandControl": {
-        "title": "Command Control:",
-        "desc": "Enable/disable specific commands and set custom responses"
+        "title": "Управление Командами:",
+        "desc": "Включайте/отключайте определённые команды и устанавливайте пользовательские ответы"
       },
       "analytics": {
-        "title": "Analytics:",
-        "desc": "View bot usage statistics and interaction patterns"
+        "title": "Аналитика:",
+        "desc": "Просматривайте статистику использования бота и модели взаимодействия"
       },
       "settingsBackup": {
-        "title": "Settings Backup:",
-        "desc": "Export/import your channel configuration"
+        "title": "Резервная Копия Настроек:",
+        "desc": "Экспортируйте/импортируйте конфигурацию вашего канала"
       }
     },
-    "gettingStartedTitle": "Getting Started",
+    "gettingStartedTitle": "Начало Работы",
     "steps": {
       "visit": {
-        "title": "Visit the Dashboard:",
-        "desc": "Go to https://app.wildcat.chat/"
+        "title": "Посетите Панель:",
+        "desc": "Перейдите на https://app.wildcat.chat/"
       },
       "authorize": {
-        "title": "Authorize:",
-        "desc": "Click \"Login with Twitch\" and grant the required permissions"
+        "title": "Авторизация:",
+        "desc": "Нажмите \"Вход через Twitch\" и предоставьте необходимые разрешения"
       },
       "addBot": {
-        "title": "Add the Bot:",
-        "desc": "Use the \"Add Bot to My Channel\" button to invite ChatSage to your channel"
+        "title": "Добавьте Бота:",
+        "desc": "Используйте кнопку \"Добавить Бота на Мой Канал\", чтобы пригласить ChatSage на ваш канал"
       },
       "configure": {
-        "title": "Configure:",
-        "desc": "Customize settings through the dashboard interface"
+        "title": "Настройка:",
+        "desc": "Настройте параметры через интерфейс панели"
       },
       "grantPerms": {
-        "title": "Grant Permissions:",
-        "desc": "In Twitch chat, type /mod ChatSageBot to give the bot moderator status"
+        "title": "Предоставьте Разрешения:",
+        "desc": "В чате Twitch введите /mod ChatSageBot, чтобы дать боту статус модератора"
       }
     },
-    "oauthTitle": "OAuth Permissions",
-    "oauthIntro": "The dashboard requires the following Twitch OAuth scopes:",
+    "oauthTitle": "Разрешения OAuth",
+    "oauthIntro": "Панель требует следующие области OAuth Twitch:",
     "oauth": {
-      "chatRead": "Read chat messages",
-      "chatEdit": "Send chat messages",
-      "readSubs": "Access subscription information",
-      "manageRedemptions": "Manage channel point redemptions",
-      "readEmail": "Access your email address"
+      "chatRead": "Читать сообщения чата",
+      "chatEdit": "Отправлять сообщения чата",
+      "readSubs": "Доступ к информации подписок",
+      "manageRedemptions": "Управлять выкупами поинтов канала",
+      "readEmail": "Доступ к вашему адресу электронной почты"
     },
-    "noteLabel": "Note:",
-    "noteText": "ChatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
+    "noteLabel": "Примечание:",
+    "noteText": "ChatSage в настоящее время доступен только по приглашению. Если вы не видите свой канал на панели, пожалуйста, запросите доступ через форму обратной связи."
   }
 }

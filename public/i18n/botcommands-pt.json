@@ -68,24 +68,24 @@
     },
     "quote": {
       "name": "!quote",
-      "description": "Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.",
+      "description": "Adicione, visualize ou pesquise citações do canal. As citações são armazenadas por canal e podem incluir atribuição opcional de autor.",
       "usage": {
         "random": "!quote",
-        "randomDesc": "Shows a random quote",
+        "randomDesc": "Mostra uma citação aleatória",
         "id": "!quote <id>",
-        "idDesc": "Shows quote by ID number, e.g. !quote 12",
+        "idDesc": "Mostra citação por número de ID, ex: !quote 12",
         "last": "!quote last",
-        "lastDesc": "Shows the most recently added quote",
-        "search": "!quote <search term>",
-        "searchDesc": "Searches quotes by text or author, e.g. !quote parfait",
-        "searchExplicit": "!quote search <term>",
-        "searchExplicitDesc": "Explicit search command",
-        "add": "!quote add <text [- author]>",
-        "addDesc": "Adds a new quote. Optional author after \" - \", e.g. !quote add \"hello world - parfait\"",
+        "lastDesc": "Mostra a citação adicionada mais recentemente",
+        "search": "!quote <termo de busca>",
+        "searchDesc": "Pesquisa citações por texto ou autor, ex: !quote parfait",
+        "searchExplicit": "!quote search <termo>",
+        "searchExplicitDesc": "Comando de busca explícito",
+        "add": "!quote add <texto [- autor]>",
+        "addDesc": "Adiciona uma nova citação. Autor opcional após \" - \", ex: !quote add \"olá mundo - parfait\"",
         "delete": "!quote delete <id>",
-        "deleteDesc": "Deletes a quote (mods/broadcaster only)",
-        "edit": "!quote edit <id> <text [- author]>",
-        "editDesc": "Edits an existing quote (mods/broadcaster only)"
+        "deleteDesc": "Deleta uma citação (apenas mods/broadcaster)",
+        "edit": "!quote edit <id> <texto [- autor]>",
+        "editDesc": "Edita uma citação existente (apenas mods/broadcaster)"
       }
     },
     "geo": {
@@ -146,7 +146,7 @@
         "roundsCmd": "!riddle <rodadas>",
         "subjectRoundsCmd": "!riddle <tema> <rodadas>",
         "gameRoundsCmd": "!riddle game <rodadas>",
-        "reportCmd": "!riddle report <motivo... P",
+        "reportCmd": "!riddle report <motivo...>",
         "configDifficultyCmd": "!riddle config difficulty <fácil|normal|difícil>",
         "questionTimeCmd": "!riddle config questiontime <segundos>",
         "pointsBaseCmd": "!riddle config pointsbase <número>",
@@ -238,81 +238,81 @@
   },
   "ui": {
     "languageSelector": "Idioma",
-    "mod": "Mod"
+    "mod": "Moderador"
   },
   "sidebar": {
     "generalCommands": "Comandos Gerais",
     "games": "Jogos",
     "config": "Configuração",
-    "webDashboard": "Web Dashboard"
+    "webDashboard": "Painel Web"
   },
   "webDashboard": {
-    "title": "Web Dashboard",
-    "intro": "The ChatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
-    "featuresTitle": "Available Dashboard Features",
+    "title": "Painel Web",
+    "intro": "O Painel Web do ChatSage fornece aos streamers uma interface abrangente para gerenciar o bot em seu canal. Acesse fazendo login com sua conta Twitch.",
+    "featuresTitle": "Recursos de Painel Disponíveis",
     "features": {
       "botManagement": {
-        "title": "Bot Management:",
-        "desc": "Add or remove ChatSage from your channel"
+        "title": "Gerenciamento de Bot:",
+        "desc": "Adicione ou remova ChatSage do seu canal"
       },
       "channelConfig": {
-        "title": "Channel Configuration:",
-        "desc": "Configure bot language, auto-chat settings, and command permissions"
+        "title": "Configuração de Canal:",
+        "desc": "Configure idioma do bot, configurações de auto-chat e permissões de comando"
       },
       "contextManagement": {
-        "title": "Context Management:",
-        "desc": "View and manage conversation context, summaries, and chat history"
+        "title": "Gerenciamento de Contexto:",
+        "desc": "Visualize e gerencie contexto de conversas, resumos e histórico de chat"
       },
       "streamIntegration": {
-        "title": "Stream Integration:",
-        "desc": "Monitor current game, title, and stream information"
+        "title": "Integração de Stream:",
+        "desc": "Monitore jogo atual, título e informações de stream"
       },
       "commandControl": {
-        "title": "Command Control:",
-        "desc": "Enable/disable specific commands and set custom responses"
+        "title": "Controle de Comando:",
+        "desc": "Ativar/desativar comandos específicos e defina respostas personalizadas"
       },
       "analytics": {
-        "title": "Analytics:",
-        "desc": "View bot usage statistics and interaction patterns"
+        "title": "Análise:",
+        "desc": "Visualize estatísticas de uso do bot e padrões de interação"
       },
       "settingsBackup": {
-        "title": "Settings Backup:",
-        "desc": "Export/import your channel configuration"
+        "title": "Backup de Configurações:",
+        "desc": "Exporte/importe sua configuração de canal"
       }
     },
-    "gettingStartedTitle": "Getting Started",
+    "gettingStartedTitle": "Começando",
     "steps": {
       "visit": {
-        "title": "Visit the Dashboard:",
-        "desc": "Go to https://app.wildcat.chat/"
+        "title": "Visite o Painel:",
+        "desc": "Vá para https://app.wildcat.chat/"
       },
       "authorize": {
-        "title": "Authorize:",
-        "desc": "Click \"Login with Twitch\" and grant the required permissions"
+        "title": "Autorize:",
+        "desc": "Clique em \"Login com Twitch\" e conceda as permissões necessárias"
       },
       "addBot": {
-        "title": "Add the Bot:",
-        "desc": "Use the \"Add Bot to My Channel\" button to invite ChatSage to your channel"
+        "title": "Adicione o Bot:",
+        "desc": "Use o botão \"Adicionar Bot ao Meu Canal\" para convidar ChatSage para seu canal"
       },
       "configure": {
         "title": "Configure:",
-        "desc": "Customize settings through the dashboard interface"
+        "desc": "Personalize as configurações através da interface do painel"
       },
       "grantPerms": {
-        "title": "Grant Permissions:",
-        "desc": "In Twitch chat, type /mod ChatSageBot to give the bot moderator status"
+        "title": "Conceda Permissões:",
+        "desc": "No chat do Twitch, digite /mod ChatSageBot para dar ao bot o status de moderador"
       }
     },
-    "oauthTitle": "OAuth Permissions",
-    "oauthIntro": "The dashboard requires the following Twitch OAuth scopes:",
+    "oauthTitle": "Permissões OAuth",
+    "oauthIntro": "O painel requer os seguintes escopos OAuth do Twitch:",
     "oauth": {
-      "chatRead": "Read chat messages",
-      "chatEdit": "Send chat messages",
-      "readSubs": "Access subscription information",
-      "manageRedemptions": "Manage channel point redemptions",
-      "readEmail": "Access your email address"
+      "chatRead": "Ler mensagens de chat",
+      "chatEdit": "Enviar mensagens de chat",
+      "readSubs": "Acessar informações de assinatura",
+      "manageRedemptions": "Gerenciar resgate de pontos de canal",
+      "readEmail": "Acessar seu endereço de email"
     },
-    "noteLabel": "Note:",
-    "noteText": "ChatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
+    "noteLabel": "Nota:",
+    "noteText": "ChatSage é atualmente apenas por convite. Se você não vir seu canal no painel, solicite acesso através do formulário de contato."
   }
 }

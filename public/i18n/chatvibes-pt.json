@@ -1,85 +1,85 @@
 {
   "meta": {
-    "title": "ChatVibes TTS Bot Commands"
+    "title": "Comandos do Bot TTS ChatVibes"
   },
   "nav": {
     "toggleNav": "☰",
-    "home": "Home",
-    "chatSageDocs": "ChatSage Docs",
-    "chatVibesDocs": "ChatVibes Docs",
-    "contact": "Contact"
+    "home": "Página Inicial",
+    "chatSageDocs": "Documentação ChatSage",
+    "chatVibesDocs": "Documentação ChatVibes",
+    "contact": "Contato"
   },
   "sidebar": {
     "chatVibes": "ChatVibes",
-    "toggleSidebar": "Toggle Sidebar",
-    "commands": "Commands",
+    "toggleSidebar": "Alternar Barra Lateral",
+    "commands": "Comandos",
     "toggleSubmenu": "",
-    "ttsCommands": "Text-To-Speech Commands",
-    "musicCommands": "Music Generation Commands",
-    "voices": "Voices",
-    "languageBoost": "Language Boost",
-    "webDashboard": "Web Dashboard",
-    "troubleshooting": "Troubleshooting"
+    "ttsCommands": "Comandos de Conversão de Texto em Fala",
+    "musicCommands": "Comandos de Geração de Música",
+    "voices": "Vozes",
+    "languageBoost": "Aumento de Idioma",
+    "webDashboard": "Painel Web",
+    "troubleshooting": "Solução de Problemas"
   },
   "page": {
-    "title": "ChatVibes TTS Bot Documentation",
-    "inviteNote": "ChatVibes is currently invite-only.",
-    "requestAccess": "Request access"
+    "title": "Documentação do Bot TTS ChatVibes",
+    "inviteNote": "ChatVibes é atualmente apenas por convite.",
+    "requestAccess": "Solicitar acesso"
   },
   "commands": {
-    "title": "Commands",
-    "prefixTip": "All TTS commands are prefixed with !tts.",
-    "exampleTip": "For example: !tts status",
-    "expandTip": "Click any command row below to expand and see usage details.",
-    "webDashboardTip": "Broadcasters and viewers can also configure settings using the ChatVibes Web Dashboard.",
-    "myvoiceTip": "Viewers can set their own TTS preferences using the web UI by sending !myvoice in chat.",
-    "ttsCommandsTitle": "Text-To-Speech Commands",
+    "title": "Comandos",
+    "prefixTip": "Todos os comandos TTS são prefixados com !tts.",
+    "exampleTip": "Por exemplo: !tts status",
+    "expandTip": "Clique em qualquer linha de comando abaixo para expandir e ver detalhes de uso.",
+    "webDashboardTip": "Transmissores e espectadores também podem configurar definições usando o Painel Web do ChatVibes.",
+    "myvoiceTip": "Espectadores podem definir suas próprias preferências de TTS usando a interface web enviando !myvoice no chat.",
+    "ttsCommandsTitle": "Comandos de Conversão de Texto em Fala",
     "common": {
-      "notes": "Notes:",
-      "note": "Note:",
-      "permission": "Permission:",
-      "description": "Description:",
-      "everyone": "Everyone",
-      "everyoneOwnPreference": "Everyone (for their own preference)",
-      "moderator": "Moderator",
-      "streamerBroadcaster": "Streamer/Broadcaster (via Web Dashboard)"
+      "notes": "Notas:",
+      "note": "Nota:",
+      "permission": "Permissão:",
+      "description": "Descrição:",
+      "everyone": "Todos",
+      "everyoneOwnPreference": "Todos (para sua própria preferência)",
+      "moderator": "Moderador",
+      "streamerBroadcaster": "Transmissor/Produtor (via Painel Web)"
     },
     "ttsStatus": {
       "name": "!tts status",
-      "description": "Gets the current status of the TTS application for the channel.",
-      "notes": "Displays engine state, mode, queue length, default voice, pitch, speed, emotion, and language boost settings.",
+      "description": "Obtém o status atual da aplicação TTS para o canal.",
+      "notes": "Exibe estado do motor, modo, comprimento da fila, voz padrão, tom, velocidade, emoção e configurações de aumento de idioma.",
       "usage": {
         "basic": "!tts status"
       }
     },
     "ttsVoices": {
       "name": "!tts voices",
-      "description": "Provides a link to the documentation section for available TTS voices.",
+      "description": "Fornece um link para a seção de documentação de vozes TTS disponíveis.",
       "usage": {
         "basic": "!tts voices"
       }
     },
     "ttsLanguageslist": {
       "name": "!tts languageslist",
-      "description": "Provides a link to the documentation section for available TTS language boost options.",
+      "description": "Fornece um link para a seção de documentação de opções de aumento de idioma TTS disponíveis.",
       "usage": {
         "basic": "!tts languageslist"
       }
     },
     "ttsCommands": {
-      "name": "!tts commands\n(Alias: !tts help)",
-      "description": "Provides a link to the full list of !tts subcommands.",
+      "name": "!tts commands\n(Apelido: !tts help)",
+      "description": "Fornece um link para a lista completa de subcomandos !tts.",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
       }
     },
     "ttsPrefs": {
-      "name": "!tts prefs\n(Aliases: !tts preferences, !tts settings)",
-      "description": "Sends you a short-lived link to your personal TTS settings page.",
-      "feature1": "Configure your own voice, pitch, speed, emotion, and language on a per-channel basis.",
-      "feature2": "Includes a red-outlined \"Danger Zone\" where you can add yourself to the channel's TTS and/or Music ignore lists (only a moderator can undo this).",
-      "feature3": "The bot posts the link publicly in chat; it is signed for you only and expires after first access or 10 minutes. The page is pre-filled with the current channel.",
+      "name": "!tts prefs\n(Apelidos: !tts preferences, !tts settings)",
+      "description": "Envia um link de curta duração para sua página pessoal de configurações de TTS.",
+      "feature1": "Configure sua própria voz, tom, velocidade, emoção e idioma por canal.",
+      "feature2": "Inclui uma \"Zona de Perigo\" com contorno vermelho onde você pode se adicionar à lista de ignorados de TTS e/ou Música do canal (apenas um moderador pode desfazer isso).",
+      "feature3": "O bot publica o link publicamente no chat; está assinado apenas para você e expira após o primeiro acesso ou 10 minutos. A página é pré-preenchida com o canal atual.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -88,23 +88,23 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Sends you a short-lived link to your personal TTS settings page (equivalent to !tts prefs).",
-      "notes": "Same as !tts prefs. The bot posts the link publicly in chat; it is signed for you only and expires after first access or 10 minutes. The page is pre-filled with the current channel.",
+      "description": "Envia um link de curta duração para sua página pessoal de configurações de TTS (equivalente a !tts prefs).",
+      "notes": "Igual a !tts prefs. O bot publica o link publicamente no chat; está assinado apenas para você e expira após o primeiro acesso ou 10 minutos. A página é pré-preenchida com o canal atual.",
       "usage": {
         "basic": "!myvoice"
       }
     },
     "ttsOn": {
-      "name": "!tts on\n(Alias: !tts enable)",
-      "description": "Enables the TTS engine. Messages and events may be spoken based on the current mode.",
+      "name": "!tts on\n(Apelido: !tts enable)",
+      "description": "Ativa o motor TTS. Mensagens e eventos podem ser falados com base no modo atual.",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
       }
     },
     "ttsOff": {
-      "name": "!tts off\n(Alias: !tts disable)",
-      "description": "Disables the TTS engine entirely. No messages or events will be spoken.",
+      "name": "!tts off\n(Apelido: !tts disable)",
+      "description": "Desativa o motor TTS completamente. Nenhuma mensagem ou evento será falado.",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
@@ -112,14 +112,14 @@
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
-      "description": "Toggles the TTS mode.",
-      "allDesc": "(Speak all chat messages & events; this is the default mode)",
-      "commandDesc": "(Only speak on command or for events)",
-      "bitsPointsOnlyDesc": "(Only speak Bits cheers & Channel Point redemptions)",
-      "bitsAlias": "(Alias for bits_points_only)",
-      "pointsAlias": "(Alias for bits_points_only)",
-      "statusDesc": "(Displays current mode)",
-      "notes": "all: All chat messages (not from ignored users or commands) and enabled events will be spoken, subject to the !tts permission setting.\ncommand: Only messages triggered by specific TTS commands (like !tts <message>) or enabled events will be spoken. Regular chat is ignored.\nbits_points_only: Only Bits cheers and Channel Point redemptions are read aloud. Regular chat and commands are ignored.",
+      "description": "Alterna o modo de TTS.",
+      "allDesc": "(Falar todas as mensagens de chat e eventos; este é o modo padrão)",
+      "commandDesc": "(Falar apenas por comando ou para eventos)",
+      "bitsPointsOnlyDesc": "(Falar apenas cheers de Bits e resgates de Pontos de Canal)",
+      "bitsAlias": "(Apelido para bits_points_only)",
+      "pointsAlias": "(Apelido para bits_points_only)",
+      "statusDesc": "(Exibe o modo atual)",
+      "notes": "all: Todas as mensagens de chat (não de usuários ignorados ou comandos) e eventos ativados serão falados, sujeito à configuração de permissão !tts.\ncommand: Apenas mensagens acionadas por comandos TTS específicos (como !tts <mensagem>) ou eventos ativados serão falados. O chat regular é ignorado.\nbits_points_only: Apenas cheers de Bits e resgates de Pontos de Canal são lidos em voz alta. Chat regular e comandos são ignorados.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -131,9 +131,9 @@
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|mods]",
-      "description": "Sets a filter on who can trigger TTS when the bot is in all mode.",
-      "statusDesc": "(displays the current permission filter)",
-      "notes": "everyone or all: Any user's chat message can be spoken. (Default)\nmods: Only messages from moderators and the broadcaster will be spoken.\nThis does not affect command mode.",
+      "description": "Define um filtro sobre quem pode ativar TTS quando o bot está no modo all.",
+      "statusDesc": "(exibe o filtro de permissão atual)",
+      "notes": "everyone ou all: A mensagem de chat de qualquer usuário pode ser falada. (Padrão)\nmods: Apenas mensagens de moderadores e do produtor serão faladas.\nIsso não afeta o modo de comando.",
       "usage": {
         "everyone": "!tts permission everyone",
         "mods": "!tts permission mods",
@@ -142,11 +142,11 @@
     },
     "ttsBits": {
       "name": "!tts bits [on|off|min <amount>]",
-      "description": "Configures the Bits-for-TTS feature, allowing channels to require a minimum Cheer amount to trigger TTS.",
-      "statusDesc": "(displays current Bits-for-TTS status)",
-      "onDesc": "on: Enables Bits-for-TTS mode. Only messages with a sufficient cheer will be read.",
-      "offDesc": "off: Disables Bits-for-TTS mode.",
-      "minDesc": "min <amount>: Sets the minimum number of Bits required (e.g., min 100).",
+      "description": "Configura o recurso Bits-for-TTS, permitindo que canais exijam um valor mínimo de Cheer para ativar TTS.",
+      "statusDesc": "(exibe o status atual de Bits-for-TTS)",
+      "onDesc": "on: Ativa o modo Bits-for-TTS. Apenas mensagens com um cheer suficiente serão lidas.",
+      "offDesc": "off: Desativa o modo Bits-for-TTS.",
+      "minDesc": "min <amount>: Define o número mínimo de Bits necessários (ex: min 100).",
       "usage": {
         "on": "!tts bits on",
         "off": "!tts bits off",
@@ -155,67 +155,67 @@
       }
     },
     "channelPointsTTS": {
-      "name": "Channel Points → TTS",
-      "description": "Create a custom Twitch Channel Point reward for viewers to redeem with a message to be read aloud.",
-      "noteText": "This feature is configured exclusively through the ChatVibes Web Dashboard under the \"Channel Points → TTS\" section.",
-      "howItWorks": "How It Works:",
-      "step1": "Streamer Setup: Enable the feature in the dashboard.",
-      "step2": "Reward Creation: The bot automatically creates a custom Channel Point reward on your Twitch channel.",
-      "step3": "Viewer Redemption: Viewers redeem the reward with a custom message, which gets read aloud.",
-      "step4": "Content Policy: Built-in filtering (length limits, link blocking, banned words).",
-      "configOptions": "Configuration Options:",
-      "basicSettings": "Basic Settings: Reward title, cost (points), prompt text, skip queue option",
-      "advancedSettings": "Advanced Settings: Global cooldown, per-stream limit, per-user limit",
-      "contentPolicy": "Content Policy: Min/max message length, block links, banned words list",
-      "skipQueue": "Skip the Reward Queue:",
-      "skipQueueDefault": "Default Setting: This option is enabled by default for immediate TTS playback.",
-      "skipQueueEnabled": "When Enabled: Redemptions are processed immediately and do not appear in your Twitch \"Reward Requests\" queue.",
-      "skipQueueDisabled": "When Disabled: Redemptions appear in your Twitch dashboard for manual approval before TTS plays.",
-      "skipQueueUseCase": "Use Case: Enable for instant TTS, disable for moderation control.",
-      "ttsModes": "TTS Modes:",
-      "ttsModesText": "Works with all TTS modes (All Messages, Commands Only, Bits/Points Only).",
-      "requirements": "Requirements:",
-      "requirementsText": "Must grant channel:manage:redemptions and channel:read:redemptions OAuth scopes during initial dashboard setup."
+      "name": "Pontos de Canal → TTS",
+      "description": "Crie uma recompensa de Ponto de Canal do Twitch personalizada para espectadores resgatarem com uma mensagem para ser lida em voz alta.",
+      "noteText": "Este recurso é configurado exclusivamente através do Painel Web do ChatVibes na seção \"Pontos de Canal → TTS\".",
+      "howItWorks": "Como Funciona:",
+      "step1": "Configuração do Transmissor: Ative o recurso no painel.",
+      "step2": "Criação de Recompensa: O bot cria automaticamente uma recompensa de Ponto de Canal personalizada em seu canal Twitch.",
+      "step3": "Resgate do Espectador: Espectadores resgatam a recompensa com uma mensagem personalizada, que é lida em voz alta.",
+      "step4": "Política de Conteúdo: Filtragem integrada (limites de comprimento, bloqueio de links, palavras banidas).",
+      "configOptions": "Opções de Configuração:",
+      "basicSettings": "Configurações Básicas: Título da recompensa, custo (pontos), texto de solicitação, opção de ignorar fila",
+      "advancedSettings": "Configurações Avançadas: Tempo de espera global, limite por transmissão, limite por usuário",
+      "contentPolicy": "Política de Conteúdo: Comprimento mínimo/máximo de mensagem, bloquear links, lista de palavras banidas",
+      "skipQueue": "Ignorar a Fila de Recompensas:",
+      "skipQueueDefault": "Configuração Padrão: Esta opção está habilitada por padrão para reprodução de TTS imediata.",
+      "skipQueueEnabled": "Quando Habilitado: Os resgates são processados imediatamente e não aparecem em sua fila \"Pedidos de Recompensa\" do Twitch.",
+      "skipQueueDisabled": "Quando Desabilitado: Os resgates aparecem em seu painel Twitch para aprovação manual antes do TTS ser reproduzido.",
+      "skipQueueUseCase": "Caso de Uso: Ativar para TTS instantâneo, desativar para controle de moderação.",
+      "ttsModes": "Modos de TTS:",
+      "ttsModesText": "Funciona com todos os modos de TTS (Todas as Mensagens, Apenas Comandos, Apenas Bits/Pontos).",
+      "requirements": "Requisitos:",
+      "requirementsText": "Deve conceder escopos OAuth channel:manage:redemptions e channel:read:redemptions durante a configuração inicial do painel."
     },
     "ttsPause": {
       "name": "!tts pause",
-      "description": "Pauses the processing of the TTS event queue.",
-      "notes": "New messages/events will still be added to the queue but won't be spoken until resumed.",
+      "description": "Pausa o processamento da fila de eventos TTS.",
+      "notes": "Novas mensagens/eventos ainda serão adicionadas à fila, mas não serão falados até serem retomados.",
       "usage": {
         "basic": "!tts pause"
       }
     },
     "ttsResume": {
       "name": "!tts resume",
-      "description": "Resumes processing of the TTS event queue if it was paused.",
+      "description": "Retoma o processamento da fila de eventos TTS se tiver sido pausado.",
       "usage": {
         "basic": "!tts resume"
       }
     },
     "ttsClear": {
       "name": "!tts clear",
-      "description": "Clears all pending messages and events from the TTS queue.",
-      "notes": "This command only removes messages waiting in the queue. It does not stop audio that is currently playing or actively being generated by the TTS engine.",
+      "description": "Limpa todas as mensagens e eventos pendentes da fila de TTS.",
+      "notes": "Este comando apenas remove mensagens aguardando na fila. Não interrompe o áudio que está sendo reproduzido ou gerado ativamente pelo motor TTS.",
       "usage": {
         "basic": "!tts clear"
       }
     },
     "ttsStop": {
       "name": "!tts stop",
-      "description": "Stops the currently playing or generating TTS audio.",
-      "note1": "If TTS is currently speaking or generating audio, this command will attempt to stop it.",
-      "note2": "Any user can stop a message if it was triggered by their own chat message.",
-      "note3": "Moderators and the broadcaster can stop any TTS audio.",
-      "permission": "Everyone for their own messages, Moderator for others",
+      "description": "Interrompe o áudio de TTS que está sendo reproduzido ou gerado.",
+      "note1": "Se o TTS estiver falando ou gerando áudio, este comando tentará interrompê-lo.",
+      "note2": "Qualquer usuário pode interromper uma mensagem se foi acionada por sua própria mensagem de chat.",
+      "note3": "Moderadores e o produtor podem interromper qualquer áudio de TTS.",
+      "permission": "Todos para suas próprias mensagens, Moderador para outras",
       "usage": {
         "basic": "!tts stop"
       }
     },
     "ttsVoice": {
       "name": "!tts voice <voice_id|reset>",
-      "description": "Allows a user to set their preferred voice for messages they send.",
-      "statusDesc": "(displays current personal preference)",
-      "notes": "Use reset to revert to the channel's default voice. Use !tts voices to get a link to available voice IDs.",
+      "description": "Permite que um usuário defina sua voz preferida para mensagens que ele envia.",
+      "statusDesc": "(exibe a preferência pessoal atual)",
+      "notes": "Use reset para reverter para a voz padrão do canal. Use !tts voices para obter um link para IDs de voz disponíveis.",
       "usage": {
         "example": "!tts voice Friendly_Person",
         "reset": "!tts voice reset",
@@ -224,9 +224,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "Allows a user to set their preferred emotion for their messages.",
-      "statusDesc": "(displays current personal preference)",
-      "notes": "Valid emotions: neutral, happy, sad, angry, fearful, disgusted, surprised. Use reset for the channel default.",
+      "description": "Permite que um usuário defina sua emoção preferida para suas mensagens.",
+      "statusDesc": "(exibe a preferência pessoal atual)",
+      "notes": "Emoções válidas: neutral, happy, sad, angry, fearful, disgusted, surprised. Use reset para o padrão do canal.",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -234,58 +234,58 @@
       }
     },
     "ttsLanguage": {
-      "name": "!tts language <language|reset>\n(Alias: !tts lang)",
-      "description": "Sets your preferred language boost for TTS."
+      "name": "!tts language <language|reset>\n(Apelido: !tts lang)",
+      "description": "Define seu aumento de idioma preferido para TTS."
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
-      "description": "Sets your personal TTS pitch."
+      "description": "Define seu tom pessoal de TTS."
     },
     "ttsSpeed": {
       "name": "!tts speed <value|reset>",
-      "description": "Sets your personal TTS speed."
+      "description": "Define sua velocidade pessoal de TTS."
     },
     "ttsIgnore": {
       "name": "!tts ignore <username>\n!tts ignore add <username>"
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Aliases: delete, rem, remove)",
-      "description": "Removes the specified Twitch user from the TTS ignore list."
+      "name": "!tts ignore del <username>\n(Apelidos: delete, rem, remove)",
+      "description": "Remove o usuário Twitch especificado da lista de ignorados de TTS."
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "Lists all users currently on the TTS ignore list for the channel."
+      "description": "Lista todos os usuários atualmente na lista de ignorados de TTS do canal."
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Toggles whether Twitch events (like subscriptions, cheers, raids, etc.) are announced by TTS."
+      "description": "Alterna se eventos Twitch (como inscrições, cheers, raids, etc.) são anunciados por TTS."
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "Sets the default TTS voice for the channel."
+      "description": "Define a voz padrão de TTS para o canal."
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Sets the default TTS emotion for the channel."
+      "description": "Define a emoção padrão de TTS para o canal."
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <language|reset>",
-      "description": "Sets the default TTS language boost for the channel."
+      "description": "Define o aumento de idioma padrão de TTS para o canal."
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <value|reset>",
-      "description": "Sets the default TTS pitch for the channel."
+      "description": "Define o tom padrão de TTS para o canal."
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <value|reset>",
-      "description": "Sets the default TTS speed for the channel."
+      "description": "Define a velocidade padrão de TTS para o canal."
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Alias: !tts say <message>)"
+      "name": "!tts <message>\n(Apelido: !tts say <message>)"
     },
     "musicPrompt": {
       "name": "!music <prompt>",
-      "description": "Generates a short piece of music based on your prompt."
+      "description": "Gera uma curta peça de música baseada em seu prompt."
     },
     "musicOnOff": {
       "name": "!music on\n!music off"
@@ -298,21 +298,21 @@
     },
     "musicHelp": {
       "name": "!music help",
-      "description": "Provides a list of all music subcommands and their usage."
+      "description": "Fornece uma lista de todos os subcomandos de música e seu uso."
     },
     "musicStatus": {
       "name": "!music status",
-      "description": "Shows the current status of music generation (enabled/disabled, mode, queue length)."
+      "description": "Exibe o status atual da geração de música (habilitada/desabilitada, modo, comprimento da fila)."
     },
     "musicClear": {
       "name": "!music clear",
-      "description": "(Mod only) Clears all pending music generation requests from the queue."
+      "description": "(Apenas Mod) Limpa todos os pedidos de geração de música pendentes da fila."
     },
     "musicIgnore": {
       "name": "!music ignore <username>\n!music ignore add <username>"
     },
     "musicIgnoreDel": {
-      "name": "!music ignore del <username>\n(Aliases: delete, rem, remove)"
+      "name": "!music ignore del <username>\n(Apelidos: delete, rem, remove)"
     },
     "musicIgnored": {
       "name": "!music ignored"
@@ -320,41 +320,41 @@
   },
   "table": {
     "headers": {
-      "command": "Command",
-      "description": "Description"
+      "command": "Comando",
+      "description": "Descrição"
     },
     "categories": {
-      "ttsGeneral": "General",
-      "engineModeControl": "Engine & Mode Control (Moderator Only)",
-      "channelPointsTTS": "Channel Points → TTS (Web Dashboard Only)",
-      "queueManagement": "Queue Management (Moderator Only)",
-      "userEventPreferences": "User & Event Preferences",
-      "channelDefaults": "Channel-Wide Default Configuration (Moderator Only)",
-      "directTTS": "Direct TTS"
+      "ttsGeneral": "Geral",
+      "engineModeControl": "Controle de Motor e Modo (Apenas Moderador)",
+      "channelPointsTTS": "Pontos de Canal → TTS (Apenas Painel Web)",
+      "queueManagement": "Gerenciamento de Fila (Apenas Moderador)",
+      "userEventPreferences": "Preferências de Usuário e Evento",
+      "channelDefaults": "Configuração de Padrões em Nível de Canal (Apenas Moderador)",
+      "directTTS": "TTS Direto"
     }
   },
   "music": {
-    "title": "Music Generation Commands",
-    "prefixTip": "All music generation commands are prefixed with !music",
-    "exampleTip": "For example: !music 90s soulful house",
-    "expandTip": "Click any command row below to expand and see usage details.",
-    "commandsTitle": "Music Generation Commands"
+    "title": "Comandos de Geração de Música",
+    "prefixTip": "Todos os comandos de geração de música são prefixados com !music",
+    "exampleTip": "Por exemplo: !music house soulful dos anos 90",
+    "expandTip": "Clique em qualquer linha de comando abaixo para expandir e ver detalhes de uso.",
+    "commandsTitle": "Comandos de Geração de Música"
   },
   "voices": {
-    "title": "Voices",
-    "popularTitle": "Popular Voice IDs",
-    "completeListTitle": "Complete Voice List (from Wavespeed AI minimax/speech-02-turbo Schema)"
+    "title": "Vozes",
+    "popularTitle": "IDs de Voz Populares",
+    "completeListTitle": "Lista Completa de Vozes (do Schema Wavespeed AI minimax/speech-02-turbo)"
   },
   "languageBoost": {
-    "title": "Language Boost",
-    "optionsTitle": "Available Language Boost Options"
+    "title": "Aumento de Idioma",
+    "optionsTitle": "Opções de Aumento de Idioma Disponíveis"
   },
   "webDashboard": {
-    "title": "Web Dashboard",
-    "settingsTitle": "Available Dashboard Settings",
-    "obsSetupTitle": "OBS Browser Source Setup"
+    "title": "Painel Web",
+    "settingsTitle": "Configurações Disponíveis do Painel",
+    "obsSetupTitle": "Configuração de Fonte de Navegador OBS"
   },
   "troubleshooting": {
-    "title": "Troubleshooting"
+    "title": "Solução de Problemas"
   }
 }
