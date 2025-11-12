@@ -78,7 +78,7 @@
             <li><a href="#general" data-i18n="sidebar.generalCommands">General Commands</a></li>
             <li><a href="#games" data-i18n="sidebar.games">Games</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config</a></li>
-            <li><a href="#web-dashboard">Web Dashboard</a></li>
+            <li><a href="#web-dashboard" data-i18n="sidebar.webDashboard">Web Dashboard</a></li>
         </ul>
     </nav>
 
@@ -198,19 +198,19 @@
         </tbody>
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
-                <td>!quote</td>
-                <td><span class="description-text">Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.</span><span class="dropdown-toggle">&#x25BC;</span></td>
+                <td data-i18n-key="commands.quote.name">!quote</td>
+                <td data-i18n-key="commands.quote.description"><span class="description-text">Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.</span><span class="dropdown-toggle">&#x25BC;</span></td>
             </tr>
             <tr class="dropdown-details" style="display:none;">
                 <td colspan="2">
-                    <code>!quote</code> <span>Shows a random quote</span>
-                    <code>!quote &lt;id&gt;</code> <span>Shows quote by ID number, e.g. !quote 12</span>
-                    <code>!quote last</code> <span>Shows the most recently added quote</span>
-                    <code>!quote &lt;search term&gt;</code> <span>Searches quotes by text or author, e.g. !quote parfait</span>
-                    <code>!quote search &lt;term&gt;</code> <span>Explicit search command</span>
-                    <code>!quote add &lt;text [- author]&gt;</code> <span>Adds a new quote. Optional author after " - ", e.g. !quote add "hello world - parfait"</span>
-                    <code class="mod-command">!quote delete &lt;id&gt;</code> <span>Deletes a quote (mods/broadcaster only)</span>
-                    <code class="mod-command">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code> <span>Edits an existing quote (mods/broadcaster only)</span>
+                    <code data-i18n-cmd="commands.quote.usage.random">!quote</code> <span data-i18n="commands.quote.usage.randomDesc">Shows a random quote</span>
+                    <code data-i18n-cmd="commands.quote.usage.id">!quote &lt;id&gt;</code> <span data-i18n="commands.quote.usage.idDesc">Shows quote by ID number, e.g. !quote 12</span>
+                    <code data-i18n-cmd="commands.quote.usage.last">!quote last</code> <span data-i18n="commands.quote.usage.lastDesc">Shows the most recently added quote</span>
+                    <code data-i18n-cmd="commands.quote.usage.search">!quote &lt;search term&gt;</code> <span data-i18n="commands.quote.usage.searchDesc">Searches quotes by text or author, e.g. !quote parfait</span>
+                    <code data-i18n-cmd="commands.quote.usage.searchExplicit">!quote search &lt;term&gt;</code> <span data-i18n="commands.quote.usage.searchExplicitDesc">Explicit search command</span>
+                    <code data-i18n-cmd="commands.quote.usage.add">!quote add &lt;text [- author]&gt;</code> <span data-i18n="commands.quote.usage.addDesc">Adds a new quote. Optional author after " - ", e.g. !quote add "hello world - parfait"</span>
+                    <code class="mod-command" data-i18n-cmd="commands.quote.usage.delete">!quote delete &lt;id&gt;</code> <span data-i18n="commands.quote.usage.deleteDesc">Deletes a quote (mods/broadcaster only)</span>
+                    <code class="mod-command" data-i18n-cmd="commands.quote.usage.edit">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code> <span data-i18n="commands.quote.usage.editDesc">Edits an existing quote (mods/broadcaster only)</span>
                 </td>
             </tr>
         </tbody>
@@ -384,40 +384,40 @@
     </table>
 
     <section id="web-dashboard" class="section">
-        <h2>Web Dashboard</h2>
-        <p>The <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">ChatSage Web Dashboard</a> provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.</p>
+        <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
+        <p data-i18n="webDashboard.intro">The <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">ChatSage Web Dashboard</a> provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.</p>
 
-        <h3>Available Dashboard Features</h3>
+        <h3 data-i18n="webDashboard.featuresTitle">Available Dashboard Features</h3>
         <ul>
-            <li><strong>Bot Management:</strong> Add or remove ChatSage from your channel</li>
-            <li><strong>Channel Configuration:</strong> Configure bot language, auto-chat settings, and command permissions</li>
-            <li><strong>Context Management:</strong> View and manage conversation context, summaries, and chat history</li>
-            <li><strong>Stream Integration:</strong> Monitor current game, title, and stream information</li>
-            <li><strong>Command Control:</strong> Enable/disable specific commands and set custom responses</li>
-            <li><strong>Analytics:</strong> View bot usage statistics and interaction patterns</li>
-            <li><strong>Settings Backup:</strong> Export/import your channel configuration</li>
+            <li><strong data-i18n="webDashboard.features.botManagement.title">Bot Management:</strong> <span data-i18n="webDashboard.features.botManagement.desc">Add or remove ChatSage from your channel</span></li>
+            <li><strong data-i18n="webDashboard.features.channelConfig.title">Channel Configuration:</strong> <span data-i18n="webDashboard.features.channelConfig.desc">Configure bot language, auto-chat settings, and command permissions</span></li>
+            <li><strong data-i18n="webDashboard.features.contextManagement.title">Context Management:</strong> <span data-i18n="webDashboard.features.contextManagement.desc">View and manage conversation context, summaries, and chat history</span></li>
+            <li><strong data-i18n="webDashboard.features.streamIntegration.title">Stream Integration:</strong> <span data-i18n="webDashboard.features.streamIntegration.desc">Monitor current game, title, and stream information</span></li>
+            <li><strong data-i18n="webDashboard.features.commandControl.title">Command Control:</strong> <span data-i18n="webDashboard.features.commandControl.desc">Enable/disable specific commands and set custom responses</span></li>
+            <li><strong data-i18n="webDashboard.features.analytics.title">Analytics:</strong> <span data-i18n="webDashboard.features.analytics.desc">View bot usage statistics and interaction patterns</span></li>
+            <li><strong data-i18n="webDashboard.features.settingsBackup.title">Settings Backup:</strong> <span data-i18n="webDashboard.features.settingsBackup.desc">Export/import your channel configuration</span></li>
         </ul>
 
-        <h3>Getting Started</h3>
+        <h3 data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
         <ol>
-            <li><strong>Visit the Dashboard:</strong> Go to <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">https://app.wildcat.chat/</a></li>
-            <li><strong>Authorize:</strong> Click "Login with Twitch" and grant the required permissions</li>
-            <li><strong>Add the Bot:</strong> Use the "Add Bot to My Channel" button to invite ChatSage to your channel</li>
-            <li><strong>Configure:</strong> Customize settings through the dashboard interface</li>
-            <li><strong>Grant Permissions:</strong> In Twitch chat, type <code>/mod ChatSageBot</code> to give the bot moderator status</li>
+            <li><strong data-i18n="webDashboard.steps.visit.title">Visit the Dashboard:</strong> <span data-i18n="webDashboard.steps.visit.desc">Go to <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">https://app.wildcat.chat/</a></span></li>
+            <li><strong data-i18n="webDashboard.steps.authorize.title">Authorize:</strong> <span data-i18n="webDashboard.steps.authorize.desc">Click "Login with Twitch" and grant the required permissions</span></li>
+            <li><strong data-i18n="webDashboard.steps.addBot.title">Add the Bot:</strong> <span data-i18n="webDashboard.steps.addBot.desc">Use the "Add Bot to My Channel" button to invite ChatSage to your channel</span></li>
+            <li><strong data-i18n="webDashboard.steps.configure.title">Configure:</strong> <span data-i18n="webDashboard.steps.configure.desc">Customize settings through the dashboard interface</span></li>
+            <li><strong data-i18n="webDashboard.steps.grantPerms.title">Grant Permissions:</strong> <span data-i18n="webDashboard.steps.grantPerms.desc">In Twitch chat, type <code>/mod ChatSageBot</code> to give the bot moderator status</span></li>
         </ol>
 
-        <h3>OAuth Permissions</h3>
-        <p>The dashboard requires the following Twitch OAuth scopes:</p>
+        <h3 data-i18n="webDashboard.oauthTitle">OAuth Permissions</h3>
+        <p data-i18n="webDashboard.oauthIntro">The dashboard requires the following Twitch OAuth scopes:</p>
         <ul>
-            <li><code>chat:read</code> - Read chat messages</li>
-            <li><code>chat:edit</code> - Send chat messages</li>
-            <li><code>channel:read:subscriptions</code> - Access subscription information</li>
-            <li><code>channel:manage:redemptions</code> - Manage channel point redemptions</li>
-            <li><code>user:read:email</code> - Access your email address</li>
+            <li><code>chat:read</code> - <span data-i18n="webDashboard.oauth.chatRead">Read chat messages</span></li>
+            <li><code>chat:edit</code> - <span data-i18n="webDashboard.oauth.chatEdit">Send chat messages</span></li>
+            <li><code>channel:read:subscriptions</code> - <span data-i18n="webDashboard.oauth.readSubs">Access subscription information</span></li>
+            <li><code>channel:manage:redemptions</code> - <span data-i18n="webDashboard.oauth.manageRedemptions">Manage channel point redemptions</span></li>
+            <li><code>user:read:email</code> - <span data-i18n="webDashboard.oauth.readEmail">Access your email address</span></li>
         </ul>
 
-        <p><strong>Note:</strong> ChatSage is currently invite-only. If you don't see your channel in the dashboard, please <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">request access through the contact form</a>.</p>
+        <p><strong data-i18n="webDashboard.noteLabel">Note:</strong> <span data-i18n="webDashboard.noteText">ChatSage is currently invite-only. If you don't see your channel in the dashboard, please <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">request access through the contact form</a>.</span></p>
     </section>
 
         <div id="last-updated" style="text-align:center; margin-top:2rem; color:var(--color-border, #888); font-size:0.95em;">

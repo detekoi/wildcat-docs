@@ -66,6 +66,28 @@
       "name": "!lurk",
       "description": "Deixe o chat saber que você está lurkando. Forneça um motivo opcional para uma despedida personalizada."
     },
+    "quote": {
+      "name": "!quote",
+      "description": "Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.",
+      "usage": {
+        "random": "!quote",
+        "randomDesc": "Shows a random quote",
+        "id": "!quote <id>",
+        "idDesc": "Shows quote by ID number, e.g. !quote 12",
+        "last": "!quote last",
+        "lastDesc": "Shows the most recently added quote",
+        "search": "!quote <search term>",
+        "searchDesc": "Searches quotes by text or author, e.g. !quote parfait",
+        "searchExplicit": "!quote search <term>",
+        "searchExplicitDesc": "Explicit search command",
+        "add": "!quote add <text [- author]>",
+        "addDesc": "Adds a new quote. Optional author after \" - \", e.g. !quote add \"hello world - parfait\"",
+        "delete": "!quote delete <id>",
+        "deleteDesc": "Deletes a quote (mods/broadcaster only)",
+        "edit": "!quote edit <id> <text [- author]>",
+        "editDesc": "Edits an existing quote (mods/broadcaster only)"
+      }
+    },
     "geo": {
       "name": "!geo",
       "description": "Inicia ou gerencia o Geo-Game, um jogo de adivinhação geográfica para o mundo real ou mundos virtuais.",
@@ -221,6 +243,76 @@
   "sidebar": {
     "generalCommands": "Comandos Gerais",
     "games": "Jogos",
-    "config": "Configuração"
+    "config": "Configuração",
+    "webDashboard": "Web Dashboard"
+  },
+  "webDashboard": {
+    "title": "Web Dashboard",
+    "intro": "The ChatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
+    "featuresTitle": "Available Dashboard Features",
+    "features": {
+      "botManagement": {
+        "title": "Bot Management:",
+        "desc": "Add or remove ChatSage from your channel"
+      },
+      "channelConfig": {
+        "title": "Channel Configuration:",
+        "desc": "Configure bot language, auto-chat settings, and command permissions"
+      },
+      "contextManagement": {
+        "title": "Context Management:",
+        "desc": "View and manage conversation context, summaries, and chat history"
+      },
+      "streamIntegration": {
+        "title": "Stream Integration:",
+        "desc": "Monitor current game, title, and stream information"
+      },
+      "commandControl": {
+        "title": "Command Control:",
+        "desc": "Enable/disable specific commands and set custom responses"
+      },
+      "analytics": {
+        "title": "Analytics:",
+        "desc": "View bot usage statistics and interaction patterns"
+      },
+      "settingsBackup": {
+        "title": "Settings Backup:",
+        "desc": "Export/import your channel configuration"
+      }
+    },
+    "gettingStartedTitle": "Getting Started",
+    "steps": {
+      "visit": {
+        "title": "Visit the Dashboard:",
+        "desc": "Go to https://app.wildcat.chat/"
+      },
+      "authorize": {
+        "title": "Authorize:",
+        "desc": "Click \"Login with Twitch\" and grant the required permissions"
+      },
+      "addBot": {
+        "title": "Add the Bot:",
+        "desc": "Use the \"Add Bot to My Channel\" button to invite ChatSage to your channel"
+      },
+      "configure": {
+        "title": "Configure:",
+        "desc": "Customize settings through the dashboard interface"
+      },
+      "grantPerms": {
+        "title": "Grant Permissions:",
+        "desc": "In Twitch chat, type /mod ChatSageBot to give the bot moderator status"
+      }
+    },
+    "oauthTitle": "OAuth Permissions",
+    "oauthIntro": "The dashboard requires the following Twitch OAuth scopes:",
+    "oauth": {
+      "chatRead": "Read chat messages",
+      "chatEdit": "Send chat messages",
+      "readSubs": "Access subscription information",
+      "manageRedemptions": "Manage channel point redemptions",
+      "readEmail": "Access your email address"
+    },
+    "noteLabel": "Note:",
+    "noteText": "ChatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
   }
 }
