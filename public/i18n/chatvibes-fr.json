@@ -285,37 +285,62 @@
     },
     "musicPrompt": {
       "name": "!music <prompt>",
-      "description": "Génère un court morceau de musique en fonction de votre demande."
+      "description": "Génère un court morceau de musique en fonction de votre demande.",
+      "permission": "Configurable par les modérateurs (par défaut : tout le monde, peut être réservé aux modérateurs). L'utilisateur ne doit pas être sur la liste d'ignorés de musique."
     },
     "musicOnOff": {
-      "name": "!music on\n!music off"
+      "name": "!music on\n!music off",
+      "description": "(Modérateur uniquement) Active ou désactive la fonctionnalité de génération de musique pour le canal.",
+      "permission": "Modérateur"
     },
     "musicMode": {
-      "name": "!music mode <all|mods>"
+      "name": "!music mode <all|mods>",
+      "description": "(Modérateur uniquement) Définit qui peut utiliser la commande !music <prompt>.",
+      "permission": "Modérateur"
     },
     "musicBits": {
-      "name": "!music bits [on|off|min <amount>]"
+      "name": "!music bits [on|off|min <amount>]",
+      "description": "(Modérateur uniquement) Configure Bits-pour-Musique. Lorsqu'elle est activée, les utilisateurs doivent faire une acclamation avec leur demande pour générer de la musique.",
+      "permission": "Modérateur",
+      "statusNote": "(affiche l'état actuel)",
+      "optionOn": "on : Active le mode Bits-pour-Musique.",
+      "optionOff": "off : Désactive le mode Bits-pour-Musique.",
+      "optionMin": "min <amount> : Définit le nombre minimum de Bits requis (par ex., min 100)."
     },
     "musicHelp": {
       "name": "!music help",
-      "description": "Fournit une liste de toutes les sous-commandes de musique et leur utilisation."
+      "description": "Fournit une liste de toutes les sous-commandes de musique et leur utilisation.",
+      "permission": "Tout le monde",
+      "notes": "Liste toutes les sous-commandes !music et leur utilisation, similaire à cette documentation."
     },
     "musicStatus": {
       "name": "!music status",
-      "description": "Affiche l'état actuel de la génération de musique (activée/désactivée, mode, longueur de la file d'attente)."
+      "description": "Affiche l'état actuel de la génération de musique (activée/désactivée, mode, longueur de la file d'attente).",
+      "permission": "Tout le monde"
     },
     "musicClear": {
       "name": "!music clear",
-      "description": "(Modérateur uniquement) Efface toutes les demandes de génération de musique en attente de la file d'attente."
+      "description": "(Modérateur uniquement) Efface toutes les demandes de génération de musique en attente de la file d'attente.",
+      "permission": "Modérateur"
     },
     "musicIgnore": {
-      "name": "!music ignore <username>\n!music ignore add <username>"
+      "name": "!music ignore <username>\n!music ignore add <username>",
+      "permission": "Tout le monde (pour s'ajouter soi-même), Modérateur (pour ajouter d'autres)",
+      "descriptionUser": "Pour tout utilisateur : Ajoutez-vous à la liste d'ignorés de musique. Vos demandes !music <prompt> seront ignorées.",
+      "descriptionMod": "Pour les Modérateurs ou le Diffuseur : Ajoutez n'importe quel utilisateur Twitch spécifié à la liste d'ignorés de musique.",
+      "usageSelf": "!music ignore votrenom (si vous voulez vous ignorer)",
+      "usageMod": "!music ignore add AutreUtilisateur (si vous êtes mod/diffuseur)"
     },
     "musicIgnoreDel": {
-      "name": "!music ignore del <username>\n(Alias : delete, rem, remove)"
+      "name": "!music ignore del <username>\n(Alias : delete, rem, remove)",
+      "description": "(Modérateur uniquement) Supprime l'utilisateur Twitch spécifié de la liste d'ignorés de musique.",
+      "aliases": "(Alias : delete, rem, remove)",
+      "permission": "Modérateur"
     },
     "musicIgnored": {
-      "name": "!music ignored"
+      "name": "!music ignored",
+      "description": "(Modérateur uniquement) Liste tous les utilisateurs actuellement sur la liste d'ignorés de musique pour le canal.",
+      "permission": "Modérateur"
     }
   },
   "table": {
@@ -338,23 +363,97 @@
     "prefixTip": "Toutes les commandes de génération de musique sont préfixées par !music",
     "exampleTip": "Par exemple : !music 90s soulful house",
     "expandTip": "Cliquez sur n'importe quelle ligne de commande ci-dessous pour développer et voir les détails d'utilisation.",
-    "commandsTitle": "Commandes de Génération de Musique"
+    "commandsTitle": "Commandes de Génération de Musique",
+    "tableCommand": "Commande",
+    "tableDescription": "Description",
+    "labelPermission": "Permission :",
+    "labelNotes": "Remarques :",
+    "labelUsage": "Utilisation :",
+    "labelDescription": "Description :"
   },
   "voices": {
     "title": "Voix",
+    "introText": "Les voix suivantes sont disponibles à partir du modèle minimax/speech-02-turbo via Wavespeed AI. Le bot utilise une liste codée complète de 472 voix avec catégorisation automatique de la langue sur 45 langues. Le voice_id est utilisé dans les commandes comme !tts voice <voice_id>.",
     "popularTitle": "Identifiants de Voix Populaires",
-    "completeListTitle": "Liste Complète des Voix (du Schéma Wavespeed AI minimax/speech-02-turbo)"
+    "popularText": "Voix en vedette du modèle minimax/speech-02-turbo via Wavespeed AI. Pour toute voix de cette liste, vous pouvez utiliser la commande !tts voice <voice_id> pour l'utiliser.",
+    "completeListTitle": "Liste Complète des Voix (du Schéma Wavespeed AI minimax/speech-02-turbo)",
+    "completeListText": "Ceci est la liste complète de toutes les 472 voix disponibles organisées par langue. Les voix sont automatiquement catégorisées par préfixe de langue pour une identification facile.",
+    "expandText": "Cliquez pour développer la liste complète des voix (472 voix sur 45 langues)"
   },
   "languageBoost": {
     "title": "Amélioration de Langue",
-    "optionsTitle": "Options d'Amélioration de Langue Disponibles"
+    "introText": "La fonctionnalité language_boost aide le modèle TTS à mieux comprendre et prononcer les mots de langues ou dialectes spécifiques. Ceci est particulièrement utile dans les chats multilingues ou lorsque les nuances d'une langue spécifique sont importantes pour un TTS clair.",
+    "commandText": "Vous pouvez définir une préférence personnelle d'amélioration de langue en utilisant !tts language <nom_langue> ou les modérateurs peuvent définir un défaut de canal avec !tts defaultlanguage <nom_langue>.",
+    "optionsTitle": "Options d'Amélioration de Langue Disponibles",
+    "optionsIntro": "Les valeurs suivantes sont acceptées :",
+    "usageText": "L'utilisation de auto s'appuiera sur la détection automatique de la langue du modèle. English est souvent un bon défaut pour les chats principalement anglophones. Choisir une langue spécifique peut améliorer considérablement la prononciation de cette langue."
   },
   "webDashboard": {
     "title": "Tableau de Bord Web",
+    "introText": "Le Tableau de Bord Web ChatVibes fournit aux streamers une interface complète pour configurer tous les paramètres TTS et musique. Accédez-y en vous connectant avec votre compte Twitch.",
     "settingsTitle": "Paramètres Disponibles du Tableau de Bord",
-    "obsSetupTitle": "Configuration de la Source du Navigateur OBS"
+    "settingEngineTitle": "Contrôle du Moteur :",
+    "settingEngineDesc": "Activer/désactiver TTS, annoncer les événements, définir le mode TTS et les permissions",
+    "settingViewerTitle": "Préférences des Spectateurs :",
+    "settingViewerDesc": "Autoriser ou forcer la voix par défaut du canal pour tous les messages",
+    "settingUrlTitle": "Lecture d'URL :",
+    "settingUrlDesc": "Lire les URLs complètes ou seulement les noms de domaine",
+    "settingBitsTitle": "Bits → TTS :",
+    "settingBitsDesc": "Exiger un minimum de bits pour les messages TTS",
+    "settingChannelPointsTitle": "Points de Canal → TTS :",
+    "settingChannelPointsDesc": "Créer et configurer une récompense personnalisée de Points de Canal (voir section ci-dessus)",
+    "settingMusicTitle": "Génération de Musique :",
+    "settingMusicDesc": "Activer/désactiver la musique, définir les permissions, exiger des bits",
+    "settingIgnoreTitle": "Listes d'Ignorés :",
+    "settingIgnoreDesc": "Gérer les listes d'ignorés TTS et musique avec interface d'ajout/suppression",
+    "settingVoiceTitle": "Paramètres de Voix par Défaut :",
+    "settingVoiceDesc": "Définir les défauts du canal pour la voix, l'émotion, la tonalité, la vitesse, la langue et la normalisation du texte",
+    "settingObsTitle": "Configuration OBS :",
+    "settingObsDesc": "Obtenez votre URL TTS unique et sécurisée et des instructions de configuration détaillées",
+    "settingPreviewTitle": "Aperçu de la Voix :",
+    "settingPreviewDesc": "Testez vos paramètres de voix actuels avant de diffuser en direct",
+    "obsSetupTitle": "Configuration de la Source du Navigateur OBS",
+    "obsStep1Title": "Étape 1 : Ajouter une Source de Navigateur dans OBS",
+    "obsStep1_1": "Dans OBS, cliquez sur le \"+\" sous Sources",
+    "obsStep1_2": "Sélectionnez \"Navigateur\"",
+    "obsStep1_3": "Nommez-la (ex : \"ChatVibes TTS\")",
+    "obsStep1_4": "Configurez :",
+    "obsConfigUrlTitle": "URL :",
+    "obsConfigUrlDesc": "Collez votre URL unique depuis le tableau de bord",
+    "obsConfigSizeTitle": "Largeur/Hauteur :",
+    "obsConfigSizeDesc": "300x100 (peu importe, c'est audio seulement)",
+    "obsConfigControl": "✓ Contrôler l'audio via OBS (doit être coché)",
+    "obsConfigShutdown": "Décochez \"Fermer la source lorsqu'elle n'est pas visible\" pour un audio persistant",
+    "obsStep2Title": "Étape 2 : Activer la Surveillance Audio",
+    "obsStep2_1": "Trouvez le mixeur audio dans OBS (panneau inférieur)",
+    "obsStep2_2": "Cliquez sur l'engrenage (⚙️) à côté de \"ChatVibes TTS\" → \"Propriétés Audio Avancées\"",
+    "obsStep2_3": "Réglez \"Surveillance Audio\" sur :",
+    "obsMonitorOutputTitle": "Surveiller et Sortie",
+    "obsMonitorOutputDesc": "- VOUS ET le stream l'entendez",
+    "obsMonitorOnlyTitle": "Surveiller Uniquement",
+    "obsMonitorOnlyDesc": "- Seulement vous l'entendez (pour tester)",
+    "obsImportantTitle": "Important :",
+    "obsImportantDesc": "Assurez-vous que la source n'est pas muette dans votre mixeur audio et que le volume est réglé de manière appropriée."
   },
   "troubleshooting": {
-    "title": "Dépannage"
+    "title": "Dépannage",
+    "q1": "Le bot ne répond pas aux commandes ?",
+    "a1": "Assurez-vous que le bot est modérateur dans votre canal. Vous pouvez le faire en tapant /mod chatvibesbot dans votre chat Twitch. Dans de nombreux cas, le bot peut avoir besoin de permissions de modérateur pour lire les messages et répondre aux commandes.",
+    "q2": "Le bot ne parle pas ?",
+    "a2": "Assurez-vous que le bot est activé dans votre canal. Vous pouvez le faire en tapant !tts on dans votre chat Twitch. Vérifiez également le mode actuel !tts mode et les permissions !tts permission.",
+    "q3": "Le bot ne parle pas dans une langue spécifique, ou lit les nombres en chinois ?",
+    "a3": "Assurez-vous que l'amélioration de langue est définie sur la langue correcte. Vous pouvez le faire en tapant !tts language <nom_langue> pour vous-même ou !tts defaultlanguage <nom_langue> pour le canal dans votre chat Twitch. Vous pouvez vérifier l'amélioration de langue actuelle en utilisant !tts defaultlanguage.",
+    "q4": "La génération TTS prend trop de temps ou échoue ?",
+    "a4": "ChatVibes utilise maintenant Wavespeed AI avec le mode synchronisé activé pour la latence la plus faible. Si vous rencontrez des retards, vérifiez votre connexion Internet et essayez d'utiliser !tts stop pour annuler toute génération bloquée. Le bot réessaie automatiquement les demandes échouées.",
+    "q5": "Erreur de voix introuvable ?",
+    "a5": "Assurez-vous d'utiliser le voice ID correct de la section Voix. Les voice IDs sont sensibles à la casse et doivent correspondre exactement. Essayez !tts voices pour obtenir un lien vers les voix disponibles.",
+    "q6": "Erreur \"Accès à la voix refusé\" ?",
+    "a6": "Certaines voix (en particulier certains effets audio Moss) peuvent nécessiter des permissions d'accès spéciales sur Wavespeed AI. Si vous recevez cette erreur, essayez d'utiliser une voix différente de la liste des voix disponibles. La plupart des voix fonctionnent avec un accès standard.",
+    "q7": "Erreur \"Voix invalide\" ?",
+    "a7": "Le voice ID que vous utilisez n'est pas disponible ou n'existe pas. Assurez-vous d'utiliser le voice ID correct de la section Voix. Les voice IDs sont sensibles à la casse et doivent correspondre exactement.",
+    "q8": "L'émotion ne fonctionne pas ?",
+    "a8": "Notez que l'émotion \"auto\" n'est plus prise en charge. Utilisez neutral, happy, sad, angry, fearful, disgusted ou surprised à la place.",
+    "q9": "Besoin d'aide ?",
+    "a9": "Contactez le développeur via le formulaire de contact sur le site web du portfolio d'Henry."
   }
 }

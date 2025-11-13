@@ -285,37 +285,62 @@
     },
     "musicPrompt": {
       "name": "!music <プロンプト>",
-      "description": "プロンプトに基づいて短い音楽を生成します。"
+      "description": "プロンプトに基づいて短い音楽を生成します。",
+      "permission": "モデレーターが設定可能(デフォルト: 全員、モデレーターのみに変更可能)。ユーザーは音楽除外リストに登録されていないこと。"
     },
     "musicOnOff": {
-      "name": "!music on\n!music off"
+      "name": "!music on\n!music off",
+      "description": "(モデレーターのみ) チャンネルの音楽生成機能を有効または無効にします。",
+      "permission": "モデレーター"
     },
     "musicMode": {
-      "name": "!music mode <all|mods>"
+      "name": "!music mode <all|mods>",
+      "description": "(モデレーターのみ) !music <プロンプト> コマンドを使用できるユーザーを設定します。",
+      "permission": "モデレーター"
     },
     "musicBits": {
-      "name": "!music bits [on|off|min <金額>]"
+      "name": "!music bits [on|off|min <金額>]",
+      "description": "(モデレーターのみ) Bits-for-Musicを設定します。有効にすると、ユーザーは音楽を生成するためにプロンプトと一緒にチアする必要があります。",
+      "permission": "モデレーター",
+      "statusNote": "(現在のステータスを表示)",
+      "optionOn": "on: Bits-for-Musicモードを有効にします。",
+      "optionOff": "off: Bits-for-Musicモードを無効にします。",
+      "optionMin": "min <金額>: 必要な最小Bits数を設定します(例: min 100)。"
     },
     "musicHelp": {
       "name": "!music help",
-      "description": "すべての音楽サブコマンドとその使用方法のリストを提供します。"
+      "description": "すべての音楽サブコマンドとその使用方法のリストを提供します。",
+      "permission": "全員",
+      "notes": "すべての!musicサブコマンドとその使用方法をリストします。このドキュメントと同様です。"
     },
     "musicStatus": {
       "name": "!music status",
-      "description": "音楽生成の現在のステータスを表示します(有効/無効、モード、キューの長さ)。"
+      "description": "音楽生成の現在のステータスを表示します(有効/無効、モード、キューの長さ)。",
+      "permission": "全員"
     },
     "musicClear": {
       "name": "!music clear",
-      "description": "(モデレーターのみ) キューからすべての保留中の音楽生成リクエストをクリアします。"
+      "description": "(モデレーターのみ) キューからすべての保留中の音楽生成リクエストをクリアします。",
+      "permission": "モデレーター"
     },
     "musicIgnore": {
-      "name": "!music ignore <ユーザー名>\n!music ignore add <ユーザー名>"
+      "name": "!music ignore <ユーザー名>\n!music ignore add <ユーザー名>",
+      "permission": "全員(自分を追加)、モデレーター(他人を追加)",
+      "descriptionUser": "すべてのユーザー: 音楽除外リストに自分自身を追加します。あなたの!music <プロンプト>リクエストは無視されます。",
+      "descriptionMod": "モデレーターまたは配信者: 指定したTwitchユーザーを音楽除外リストに追加します。",
+      "usageSelf": "!music ignore あなたのユーザー名 (自分自身を無視したい場合)",
+      "usageMod": "!music ignore add 他のユーザー (mod/配信者の場合)"
     },
     "musicIgnoreDel": {
-      "name": "!music ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)"
+      "name": "!music ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
+      "description": "(モデレーターのみ) 指定したTwitchユーザーを音楽除外リストから削除します。",
+      "aliases": "(エイリアス: delete, rem, remove)",
+      "permission": "モデレーター"
     },
     "musicIgnored": {
-      "name": "!music ignored"
+      "name": "!music ignored",
+      "description": "(モデレーターのみ) チャンネルの音楽除外リストに現在登録されているすべてのユーザーを一覧表示します。",
+      "permission": "モデレーター"
     }
   },
   "table": {
@@ -338,23 +363,97 @@
     "prefixTip": "すべての音楽生成コマンドには !music が接頭辞として付きます",
     "exampleTip": "例: !music 90s soulful house",
     "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
-    "commandsTitle": "音楽生成コマンド"
+    "commandsTitle": "音楽生成コマンド",
+    "tableCommand": "コマンド",
+    "tableDescription": "説明",
+    "labelPermission": "権限:",
+    "labelNotes": "注意事項:",
+    "labelUsage": "使用方法:",
+    "labelDescription": "説明:"
   },
   "voices": {
     "title": "音声",
     "popularTitle": "人気の音声ID",
-    "completeListTitle": "完全な音声リスト(Wavespeed AI minimax/speech-02-turbo スキーマより)"
+    "completeListTitle": "完全な音声リスト(Wavespeed AI minimax/speech-02-turbo スキーマより)",
+    "introText": "以下の音声はWavespeed AI経由でminimax/speech-02-turboモデルから利用可能です。ボットは45言語にわたる472音声の包括的なハードコードリストを自動言語分類で使用しています。voice_idは!tts voice <voice_id>のようなコマンドで使用されます。",
+    "popularText": "Wavespeed AI経由のminimax/speech-02-turboモデルから特集された音声。このリストの任意の音声について、!tts voice <voice_id>コマンドを使用して利用できます。",
+    "completeListText": "これは言語別に整理された利用可能な472音声すべての完全なリストです。音声は簡単に識別できるように言語プレフィックスで自動的に分類されています。",
+    "expandText": "クリックして完全な音声リストを展開(45言語で472音声)"
   },
   "languageBoost": {
     "title": "言語ブースト",
-    "optionsTitle": "利用可能な言語ブーストオプション"
+    "optionsTitle": "利用可能な言語ブーストオプション",
+    "introText": "language_boost機能は、TTSモデルが特定の言語や方言の単語をよりよく理解し発音するのを助けます。これは多言語チャットや、特定の言語のニュアンスが明確なTTSにとって重要な場合に特に便利です。",
+    "commandText": "!tts language <言語名>を使用して個人の言語ブースト設定を行うか、モデレーターは!tts defaultlanguage <言語名>でチャンネルのデフォルトを設定できます。",
+    "optionsIntro": "次の値が受け入れられます:",
+    "usageText": "autoを使用すると、モデルの自動言語検出に依存します。Englishは主に英語を話すチャットにとってよいデフォルトです。特定の言語を選択すると、その言語の発音が大幅に改善される可能性があります。"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
     "settingsTitle": "利用可能なダッシュボード設定",
-    "obsSetupTitle": "OBSブラウザソースのセットアップ"
+    "obsSetupTitle": "OBSブラウザソースのセットアップ",
+    "introText": "ChatVibes Webダッシュボードは、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
+    "settingEngineTitle": "エンジン制御:",
+    "settingEngineDesc": "TTSの有効/無効、イベントのアナウンス、TTSモードと権限の設定",
+    "settingViewerTitle": "視聴者の設定:",
+    "settingViewerDesc": "すべてのメッセージでチャンネルデフォルト音声を許可または強制",
+    "settingUrlTitle": "URL読み上げ:",
+    "settingUrlDesc": "完全なURLまたはドメイン名のみを読む",
+    "settingBitsTitle": "Bits → TTS:",
+    "settingBitsDesc": "TTSメッセージに最小bitsを要求",
+    "settingChannelPointsTitle": "チャンネルポイント → TTS:",
+    "settingChannelPointsDesc": "カスタムチャンネルポイント報酬を作成および設定(上記のセクションを参照)",
+    "settingMusicTitle": "音楽生成:",
+    "settingMusicDesc": "音楽の有効/無効、権限の設定、bitsの要求",
+    "settingIgnoreTitle": "除外リスト:",
+    "settingIgnoreDesc": "追加/削除インターフェースでTTSおよび音楽除外リストを管理",
+    "settingVoiceTitle": "デフォルト音声設定:",
+    "settingVoiceDesc": "音声、感情、ピッチ、速度、言語、テキスト正規化のチャンネルデフォルトを設定",
+    "settingObsTitle": "OBS設定:",
+    "settingObsDesc": "固有の安全なTTS URLと詳細なセットアップ手順を取得",
+    "settingPreviewTitle": "音声プレビュー:",
+    "settingPreviewDesc": "ライブ配信前に現在の音声設定をテスト",
+    "obsStep1Title": "ステップ1: OBSにブラウザソースを追加",
+    "obsStep1_1": "OBSで、ソースの下の\"+\"をクリック",
+    "obsStep1_2": "\"ブラウザ\"を選択",
+    "obsStep1_3": "名前を付ける(例: \"ChatVibes TTS\")",
+    "obsStep1_4": "設定:",
+    "obsConfigUrlTitle": "URL:",
+    "obsConfigUrlDesc": "ダッシュボードから固有のURLを貼り付け",
+    "obsConfigSizeTitle": "幅/高さ:",
+    "obsConfigSizeDesc": "300x100 (重要ではありません、オーディオのみです)",
+    "obsConfigControl": "✓ OBS経由でオーディオを制御(チェック必須)",
+    "obsConfigShutdown": "持続的なオーディオのために\"表示されていないときにソースをシャットダウン\"のチェックを外す",
+    "obsStep2Title": "ステップ2: オーディオモニタリングを有効化",
+    "obsStep2_1": "OBSでオーディオミキサーを見つける(下部パネル)",
+    "obsStep2_2": "\"ChatVibes TTS\"の横の歯車(⚙️)をクリック → \"詳細オーディオプロパティ\"",
+    "obsStep2_3": "\"オーディオモニタリング\"を次に設定:",
+    "obsMonitorOutputTitle": "モニターと出力",
+    "obsMonitorOutputDesc": "- あなたと配信の両方が聞こえます",
+    "obsMonitorOnlyTitle": "モニターのみ",
+    "obsMonitorOnlyDesc": "- あなただけが聞こえます(テスト用)",
+    "obsImportantTitle": "重要:",
+    "obsImportantDesc": "オーディオミキサーでソースがミュートされておらず、音量が適切に設定されていることを確認してください。"
   },
   "troubleshooting": {
-    "title": "トラブルシューティング"
+    "title": "トラブルシューティング",
+    "q1": "ボットがコマンドに応答しない?",
+    "a1": "ボットがあなたのチャンネルのモデレーターであることを確認してください。Twitchチャットで/mod chatvibesbotと入力することでこれを行えます。多くの場合、ボットはメッセージを読んでコマンドに応答するためにモデレーター権限が必要な場合があります。",
+    "q2": "ボットが話さない?",
+    "a2": "ボットがあなたのチャンネルで有効になっていることを確認してください。Twitchチャットで!tts onと入力することでこれを行えます。また、現在のモード!tts modeと権限!tts permissionを確認してください。",
+    "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",
+    "a3": "言語ブーストが正しい言語に設定されていることを確認してください。自分用には!tts language <言語名>、チャンネル用には!tts defaultlanguage <言語名>をTwitchチャットで入力することでこれを行えます。!tts defaultlanguageを使用して現在の言語ブーストを確認できます。",
+    "q4": "TTS生成に時間がかかりすぎるか失敗する?",
+    "a4": "ChatVibesは現在、最低レイテンシのために同期モードを有効にしたWavespeed AIを使用しています。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
+    "q5": "音声が見つかりませんエラー?",
+    "a5": "音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。!tts voicesで利用可能な音声へのリンクを取得してください。",
+    "q6": "\"音声アクセスが拒否されました\"エラー?",
+    "a6": "一部の音声(特に特定のMossオーディオエフェクト)は、Wavespeed AIで特別なアクセス権限が必要な場合があります。このエラーが発生した場合は、利用可能な音声リストから別の音声を使用してみてください。ほとんどの音声は標準アクセスで動作します。",
+    "q7": "\"無効な音声\"エラー?",
+    "a7": "使用しているvoice IDが利用できないか存在しません。音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。",
+    "q8": "感情が機能しない?",
+    "a8": "\"auto\"感情はサポートされなくなったことに注意してください。代わりにneutral、happy、sad、angry、fearful、disgusted、またはsurprisedを使用してください。",
+    "q9": "ヘルプが必要?",
+    "a9": "Henryのポートフォリオウェブサイトのお問い合わせフォームから開発者にお問い合わせください。"
   }
 }

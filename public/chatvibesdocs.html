@@ -651,8 +651,8 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Command</th>
-                        <th>Description</th>
+                        <th data-i18n="music.tableCommand">Command</th>
+                        <th data-i18n="music.tableDescription">Description</th>
                     </tr>
                 </thead>
                 <tbody class="dropdown-group">
@@ -663,29 +663,29 @@
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code>!music epic orchestral battle theme</code>
-                            <p><strong>Permission:</strong> Configurable by mods (default: everyone, can be mods only). User must not be on music ignore list.</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicPrompt.permission">Configurable by mods (default: everyone, can be mods only). User must not be on music ignore list.</span></p>
                         </td>
                     </tr>
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
                         <td class="mod-command" data-i18n-key="commands.musicOnOff.name">!music on<br>!music off</td>
-                        <td>(Mod only) Enables or disables the music generation feature for the channel. <span class="dropdown-toggle">&#x25BC;</span></td>
+                        <td data-i18n-key="commands.musicOnOff.description">(Mod only) Enables or disables the music generation feature for the channel. <span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code class="mod-command">!music on</code>
                             <code class="mod-command">!music off</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicOnOff.permission">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
                         <td class="mod-command" data-i18n-key="commands.musicMode.name">!music mode &lt;all|mods&gt;</td>
-                        <td>(Mod only) Sets who can use the <span class="inline-code">!music &lt;prompt&gt;</span> command.<br>
+                        <td><span data-i18n-key="commands.musicMode.description">(Mod only) Sets who can use the <span class="inline-code">!music &lt;prompt&gt;</span> command.<br>
                             <span class="inline-code">all</span>: Everyone can generate music.<br>
-                            <span class="inline-code">mods</span>: Only moderators and the broadcaster can generate music.
+                            <span class="inline-code">mods</span>: Only moderators and the broadcaster can generate music.</span>
                             <span class="dropdown-toggle">&#x25BC;</span>
                         </td>
                     </tr>
@@ -693,28 +693,28 @@
                         <td colspan="2">
                             <code class="mod-command">!music mode all</code>
                             <code class="mod-command">!music mode mods</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicMode.permission">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
                         <td class="mod-command" data-i18n-key="commands.musicBits.name">!music bits [on|off|min &lt;amount&gt;]</td>
-                        <td>(Mod only) Configures Bits-for-Music. When enabled, users must cheer with their prompt to generate music. <span class="dropdown-toggle">&#x25BC;</span></td>
+                        <td data-i18n-key="commands.musicBits.description">(Mod only) Configures Bits-for-Music. When enabled, users must cheer with their prompt to generate music. <span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code class="mod-command">!music bits on</code>
                             <code class="mod-command">!music bits off</code>
                             <code class="mod-command">!music bits min 100</code>
-                            <code class="mod-command">!music bits</code> <span>(displays current status)</span>
-                            <p><strong>Description:</strong></p>
+                            <code class="mod-command">!music bits</code> <span data-i18n-key="commands.musicBits.statusNote">(displays current status)</span>
+                            <p><strong data-i18n="music.labelDescription">Description:</strong></p>
                             <ul>
-                                <li><span class="inline-code">on</span>: Enables Bits-for-Music mode.</li>
-                                <li><span class="inline-code">off</span>: Disables Bits-for-Music mode.</li>
-                                <li><span class="inline-code">min &lt;amount&gt;</span>: Sets the minimum number of Bits required (e.g., <span class="inline-code">min 100</span>).</li>
+                                <li data-i18n-key="commands.musicBits.optionOn"><span class="inline-code">on</span>: Enables Bits-for-Music mode.</li>
+                                <li data-i18n-key="commands.musicBits.optionOff"><span class="inline-code">off</span>: Disables Bits-for-Music mode.</li>
+                                <li data-i18n-key="commands.musicBits.optionMin"><span class="inline-code">min &lt;amount&gt;</span>: Sets the minimum number of Bits required (e.g., <span class="inline-code">min 100</span>).</li>
                             </ul>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicBits.permission">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -727,8 +727,8 @@
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code>!music help</code>
-                            <p><strong>Notes:</strong> Lists all <span class="inline-code">!music</span> subcommands and their usage, similar to this documentation.</p>
-                            <p><strong>Permission:</strong> Everyone</p>
+                            <p><strong data-i18n="music.labelNotes">Notes:</strong> <span data-i18n-key="commands.musicHelp.notes">Lists all <span class="inline-code">!music</span> subcommands and their usage, similar to this documentation.</span></p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicHelp.permission">Everyone</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -740,7 +740,7 @@
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code>!music status</code>
-                            <p><strong>Permission:</strong> Everyone</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicStatus.permission">Everyone</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -752,7 +752,7 @@
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code class="mod-command">!music clear</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicClear.permission">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -760,43 +760,43 @@
                     <tr class="dropdown-summary">
                         <td data-i18n-key="commands.musicIgnore.name">!music ignore &lt;username&gt;<br>!music ignore add &lt;username&gt;</td>
                         <td>
-                            <strong>For any user:</strong> Add <em>yourself</em> to the music ignore list. Your <span class="inline-code">!music &lt;prompt&gt;</span> requests will be ignored.<br>
-                            <strong>For Moderators or Broadcaster:</strong> Add <em>any specified Twitch user</em> to the music ignore list.<br>
+                            <span data-i18n-key="commands.musicIgnore.descriptionUser"><strong>For any user:</strong> Add <em>yourself</em> to the music ignore list. Your <span class="inline-code">!music &lt;prompt&gt;</span> requests will be ignored.</span><br>
+                            <span data-i18n-key="commands.musicIgnore.descriptionMod"><strong>For Moderators or Broadcaster:</strong> Add <em>any specified Twitch user</em> to the music ignore list.</span><br>
                             <span class="dropdown-toggle">&#x25BC;</span>
                         </td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <strong>Usage:</strong>
+                            <strong data-i18n="music.labelUsage">Usage:</strong>
                             <ul>
-                                <li><code>!music ignore yourusername</code> (if you want to ignore yourself)</li>
-                                <li><code class="mod-command">!music ignore add SomeOtherUser</code> (if you are a mod/broadcaster)</li>
+                                <li data-i18n-key="commands.musicIgnore.usageSelf"><code>!music ignore yourusername</code> (if you want to ignore yourself)</li>
+                                <li data-i18n-key="commands.musicIgnore.usageMod"><code class="mod-command">!music ignore add SomeOtherUser</code> (if you are a mod/broadcaster)</li>
                             </ul>
-                            <p><strong>Permission:</strong> Everyone (to add themselves), Moderator (to add others)</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicIgnore.permission">Everyone (to add themselves), Moderator (to add others)</span></p>
                         </td>
                     </tr>
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicIgnoreDel.name">!music ignore del &lt;username&gt;<br><span style="font-size:0.9em;">(Aliases: delete, rem, remove)</span></td>
-                        <td>(Mod only) Removes the specified Twitch user from the music ignore list. <span class="dropdown-toggle">&#x25BC;</span></td>
+                        <td class="mod-command" data-i18n-key="commands.musicIgnoreDel.name">!music ignore del &lt;username&gt;<br><span style="font-size:0.9em;" data-i18n-key="commands.musicIgnoreDel.aliases">(Aliases: delete, rem, remove)</span></td>
+                        <td data-i18n-key="commands.musicIgnoreDel.description">(Mod only) Removes the specified Twitch user from the music ignore list. <span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code class="mod-command">!music ignore del SomeUser</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicIgnoreDel.permission">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
                         <td class="mod-command" data-i18n-key="commands.musicIgnored.name">!music ignored</td>
-                        <td>(Mod only) Lists all users currently on the music ignore list for the channel. <span class="dropdown-toggle">&#x25BC;</span></td>
+                        <td data-i18n-key="commands.musicIgnored.description">(Mod only) Lists all users currently on the music ignore list for the channel. <span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
                             <code class="mod-command">!music ignored</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicIgnored.permission">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -805,10 +805,10 @@
 
         <section id="voices" class="section">
             <h2 data-i18n="voices.title">Voices</h2>
-            <p>The following voices are available from the <span class="inline-code">minimax/speech-02-turbo</span> model via <strong>Wavespeed AI</strong>. The bot uses a comprehensive hardcoded list of 472 voices with automatic language categorization across 45 languages. The <span class="inline-code">voice_id</span> is used in commands like <span class="inline-code">!tts voice &lt;voice_id&gt;</span>.</p>
-            
+            <p data-i18n="voices.introText">The following voices are available from the <span class="inline-code">minimax/speech-02-turbo</span> model via <strong>Wavespeed AI</strong>. The bot uses a comprehensive hardcoded list of 472 voices with automatic language categorization across 45 languages. The <span class="inline-code">voice_id</span> is used in commands like <span class="inline-code">!tts voice &lt;voice_id&gt;</span>.</p>
+
             <h3 data-i18n="voices.popularTitle">Popular Voice IDs</h3>
-            <p>Featured voices from the <span class="inline-code">minimax/speech-02-turbo</span> model via Wavespeed AI. For any voice in this list, you can use the command <span class="inline-code">!tts voice &lt;voice_id&gt;</span> to use it.</p>
+            <p data-i18n="voices.popularText">Featured voices from the <span class="inline-code">minimax/speech-02-turbo</span> model via Wavespeed AI. For any voice in this list, you can use the command <span class="inline-code">!tts voice &lt;voice_id&gt;</span> to use it.</p>
             <ul>
                 <li>Wise_Woman</li>
                 <li>Friendly_Person</li>
@@ -838,11 +838,11 @@
                 </ul>
 
             <h3 data-i18n="voices.completeListTitle">Complete Voice List (from <a href="https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo" target="_blank" class="default-link-style">Wavespeed AI minimax/speech-02-turbo Schema</a>)</h3>
-            <p>This is the complete list of all 472 available voices organized by language. The voices are automatically categorized by language prefix for easy identification.</p>
+            <p data-i18n="voices.completeListText">This is the complete list of all 472 available voices organized by language. The voices are automatically categorized by language prefix for easy identification.</p>
 
             <details class="voice-list-details">
                 <summary class="voice-list-summary">
-                    <span class="summary-text">Click to expand complete voice list (472 voices across 45 languages)</span>
+                    <span class="summary-text" data-i18n="voices.expandText">Click to expand complete voice list (472 voices across 45 languages)</span>
                     <span class="summary-arrow">▼</span>
                 </summary>
                 <div class="voice-list-content">
@@ -1506,11 +1506,11 @@
 
         <section id="language-boost" class="section">
             <h2 data-i18n="languageBoost.title">Language Boost</h2>
-            <p>The <span class="inline-code">language_boost</span> feature helps the TTS model better understand and pronounce words from specific languages or dialects. This is particularly useful in multilingual chats or when a specific language's nuances are important for clear TTS.</p>
-            <p>You can set a personal language boost preference using <span class="inline-code">!tts language &lt;language_name&gt;</span> or moderators can set a channel default with <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span>.</p>
-            
+            <p data-i18n="languageBoost.introText">The <span class="inline-code">language_boost</span> feature helps the TTS model better understand and pronounce words from specific languages or dialects. This is particularly useful in multilingual chats or when a specific language's nuances are important for clear TTS.</p>
+            <p data-i18n="languageBoost.commandText">You can set a personal language boost preference using <span class="inline-code">!tts language &lt;language_name&gt;</span> or moderators can set a channel default with <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span>.</p>
+
             <h3 data-i18n="languageBoost.optionsTitle">Available Language Boost Options</h3>
-            <p>The following values are accepted:</p>
+            <p data-i18n="languageBoost.optionsIntro">The following values are accepted:</p>
             <ul class="language-list">
                 <li>auto</li>
                 <li>Arabic</li>
@@ -1538,70 +1538,70 @@
                 <li>Ukrainian</li>
                 <li>Vietnamese</li>
             </ul>
-            <p>Using <span class="inline-code">auto</span> will rely on the model's automatic language detection. <span class="inline-code">English</span> is often a good default for primarily English-speaking chats. Choosing a specific language can significantly improve pronunciation for that language.</p>
+            <p data-i18n="languageBoost.usageText">Using <span class="inline-code">auto</span> will rely on the model's automatic language detection. <span class="inline-code">English</span> is often a good default for primarily English-speaking chats. Choosing a specific language can significantly improve pronunciation for that language.</p>
         </section>
 
         <section id="web-dashboard" class="section">
             <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
-            <p>The <a href="https://tts.wildcat.chat/" class="default-link-style" target="_blank">ChatVibes Web Dashboard</a> provides streamers with a comprehensive interface to configure all TTS and music settings. Access it by logging in with your Twitch account.</p>
+            <p data-i18n="webDashboard.introText">The <a href="https://tts.wildcat.chat/" class="default-link-style" target="_blank">ChatVibes Web Dashboard</a> provides streamers with a comprehensive interface to configure all TTS and music settings. Access it by logging in with your Twitch account.</p>
 
             <h3 data-i18n="webDashboard.settingsTitle">Available Dashboard Settings</h3>
             <ul>
-                <li><strong>Engine Control:</strong> Enable/disable TTS, announce events, set TTS mode and permissions</li>
-                <li><strong>Viewer Preferences:</strong> Allow or force channel default voice for all messages</li>
-                <li><strong>URL Reading:</strong> Read full URLs or just domain names</li>
-                <li><strong>Bits → TTS:</strong> Require minimum bits for TTS messages</li>
-                <li><strong>Channel Points → TTS:</strong> Create and configure a custom Channel Point reward (see section above)</li>
-                <li><strong>Music Generation:</strong> Enable/disable music, set permissions, require bits</li>
-                <li><strong>Ignore Lists:</strong> Manage TTS and music ignore lists with add/remove interface</li>
-                <li><strong>Default Voice Settings:</strong> Set channel defaults for voice, emotion, pitch, speed, language, and text normalization</li>
-                <li><strong>OBS Setup:</strong> Get your unique secure TTS URL and detailed setup instructions</li>
-                <li><strong>Voice Preview:</strong> Test your current voice settings before going live</li>
+                <li><strong data-i18n="webDashboard.settingEngineTitle">Engine Control:</strong> <span data-i18n="webDashboard.settingEngineDesc">Enable/disable TTS, announce events, set TTS mode and permissions</span></li>
+                <li><strong data-i18n="webDashboard.settingViewerTitle">Viewer Preferences:</strong> <span data-i18n="webDashboard.settingViewerDesc">Allow or force channel default voice for all messages</span></li>
+                <li><strong data-i18n="webDashboard.settingUrlTitle">URL Reading:</strong> <span data-i18n="webDashboard.settingUrlDesc">Read full URLs or just domain names</span></li>
+                <li><strong data-i18n="webDashboard.settingBitsTitle">Bits → TTS:</strong> <span data-i18n="webDashboard.settingBitsDesc">Require minimum bits for TTS messages</span></li>
+                <li><strong data-i18n="webDashboard.settingChannelPointsTitle">Channel Points → TTS:</strong> <span data-i18n="webDashboard.settingChannelPointsDesc">Create and configure a custom Channel Point reward (see section above)</span></li>
+                <li><strong data-i18n="webDashboard.settingMusicTitle">Music Generation:</strong> <span data-i18n="webDashboard.settingMusicDesc">Enable/disable music, set permissions, require bits</span></li>
+                <li><strong data-i18n="webDashboard.settingIgnoreTitle">Ignore Lists:</strong> <span data-i18n="webDashboard.settingIgnoreDesc">Manage TTS and music ignore lists with add/remove interface</span></li>
+                <li><strong data-i18n="webDashboard.settingVoiceTitle">Default Voice Settings:</strong> <span data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, emotion, pitch, speed, language, and text normalization</span></li>
+                <li><strong data-i18n="webDashboard.settingObsTitle">OBS Setup:</strong> <span data-i18n="webDashboard.settingObsDesc">Get your unique secure TTS URL and detailed setup instructions</span></li>
+                <li><strong data-i18n="webDashboard.settingPreviewTitle">Voice Preview:</strong> <span data-i18n="webDashboard.settingPreviewDesc">Test your current voice settings before going live</span></li>
             </ul>
 
             <h3 data-i18n="webDashboard.obsSetupTitle">OBS Browser Source Setup</h3>
-            <p><strong>Step 1: Add Browser Source in OBS</strong></p>
+            <p><strong data-i18n="webDashboard.obsStep1Title">Step 1: Add Browser Source in OBS</strong></p>
             <ol>
-                <li>In OBS, click the "+" under Sources</li>
-                <li>Select "Browser"</li>
-                <li>Name it (e.g., "ChatVibes TTS")</li>
-                <li>Configure:
+                <li data-i18n="webDashboard.obsStep1_1">In OBS, click the "+" under Sources</li>
+                <li data-i18n="webDashboard.obsStep1_2">Select "Browser"</li>
+                <li data-i18n="webDashboard.obsStep1_3">Name it (e.g., "ChatVibes TTS")</li>
+                <li><span data-i18n="webDashboard.obsStep1_4">Configure:</span>
                     <ul>
-                        <li><strong>URL:</strong> Paste your unique URL from the dashboard</li>
-                        <li><strong>Width/Height:</strong> 300x100 (doesn't matter, it's audio-only)</li>
-                        <li><strong>✓ Control audio via OBS</strong> (must be checked)</li>
-                        <li>Uncheck "Shutdown source when not visible" for persistent audio</li>
+                        <li><strong data-i18n="webDashboard.obsConfigUrlTitle">URL:</strong> <span data-i18n="webDashboard.obsConfigUrlDesc">Paste your unique URL from the dashboard</span></li>
+                        <li><strong data-i18n="webDashboard.obsConfigSizeTitle">Width/Height:</strong> <span data-i18n="webDashboard.obsConfigSizeDesc">300x100 (doesn't matter, it's audio-only)</span></li>
+                        <li data-i18n="webDashboard.obsConfigControl"><strong>✓ Control audio via OBS</strong> (must be checked)</li>
+                        <li data-i18n="webDashboard.obsConfigShutdown">Uncheck "Shutdown source when not visible" for persistent audio</li>
                     </ul>
                 </li>
             </ol>
 
-            <p><strong>Step 2: Enable Audio Monitoring</strong></p>
+            <p><strong data-i18n="webDashboard.obsStep2Title">Step 2: Enable Audio Monitoring</strong></p>
             <ol>
-                <li>Find the audio mixer in OBS (bottom panel)</li>
-                <li>Click the gear (⚙️) next to "ChatVibes TTS" → "Advanced Audio Properties"</li>
-                <li>Set "Audio Monitoring" to:
+                <li data-i18n="webDashboard.obsStep2_1">Find the audio mixer in OBS (bottom panel)</li>
+                <li data-i18n="webDashboard.obsStep2_2">Click the gear (⚙️) next to "ChatVibes TTS" → "Advanced Audio Properties"</li>
+                <li><span data-i18n="webDashboard.obsStep2_3">Set "Audio Monitoring" to:</span>
                     <ul>
-                        <li><strong>Monitor and Output</strong> - You AND stream hear it</li>
-                        <li><strong>Monitor Only</strong> - Only you hear it (for testing)</li>
+                        <li><strong data-i18n="webDashboard.obsMonitorOutputTitle">Monitor and Output</strong> <span data-i18n="webDashboard.obsMonitorOutputDesc">- You AND stream hear it</span></li>
+                        <li><strong data-i18n="webDashboard.obsMonitorOnlyTitle">Monitor Only</strong> <span data-i18n="webDashboard.obsMonitorOnlyDesc">- Only you hear it (for testing)</span></li>
                     </ul>
                 </li>
             </ol>
 
-            <p><strong>Important:</strong> Make sure the source is unmuted in your audio mixer and volume is set appropriately.</p>
+            <p><strong data-i18n="webDashboard.obsImportantTitle">Important:</strong> <span data-i18n="webDashboard.obsImportantDesc">Make sure the source is unmuted in your audio mixer and volume is set appropriately.</span></p>
         </section>
 
         <section id="troubleshooting" class="section">
             <h2 data-i18n="troubleshooting.title">Troubleshooting</h2>
             <ul>
-                <li><strong>Bot not responding to commands?</strong> Make sure the bot is a moderator in your channel. You can do this by typing <span class="inline-code">/mod chatvibesbot</span> in your Twitch chat. In many cases, the bot may need moderator permissions to read messages and respond to commands.</li>
-                <li><strong>Bot not speaking?</strong> Make sure the bot is enabled in your channel. You can do this by typing <span class="inline-code">!tts on</span> in your Twitch chat. Also, check the current mode <span class="inline-code">!tts mode</span> and permissions <span class="inline-code">!tts permission</span>.</li>
-                <li><strong>Bot not speaking in a specific language, or reading numbers in Chinese?</strong> Make sure the language boost is set to the correct language. You can do this by typing <span class="inline-code">!tts language &lt;language_name&gt;</span> for yourself or <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel in your Twitch chat. You can check the current language boost using <span class="inline-code">!tts defaultlanguage</span>.</li>
-                <li><strong>TTS generation taking too long or failing?</strong> ChatVibes now uses Wavespeed AI with sync mode enabled for the lowest latency. If you experience delays, check your internet connection and try using <span class="inline-code">!tts stop</span> to cancel any stuck generation. The bot automatically retries failed requests.</li>
-                <li><strong>Voice not found error?</strong> Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly. Try <span class="inline-code">!tts voices</span> to get a link to available voices.</li>
-                <li><strong>"Voice access denied" error?</strong> Some voices (particularly certain Moss audio effects) may require special access permissions on Wavespeed AI. If you receive this error, try using a different voice from the <a href="#voices" class="default-link-style">available voices list</a>. Most voices work with standard access.</li>
-                <li><strong>"Invalid voice" error?</strong> The voice ID you're using is not available or doesn't exist. Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly.</li>
-                <li><strong>Emotion not working?</strong> Note that "auto" emotion is no longer supported. Use <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, or <span class="inline-code">surprised</span> instead.</li>
-                <li><strong>Need help?</strong> Contact the developer via the <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">contact form</a> at Henry's portfolio website.</li>
+                <li><strong data-i18n="troubleshooting.q1">Bot not responding to commands?</strong> <span data-i18n="troubleshooting.a1">Make sure the bot is a moderator in your channel. You can do this by typing <span class="inline-code">/mod chatvibesbot</span> in your Twitch chat. In many cases, the bot may need moderator permissions to read messages and respond to commands.</span></li>
+                <li><strong data-i18n="troubleshooting.q2">Bot not speaking?</strong> <span data-i18n="troubleshooting.a2">Make sure the bot is enabled in your channel. You can do this by typing <span class="inline-code">!tts on</span> in your Twitch chat. Also, check the current mode <span class="inline-code">!tts mode</span> and permissions <span class="inline-code">!tts permission</span>.</span></li>
+                <li><strong data-i18n="troubleshooting.q3">Bot not speaking in a specific language, or reading numbers in Chinese?</strong> <span data-i18n="troubleshooting.a3">Make sure the language boost is set to the correct language. You can do this by typing <span class="inline-code">!tts language &lt;language_name&gt;</span> for yourself or <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel in your Twitch chat. You can check the current language boost using <span class="inline-code">!tts defaultlanguage</span>.</span></li>
+                <li><strong data-i18n="troubleshooting.q4">TTS generation taking too long or failing?</strong> <span data-i18n="troubleshooting.a4">ChatVibes now uses Wavespeed AI with sync mode enabled for the lowest latency. If you experience delays, check your internet connection and try using <span class="inline-code">!tts stop</span> to cancel any stuck generation. The bot automatically retries failed requests.</span></li>
+                <li><strong data-i18n="troubleshooting.q5">Voice not found error?</strong> <span data-i18n="troubleshooting.a5">Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly. Try <span class="inline-code">!tts voices</span> to get a link to available voices.</span></li>
+                <li><strong data-i18n="troubleshooting.q6">"Voice access denied" error?</strong> <span data-i18n="troubleshooting.a6">Some voices (particularly certain Moss audio effects) may require special access permissions on Wavespeed AI. If you receive this error, try using a different voice from the <a href="#voices" class="default-link-style">available voices list</a>. Most voices work with standard access.</span></li>
+                <li><strong data-i18n="troubleshooting.q7">"Invalid voice" error?</strong> <span data-i18n="troubleshooting.a7">The voice ID you're using is not available or doesn't exist. Make sure you're using the correct voice ID from the <a href="#voices" class="default-link-style">Voices section</a>. Voice IDs are case-sensitive and must match exactly.</span></li>
+                <li><strong data-i18n="troubleshooting.q8">Emotion not working?</strong> <span data-i18n="troubleshooting.a8">Note that "auto" emotion is no longer supported. Use <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, or <span class="inline-code">surprised</span> instead.</span></li>
+                <li><strong data-i18n="troubleshooting.q9">Need help?</strong> <span data-i18n="troubleshooting.a9">Contact the developer via the <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank">contact form</a> at Henry's portfolio website.</span></li>
             </ul>
         </section>
 
