@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildcat.chat Documentation</title>
+    <title data-i18n="meta.title">Wildcat.chat Documentation</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/unified.css">
     <link rel="stylesheet" href="styles/components.css">
@@ -88,9 +88,9 @@
                     </style>
                     <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
                 </svg>
-                Wildcat.chat Documentation
+                <span data-i18n="hero.title">Wildcat.chat Documentation</span>
             </h1>
-            <p class="tagline">AI-Powered Twitch Bot Platform</p>
+            <p class="tagline" data-i18n="hero.tagline">AI-Powered Twitch Bot Platform</p>
         </div>
 
         <!-- Unified Navigation Bar -->
@@ -109,65 +109,66 @@
                     <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
                 </svg>
             </a>
-            <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
+            <button class="navbar-toggle" aria-label="Toggle navigation" data-i18n="nav.toggleNav">☰</button>
             <ul class="site-navbar-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="botcommands.html">ChatSage Docs</a></li>
-                <li><a href="chatvibesdocs.html">ChatVibes Docs</a></li>
-                <li><a href="https://detekoi.github.io/index.html#contact-me">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">ChatSage Docs</a></li>
+                <li><a href="chatvibesdocs.html" data-i18n="nav.chatVibesDocs">ChatVibes Docs</a></li>
+                <li><a href="https://detekoi.github.io/index.html#contact-me" data-i18n="nav.contact">Contact</a></li>
             </ul>
         </nav>
 
         <main>
             <section id="bots">
-                <h2>Bot Documentation</h2>
-                <p>Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS services for Twitch streamers.</p>
+                <h2 data-i18n="page.botsTitle">Bot Documentation</h2>
+                <p data-i18n="page.welcome">Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS services for Twitch streamers.</p>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <div style="border: 1px solid #ddd; padding: 1.5rem; border-radius: 8px;">
-                        <h3>ChatSage Bot</h3>
-                        <p>AI-powered chatbot with contextual responses, web search, games, and more.</p>
+                        <h3 data-i18n="page.chatsage.title">ChatSage Bot</h3>
+                        <p data-i18n="page.chatsage.description">AI-powered chatbot with contextual responses, web search, games, and more.</p>
                         <ul style="margin: 1rem 0;">
-                            <li>Ask questions and get AI responses</li>
-                            <li>Web search integration</li>
-                            <li>Interactive games (trivia, geo-game, riddles)</li>
-                            <li>Auto-chat and translation features</li>
+                            <li data-i18n="page.chatsage.feature1">Ask questions and get AI responses</li>
+                            <li data-i18n="page.chatsage.feature2">Web search integration</li>
+                            <li data-i18n="page.chatsage.feature3">Interactive games (trivia, geo-game, riddles)</li>
+                            <li data-i18n="page.chatsage.feature4">Auto-chat and translation features</li>
                         </ul>
-                        <a href="botcommands.html" style="display: inline-block; background: #6441a5; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;">View ChatSage Docs →</a>
+                        <a href="botcommands.html" style="display: inline-block; background: #6441a5; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;" data-i18n="page.chatsage.button">View ChatSage Docs →</a>
                     </div>
 
                     <div style="border: 1px solid #ddd; padding: 1.5rem; border-radius: 8px;">
-                        <h3>ChatVibes TTS Bot</h3>
-                        <p>Advanced Text-to-Speech bot with music generation capabilities.</p>
+                        <h3 data-i18n="page.chatvibes.title">ChatVibes TTS Bot</h3>
+                        <p data-i18n="page.chatvibes.description">Advanced Text-to-Speech bot with music generation capabilities.</p>
                         <ul style="margin: 1rem 0;">
-                            <li>Natural-sounding TTS with 300+ voices</li>
-                            <li>Channel points integration</li>
-                            <li>AI music generation</li>
-                            <li>Web dashboard for settings</li>
+                            <li data-i18n="page.chatvibes.feature1">Natural-sounding TTS with 300+ voices</li>
+                            <li data-i18n="page.chatvibes.feature2">Channel points integration</li>
+                            <li data-i18n="page.chatvibes.feature3">AI music generation</li>
+                            <li data-i18n="page.chatvibes.feature4">Web dashboard for settings</li>
                         </ul>
-                        <a href="chatvibesdocs.html" style="display: inline-block; background: #6441a5; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;">View ChatVibes Docs →</a>
+                        <a href="chatvibesdocs.html" style="display: inline-block; background: #6441a5; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;" data-i18n="page.chatvibes.button">View ChatVibes Docs →</a>
                     </div>
                 </div>
             </section>
 
             <section id="getting-started" style="margin-top: 3rem;">
-                <h2>Getting Started</h2>
-                <h3>Quick Start</h3>
+                <h2 data-i18n="page.gettingStarted.title">Getting Started</h2>
+                <h3 data-i18n="page.gettingStarted.quickStartTitle">Quick Start</h3>
                 <ol>
-                    <li>Visit <a href="https://app.wildcat.chat" class="default-link-style">app.wildcat.chat</a> to set up your ChatSage bot</li>
-                    <li>Visit <a href="https://tts.wildcat.chat/" class="default-link-style">tts.wildcat.chat</a> for ChatVibes TTS dashboard</li>
-                    <li>Authenticate with your Twitch account</li>
-                    <li>Configure your bot settings</li>
-                    <li>Check the documentation pages for detailed command references</li>
+                    <li data-i18n="page.gettingStarted.step1">Visit <a href="https://app.wildcat.chat" class="default-link-style">app.wildcat.chat</a> to set up your ChatSage bot</li>
+                    <li data-i18n="page.gettingStarted.step2">Visit <a href="https://tts.wildcat.chat/" class="default-link-style">tts.wildcat.chat</a> for ChatVibes TTS dashboard</li>
+                    <li data-i18n="page.gettingStarted.step3">Authenticate with your Twitch account</li>
+                    <li data-i18n="page.gettingStarted.step4">Configure your bot settings</li>
+                    <li data-i18n="page.gettingStarted.step5">Check the documentation pages for detailed command references</li>
                 </ol>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2025 Wildcat.chat. All rights reserved.</p>
+            <p data-i18n="page.footer">© 2025 Wildcat.chat. All rights reserved.</p>
         </footer>
     </div>
     <script src="scripts/navigation.js"></script>
     <script src="scripts/static-background.js"></script>
+    <script src="scripts/i18n.js"></script>
 </body>
 </html>

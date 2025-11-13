@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Wildcat.chat ドキュメント"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "ホーム",
+    "chatSageDocs": "ChatSage ドキュメント",
+    "chatVibesDocs": "ChatVibes ドキュメント",
+    "contact": "お問い合わせ"
+  },
+  "hero": {
+    "title": "Wildcat.chat ドキュメント",
+    "tagline": "AI搭載Twitchボットプラットフォーム"
+  },
+  "page": {
+    "welcome": "Wildcat.chatへようこそ！このプラットフォームは、Twitchストリーマー向けのAI搭載チャットボットとTTSサービスを提供します。",
+    "botsTitle": "ボットドキュメント",
+    "chatsage": {
+      "title": "ChatSage ボット",
+      "description": "コンテキスト対応の応答、ウェブ検索、ゲームなどを備えたAI搭載チャットボット。",
+      "feature1": "質問をしてAIの応答を取得",
+      "feature2": "ウェブ検索統合",
+      "feature3": "インタラクティブゲーム（クイズ、地理ゲーム、なぞなぞ）",
+      "feature4": "自動チャットと翻訳機能",
+      "button": "ChatSage ドキュメントを見る →"
+    },
+    "chatvibes": {
+      "title": "ChatVibes TTS ボット",
+      "description": "音楽生成機能を備えた高度なテキスト読み上げボット。",
+      "feature1": "300以上の音声を備えた自然な音声のTTS",
+      "feature2": "チャンネルポイント統合",
+      "feature3": "AI音楽生成",
+      "feature4": "設定用ウェブダッシュボード",
+      "button": "ChatVibes ドキュメントを見る →"
+    },
+    "gettingStarted": {
+      "title": "はじめに",
+      "quickStartTitle": "クイックスタート",
+      "step1": "<a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a>にアクセスしてChatSageボットをセットアップ",
+      "step2": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a>にアクセスしてChatVibes TTSダッシュボードを開く",
+      "step3": "Twitchアカウントで認証",
+      "step4": "ボット設定を構成",
+      "step5": "詳細なコマンドリファレンスについては、ドキュメントページを確認"
+    },
+    "footer": "© 2025 Wildcat.chat. 全著作権所有。"
+  }
+}

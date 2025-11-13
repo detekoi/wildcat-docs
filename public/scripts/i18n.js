@@ -67,7 +67,10 @@ async function initI18n() {
 // Get the current page identifier for loading the correct translation file
 function getCurrentPageId() {
   const path = window.location.pathname;
-  if (path.includes('chatvibesdocs')) {
+  // Check for index.html or root path first
+  if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
+    return 'index';
+  } else if (path.includes('chatvibesdocs')) {
     return 'chatvibes';
   } else if (path.includes('botcommands')) {
     return 'botcommands';

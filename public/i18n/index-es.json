@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Documentación de Wildcat.chat"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Inicio",
+    "chatSageDocs": "Docs de ChatSage",
+    "chatVibesDocs": "Docs de ChatVibes",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Documentación de Wildcat.chat",
+    "tagline": "Plataforma de Bots de Twitch con IA"
+  },
+  "page": {
+    "welcome": "¡Bienvenido a Wildcat.chat! Esta plataforma proporciona bots de chat con IA y servicios de TTS para streamers de Twitch.",
+    "botsTitle": "Documentación de Bots",
+    "chatsage": {
+      "title": "Bot ChatSage",
+      "description": "Chatbot con IA con respuestas contextuales, búsqueda web, juegos y más.",
+      "feature1": "Haz preguntas y obtén respuestas de IA",
+      "feature2": "Integración de búsqueda web",
+      "feature3": "Juegos interactivos (trivia, geo-juego, acertijos)",
+      "feature4": "Funciones de auto-chat y traducción",
+      "button": "Ver Docs de ChatSage →"
+    },
+    "chatvibes": {
+      "title": "Bot ChatVibes TTS",
+      "description": "Bot avanzado de Texto a Voz con capacidades de generación de música.",
+      "feature1": "TTS de sonido natural con más de 300 voces",
+      "feature2": "Integración de Channel Points",
+      "feature3": "Generación de música con IA",
+      "feature4": "Panel web para configuraciones",
+      "button": "Ver Docs de ChatVibes →"
+    },
+    "gettingStarted": {
+      "title": "Primeros Pasos",
+      "quickStartTitle": "Inicio Rápido",
+      "step1": "Visita <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> para configurar tu bot ChatSage",
+      "step2": "Visita <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> para el panel de ChatVibes TTS",
+      "step3": "Autentícate con tu cuenta de Twitch",
+      "step4": "Configura los ajustes de tu bot",
+      "step5": "Consulta las páginas de documentación para referencias detalladas de comandos"
+    },
+    "footer": "© 2025 Wildcat.chat. Todos los derechos reservados."
+  }
+}

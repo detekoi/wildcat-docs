@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Документация Wildcat.chat"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Главная",
+    "chatSageDocs": "Документация ChatSage",
+    "chatVibesDocs": "Документация ChatVibes",
+    "contact": "Контакты"
+  },
+  "hero": {
+    "title": "Документация Wildcat.chat",
+    "tagline": "Платформа ботов Twitch на базе ИИ"
+  },
+  "page": {
+    "welcome": "Добро пожаловать на Wildcat.chat! Эта платформа предоставляет чат-ботов на базе ИИ и услуги TTS для стримеров Twitch.",
+    "botsTitle": "Документация ботов",
+    "chatsage": {
+      "title": "Бот ChatSage",
+      "description": "Чат-бот на базе ИИ с контекстными ответами, веб-поиском, играми и многим другим.",
+      "feature1": "Задавайте вопросы и получайте ответы от ИИ",
+      "feature2": "Интеграция веб-поиска",
+      "feature3": "Интерактивные игры (викторины, гео-игра, загадки)",
+      "feature4": "Функции автоматического чата и перевода",
+      "button": "Посмотреть документацию ChatSage →"
+    },
+    "chatvibes": {
+      "title": "Бот ChatVibes TTS",
+      "description": "Продвинутый бот преобразования текста в речь с возможностями генерации музыки.",
+      "feature1": "Естественное звучание TTS с более чем 300 голосами",
+      "feature2": "Интеграция Channel Points",
+      "feature3": "Генерация музыки с помощью ИИ",
+      "feature4": "Веб-панель для настроек",
+      "button": "Посмотреть документацию ChatVibes →"
+    },
+    "gettingStarted": {
+      "title": "Начало работы",
+      "quickStartTitle": "Быстрый старт",
+      "step1": "Посетите <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> для настройки вашего бота ChatSage",
+      "step2": "Посетите <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> для панели ChatVibes TTS",
+      "step3": "Аутентифицируйтесь с помощью вашей учетной записи Twitch",
+      "step4": "Настройте параметры вашего бота",
+      "step5": "Проверьте страницы документации для подробных справочников команд"
+    },
+    "footer": "© 2025 Wildcat.chat. Все права защищены."
+  }
+}

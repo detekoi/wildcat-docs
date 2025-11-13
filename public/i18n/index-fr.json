@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Documentation Wildcat.chat"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Accueil",
+    "chatSageDocs": "Docs ChatSage",
+    "chatVibesDocs": "Docs ChatVibes",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Documentation Wildcat.chat",
+    "tagline": "Plateforme de Bots Twitch alimentée par l'IA"
+  },
+  "page": {
+    "welcome": "Bienvenue sur Wildcat.chat ! Cette plateforme fournit des bots de chat alimentés par l'IA et des services TTS pour les streamers Twitch.",
+    "botsTitle": "Documentation des Bots",
+    "chatsage": {
+      "title": "Bot ChatSage",
+      "description": "Chatbot alimenté par l'IA avec réponses contextuelles, recherche web, jeux et plus encore.",
+      "feature1": "Posez des questions et obtenez des réponses IA",
+      "feature2": "Intégration de recherche web",
+      "feature3": "Jeux interactifs (quiz, jeu géo, énigmes)",
+      "feature4": "Fonctionnalités de chat automatique et de traduction",
+      "button": "Voir les Docs ChatSage →"
+    },
+    "chatvibes": {
+      "title": "Bot ChatVibes TTS",
+      "description": "Bot de synthèse vocale avancé avec capacités de génération musicale.",
+      "feature1": "TTS au son naturel avec plus de 300 voix",
+      "feature2": "Intégration des Channel Points",
+      "feature3": "Génération musicale IA",
+      "feature4": "Tableau de bord web pour les paramètres",
+      "button": "Voir les Docs ChatVibes →"
+    },
+    "gettingStarted": {
+      "title": "Pour Commencer",
+      "quickStartTitle": "Démarrage Rapide",
+      "step1": "Visitez <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> pour configurer votre bot ChatSage",
+      "step2": "Visitez <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> pour le tableau de bord ChatVibes TTS",
+      "step3": "Authentifiez-vous avec votre compte Twitch",
+      "step4": "Configurez les paramètres de votre bot",
+      "step5": "Consultez les pages de documentation pour des références de commandes détaillées"
+    },
+    "footer": "© 2025 Wildcat.chat. Tous droits réservés."
+  }
+}

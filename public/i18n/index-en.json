@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Wildcat.chat Documentation"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Home",
+    "chatSageDocs": "ChatSage Docs",
+    "chatVibesDocs": "ChatVibes Docs",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Wildcat.chat Documentation",
+    "tagline": "AI-Powered Twitch Bot Platform"
+  },
+  "page": {
+    "welcome": "Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS services for Twitch streamers.",
+    "botsTitle": "Bot Documentation",
+    "chatsage": {
+      "title": "ChatSage Bot",
+      "description": "AI-powered chatbot with contextual responses, web search, games, and more.",
+      "feature1": "Ask questions and get AI responses",
+      "feature2": "Web search integration",
+      "feature3": "Interactive games (trivia, geo-game, riddles)",
+      "feature4": "Auto-chat and translation features",
+      "button": "View ChatSage Docs →"
+    },
+    "chatvibes": {
+      "title": "ChatVibes TTS Bot",
+      "description": "Advanced Text-to-Speech bot with music generation capabilities.",
+      "feature1": "Natural-sounding TTS with 300+ voices",
+      "feature2": "Channel points integration",
+      "feature3": "AI music generation",
+      "feature4": "Web dashboard for settings",
+      "button": "View ChatVibes Docs →"
+    },
+    "gettingStarted": {
+      "title": "Getting Started",
+      "quickStartTitle": "Quick Start",
+      "step1": "Visit <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> to set up your ChatSage bot",
+      "step2": "Visit <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> for ChatVibes TTS dashboard",
+      "step3": "Authenticate with your Twitch account",
+      "step4": "Configure your bot settings",
+      "step5": "Check the documentation pages for detailed command references"
+    },
+    "footer": "© 2025 Wildcat.chat. All rights reserved."
+  }
+}
+

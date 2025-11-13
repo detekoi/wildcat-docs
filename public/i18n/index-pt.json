@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "title": "Documentação Wildcat.chat"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Início",
+    "chatSageDocs": "Docs ChatSage",
+    "chatVibesDocs": "Docs ChatVibes",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Documentação Wildcat.chat",
+    "tagline": "Plataforma de Bots Twitch com IA"
+  },
+  "page": {
+    "welcome": "Bem-vindo ao Wildcat.chat! Esta plataforma fornece bots de chat com IA e serviços TTS para streamers do Twitch.",
+    "botsTitle": "Documentação de Bots",
+    "chatsage": {
+      "title": "Bot ChatSage",
+      "description": "Chatbot com IA com respostas contextuais, pesquisa na web, jogos e muito mais.",
+      "feature1": "Faça perguntas e obtenha respostas de IA",
+      "feature2": "Integração de pesquisa na web",
+      "feature3": "Jogos interativos (trivia, geo-jogo, enigmas)",
+      "feature4": "Recursos de chat automático e tradução",
+      "button": "Ver Docs ChatSage →"
+    },
+    "chatvibes": {
+      "title": "Bot ChatVibes TTS",
+      "description": "Bot avançado de Texto para Fala com capacidades de geração de música.",
+      "feature1": "TTS com som natural com mais de 300 vozes",
+      "feature2": "Integração de Channel Points",
+      "feature3": "Geração de música com IA",
+      "feature4": "Painel web para configurações",
+      "button": "Ver Docs ChatVibes →"
+    },
+    "gettingStarted": {
+      "title": "Começando",
+      "quickStartTitle": "Início Rápido",
+      "step1": "Visite <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> para configurar seu bot ChatSage",
+      "step2": "Visite <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> para o painel ChatVibes TTS",
+      "step3": "Autentique-se com sua conta do Twitch",
+      "step4": "Configure as configurações do seu bot",
+      "step5": "Verifique as páginas de documentação para referências detalhadas de comandos"
+    },
+    "footer": "© 2025 Wildcat.chat. Todos os direitos reservados."
+  }
+}
