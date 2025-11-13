@@ -159,7 +159,7 @@
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.ttsCommands.name">!tts commands<br><span style="font-size:0.9em;">(Alias: !tts help)</span></td>
+                        <td data-i18n-key="commands.ttsCommands.name">!tts commands<br><span style="font-size:0.9em;" data-i18n="commands.ttsCommands.alias">(Alias: !tts help)</span></td>
                         <td data-i18n-key="commands.ttsCommands.description"><span class="description-text">Provides a link to the full list of <span class="inline-code">!tts</span> subcommands.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
@@ -173,7 +173,7 @@
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
                         <!-- Updated alias text to include !tts settings -->
-                        <td data-i18n-key="commands.ttsPrefs.name">!tts prefs<br><span style="font-size:0.9em;">(Aliases: !tts preferences, !tts settings)</span></td>
+                        <td data-i18n-key="commands.ttsPrefs.name">!tts prefs<br><span style="font-size:0.9em;" data-i18n="commands.ttsPrefs.aliases">(Aliases: !tts preferences, !tts settings)</span></td>
                         <td data-i18n-key="commands.ttsPrefs.description"><span class="description-text">Sends you a short-lived link to <strong>your personal TTS settings page</strong>.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
@@ -211,7 +211,7 @@
                 </tbody>
                  <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.ttsOn.name">!tts on<br><span style="font-size:0.9em;">(Alias: !tts enable)</span></td>
+                        <td class="mod-command" data-i18n-key="commands.ttsOn.name">!tts on<br><span style="font-size:0.9em;" data-i18n="commands.ttsOn.alias">(Alias: !tts enable)</span></td>
                         <td data-i18n-key="commands.ttsOn.description"><span class="description-text">Enables the TTS engine. Messages and events may be spoken based on the current mode.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
@@ -224,7 +224,7 @@
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.ttsOff.name">!tts off<br><span style="font-size:0.9em;">(Alias: !tts disable)</span></td>
+                        <td class="mod-command" data-i18n-key="commands.ttsOff.name">!tts off<br><span style="font-size:0.9em;" data-i18n="commands.ttsOff.alias">(Alias: !tts disable)</span></td>
                         <td data-i18n-key="commands.ttsOff.description"><span class="description-text">Disables the TTS engine entirely. No messages or events will be spoken.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
@@ -427,7 +427,7 @@
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.ttsLanguage.name">!tts language &lt;language|reset&gt;<br><span style="font-size:0.9em;">(Alias: !tts lang)</span></td>
+                        <td data-i18n-key="commands.ttsLanguage.name">!tts language &lt;language|reset&gt;<br><span style="font-size:0.9em;" data-i18n="commands.ttsLanguage.alias">(Alias: !tts lang)</span></td>
                         <td data-i18n-key="commands.ttsLanguage.description"><span class="description-text">Sets your preferred language boost for TTS.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
@@ -477,8 +477,8 @@
                     <tr class="dropdown-summary">
                         <td data-i18n-key="commands.ttsIgnore.name">!tts ignore &lt;username&gt;<br>!tts ignore add &lt;username&gt;</td>
                         <td>
-                            <strong>For any user:</strong> Add <em>yourself</em> to the TTS ignore list for the channel. Your messages will not be spoken.<br>
-                            <strong>For Moderators or Broadcaster:</strong> Add <em>any specified Twitch user</em> to the TTS ignore list for the channel.<br>
+                            <span data-i18n-key="commands.ttsIgnore.descriptionUser"><strong>For any user:</strong> Add <em>yourself</em> to the TTS ignore list for the channel. Your messages will not be spoken.</span><br>
+                            <span data-i18n-key="commands.ttsIgnore.descriptionMod"><strong>For Moderators or Broadcaster:</strong> Add <em>any specified Twitch user</em> to the TTS ignore list for the channel.</span><br>
                             <span class="dropdown-toggle">&#x25BC;</span>
                         </td>
                     </tr>
@@ -486,8 +486,8 @@
                         <td colspan="2">
                             <strong data-i18n="commands.common.usage">Usage:</strong>
                             <ul>
-                                <li data-i18n-key="commands.ttsIgnore.usageSelf"><code data-i18n-cmd="commands.ttsIgnore.usage.self">!tts ignore yourusername</code> (if you want to ignore yourself)</li>
-                                <li data-i18n-key="commands.ttsIgnore.usageMod"><code class="mod-command" data-i18n-cmd="commands.ttsIgnore.usage.mod">!tts ignore add SomeOtherUser</code> (if you are a mod/broadcaster)</li>
+                                <li><code data-i18n-cmd="commands.ttsIgnore.usage.self">!tts ignore yourusername</code> <span data-i18n="commands.ttsIgnore.usageSelfNote">(if you want to ignore yourself)</span></li>
+                                <li><code class="mod-command" data-i18n-cmd="commands.ttsIgnore.usage.mod">!tts ignore add SomeOtherUser</code> <span data-i18n="commands.ttsIgnore.usageModNote">(if you are a mod/broadcaster)</span></li>
                             </ul>
                             <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.ttsIgnore.permission">Everyone (to add themselves), Moderator (to add others)</span></p>
                         </td>
@@ -495,7 +495,7 @@
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.ttsIgnoreDel.name">!tts ignore del &lt;username&gt;<br><span style="font-size:0.9em;">(Aliases: delete, rem, remove)</span></td>
+                        <td class="mod-command" data-i18n-key="commands.ttsIgnoreDel.name">!tts ignore del &lt;username&gt;<br><span style="font-size:0.9em;" data-i18n="commands.ttsIgnoreDel.aliases">(Aliases: delete, rem, remove)</span></td>
                         <td data-i18n-key="commands.ttsIgnoreDel.description"><span class="description-text">Removes the specified Twitch user from the TTS ignore list.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
@@ -617,8 +617,8 @@
                 </tbody>
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;<br><span style="font-size:0.9em;">(Alias: !tts say &lt;message&gt;)</span></td>
-                        <td>Immediately enqueues the provided message for TTS. This works in both <span class="inline-code">all</span> and <span class="inline-code">command</span> modes. Uses the requesting user's preferences (or channel defaults) for voice, pitch, speed, and emotion. <span class="dropdown-toggle">&#x25BC;</span></td>
+                        <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;<br><span style="font-size:0.9em;" data-i18n="commands.ttsMessage.alias">(Alias: !tts say &lt;message&gt;)</span></td>
+                        <td data-i18n-key="commands.ttsMessage.description"><span class="description-text">Immediately enqueues the provided message for TTS. This works in both all and command modes. Uses the requesting user's preferences (or channel defaults) for voice, pitch, speed, and emotion.</span><span class="dropdown-toggle">&#x25BC;</span></td>
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
@@ -683,7 +683,7 @@
                 <tbody class="dropdown-group">
                     <tr class="dropdown-summary">
                         <td class="mod-command" data-i18n-key="commands.musicMode.name">!music mode &lt;all|mods&gt;</td>
-                        <td><span data-i18n-key="commands.musicMode.description">(Mod only) Sets who can use the <span class="inline-code">!music &lt;prompt&gt;</span> command.<br>
+                        <td data-i18n-key="commands.musicMode.description"><span class="description-text">(Mod only) Sets who can use the <span class="inline-code">!music &lt;prompt&gt;</span> command.<br>
                             <span class="inline-code">all</span>: Everyone can generate music.<br>
                             <span class="inline-code">mods</span>: Only moderators and the broadcaster can generate music.</span>
                             <span class="dropdown-toggle">&#x25BC;</span>
@@ -769,8 +769,8 @@
                         <td colspan="2">
                             <strong data-i18n="music.labelUsage">Usage:</strong>
                             <ul>
-                                <li data-i18n-key="commands.musicIgnore.usageSelf"><code>!music ignore yourusername</code> (if you want to ignore yourself)</li>
-                                <li data-i18n-key="commands.musicIgnore.usageMod"><code class="mod-command">!music ignore add SomeOtherUser</code> (if you are a mod/broadcaster)</li>
+                                <li><code data-i18n-cmd="commands.musicIgnore.usageSelf">!music ignore yourusername</code> <span data-i18n="commands.musicIgnore.usageSelfNote">(if you want to ignore yourself)</span></li>
+                                <li><code class="mod-command" data-i18n-cmd="commands.musicIgnore.usageMod">!music ignore add SomeOtherUser</code> <span data-i18n="commands.musicIgnore.usageModNote">(if you are a mod/broadcaster)</span></li>
                             </ul>
                             <p><strong data-i18n="music.labelPermission">Permission:</strong> <span data-i18n-key="commands.musicIgnore.permission">Everyone (to add themselves), Moderator (to add others)</span></p>
                         </td>

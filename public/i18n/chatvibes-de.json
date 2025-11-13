@@ -40,6 +40,8 @@
       "permission": "Berechtigung:",
       "description": "Beschreibung:",
       "usage": "Verwendung:",
+      "alias": "Alias:",
+      "aliases": "Aliase:",
       "everyone": "Alle",
       "everyoneOwnPreference": "Alle (für ihre eigenen Voreinstellungen)",
       "moderator": "Moderator",
@@ -70,6 +72,7 @@
     "ttsCommands": {
       "name": "!tts commands\n(Alias: !tts help)",
       "description": "Stellt einen Link zur vollständigen Liste der !tts Unterbefehle bereit.",
+      "alias": "(Alias: !tts help)",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
@@ -78,6 +81,7 @@
     "ttsPrefs": {
       "name": "!tts prefs\n(Aliase: !tts preferences, !tts settings)",
       "description": "Sendet dir einen kurzlebigen Link zu deiner persönlichen TTS-Einstellungsseite.",
+      "aliases": "(Aliase: !tts preferences, !tts settings)",
       "feature1": "Konfiguriere deine eigene Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprache pro Kanal.",
       "feature2": "Enthält eine rot markierte \"Gefahrenzone\", in der du dich selbst zu den Ignorieren-Listen für TTS und/oder Musik des Kanals hinzufügen kannst (nur ein Moderator kann dies rückgängig machen).",
       "feature3": "Der Bot postet den Link öffentlich im Chat; er ist nur für dich signiert und läuft nach dem ersten Zugriff oder nach 10 Minuten ab. Die Seite ist mit dem aktuellen Kanal vorausgefüllt.",
@@ -98,6 +102,7 @@
     "ttsOn": {
       "name": "!tts on\n(Alias: !tts enable)",
       "description": "Aktiviert die TTS-Engine. Nachrichten und Ereignisse können je nach aktuellem Modus gesprochen werden.",
+      "alias": "(Alias: !tts enable)",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
@@ -106,6 +111,7 @@
     "ttsOff": {
       "name": "!tts off\n(Alias: !tts disable)",
       "description": "Deaktiviert die TTS-Engine vollständig. Keine Nachrichten oder Ereignisse werden gesprochen.",
+      "alias": "(Alias: !tts disable)",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
@@ -237,6 +243,7 @@
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Alias: !tts lang)",
       "description": "Legt deine bevorzugte Sprachunterstützung für TTS fest.",
+      "alias": "(Alias: !tts lang)",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
       "notes": "Beeinflusst, wie Sprache interpretiert und generiert wird. Verwende reset oder auto, um den Kanal-Standard zu verwenden. Siehe Abschnitt Sprachunterstützung oder verwende !tts languageslist für verfügbare Optionen.",
       "usage": {
@@ -272,8 +279,12 @@
     },
     "ttsIgnore": {
       "name": "!tts ignore <username>\n!tts ignore add <username>",
+      "descriptionUser": "Für jeden Benutzer: Füge dich selbst zur TTS-Ignorieren-Liste des Kanals hinzu. Deine Nachrichten werden nicht gesprochen.",
+      "descriptionMod": "Für Moderatoren oder Broadcaster: Füge einen angegebenen Twitch-Benutzer zur TTS-Ignorieren-Liste des Kanals hinzu.",
       "usageDescUser": "Für jeden Benutzer: Füge dich selbst zur TTS-Ignorieren-Liste des Kanals hinzu. Deine Nachrichten werden nicht gesprochen.",
       "usageDescMod": "Für Moderatoren oder Broadcaster: Füge einen angegebenen Twitch-Benutzer zur TTS-Ignorieren-Liste des Kanals hinzu.",
+      "usageSelfNote": "(wenn du dich selbst ignorieren möchtest)",
+      "usageModNote": "(wenn du Mod/Broadcaster bist)",
       "permission": "Alle (um sich selbst hinzuzufügen), Moderator (um andere hinzuzufügen)",
       "usage": {
         "self": "!tts ignore deinbenutzername",
@@ -283,6 +294,7 @@
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Aliase: delete, rem, remove)",
       "description": "Entfernt den angegebenen Twitch-Benutzer aus der TTS-Ignorieren-Liste.",
+      "aliases": "(Aliase: delete, rem, remove)",
       "usage": {
         "basic": "!tts ignore del EinBenutzer"
       }
@@ -361,6 +373,8 @@
     },
     "ttsMessage": {
       "name": "!tts <message>\n(Alias: !tts say <message>)",
+      "description": "Stellt die bereitgestellte Nachricht sofort für TTS in die Warteschlange. Funktioniert sowohl im all- als auch im command-Modus. Verwendet die Präferenzen des anfordernden Benutzers (oder Kanal-Standardwerte) für Stimme, Tonhöhe, Geschwindigkeit und Emotion.",
+      "alias": "(Alias: !tts say <message>)",
       "usage": {
         "basic": "!tts Willkommen alle zum Stream!",
         "say": "!tts say Willkommen alle!"
@@ -378,7 +392,7 @@
     },
     "musicMode": {
       "name": "!music mode <all|mods>",
-      "description": "(Nur Mod) Legt fest, wer den Befehl !music <prompt> verwenden kann.",
+      "description": "(Nur Mod) Legt fest, wer den Befehl !music <prompt> verwenden kann.\nall: Alle können Musik generieren.\nmods: Nur Moderatoren und der Broadcaster können Musik generieren.",
       "permission": "Moderator"
     },
     "musicBits": {
@@ -412,7 +426,9 @@
       "descriptionUser": "Für jeden Benutzer: Füge dich selbst zur Musik-Ignorierliste hinzu. Deine !music <prompt> Anfragen werden ignoriert.",
       "descriptionMod": "Für Moderatoren oder Broadcaster: Füge einen beliebigen angegebenen Twitch-Benutzer zur Musik-Ignorierliste hinzu.",
       "usageSelf": "!music ignore deinbenutzername (wenn du dich selbst ignorieren möchtest)",
-      "usageMod": "!music ignore add AndererBenutzer (wenn du Mod/Broadcaster bist)"
+      "usageMod": "!music ignore add AndererBenutzer (wenn du Mod/Broadcaster bist)",
+      "usageSelfNote": "(wenn du dich selbst ignorieren möchtest)",
+      "usageModNote": "(wenn du Mod/Broadcaster bist)"
     },
     "musicIgnoreDel": {
       "name": "!music ignore del <username>\n(Aliase: delete, rem, remove)",

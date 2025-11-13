@@ -43,7 +43,9 @@
       "everyone": "Все",
       "everyoneOwnPreference": "Все (для их собственного предпочтения)",
       "moderator": "Модератор",
-      "streamerBroadcaster": "Стример/Вещатель (через веб-панель управления)"
+      "streamerBroadcaster": "Стример/Вещатель (через веб-панель управления)",
+      "alias": "Псевдоним:",
+      "aliases": "Псевдонимы:"
     },
     "ttsStatus": {
       "name": "!tts status",
@@ -73,7 +75,8 @@
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
-      }
+      },
+      "alias": "(Псевдоним: !tts help)"
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Псевдонимы: !tts preferences, !tts settings)",
@@ -85,7 +88,8 @@
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
         "settings": "!tts settings"
-      }
+      },
+      "aliases": "(Псевдонимы: !tts preferences, !tts settings)"
     },
     "myvoice": {
       "name": "!myvoice",
@@ -101,7 +105,8 @@
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
-      }
+      },
+      "alias": "(Псевдоним: !tts enable)"
     },
     "ttsOff": {
       "name": "!tts off\n(Псевдоним: !tts disable)",
@@ -109,7 +114,8 @@
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
-      }
+      },
+      "alias": "(Псевдоним: !tts disable)"
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
@@ -244,7 +250,8 @@
         "langAlias": "!tts lang Japanese",
         "reset": "!tts language reset",
         "status": "!tts language"
-      }
+      },
+      "alias": "(Псевдоним: !tts lang)"
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
@@ -278,14 +285,19 @@
       "usage": {
         "self": "!tts ignore вашеимя",
         "mod": "!tts ignore add ДругойПользователь"
-      }
+      },
+      "descriptionUser": "Для любого пользователя: Добавьте себя в список игнорируемых TTS канала. Ваши сообщения не будут озвучены.",
+      "descriptionMod": "Для модераторов или вещателя: Добавьте любого указанного пользователя Twitch в список игнорируемых TTS канала.",
+      "usageSelfNote": "(если вы хотите игнорировать себя)",
+      "usageModNote": "(если вы мод/вещатель)"
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Псевдонимы: delete, rem, remove)",
       "description": "Удаляет указанного пользователя Twitch из списка игнорирования синтеза речи.",
       "usage": {
         "basic": "!tts ignore del Пользователь"
-      }
+      },
+      "aliases": "(Псевдонимы: delete, rem, remove)"
     },
     "ttsIgnored": {
       "name": "!tts ignored",
@@ -364,7 +376,9 @@
       "usage": {
         "basic": "!tts Добро пожаловать всем на стрим!",
         "say": "!tts say Добро пожаловать всем!"
-      }
+      },
+      "description": "Немедленно ставит предоставленное сообщение в очередь для TTS. Работает как в режиме all, так и в режиме command. Использует предпочтения запрашивающего пользователя (или значения по умолчанию канала) для голоса, высоты тона, скорости и эмоции.",
+      "alias": "(Псевдоним: !tts say <message>)"
     },
     "musicPrompt": {
       "name": "!music <prompt>",
@@ -378,7 +392,7 @@
     },
     "musicMode": {
       "name": "!music mode <all|mods>",
-      "description": "(Только модератор) Определяет, кто может использовать команду !music <prompt>.",
+      "description": "(Только мод) Устанавливает, кто может использовать команду !music <prompt>.\nall: Все могут генерировать музыку.\nmods: Только модераторы и вещатель могут генерировать музыку.",
       "permission": "Модератор"
     },
     "musicBits": {
@@ -412,7 +426,9 @@
       "descriptionUser": "Для любого пользователя: Добавьте себя в список игнорирования музыки. Ваши запросы !music <prompt> будут игнорироваться.",
       "descriptionMod": "Для Модераторов или Вещателя: Добавьте любого указанного пользователя Twitch в список игнорирования музыки.",
       "usageSelf": "!music ignore вашеимя (если вы хотите игнорировать себя)",
-      "usageMod": "!music ignore add ДругойПользователь (если вы модератор/вещатель)"
+      "usageMod": "!music ignore add ДругойПользователь (если вы модератор/вещатель)",
+      "usageSelfNote": "(если вы хотите игнорировать себя)",
+      "usageModNote": "(если вы мод/вещатель)"
     },
     "musicIgnoreDel": {
       "name": "!music ignore del <username>\n(Псевдонимы: delete, rem, remove)",

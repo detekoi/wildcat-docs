@@ -43,7 +43,9 @@
       "everyone": "Todos",
       "everyoneOwnPreference": "Todos (para su propia preferencia)",
       "moderator": "Moderador",
-      "streamerBroadcaster": "Streamer/Broadcaster (vía Panel Web)"
+      "streamerBroadcaster": "Streamer/Broadcaster (vía Panel Web)",
+      "alias": "Alias:",
+      "aliases": "Alias:"
     },
     "ttsStatus": {
       "name": "!tts status",
@@ -73,7 +75,8 @@
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
-      }
+      },
+      "alias": "(Alias: !tts help)"
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias: !tts preferences, !tts settings)",
@@ -85,7 +88,8 @@
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
         "settings": "!tts settings"
-      }
+      },
+      "aliases": "(Alias: !tts preferences, !tts settings)"
     },
     "myvoice": {
       "name": "!myvoice",
@@ -101,7 +105,8 @@
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
-      }
+      },
+      "alias": "(Alias: !tts enable)"
     },
     "ttsOff": {
       "name": "!tts off\n(Alias: !tts disable)",
@@ -109,7 +114,8 @@
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
-      }
+      },
+      "alias": "(Alias: !tts disable)"
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
@@ -244,7 +250,8 @@
         "langAlias": "!tts lang Japanese",
         "reset": "!tts language reset",
         "status": "!tts language"
-      }
+      },
+      "alias": "(Alias: !tts lang)"
     },
     "ttsPitch": {
       "name": "!tts pitch <valor|reset>",
@@ -278,14 +285,19 @@
       "usage": {
         "self": "!tts ignore tunombredeusuario",
         "mod": "!tts ignore add OtroUsuario"
-      }
+      },
+      "descriptionUser": "Para cualquier usuario: Agrégate a la lista de ignorados de TTS del canal. Tus mensajes no serán hablados.",
+      "descriptionMod": "Para Moderadores o Broadcaster: Agrega cualquier usuario de Twitch especificado a la lista de ignorados de TTS del canal.",
+      "usageSelfNote": "(si quieres ignorarte a ti mismo)",
+      "usageModNote": "(si eres mod/broadcaster)"
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <usuario>\n(Alias: delete, rem, remove)",
       "description": "Elimina el usuario de Twitch especificado de la lista de ignorados de TTS.",
       "usage": {
         "basic": "!tts ignore del AlgunUsuario"
-      }
+      },
+      "aliases": "(Alias: delete, rem, remove)"
     },
     "ttsIgnored": {
       "name": "!tts ignored",
@@ -364,7 +376,9 @@
       "usage": {
         "basic": "!tts ¡Bienvenidos todos al stream!",
         "say": "!tts say ¡Bienvenidos todos!"
-      }
+      },
+      "description": "Encola inmediatamente el mensaje proporcionado para TTS. Esto funciona tanto en modo all como en modo command. Utiliza las preferencias del usuario solicitante (o los valores predeterminados del canal) para voz, tono, velocidad y emoción.",
+      "alias": "(Alias: !tts say <message>)"
     },
     "musicPrompt": {
       "name": "!music <prompt>",
@@ -378,7 +392,7 @@
     },
     "musicMode": {
       "name": "!music mode <all|mods>",
-      "description": "(Solo Mod) Establece quién puede usar el comando !music <prompt>.",
+      "description": "(Solo Mod) Establece quién puede usar el comando !music <prompt>.\nall: Todos pueden generar música.\nmods: Solo los moderadores y el broadcaster pueden generar música.",
       "permission": "Moderador"
     },
     "musicBits": {
@@ -412,7 +426,9 @@
       "descriptionUser": "Para cualquier usuario: Añádete a la lista de ignorados de música. Tus solicitudes !music <prompt> serán ignoradas.",
       "descriptionMod": "Para Moderadores o Broadcaster: Añade cualquier usuario de Twitch especificado a la lista de ignorados de música.",
       "usageSelf": "!music ignore tunombredeusuario (si deseas ignorarte a ti mismo)",
-      "usageMod": "!music ignore add OtroUsuario (si eres mod/broadcaster)"
+      "usageMod": "!music ignore add OtroUsuario (si eres mod/broadcaster)",
+      "usageSelfNote": "(si quieres ignorarte a ti mismo)",
+      "usageModNote": "(si eres mod/broadcaster)"
     },
     "musicIgnoreDel": {
       "name": "!music ignore del <usuario>\n(Alias: delete, rem, remove)",

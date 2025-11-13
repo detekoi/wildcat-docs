@@ -43,7 +43,9 @@
       "everyone": "全員",
       "everyoneOwnPreference": "全員(自分の設定のみ)",
       "moderator": "モデレーター",
-      "streamerBroadcaster": "配信者(Webダッシュボード経由)"
+      "streamerBroadcaster": "配信者(Webダッシュボード経由)",
+      "alias": "エイリアス:",
+      "aliases": "エイリアス:"
     },
     "ttsStatus": {
       "name": "!tts status",
@@ -73,7 +75,8 @@
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
-      }
+      },
+      "alias": "(エイリアス: !tts help)"
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(エイリアス: !tts preferences, !tts settings)",
@@ -85,7 +88,8 @@
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
         "settings": "!tts settings"
-      }
+      },
+      "aliases": "(エイリアス: !tts preferences, !tts settings)"
     },
     "myvoice": {
       "name": "!myvoice",
@@ -101,7 +105,8 @@
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
-      }
+      },
+      "alias": "(エイリアス: !tts enable)"
     },
     "ttsOff": {
       "name": "!tts off\n(エイリアス: !tts disable)",
@@ -109,7 +114,8 @@
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
-      }
+      },
+      "alias": "(エイリアス: !tts disable)"
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
@@ -244,7 +250,8 @@
         "langAlias": "!tts lang Japanese",
         "reset": "!tts language reset",
         "status": "!tts language"
-      }
+      },
+      "alias": "(エイリアス: !tts lang)"
     },
     "ttsPitch": {
       "name": "!tts pitch <値|reset>",
@@ -278,14 +285,19 @@
       "usage": {
         "self": "!tts ignore あなたのユーザー名",
         "mod": "!tts ignore add 他のユーザー"
-      }
+      },
+      "descriptionUser": "任意のユーザー向け: チャンネルのTTS無視リストに自分を追加します。あなたのメッセージは読み上げられません。",
+      "descriptionMod": "モデレーターまたは配信者向け: 指定された任意のTwitchユーザーをチャンネルのTTS無視リストに追加します。",
+      "usageSelfNote": "(自分を無視したい場合)",
+      "usageModNote": "(あなたがモデレーター/配信者の場合)"
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
       "description": "指定したTwitchユーザーをTTS除外リストから削除します。",
       "usage": {
         "basic": "!tts ignore del ユーザー"
-      }
+      },
+      "aliases": "(エイリアス: delete, rem, remove)"
     },
     "ttsIgnored": {
       "name": "!tts ignored",
@@ -364,7 +376,9 @@
       "usage": {
         "basic": "!tts 皆さん配信へようこそ!",
         "say": "!tts say 皆さんようこそ!"
-      }
+      },
+      "description": "提供されたメッセージをTTS用にすぐにキューに入れます。これはallモードとcommandモードの両方で機能します。リクエストしたユーザーの設定（またはチャンネルのデフォルト値）を音声、ピッチ、速度、感情に使用します。",
+      "alias": "(エイリアス: !tts say <message>)"
     },
     "musicPrompt": {
       "name": "!music <プロンプト>",
@@ -378,7 +392,7 @@
     },
     "musicMode": {
       "name": "!music mode <all|mods>",
-      "description": "(モデレーターのみ) !music <プロンプト> コマンドを使用できるユーザーを設定します。",
+      "description": "(モデレーターのみ) !music <prompt>コマンドを使用できる人を設定します。\nall: 誰でも音楽を生成できます。\nmods: モデレーターと配信者のみが音楽を生成できます。",
       "permission": "モデレーター"
     },
     "musicBits": {
@@ -412,7 +426,9 @@
       "descriptionUser": "すべてのユーザー: 音楽除外リストに自分自身を追加します。あなたの!music <プロンプト>リクエストは無視されます。",
       "descriptionMod": "モデレーターまたは配信者: 指定したTwitchユーザーを音楽除外リストに追加します。",
       "usageSelf": "!music ignore あなたのユーザー名 (自分自身を無視したい場合)",
-      "usageMod": "!music ignore add 他のユーザー (mod/配信者の場合)"
+      "usageMod": "!music ignore add 他のユーザー (mod/配信者の場合)",
+      "usageSelfNote": "(自分を無視したい場合)",
+      "usageModNote": "(あなたがモデレーター/配信者の場合)"
     },
     "musicIgnoreDel": {
       "name": "!music ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
