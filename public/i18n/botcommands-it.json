@@ -66,6 +66,28 @@
       "name": "!lurk",
       "description": "Fai sapere alla chat che sei in modalità lurk. Fornisci un motivo opzionale per un saluto personalizzato."
     },
+    "quote": {
+      "name": "!quote",
+      "description": "Aggiungi, visualizza o cerca citazioni dal canale. Le citazioni vengono archiviate per canale e possono includere un'attribuzione opzionale dell'autore.",
+      "usage": {
+        "random": "!quote",
+        "randomDesc": "Mostra una citazione casuale",
+        "id": "!quote <id>",
+        "idDesc": "Mostra la citazione per numero ID, ad es. !quote 12",
+        "last": "!quote last",
+        "lastDesc": "Mostra la citazione aggiunta più di recente",
+        "search": "!quote <search term>",
+        "searchDesc": "Cerca citazioni per testo o autore, ad es. !quote parfait",
+        "searchExplicit": "!quote search <term>",
+        "searchExplicitDesc": "Comando di ricerca esplicito",
+        "add": "!quote add <text [- author]>",
+        "addDesc": "Aggiunge una nuova citazione. Autore opzionale dopo \" - \", ad es. !quote add \"hello world - parfait\"",
+        "delete": "!quote delete <id>",
+        "deleteDesc": "Elimina una citazione (solo moderatori/broadcaster)",
+        "edit": "!quote edit <id> <text [- author]>",
+        "editDesc": "Modifica una citazione esistente (solo moderatori/broadcaster)"
+      }
+    },
     "geo": {
       "name": "!geo",
       "description": "Avvia o gestisce Geo-Game, un gioco di indovinelli geografici per il mondo reale o mondi virtuali.",
@@ -216,11 +238,81 @@
   },
   "ui": {
     "languageSelector": "Lingua",
-    "mod": "Mod"
+    "mod": "Moderatore"
   },
   "sidebar": {
     "generalCommands": "Comandi Generali",
     "games": "Giochi",
-    "config": "Configurazione"
+    "config": "Configurazione",
+    "webDashboard": "Pannello Web"
+  },
+  "webDashboard": {
+    "title": "Pannello Web",
+    "intro": "Il Pannello Web di ChatSage fornisce ai streamer un'interfaccia completa per gestire il bot nel loro canale. Accedi utilizzando il tuo account Twitch.",
+    "featuresTitle": "Funzionalità Disponibili del Pannello",
+    "features": {
+      "botManagement": {
+        "title": "Gestione Bot:",
+        "desc": "Aggiungi o rimuovi ChatSage dal tuo canale"
+      },
+      "channelConfig": {
+        "title": "Configurazione del Canale:",
+        "desc": "Configura la lingua del bot, le impostazioni della chat automatica e i permessi dei comandi"
+      },
+      "contextManagement": {
+        "title": "Gestione del Contesto:",
+        "desc": "Visualizza e gestisci il contesto della conversazione, i riassunti e la cronologia della chat"
+      },
+      "streamIntegration": {
+        "title": "Integrazione del Flusso:",
+        "desc": "Monitora il gioco attuale, il titolo e le informazioni del flusso"
+      },
+      "commandControl": {
+        "title": "Controllo dei Comandi:",
+        "desc": "Abilita/disabilita comandi specifici e imposta risposte personalizzate"
+      },
+      "analytics": {
+        "title": "Analitiche:",
+        "desc": "Visualizza le statistiche di utilizzo del bot e i modelli di interazione"
+      },
+      "settingsBackup": {
+        "title": "Backup delle Impostazioni:",
+        "desc": "Esporta/importa la configurazione del tuo canale"
+      }
+    },
+    "gettingStartedTitle": "Guida Introduttiva",
+    "steps": {
+      "visit": {
+        "title": "Visita il Pannello:",
+        "desc": "Go to https://app.wildcat.chat/"
+      },
+      "authorize": {
+        "title": "Autorizza:",
+        "desc": "Fai clic su \"Accedi con Twitch\" e concedi i permessi richiesti"
+      },
+      "addBot": {
+        "title": "Aggiungi il Bot:",
+        "desc": "Utilizza il pulsante \"Aggiungi Bot al Mio Canale\" per invitare ChatSage nel tuo canale"
+      },
+      "configure": {
+        "title": "Configura:",
+        "desc": "Personalizza le impostazioni tramite l'interfaccia del pannello"
+      },
+      "grantPerms": {
+        "title": "Concedi Permessi:",
+        "desc": "Nella chat di Twitch, digita /mod ChatSageBot per dare al bot lo stato di moderatore"
+      }
+    },
+    "oauthTitle": "Permessi OAuth",
+    "oauthIntro": "Il pannello richiede i seguenti scope OAuth di Twitch:",
+    "oauth": {
+      "chatRead": "Leggi i messaggi della chat",
+      "chatEdit": "Invia messaggi di chat",
+      "readSubs": "Accedi alle informazioni di sottoscrizione",
+      "manageRedemptions": "Gestisci i rimborsi dei punti canale",
+      "readEmail": "Accedi al tuo indirizzo email"
+    },
+    "noteLabel": "Nota:",
+    "noteText": "ChatSage è attualmente solo su invito. Se non vedi il tuo canale nel pannello, richiedi l'accesso tramite il modulo di contatto."
   }
 }

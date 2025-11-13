@@ -64,10 +64,23 @@ async function initI18n() {
   translatePage();
 }
 
+// Get the current page identifier for loading the correct translation file
+function getCurrentPageId() {
+  const path = window.location.pathname;
+  if (path.includes('chatvibesdocs')) {
+    return 'chatvibes';
+  } else if (path.includes('botcommands')) {
+    return 'botcommands';
+  }
+  // Default to botcommands for backward compatibility
+  return 'botcommands';
+}
+
 // Load translations from JSON file
 async function loadTranslations(lang) {
   try {
-    const response = await fetch(`./i18n/${lang}.json`);
+    const pageId = getCurrentPageId();
+    const response = await fetch(`./i18n/${pageId}-${lang}.json`);
     if (!response.ok) {
       throw new Error(`Failed to load translations for ${lang}`);
     }

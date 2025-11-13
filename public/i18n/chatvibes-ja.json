@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "title": "ChatVibes TTS ボットコマンド"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "ホーム",
+    "chatSageDocs": "ChatSage ドキュメント",
+    "chatVibesDocs": "ChatVibes ドキュメント",
+    "contact": "お問い合わせ"
+  },
+  "sidebar": {
+    "chatVibes": "ChatVibes",
+    "toggleSidebar": "サイドバーを切り替え",
+    "commands": "コマンド",
+    "toggleSubmenu": "",
+    "ttsCommands": "読み上げコマンド",
+    "musicCommands": "音楽生成コマンド",
+    "voices": "音声",
+    "languageBoost": "言語ブースト",
+    "webDashboard": "Webダッシュボード",
+    "troubleshooting": "トラブルシューティング"
+  },
+  "page": {
+    "title": "ChatVibes TTS ボット ドキュメント",
+    "inviteNote": "ChatVibesは現在招待制です。",
+    "requestAccess": "アクセスをリクエスト"
+  },
+  "commands": {
+    "title": "コマンド",
+    "prefixTip": "すべてのTTSコマンドには !tts が接頭辞として付きます。",
+    "exampleTip": "例: !tts status",
+    "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
+    "webDashboardTip": "配信者および視聴者は、ChatVibes Webダッシュボードを使用して設定を行うこともできます。",
+    "myvoiceTip": "視聴者は、チャットで !myvoice を送信することで、Web UIを使用して自分のTTS設定を行えます。",
+    "ttsCommandsTitle": "読み上げコマンド",
+    "common": {
+      "notes": "注意事項:",
+      "note": "注意:",
+      "permission": "権限:",
+      "description": "説明:",
+      "usage": "使用法:",
+      "everyone": "全員",
+      "everyoneOwnPreference": "全員(自分の設定のみ)",
+      "moderator": "モデレーター",
+      "streamerBroadcaster": "配信者(Webダッシュボード経由)"
+    },
+    "ttsStatus": {
+      "name": "!tts status",
+      "description": "チャンネルのTTSアプリケーションの現在のステータスを取得します。",
+      "notes": "エンジンの状態、モード、キューの長さ、デフォルト音声、ピッチ、速度、感情、言語ブースト設定を表示します。",
+      "usage": {
+        "basic": "!tts status"
+      }
+    },
+    "ttsVoices": {
+      "name": "!tts voices",
+      "description": "利用可能なTTS音声のドキュメントセクションへのリンクを提供します。",
+      "usage": {
+        "basic": "!tts voices"
+      }
+    },
+    "ttsLanguageslist": {
+      "name": "!tts languageslist",
+      "description": "利用可能なTTS言語ブーストオプションのドキュメントセクションへのリンクを提供します。",
+      "usage": {
+        "basic": "!tts languageslist"
+      }
+    },
+    "ttsCommands": {
+      "name": "!tts commands\n(エイリアス: !tts help)",
+      "description": "!tts サブコマンドの完全なリストへのリンクを提供します。",
+      "usage": {
+        "commands": "!tts commands",
+        "help": "!tts help"
+      }
+    },
+    "ttsPrefs": {
+      "name": "!tts prefs\n(エイリアス: !tts preferences, !tts settings)",
+      "description": "個人用TTS設定ページへの短期間有効なリンクを送信します。",
+      "feature1": "チャンネルごとに、自分の音声、ピッチ、速度、感情、言語を設定できます。",
+      "feature2": "赤枠で囲まれた「危険ゾーン」が含まれており、チャンネルのTTSおよび/または音楽の除外リストに自分自身を追加できます(モデレーターのみ解除可能)。",
+      "feature3": "ボットはリンクをチャットに公開投稿しますが、あなた専用に署名されており、最初のアクセス後または10分後に期限切れになります。ページには現在のチャンネルが事前入力されています。",
+      "usage": {
+        "prefs": "!tts prefs",
+        "preferences": "!tts preferences",
+        "settings": "!tts settings"
+      }
+    },
+    "myvoice": {
+      "name": "!myvoice",
+      "description": "個人用TTS設定ページへの短期間有効なリンクを送信します(!tts prefsと同等)。",
+      "notes": "!tts prefsと同じです。ボットはリンクをチャットに公開投稿しますが、あなた専用に署名されており、最初のアクセス後または10分後に期限切れになります。ページには現在のチャンネルが事前入力されています。",
+      "usage": {
+        "basic": "!myvoice"
+      }
+    },
+    "ttsOn": {
+      "name": "!tts on\n(エイリアス: !tts enable)",
+      "description": "TTSエンジンを有効にします。現在のモードに基づいて、メッセージとイベントが読み上げられます。",
+      "usage": {
+        "on": "!tts on",
+        "enable": "!tts enable"
+      }
+    },
+    "ttsOff": {
+      "name": "!tts off\n(エイリアス: !tts disable)",
+      "description": "TTSエンジンを完全に無効にします。メッセージやイベントは読み上げられません。",
+      "usage": {
+        "off": "!tts off",
+        "disable": "!tts disable"
+      }
+    },
+    "ttsMode": {
+      "name": "!tts mode [all|command|bits_points_only]",
+      "description": "TTSモードを切り替えます。",
+      "allDesc": "(すべてのチャットメッセージとイベントを読み上げます。これがデフォルトモードです)",
+      "commandDesc": "(コマンドまたはイベントでのみ読み上げます)",
+      "bitsPointsOnlyDesc": "(Bitsチアとチャンネルポイント交換のみを読み上げます)",
+      "bitsAlias": "(bits_points_onlyのエイリアス)",
+      "pointsAlias": "(bits_points_onlyのエイリアス)",
+      "statusDesc": "(現在のモードを表示)",
+      "notes": "all: すべてのチャットメッセージ(除外ユーザーやコマンドからのものを除く)および有効なイベントが、!tts permission設定に従って読み上げられます。\ncommand: 特定のTTSコマンド(!tts <メッセージ>など)または有効なイベントによってトリガーされたメッセージのみが読み上げられます。通常のチャットは無視されます。\nbits_points_only: Bitsチアとチャンネルポイント交換のみが読み上げられます。通常のチャットとコマンドは無視されます。",
+      "usage": {
+        "all": "!tts mode all",
+        "command": "!tts mode command",
+        "bitsPointsOnly": "!tts mode bits_points_only",
+        "bits": "!tts mode bits",
+        "points": "!tts mode points",
+        "status": "!tts mode"
+      }
+    },
+    "ttsPermission": {
+      "name": "!tts permission [everyone|all|mods]",
+      "description": "ボットがallモードのときにTTSをトリガーできるユーザーのフィルターを設定します。",
+      "statusDesc": "(現在の権限フィルターを表示)",
+      "notes": "everyone または all: すべてのユーザーのチャットメッセージが読み上げられます。(デフォルト)\nmods: モデレーターと配信者からのメッセージのみが読み上げられます。\nこれはcommandモードには影響しません。",
+      "usage": {
+        "everyone": "!tts permission everyone",
+        "mods": "!tts permission mods",
+        "status": "!tts permission"
+      }
+    },
+    "ttsBits": {
+      "name": "!tts bits [on|off|min <金額>]",
+      "description": "Bits-for-TTS機能を設定します。チャンネルがTTSをトリガーするために最小チア金額を要求できるようにします。",
+      "statusDesc": "(現在のBits-for-TTSステータスを表示)",
+      "onDesc": "on: Bits-for-TTSモードを有効にします。十分なチアを含むメッセージのみが読み上げられます。",
+      "offDesc": "off: Bits-for-TTSモードを無効にします。",
+      "minDesc": "min <金額>: 必要な最小Bits数を設定します(例: min 100)。",
+      "usage": {
+        "on": "!tts bits on",
+        "off": "!tts bits off",
+        "min": "!tts bits min 100",
+        "status": "!tts bits"
+      }
+    },
+    "channelPointsTTS": {
+      "name": "チャンネルポイント → TTS",
+      "description": "視聴者がメッセージを読み上げさせるために交換できるカスタムTwitchチャンネルポイント報酬を作成します。",
+      "noteText": "この機能は、ChatVibes Webダッシュボードの「チャンネルポイント → TTS」セクションからのみ設定できます。",
+      "howItWorks": "仕組み:",
+      "step1": "配信者の設定: ダッシュボードで機能を有効にします。",
+      "step2": "報酬の作成: ボットがTwitchチャンネルにカスタムチャンネルポイント報酬を自動的に作成します。",
+      "step3": "視聴者の交換: 視聴者がカスタムメッセージ付きで報酬を交換すると、そのメッセージが読み上げられます。",
+      "step4": "コンテンツポリシー: 組み込みフィルタリング(長さ制限、リンクブロック、禁止ワード)。",
+      "configOptions": "設定オプション:",
+      "basicSettings": "基本設定: 報酬タイトル、コスト(ポイント)、プロンプトテキスト、キュースキップオプション",
+      "advancedSettings": "詳細設定: グローバルクールダウン、配信ごとの制限、ユーザーごとの制限",
+      "contentPolicy": "コンテンツポリシー: メッセージの最小/最大長、リンクブロック、禁止ワードリスト",
+      "skipQueue": "報酬キューをスキップ:",
+      "skipQueueDefault": "デフォルト設定: このオプションはデフォルトで有効になっており、即座にTTS再生されます。",
+      "skipQueueEnabled": "有効時: 交換は即座に処理され、Twitchの「報酬リクエスト」キューに表示されません。",
+      "skipQueueDisabled": "無効時: 交換はTwitchダッシュボードに表示され、TTS再生前に手動承認が必要です。",
+      "skipQueueUseCase": "使用例: 即座のTTSには有効、モデレーション管理には無効にします。",
+      "ttsModes": "TTSモード:",
+      "ttsModesText": "すべてのTTSモード(すべてのメッセージ、コマンドのみ、Bits/ポイントのみ)で動作します。",
+      "requirements": "要件:",
+      "requirementsText": "初期ダッシュボード設定時に、channel:manage:redemptionsおよびchannel:read:redemptions OAuthスコープを付与する必要があります。"
+    },
+    "ttsPause": {
+      "name": "!tts pause",
+      "description": "TTSイベントキューの処理を一時停止します。",
+      "notes": "新しいメッセージ/イベントは引き続きキューに追加されますが、再開されるまで読み上げられません。",
+      "usage": {
+        "basic": "!tts pause"
+      }
+    },
+    "ttsResume": {
+      "name": "!tts resume",
+      "description": "一時停止されていた場合、TTSイベントキューの処理を再開します。",
+      "usage": {
+        "basic": "!tts resume"
+      }
+    },
+    "ttsClear": {
+      "name": "!tts clear",
+      "description": "TTSキューからすべての保留中のメッセージとイベントをクリアします。",
+      "notes": "このコマンドは、キューで待機中のメッセージのみを削除します。現在再生中またはTTSエンジンによって生成中のオーディオは停止しません。",
+      "usage": {
+        "basic": "!tts clear"
+      }
+    },
+    "ttsStop": {
+      "name": "!tts stop",
+      "description": "現在再生中または生成中のTTSオーディオを停止します。",
+      "note1": "TTSが現在話している、またはオーディオを生成している場合、このコマンドはそれを停止しようとします。",
+      "note2": "すべてのユーザーは、自分のチャットメッセージによってトリガーされた場合、メッセージを停止できます。",
+      "note3": "モデレーターと配信者は、すべてのTTSオーディオを停止できます。",
+      "permission": "自分のメッセージは全員、他人のメッセージはモデレーター",
+      "usage": {
+        "basic": "!tts stop"
+      }
+    },
+    "ttsVoice": {
+      "name": "!tts voice <voice_id|reset>",
+      "description": "ユーザーが送信するメッセージの優先音声を設定できます。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "resetを使用すると、チャンネルのデフォルト音声に戻ります。!tts voicesを使用して、利用可能な音声IDのリンクを取得します。",
+      "usage": {
+        "example": "!tts voice Friendly_Person",
+        "reset": "!tts voice reset",
+        "status": "!tts voice"
+      }
+    },
+    "ttsEmotion": {
+      "name": "!tts emotion <emotion_name|reset|auto>",
+      "description": "ユーザーが自分のメッセージの優先感情を設定できます。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "有効な感情: neutral, happy, sad, angry, fearful, disgusted, surprised。チャンネルのデフォルトにはresetを使用します。",
+      "usage": {
+        "example": "!tts emotion happy",
+        "reset": "!tts emotion reset",
+        "status": "!tts emotion"
+      }
+    },
+    "ttsLanguage": {
+      "name": "!tts language <言語|reset>\n(エイリアス: !tts lang)",
+      "description": "TTSの優先言語ブーストを設定します。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "音声の解釈と生成方法に影響します。チャンネルのデフォルトを使用するにはresetまたはautoを使用します。利用可能なオプションについては、言語ブーストセクションを参照するか、!tts languageslistを使用してください。",
+      "usage": {
+        "example": "!tts language English",
+        "langAlias": "!tts lang Japanese",
+        "reset": "!tts language reset",
+        "status": "!tts language"
+      }
+    },
+    "ttsPitch": {
+      "name": "!tts pitch <値|reset>",
+      "description": "個人用TTSピッチを設定します。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "値は-12から12の整数である必要があります(0が通常)。チャンネルのデフォルトにはresetを使用します。",
+      "usage": {
+        "positive": "!tts pitch 2",
+        "negative": "!tts pitch -3",
+        "reset": "!tts pitch reset",
+        "status": "!tts pitch"
+      }
+    },
+    "ttsSpeed": {
+      "name": "!tts speed <値|reset>",
+      "description": "個人用TTS速度を設定します。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "値は0.5から2.0の数値である必要があります(1.0が通常)。チャンネルのデフォルトにはresetを使用します。",
+      "usage": {
+        "faster": "!tts speed 1.2",
+        "slower": "!tts speed 0.8",
+        "reset": "!tts speed reset",
+        "status": "!tts speed"
+      }
+    },
+    "ttsIgnore": {
+      "name": "!tts ignore <ユーザー名>\n!tts ignore add <ユーザー名>",
+      "usageDescUser": "すべてのユーザー向け: チャンネルのTTS除外リストに自分を追加します。あなたのメッセージは読み上げられません。",
+      "usageDescMod": "モデレーターまたは配信者向け: 指定したTwitchユーザーをチャンネルのTTS除外リストに追加します。",
+      "permission": "全員(自分自身を追加する場合)、モデレーター(他のユーザーを追加する場合)",
+      "usage": {
+        "self": "!tts ignore あなたのユーザー名",
+        "mod": "!tts ignore add 他のユーザー"
+      }
+    },
+    "ttsIgnoreDel": {
+      "name": "!tts ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
+      "description": "指定したTwitchユーザーをTTS除外リストから削除します。",
+      "usage": {
+        "basic": "!tts ignore del ユーザー"
+      }
+    },
+    "ttsIgnored": {
+      "name": "!tts ignored",
+      "description": "チャンネルのTTS除外リストに現在登録されているすべてのユーザーを一覧表示します。",
+      "usage": {
+        "basic": "!tts ignored"
+      }
+    },
+    "ttsEvents": {
+      "name": "!tts events [on|off]",
+      "description": "Twitchイベント(サブスクリプション、チア、レイドなど)をTTSでアナウンスするかどうかを切り替えます。",
+      "statusDesc": "(現在のイベントアナウンスステータスを表示)",
+      "usage": {
+        "on": "!tts events on",
+        "off": "!tts events off",
+        "status": "!tts events"
+      }
+    },
+    "ttsDefaultvoice": {
+      "name": "!tts defaultvoice <voice_id|reset>",
+      "description": "チャンネルのデフォルトTTS音声を設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "システムデフォルトに戻すにはresetを使用します。音声IDへのリンクには!tts voicesを使用します。",
+      "usage": {
+        "example": "!tts defaultvoice Friendly_Person",
+        "reset": "!tts defaultvoice reset",
+        "status": "!tts defaultvoice"
+      }
+    },
+    "ttsDefaultemotion": {
+      "name": "!tts defaultemotion <emotion_name|reset>",
+      "description": "チャンネルのデフォルトTTS感情を設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "有効な感情: neutral, happy, sad, angry, fearful, disgusted, surprised。システムデフォルト(neutral)にはresetを使用します。",
+      "usage": {
+        "example": "!tts defaultemotion happy",
+        "reset": "!tts defaultemotion reset",
+        "status": "!tts defaultemotion"
+      }
+    },
+    "ttsDefaultlanguage": {
+      "name": "!tts defaultlanguage <言語|reset>",
+      "description": "チャンネルのデフォルトTTS言語ブーストを設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "システムデフォルトを使用するにはresetまたはautoを使用します。オプションについては、言語ブーストセクションを参照するか、!tts languageslistを使用してください。",
+      "usage": {
+        "example": "!tts defaultlanguage English",
+        "reset": "!tts defaultlanguage reset",
+        "status": "!tts defaultlanguage"
+      }
+    },
+    "ttsDefaultpitch": {
+      "name": "!tts defaultpitch <値|reset>",
+      "description": "チャンネルのデフォルトTTSピッチを設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "値は-12から12の整数である必要があります(0が通常)。システムデフォルト(0)にはresetを使用します。",
+      "usage": {
+        "example": "!tts defaultpitch 2",
+        "reset": "!tts defaultpitch reset",
+        "status": "!tts defaultpitch"
+      }
+    },
+    "ttsDefaultspeed": {
+      "name": "!tts defaultspeed <値|reset>",
+      "description": "チャンネルのデフォルトTTS速度を設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "値は0.5から2.0の数値である必要があります(1.0が通常)。システムデフォルト(1.0)にはresetを使用します。",
+      "usage": {
+        "example": "!tts defaultspeed 1.2",
+        "reset": "!tts defaultspeed reset",
+        "status": "!tts defaultspeed"
+      }
+    },
+    "ttsMessage": {
+      "name": "!tts <メッセージ>\n(エイリアス: !tts say <メッセージ>)",
+      "usage": {
+        "basic": "!tts 皆さん配信へようこそ!",
+        "say": "!tts say 皆さんようこそ!"
+      }
+    },
+    "musicPrompt": {
+      "name": "!music <プロンプト>",
+      "description": "プロンプトに基づいて短い音楽を生成します。",
+      "permission": "モデレーターが設定可能(デフォルト: 全員、モデレーターのみに変更可能)。ユーザーは音楽除外リストに登録されていないこと。"
+    },
+    "musicOnOff": {
+      "name": "!music on\n!music off",
+      "description": "(モデレーターのみ) チャンネルの音楽生成機能を有効または無効にします。",
+      "permission": "モデレーター"
+    },
+    "musicMode": {
+      "name": "!music mode <all|mods>",
+      "description": "(モデレーターのみ) !music <プロンプト> コマンドを使用できるユーザーを設定します。",
+      "permission": "モデレーター"
+    },
+    "musicBits": {
+      "name": "!music bits [on|off|min <金額>]",
+      "description": "(モデレーターのみ) Bits-for-Musicを設定します。有効にすると、ユーザーは音楽を生成するためにプロンプトと一緒にチアする必要があります。",
+      "permission": "モデレーター",
+      "statusNote": "(現在のステータスを表示)",
+      "optionOn": "on: Bits-for-Musicモードを有効にします。",
+      "optionOff": "off: Bits-for-Musicモードを無効にします。",
+      "optionMin": "min <金額>: 必要な最小Bits数を設定します(例: min 100)。"
+    },
+    "musicHelp": {
+      "name": "!music help",
+      "description": "すべての音楽サブコマンドとその使用方法のリストを提供します。",
+      "permission": "全員",
+      "notes": "すべての!musicサブコマンドとその使用方法をリストします。このドキュメントと同様です。"
+    },
+    "musicStatus": {
+      "name": "!music status",
+      "description": "音楽生成の現在のステータスを表示します(有効/無効、モード、キューの長さ)。",
+      "permission": "全員"
+    },
+    "musicClear": {
+      "name": "!music clear",
+      "description": "(モデレーターのみ) キューからすべての保留中の音楽生成リクエストをクリアします。",
+      "permission": "モデレーター"
+    },
+    "musicIgnore": {
+      "name": "!music ignore <ユーザー名>\n!music ignore add <ユーザー名>",
+      "permission": "全員(自分を追加)、モデレーター(他人を追加)",
+      "descriptionUser": "すべてのユーザー: 音楽除外リストに自分自身を追加します。あなたの!music <プロンプト>リクエストは無視されます。",
+      "descriptionMod": "モデレーターまたは配信者: 指定したTwitchユーザーを音楽除外リストに追加します。",
+      "usageSelf": "!music ignore あなたのユーザー名 (自分自身を無視したい場合)",
+      "usageMod": "!music ignore add 他のユーザー (mod/配信者の場合)"
+    },
+    "musicIgnoreDel": {
+      "name": "!music ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
+      "description": "(モデレーターのみ) 指定したTwitchユーザーを音楽除外リストから削除します。",
+      "aliases": "(エイリアス: delete, rem, remove)",
+      "permission": "モデレーター"
+    },
+    "musicIgnored": {
+      "name": "!music ignored",
+      "description": "(モデレーターのみ) チャンネルの音楽除外リストに現在登録されているすべてのユーザーを一覧表示します。",
+      "permission": "モデレーター"
+    }
+  },
+  "table": {
+    "headers": {
+      "command": "コマンド",
+      "description": "説明"
+    },
+    "categories": {
+      "ttsGeneral": "一般",
+      "engineModeControl": "エンジンとモード制御(モデレーターのみ)",
+      "channelPointsTTS": "チャンネルポイント → TTS(Webダッシュボードのみ)",
+      "queueManagement": "キュー管理(モデレーターのみ)",
+      "userEventPreferences": "ユーザーとイベント設定",
+      "channelDefaults": "チャンネル全体のデフォルト設定(モデレーターのみ)",
+      "directTTS": "直接TTS"
+    }
+  },
+  "music": {
+    "title": "音楽生成コマンド",
+    "prefixTip": "すべての音楽生成コマンドには !music が接頭辞として付きます",
+    "exampleTip": "例: !music 90s soulful house",
+    "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
+    "commandsTitle": "音楽生成コマンド",
+    "tableCommand": "コマンド",
+    "tableDescription": "説明",
+    "labelPermission": "権限:",
+    "labelNotes": "注意事項:",
+    "labelUsage": "使用方法:",
+    "labelDescription": "説明:"
+  },
+  "voices": {
+    "title": "音声",
+    "popularTitle": "人気の音声ID",
+    "completeListTitle": "完全な音声リスト(Wavespeed AI minimax/speech-02-turbo スキーマより)",
+    "introText": "以下の音声はWavespeed AI経由でminimax/speech-02-turboモデルから利用可能です。ボットは45言語にわたる472音声の包括的なハードコードリストを自動言語分類で使用しています。voice_idは!tts voice <voice_id>のようなコマンドで使用されます。",
+    "popularText": "Wavespeed AI経由のminimax/speech-02-turboモデルから特集された音声。このリストの任意の音声について、!tts voice <voice_id>コマンドを使用して利用できます。",
+    "completeListText": "これは言語別に整理された利用可能な472音声すべての完全なリストです。音声は簡単に識別できるように言語プレフィックスで自動的に分類されています。",
+    "expandText": "クリックして完全な音声リストを展開(45言語で472音声)"
+  },
+  "languageBoost": {
+    "title": "言語ブースト",
+    "optionsTitle": "利用可能な言語ブーストオプション",
+    "introText": "language_boost機能は、TTSモデルが特定の言語や方言の単語をよりよく理解し発音するのを助けます。これは多言語チャットや、特定の言語のニュアンスが明確なTTSにとって重要な場合に特に便利です。",
+    "commandText": "!tts language <言語名>を使用して個人の言語ブースト設定を行うか、モデレーターは!tts defaultlanguage <言語名>でチャンネルのデフォルトを設定できます。",
+    "optionsIntro": "次の値が受け入れられます:",
+    "usageText": "autoを使用すると、モデルの自動言語検出に依存します。Englishは主に英語を話すチャットにとってよいデフォルトです。特定の言語を選択すると、その言語の発音が大幅に改善される可能性があります。"
+  },
+  "webDashboard": {
+    "title": "Webダッシュボード",
+    "settingsTitle": "利用可能なダッシュボード設定",
+    "obsSetupTitle": "OBSブラウザソースのセットアップ",
+    "introText": "ChatVibes Webダッシュボードは、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
+    "settingEngineTitle": "エンジン制御:",
+    "settingEngineDesc": "TTSの有効/無効、イベントのアナウンス、TTSモードと権限の設定",
+    "settingViewerTitle": "視聴者の設定:",
+    "settingViewerDesc": "すべてのメッセージでチャンネルデフォルト音声を許可または強制",
+    "settingUrlTitle": "URL読み上げ:",
+    "settingUrlDesc": "完全なURLまたはドメイン名のみを読む",
+    "settingBitsTitle": "Bits → TTS:",
+    "settingBitsDesc": "TTSメッセージに最小bitsを要求",
+    "settingChannelPointsTitle": "チャンネルポイント → TTS:",
+    "settingChannelPointsDesc": "カスタムチャンネルポイント報酬を作成および設定(上記のセクションを参照)",
+    "settingMusicTitle": "音楽生成:",
+    "settingMusicDesc": "音楽の有効/無効、権限の設定、bitsの要求",
+    "settingIgnoreTitle": "除外リスト:",
+    "settingIgnoreDesc": "追加/削除インターフェースでTTSおよび音楽除外リストを管理",
+    "settingVoiceTitle": "デフォルト音声設定:",
+    "settingVoiceDesc": "音声、感情、ピッチ、速度、言語、テキスト正規化のチャンネルデフォルトを設定",
+    "settingObsTitle": "OBS設定:",
+    "settingObsDesc": "固有の安全なTTS URLと詳細なセットアップ手順を取得",
+    "settingPreviewTitle": "音声プレビュー:",
+    "settingPreviewDesc": "ライブ配信前に現在の音声設定をテスト",
+    "obsStep1Title": "ステップ1: OBSにブラウザソースを追加",
+    "obsStep1_1": "OBSで、ソースの下の\"+\"をクリック",
+    "obsStep1_2": "\"ブラウザ\"を選択",
+    "obsStep1_3": "名前を付ける(例: \"ChatVibes TTS\")",
+    "obsStep1_4": "設定:",
+    "obsConfigUrlTitle": "URL:",
+    "obsConfigUrlDesc": "ダッシュボードから固有のURLを貼り付け",
+    "obsConfigSizeTitle": "幅/高さ:",
+    "obsConfigSizeDesc": "300x100 (重要ではありません、オーディオのみです)",
+    "obsConfigControl": "✓ OBS経由でオーディオを制御(チェック必須)",
+    "obsConfigShutdown": "持続的なオーディオのために\"表示されていないときにソースをシャットダウン\"のチェックを外す",
+    "obsStep2Title": "ステップ2: オーディオモニタリングを有効化",
+    "obsStep2_1": "OBSでオーディオミキサーを見つける(下部パネル)",
+    "obsStep2_2": "\"ChatVibes TTS\"の横の歯車(⚙️)をクリック → \"詳細オーディオプロパティ\"",
+    "obsStep2_3": "\"オーディオモニタリング\"を次に設定:",
+    "obsMonitorOutputTitle": "モニターと出力",
+    "obsMonitorOutputDesc": "- あなたと配信の両方が聞こえます",
+    "obsMonitorOnlyTitle": "モニターのみ",
+    "obsMonitorOnlyDesc": "- あなただけが聞こえます(テスト用)",
+    "obsImportantTitle": "重要:",
+    "obsImportantDesc": "オーディオミキサーでソースがミュートされておらず、音量が適切に設定されていることを確認してください。"
+  },
+  "troubleshooting": {
+    "title": "トラブルシューティング",
+    "q1": "ボットがコマンドに応答しない?",
+    "a1": "ボットがあなたのチャンネルのモデレーターであることを確認してください。Twitchチャットで/mod chatvibesbotと入力することでこれを行えます。多くの場合、ボットはメッセージを読んでコマンドに応答するためにモデレーター権限が必要な場合があります。",
+    "q2": "ボットが話さない?",
+    "a2": "ボットがあなたのチャンネルで有効になっていることを確認してください。Twitchチャットで!tts onと入力することでこれを行えます。また、現在のモード!tts modeと権限!tts permissionを確認してください。",
+    "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",
+    "a3": "言語ブーストが正しい言語に設定されていることを確認してください。自分用には!tts language <言語名>、チャンネル用には!tts defaultlanguage <言語名>をTwitchチャットで入力することでこれを行えます。!tts defaultlanguageを使用して現在の言語ブーストを確認できます。",
+    "q4": "TTS生成に時間がかかりすぎるか失敗する?",
+    "a4": "ChatVibesは現在、最低レイテンシのために同期モードを有効にしたWavespeed AIを使用しています。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
+    "q5": "音声が見つかりませんエラー?",
+    "a5": "音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。!tts voicesで利用可能な音声へのリンクを取得してください。",
+    "q6": "\"音声アクセスが拒否されました\"エラー?",
+    "a6": "一部の音声(特に特定のMossオーディオエフェクト)は、Wavespeed AIで特別なアクセス権限が必要な場合があります。このエラーが発生した場合は、利用可能な音声リストから別の音声を使用してみてください。ほとんどの音声は標準アクセスで動作します。",
+    "q7": "\"無効な音声\"エラー?",
+    "a7": "使用しているvoice IDが利用できないか存在しません。音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。",
+    "q8": "感情が機能しない?",
+    "a8": "\"auto\"感情はサポートされなくなったことに注意してください。代わりにneutral、happy、sad、angry、fearful、disgusted、またはsurprisedを使用してください。",
+    "q9": "ヘルプが必要?",
+    "a9": "Henryのポートフォリオウェブサイトのお問い合わせフォームから開発者にお問い合わせください。"
+  }
+}

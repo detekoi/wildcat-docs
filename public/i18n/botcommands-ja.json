@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "title": "ボットコマンド"
+  },
+  "page": {
+    "title": "ChatSage ボットコマンド",
+    "expandTip": "下のコマンド行をクリックすると、詳細な使用方法が表示されます。",
+    "lastUpdated": "最終更新"
+  },
+  "table": {
+    "headers": {
+      "command": "コマンド",
+      "description": "説明"
+    },
+    "categories": {
+      "general": "一般",
+      "games": "ゲーム",
+      "config": "設定"
+    }
+  },
+  "commands": {
+    "ask": {
+      "name": "!ask / !sage",
+      "description": "Sageに質問します。検索機能をインテリジェントに使用します。",
+      "usage": {
+        "question": "!ask <質問>",
+        "analyzeQuestion": "!game analyze <質問>"
+      }
+    },
+    "search": {
+      "name": "!search",
+      "description": "トピックに関する情報をウェブ検索します。",
+      "usage": {
+        "query": "!search <検索クエリ>"
+      }
+    },
+    "game": {
+      "name": "!game",
+      "description": "現在プレイ中のゲームに関する調査された情報を提供します。「analyze」を追加すると、ストリームでAI画像認識を使用します(5分ごとに更新されるTwitchサムネイルを使用)。",
+      "usage": {
+        "analyzeText": "AIでストリームの映像を分析",
+        "questionText": "ゲームプレイに関する具体的な質問に回答",
+        "analyzeQuestionText": "映像を分析して質問に回答",
+        "question": "!game <質問>",
+        "analyzeQuestion": "!game analyze <質問>"
+      }
+    },
+    "translate": {
+      "name": "!translate",
+      "description": "ユーザーの自動メッセージ翻訳を管理します。",
+      "usage": {
+        "lang": "!translate <言語>",
+        "stop": "!translate stop",
+        "modUser": "!translate <言語|stop> [ユーザー]",
+        "modAll": "!translate stop all"
+      }
+    },
+    "help": {
+      "name": "!commands / !help",
+      "description": "利用可能なコマンドのリストを表示します。",
+      "usage": {
+        "basic": "!help または !commands"
+      }
+    },
+    "lurk": {
+      "name": "!lurk",
+      "description": "チャットに潜伏中であることを知らせます。カスタムメッセージのために理由を追加することもできます。"
+    },
+    "quote": {
+      "name": "!quote",
+      "description": "チャンネルの名言を追加、表示、検索します。名言はチャンネルごとに保存され、オプションで作者を指定できます。",
+      "usage": {
+        "random": "!quote",
+        "randomDesc": "ランダムな名言を表示",
+        "id": "!quote <ID>",
+        "idDesc": "ID番号で名言を表示、例: !quote 12",
+        "last": "!quote last",
+        "lastDesc": "最近追加された名言を表示",
+        "search": "!quote <検索語>",
+        "searchDesc": "テキストまたは作者で名言を検索、例: !quote parfait",
+        "searchExplicit": "!quote search <検索語>",
+        "searchExplicitDesc": "明示的な検索コマンド",
+        "add": "!quote add <テキスト [- 作者]>",
+        "addDesc": "新しい名言を追加。\" - \"の後にオプションで作者を指定、例: !quote add \"hello world - parfait\"",
+        "delete": "!quote delete <ID>",
+        "deleteDesc": "名言を削除(モデレーター/配信者のみ)",
+        "edit": "!quote edit <ID> <テキスト [- 作者]>",
+        "editDesc": "既存の名言を編集(モデレーター/配信者のみ)"
+      }
+    },
+    "geo": {
+      "name": "!geo",
+      "description": "Geo-Gameを開始または管理します。IRLまたは仮想世界の地理推測ゲームです。",
+      "usage": {
+        "basic": "グローバルな現実世界のゲームを開始",
+        "region": "地域限定の現実世界のゲームを開始、例: !geo Japan",
+        "game": "現在のストリームのゲームを使用してゲーム世界のゲームを開始",
+        "gameTitle": "指定されたゲームでゲーム世界のゲームを開始、例: !geo game \"Metroid Prime\"",
+        "rounds": "N回のラウンドでゲームを実行、例: !geo Japan 3",
+        "stop": "ゲーム開始者、モデレーター、または配信者が停止可能",
+        "interval": "ヒント間の時間を30〜300秒に設定",
+        "duration": "ラウンドの長さを3〜20分に設定",
+        "configRegion": "Europe,AsiaまたはUSA,Canadaなどの地域を設定",
+        "configGame": "優先ゲームタイトルをカンマ区切りで設定",
+        "pointsBase": "基本ポイントを1〜100に設定",
+        "maxRounds": "最大ラウンド数を1〜10に設定",
+        "clearLeaderboard": "またはresetstats",
+        "report": "問題のある場所やヒントを報告",
+        "regionCmd": "!geo <地域>",
+        "commandRounds": "!geo <コマンド> N",
+        "configRegionCmd": "!geo config region <地域>",
+        "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
+        "intervalCmd": "!geo config interval <秒>",
+        "durationCmd": "!geo config duration <分>",
+        "configGameCmd": "!geo config game <タイトル>",
+        "pointsBaseCmd": "!geo config pointsbase <数値>",
+        "maxRoundsCmd": "!geo config maxrounds <数値>",
+        "reportCmd": "!geo report <理由>",
+        "gameTitleCmd": "!geo game [ゲームタイトル]",
+        "japan": "Japan",
+        "metroidPrime": "Metroid Prime",
+        "europe": "Europe",
+        "asia": "Asia",
+        "usa": "USA",
+        "canada": "Canada"
+      }
+    },
+    "riddle": {
+      "name": "!riddle",
+      "description": "なぞなぞゲームを開始または管理します。なぞなぞは一般知識、現在のストリームゲーム、または特定の主題に関するものです。",
+      "usage": {
+        "basic": "一般知識のなぞなぞを開始",
+        "subject": "例: !riddle animals",
+        "rounds": "例: !riddle 3 で一般知識3ラウンド",
+        "subjectRounds": "例: !riddle history 5",
+        "game": "現在のストリームゲームに関するなぞなぞ",
+        "report": "問題のあるなぞなぞを報告",
+        "stop": "ゲーム開始者、モデレーター、または配信者が停止可能",
+        "questionTime": "なぞなぞごとの時間を15〜120秒に設定",
+        "pointsBase": "基本ポイントを1〜100に設定",
+        "maxRounds": "最大ラウンド数を1〜20に設定",
+        "keywordsLimit": "除外する最近のキーワード数を設定、例: 20〜100",
+        "roundDelay": "ラウンド間の遅延を設定",
+        "clearLeaderboard": "またはcleardata",
+        "subjectCmd": "!riddle <主題>",
+        "roundsCmd": "!riddle <ラウンド数>",
+        "subjectRoundsCmd": "!riddle <主題> <ラウンド数>",
+        "gameRoundsCmd": "!riddle game <ラウンド数>",
+        "reportCmd": "!riddle report <理由...>",
+        "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
+        "questionTimeCmd": "!riddle config questiontime <秒>",
+        "pointsBaseCmd": "!riddle config pointsbase <数値>",
+        "maxRoundsCmd": "!riddle config maxrounds <数値>",
+        "keywordsLimitCmd": "!riddle config keywordslimit <数値>",
+        "roundDelayCmd": "!riddle config rounddelay <ミリ秒>",
+        "animals": "animals",
+        "history": "history"
+      }
+    },
+    "trivia": {
+      "name": "!trivia",
+      "description": "現在のストリームゲームを含む、様々なトピックに関する事実問題のトリビアゲームを開始または管理します。",
+      "usage": {
+        "basic": "一般知識トリビアを開始",
+        "topic": "トピック別トリビアを開始、例: !trivia science",
+        "game": "現在のストリームゲームに関するトリビアを開始",
+        "rounds": "ラウンド数を指定、例: !trivia 3",
+        "topicRounds": "例: !trivia history 5",
+        "report": "問題のある質問を報告",
+        "stop": "ゲーム開始者、モデレーター、または配信者が停止可能",
+        "time": "質問ごとの時間を10〜120秒に設定",
+        "pointsBase": "基本ポイントを1〜100に設定",
+        "configTopic": "優先トピックをカンマ区切りで設定",
+        "maxRounds": "最大ラウンド数を1〜10に設定",
+        "topicCmd": "!trivia <トピック>",
+        "roundsCmd": "!trivia <ラウンド数>",
+        "topicRoundsCmd": "!trivia <トピック> <ラウンド数>",
+        "reportCmd": "!trivia report <理由>",
+        "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
+        "timeCmd": "!trivia config time <秒>",
+        "pointsBaseCmd": "!trivia config pointsbase <数値>",
+        "configTopicCmd": "!trivia config topic <トピック>",
+        "maxRoundsCmd": "!trivia config maxrounds <数値>",
+        "science": "science",
+        "history": "history"
+      }
+    },
+    "botlang": {
+      "name": "!botlang",
+      "description": "チャンネル全体でボットが特定の言語で話すように設定します。",
+      "usage": {
+        "status": "現在の言語を確認",
+        "off": "英語にリセット",
+        "default": "英語にリセット",
+        "langCmd": "!botlang <言語>"
+      }
+    },
+    "auto": {
+      "name": "!auto",
+      "description": "自動チャットモードとオプションを設定します。",
+      "usage": {
+        "status": "現在の自動チャットモード、頻度、カテゴリーを表示",
+        "modeCmd": "!auto <off|low|medium|high>",
+        "mode": "自動チャットの積極性を設定(offで無効化)",
+        "freqCmd": "!auto config frequency:<分>",
+        "freq": "自動メッセージ間の最小間隔を設定(分)",
+        "greetingsCmd": "!auto config greetings:<on|off>",
+        "greetings": "挨拶を有効/無効にする",
+        "factsCmd": "!auto config facts:<on|off>",
+        "facts": "豆知識とヒントを有効/無効にする",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "questions": "エンゲージメント質問を有効/無効にする",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "広告休憩通知を有効/無効にする",
+        "multiCmd": "!auto config frequency:<分> greetings:<on|off> facts:<on|off> questions:<on|off>",
+        "multi": "複数のオプションを一度に設定"
+      }
+    },
+    "disable": {
+      "name": "!disable",
+      "description": "このチャンネルでコマンドを無効にします。",
+      "usage": {
+        "lurk": "!lurkコマンドを無効にする",
+        "trivia": "!triviaコマンドを無効にする"
+      }
+    },
+    "enable": {
+      "name": "!enable",
+      "description": "このチャンネルで以前無効にしたコマンドを有効にします。",
+      "usage": {
+        "trivia": "!triviaコマンドを有効にする"
+      }
+    },
+    "ping": {
+      "name": "!ping",
+      "description": "ボットが応答しているかを確認します。Pong!と応答します。"
+    }
+  },
+  "ui": {
+    "languageSelector": "言語",
+    "mod": "モデレーター"
+  },
+  "sidebar": {
+    "generalCommands": "一般コマンド",
+    "games": "ゲーム",
+    "config": "設定",
+    "webDashboard": "Webダッシュボード"
+  },
+  "webDashboard": {
+    "title": "Webダッシュボード",
+    "intro": "ChatSage Webダッシュボードは、配信者がチャンネルのボットを管理するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスしてください。",
+    "featuresTitle": "利用可能なダッシュボード機能",
+    "features": {
+      "botManagement": {
+        "title": "ボット管理:",
+        "desc": "チャンネルにChatSageを追加または削除"
+      },
+      "channelConfig": {
+        "title": "チャンネル設定:",
+        "desc": "ボットの言語、自動チャット設定、コマンド権限を設定"
+      },
+      "contextManagement": {
+        "title": "コンテキスト管理:",
+        "desc": "会話のコンテキスト、要約、チャット履歴を表示および管理"
+      },
+      "streamIntegration": {
+        "title": "ストリーム連携:",
+        "desc": "現在のゲーム、タイトル、ストリーム情報を監視"
+      },
+      "commandControl": {
+        "title": "コマンド管理:",
+        "desc": "特定のコマンドを有効/無効にし、カスタム応答を設定"
+      },
+      "analytics": {
+        "title": "分析:",
+        "desc": "ボットの使用統計とインタラクションパターンを表示"
+      },
+      "settingsBackup": {
+        "title": "設定バックアップ:",
+        "desc": "チャンネル設定をエクスポート/インポート"
+      }
+    },
+    "gettingStartedTitle": "はじめに",
+    "steps": {
+      "visit": {
+        "title": "ダッシュボードにアクセス:",
+        "desc": "https://app.wildcat.chat/ にアクセス"
+      },
+      "authorize": {
+        "title": "認証:",
+        "desc": "\"Login with Twitch\"をクリックして必要な権限を付与"
+      },
+      "addBot": {
+        "title": "ボットを追加:",
+        "desc": "\"Add Bot to My Channel\"ボタンを使用してChatSageをチャンネルに招待"
+      },
+      "configure": {
+        "title": "設定:",
+        "desc": "ダッシュボードインターフェースから設定をカスタマイズ"
+      },
+      "grantPerms": {
+        "title": "権限を付与:",
+        "desc": "Twitchチャットで /mod ChatSageBot と入力してボットにモデレーターステータスを付与"
+      }
+    },
+    "oauthTitle": "OAuth権限",
+    "oauthIntro": "ダッシュボードには以下のTwitch OAuthスコープが必要です:",
+    "oauth": {
+      "chatRead": "チャットメッセージを読む",
+      "chatEdit": "チャットメッセージを送信",
+      "readSubs": "サブスクリプション情報にアクセス",
+      "manageRedemptions": "チャンネルポイント特典を管理",
+      "readEmail": "メールアドレスにアクセス"
+    },
+    "noteLabel": "注意:",
+    "noteText": "ChatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、お問い合わせフォームからアクセスをリクエストしてください。"
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "title": "Comandos del Bot"
+  },
+  "page": {
+    "title": "Comandos del Bot ChatSage",
+    "expandTip": "Haz clic en cualquier fila de comando a continuación para expandir y ver los detalles de uso.",
+    "lastUpdated": "Última actualización"
+  },
+  "table": {
+    "headers": {
+      "command": "Comando",
+      "description": "Descripción"
+    },
+    "categories": {
+      "general": "General",
+      "games": "Juegos",
+      "config": "Configuración"
+    }
+  },
+  "commands": {
+    "ask": {
+      "name": "!ask / !sage",
+      "description": "Hazle una pregunta a Sage. Utiliza la búsqueda de manera inteligente.",
+      "usage": {
+        "question": "!ask <tu pregunta>",
+        "analyzeQuestion": "!game analyze <tu pregunta>"
+      }
+    },
+    "search": {
+      "name": "!search",
+      "description": "Busca en la web información sobre un tema.",
+      "usage": {
+        "query": "!search <tu consulta>"
+      }
+    },
+    "game": {
+      "name": "!game",
+      "description": "Proporciona información investigada sobre el juego que se está jugando actualmente. Añade \"analyze\" para usar reconocimiento de imagen con IA en el stream (utiliza la miniatura de Twitch que se actualiza cada 5 minutos).",
+      "usage": {
+        "analyzeText": "Analiza las imágenes del stream con IA",
+        "questionText": "Responde preguntas específicas sobre el juego",
+        "analyzeQuestionText": "Analiza las imágenes y responde la pregunta",
+        "question": "!game <tu pregunta>",
+        "analyzeQuestion": "!game analyze <tu pregunta>"
+      }
+    },
+    "translate": {
+      "name": "!translate",
+      "description": "Gestiona la traducción automática de mensajes para usuarios.",
+      "usage": {
+        "lang": "!translate <idioma>",
+        "stop": "!translate stop",
+        "modUser": "!translate <idioma|stop> [usuario]",
+        "modAll": "!translate stop all"
+      }
+    },
+    "help": {
+      "name": "!commands / !help",
+      "description": "Muestra dónde encontrar la lista de comandos disponibles.",
+      "usage": {
+        "basic": "!help o !commands"
+      }
+    },
+    "lurk": {
+      "name": "!lurk",
+      "description": "Haz saber al chat que estás acechando. Proporciona una razón opcional para una despedida personalizada."
+    },
+    "quote": {
+      "name": "!quote",
+      "description": "Añade, visualiza o busca citas del canal. Las citas se almacenan por canal y pueden incluir una atribución de autor opcional.",
+      "usage": {
+        "random": "!quote",
+        "randomDesc": "Muestra una cita aleatoria",
+        "id": "!quote <id>",
+        "idDesc": "Muestra la cita por número de ID, ej. !quote 12",
+        "last": "!quote last",
+        "lastDesc": "Muestra la cita añadida más recientemente",
+        "search": "!quote <término de búsqueda>",
+        "searchDesc": "Busca citas por texto o autor, ej. !quote parfait",
+        "searchExplicit": "!quote search <término>",
+        "searchExplicitDesc": "Comando de búsqueda explícito",
+        "add": "!quote add <texto [- autor]>",
+        "addDesc": "Añade una nueva cita. Autor opcional después de \" - \", ej. !quote add \"hola mundo - parfait\"",
+        "delete": "!quote delete <id>",
+        "deleteDesc": "Elimina una cita (solo moderadores/broadcaster)",
+        "edit": "!quote edit <id> <texto [- autor]>",
+        "editDesc": "Edita una cita existente (solo moderadores/broadcaster)"
+      }
+    },
+    "geo": {
+      "name": "!geo",
+      "description": "Inicia o gestiona Geo-Game, un juego de adivinanzas geográficas para mundos IRL o virtuales.",
+      "usage": {
+        "basic": "Inicia un juego global del mundo real",
+        "region": "Inicia un juego del mundo real específico de una región, ej. !geo Japan",
+        "game": "Inicia un juego de mundo virtual usando el juego actual del stream",
+        "gameTitle": "Inicia un juego de mundo virtual con el juego especificado, ej. !geo game \"Metroid Prime\"",
+        "rounds": "Ejecuta cualquier comando de juego con N rondas, ej. !geo Japan 3",
+        "stop": "El iniciador del juego, moderadores o broadcaster pueden detenerlo",
+        "interval": "Establece el tiempo entre pistas de 30 a 300 segundos",
+        "duration": "Establece la duración de la ronda de 3 a 20 minutos",
+        "configRegion": "Establece regiones como Europe,Asia o USA,Canada",
+        "configGame": "Establece títulos de juegos preferidos, separados por comas",
+        "pointsBase": "Establece los puntos base de 1 a 100",
+        "maxRounds": "Establece el máximo de rondas de 1 a 10",
+        "clearLeaderboard": "O resetstats",
+        "report": "Reporta ubicaciones o pistas problemáticas",
+        "regionCmd": "!geo <región>",
+        "commandRounds": "!geo <comando> N",
+        "configRegionCmd": "!geo config region <regiones>",
+        "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
+        "intervalCmd": "!geo config interval <segundos>",
+        "durationCmd": "!geo config duration <minutos>",
+        "configGameCmd": "!geo config game <títulos>",
+        "pointsBaseCmd": "!geo config pointsbase <número>",
+        "maxRoundsCmd": "!geo config maxrounds <número>",
+        "reportCmd": "!geo report <razón>",
+        "gameTitleCmd": "!geo game [Título del Juego]",
+        "japan": "Japan",
+        "metroidPrime": "Metroid Prime",
+        "europe": "Europe",
+        "asia": "Asia",
+        "usa": "USA",
+        "canada": "Canada"
+      }
+    },
+    "riddle": {
+      "name": "!riddle",
+      "description": "Inicia o gestiona un juego de Acertijos. Los acertijos pueden ser generales, sobre el juego actual del stream o un tema específico.",
+      "usage": {
+        "basic": "Inicia un acertijo de conocimiento general",
+        "subject": "Ejemplo: !riddle animals",
+        "rounds": "Ejemplo: !riddle 3 para 3 rondas generales",
+        "subjectRounds": "Ejemplo: !riddle history 5",
+        "game": "Acertijo sobre el juego actual del stream",
+        "report": "Reporta acertijos problemáticos",
+        "stop": "El iniciador del juego, moderadores o broadcaster pueden detenerlo",
+        "questionTime": "Establece el tiempo por acertijo de 15 a 120 segundos",
+        "pointsBase": "Establece los puntos base de 1 a 100",
+        "maxRounds": "Establece el máximo de rondas de 1 a 20",
+        "keywordsLimit": "Establece palabras clave recientes a excluir, ej. 20-100",
+        "roundDelay": "Establece el retraso entre rondas",
+        "clearLeaderboard": "O cleardata",
+        "subjectCmd": "!riddle <tema>",
+        "roundsCmd": "!riddle <rondas>",
+        "subjectRoundsCmd": "!riddle <tema> <rondas>",
+        "gameRoundsCmd": "!riddle game <rondas>",
+        "reportCmd": "!riddle report <razón...>",
+        "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
+        "questionTimeCmd": "!riddle config questiontime <segundos>",
+        "pointsBaseCmd": "!riddle config pointsbase <número>",
+        "maxRoundsCmd": "!riddle config maxrounds <número>",
+        "keywordsLimitCmd": "!riddle config keywordslimit <número>",
+        "roundDelayCmd": "!riddle config rounddelay <milisegundos>",
+        "animals": "animals",
+        "history": "history"
+      }
+    },
+    "trivia": {
+      "name": "!trivia",
+      "description": "Inicia o gestiona juegos de Trivia con preguntas basadas en hechos sobre varios temas, incluyendo el juego actual del stream.",
+      "usage": {
+        "basic": "Inicia trivia de conocimiento general",
+        "topic": "Inicia trivia de un tema específico, ej. !trivia science",
+        "game": "Inicia trivia sobre el juego actual del stream",
+        "rounds": "Especifica el número de rondas, ej. !trivia 3",
+        "topicRounds": "Ejemplo: !trivia history 5",
+        "report": "Reporta preguntas problemáticas",
+        "stop": "El iniciador del juego, moderadores o broadcaster pueden detenerlo",
+        "time": "Establece el tiempo por pregunta de 10 a 120 segundos",
+        "pointsBase": "Establece los puntos base de 1 a 100",
+        "configTopic": "Establece temas preferidos, separados por comas",
+        "maxRounds": "Establece el máximo de rondas de 1 a 10",
+        "topicCmd": "!trivia <tema>",
+        "roundsCmd": "!trivia <rondas>",
+        "topicRoundsCmd": "!trivia <tema> <rondas>",
+        "reportCmd": "!trivia report <razón>",
+        "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
+        "timeCmd": "!trivia config time <segundos>",
+        "pointsBaseCmd": "!trivia config pointsbase <número>",
+        "configTopicCmd": "!trivia config topic <temas>",
+        "maxRoundsCmd": "!trivia config maxrounds <número>",
+        "science": "science",
+        "history": "history"
+      }
+    },
+    "botlang": {
+      "name": "!botlang",
+      "description": "Configura el bot para que hable en un idioma específico para todo el canal.",
+      "usage": {
+        "status": "Verifica el idioma actual",
+        "off": "Restablece al inglés",
+        "default": "Restablece al inglés",
+        "langCmd": "!botlang <idioma>"
+      }
+    },
+    "auto": {
+      "name": "!auto",
+      "description": "Configura el modo de chat automático y sus opciones.",
+      "usage": {
+        "status": "Muestra el modo de chat automático actual, frecuencia y categorías",
+        "modeCmd": "!auto <off|low|medium|high>",
+        "mode": "Establece la agresividad del chat automático (off lo desactiva)",
+        "freqCmd": "!auto config frequency:<minutos>",
+        "freq": "Establece el intervalo mínimo entre mensajes automáticos (minutos)",
+        "greetingsCmd": "!auto config greetings:<on|off>",
+        "greetings": "Activa/desactiva saludos",
+        "factsCmd": "!auto config facts:<on|off>",
+        "facts": "Activa/desactiva datos curiosos y consejos",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "questions": "Activa/desactiva preguntas de participación",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "Activa/desactiva notificaciones de pausas publicitarias",
+        "multiCmd": "!auto config frequency:<minutos> greetings:<on|off> facts:<on|off> questions:<on|off>",
+        "multi": "Establece múltiples opciones a la vez"
+      }
+    },
+    "disable": {
+      "name": "!disable",
+      "description": "Desactiva un comando en este canal.",
+      "usage": {
+        "lurk": "Desactiva el comando !lurk",
+        "trivia": "Desactiva el comando !trivia"
+      }
+    },
+    "enable": {
+      "name": "!enable",
+      "description": "Activa un comando previamente desactivado en este canal.",
+      "usage": {
+        "trivia": "Activa el comando !trivia"
+      }
+    },
+    "ping": {
+      "name": "!ping",
+      "description": "Verifica si el bot está respondiendo. ¡Responde con Pong!"
+    }
+  },
+  "ui": {
+    "languageSelector": "Idioma",
+    "mod": "Mod"
+  },
+  "sidebar": {
+    "generalCommands": "Comandos Generales",
+    "games": "Juegos",
+    "config": "Configuración",
+    "webDashboard": "Panel Web"
+  },
+  "webDashboard": {
+    "title": "Panel Web",
+    "intro": "El Panel Web de ChatSage proporciona a los streamers una interfaz completa para gestionar el bot en su canal. Accede iniciando sesión con tu cuenta de Twitch.",
+    "featuresTitle": "Características Disponibles del Panel",
+    "features": {
+      "botManagement": {
+        "title": "Gestión del Bot:",
+        "desc": "Añadir o eliminar ChatSage de tu canal"
+      },
+      "channelConfig": {
+        "title": "Configuración del Canal:",
+        "desc": "Configurar el idioma del bot, ajustes de chat automático y permisos de comandos"
+      },
+      "contextManagement": {
+        "title": "Gestión de Contexto:",
+        "desc": "Ver y gestionar el contexto de conversación, resúmenes e historial del chat"
+      },
+      "streamIntegration": {
+        "title": "Integración del Stream:",
+        "desc": "Monitorear el juego actual, título e información del stream"
+      },
+      "commandControl": {
+        "title": "Control de Comandos:",
+        "desc": "Activar/desactivar comandos específicos y establecer respuestas personalizadas"
+      },
+      "analytics": {
+        "title": "Analíticas:",
+        "desc": "Ver estadísticas de uso del bot y patrones de interacción"
+      },
+      "settingsBackup": {
+        "title": "Respaldo de Configuración:",
+        "desc": "Exportar/importar la configuración de tu canal"
+      }
+    },
+    "gettingStartedTitle": "Primeros Pasos",
+    "steps": {
+      "visit": {
+        "title": "Visita el Panel:",
+        "desc": "Ve a https://app.wildcat.chat/"
+      },
+      "authorize": {
+        "title": "Autoriza:",
+        "desc": "Haz clic en \"Iniciar sesión con Twitch\" y otorga los permisos requeridos"
+      },
+      "addBot": {
+        "title": "Añade el Bot:",
+        "desc": "Usa el botón \"Añadir Bot a Mi Canal\" para invitar a ChatSage a tu canal"
+      },
+      "configure": {
+        "title": "Configura:",
+        "desc": "Personaliza la configuración a través de la interfaz del panel"
+      },
+      "grantPerms": {
+        "title": "Otorga Permisos:",
+        "desc": "En el chat de Twitch, escribe /mod ChatSageBot para dar al bot el estatus de moderador"
+      }
+    },
+    "oauthTitle": "Permisos OAuth",
+    "oauthIntro": "El panel requiere los siguientes ámbitos OAuth de Twitch:",
+    "oauth": {
+      "chatRead": "Leer mensajes del chat",
+      "chatEdit": "Enviar mensajes del chat",
+      "readSubs": "Acceder a información de suscripciones",
+      "manageRedemptions": "Gestionar canjes de puntos del canal",
+      "readEmail": "Acceder a tu dirección de correo electrónico"
+    },
+    "noteLabel": "Nota:",
+    "noteText": "ChatSage está actualmente disponible solo por invitación. Si no ves tu canal en el panel, por favor solicita acceso a través del formulario de contacto."
+  }
+}

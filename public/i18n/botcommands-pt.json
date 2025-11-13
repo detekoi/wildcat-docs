@@ -66,6 +66,28 @@
       "name": "!lurk",
       "description": "Deixe o chat saber que você está lurkando. Forneça um motivo opcional para uma despedida personalizada."
     },
+    "quote": {
+      "name": "!quote",
+      "description": "Adicione, visualize ou pesquise citações do canal. As citações são armazenadas por canal e podem incluir atribuição opcional de autor.",
+      "usage": {
+        "random": "!quote",
+        "randomDesc": "Mostra uma citação aleatória",
+        "id": "!quote <id>",
+        "idDesc": "Mostra citação por número de ID, ex: !quote 12",
+        "last": "!quote last",
+        "lastDesc": "Mostra a citação adicionada mais recentemente",
+        "search": "!quote <termo de busca>",
+        "searchDesc": "Pesquisa citações por texto ou autor, ex: !quote parfait",
+        "searchExplicit": "!quote search <termo>",
+        "searchExplicitDesc": "Comando de busca explícito",
+        "add": "!quote add <texto [- autor]>",
+        "addDesc": "Adiciona uma nova citação. Autor opcional após \" - \", ex: !quote add \"olá mundo - parfait\"",
+        "delete": "!quote delete <id>",
+        "deleteDesc": "Deleta uma citação (apenas mods/broadcaster)",
+        "edit": "!quote edit <id> <texto [- autor]>",
+        "editDesc": "Edita uma citação existente (apenas mods/broadcaster)"
+      }
+    },
     "geo": {
       "name": "!geo",
       "description": "Inicia ou gerencia o Geo-Game, um jogo de adivinhação geográfica para o mundo real ou mundos virtuais.",
@@ -124,7 +146,7 @@
         "roundsCmd": "!riddle <rodadas>",
         "subjectRoundsCmd": "!riddle <tema> <rodadas>",
         "gameRoundsCmd": "!riddle game <rodadas>",
-        "reportCmd": "!riddle report <motivo... P",
+        "reportCmd": "!riddle report <motivo...>",
         "configDifficultyCmd": "!riddle config difficulty <fácil|normal|difícil>",
         "questionTimeCmd": "!riddle config questiontime <segundos>",
         "pointsBaseCmd": "!riddle config pointsbase <número>",
@@ -216,11 +238,81 @@
   },
   "ui": {
     "languageSelector": "Idioma",
-    "mod": "Mod"
+    "mod": "Moderador"
   },
   "sidebar": {
     "generalCommands": "Comandos Gerais",
     "games": "Jogos",
-    "config": "Configuração"
+    "config": "Configuração",
+    "webDashboard": "Painel Web"
+  },
+  "webDashboard": {
+    "title": "Painel Web",
+    "intro": "O Painel Web do ChatSage fornece aos streamers uma interface abrangente para gerenciar o bot em seu canal. Acesse fazendo login com sua conta Twitch.",
+    "featuresTitle": "Recursos de Painel Disponíveis",
+    "features": {
+      "botManagement": {
+        "title": "Gerenciamento de Bot:",
+        "desc": "Adicione ou remova ChatSage do seu canal"
+      },
+      "channelConfig": {
+        "title": "Configuração de Canal:",
+        "desc": "Configure idioma do bot, configurações de auto-chat e permissões de comando"
+      },
+      "contextManagement": {
+        "title": "Gerenciamento de Contexto:",
+        "desc": "Visualize e gerencie contexto de conversas, resumos e histórico de chat"
+      },
+      "streamIntegration": {
+        "title": "Integração de Stream:",
+        "desc": "Monitore jogo atual, título e informações de stream"
+      },
+      "commandControl": {
+        "title": "Controle de Comando:",
+        "desc": "Ativar/desativar comandos específicos e defina respostas personalizadas"
+      },
+      "analytics": {
+        "title": "Análise:",
+        "desc": "Visualize estatísticas de uso do bot e padrões de interação"
+      },
+      "settingsBackup": {
+        "title": "Backup de Configurações:",
+        "desc": "Exporte/importe sua configuração de canal"
+      }
+    },
+    "gettingStartedTitle": "Começando",
+    "steps": {
+      "visit": {
+        "title": "Visite o Painel:",
+        "desc": "Vá para https://app.wildcat.chat/"
+      },
+      "authorize": {
+        "title": "Autorize:",
+        "desc": "Clique em \"Login com Twitch\" e conceda as permissões necessárias"
+      },
+      "addBot": {
+        "title": "Adicione o Bot:",
+        "desc": "Use o botão \"Adicionar Bot ao Meu Canal\" para convidar ChatSage para seu canal"
+      },
+      "configure": {
+        "title": "Configure:",
+        "desc": "Personalize as configurações através da interface do painel"
+      },
+      "grantPerms": {
+        "title": "Conceda Permissões:",
+        "desc": "No chat do Twitch, digite /mod ChatSageBot para dar ao bot o status de moderador"
+      }
+    },
+    "oauthTitle": "Permissões OAuth",
+    "oauthIntro": "O painel requer os seguintes escopos OAuth do Twitch:",
+    "oauth": {
+      "chatRead": "Ler mensagens de chat",
+      "chatEdit": "Enviar mensagens de chat",
+      "readSubs": "Acessar informações de assinatura",
+      "manageRedemptions": "Gerenciar resgate de pontos de canal",
+      "readEmail": "Acessar seu endereço de email"
+    },
+    "noteLabel": "Nota:",
+    "noteText": "ChatSage é atualmente apenas por convite. Se você não vir seu canal no painel, solicite acesso através do formulário de contato."
   }
 }

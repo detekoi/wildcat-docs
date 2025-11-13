@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "title": "ChatVibes TTS Bot Befehle"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Startseite",
+    "chatSageDocs": "ChatSage Dokumentation",
+    "chatVibesDocs": "ChatVibes Dokumentation",
+    "contact": "Kontakt"
+  },
+  "sidebar": {
+    "chatVibes": "ChatVibes",
+    "toggleSidebar": "Seitenleiste umschalten",
+    "commands": "Befehle",
+    "toggleSubmenu": "",
+    "ttsCommands": "Text-zu-Sprache Befehle",
+    "musicCommands": "Musikgenerierungs-Befehle",
+    "voices": "Stimmen",
+    "languageBoost": "Sprachunterstützung",
+    "webDashboard": "Web Dashboard",
+    "troubleshooting": "Fehlerbehebung"
+  },
+  "page": {
+    "title": "ChatVibes TTS Bot Dokumentation",
+    "inviteNote": "ChatVibes ist derzeit nur auf Einladung verfügbar.",
+    "requestAccess": "Zugriff anfordern"
+  },
+  "commands": {
+    "title": "Befehle",
+    "prefixTip": "Alle TTS-Befehle beginnen mit !tts.",
+    "exampleTip": "Zum Beispiel: !tts status",
+    "expandTip": "Klicke auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails anzuzeigen.",
+    "webDashboardTip": "Broadcaster und Zuschauer können Einstellungen auch über das ChatVibes Web Dashboard konfigurieren.",
+    "myvoiceTip": "Zuschauer können ihre eigenen TTS-Einstellungen über die Web-Benutzeroberfläche festlegen, indem sie !myvoice im Chat senden.",
+    "ttsCommandsTitle": "Text-zu-Sprache Befehle",
+    "common": {
+      "notes": "Hinweise:",
+      "note": "Hinweis:",
+      "permission": "Berechtigung:",
+      "description": "Beschreibung:",
+      "usage": "Verwendung:",
+      "everyone": "Alle",
+      "everyoneOwnPreference": "Alle (für ihre eigenen Voreinstellungen)",
+      "moderator": "Moderator",
+      "streamerBroadcaster": "Streamer/Broadcaster (über Web Dashboard)"
+    },
+    "ttsStatus": {
+      "name": "!tts status",
+      "description": "Ruft den aktuellen Status der TTS-Anwendung für den Kanal ab.",
+      "notes": "Zeigt Engine-Status, Modus, Warteschlangenlänge, Standard-Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprachunterstützungseinstellungen an.",
+      "usage": {
+        "basic": "!tts status"
+      }
+    },
+    "ttsVoices": {
+      "name": "!tts voices",
+      "description": "Stellt einen Link zum Dokumentationsbereich für verfügbare TTS-Stimmen bereit.",
+      "usage": {
+        "basic": "!tts voices"
+      }
+    },
+    "ttsLanguageslist": {
+      "name": "!tts languageslist",
+      "description": "Stellt einen Link zum Dokumentationsbereich für verfügbare Sprachunterstützungsoptionen bereit.",
+      "usage": {
+        "basic": "!tts languageslist"
+      }
+    },
+    "ttsCommands": {
+      "name": "!tts commands\n(Alias: !tts help)",
+      "description": "Stellt einen Link zur vollständigen Liste der !tts Unterbefehle bereit.",
+      "usage": {
+        "commands": "!tts commands",
+        "help": "!tts help"
+      }
+    },
+    "ttsPrefs": {
+      "name": "!tts prefs\n(Aliase: !tts preferences, !tts settings)",
+      "description": "Sendet dir einen kurzlebigen Link zu deiner persönlichen TTS-Einstellungsseite.",
+      "feature1": "Konfiguriere deine eigene Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprache pro Kanal.",
+      "feature2": "Enthält eine rot markierte \"Gefahrenzone\", in der du dich selbst zu den Ignorieren-Listen für TTS und/oder Musik des Kanals hinzufügen kannst (nur ein Moderator kann dies rückgängig machen).",
+      "feature3": "Der Bot postet den Link öffentlich im Chat; er ist nur für dich signiert und läuft nach dem ersten Zugriff oder nach 10 Minuten ab. Die Seite ist mit dem aktuellen Kanal vorausgefüllt.",
+      "usage": {
+        "prefs": "!tts prefs",
+        "preferences": "!tts preferences",
+        "settings": "!tts settings"
+      }
+    },
+    "myvoice": {
+      "name": "!myvoice",
+      "description": "Sendet dir einen kurzlebigen Link zu deiner persönlichen TTS-Einstellungsseite (entspricht !tts prefs).",
+      "notes": "Identisch mit !tts prefs. Der Bot postet den Link öffentlich im Chat; er ist nur für dich signiert und läuft nach dem ersten Zugriff oder nach 10 Minuten ab. Die Seite ist mit dem aktuellen Kanal vorausgefüllt.",
+      "usage": {
+        "basic": "!myvoice"
+      }
+    },
+    "ttsOn": {
+      "name": "!tts on\n(Alias: !tts enable)",
+      "description": "Aktiviert die TTS-Engine. Nachrichten und Ereignisse können je nach aktuellem Modus gesprochen werden.",
+      "usage": {
+        "on": "!tts on",
+        "enable": "!tts enable"
+      }
+    },
+    "ttsOff": {
+      "name": "!tts off\n(Alias: !tts disable)",
+      "description": "Deaktiviert die TTS-Engine vollständig. Keine Nachrichten oder Ereignisse werden gesprochen.",
+      "usage": {
+        "off": "!tts off",
+        "disable": "!tts disable"
+      }
+    },
+    "ttsMode": {
+      "name": "!tts mode [all|command|bits_points_only]",
+      "description": "Schaltet den TTS-Modus um.",
+      "allDesc": "(Spricht alle Chat-Nachrichten & Ereignisse aus; dies ist der Standard-Modus)",
+      "commandDesc": "(Spricht nur auf Befehl oder bei Ereignissen)",
+      "bitsPointsOnlyDesc": "(Spricht nur Bits-Cheers & Channel Point Einlösungen aus)",
+      "bitsAlias": "(Alias für bits_points_only)",
+      "pointsAlias": "(Alias für bits_points_only)",
+      "statusDesc": "(Zeigt aktuellen Modus an)",
+      "notes": "all: Alle Chat-Nachrichten (nicht von ignorierten Benutzern oder Befehlen) und aktivierte Ereignisse werden gesprochen, unterliegen jedoch der !tts Berechtigungseinstellung.\ncommand: Nur Nachrichten, die durch spezifische TTS-Befehle ausgelöst wurden (wie !tts <Nachricht>) oder aktivierte Ereignisse werden gesprochen. Normaler Chat wird ignoriert.\nbits_points_only: Nur Bits-Cheers und Channel Point Einlösungen werden laut vorgelesen. Normaler Chat und Befehle werden ignoriert.",
+      "usage": {
+        "all": "!tts mode all",
+        "command": "!tts mode command",
+        "bitsPointsOnly": "!tts mode bits_points_only",
+        "bits": "!tts mode bits",
+        "points": "!tts mode points",
+        "status": "!tts mode"
+      }
+    },
+    "ttsPermission": {
+      "name": "!tts permission [everyone|all|mods]",
+      "description": "Legt einen Filter fest, wer TTS auslösen kann, wenn der Bot im All-Modus ist.",
+      "statusDesc": "(zeigt den aktuellen Berechtigungsfilter an)",
+      "notes": "everyone oder all: Jede Nachricht eines Benutzers im Chat kann gesprochen werden. (Standard)\nmods: Nur Nachrichten von Moderatoren und dem Broadcaster werden gesprochen.\nDies betrifft nicht den Befehlsmodus.",
+      "usage": {
+        "everyone": "!tts permission everyone",
+        "mods": "!tts permission mods",
+        "status": "!tts permission"
+      }
+    },
+    "ttsBits": {
+      "name": "!tts bits [on|off|min <amount>]",
+      "description": "Konfiguriert die Bits-für-TTS-Funktion, mit der Kanäle einen Mindest-Cheer-Betrag verlangen können, um TTS auszulösen.",
+      "statusDesc": "(zeigt aktuellen Bits-für-TTS-Status an)",
+      "onDesc": "on: Aktiviert den Bits-für-TTS-Modus. Nur Nachrichten mit ausreichendem Cheer werden gelesen.",
+      "offDesc": "off: Deaktiviert den Bits-für-TTS-Modus.",
+      "minDesc": "min <amount>: Legt die Mindestanzahl erforderlicher Bits fest (z.B. min 100).",
+      "usage": {
+        "on": "!tts bits on",
+        "off": "!tts bits off",
+        "min": "!tts bits min 100",
+        "status": "!tts bits"
+      }
+    },
+    "channelPointsTTS": {
+      "name": "Channel Points → TTS",
+      "description": "Erstelle eine benutzerdefinierte Twitch Channel Point Belohnung, damit Zuschauer eine Nachricht mit der Option einlösen können, die laut vorgelesen wird.",
+      "noteText": "Diese Funktion wird ausschließlich über das ChatVibes Web Dashboard im Abschnitt \"Channel Points → TTS\" konfiguriert.",
+      "howItWorks": "So funktioniert es:",
+      "step1": "Streamer-Setup: Aktivieren Sie die Funktion im Dashboard.",
+      "step2": "Belohnungserstellung: Der Bot erstellt automatisch eine benutzerdefinierte Channel Point Belohnung auf deinem Twitch-Kanal.",
+      "step3": "Zuschauer-Einlösung: Zuschauer lösen die Belohnung mit einer benutzerdefinierten Nachricht ein, die laut vorgelesen wird.",
+      "step4": "Inhaltsrichtlinie: Integrierte Filterung (Längenbeschränkungen, Link-Blockierung, verbotene Wörter).",
+      "configOptions": "Konfigurationsoptionen:",
+      "basicSettings": "Grundeinstellungen: Belohnungstitel, Kosten (Punkte), Eingabeaufforderungstext, Warteschlange überspringen Option",
+      "advancedSettings": "Erweiterte Einstellungen: Globale Abkühlungszeit, Pro-Stream-Limit, Pro-Benutzer-Limit",
+      "contentPolicy": "Inhaltsrichtlinie: Min./Max. Nachrichtenlänge, Links blockieren, Liste verbotener Wörter",
+      "skipQueue": "Warteschlange überspringen:",
+      "skipQueueDefault": "Standard-Einstellung: Diese Option ist standardmäßig aktiviert für sofortige TTS-Wiedergabe.",
+      "skipQueueEnabled": "Bei Aktivierung: Einlösungen werden sofort verarbeitet und erscheinen nicht in deiner Twitch \"Belohnungsanfragen\"-Warteschlange.",
+      "skipQueueDisabled": "Bei Deaktivierung: Einlösungen erscheinen in deinem Twitch-Dashboard zur manuellen Genehmigung, bevor TTS abgespielt wird.",
+      "skipQueueUseCase": "Anwendungsfall: Aktivieren Sie für sofortiges TTS, deaktivieren Sie für Moderationskontrolle.",
+      "ttsModes": "TTS-Modi:",
+      "ttsModesText": "Funktioniert mit allen TTS-Modi (Alle Nachrichten, Nur Befehle, Bits/Punkte Nur).",
+      "requirements": "Anforderungen:",
+      "requirementsText": "Muss während des anfänglichen Dashboard-Setups die OAuth-Scopes channel:manage:redemptions und channel:read:redemptions gewähren."
+    },
+    "ttsPause": {
+      "name": "!tts pause",
+      "description": "Pausiert die Verarbeitung der TTS-Ereigniswarteschlange.",
+      "notes": "Neue Nachrichten/Ereignisse werden der Warteschlange hinzugefügt, werden aber nicht gesprochen, bis sie fortgesetzt werden.",
+      "usage": {
+        "basic": "!tts pause"
+      }
+    },
+    "ttsResume": {
+      "name": "!tts resume",
+      "description": "Setzt die Verarbeitung der TTS-Ereigniswarteschlange fort, wenn sie angehalten wurde.",
+      "usage": {
+        "basic": "!tts resume"
+      }
+    },
+    "ttsClear": {
+      "name": "!tts clear",
+      "description": "Löscht alle ausstehenden Nachrichten und Ereignisse aus der TTS-Warteschlange.",
+      "notes": "Dieser Befehl entfernt nur Nachrichten, die in der Warteschlange warten. Er stoppt nicht die Audiowiedergabe, die gerade läuft oder aktiv von der TTS-Engine generiert wird.",
+      "usage": {
+        "basic": "!tts clear"
+      }
+    },
+    "ttsStop": {
+      "name": "!tts stop",
+      "description": "Stoppt die derzeit wiedergegebene oder generierte TTS-Audiowiedergabe.",
+      "note1": "Wenn TTS gerade spricht oder Audio generiert, versucht dieser Befehl, es zu stoppen.",
+      "note2": "Jeder Benutzer kann eine Nachricht stoppen, wenn sie durch seine eigene Chat-Nachricht ausgelöst wurde.",
+      "note3": "Moderatoren und der Broadcaster können beliebige TTS-Audiowiedergaben stoppen.",
+      "permission": "Alle für ihre eigenen Nachrichten, Moderator für andere",
+      "usage": {
+        "basic": "!tts stop"
+      }
+    },
+    "ttsVoice": {
+      "name": "!tts voice <voice_id|reset>",
+      "description": "Ermöglicht es einem Benutzer, seine bevorzugte Stimme für die Nachrichten festzulegen, die er sendet.",
+      "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
+      "notes": "Verwende reset, um zur Standard-Stimme des Kanals zurückzukehren. Verwende !tts voices, um einen Link zu verfügbaren Stimmen-IDs zu erhalten.",
+      "usage": {
+        "example": "!tts voice Friendly_Person",
+        "reset": "!tts voice reset",
+        "status": "!tts voice"
+      }
+    },
+    "ttsEmotion": {
+      "name": "!tts emotion <emotion_name|reset|auto>",
+      "description": "Ermöglicht es einem Benutzer, seine bevorzugte Emotion für seine Nachrichten festzulegen.",
+      "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
+      "notes": "Gültige Emotionen: neutral, happy, sad, angry, fearful, disgusted, surprised. Verwende reset für den Kanal-Standard.",
+      "usage": {
+        "example": "!tts emotion happy",
+        "reset": "!tts emotion reset",
+        "status": "!tts emotion"
+      }
+    },
+    "ttsLanguage": {
+      "name": "!tts language <language|reset>\n(Alias: !tts lang)",
+      "description": "Legt deine bevorzugte Sprachunterstützung für TTS fest.",
+      "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
+      "notes": "Beeinflusst, wie Sprache interpretiert und generiert wird. Verwende reset oder auto, um den Kanal-Standard zu verwenden. Siehe Abschnitt Sprachunterstützung oder verwende !tts languageslist für verfügbare Optionen.",
+      "usage": {
+        "example": "!tts language English",
+        "langAlias": "!tts lang Japanese",
+        "reset": "!tts language reset",
+        "status": "!tts language"
+      }
+    },
+    "ttsPitch": {
+      "name": "!tts pitch <value|reset>",
+      "description": "Legt deine persönliche TTS-Tonhöhe fest.",
+      "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
+      "notes": "Der Wert muss eine Ganzzahl zwischen -12 und 12 sein (0 ist normal). Verwende reset für den Kanal-Standard.",
+      "usage": {
+        "positive": "!tts pitch 2",
+        "negative": "!tts pitch -3",
+        "reset": "!tts pitch reset",
+        "status": "!tts pitch"
+      }
+    },
+    "ttsSpeed": {
+      "name": "!tts speed <value|reset>",
+      "description": "Legt deine persönliche TTS-Geschwindigkeit fest.",
+      "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
+      "notes": "Der Wert muss eine Zahl zwischen 0.5 und 2.0 sein (1.0 ist normal). Verwende reset für den Kanal-Standard.",
+      "usage": {
+        "faster": "!tts speed 1.2",
+        "slower": "!tts speed 0.8",
+        "reset": "!tts speed reset",
+        "status": "!tts speed"
+      }
+    },
+    "ttsIgnore": {
+      "name": "!tts ignore <username>\n!tts ignore add <username>",
+      "usageDescUser": "Für jeden Benutzer: Füge dich selbst zur TTS-Ignorieren-Liste des Kanals hinzu. Deine Nachrichten werden nicht gesprochen.",
+      "usageDescMod": "Für Moderatoren oder Broadcaster: Füge einen angegebenen Twitch-Benutzer zur TTS-Ignorieren-Liste des Kanals hinzu.",
+      "permission": "Alle (um sich selbst hinzuzufügen), Moderator (um andere hinzuzufügen)",
+      "usage": {
+        "self": "!tts ignore deinbenutzername",
+        "mod": "!tts ignore add AndererBenutzer"
+      }
+    },
+    "ttsIgnoreDel": {
+      "name": "!tts ignore del <username>\n(Aliase: delete, rem, remove)",
+      "description": "Entfernt den angegebenen Twitch-Benutzer aus der TTS-Ignorieren-Liste.",
+      "usage": {
+        "basic": "!tts ignore del EinBenutzer"
+      }
+    },
+    "ttsIgnored": {
+      "name": "!tts ignored",
+      "description": "Listet alle Benutzer auf, die sich derzeit auf der TTS-Ignorieren-Liste des Kanals befinden.",
+      "usage": {
+        "basic": "!tts ignored"
+      }
+    },
+    "ttsEvents": {
+      "name": "!tts events [on|off]",
+      "description": "Schaltet um, ob Twitch-Ereignisse (wie Abos, Cheers, Raids usw.) von TTS angekündigt werden.",
+      "statusDesc": "(zeigt aktuellen Status der Event-Ankündigungen an)",
+      "usage": {
+        "on": "!tts events on",
+        "off": "!tts events off",
+        "status": "!tts events"
+      }
+    },
+    "ttsDefaultvoice": {
+      "name": "!tts defaultvoice <voice_id|reset>",
+      "description": "Legt die Standard-TTS-Stimme für den Kanal fest.",
+      "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
+      "notes": "Verwende reset, um zum System-Standard zurückzukehren. Verwende !tts voices für einen Link zu Stimmen-IDs.",
+      "usage": {
+        "example": "!tts defaultvoice Friendly_Person",
+        "reset": "!tts defaultvoice reset",
+        "status": "!tts defaultvoice"
+      }
+    },
+    "ttsDefaultemotion": {
+      "name": "!tts defaultemotion <emotion_name|reset>",
+      "description": "Legt die Standard-TTS-Emotion für den Kanal fest.",
+      "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
+      "notes": "Gültige Emotionen: neutral, happy, sad, angry, fearful, disgusted, surprised. Verwende reset für System-Standard (neutral).",
+      "usage": {
+        "example": "!tts defaultemotion happy",
+        "reset": "!tts defaultemotion reset",
+        "status": "!tts defaultemotion"
+      }
+    },
+    "ttsDefaultlanguage": {
+      "name": "!tts defaultlanguage <language|reset>",
+      "description": "Legt die Standard-Sprachunterstützung von TTS für den Kanal fest.",
+      "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
+      "notes": "Verwende reset oder auto, um den System-Standard zu verwenden. Siehe Abschnitt Sprachunterstützung oder verwende !tts languageslist für Optionen.",
+      "usage": {
+        "example": "!tts defaultlanguage English",
+        "reset": "!tts defaultlanguage reset",
+        "status": "!tts defaultlanguage"
+      }
+    },
+    "ttsDefaultpitch": {
+      "name": "!tts defaultpitch <value|reset>",
+      "description": "Legt die Standard-TTS-Tonhöhe für den Kanal fest.",
+      "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
+      "notes": "Der Wert muss eine Ganzzahl zwischen -12 und 12 sein (0 ist normal). Verwende reset für System-Standard (0).",
+      "usage": {
+        "example": "!tts defaultpitch 2",
+        "reset": "!tts defaultpitch reset",
+        "status": "!tts defaultpitch"
+      }
+    },
+    "ttsDefaultspeed": {
+      "name": "!tts defaultspeed <value|reset>",
+      "description": "Legt die Standard-TTS-Geschwindigkeit für den Kanal fest.",
+      "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
+      "notes": "Der Wert muss eine Zahl zwischen 0.5 und 2.0 sein (1.0 ist normal). Verwende reset für System-Standard (1.0).",
+      "usage": {
+        "example": "!tts defaultspeed 1.2",
+        "reset": "!tts defaultspeed reset",
+        "status": "!tts defaultspeed"
+      }
+    },
+    "ttsMessage": {
+      "name": "!tts <message>\n(Alias: !tts say <message>)",
+      "usage": {
+        "basic": "!tts Willkommen alle zum Stream!",
+        "say": "!tts say Willkommen alle!"
+      }
+    },
+    "musicPrompt": {
+      "name": "!music <prompt>",
+      "description": "Generiert ein kurzes Musikstück basierend auf deine Eingabe.",
+      "permission": "Konfigurierbar durch Moderatoren (Standard: alle, kann nur Moderatoren sein). Benutzer darf nicht auf der Musik-Ignorierliste stehen."
+    },
+    "musicOnOff": {
+      "name": "!music on\n!music off",
+      "description": "(Nur Mod) Aktiviert oder deaktiviert die Musikgenerierungsfunktion für den Kanal.",
+      "permission": "Moderator"
+    },
+    "musicMode": {
+      "name": "!music mode <all|mods>",
+      "description": "(Nur Mod) Legt fest, wer den Befehl !music <prompt> verwenden kann.",
+      "permission": "Moderator"
+    },
+    "musicBits": {
+      "name": "!music bits [on|off|min <amount>]",
+      "description": "(Nur Mod) Konfiguriert Bits-für-Musik. Wenn aktiviert, müssen Benutzer mit ihrem Prompt cheeren, um Musik zu generieren.",
+      "permission": "Moderator",
+      "statusNote": "(zeigt aktuellen Status an)",
+      "optionOn": "on: Aktiviert den Bits-für-Musik-Modus.",
+      "optionOff": "off: Deaktiviert den Bits-für-Musik-Modus.",
+      "optionMin": "min <amount>: Legt die Mindestanzahl erforderlicher Bits fest (z.B. min 100)."
+    },
+    "musicHelp": {
+      "name": "!music help",
+      "description": "Stellt eine Liste aller Musikunterbefehle und deren Verwendung bereit.",
+      "permission": "Alle",
+      "notes": "Listet alle !music Unterbefehle und deren Verwendung auf, ähnlich wie diese Dokumentation."
+    },
+    "musicStatus": {
+      "name": "!music status",
+      "description": "Zeigt den aktuellen Status der Musikgenerierung (aktiviert/deaktiviert, Modus, Warteschlangenlänge).",
+      "permission": "Alle"
+    },
+    "musicClear": {
+      "name": "!music clear",
+      "description": "(Nur Mod) Löscht alle ausstehenden Musikgenerierungsanfragen aus der Warteschlange.",
+      "permission": "Moderator"
+    },
+    "musicIgnore": {
+      "name": "!music ignore <username>\n!music ignore add <username>",
+      "permission": "Alle (um sich selbst hinzuzufügen), Moderator (um andere hinzuzufügen)",
+      "descriptionUser": "Für jeden Benutzer: Füge dich selbst zur Musik-Ignorierliste hinzu. Deine !music <prompt> Anfragen werden ignoriert.",
+      "descriptionMod": "Für Moderatoren oder Broadcaster: Füge einen beliebigen angegebenen Twitch-Benutzer zur Musik-Ignorierliste hinzu.",
+      "usageSelf": "!music ignore deinbenutzername (wenn du dich selbst ignorieren möchtest)",
+      "usageMod": "!music ignore add AndererBenutzer (wenn du Mod/Broadcaster bist)"
+    },
+    "musicIgnoreDel": {
+      "name": "!music ignore del <username>\n(Aliase: delete, rem, remove)",
+      "description": "(Nur Mod) Entfernt den angegebenen Twitch-Benutzer aus der Musik-Ignorierliste.",
+      "aliases": "(Aliase: delete, rem, remove)",
+      "permission": "Moderator"
+    },
+    "musicIgnored": {
+      "name": "!music ignored",
+      "description": "(Nur Mod) Listet alle Benutzer auf, die sich derzeit auf der Musik-Ignorierliste des Kanals befinden.",
+      "permission": "Moderator"
+    }
+  },
+  "table": {
+    "headers": {
+      "command": "Befehl",
+      "description": "Beschreibung"
+    },
+    "categories": {
+      "ttsGeneral": "Allgemein",
+      "engineModeControl": "Engine & Modus Kontrolle (Nur Moderator)",
+      "channelPointsTTS": "Channel Points → TTS (Nur Web Dashboard)",
+      "queueManagement": "Warteschlange-Verwaltung (Nur Moderator)",
+      "userEventPreferences": "Benutzer- & Ereignisvoreinstellungen",
+      "channelDefaults": "Kanal-weite Standard-Konfiguration (Nur Moderator)",
+      "directTTS": "Direkte TTS"
+    }
+  },
+  "music": {
+    "title": "Musikgenerierungs-Befehle",
+    "prefixTip": "Alle Musikgenerierungs-Befehle sind mit !music vorangestellt",
+    "exampleTip": "Zum Beispiel: !music 90s soulful house",
+    "expandTip": "Klicke auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails anzuzeigen.",
+    "commandsTitle": "Musikgenerierungs-Befehle",
+    "tableCommand": "Befehl",
+    "tableDescription": "Beschreibung",
+    "labelPermission": "Berechtigung:",
+    "labelNotes": "Hinweise:",
+    "labelUsage": "Verwendung:",
+    "labelDescription": "Beschreibung:"
+  },
+  "voices": {
+    "title": "Stimmen",
+    "popularTitle": "Beliebte Stimmen-IDs",
+    "completeListTitle": "Vollständige Stimm-Liste (aus Wavespeed AI minimax/speech-02-turbo Schema)",
+    "introText": "Die folgenden Stimmen sind vom Modell minimax/speech-02-turbo über Wavespeed AI verfügbar. Der Bot verwendet eine umfassende hartcodierte Liste von 472 Stimmen mit automatischer Sprachkategorisierung über 45 Sprachen. Die voice_id wird in Befehlen wie !tts voice <voice_id> verwendet.",
+    "popularText": "Ausgewählte Stimmen vom Modell minimax/speech-02-turbo über Wavespeed AI. Für jede Stimme in dieser Liste kannst du den Befehl !tts voice <voice_id> verwenden, um sie zu nutzen.",
+    "completeListText": "Dies ist die vollständige Liste aller 472 verfügbaren Stimmen, organisiert nach Sprache. Die Stimmen werden automatisch nach Sprachpräfix kategorisiert zur einfachen Identifizierung.",
+    "expandText": "Klicken, um die vollständige Stimmliste zu erweitern (472 Stimmen in 45 Sprachen)"
+  },
+  "languageBoost": {
+    "title": "Sprachunterstützung",
+    "optionsTitle": "Verfügbare Sprachunterstützungsoptionen",
+    "introText": "Die language_boost-Funktion hilft dem TTS-Modell, Wörter aus bestimmten Sprachen oder Dialekten besser zu verstehen und auszusprechen. Dies ist besonders nützlich in mehrsprachigen Chats oder wenn die Nuancen einer bestimmten Sprache für klares TTS wichtig sind.",
+    "commandText": "Du kannst eine persönliche Sprachunterstützungspräferenz mit !tts language <sprache> festlegen oder Moderatoren können einen Kanal-Standard mit !tts defaultlanguage <sprache> festlegen.",
+    "optionsIntro": "Die folgenden Werte werden akzeptiert:",
+    "usageText": "Die Verwendung von auto verlässt sich auf die automatische Spracherkennung des Modells. English ist oft ein guter Standard für überwiegend englischsprachige Chats. Die Auswahl einer bestimmten Sprache kann die Aussprache für diese Sprache erheblich verbessern."
+  },
+  "webDashboard": {
+    "title": "Web Dashboard",
+    "settingsTitle": "Verfügbare Dashboard-Einstellungen",
+    "obsSetupTitle": "OBS Browser Source Einrichtung",
+    "introText": "Das ChatVibes Web Dashboard bietet Streamern eine umfassende Oberfläche zur Konfiguration aller TTS- und Musikeinstellungen. Greife darauf zu, indem du dich mit deinem Twitch-Konto anmeldest.",
+    "settingEngineTitle": "Engine-Steuerung:",
+    "settingEngineDesc": "TTS aktivieren/deaktivieren, Ereignisse ankündigen, TTS-Modus und Berechtigungen festlegen",
+    "settingViewerTitle": "Zuschauerpräferenzen:",
+    "settingViewerDesc": "Standard-Kanalstimme für alle Nachrichten zulassen oder erzwingen",
+    "settingUrlTitle": "URL-Vorlesen:",
+    "settingUrlDesc": "Vollständige URLs oder nur Domainnamen vorlesen",
+    "settingBitsTitle": "Bits → TTS:",
+    "settingBitsDesc": "Mindest-Bits für TTS-Nachrichten erforderlich",
+    "settingChannelPointsTitle": "Channel Points → TTS:",
+    "settingChannelPointsDesc": "Erstelle und konfiguriere eine benutzerdefinierte Channel Point Belohnung (siehe Abschnitt oben)",
+    "settingMusicTitle": "Musikgenerierung:",
+    "settingMusicDesc": "Musik aktivieren/deaktivieren, Berechtigungen festlegen, Bits erforderlich",
+    "settingIgnoreTitle": "Ignorierlisten:",
+    "settingIgnoreDesc": "TTS- und Musik-Ignorierlisten mit Hinzufügen/Entfernen-Oberfläche verwalten",
+    "settingVoiceTitle": "Standard-Spracheinstellungen:",
+    "settingVoiceDesc": "Kanal-Standardwerte für Stimme, Emotion, Tonhöhe, Geschwindigkeit, Sprache und Textnormalisierung festlegen",
+    "settingObsTitle": "OBS-Einrichtung:",
+    "settingObsDesc": "Erhalte deine einzigartige sichere TTS-URL und detaillierte Einrichtungsanweisungen",
+    "settingPreviewTitle": "Stimmen-Vorschau:",
+    "settingPreviewDesc": "Teste deine aktuellen Stimmeinstellungen vor dem Live-Streaming",
+    "obsStep1Title": "Schritt 1: Browser Source in OBS hinzufügen",
+    "obsStep1_1": "Klicke in OBS auf das \"+\" unter Quellen",
+    "obsStep1_2": "Wähle \"Browser\"",
+    "obsStep1_3": "Benenne sie (z.B. \"ChatVibes TTS\")",
+    "obsStep1_4": "Konfiguriere:",
+    "obsConfigUrlTitle": "URL:",
+    "obsConfigUrlDesc": "Füge deine eindeutige URL aus dem Dashboard ein",
+    "obsConfigSizeTitle": "Breite/Höhe:",
+    "obsConfigSizeDesc": "300x100 (egal, es ist nur Audio)",
+    "obsConfigControl": "✓ Audio über OBS steuern (muss aktiviert sein)",
+    "obsConfigShutdown": "Deaktiviere \"Quelle herunterfahren, wenn nicht sichtbar\" für persistentes Audio",
+    "obsStep2Title": "Schritt 2: Audio-Monitoring aktivieren",
+    "obsStep2_1": "Finde den Audio-Mixer in OBS (unteres Panel)",
+    "obsStep2_2": "Klicke auf das Zahnrad (⚙️) neben \"ChatVibes TTS\" → \"Erweiterte Audio-Eigenschaften\"",
+    "obsStep2_3": "Stelle \"Audio-Monitoring\" ein auf:",
+    "obsMonitorOutputTitle": "Monitor und Ausgabe",
+    "obsMonitorOutputDesc": "- DU UND der Stream hören es",
+    "obsMonitorOnlyTitle": "Nur Monitor",
+    "obsMonitorOnlyDesc": "- Nur du hörst es (zum Testen)",
+    "obsImportantTitle": "Wichtig:",
+    "obsImportantDesc": "Stelle sicher, dass die Quelle in deinem Audio-Mixer nicht stummgeschaltet ist und die Lautstärke angemessen eingestellt ist."
+  },
+  "troubleshooting": {
+    "title": "Fehlerbehebung",
+    "q1": "Bot reagiert nicht auf Befehle?",
+    "a1": "Stelle sicher, dass der Bot ein Moderator in deinem Kanal ist. Du kannst dies tun, indem du /mod chatvibesbot in deinem Twitch-Chat eingibst. In vielen Fällen benötigt der Bot Moderatorrechte, um Nachrichten zu lesen und auf Befehle zu reagieren.",
+    "q2": "Bot spricht nicht?",
+    "a2": "Stelle sicher, dass der Bot in deinem Kanal aktiviert ist. Du kannst dies tun, indem du !tts on in deinem Twitch-Chat eingibst. Überprüfe auch den aktuellen Modus !tts mode und Berechtigungen !tts permission.",
+    "q3": "Bot spricht nicht in einer bestimmten Sprache oder liest Zahlen auf Chinesisch?",
+    "a3": "Stelle sicher, dass die Sprachunterstützung auf die richtige Sprache eingestellt ist. Du kannst dies tun, indem du !tts language <sprachname> für dich selbst oder !tts defaultlanguage <sprachname> für den Kanal in deinem Twitch-Chat eingibst. Du kannst die aktuelle Sprachunterstützung mit !tts defaultlanguage überprüfen.",
+    "q4": "TTS-Generierung dauert zu lange oder schlägt fehl?",
+    "a4": "ChatVibes verwendet jetzt Wavespeed AI mit aktiviertem Sync-Modus für niedrigste Latenz. Wenn du Verzögerungen hast, überprüfe deine Internetverbindung und versuche !tts stop zu verwenden, um festgefahrene Generierungen abzubrechen. Der Bot wiederholt fehlgeschlagene Anfragen automatisch.",
+    "q5": "Fehler „Stimme nicht gefunden\"?",
+    "a5": "Stelle sicher, dass du die richtige voice ID aus dem Stimmen-Abschnitt verwendest. Voice IDs sind groß-/kleinschreibungssensitiv und müssen genau übereinstimmen. Versuche !tts voices für einen Link zu verfügbaren Stimmen.",
+    "q6": "Fehler „Stimmenzugriff verweigert\"?",
+    "a6": "Einige Stimmen (insbesondere bestimmte Moss-Audioeffekte) erfordern möglicherweise spezielle Zugriffsberechtigungen auf Wavespeed AI. Wenn du diesen Fehler erhältst, versuche eine andere Stimme aus der Liste verfügbarer Stimmen zu verwenden. Die meisten Stimmen funktionieren mit Standardzugriff.",
+    "q7": "Fehler „Ungültige Stimme\"?",
+    "a7": "Die voice ID, die du verwendest, ist nicht verfügbar oder existiert nicht. Stelle sicher, dass du die richtige voice ID aus dem Stimmen-Abschnitt verwendest. Voice IDs sind groß-/kleinschreibungssensitiv und müssen genau übereinstimmen.",
+    "q8": "Emotion funktioniert nicht?",
+    "a8": "Beachte, dass die Emotion \"auto\" nicht mehr unterstützt wird. Verwende stattdessen neutral, happy, sad, angry, fearful, disgusted oder surprised.",
+    "q9": "Benötigst du Hilfe?",
+    "a9": "Kontaktiere den Entwickler über das Kontaktformular auf Henrys Portfolio-Website."
+  }
+}
