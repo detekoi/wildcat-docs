@@ -141,7 +141,7 @@ function getTranslation(key, defaultValue = null) {
 // Translate the entire page
 function translatePage() {
   // First translate non-span elements with data-i18n
-  document.querySelectorAll('h1[data-i18n], h2[data-i18n], h3[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), a[data-i18n]').forEach(element => {
+  document.querySelectorAll('h1[data-i18n], h2[data-i18n], h3[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), a[data-i18n], button[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key, element.textContent);
     // Check if translation contains HTML tags
@@ -193,7 +193,7 @@ function translatePage() {
   });
   
   // Handle data-i18n-key on span and other elements (not just table cells)
-  document.querySelectorAll('span[data-i18n-key], code[data-i18n-key], p[data-i18n-key], li[data-i18n-key]').forEach(element => {
+  document.querySelectorAll('span[data-i18n-key], code[data-i18n-key], p[data-i18n-key], li[data-i18n-key], button[data-i18n-key]').forEach(element => {
     const key = element.getAttribute('data-i18n-key');
     const translation = getTranslation(key, element.textContent);
     if (translation.includes('<') && translation.includes('>')) {

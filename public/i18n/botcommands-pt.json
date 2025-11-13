@@ -2,6 +2,13 @@
   "meta": {
     "title": "Comandos do Bot"
   },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Início",
+    "chatSageDocs": "Docs ChatSage",
+    "chatVibesDocs": "Docs ChatVibes",
+    "contact": "Contato"
+  },
   "page": {
     "title": "Comandos do Bot ChatSage",
     "expandTip": "Clique em qualquer linha de comando abaixo para expandir e ver detalhes de uso.",

@@ -2,6 +2,13 @@
   "meta": {
     "title": "ボットコマンド"
   },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "ホーム",
+    "chatSageDocs": "ChatSage ドキュメント",
+    "chatVibesDocs": "ChatVibes ドキュメント",
+    "contact": "お問い合わせ"
+  },
   "page": {
     "title": "ChatSage ボットコマンド",
     "expandTip": "下のコマンド行をクリックすると、詳細な使用方法が表示されます。",

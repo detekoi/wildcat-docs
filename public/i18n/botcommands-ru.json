@@ -2,6 +2,13 @@
   "meta": {
     "title": "Команды Бота"
   },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Главная",
+    "chatSageDocs": "Документация ChatSage",
+    "chatVibesDocs": "Документация ChatVibes",
+    "contact": "Контакты"
+  },
   "page": {
     "title": "Команды ChatSage Бота",
     "expandTip": "Нажмите на любую строку команды ниже, чтобы развернуть и увидеть детали использования.",
