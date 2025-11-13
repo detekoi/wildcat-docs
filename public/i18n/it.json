@@ -222,5 +222,81 @@
     "generalCommands": "Comandi Generali",
     "games": "Giochi",
     "config": "Configurazione"
+  },
+  "chatvibesdocs": {
+    "meta": {
+      "title": "Comandi del Bot TTS ChatVibes"
+    },
+    "page": {
+      "title": "Documentazione del Bot TTS ChatVibes",
+      "expandTip": "Fai clic su qualsiasi riga di comando qui sotto per espandere e vedere i dettagli di utilizzo.",
+      "lastUpdated": "Ultimo aggiornamento"
+    },
+    "table": {
+      "headers": {
+        "command": "Comando",
+        "description": "Descrizione"
+      },
+      "categories": {
+        "general": "Generale",
+        "engineControl": "Controllo Motore e Modalità (Solo Moderatore)",
+        "channelPoints": "Punti Canale → TTS (Solo Dashboard Web)",
+        "queueManagement": "Gestione Coda (Solo Moderatore)",
+        "userPreferences": "Preferenze Utente ed Eventi"
+      }
+    },
+    "ui": {
+      "permission": "Permesso",
+      "notes": "Note",
+      "description": "Descrizione",
+      "alias": "Alias",
+      "usage": "Utilizzo",
+      "howItWorks": "Come Funziona",
+      "mod": "Moderatore"
+    },
+    "intro": {
+      "tipPrefix": "Tutti i comandi TTS hanno il prefisso !tts.",
+      "tipExample": "Ad esempio: !tts status",
+      "expandTip": "Fai clic su qualsiasi riga di comando qui sotto per espandere e vedere i dettagli di utilizzo.",
+      "dashboardInfo": "Gli streamer e gli spettatori possono anche configurare le impostazioni utilizzando la Dashboard Web di ChatVibes.",
+      "preferencesInfo": "Gli spettatori possono impostare le proprie preferenze TTS utilizzando l'interfaccia web inviando !myvoice nella chat."
+    },
+    "commandsSummary": {
+      "status": "Ottiene lo stato corrente dell'applicazione TTS per il canale.",
+      "voices": "Fornisce un collegamento alla sezione della documentazione per le voci TTS disponibili.",
+      "prefs": "Ti invia un collegamento temporaneo alla tua pagina di impostazioni TTS personale.",
+      "on": "Abilita il motore TTS. I messaggi e gli eventi possono essere pronunciati in base alla modalità corrente.",
+      "off": "Disabilita completamente il motore TTS. Nessun messaggio o evento verrà pronunciato.",
+      "mode": "Cambia la modalità TTS.",
+      "permission": "Imposta un filtro su chi può attivare il TTS quando il bot è in modalità 'all'.",
+      "bits": "Configura la funzione Bits-per-TTS, consentendo ai canali di richiedere un importo minimo di Cheer per attivare il TTS.",
+      "pause": "Mette in pausa l'elaborazione della coda degli eventi TTS.",
+      "resume": "Riprende l'elaborazione della coda degli eventi TTS se era in pausa.",
+      "clear": "Cancella tutti i messaggi e gli eventi in sospeso dalla coda TTS.",
+      "stop": "Interrompe l'audio TTS attualmente in riproduzione o in generazione.",
+      "voice": "Consente a un utente di impostare la propria voce preferita per i messaggi che invia.",
+      "emotion": "Consente a un utente di impostare la propria emozione preferita per i propri messaggi.",
+      "language": "Imposta la tua lingua preferita per il TTS.",
+      "pitch": "Imposta il tuo tono TTS personale.",
+      "speed": "Imposta la tua velocità TTS personale.",
+      "ignore": "Aggiungiti alla lista degli ignorati TTS per il canale."
+    },
+    "troubleshooting": {
+      "botNotResponding": "Il bot non risponde ai comandi? Assicurati che il bot sia moderatore nel tuo canale. Puoi farlo digitando /mod chatvibesbot nella tua chat di Twitch. In molti casi, il bot potrebbe aver bisogno di permessi di moderatore per leggere i messaggi e rispondere ai comandi.",
+      "botNotSpeaking": "Il bot non parla? Assicurati che il bot sia abilitato nel tuo canale. Puoi farlo digitando !tts on nella tua chat di Twitch. Verifica anche la modalità corrente !tts mode e i permessi !tts permission.",
+      "languageIssue": "Il bot non parla in una lingua specifica, o legge numeri in cinese? Assicurati che la lingua sia impostata correttamente. Puoi farlo digitando !tts language <nome_lingua> per te stesso o !tts defaultlanguage <nome_lingua> per il canale nella tua chat di Twitch.",
+      "generationTooSlow": "La generazione TTS impiega troppo tempo o fallisce? ChatVibes ora utilizza Wavespeed AI con modalità sincrona abilitata per la latenza più bassa. Se riscontri ritardi, controlla la tua connessione Internet e prova a utilizzare !tts stop per annullare qualsiasi generazione bloccata.",
+      "voiceNotFound": "Errore voce non trovata? Assicurati di utilizzare l'ID voce corretto dalla sezione Voci. Gli ID voce fanno distinzione tra maiuscole e minuscole e devono corrispondere esattamente.",
+      "voiceAccessDenied": "Errore \"accesso alla voce negato\"? Alcune voci (in particolare certi effetti audio Moss) potrebbero richiedere permessi di accesso speciali su Wavespeed AI. Se ricevi questo errore, prova a utilizzare una voce diversa dall'elenco delle voci disponibili.",
+      "invalidVoice": "Errore \"voce non valida\"? L'ID voce che stai utilizzando non è disponibile o non esiste. Assicurati di utilizzare l'ID voce corretto dalla sezione Voci.",
+      "emotionNotWorking": "L'emozione non funziona? Nota che l'emozione \"auto\" non è più supportata. Usa neutral, happy, sad, angry, fearful, disgusted o surprised invece.",
+      "needHelp": "Hai bisogno di aiuto? Contatta lo sviluppatore tramite il modulo di contatto sul sito web del portfolio di Henry."
+    },
+    "obsBrowserSetup": {
+      "title": "Configurazione Sorgente Browser OBS",
+      "step1": "Passaggio 1: Aggiungere Sorgente Browser in OBS",
+      "step2": "Passaggio 2: Abilitare il Monitoraggio Audio",
+      "important": "Importante"
+    }
   }
 }

@@ -223,4 +223,81 @@
       "games": "ゲーム",
       "config": "設定"
     }
+  },
+  "chatvibesdocs": {
+    "meta": {
+      "title": "ChatVibes TTS ボットコマンド"
+    },
+    "page": {
+      "title": "ChatVibes TTS ボットドキュメント",
+      "expandTip": "以下の任意のコマンド行をクリックして、使用方法の詳細を展開してください。",
+      "lastUpdated": "最終更新"
+    },
+    "table": {
+      "headers": {
+        "command": "コマンド",
+        "description": "説明"
+      },
+      "categories": {
+        "general": "一般",
+        "engineControl": "エンジンとモード制御（モデレーターのみ）",
+        "channelPoints": "チャンネルポイント → TTS（Webダッシュボードのみ）",
+        "queueManagement": "キュー管理（モデレーターのみ）",
+        "userPreferences": "ユーザー設定とイベント"
+      }
+    },
+    "ui": {
+      "permission": "権限",
+      "notes": "注記",
+      "description": "説明",
+      "alias": "エイリアス",
+      "usage": "使用方法",
+      "howItWorks": "動作方法",
+      "mod": "モデレーター"
+    },
+    "intro": {
+      "tipPrefix": "すべてのTTSコマンドには!ttsのプレフィックスが付きます。",
+      "tipExample": "例：!tts status",
+      "expandTip": "以下の任意のコマンド行をクリックして、使用方法の詳細を展開してください。",
+      "dashboardInfo": "配信者と視聴者は、ChatVibes Webダッシュボードを使用して設定を構成することもできます。",
+      "preferencesInfo": "視聴者は、チャットで!myvoiceを送信することで、WebUIを使用して独自のTTS設定を行うことができます。"
+    },
+    "commandsSummary": {
+      "status": "チャンネルのTTSアプリケーションの現在のステータスを取得します。",
+      "voices": "利用可能なTTS音声のドキュメントセクションへのリンクを提供します。",
+      "prefs": "個人のTTS設定ページへの短期間有効なリンクを送信します。",
+      "on": "TTSエンジンを有効にします。現在のモードに基づいてメッセージとイベントが読み上げられる場合があります。",
+      "off": "TTSエンジンを完全に無効にします。メッセージやイベントは読み上げられません。",
+      "mode": "TTSモードを切り替えます。",
+      "permission": "ボットが'all'モードのときにTTSをトリガーできるユーザーのフィルターを設定します。",
+      "bits": "Bits-for-TTS機能を設定し、チャンネルがTTSをトリガーするための最小Cheer量を要求できるようにします。",
+      "pause": "TTSイベントキューの処理を一時停止します。",
+      "resume": "一時停止されていた場合、TTSイベントキューの処理を再開します。",
+      "clear": "TTSキューから保留中のすべてのメッセージとイベントをクリアします。",
+      "stop": "現在再生中または生成中のTTSオーディオを停止します。",
+      "voice": "ユーザーが送信するメッセージの優先音声を設定できるようにします。",
+      "emotion": "ユーザーが自分のメッセージの優先感情を設定できるようにします。",
+      "language": "TTSの優先言語を設定します。",
+      "pitch": "個人のTTSピッチを設定します。",
+      "speed": "個人のTTS速度を設定します。",
+      "ignore": "チャンネルのTTS無視リストに自分自身を追加します。"
+    },
+    "troubleshooting": {
+      "botNotResponding": "ボットがコマンドに応答しませんか？ボットがチャンネルのモデレーターであることを確認してください。Twitchチャットで/mod chatvibesbotと入力することで実行できます。多くの場合、ボットはメッセージを読み取り、コマンドに応答するためにモデレーター権限が必要です。",
+      "botNotSpeaking": "ボットが話しませんか？ボットがチャンネルで有効になっていることを確認してください。Twitchチャットで!tts onと入力することで実行できます。また、現在のモード!tts modeと権限!tts permissionを確認してください。",
+      "languageIssue": "ボットが特定の言語で話さない、または数字を中国語で読み上げますか？言語が正しく設定されていることを確認してください。Twitchチャットで自分用に!tts language <言語名>、チャンネル用に!tts defaultlanguage <言語名>と入力することで実行できます。",
+      "generationTooSlow": "TTS生成に時間がかかりすぎる、または失敗しますか？ChatVibesは現在、最低レイテンシのために同期モードを有効にしたWavespeed AIを使用しています。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。",
+      "voiceNotFound": "音声が見つかりませんエラー？音声セクションから正しい音声IDを使用していることを確認してください。音声IDは大文字と小文字を区別し、正確に一致する必要があります。",
+      "voiceAccessDenied": "「音声アクセスが拒否されました」エラー？一部の音声（特に特定のMossオーディオエフェクト）は、Wavespeed AIで特別なアクセス許可が必要な場合があります。このエラーが表示された場合は、利用可能な音声リストから別の音声を使用してみてください。",
+      "invalidVoice": "「無効な音声」エラー？使用している音声IDが利用できないか、存在しません。音声セクションから正しい音声IDを使用していることを確認してください。",
+      "emotionNotWorking": "感情が機能しませんか？「auto」感情はサポートされなくなりました。代わりにneutral、happy、sad、angry、fearful、disgusted、またはsurprisedを使用してください。",
+      "needHelp": "助けが必要ですか？Henryのポートフォリオウェブサイトのお問い合わせフォームから開発者に連絡してください。"
+    },
+    "obsBrowserSetup": {
+      "title": "OBSブラウザソース設定",
+      "step1": "ステップ1：OBSでブラウザソースを追加",
+      "step2": "ステップ2：オーディオモニタリングを有効化",
+      "important": "重要"
+    }
   }
+}
