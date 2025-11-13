@@ -28,11 +28,11 @@
   },
   "commands": {
     "title": "コマンド",
-    "prefixTip": "すべてのTTSコマンドには !tts が接頭辞として付きます。",
-    "exampleTip": "例: !tts status",
+    "prefixTip": "すべてのTTSコマンドは <span class=\"inline-code\">!tts</span> で始まります。",
+    "exampleTip": "例: <span class=\"inline-code\">!tts status</span>",
     "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
-    "webDashboardTip": "配信者および視聴者は、ChatVibes Webダッシュボードを使用して設定を行うこともできます。",
-    "myvoiceTip": "視聴者は、チャットで !myvoice を送信することで、Web UIを使用して自分のTTS設定を行えます。",
+    "webDashboardTip": "配信者と視聴者は、<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a>を使用して設定を構成することもできます。",
+    "myvoiceTip": "視聴者は、チャットで <span class=\"inline-code\">!myvoice</span> を送信することで、Web UIを使用して独自のTTS設定を設定できます。",
     "ttsCommandsTitle": "読み上げコマンド",
     "common": {
       "notes": "注意事項:",
@@ -400,15 +400,15 @@
       "description": "(モデレーターのみ) Bits-for-Musicを設定します。有効にすると、ユーザーは音楽を生成するためにプロンプトと一緒にチアする必要があります。",
       "permission": "モデレーター",
       "statusNote": "(現在のステータスを表示)",
-      "optionOn": "on: Bits-for-Musicモードを有効にします。",
-      "optionOff": "off: Bits-for-Musicモードを無効にします。",
-      "optionMin": "min <金額>: 必要な最小Bits数を設定します(例: min 100)。"
+      "optionOn": "<span class=\"inline-code\">on</span>: Bits-for-Musicモードを有効にします。",
+      "optionOff": "<span class=\"inline-code\">off</span>: Bits-for-Musicモードを無効にします。",
+      "optionMin": "<span class=\"inline-code\">min &lt;amount&gt;</span>: 必要な最小Bits数を設定します（例：<span class=\"inline-code\">min 100</span>）。"
     },
     "musicHelp": {
       "name": "!music help",
       "description": "すべての音楽サブコマンドとその使用方法のリストを提供します。",
       "permission": "全員",
-      "notes": "すべての!musicサブコマンドとその使用方法をリストします。このドキュメントと同様です。"
+      "notes": "このドキュメントと同様に、すべての<span class=\"inline-code\">!music</span>サブコマンドとその使用方法を一覧表示します。"
     },
     "musicStatus": {
       "name": "!music status",
@@ -423,8 +423,8 @@
     "musicIgnore": {
       "name": "!music ignore <ユーザー名>\n!music ignore add <ユーザー名>",
       "permission": "全員(自分を追加)、モデレーター(他人を追加)",
-      "descriptionUser": "すべてのユーザー: 音楽除外リストに自分自身を追加します。あなたの!music <プロンプト>リクエストは無視されます。",
-      "descriptionMod": "モデレーターまたは配信者: 指定したTwitchユーザーを音楽除外リストに追加します。",
+      "descriptionUser": "<strong>任意のユーザー:</strong> 音楽無視リストに<em>自分自身</em>を追加します。あなたの<span class=\"inline-code\">!music &lt;prompt&gt;</span>リクエストは無視されます。",
+      "descriptionMod": "<strong>モデレーターまたはブロードキャスター:</strong> 音楽無視リストに<em>指定された任意のTwitchユーザー</em>を追加します。",
       "usageSelf": "!music ignore あなたのユーザー名 (自分自身を無視したい場合)",
       "usageMod": "!music ignore add 他のユーザー (mod/配信者の場合)",
       "usageSelfNote": "(自分を無視したい場合)",
@@ -459,8 +459,8 @@
   },
   "music": {
     "title": "音楽生成コマンド",
-    "prefixTip": "すべての音楽生成コマンドには !music が接頭辞として付きます",
-    "exampleTip": "例: !music 90s soulful house",
+    "prefixTip": "すべての音楽生成コマンドは <span class=\"inline-code\">!music</span> で始まります",
+    "exampleTip": "例: <span class=\"inline-code\">!music 90s soulful house</span>",
     "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
     "commandsTitle": "音楽生成コマンド",
     "tableCommand": "コマンド",
@@ -473,25 +473,27 @@
   "voices": {
     "title": "音声",
     "popularTitle": "人気の音声ID",
-    "completeListTitle": "完全な音声リスト(Wavespeed AI minimax/speech-02-turbo スキーマより)",
-    "introText": "以下の音声はWavespeed AI経由でminimax/speech-02-turboモデルから利用可能です。ボットは45言語にわたる472音声の包括的なハードコードリストを自動言語分類で使用しています。voice_idは!tts voice <voice_id>のようなコマンドで使用されます。",
-    "popularText": "Wavespeed AI経由のminimax/speech-02-turboモデルから特集された音声。このリストの任意の音声について、!tts voice <voice_id>コマンドを使用して利用できます。",
+    "completeListTitle": "完全な音声リスト（<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turboスキーマ</a>から）",
+    "introText": "以下の音声は、<strong>Wavespeed AI</strong>経由の<span class=\"inline-code\">minimax/speech-02-turbo</span>モデルから利用できます。ボットは、45言語にわたる自動言語分類を備えた472音声の包括的なハードコードされたリストを使用します。<span class=\"inline-code\">voice_id</span>は、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>などのコマンドで使用されます。",
+    "popularText": "<strong>Wavespeed AI</strong>経由の<span class=\"inline-code\">minimax/speech-02-turbo</span>モデルからの注目の音声。このリストの任意の音声について、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>コマンドを使用してそれを使用できます。",
     "completeListText": "これは言語別に整理された利用可能な472音声すべての完全なリストです。音声は簡単に識別できるように言語プレフィックスで自動的に分類されています。",
-    "expandText": "クリックして完全な音声リストを展開(45言語で472音声)"
+    "expandText": "クリックして完全な音声リストを展開(45言語で472音声)",
+    "completeListNote": "注: 完全なリストには、言語プレフィックスで自動的に分類された45言語にわたる472音声がすべて含まれています。チャットの<span class=\"inline-code\">!tts voices</span>コマンドはここにリンクします。最新のリストについては、<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AIスキーマAPI</a>を参照するか、設定を設定する際にボットの音声検証を使用してください。",
+    "mossNote": "⚠️ 注: 一部のMossオーディオ音声には特別なアクセス権限が必要な場合があります。「このvoice_idにアクセスできません」というエラーが表示された場合は、このリストから別の音声を試してください。"
   },
   "languageBoost": {
     "title": "言語ブースト",
     "optionsTitle": "利用可能な言語ブーストオプション",
-    "introText": "language_boost機能は、TTSモデルが特定の言語や方言の単語をよりよく理解し発音するのを助けます。これは多言語チャットや、特定の言語のニュアンスが明確なTTSにとって重要な場合に特に便利です。",
-    "commandText": "!tts language <言語名>を使用して個人の言語ブースト設定を行うか、モデレーターは!tts defaultlanguage <言語名>でチャンネルのデフォルトを設定できます。",
+    "introText": "<span class=\"inline-code\">language_boost</span>機能は、TTSモデルが特定の言語や方言の単語をよりよく理解し、発音するのに役立ちます。これは、多言語チャットや、特定の言語のニュアンスが明確なTTSにとって重要である場合に特に有用です。",
+    "commandText": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span>を使用して個人の言語ブースト設定を設定するか、モデレーターが<span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>でチャンネルのデフォルトを設定できます。",
     "optionsIntro": "次の値が受け入れられます:",
-    "usageText": "autoを使用すると、モデルの自動言語検出に依存します。Englishは主に英語を話すチャットにとってよいデフォルトです。特定の言語を選択すると、その言語の発音が大幅に改善される可能性があります。"
+    "usageText": "<span class=\"inline-code\">auto</span>を使用すると、モデルの自動言語検出に依存します。<span class=\"inline-code\">English</span>は、主に英語のチャットには適切なデフォルトです。特定の言語を選択すると、その言語の発音が大幅に改善される場合があります。"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
     "settingsTitle": "利用可能なダッシュボード設定",
     "obsSetupTitle": "OBSブラウザソースのセットアップ",
-    "introText": "ChatVibes Webダッシュボードは、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
+    "introText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a>は、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
     "settingEngineTitle": "エンジン制御:",
     "settingEngineDesc": "TTSの有効/無効、イベントのアナウンス、TTSモードと権限の設定",
     "settingViewerTitle": "視聴者の設定:",

@@ -138,9 +138,27 @@ function getTranslation(key, defaultValue = null) {
 // Translate the entire page
 function translatePage() {
   // First translate non-span elements with data-i18n
-  document.querySelectorAll('h1[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), a[data-i18n]').forEach(element => {
+  document.querySelectorAll('h1[data-i18n], h2[data-i18n], h3[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), a[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    element.textContent = getTranslation(key, element.textContent);
+    const translation = getTranslation(key, element.textContent);
+    // Check if translation contains HTML tags
+    if (translation.includes('<') && translation.includes('>')) {
+      element.innerHTML = translation;
+    } else {
+      element.textContent = translation;
+    }
+  });
+  
+  // Handle div elements with data-i18n that may contain HTML (like tip-text divs)
+  document.querySelectorAll('div[data-i18n], p[data-i18n], em[data-i18n], li[data-i18n], strong[data-i18n]').forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const translation = getTranslation(key, element.innerHTML);
+    // Check if translation contains HTML tags
+    if (translation.includes('<') && translation.includes('>')) {
+      element.innerHTML = translation;
+    } else {
+      element.textContent = translation;
+    }
   });
   
   // Handle complete description translations
@@ -151,14 +169,35 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key, element.textContent);
     
-    // For all normal span elements, translate text content
-    element.textContent = translation;
+    // Check if translation contains HTML tags
+    if (translation.includes('<') && translation.includes('>')) {
+      element.innerHTML = translation;
+    } else {
+      // For all normal span elements, translate text content
+      element.textContent = translation;
+    }
   });
   
   // Handle nested translations (words inside descriptions)
   document.querySelectorAll('[data-i18n] [data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    element.textContent = getTranslation(key, element.textContent);
+    const translation = getTranslation(key, element.textContent);
+    if (translation.includes('<') && translation.includes('>')) {
+      element.innerHTML = translation;
+    } else {
+      element.textContent = translation;
+    }
+  });
+  
+  // Handle data-i18n-key on span and other elements (not just table cells)
+  document.querySelectorAll('span[data-i18n-key], code[data-i18n-key], p[data-i18n-key], li[data-i18n-key]').forEach(element => {
+    const key = element.getAttribute('data-i18n-key');
+    const translation = getTranslation(key, element.textContent);
+    if (translation.includes('<') && translation.includes('>')) {
+      element.innerHTML = translation;
+    } else {
+      element.textContent = translation;
+    }
   });
   
   // Handle command examples that need parameter translation

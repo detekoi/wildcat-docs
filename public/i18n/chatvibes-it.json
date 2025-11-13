@@ -28,11 +28,11 @@
   },
   "commands": {
     "title": "Comandi",
-    "prefixTip": "Tutti i comandi TTS sono preceduti da !tts.",
-    "exampleTip": "Ad esempio: !tts status",
+    "prefixTip": "Tutti i comandi TTS sono prefissati con <span class=\"inline-code\">!tts</span>.",
+    "exampleTip": "Ad esempio: <span class=\"inline-code\">!tts status</span>",
     "expandTip": "Clicca su qualsiasi riga di comando qui sotto per espandere e visualizzare i dettagli di utilizzo.",
-    "webDashboardTip": "I broadcaster e gli spettatori possono anche configurare le impostazioni tramite il Web Dashboard di ChatVibes.",
-    "myvoiceTip": "Gli spettatori possono impostare le proprie preferenze TTS utilizzando l'interfaccia web inviando !myvoice in chat.",
+    "webDashboardTip": "I broadcaster e gli spettatori possono anche configurare le impostazioni utilizzando la <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a>.",
+    "myvoiceTip": "Gli spettatori possono impostare le proprie preferenze TTS utilizzando l'interfaccia web inviando <span class=\"inline-code\">!myvoice</span> nella chat.",
     "ttsCommandsTitle": "Comandi Text-To-Speech",
     "common": {
       "notes": "Note:",
@@ -400,15 +400,15 @@
       "description": "(Solo Mod) Configura Bits-per-Musica. Quando abilitato, gli utenti devono fare cheer con il loro prompt per generare musica.",
       "permission": "Moderatore",
       "statusNote": "(visualizza lo stato attuale)",
-      "optionOn": "on: Attiva la modalità Bits-per-Musica.",
-      "optionOff": "off: Disattiva la modalità Bits-per-Musica.",
-      "optionMin": "min <amount>: Imposta il numero minimo di Bits richiesti (ad esempio, min 100)."
+      "optionOn": "<span class=\"inline-code\">on</span>: Abilita la modalità Bits per Musica.",
+      "optionOff": "<span class=\"inline-code\">off</span>: Disabilita la modalità Bits per Musica.",
+      "optionMin": "<span class=\"inline-code\">min &lt;amount&gt;</span>: Imposta il numero minimo di Bits richiesti (es., <span class=\"inline-code\">min 100</span>)."
     },
     "musicHelp": {
       "name": "!music help",
       "description": "Fornisce un elenco di tutti i sottocomandi di musica e il loro utilizzo.",
       "permission": "Tutti",
-      "notes": "Elenca tutti i sottocomandi !music e il loro utilizzo, simile a questa documentazione."
+      "notes": "Elenca tutti i sottocomandi <span class=\"inline-code\">!music</span> e il loro utilizzo, simile a questa documentazione."
     },
     "musicStatus": {
       "name": "!music status",
@@ -423,8 +423,8 @@
     "musicIgnore": {
       "name": "!music ignore <username>\n!music ignore add <username>",
       "permission": "Tutti (per aggiungersi), Moderatore (per aggiungere altri)",
-      "descriptionUser": "Per qualsiasi utente: Aggiungiti all'elenco di ignorati della musica. Le tue richieste !music <prompt> verranno ignorate.",
-      "descriptionMod": "Per Moderatori o Broadcaster: Aggiungi qualsiasi utente Twitch specificato all'elenco di ignorati della musica.",
+      "descriptionUser": "<strong>Per qualsiasi utente:</strong> Aggiungi <em>te stesso</em> alla lista di ignorare musica. Le tue richieste <span class=\"inline-code\">!music &lt;prompt&gt;</span> saranno ignorate.",
+      "descriptionMod": "<strong>Per Moderatori o Broadcaster:</strong> Aggiungi <em>qualsiasi utente Twitch specificato</em> alla lista di ignorare musica.",
       "usageSelf": "!music ignore tuonome (se vuoi ignorare te stesso)",
       "usageMod": "!music ignore add AltroUtente (se sei mod/broadcaster)",
       "usageSelfNote": "(se vuoi ignorare te stesso)",
@@ -459,8 +459,8 @@
   },
   "music": {
     "title": "Comandi Generazione Musicale",
-    "prefixTip": "Tutti i comandi di generazione musicale sono preceduti da !music",
-    "exampleTip": "Ad esempio: !music 90s soulful house",
+    "prefixTip": "Tutti i comandi di generazione musicale sono prefissati con <span class=\"inline-code\">!music</span>",
+    "exampleTip": "Ad esempio: <span class=\"inline-code\">!music 90s soulful house</span>",
     "expandTip": "Clicca su qualsiasi riga di comando qui sotto per espandere e visualizzare i dettagli di utilizzo.",
     "commandsTitle": "Comandi Generazione Musicale",
     "tableCommand": "Comando",
@@ -472,24 +472,26 @@
   },
   "voices": {
     "title": "Voci",
-    "introText": "Le seguenti voci sono disponibili dal modello minimax/speech-02-turbo tramite Wavespeed AI. Il bot utilizza un elenco completo codificato di 472 voci con categorizzazione automatica della lingua su 45 lingue. Il voice_id viene utilizzato in comandi come !tts voice <voice_id>.",
+    "introText": "Le seguenti voci sono disponibili dal modello <span class=\"inline-code\">minimax/speech-02-turbo</span> tramite <strong>Wavespeed AI</strong>. Il bot utilizza un elenco completo hardcoded di 472 voci con categorizzazione automatica della lingua su 45 lingue. Il <span class=\"inline-code\">voice_id</span> viene utilizzato in comandi come <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
     "popularTitle": "ID Voce Popolare",
-    "popularText": "Voci in evidenza dal modello minimax/speech-02-turbo tramite Wavespeed AI. Per qualsiasi voce in questo elenco, puoi usare il comando !tts voice <voice_id> per usarla.",
-    "completeListTitle": "Elenco Completo Voci (dallo Schema Wavespeed AI minimax/speech-02-turbo)",
+    "popularText": "Voci in evidenza dal modello <span class=\"inline-code\">minimax/speech-02-turbo</span> tramite <strong>Wavespeed AI</strong>. Per qualsiasi voce in questo elenco, puoi usare il comando <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> per usarla.",
+    "completeListTitle": "Elenco completo delle voci (dallo <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Schema Wavespeed AI minimax/speech-02-turbo</a>)",
     "completeListText": "Questo è l'elenco completo di tutte le 472 voci disponibili organizzate per lingua. Le voci vengono automaticamente categorizzate per prefisso della lingua per una facile identificazione.",
-    "expandText": "Clicca per espandere l'elenco completo delle voci (472 voci in 45 lingue)"
+    "expandText": "Clicca per espandere l'elenco completo delle voci (472 voci in 45 lingue)",
+    "completeListNote": "Nota: L'elenco completo include tutte le 472 voci su 45 lingue, automaticamente categorizzate per prefisso di lingua. Il comando <span class=\"inline-code\">!tts voices</span> nella chat collega qui. Per l'elenco più aggiornato, consultare l'<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">API dello schema Wavespeed AI</a> o utilizzare la convalida della voce del bot durante l'impostazione delle preferenze.",
+    "mossNote": "⚠️ Nota: Alcune voci audio Moss potrebbero richiedere autorizzazioni di accesso speciali. Se ricevi un errore \"non hai accesso a questo voice_id\", prova una voce diversa da questo elenco."
   },
   "languageBoost": {
     "title": "Potenziamento Lingua",
-    "introText": "La funzionalità language_boost aiuta il modello TTS a comprendere e pronunciare meglio le parole di lingue o dialetti specifici. Questo è particolarmente utile nelle chat multilingue o quando le sfumature di una lingua specifica sono importanti per un TTS chiaro.",
-    "commandText": "Puoi impostare una preferenza personale di potenziamento lingua usando !tts language <nome_lingua> o i moderatori possono impostare un valore predefinito del canale con !tts defaultlanguage <nome_lingua>.",
+    "introText": "La funzionalità <span class=\"inline-code\">language_boost</span> aiuta il modello TTS a comprendere e pronunciare meglio le parole di lingue o dialetti specifici. Questo è particolarmente utile nelle chat multilingue o quando le sfumature di una lingua specifica sono importanti per un TTS chiaro.",
+    "commandText": "Puoi impostare una preferenza di boost della lingua personale usando <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> o i moderatori possono impostare un valore predefinito del canale con <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
     "optionsTitle": "Opzioni Potenziamento Lingua Disponibili",
     "optionsIntro": "I seguenti valori sono accettati:",
-    "usageText": "Usando auto ci si affiderà al rilevamento automatico della lingua del modello. English è spesso un buon valore predefinito per le chat principalmente in inglese. Scegliere una lingua specifica può migliorare significativamente la pronuncia per quella lingua."
+    "usageText": "Usare <span class=\"inline-code\">auto</span> si baserà sul rilevamento automatico della lingua del modello. <span class=\"inline-code\">English</span> è spesso un buon valore predefinito per chat principalmente in inglese. Scegliere una lingua specifica può migliorare significativamente la pronuncia per quella lingua."
   },
   "webDashboard": {
     "title": "Web Dashboard",
-    "introText": "Il Web Dashboard di ChatVibes fornisce agli streamer un'interfaccia completa per configurare tutte le impostazioni TTS e musicali. Accedi effettuando il login con il tuo account Twitch.",
+    "introText": "La <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a> fornisce agli streamer un'interfaccia completa per configurare tutte le impostazioni TTS e musica. Accedi effettuando l'accesso con il tuo account Twitch.",
     "settingsTitle": "Impostazioni Dashboard Disponibili",
     "settingEngineTitle": "Controllo Motore:",
     "settingEngineDesc": "Abilita/disabilita TTS, annuncia eventi, imposta modalità TTS e permessi",
