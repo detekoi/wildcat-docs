@@ -432,12 +432,12 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code>!tts language English</code>
-                            <code>!tts lang Japanese</code>
-                            <code>!tts language reset</code>
-                            <code>!tts language</code> <span>(displays current personal preference)</span>
-                            <p><strong>Notes:</strong> Affects how speech is interpreted and generated. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> to use the channel's default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for available options.</p>
-                            <p><strong>Permission:</strong> Everyone (for their own preference)</p>
+                            <code data-i18n-cmd="commands.ttsLanguage.usage.example">!tts language English</code>
+                            <code data-i18n-cmd="commands.ttsLanguage.usage.langAlias">!tts lang Japanese</code>
+                            <code data-i18n-cmd="commands.ttsLanguage.usage.reset">!tts language reset</code>
+                            <code data-i18n-cmd="commands.ttsLanguage.usage.status">!tts language</code> <span data-i18n="commands.ttsLanguage.statusDesc">(displays current personal preference)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsLanguage.notes">Affects how speech is interpreted and generated. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> to use the channel's default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for available options.</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own preference)</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -448,12 +448,12 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code>!tts pitch 2</code>
-                            <code>!tts pitch -3</code>
-                            <code>!tts pitch reset</code>
-                            <code>!tts pitch</code> <span>(displays current personal preference)</span>
-                            <p><strong>Notes:</strong> Value must be an integer between -12 and 12 (0 is normal). Use <span class="inline-code">reset</span> for the channel default.</p>
-                            <p><strong>Permission:</strong> Everyone (for their own preference)</p>
+                            <code data-i18n-cmd="commands.ttsPitch.usage.positive">!tts pitch 2</code>
+                            <code data-i18n-cmd="commands.ttsPitch.usage.negative">!tts pitch -3</code>
+                            <code data-i18n-cmd="commands.ttsPitch.usage.reset">!tts pitch reset</code>
+                            <code data-i18n-cmd="commands.ttsPitch.usage.status">!tts pitch</code> <span data-i18n="commands.ttsPitch.statusDesc">(displays current personal preference)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsPitch.notes">Value must be an integer between -12 and 12 (0 is normal). Use <span class="inline-code">reset</span> for the channel default.</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own preference)</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -464,12 +464,12 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code>!tts speed 1.2</code>
-                            <code>!tts speed 0.8</code>
-                            <code>!tts speed reset</code>
-                            <code>!tts speed</code> <span>(displays current personal preference)</span>
-                            <p><strong>Notes:</strong> Value must be a number between 0.5 and 2.0 (1.0 is normal). Use <span class="inline-code">reset</span> for the channel default.</p>
-                            <p><strong>Permission:</strong> Everyone (for their own preference)</p>
+                            <code data-i18n-cmd="commands.ttsSpeed.usage.faster">!tts speed 1.2</code>
+                            <code data-i18n-cmd="commands.ttsSpeed.usage.slower">!tts speed 0.8</code>
+                            <code data-i18n-cmd="commands.ttsSpeed.usage.reset">!tts speed reset</code>
+                            <code data-i18n-cmd="commands.ttsSpeed.usage.status">!tts speed</code> <span data-i18n="commands.ttsSpeed.statusDesc">(displays current personal preference)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsSpeed.notes">Value must be a number between 0.5 and 2.0 (1.0 is normal). Use <span class="inline-code">reset</span> for the channel default.</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own preference)</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -484,12 +484,12 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <strong>Usage:</strong>
+                            <strong data-i18n="commands.common.usage">Usage:</strong>
                             <ul>
-                                <li><code>!tts ignore yourusername</code> (if you want to ignore yourself)</li>
-                                <li><code class="mod-command">!tts ignore add SomeOtherUser</code> (if you are a mod/broadcaster)</li>
+                                <li data-i18n-key="commands.ttsIgnore.usageSelf"><code data-i18n-cmd="commands.ttsIgnore.usage.self">!tts ignore yourusername</code> (if you want to ignore yourself)</li>
+                                <li data-i18n-key="commands.ttsIgnore.usageMod"><code class="mod-command" data-i18n-cmd="commands.ttsIgnore.usage.mod">!tts ignore add SomeOtherUser</code> (if you are a mod/broadcaster)</li>
                             </ul>
-                            <p><strong>Permission:</strong> Everyone (to add themselves), Moderator (to add others)</p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.ttsIgnore.permission">Everyone (to add themselves), Moderator (to add others)</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -500,8 +500,8 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts ignore del SomeUser</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsIgnoreDel.usage.basic">!tts ignore del SomeUser</code>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -512,8 +512,8 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts ignored</code>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsIgnored.usage.basic">!tts ignored</code>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -524,10 +524,10 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts events on</code>
-                            <code class="mod-command">!tts events off</code>
-                            <code class="mod-command">!tts events</code> <span>(displays current event announcement status)</span>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsEvents.usage.on">!tts events on</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsEvents.usage.off">!tts events off</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsEvents.usage.status">!tts events</code> <span data-i18n="commands.ttsEvents.statusDesc">(displays current event announcement status)</span>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -543,11 +543,11 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts defaultvoice Friendly_Person</code>
-                            <code class="mod-command">!tts defaultvoice reset</code>
-                            <code class="mod-command">!tts defaultvoice</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Use <span class="inline-code">reset</span> to revert to the system default. Use <span class="inline-code">!tts voices</span> for a link to voice IDs.</p>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultvoice.usage.example">!tts defaultvoice Friendly_Person</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultvoice.usage.reset">!tts defaultvoice reset</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultvoice.usage.status">!tts defaultvoice</code> <span data-i18n="commands.ttsDefaultvoice.statusDesc">(displays current channel default)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsDefaultvoice.notes">Use <span class="inline-code">reset</span> to revert to the system default. Use <span class="inline-code">!tts voices</span> for a link to voice IDs.</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -558,11 +558,11 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts defaultemotion happy</code>
-                            <code class="mod-command">!tts defaultemotion reset</code>
-                            <code class="mod-command">!tts defaultemotion</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for system default (<span class="inline-code">neutral</span>).</p>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultemotion.usage.example">!tts defaultemotion happy</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultemotion.usage.reset">!tts defaultemotion reset</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultemotion.usage.status">!tts defaultemotion</code> <span data-i18n="commands.ttsDefaultemotion.statusDesc">(displays current channel default)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsDefaultemotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for system default (<span class="inline-code">neutral</span>).</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -573,11 +573,11 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts defaultlanguage English</code>
-                            <code class="mod-command">!tts defaultlanguage reset</code>
-                            <code class="mod-command">!tts defaultlanguage</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> to use the system default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for options.</p>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultlanguage.usage.example">!tts defaultlanguage English</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultlanguage.usage.reset">!tts defaultlanguage reset</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultlanguage.usage.status">!tts defaultlanguage</code> <span data-i18n="commands.ttsDefaultlanguage.statusDesc">(displays current channel default)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsDefaultlanguage.notes">Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> to use the system default. See <a href="#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> for options.</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -588,11 +588,11 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts defaultpitch 2</code>
-                            <code class="mod-command">!tts defaultpitch reset</code>
-                            <code class="mod-command">!tts defaultpitch</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Value must be an integer between -12 and 12 (0 is normal). Use <span class="inline-code">reset</span> for system default (0).</p>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultpitch.usage.example">!tts defaultpitch 2</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultpitch.usage.reset">!tts defaultpitch reset</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultpitch.usage.status">!tts defaultpitch</code> <span data-i18n="commands.ttsDefaultpitch.statusDesc">(displays current channel default)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsDefaultpitch.notes">Value must be an integer between -12 and 12 (0 is normal). Use <span class="inline-code">reset</span> for system default (0).</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -603,11 +603,11 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code class="mod-command">!tts defaultspeed 1.2</code>
-                            <code class="mod-command">!tts defaultspeed reset</code>
-                            <code class="mod-command">!tts defaultspeed</code> <span>(displays current channel default)</span>
-                            <p><strong>Notes:</strong> Value must be a number between 0.5 and 2.0 (1.0 is normal). Use <span class="inline-code">reset</span> for system default (1.0).</p>
-                            <p><strong>Permission:</strong> Moderator</p>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultspeed.usage.example">!tts defaultspeed 1.2</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultspeed.usage.reset">!tts defaultspeed reset</code>
+                            <code class="mod-command" data-i18n-cmd="commands.ttsDefaultspeed.usage.status">!tts defaultspeed</code> <span data-i18n="commands.ttsDefaultspeed.statusDesc">(displays current channel default)</span>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span data-i18n="commands.ttsDefaultspeed.notes">Value must be a number between 0.5 and 2.0 (1.0 is normal). Use <span class="inline-code">reset</span> for system default (1.0).</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.moderator">Moderator</span></p>
                         </td>
                     </tr>
                 </tbody>
@@ -622,9 +622,9 @@
                     </tr>
                     <tr class="dropdown-details" style="display:none;">
                         <td colspan="2">
-                            <code>!tts Welcome everyone to the stream!</code>
-                            <code>!tts say Welcome everyone!</code>
-                            <p><strong>Permission:</strong> Everyone</p>
+                            <code data-i18n-cmd="commands.ttsMessage.usage.basic">!tts Welcome everyone to the stream!</code>
+                            <code data-i18n-cmd="commands.ttsMessage.usage.say">!tts say Welcome everyone!</code>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span data-i18n="commands.common.everyone">Everyone</span></p>
                         </td>
                     </tr>
                 </tbody>

@@ -39,6 +39,7 @@
       "note": "Nota:",
       "permission": "Permissão:",
       "description": "Descrição:",
+      "usage": "Uso:",
       "everyone": "Todos",
       "everyoneOwnPreference": "Todos (para sua própria preferência)",
       "moderator": "Moderador",
@@ -235,53 +236,135 @@
     },
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Apelido: !tts lang)",
-      "description": "Define seu aumento de idioma preferido para TTS."
+      "description": "Define seu aumento de idioma preferido para TTS.",
+      "statusDesc": "(exibe a preferência pessoal atual)",
+      "notes": "Afeta como a fala é interpretada e gerada. Use reset ou auto para usar o padrão do canal. Veja a seção de Aumento de Idioma ou use !tts languageslist para opções disponíveis.",
+      "usage": {
+        "example": "!tts language English",
+        "langAlias": "!tts lang Japanese",
+        "reset": "!tts language reset",
+        "status": "!tts language"
+      }
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
-      "description": "Define seu tom pessoal de TTS."
+      "description": "Define seu tom pessoal de TTS.",
+      "statusDesc": "(exibe a preferência pessoal atual)",
+      "notes": "O valor deve ser um inteiro entre -12 e 12 (0 é normal). Use reset para o padrão do canal.",
+      "usage": {
+        "positive": "!tts pitch 2",
+        "negative": "!tts pitch -3",
+        "reset": "!tts pitch reset",
+        "status": "!tts pitch"
+      }
     },
     "ttsSpeed": {
       "name": "!tts speed <value|reset>",
-      "description": "Define sua velocidade pessoal de TTS."
+      "description": "Define sua velocidade pessoal de TTS.",
+      "statusDesc": "(exibe a preferência pessoal atual)",
+      "notes": "O valor deve ser um número entre 0.5 e 2.0 (1.0 é normal). Use reset para o padrão do canal.",
+      "usage": {
+        "faster": "!tts speed 1.2",
+        "slower": "!tts speed 0.8",
+        "reset": "!tts speed reset",
+        "status": "!tts speed"
+      }
     },
     "ttsIgnore": {
-      "name": "!tts ignore <username>\n!tts ignore add <username>"
+      "name": "!tts ignore <username>\n!tts ignore add <username>",
+      "usageDescUser": "Para qualquer usuário: Adicione-se à lista de ignorados de TTS do canal. Suas mensagens não serão faladas.",
+      "usageDescMod": "Para Moderadores ou Produtor: Adicione qualquer usuário Twitch especificado à lista de ignorados de TTS do canal.",
+      "permission": "Todos (para se adicionar), Moderador (para adicionar outros)",
+      "usage": {
+        "self": "!tts ignore seunome",
+        "mod": "!tts ignore add OutroUsuario"
+      }
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Apelidos: delete, rem, remove)",
-      "description": "Remove o usuário Twitch especificado da lista de ignorados de TTS."
+      "description": "Remove o usuário Twitch especificado da lista de ignorados de TTS.",
+      "usage": {
+        "basic": "!tts ignore del AlgumUsuario"
+      }
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "Lista todos os usuários atualmente na lista de ignorados de TTS do canal."
+      "description": "Lista todos os usuários atualmente na lista de ignorados de TTS do canal.",
+      "usage": {
+        "basic": "!tts ignored"
+      }
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Alterna se eventos Twitch (como inscrições, cheers, raids, etc.) são anunciados por TTS."
+      "description": "Alterna se eventos Twitch (como inscrições, cheers, raids, etc.) são anunciados por TTS.",
+      "statusDesc": "(exibe o status atual de anúncios de eventos)",
+      "usage": {
+        "on": "!tts events on",
+        "off": "!tts events off",
+        "status": "!tts events"
+      }
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "Define a voz padrão de TTS para o canal."
+      "description": "Define a voz padrão de TTS para o canal.",
+      "statusDesc": "(exibe o padrão atual do canal)",
+      "notes": "Use reset para reverter para o padrão do sistema. Use !tts voices para um link para IDs de voz.",
+      "usage": {
+        "example": "!tts defaultvoice Friendly_Person",
+        "reset": "!tts defaultvoice reset",
+        "status": "!tts defaultvoice"
+      }
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Define a emoção padrão de TTS para o canal."
+      "description": "Define a emoção padrão de TTS para o canal.",
+      "statusDesc": "(exibe o padrão atual do canal)",
+      "notes": "Emoções válidas: neutral, happy, sad, angry, fearful, disgusted, surprised. Use reset para o padrão do sistema (neutral).",
+      "usage": {
+        "example": "!tts defaultemotion happy",
+        "reset": "!tts defaultemotion reset",
+        "status": "!tts defaultemotion"
+      }
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <language|reset>",
-      "description": "Define o aumento de idioma padrão de TTS para o canal."
+      "description": "Define o aumento de idioma padrão de TTS para o canal.",
+      "statusDesc": "(exibe o padrão atual do canal)",
+      "notes": "Use reset ou auto para usar o padrão do sistema. Veja a seção de Aumento de Idioma ou use !tts languageslist para opções.",
+      "usage": {
+        "example": "!tts defaultlanguage English",
+        "reset": "!tts defaultlanguage reset",
+        "status": "!tts defaultlanguage"
+      }
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <value|reset>",
-      "description": "Define o tom padrão de TTS para o canal."
+      "description": "Define o tom padrão de TTS para o canal.",
+      "statusDesc": "(exibe o padrão atual do canal)",
+      "notes": "O valor deve ser um inteiro entre -12 e 12 (0 é normal). Use reset para o padrão do sistema (0).",
+      "usage": {
+        "example": "!tts defaultpitch 2",
+        "reset": "!tts defaultpitch reset",
+        "status": "!tts defaultpitch"
+      }
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <value|reset>",
-      "description": "Define a velocidade padrão de TTS para o canal."
+      "description": "Define a velocidade padrão de TTS para o canal.",
+      "statusDesc": "(exibe o padrão atual do canal)",
+      "notes": "O valor deve ser um número entre 0.5 e 2.0 (1.0 é normal). Use reset para o padrão do sistema (1.0).",
+      "usage": {
+        "example": "!tts defaultspeed 1.2",
+        "reset": "!tts defaultspeed reset",
+        "status": "!tts defaultspeed"
+      }
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Apelido: !tts say <message>)"
+      "name": "!tts <message>\n(Apelido: !tts say <message>)",
+      "usage": {
+        "basic": "!tts Bem-vindos todos à transmissão!",
+        "say": "!tts say Bem-vindos todos!"
+      }
     },
     "musicPrompt": {
       "name": "!music <prompt>",

@@ -39,6 +39,7 @@
       "note": "注意:",
       "permission": "権限:",
       "description": "説明:",
+      "usage": "使用法:",
       "everyone": "全員",
       "everyoneOwnPreference": "全員(自分の設定のみ)",
       "moderator": "モデレーター",
@@ -235,53 +236,135 @@
     },
     "ttsLanguage": {
       "name": "!tts language <言語|reset>\n(エイリアス: !tts lang)",
-      "description": "TTSの優先言語ブーストを設定します。"
+      "description": "TTSの優先言語ブーストを設定します。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "音声の解釈と生成方法に影響します。チャンネルのデフォルトを使用するにはresetまたはautoを使用します。利用可能なオプションについては、言語ブーストセクションを参照するか、!tts languageslistを使用してください。",
+      "usage": {
+        "example": "!tts language English",
+        "langAlias": "!tts lang Japanese",
+        "reset": "!tts language reset",
+        "status": "!tts language"
+      }
     },
     "ttsPitch": {
       "name": "!tts pitch <値|reset>",
-      "description": "個人用TTSピッチを設定します。"
+      "description": "個人用TTSピッチを設定します。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "値は-12から12の整数である必要があります(0が通常)。チャンネルのデフォルトにはresetを使用します。",
+      "usage": {
+        "positive": "!tts pitch 2",
+        "negative": "!tts pitch -3",
+        "reset": "!tts pitch reset",
+        "status": "!tts pitch"
+      }
     },
     "ttsSpeed": {
       "name": "!tts speed <値|reset>",
-      "description": "個人用TTS速度を設定します。"
+      "description": "個人用TTS速度を設定します。",
+      "statusDesc": "(現在の個人設定を表示)",
+      "notes": "値は0.5から2.0の数値である必要があります(1.0が通常)。チャンネルのデフォルトにはresetを使用します。",
+      "usage": {
+        "faster": "!tts speed 1.2",
+        "slower": "!tts speed 0.8",
+        "reset": "!tts speed reset",
+        "status": "!tts speed"
+      }
     },
     "ttsIgnore": {
-      "name": "!tts ignore <ユーザー名>\n!tts ignore add <ユーザー名>"
+      "name": "!tts ignore <ユーザー名>\n!tts ignore add <ユーザー名>",
+      "usageDescUser": "すべてのユーザー向け: チャンネルのTTS除外リストに自分を追加します。あなたのメッセージは読み上げられません。",
+      "usageDescMod": "モデレーターまたは配信者向け: 指定したTwitchユーザーをチャンネルのTTS除外リストに追加します。",
+      "permission": "全員(自分自身を追加する場合)、モデレーター(他のユーザーを追加する場合)",
+      "usage": {
+        "self": "!tts ignore あなたのユーザー名",
+        "mod": "!tts ignore add 他のユーザー"
+      }
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
-      "description": "指定したTwitchユーザーをTTS除外リストから削除します。"
+      "description": "指定したTwitchユーザーをTTS除外リストから削除します。",
+      "usage": {
+        "basic": "!tts ignore del ユーザー"
+      }
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "チャンネルのTTS除外リストに現在登録されているすべてのユーザーを一覧表示します。"
+      "description": "チャンネルのTTS除外リストに現在登録されているすべてのユーザーを一覧表示します。",
+      "usage": {
+        "basic": "!tts ignored"
+      }
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Twitchイベント(サブスクリプション、チア、レイドなど)をTTSでアナウンスするかどうかを切り替えます。"
+      "description": "Twitchイベント(サブスクリプション、チア、レイドなど)をTTSでアナウンスするかどうかを切り替えます。",
+      "statusDesc": "(現在のイベントアナウンスステータスを表示)",
+      "usage": {
+        "on": "!tts events on",
+        "off": "!tts events off",
+        "status": "!tts events"
+      }
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "チャンネルのデフォルトTTS音声を設定します。"
+      "description": "チャンネルのデフォルトTTS音声を設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "システムデフォルトに戻すにはresetを使用します。音声IDへのリンクには!tts voicesを使用します。",
+      "usage": {
+        "example": "!tts defaultvoice Friendly_Person",
+        "reset": "!tts defaultvoice reset",
+        "status": "!tts defaultvoice"
+      }
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "チャンネルのデフォルトTTS感情を設定します。"
+      "description": "チャンネルのデフォルトTTS感情を設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "有効な感情: neutral, happy, sad, angry, fearful, disgusted, surprised。システムデフォルト(neutral)にはresetを使用します。",
+      "usage": {
+        "example": "!tts defaultemotion happy",
+        "reset": "!tts defaultemotion reset",
+        "status": "!tts defaultemotion"
+      }
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <言語|reset>",
-      "description": "チャンネルのデフォルトTTS言語ブーストを設定します。"
+      "description": "チャンネルのデフォルトTTS言語ブーストを設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "システムデフォルトを使用するにはresetまたはautoを使用します。オプションについては、言語ブーストセクションを参照するか、!tts languageslistを使用してください。",
+      "usage": {
+        "example": "!tts defaultlanguage English",
+        "reset": "!tts defaultlanguage reset",
+        "status": "!tts defaultlanguage"
+      }
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <値|reset>",
-      "description": "チャンネルのデフォルトTTSピッチを設定します。"
+      "description": "チャンネルのデフォルトTTSピッチを設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "値は-12から12の整数である必要があります(0が通常)。システムデフォルト(0)にはresetを使用します。",
+      "usage": {
+        "example": "!tts defaultpitch 2",
+        "reset": "!tts defaultpitch reset",
+        "status": "!tts defaultpitch"
+      }
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <値|reset>",
-      "description": "チャンネルのデフォルトTTS速度を設定します。"
+      "description": "チャンネルのデフォルトTTS速度を設定します。",
+      "statusDesc": "(現在のチャンネルデフォルトを表示)",
+      "notes": "値は0.5から2.0の数値である必要があります(1.0が通常)。システムデフォルト(1.0)にはresetを使用します。",
+      "usage": {
+        "example": "!tts defaultspeed 1.2",
+        "reset": "!tts defaultspeed reset",
+        "status": "!tts defaultspeed"
+      }
     },
     "ttsMessage": {
-      "name": "!tts <メッセージ>\n(エイリアス: !tts say <メッセージ>)"
+      "name": "!tts <メッセージ>\n(エイリアス: !tts say <メッセージ>)",
+      "usage": {
+        "basic": "!tts 皆さん配信へようこそ!",
+        "say": "!tts say 皆さんようこそ!"
+      }
     },
     "musicPrompt": {
       "name": "!music <プロンプト>",

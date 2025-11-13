@@ -39,6 +39,7 @@
       "note": "Примечание:",
       "permission": "Разрешение:",
       "description": "Описание:",
+      "usage": "Использование:",
       "everyone": "Все",
       "everyoneOwnPreference": "Все (для их собственного предпочтения)",
       "moderator": "Модератор",
@@ -235,53 +236,135 @@
     },
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Псевдоним: !tts lang)",
-      "description": "Устанавливает предпочтительное языковое усиление для синтеза речи."
+      "description": "Устанавливает предпочтительное языковое усиление для синтеза речи.",
+      "statusDesc": "(отображает текущее личное предпочтение)",
+      "notes": "Влияет на то, как интерпретируется и генерируется речь. Используйте reset или auto для использования стандартного значения канала. См. раздел Языковое усиление или используйте !tts languageslist для доступных опций.",
+      "usage": {
+        "example": "!tts language English",
+        "langAlias": "!tts lang Japanese",
+        "reset": "!tts language reset",
+        "status": "!tts language"
+      }
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
-      "description": "Устанавливает личный тон синтеза речи."
+      "description": "Устанавливает личный тон синтеза речи.",
+      "statusDesc": "(отображает текущее личное предпочтение)",
+      "notes": "Значение должно быть целым числом от -12 до 12 (0 - нормально). Используйте reset для стандартного значения канала.",
+      "usage": {
+        "positive": "!tts pitch 2",
+        "negative": "!tts pitch -3",
+        "reset": "!tts pitch reset",
+        "status": "!tts pitch"
+      }
     },
     "ttsSpeed": {
       "name": "!tts speed <value|reset>",
-      "description": "Устанавливает личную скорость синтеза речи."
+      "description": "Устанавливает личную скорость синтеза речи.",
+      "statusDesc": "(отображает текущее личное предпочтение)",
+      "notes": "Значение должно быть числом от 0.5 до 2.0 (1.0 - нормально). Используйте reset для стандартного значения канала.",
+      "usage": {
+        "faster": "!tts speed 1.2",
+        "slower": "!tts speed 0.8",
+        "reset": "!tts speed reset",
+        "status": "!tts speed"
+      }
     },
     "ttsIgnore": {
-      "name": "!tts ignore <username>\n!tts ignore add <username>"
+      "name": "!tts ignore <username>\n!tts ignore add <username>",
+      "usageDescUser": "Для любого пользователя: Добавьте себя в список игнорирования синтеза речи для канала. Ваши сообщения не будут произноситься.",
+      "usageDescMod": "Для модераторов или вещателя: Добавьте указанного пользователя Twitch в список игнорирования синтеза речи для канала.",
+      "permission": "Все (чтобы добавить себя), Модератор (чтобы добавить других)",
+      "usage": {
+        "self": "!tts ignore вашеимя",
+        "mod": "!tts ignore add ДругойПользователь"
+      }
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Псевдонимы: delete, rem, remove)",
-      "description": "Удаляет указанного пользователя Twitch из списка игнорирования синтеза речи."
+      "description": "Удаляет указанного пользователя Twitch из списка игнорирования синтеза речи.",
+      "usage": {
+        "basic": "!tts ignore del Пользователь"
+      }
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "Список всех пользователей в списке игнорирования синтеза речи для канала."
+      "description": "Список всех пользователей в списке игнорирования синтеза речи для канала.",
+      "usage": {
+        "basic": "!tts ignored"
+      }
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Переключает, объявляются ли события Twitch (например, подписки, Bits, рейды и т. д.) с помощью синтеза речи."
+      "description": "Переключает, объявляются ли события Twitch (например, подписки, Bits, рейды и т. д.) с помощью синтеза речи.",
+      "statusDesc": "(отображает текущий статус объявления событий)",
+      "usage": {
+        "on": "!tts events on",
+        "off": "!tts events off",
+        "status": "!tts events"
+      }
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "Устанавливает голос синтеза речи по умолчанию для канала."
+      "description": "Устанавливает голос синтеза речи по умолчанию для канала.",
+      "statusDesc": "(отображает текущее стандартное значение канала)",
+      "notes": "Используйте reset для возврата к системному стандарту. Используйте !tts voices для ссылки на идентификаторы голосов.",
+      "usage": {
+        "example": "!tts defaultvoice Friendly_Person",
+        "reset": "!tts defaultvoice reset",
+        "status": "!tts defaultvoice"
+      }
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Устанавливает эмоцию синтеза речи по умолчанию для канала."
+      "description": "Устанавливает эмоцию синтеза речи по умолчанию для канала.",
+      "statusDesc": "(отображает текущее стандартное значение канала)",
+      "notes": "Допустимые эмоции: neutral, happy, sad, angry, fearful, disgusted, surprised. Используйте reset для системного стандарта (neutral).",
+      "usage": {
+        "example": "!tts defaultemotion happy",
+        "reset": "!tts defaultemotion reset",
+        "status": "!tts defaultemotion"
+      }
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <language|reset>",
-      "description": "Устанавливает языковое усиление синтеза речи по умолчанию для канала."
+      "description": "Устанавливает языковое усиление синтеза речи по умолчанию для канала.",
+      "statusDesc": "(отображает текущее стандартное значение канала)",
+      "notes": "Используйте reset или auto для использования системного стандарта. См. раздел Языковое усиление или используйте !tts languageslist для опций.",
+      "usage": {
+        "example": "!tts defaultlanguage English",
+        "reset": "!tts defaultlanguage reset",
+        "status": "!tts defaultlanguage"
+      }
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <value|reset>",
-      "description": "Устанавливает тон синтеза речи по умолчанию для канала."
+      "description": "Устанавливает тон синтеза речи по умолчанию для канала.",
+      "statusDesc": "(отображает текущее стандартное значение канала)",
+      "notes": "Значение должно быть целым числом от -12 до 12 (0 - нормально). Используйте reset для системного стандарта (0).",
+      "usage": {
+        "example": "!tts defaultpitch 2",
+        "reset": "!tts defaultpitch reset",
+        "status": "!tts defaultpitch"
+      }
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <value|reset>",
-      "description": "Устанавливает скорость синтеза речи по умолчанию для канала."
+      "description": "Устанавливает скорость синтеза речи по умолчанию для канала.",
+      "statusDesc": "(отображает текущее стандартное значение канала)",
+      "notes": "Значение должно быть числом от 0.5 до 2.0 (1.0 - нормально). Используйте reset для системного стандарта (1.0).",
+      "usage": {
+        "example": "!tts defaultspeed 1.2",
+        "reset": "!tts defaultspeed reset",
+        "status": "!tts defaultspeed"
+      }
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Псевдоним: !tts say <message>)"
+      "name": "!tts <message>\n(Псевдоним: !tts say <message>)",
+      "usage": {
+        "basic": "!tts Добро пожаловать всем на стрим!",
+        "say": "!tts say Добро пожаловать всем!"
+      }
     },
     "musicPrompt": {
       "name": "!music <prompt>",
