@@ -13,11 +13,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <style>
         .hero-section {
+            position: relative;
             text-align: left;
             padding: var(--spacing-large) var(--spacing-medium);
-            padding-left: calc(var(--spacing-large) + var(--spacing-medium));
             margin-bottom: var(--spacing-large);
+            
+            /* Full width breakout consistent with wildcat-home */
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 50vh;
             border-bottom: 1px solid var(--color-grid-line);
+            overflow: hidden;
         }
         .hero-title {
             font-size: var(--font-size-huge);
@@ -30,6 +42,8 @@
             justify-content: flex-start;
             gap: 0.5rem;
             text-transform: uppercase;
+            flex-wrap: wrap;
+            line-height: 0.9;
         }
         .tagline {
             font-size: var(--font-size-regular);
@@ -37,6 +51,8 @@
             margin: 0;
             font-weight: 400;
             text-transform: none;
+            max-width: 800px;
+            line-height: 1.8;
         }
         
         .wildcat-svg {
@@ -101,6 +117,13 @@
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0 var(--shadow-color);
             text-decoration: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: auto;
+                padding: var(--spacing-large) var(--spacing-small);
+            }
         }
     </style>
     <script
