@@ -496,9 +496,9 @@ header .tagline {
    BOT CARDS BACKGROUND
    ===================================================== */
 #bots > div > div {
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-grid-line);
+  border-radius: 0;
 }
 
 /* =====================================================
@@ -508,17 +508,17 @@ table {
   width: calc(100% - 4rem);
   margin: 2rem;
   border-collapse: collapse;
-  background-color: var(--color-background);
+  background-color: var(--color-card-bg);
   color: var(--color-text);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-grid-line);
+  border-radius: 0;
 }
 
 th,
 td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-grid-line);
 }
 
 th:nth-child(1),
@@ -537,30 +537,34 @@ td:nth-child(3) {
 }
 
 th {
-  background-color: rgba(120, 120, 120, 0.3);
-  font-weight: 700;
+  background-color: var(--color-card-bg);
+  font-weight: 800;
   text-transform: uppercase;
-  border-bottom: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-grid-line);
 }
 
 /* Code blocks in tables */
 code {
   display: block;
   margin: 4px 0;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-grid-line);
   padding: 2px 6px;
-  border-radius: 4px;
+  border-radius: 0;
   font-family: var(--font-code);
   font-size: 1em;
+  color: var(--color-text);
 }
 
 .inline-code {
   font-family: var(--font-code);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-grid-line);
   padding: 0.2em 0.4em;
-  border-radius: 3px;
+  border-radius: 0;
   font-size: 0.9em;
   display: inline-block;
+  color: var(--color-text);
 }
 
 /* Mod badge styling */
@@ -595,10 +599,11 @@ code {
 .dropdown-summary {
   cursor: pointer;
   transition: background 0.2s;
+  border-radius: 0;
 }
 
 .dropdown-summary:hover {
-  background: rgba(120, 120, 120, 0.08);
+  background: var(--color-card-bg);
 }
 
 .dropdown-toggle {
@@ -626,13 +631,15 @@ tr:last-child:not(.dropdown-details) td {
 
 /* Category headers */
 .category-header {
-  background: rgba(120, 120, 120, 0.15);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-grid-line);
   font-size: 1.25em;
-  font-weight: 700;
+  font-weight: 800;
   text-align: left;
   letter-spacing: 1px;
   color: var(--color-text);
-  text-decoration: underline;
+  text-transform: uppercase;
+  border-radius: 0;
 }
 
 /* Expand tip boxes */
@@ -640,9 +647,10 @@ tr:last-child:not(.dropdown-details) td {
   width: 75%;
   margin: 0 auto 1rem auto;
   padding: 0.75em 1em;
-  background: rgba(255, 255, 255, 0.8);
-  border-left: 4px solid var(--color-border);
-  border-radius: 6px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-grid-line);
+  border-left: 2px solid var(--color-text);
+  border-radius: 0;
   font-size: 1.08em;
   display: flex;
   align-items: center;
@@ -681,8 +689,10 @@ footer {
   padding-top: var(--spacing-large);
   padding-bottom: 80px;
   padding-left: var(--spacing-medium);
-  border-top: 4px solid var(--color-border);
+  border-top: 1px solid var(--color-grid-line);
   font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* =====================================================
@@ -764,16 +774,20 @@ footer {
 
   /* Tables */
   table {
-    background-color: #2a2a2a;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    background-color: var(--color-card-bg);
+    border-color: var(--color-grid-line);
   }
 
   code {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-card-bg);
+    border-color: var(--color-grid-line);
+    color: var(--color-text);
   }
 
   .inline-code {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-card-bg);
+    border-color: var(--color-grid-line);
+    color: var(--color-text);
   }
 
   .mod-badge {
@@ -785,17 +799,19 @@ footer {
   }
 
   .dropdown-summary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--color-card-bg);
   }
 
   .category-header {
-    background: rgba(120, 120, 120, 0.25);
-    color: #fff;
+    background: var(--color-card-bg);
+    border-color: var(--color-grid-line);
+    color: var(--color-text);
   }
 
   .expand-tip {
-    background: rgba(30, 30, 30, 0.8);
-    color: #eee;
+    background: var(--color-card-bg);
+    border-color: var(--color-grid-line);
+    color: var(--color-text);
   }
 
   .default-link-style {
@@ -804,7 +820,8 @@ footer {
 
   /* Bot cards background for dark mode */
   #bots > div > div {
-    background-color: rgba(30, 30, 30, 0.9);
+    background-color: var(--color-card-bg);
+    border-color: var(--color-grid-line);
   }
 }
 

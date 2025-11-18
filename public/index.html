@@ -13,56 +13,93 @@
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <style>
         .hero-section {
-            text-align: center;
+            text-align: left;
             padding: 3rem 0 2rem 0;
             margin-bottom: 2rem;
+            border-bottom: 1px solid var(--color-grid-line);
         }
         .hero-title {
-            font-size: 2.5rem;
-            font-weight: 300;
+            font-size: var(--font-size-huge);
+            font-weight: 800;
             margin: 0 0 0.5rem 0;
-            color: #333;
-            letter-spacing: -0.02em;
+            color: var(--color-text);
+            letter-spacing: 0.02em;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 0.5rem;
+            text-transform: uppercase;
         }
         .tagline {
-            font-size: 1.1rem;
-            color: #666;
+            font-size: var(--font-size-regular);
+            color: var(--color-text);
             margin: 0;
             font-weight: 400;
+            text-transform: none;
         }
         
-        /* Only change the kaomoji sizing */
         .wildcat-svg {
             width: 5rem;
             height: 5rem;
-            fill: #333;
+            fill: var(--color-text);
             flex-shrink: 0;
         }
         
         .site-navbar-brand .wildcat-svg {
             width: 2rem;
             height: 2rem;
-            fill: #333;
+            fill: var(--color-text);
         }
-        
-        /* Dark mode support for hero content */
-        @media (prefers-color-scheme: dark) {
-            .hero-title {
-                color: #fff;
-            }
-            .tagline {
-                color: #ccc;
-            }
-            .wildcat-svg {
-                fill: #fff;
-            }
-            .site-navbar-brand .wildcat-svg {
-                fill: #fff;
-            }
+
+        /* Bot cards grid */
+        .bot-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 0;
+            margin-top: 2rem;
+            border: 1px solid var(--color-grid-line);
+        }
+
+        .bot-card {
+            border: 1px solid var(--color-grid-line);
+            padding: 1.5rem;
+            background-color: var(--color-card-bg);
+            border-radius: 0;
+        }
+
+        .bot-card h3 {
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .bot-card-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--color-text);
+            border: 2px solid var(--color-text);
+            box-shadow: 4px 4px 0 var(--shadow-color);
+            padding: 0.5rem 1rem;
+            text-decoration: none !important;
+            border-radius: 0;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+
+        .bot-card-button:hover,
+        .bot-card-button:focus {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--shadow-color-hover);
+            text-decoration: none !important;
+        }
+
+        .bot-card-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--shadow-color);
+            text-decoration: none !important;
         }
     </style>
     <script
@@ -123,8 +160,8 @@
                 <h2 data-i18n="page.botsTitle">Bot Documentation</h2>
                 <p data-i18n="page.welcome">Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS services for Twitch streamers.</p>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div style="border: 1px solid #ddd; padding: 1.5rem; border-radius: 8px;">
+                <div class="bot-cards-grid">
+                    <div class="bot-card">
                         <h3 data-i18n="page.chatsage.title">ChatSage Bot</h3>
                         <p data-i18n="page.chatsage.description">AI-powered chatbot with contextual responses, web search, games, and more.</p>
                         <ul style="margin: 1rem 0;">
@@ -133,10 +170,10 @@
                             <li data-i18n="page.chatsage.feature3">Interactive games (trivia, geo-game, riddles)</li>
                             <li data-i18n="page.chatsage.feature4">Auto-chat and translation features</li>
                         </ul>
-                        <a href="botcommands.html" style="display: inline-block; background: #6441a5; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;" data-i18n="page.chatsage.button">View ChatSage Docs →</a>
+                        <a href="botcommands.html" class="bot-card-button" data-i18n="page.chatsage.button">View ChatSage Docs →</a>
                     </div>
 
-                    <div style="border: 1px solid #ddd; padding: 1.5rem; border-radius: 8px;">
+                    <div class="bot-card">
                         <h3 data-i18n="page.chatvibes.title">ChatVibes TTS Bot</h3>
                         <p data-i18n="page.chatvibes.description">Advanced Text-to-Speech bot with music generation capabilities.</p>
                         <ul style="margin: 1rem 0;">
@@ -145,14 +182,14 @@
                             <li data-i18n="page.chatvibes.feature3">AI music generation</li>
                             <li data-i18n="page.chatvibes.feature4">Web dashboard for settings</li>
                         </ul>
-                        <a href="chatvibesdocs.html" style="display: inline-block; background: #6441a5; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;" data-i18n="page.chatvibes.button">View ChatVibes Docs →</a>
+                        <a href="chatvibesdocs.html" class="bot-card-button" data-i18n="page.chatvibes.button">View ChatVibes Docs →</a>
                     </div>
                 </div>
             </section>
 
-            <section id="getting-started" style="margin-top: 3rem;">
+            <section id="getting-started" style="margin-top: 3rem; border-top: 1px solid var(--color-grid-line); padding-top: 2rem;">
                 <h2 data-i18n="page.gettingStarted.title">Getting Started</h2>
-                <h3 data-i18n="page.gettingStarted.quickStartTitle">Quick Start</h3>
+                <h3 data-i18n="page.gettingStarted.quickStartTitle" style="text-transform: none; font-weight: 600;">Quick Start</h3>
                 <ol>
                     <li data-i18n="page.gettingStarted.step1">Visit <a href="https://app.wildcat.chat" class="default-link-style">app.wildcat.chat</a> to set up your ChatSage bot</li>
                     <li data-i18n="page.gettingStarted.step2">Visit <a href="https://tts.wildcat.chat/" class="default-link-style">tts.wildcat.chat</a> for ChatVibes TTS dashboard</li>

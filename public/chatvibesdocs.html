@@ -14,21 +14,12 @@
         .wildcat-svg {
             width: 2rem;
             height: 2rem;
-            fill: #333;
+            fill: var(--color-text);
         }
         .site-navbar-brand .wildcat-svg {
             width: 2rem;
             height: 2rem;
-        }
-        
-        /* Dark mode support for SVG */
-        @media (prefers-color-scheme: dark) {
-            .wildcat-svg {
-                fill: #fff;
-            }
-            .site-navbar-brand .wildcat-svg {
-                fill: #fff;
-            }
+            fill: var(--color-text);
         }
     </style>
     <script
@@ -89,7 +80,7 @@
 
     <main id="content">
         <h1 data-i18n="page.title">ChatVibes TTS Bot Documentation</h1>
-        <p class="invite-note" style="margin: 0.5rem 0; color: #666;">
+        <p class="invite-note" style="margin: 0.5rem 0; color: var(--color-accent-grey);">
             <span data-i18n="page.inviteNote">ChatVibes is currently invite-only.</span> <a href="https://detekoi.github.io/index.html#contact-me" class="default-link-style" target="_blank" data-i18n="page.requestAccess">Request access</a>.
         </p>
 
