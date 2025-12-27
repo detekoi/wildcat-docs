@@ -74,8 +74,6 @@
                         data-i18n="sidebar.toggleSubmenu"></span></a>
                 <ul class="submenu">
                     <li><a href="#tts-commands" data-i18n="sidebar.ttsCommands">Text-To-Speech Commands</a></li>
-                    <li><a href="#music-commands-table" data-i18n="sidebar.musicCommands">Music Generation Commands</a>
-                    </li>
                 </ul>
             </li>
             <li><a href="#voices" data-i18n="sidebar.voices">Voices</a></li>
@@ -213,7 +211,7 @@
                                 <li data-i18n="commands.ttsPrefs.feature1">Configure your own voice, pitch, speed,
                                     emotion, and language on a per-channel basis.</li>
                                 <li data-i18n="commands.ttsPrefs.feature2">Includes a red-outlined "Danger Zone" where
-                                    you can add yourself to the channel's TTS and/or Music ignore lists (only a
+                                    you can add yourself to the channel's TTS ignore list (only a
                                     moderator can undo this).</li>
                                 <li data-i18n="commands.ttsPrefs.feature3">The bot posts the link publicly in chat; it
                                     is signed for you only and expires after first access or 10 minutes. The page is
@@ -946,228 +944,6 @@
             </table>
         </section>
 
-        <!-- MUSIC GENERATION COMMANDS SECTION -->
-        <section id="music-commands" class="section">
-            <h2 data-i18n="music.title">Music Generation Commands</h2>
-            <div class="expand-tip">
-                <div class="tip-content">
-                    <div class="tip-text" data-i18n="music.prefixTip">All music generation commands are prefixed with
-                        <span class="inline-code">!music</span>
-                    </div>
-                    <div class="tip-text" data-i18n="music.exampleTip">For example: <span class="inline-code">!music 90s
-                            soulful house</span></div>
-                    <div class="tip-text" data-i18n="music.expandTip">Click any command row below to expand and see
-                        usage details.</div>
-                </div>
-            </div>
-            <h3 id="music-commands-table" data-i18n="music.commandsTitle">Music Generation Commands</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th data-i18n="music.tableCommand">Command</th>
-                        <th data-i18n="music.tableDescription">Description</th>
-                    </tr>
-                </thead>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.musicPrompt.name">!music &lt;prompt&gt;</td>
-                        <td data-i18n-key="commands.musicPrompt.description"><span class="description-text">Generates a
-                                short piece of music based on your prompt.</span><span
-                                class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code>!music epic orchestral battle theme</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicPrompt.permission">Configurable by mods (default:
-                                    everyone, can be mods only). User must not be on music ignore list.</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicOnOff.name">!music on<br>!music off</td>
-                        <td data-i18n-key="commands.musicOnOff.description">(Mod only) Enables or disables the music
-                            generation feature for the channel. <span class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code class="mod-command">!music on</code>
-                            <code class="mod-command">!music off</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicOnOff.permission">Moderator</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicMode.name">!music mode &lt;all|mods&gt;
-                        </td>
-                        <td data-i18n-key="commands.musicMode.description"><span class="description-text">(Mod only)
-                                Sets who can use the <span class="inline-code">!music &lt;prompt&gt;</span> command.<br>
-                                <span class="inline-code">all</span>: Everyone can generate music.<br>
-                                <span class="inline-code">mods</span>: Only moderators and the broadcaster can generate
-                                music.</span>
-                            <span class="dropdown-toggle">&#x25BC;</span>
-                        </td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code class="mod-command">!music mode all</code>
-                            <code class="mod-command">!music mode mods</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicMode.permission">Moderator</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicBits.name">!music bits [on|off|min
-                            &lt;amount&gt;]</td>
-                        <td data-i18n-key="commands.musicBits.description">(Mod only) Configures Bits-for-Music. When
-                            enabled, users must cheer with their prompt to generate music. <span
-                                class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code class="mod-command">!music bits on</code>
-                            <code class="mod-command">!music bits off</code>
-                            <code class="mod-command">!music bits min 100</code>
-                            <code class="mod-command">!music bits</code> <span
-                                data-i18n-key="commands.musicBits.statusNote">(displays current status)</span>
-                            <p><strong data-i18n="music.labelDescription">Description:</strong></p>
-                            <ul>
-                                <li data-i18n-key="commands.musicBits.optionOn"><span class="inline-code">on</span>:
-                                    Enables Bits-for-Music mode.</li>
-                                <li data-i18n-key="commands.musicBits.optionOff"><span class="inline-code">off</span>:
-                                    Disables Bits-for-Music mode.</li>
-                                <li data-i18n-key="commands.musicBits.optionMin"><span class="inline-code">min
-                                        &lt;amount&gt;</span>: Sets the minimum number of Bits required (e.g., <span
-                                        class="inline-code">min 100</span>).</li>
-                            </ul>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicBits.permission">Moderator</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <!-- Added new command: !music help -->
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.musicHelp.name">!music help</td>
-                        <td data-i18n-key="commands.musicHelp.description"><span class="description-text">Provides a
-                                list of all music subcommands and their usage.</span><span
-                                class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code>!music help</code>
-                            <p><strong data-i18n="music.labelNotes">Notes:</strong> <span
-                                    data-i18n-key="commands.musicHelp.notes">Lists all <span
-                                        class="inline-code">!music</span> subcommands and their usage, similar to this
-                                    documentation.</span></p>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicHelp.permission">Everyone</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.musicStatus.name">!music status</td>
-                        <td data-i18n-key="commands.musicStatus.description"><span class="description-text">Shows the
-                                current status of music generation (enabled/disabled, mode, queue length).</span><span
-                                class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code>!music status</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicStatus.permission">Everyone</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicClear.name">!music clear</td>
-                        <td data-i18n-key="commands.musicClear.description"><span class="description-text">(Mod only)
-                                Clears all pending music generation requests from the queue.</span><span
-                                class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code class="mod-command">!music clear</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicClear.permission">Moderator</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.musicIgnore.name">!music ignore &lt;username&gt;<br>!music ignore
-                            add &lt;username&gt;</td>
-                        <td>
-                            <span data-i18n-key="commands.musicIgnore.descriptionUser"><strong>For any user:</strong>
-                                Add <em>yourself</em> to the music ignore list. Your <span class="inline-code">!music
-                                    &lt;prompt&gt;</span> requests will be ignored.</span><br>
-                            <span data-i18n-key="commands.musicIgnore.descriptionMod"><strong>For Moderators or
-                                    Broadcaster:</strong> Add <em>any specified Twitch user</em> to the music ignore
-                                list.</span><br>
-                            <span class="dropdown-toggle">&#x25BC;</span>
-                        </td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <strong data-i18n="music.labelUsage">Usage:</strong>
-                            <ul>
-                                <li><code
-                                        data-i18n-cmd="commands.musicIgnore.usageSelf">!music ignore yourusername</code>
-                                    <span data-i18n="commands.musicIgnore.usageSelfNote">(if you want to ignore
-                                        yourself)</span>
-                                </li>
-                                <li><code class="mod-command"
-                                        data-i18n-cmd="commands.musicIgnore.usageMod">!music ignore add SomeOtherUser</code>
-                                    <span data-i18n="commands.musicIgnore.usageModNote">(if you are a
-                                        mod/broadcaster)</span>
-                                </li>
-                            </ul>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicIgnore.permission">Everyone (to add themselves),
-                                    Moderator (to add others)</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicIgnoreDel.name">!music ignore del
-                            &lt;username&gt;<br><span style="font-size:0.9em;"
-                                data-i18n-key="commands.musicIgnoreDel.aliases">(Aliases: delete, rem, remove)</span>
-                        </td>
-                        <td data-i18n-key="commands.musicIgnoreDel.description">(Mod only) Removes the specified Twitch
-                            user from the music ignore list. <span class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code class="mod-command">!music ignore del SomeUser</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicIgnoreDel.permission">Moderator</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td class="mod-command" data-i18n-key="commands.musicIgnored.name">!music ignored</td>
-                        <td data-i18n-key="commands.musicIgnored.description">(Mod only) Lists all users currently on
-                            the music ignore list for the channel. <span class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code class="mod-command">!music ignored</code>
-                            <p><strong data-i18n="music.labelPermission">Permission:</strong> <span
-                                    data-i18n-key="commands.musicIgnored.permission">Moderator</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
 
         <section id="voices" class="section">
             <h2 data-i18n="voices.title">Voices</h2>
@@ -1937,7 +1713,7 @@
             <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
             <p data-i18n="webDashboard.introText">The <a href="https://tts.wildcat.chat/" class="default-link-style"
                     target="_blank">ChatVibes Web Dashboard</a> provides streamers with a comprehensive interface to
-                configure all TTS and music settings. Access it by logging in with your Twitch account.</p>
+                configure all TTS settings. Access it by logging in with your Twitch account.</p>
 
             <h3 data-i18n="webDashboard.authModesTitle">Authentication Modes</h3>
             <p data-i18n="webDashboard.authModesIntro">ChatVibes offers two ways for streamers to connect:</p>
@@ -1971,11 +1747,8 @@
                 <li><strong data-i18n="webDashboard.settingChannelPointsTitle">Channel Points → TTS:</strong> <span
                         data-i18n="webDashboard.settingChannelPointsDesc">Create and configure a custom Channel Point
                         reward (see section above)</span></li>
-                <li><strong data-i18n="webDashboard.settingMusicTitle">Music Generation:</strong> <span
-                        data-i18n="webDashboard.settingMusicDesc">Enable/disable music, set permissions, require
-                        bits</span></li>
                 <li><strong data-i18n="webDashboard.settingIgnoreTitle">Ignore Lists:</strong> <span
-                        data-i18n="webDashboard.settingIgnoreDesc">Manage TTS and music ignore lists with add/remove
+                        data-i18n="webDashboard.settingIgnoreDesc">Manage TTS ignore lists with add/remove
                         interface</span></li>
                 <li><strong data-i18n="webDashboard.settingVoiceTitle">Default Voice Settings:</strong> <span
                         data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, volume, emotion,
