@@ -1,4 +1,4 @@
-(function() {
+(function () {
   function formatDate(dateLike) {
     try {
       const d = new Date(dateLike);
@@ -74,7 +74,7 @@
     const c = commits[0];
     // Prefer committer date, then author date
     const dateLike = (c && c.commit && c.commit.committer && c.commit.committer.date) ||
-                     (c && c.commit && c.commit.author && c.commit.author.date) || null;
+      (c && c.commit && c.commit.author && c.commit.author.date) || null;
     return dateLike ? new Date(dateLike) : null;
   }
 
@@ -89,16 +89,35 @@
     const el = document.getElementById('last-updated');
     if (!el) return;
 
+    // In local development, use document.lastModified immediately
+    // to reflect local changes instead of fetching the old date from GitHub.
+    const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname) || window.location.protocol === 'file:';
+    if (isLocal) {
+      setFooterDate(el, document.lastModified);
+      return;
+    }
+
     const scriptEl = document.currentScript || document.querySelector('script[src*="last-updated.js"]');
     const { owner, repo } = deriveRepoInfo(scriptEl);
     const filePath = derivePathForApi(repo);
 
     try {
-      const date = await fetchLastCommitDate(owner, repo, filePath);
-      if (date) {
-        setFooterDate(el, date);
-        return;
+      const githubDate = await fetchLastCommitDate(owner, repo, filePath);
+
+      // Check if document.lastModified is newer than the GitHub commit date.
+      // This ensures the date is correct even if you deploy to Firebase without pushing to GitHub.
+      const docDate = new Date(document.lastModified);
+      const isDocNewer = githubDate && !isNaN(docDate.getTime()) && docDate > githubDate;
+
+      if (isDocNewer) {
+        setFooterDate(el, docDate);
+      } else if (githubDate) {
+        setFooterDate(el, githubDate);
       }
+      // If we found a date (either one), we're done. 
+      // If githubDate was null and docDate was invalid, we fall through to the final fallback.
+      if (githubDate || isDocNewer) return;
+
     } catch (_) {
       // Ignore and fall back
     }
