@@ -5,12 +5,12 @@
   "nav": {
     "toggleNav": "☰",
     "home": "Home",
-    "chatSageDocs": "ChatSage Docs",
+    "chatSageDocs": "WildcatSage Docs",
     "wildcatTtsDocs": "WildcatTTS Docs",
     "contact": "Contact"
   },
   "page": {
-    "title": "ChatSage Bot Commands",
+    "title": "WildcatSage Bot Commands",
     "expandTip": "Click any command row below to expand and see usage details.",
     "lastUpdated": "Last updated"
   },
@@ -255,12 +255,12 @@
   },
   "webDashboard": {
     "title": "Web Dashboard",
-    "intro": "The ChatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
+    "intro": "The WildcatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
     "featuresTitle": "Available Dashboard Features",
     "features": {
       "botManagement": {
         "title": "Bot Management:",
-        "desc": "Add or remove ChatSage from your channel"
+        "desc": "Add or remove WildcatSage from your channel"
       },
       "channelConfig": {
         "title": "Channel Configuration:",
@@ -299,7 +299,7 @@
       },
       "addBot": {
         "title": "Add the Bot:",
-        "desc": "Use the \"Add Bot to My Channel\" button to invite ChatSage to your channel"
+        "desc": "Use the \"Add Bot to My Channel\" button to invite WildcatSage to your channel"
       },
       "configure": {
         "title": "Configure:",
@@ -307,7 +307,7 @@
       },
       "grantPerms": {
         "title": "Grant Permissions:",
-        "desc": "In Twitch chat, type /mod ChatSageBot to give the bot moderator status"
+        "desc": "In Twitch chat, type /mod WildcatSage to give the bot moderator status"
       }
     },
     "oauthTitle": "OAuth Permissions",
@@ -320,6 +320,6 @@
       "readEmail": "Access your email address"
     },
     "noteLabel": "Note:",
-    "noteText": "ChatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
+    "noteText": "WildcatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
   }
 }

@@ -5,7 +5,7 @@
   "nav": {
     "toggleNav": "☰",
     "home": "Home",
-    "chatSageDocs": "ChatSage Docs",
+    "chatSageDocs": "WildcatSage Docs",
     "wildcatTtsDocs": "WildcatTTS Docs",
     "contact": "Contact"
   },
@@ -17,13 +17,13 @@
     "welcome": "Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS services for Twitch streamers.",
     "botsTitle": "Bot Documentation",
     "chatsage": {
-      "title": "ChatSage Bot",
+      "title": "WildcatSage Bot",
       "description": "AI-powered chatbot with contextual responses, web search, games, and more.",
       "feature1": "Ask questions and get AI responses",
       "feature2": "Web search integration",
       "feature3": "Interactive games (trivia, geo-game, riddles)",
       "feature4": "Auto-chat and translation features",
-      "button": "View ChatSage Docs →"
+      "button": "View WildcatSage Docs →"
     },
     "wildcatTts": {
       "title": "WildcatTTS TTS Bot",
@@ -37,7 +37,7 @@
     "gettingStarted": {
       "title": "Getting Started",
       "quickStartTitle": "Quick Start",
-      "step1": "Visit <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> to set up your ChatSage bot",
+      "step1": "Visit <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> to set up your WildcatSage bot",
       "step2": "Visit <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> for WildcatTTS TTS dashboard",
       "step3": "Authenticate with your Twitch account",
       "step4": "Configure your bot settings",
@@ -46,4 +46,3 @@
     "footer": "© 2025 Wildcat.chat. All rights reserved."
   }
 }
-
