@@ -9,6 +9,11 @@
     ],
     "rewrites": [
       {
+        "source": "/chatvibesdocs.html",
+        "destination": "/wildcatttsdocs.html",
+        "type": 301
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
