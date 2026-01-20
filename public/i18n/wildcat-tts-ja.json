@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "ChatVibes TTS ボットコマンド"
+    "title": "WildcatTTS TTS ボットコマンド"
   },
   "nav": {
     "toggleNav": "☰",
     "home": "ホーム",
     "chatSageDocs": "ChatSage ドキュメント",
-    "chatVibesDocs": "ChatVibes ドキュメント",
+    "wildcatTtsDocs": "WildcatTTS ドキュメント",
     "contact": "お問い合わせ"
   },
   "sidebar": {
-    "chatVibes": "ChatVibes",
+    "wildcatTts": "WildcatTTS",
     "toggleSidebar": "サイドバーを切り替え",
     "commands": "コマンド",
     "toggleSubmenu": "",
@@ -22,8 +22,8 @@
     "troubleshooting": "トラブルシューティング"
   },
   "page": {
-    "title": "ChatVibes TTS ボット ドキュメント",
-    "inviteNote": "ChatVibesは現在招待制です。",
+    "title": "WildcatTTS TTS ボット ドキュメント",
+    "inviteNote": "WildcatTTSは現在招待制です。",
     "requestAccess": "アクセスをリクエスト"
   },
   "commands": {
@@ -31,7 +31,7 @@
     "prefixTip": "すべてのTTSコマンドは <span class=\"inline-code\">!tts</span> で始まります。",
     "exampleTip": "例: <span class=\"inline-code\">!tts status</span>",
     "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
-    "webDashboardTip": "配信者と視聴者は、<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a>を使用して設定を構成することもできます。",
+    "webDashboardTip": "配信者と視聴者は、<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>を使用して設定を構成することもできます。",
     "myvoiceTip": "視聴者は、チャットで <span class=\"inline-code\">!myvoice</span> を送信することで、Web UIを使用して独自のTTS設定を設定できます。",
     "ttsCommandsTitle": "読み上げコマンド",
     "common": {
@@ -164,7 +164,7 @@
     "channelPointsTTS": {
       "name": "チャンネルポイント → TTS",
       "description": "視聴者がメッセージを読み上げさせるために交換できるカスタムTwitchチャンネルポイント報酬を作成します。",
-      "noteText": "この機能は、ChatVibes Webダッシュボードの「チャンネルポイント → TTS」セクションからのみ設定できます。",
+      "noteText": "この機能は、WildcatTTS Webダッシュボードの「チャンネルポイント → TTS」セクションからのみ設定できます。",
       "howItWorks": "仕組み:",
       "step1": "配信者の設定: ダッシュボードで機能を有効にします。",
       "step2": "報酬の作成: ボットがTwitchチャンネルにカスタムチャンネルポイント報酬を自動的に作成します。",
@@ -493,7 +493,7 @@
     "title": "Webダッシュボード",
     "settingsTitle": "利用可能なダッシュボード設定",
     "obsSetupTitle": "OBSブラウザソースのセットアップ",
-    "introText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a>は、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
+    "introText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>は、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
     "settingEngineTitle": "エンジン制御:",
     "settingEngineDesc": "TTSの有効/無効、イベントのアナウンス、TTSモードと権限の設定",
     "settingViewerTitle": "視聴者の設定:",
@@ -517,7 +517,7 @@
     "obsStep1Title": "ステップ1: OBSにブラウザソースを追加",
     "obsStep1_1": "OBSで、ソースの下の\"+\"をクリック",
     "obsStep1_2": "\"ブラウザ\"を選択",
-    "obsStep1_3": "名前を付ける(例: \"ChatVibes TTS\")",
+    "obsStep1_3": "名前を付ける(例: \"WildcatTTS TTS\")",
     "obsStep1_4": "設定:",
     "obsConfigUrlTitle": "URL:",
     "obsConfigUrlDesc": "ダッシュボードから固有のURLを貼り付け",
@@ -527,7 +527,7 @@
     "obsConfigShutdown": "持続的なオーディオのために\"表示されていないときにソースをシャットダウン\"のチェックを外す",
     "obsStep2Title": "ステップ2: オーディオモニタリングを有効化",
     "obsStep2_1": "OBSでオーディオミキサーを見つける(下部パネル)",
-    "obsStep2_2": "\"ChatVibes TTS\"の横の歯車(⚙️)をクリック → \"詳細オーディオプロパティ\"",
+    "obsStep2_2": "\"WildcatTTS TTS\"の横の歯車(⚙️)をクリック → \"詳細オーディオプロパティ\"",
     "obsStep2_3": "\"オーディオモニタリング\"を次に設定:",
     "obsMonitorOutputTitle": "モニターと出力",
     "obsMonitorOutputDesc": "- あなたと配信の両方が聞こえます",
@@ -539,13 +539,13 @@
   "troubleshooting": {
     "title": "トラブルシューティング",
     "q1": "ボットがコマンドに応答しない?",
-    "a1": "ボットがあなたのチャンネルのモデレーターであることを確認してください。Twitchチャットで/mod chatvibesbotと入力することでこれを行えます。多くの場合、ボットはメッセージを読んでコマンドに応答するためにモデレーター権限が必要な場合があります。",
+    "a1": "ボットがあなたのチャンネルのモデレーターであることを確認してください。Twitchチャットで/mod wildcatTtsbotと入力することでこれを行えます。多くの場合、ボットはメッセージを読んでコマンドに応答するためにモデレーター権限が必要な場合があります。",
     "q2": "ボットが話さない?",
     "a2": "ボットがあなたのチャンネルで有効になっていることを確認してください。Twitchチャットで!tts onと入力することでこれを行えます。また、現在のモード!tts modeと権限!tts permissionを確認してください。",
     "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",
     "a3": "言語ブーストが正しい言語に設定されていることを確認してください。自分用には!tts language <言語名>、チャンネル用には!tts defaultlanguage <言語名>をTwitchチャットで入力することでこれを行えます。!tts defaultlanguageを使用して現在の言語ブーストを確認できます。",
     "q4": "TTS生成に時間がかかりすぎるか失敗する?",
-    "a4": "ChatVibesは現在、最低レイテンシのために同期モードを有効にしたWavespeed AIを使用しています。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
+    "a4": "WildcatTTSは現在、最低レイテンシのために同期モードを有効にしたWavespeed AIを使用しています。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
     "q5": "音声が見つかりませんエラー?",
     "a5": "音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。!tts voicesで利用可能な音声へのリンクを取得してください。",
     "q6": "\"音声アクセスが拒否されました\"エラー?",

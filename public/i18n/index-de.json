@@ -6,7 +6,7 @@
     "toggleNav": "☰",
     "home": "Startseite",
     "chatSageDocs": "ChatSage Docs",
-    "chatVibesDocs": "ChatVibes Docs",
+    "wildcatTtsDocs": "WildcatTTS Docs",
     "contact": "Kontakt"
   },
   "hero": {
@@ -25,20 +25,20 @@
       "feature4": "Auto-Chat- und Übersetzungsfunktionen",
       "button": "ChatSage Docs anzeigen →"
     },
-    "chatvibes": {
-      "title": "ChatVibes TTS Bot",
+    "wildcatTts": {
+      "title": "WildcatTTS TTS Bot",
       "description": "Fortgeschrittener Text-zu-Sprache-Bot mit Musikgenerierungsfunktionen.",
       "feature1": "Natürlich klingendes TTS mit über 300 Stimmen",
       "feature2": "Channel Points Integration",
       "feature3": "KI-Musikgenerierung",
       "feature4": "Web-Dashboard für Einstellungen",
-      "button": "ChatVibes Docs anzeigen →"
+      "button": "WildcatTTS Docs anzeigen →"
     },
     "gettingStarted": {
       "title": "Erste Schritte",
       "quickStartTitle": "Schnellstart",
       "step1": "Besuchen Sie <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a>, um Ihren ChatSage-Bot einzurichten",
-      "step2": "Besuchen Sie <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> für das ChatVibes TTS-Dashboard",
+      "step2": "Besuchen Sie <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> für das WildcatTTS TTS-Dashboard",
       "step3": "Authentifizieren Sie sich mit Ihrem Twitch-Konto",
       "step4": "Konfigurieren Sie Ihre Bot-Einstellungen",
       "step5": "Überprüfen Sie die Dokumentationsseiten für detaillierte Befehlsreferenzen"

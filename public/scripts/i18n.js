@@ -39,27 +39,27 @@ async function initI18n() {
   // Try to get language from URL parameter, e.g., ?lang=es
   const urlParams = new URLSearchParams(window.location.search);
   const langParam = urlParams.get('lang');
-  
+
   // Try to get language from localStorage (if previously selected)
   const storedLang = localStorage.getItem('preferredLanguage');
-  
+
   // Try to get language from browser settings
   const browserLang = navigator.language.split('-')[0];
-  
+
   // Determine which language to use (URL param takes precedence, then stored, then browser)
   let targetLang = langParam || storedLang || browserLang || DEFAULT_LANGUAGE;
-  
+
   // If the target language is not available, fall back to default
   if (!AVAILABLE_LANGUAGES.hasOwnProperty(targetLang)) {
     targetLang = DEFAULT_LANGUAGE;
   }
-  
+
   // Load translations
   await loadTranslations(targetLang);
-  
+
   // Update language selector
   updateLanguageSelector(targetLang);
-  
+
   // Apply translations
   translatePage();
 }
@@ -70,7 +70,7 @@ function getCurrentPageId() {
   // Check for index.html or root path first
   if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
     return 'index';
-  } else if (path.includes('chatvibesdocs')) {
+  } else if (path.includes('wildcatttsdocs')) {
     return 'chatvibes';
   } else if (path.includes('botcommands')) {
     return 'botcommands';
@@ -89,13 +89,13 @@ async function loadTranslations(lang) {
     }
     translations = await response.json();
     currentLanguage = lang;
-    
+
     // Store the preferred language
     localStorage.setItem('preferredLanguage', lang);
-    
+
     // Update HTML lang attribute
     document.documentElement.lang = lang;
-    
+
     // Update URL if it doesn't already have the lang parameter
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('lang') !== lang) {
@@ -103,14 +103,14 @@ async function loadTranslations(lang) {
       const newUrl = window.location.pathname + '?' + urlParams.toString();
       window.history.replaceState({}, '', newUrl);
     }
-    
+
     // Special styling for CJK languages
     if (['ja', 'zh', 'ko'].includes(currentLanguage)) {
       document.body.classList.add('cjk-language');
     } else {
       document.body.classList.remove('cjk-language');
     }
-    
+
     return true;
   } catch (error) {
     console.error('Error loading translations:', error);
@@ -126,7 +126,7 @@ async function loadTranslations(lang) {
 function getTranslation(key, defaultValue = null) {
   const keyPath = key.split('.');
   let result = translations;
-  
+
   for (const part of keyPath) {
     if (result && result.hasOwnProperty(part)) {
       result = result[part];
@@ -134,7 +134,7 @@ function getTranslation(key, defaultValue = null) {
       return defaultValue !== null ? defaultValue : key;
     }
   }
-  
+
   return result;
 }
 
@@ -151,7 +151,7 @@ function translatePage() {
       element.textContent = translation;
     }
   });
-  
+
   // Handle div elements with data-i18n that may contain HTML (like tip-text divs)
   document.querySelectorAll('div[data-i18n], p[data-i18n], em[data-i18n], li[data-i18n], strong[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
@@ -163,15 +163,15 @@ function translatePage() {
       element.textContent = translation;
     }
   });
-  
+
   // Handle complete description translations
   document.querySelectorAll('span[data-i18n]').forEach(element => {
     // Skip elements that have nested i18n elements (we'll handle these separately)
     if (element.querySelector('[data-i18n]')) return;
-    
+
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key, element.textContent);
-    
+
     // Check if translation contains HTML tags
     if (translation.includes('<') && translation.includes('>')) {
       element.innerHTML = translation;
@@ -180,7 +180,7 @@ function translatePage() {
       element.textContent = translation;
     }
   });
-  
+
   // Handle nested translations (words inside descriptions)
   document.querySelectorAll('[data-i18n] [data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
@@ -191,7 +191,7 @@ function translatePage() {
       element.textContent = translation;
     }
   });
-  
+
   // Handle data-i18n-key on span and other elements (not just table cells)
   document.querySelectorAll('span[data-i18n-key], code[data-i18n-key], p[data-i18n-key], li[data-i18n-key], button[data-i18n-key]').forEach(element => {
     const key = element.getAttribute('data-i18n-key');
@@ -202,13 +202,13 @@ function translatePage() {
       element.textContent = translation;
     }
   });
-  
+
   // Handle command examples that need parameter translation
   document.querySelectorAll('[data-i18n-cmd]').forEach(element => {
     if (element.tagName === 'CODE') {
       const key = element.getAttribute('data-i18n-cmd');
       const translation = getTranslation(key, null);
-      
+
       if (translation) {
         // Replace only the parameters in the command example, keep the command structure
         element.textContent = translation;
@@ -217,17 +217,17 @@ function translatePage() {
   });
 
   // Special handling for elements with HTML content or specific needs
-  
+
   // Translate title
   document.title = getTranslation('meta.title', 'Bot Commands');
-  
+
   // Translate command rows - preserve the dropdown toggle
   document.querySelectorAll('.dropdown-summary').forEach(row => {
     const commandCell = row.querySelector('td:first-child');
     const descriptionCell = row.querySelector('td:nth-child(2)');
-    
+
     if (!commandCell || !descriptionCell) return;
-    
+
     // Get the i18n keys
     const commandKey = commandCell.getAttribute('data-i18n-key'); // This will be null for !lurk and !botlang
     const descriptionKey = descriptionCell.getAttribute('data-i18n-key');
@@ -237,14 +237,14 @@ function translatePage() {
     // console.log('descriptionCell:', descriptionCell.outerHTML);
     // console.log('commandKey:', commandKey);
     // console.log('descriptionKey:', descriptionKey);
-    
+
     // Only translate description if descriptionKey is present
     if (descriptionKey) { // Changed condition from (commandKey && descriptionKey)
       // No translation for commandCell here, it remains static HTML
-      
+
       // Get the dropdown toggle element if it exists
       const dropdownToggle = descriptionCell.querySelector('.dropdown-toggle');
-      
+
       // Get the description text span
       const descriptionTextSpan = descriptionCell.querySelector('.description-text');
       if (descriptionTextSpan) {
@@ -253,7 +253,7 @@ function translatePage() {
         // Fallback if for some reason description-text span is not found
         descriptionCell.textContent = getTranslation(descriptionKey, descriptionCell.textContent);
       }
-      
+
       // Re-append the dropdown toggle (this part remains the same, but now it's safe)
       if (dropdownToggle) {
         descriptionCell.appendChild(dropdownToggle);
@@ -262,19 +262,19 @@ function translatePage() {
       // console.log('Skipping row due to missing descriptionKey.');
     }
   });
-  
+
   // Translate "Mod" badge
   document.querySelectorAll('.mod-badge').forEach(badge => {
     badge.textContent = getTranslation('ui.mod', 'Mod');
     // console.log('Mod badge translated:', badge.outerHTML);
   });
-  
+
   // Update mod-command::before with CSS
   if (modCommandStyle) { // Ensure modCommandStyle is initialized
     modCommandStyle.textContent = `.mod-command::before { content: "${getTranslation('ui.mod', 'Mod')}"; }`;
     // console.log('Updated mod-command-style.');
   }
-  
+
   // Translate "Last updated" text
   const lastUpdatedEl = document.getElementById('last-updated');
   if (lastUpdatedEl) {
@@ -289,10 +289,10 @@ function createLanguageSelector() {
   if (document.querySelector('.language-selector')) {
     return;
   }
-  
+
   const selector = document.createElement('div');
   selector.className = 'language-selector';
-  
+
   const currentBtn = document.createElement('button');
   currentBtn.className = 'current-lang';
   currentBtn.type = 'button';

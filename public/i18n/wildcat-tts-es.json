@@ -1,16 +1,16 @@
 {
   "meta": {
-    "title": "Comandos del Bot TTS ChatVibes"
+    "title": "Comandos del Bot TTS WildcatTTS"
   },
   "nav": {
     "toggleNav": "☰",
     "home": "Inicio",
     "chatSageDocs": "Docs ChatSage",
-    "chatVibesDocs": "Docs ChatVibes",
+    "wildcatTtsDocs": "Docs WildcatTTS",
     "contact": "Contacto"
   },
   "sidebar": {
-    "chatVibes": "ChatVibes",
+    "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Alternar Barra Lateral",
     "commands": "Comandos",
     "toggleSubmenu": "",
@@ -22,8 +22,8 @@
     "troubleshooting": "Solución de Problemas"
   },
   "page": {
-    "title": "Documentación del Bot TTS ChatVibes",
-    "inviteNote": "ChatVibes está actualmente disponible solo por invitación.",
+    "title": "Documentación del Bot TTS WildcatTTS",
+    "inviteNote": "WildcatTTS está actualmente disponible solo por invitación.",
     "requestAccess": "Solicitar acceso"
   },
   "commands": {
@@ -31,7 +31,7 @@
     "prefixTip": "Todos los comandos TTS tienen el prefijo <span class=\"inline-code\">!tts</span>.",
     "exampleTip": "Por ejemplo: <span class=\"inline-code\">!tts status</span>",
     "expandTip": "Haz clic en cualquier fila de comando a continuación para expandir y ver los detalles de uso.",
-    "webDashboardTip": "Los broadcasters y los espectadores también pueden configurar la configuración usando el <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a>.",
+    "webDashboardTip": "Los broadcasters y los espectadores también pueden configurar la configuración usando el <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>.",
     "myvoiceTip": "Los espectadores pueden establecer sus propias preferencias de TTS usando la interfaz web enviando <span class=\"inline-code\">!myvoice</span> en el chat.",
     "ttsCommandsTitle": "Comandos de Texto a Voz",
     "common": {
@@ -164,7 +164,7 @@
     "channelPointsTTS": {
       "name": "Puntos del Canal → TTS",
       "description": "Crea una recompensa personalizada de Puntos del Canal de Twitch para que los espectadores canjeen con un mensaje que será leído en voz alta.",
-      "noteText": "Esta función se configura exclusivamente a través del Panel Web de ChatVibes en la sección \"Puntos del Canal → TTS\".",
+      "noteText": "Esta función se configura exclusivamente a través del Panel Web de WildcatTTS en la sección \"Puntos del Canal → TTS\".",
       "howItWorks": "Cómo Funciona:",
       "step1": "Configuración del Streamer: Activa la función en el panel.",
       "step2": "Creación de Recompensa: El bot crea automáticamente una recompensa personalizada de Puntos del Canal en tu canal de Twitch.",
@@ -491,7 +491,7 @@
   },
   "webDashboard": {
     "title": "Panel Web",
-    "introText": "El <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ChatVibes Web Dashboard</a> proporciona a los streamers una interfaz completa para configurar todas las configuraciones de TTS y música. Acceda iniciando sesión con su cuenta de Twitch.",
+    "introText": "El <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a> proporciona a los streamers una interfaz completa para configurar todas las configuraciones de TTS y música. Acceda iniciando sesión con su cuenta de Twitch.",
     "settingsTitle": "Configuraciones Disponibles del Panel",
     "settingEngineTitle": "Control del Motor:",
     "settingEngineDesc": "Activar/desactivar TTS, anunciar eventos, establecer modo TTS y permisos",
@@ -517,7 +517,7 @@
     "obsStep1Title": "Paso 1: Agregar Fuente de Navegador en OBS",
     "obsStep1_1": "En OBS, haz clic en el \"+\" debajo de Fuentes",
     "obsStep1_2": "Selecciona \"Navegador\"",
-    "obsStep1_3": "Nómbrala (ej., \"ChatVibes TTS\")",
+    "obsStep1_3": "Nómbrala (ej., \"WildcatTTS TTS\")",
     "obsStep1_4": "Configura:",
     "obsConfigUrlTitle": "URL:",
     "obsConfigUrlDesc": "Pega tu URL única del panel",
@@ -527,7 +527,7 @@
     "obsConfigShutdown": "Desmarca \"Apagar fuente cuando no esté visible\" para audio persistente",
     "obsStep2Title": "Paso 2: Habilitar Monitoreo de Audio",
     "obsStep2_1": "Encuentra el mezclador de audio en OBS (panel inferior)",
-    "obsStep2_2": "Haz clic en el engranaje (⚙️) junto a \"ChatVibes TTS\" → \"Propiedades de Audio Avanzadas\"",
+    "obsStep2_2": "Haz clic en el engranaje (⚙️) junto a \"WildcatTTS TTS\" → \"Propiedades de Audio Avanzadas\"",
     "obsStep2_3": "Establece \"Monitoreo de Audio\" en:",
     "obsMonitorOutputTitle": "Monitorizar y Emitir",
     "obsMonitorOutputDesc": "- TÚ Y la transmisión lo escuchan",
@@ -539,13 +539,13 @@
   "troubleshooting": {
     "title": "Solución de Problemas",
     "q1": "¿El bot no responde a los comandos?",
-    "a1": "Asegúrate de que el bot sea moderador en tu canal. Puedes hacer esto escribiendo /mod chatvibesbot en tu chat de Twitch. En muchos casos, el bot puede necesitar permisos de moderador para leer mensajes y responder a comandos.",
+    "a1": "Asegúrate de que el bot sea moderador en tu canal. Puedes hacer esto escribiendo /mod wildcatTtsbot en tu chat de Twitch. En muchos casos, el bot puede necesitar permisos de moderador para leer mensajes y responder a comandos.",
     "q2": "¿El bot no habla?",
     "a2": "Asegúrate de que el bot esté activado en tu canal. Puedes hacer esto escribiendo !tts on en tu chat de Twitch. Además, verifica el modo actual !tts mode y los permisos !tts permission.",
     "q3": "¿El bot no habla en un idioma específico, o lee números en chino?",
     "a3": "Asegúrate de que el refuerzo de idioma esté configurado en el idioma correcto. Puedes hacer esto escribiendo !tts language <nombre_idioma> para ti mismo o !tts defaultlanguage <nombre_idioma> para el canal en tu chat de Twitch. Puedes verificar el refuerzo de idioma actual usando !tts defaultlanguage.",
     "q4": "¿La generación de TTS tarda demasiado o falla?",
-    "a4": "ChatVibes ahora usa Wavespeed AI con modo sincronizado habilitado para la latencia más baja. Si experimentas retrasos, verifica tu conexión a internet e intenta usar !tts stop para cancelar cualquier generación atascada. El bot reintenta automáticamente las solicitudes fallidas.",
+    "a4": "WildcatTTS ahora usa Wavespeed AI con modo sincronizado habilitado para la latencia más baja. Si experimentas retrasos, verifica tu conexión a internet e intenta usar !tts stop para cancelar cualquier generación atascada. El bot reintenta automáticamente las solicitudes fallidas.",
     "q5": "¿Error de voz no encontrada?",
     "a5": "Asegúrate de estar usando el voice ID correcto de la sección Voces. Los voice IDs distinguen entre mayúsculas y minúsculas y deben coincidir exactamente. Prueba !tts voices para obtener un enlace a las voces disponibles.",
     "q6": "¿Error \"Acceso a voz denegado\"?",

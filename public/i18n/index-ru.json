@@ -6,7 +6,7 @@
     "toggleNav": "☰",
     "home": "Главная",
     "chatSageDocs": "Документация ChatSage",
-    "chatVibesDocs": "Документация ChatVibes",
+    "wildcatTtsDocs": "Документация WildcatTTS",
     "contact": "Контакты"
   },
   "hero": {
@@ -25,20 +25,20 @@
       "feature4": "Функции автоматического чата и перевода",
       "button": "Посмотреть документацию ChatSage →"
     },
-    "chatvibes": {
-      "title": "Бот ChatVibes TTS",
+    "wildcatTts": {
+      "title": "Бот WildcatTTS TTS",
       "description": "Продвинутый бот преобразования текста в речь с возможностями генерации музыки.",
       "feature1": "Естественное звучание TTS с более чем 300 голосами",
       "feature2": "Интеграция Channel Points",
       "feature3": "Генерация музыки с помощью ИИ",
       "feature4": "Веб-панель для настроек",
-      "button": "Посмотреть документацию ChatVibes →"
+      "button": "Посмотреть документацию WildcatTTS →"
     },
     "gettingStarted": {
       "title": "Начало работы",
       "quickStartTitle": "Быстрый старт",
       "step1": "Посетите <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> для настройки вашего бота ChatSage",
-      "step2": "Посетите <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> для панели ChatVibes TTS",
+      "step2": "Посетите <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> для панели WildcatTTS TTS",
       "step3": "Аутентифицируйтесь с помощью вашей учетной записи Twitch",
       "step4": "Настройте параметры вашего бота",
       "step5": "Проверьте страницы документации для подробных справочников команд"

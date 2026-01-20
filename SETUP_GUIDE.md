@@ -11,8 +11,19 @@ This guide walks you through setting up all custom domains for the Wildcat.chat 
 
 ### 1. TTS Web UI: `tts.wildcat.chat`
 
-**Project:** chatvibestts
-**Path:** `/Users/henry/Dev/chatvibes-web-ui`
+**Project:** wildcat-tts (if renamed) or chatvibestts (if unchanged)
+
+### ChatSage Web UI (`/Users/henry/Dev/chatsage-web-ui/functions/.env`)
+```bash
+CALLBACK_URL=https://auth.wildcat.chat/callback
+FRONTEND_URL=https://app.wildcat.chat
+```
+
+### WildcatTTS Web UI (`/Users/henry/Dev/chatvibes-web-ui/functions/.env`)
+```bash
+CALLBACK_URL=https://auth.wildcat.chat/callback
+FRONTEND_URL=https://tts.wildcat.chat
+```
 
 #### Steps:
 
