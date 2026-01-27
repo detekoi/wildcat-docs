@@ -5,7 +5,7 @@
   "nav": {
     "toggleNav": "☰",
     "home": "Главная",
-    "chatSageDocs": "Документация ChatSage",
+    "chatSageDocs": "Документация WildcatSage",
     "wildcatTtsDocs": "Документация WildcatTTS",
     "contact": "Контакты"
   },
