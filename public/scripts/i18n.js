@@ -71,7 +71,7 @@ function getCurrentPageId() {
   if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
     return 'index';
   } else if (path.includes('wildcatttsdocs')) {
-    return 'chatvibes';
+    return 'wildcat-tts';
   } else if (path.includes('botcommands')) {
     return 'botcommands';
   }
