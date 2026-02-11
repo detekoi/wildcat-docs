@@ -70,8 +70,10 @@
         </div>
         <ul>
             <li><a href="#general" data-i18n="sidebar.generalCommands">General Commands</a></li>
+            <li><a href="#custom-commands">Custom Commands</a></li>
             <li><a href="#games" data-i18n="sidebar.games">Games</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config</a></li>
+            <li><a href="#response-variables">Response Variables</a></li>
             <li><a href="#web-dashboard" data-i18n="sidebar.webDashboard">Web Dashboard</a></li>
         </ul>
     </nav>
@@ -238,6 +240,37 @@
                             data-i18n-cmd="commands.quote.usage.edit">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code>
                         <span data-i18n="commands.quote.usage.editDesc">Edits an existing quote (mods/broadcaster
                             only)</span>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr class="category-header" id="custom-commands">
+                    <td colspan="2">Custom Commands</td>
+                </tr>
+            </tbody>
+            <tbody class="dropdown-group">
+                <tr class="dropdown-summary">
+                    <td>!command <span class="mod-badge">Mod</span></td>
+                    <td><span class="description-text">Create, edit, and manage custom commands for your channel.
+                            Custom commands can also be managed via the <a href="https://app.wildcat.chat/"
+                                class="default-link-style" target="_blank">Web Dashboard</a>.</span><span
+                            class="dropdown-toggle">&#x25BC;</span></td>
+                </tr>
+                <tr class="dropdown-details" style="display:none;">
+                    <td colspan="2">
+                        <code class="mod-command">!command add &lt;name&gt; &lt;response&gt;</code>
+                        <span>Creates a new command</span>
+                        <code class="mod-command">!command edit &lt;name&gt; &lt;response&gt;</code>
+                        <span>Updates an existing command's response</span>
+                        <code class="mod-command">!command remove &lt;name&gt;</code>
+                        <span>Deletes a command</span>
+                        <code class="mod-command">!command show &lt;name&gt;</code>
+                        <span>Shows the raw response template and current settings</span>
+                        <code class="mod-command">!command options &lt;name&gt; permission=&lt;level&gt;</code>
+                        <span>Set who can use the command: everyone, subscriber, vip, moderator, or
+                            broadcaster</span>
+                        <code class="mod-command">!command options &lt;name&gt; cooldown=&lt;seconds&gt;</code>
+                        <span>Set a cooldown between uses (in seconds)</span>
                     </td>
                 </tr>
             </tbody>
@@ -513,6 +546,106 @@
                 </tr>
             </tbody>
         </table>
+
+        <section id="response-variables" class="section">
+            <h2>Response Variables</h2>
+            <p>When you create a custom command, you can use <strong>response variables</strong> to insert
+                dynamic content. Write them in your response using the <code>$(variable)</code> format and they'll
+                be replaced automatically when the command is used.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>What it does</th>
+                        <th>Example output</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>$(user)</code></td>
+                        <td>Name of the person who used the command</td>
+                        <td>WildcatGamer</td>
+                    </tr>
+                    <tr>
+                        <td><code>$(channel)</code></td>
+                        <td>Channel name</td>
+                        <td>WildcatStreamer</td>
+                    </tr>
+                    <tr>
+                        <td><code>$(args)</code></td>
+                        <td>All text after the command name as one string</td>
+                        <td>If someone types <code>!shout hello world</code> $(args) = <strong>hello world</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$(1)</code> <code>$(2)</code> ...</td>
+                        <td>A single word by position — $(1) is the 1st word, $(2) is the 2nd, and so on</td>
+                        <td>If someone types <code>!shout hello world</code> $(1) = <strong>hello</strong>, $(2) =
+                            <strong>world</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>$(count)</code></td>
+                        <td>How many times this command has been used</td>
+                        <td>42</td>
+                    </tr>
+                    <tr>
+                        <td><code>$(random X-Y)</code></td>
+                        <td>A random number between X and Y</td>
+                        <td>17 from <code>$(random 1-20)</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>$(uptime)</code></td>
+                        <td>How long the stream has been live</td>
+                        <td>2h 30m</td>
+                    </tr>
+                    <tr>
+                        <td><code>$(game)</code></td>
+                        <td>The game currently being played</td>
+                        <td>Metroid Prime</td>
+                    </tr>
+                    <tr>
+                        <td><code>$(followage)</code></td>
+                        <td>How long the user has been following the channel</td>
+                        <td>2 years 3 months</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Examples</h3>
+            <p style="margin-bottom: 6px;">Here are some example commands you can create:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Command to type in chat</th>
+                        <th>What the bot says</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>!command add hi Hello $(user)! Welcome!</code></td>
+                        <td>Hello WildcatGamer! Welcome!</td>
+                    </tr>
+                    <tr>
+                        <td><code>!command add roll $(user) rolled a $(random 1-20)!</code></td>
+                        <td>WildcatGamer rolled a 17!</td>
+                    </tr>
+                    <tr>
+                        <td><code>!command add live We've been live for $(uptime) playing $(game)!</code></td>
+                        <td>We've been live for 2h 30m playing Metroid Prime!</td>
+                    </tr>
+                    <tr>
+                        <td><code>!command add hug $(user) hugs $(1)!</code></td>
+                        <td>WildcatGamer hugs WildcatStreamer!</td>
+                    </tr>
+                    <tr>
+                        <td><code>!command add uses This command has been used $(count) times!</code></td>
+                        <td>This command has been used 42 times!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
         <section id="web-dashboard" class="section">
             <h2 data-i18n="webDashboard.title">Web Dashboard</h2>

@@ -200,9 +200,11 @@ header .tagline {
   0% {
     left: -25%;
   }
+
   16.67% {
     left: 125%;
   }
+
   100% {
     left: 125%;
   }
@@ -495,7 +497,7 @@ header .tagline {
 /* =====================================================
    BOT CARDS BACKGROUND
    ===================================================== */
-#bots > div > div {
+#bots>div>div {
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-grid-line);
   border-radius: 0;
@@ -554,6 +556,11 @@ code {
   font-family: var(--font-code);
   font-size: 1em;
   color: var(--color-text);
+}
+
+#response-variables p code {
+  display: inline;
+  margin: 0;
 }
 
 .inline-code {
@@ -699,6 +706,7 @@ footer {
    DARK MODE (Components)
    ===================================================== */
 @media (prefers-color-scheme: dark) {
+
   /* Header */
   header .role,
   header .tagline {
@@ -819,7 +827,7 @@ footer {
   }
 
   /* Bot cards background for dark mode */
-  #bots > div > div {
+  #bots>div>div {
     background-color: var(--color-card-bg);
     border-color: var(--color-grid-line);
   }
