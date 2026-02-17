@@ -644,7 +644,7 @@ tr:last-child:not(.dropdown-details) td {
   font-weight: 800;
   text-align: left;
   letter-spacing: 1px;
-  color: var(--color-text);
+  color: var(--color-accent);
   text-transform: uppercase;
   border-radius: 0;
 }
@@ -656,7 +656,7 @@ tr:last-child:not(.dropdown-details) td {
   padding: 0.75em 1em;
   background: var(--color-card-bg);
   border: 1px solid var(--color-grid-line);
-  border-left: 2px solid var(--color-text);
+  border-left: 2px solid var(--color-accent);
   border-radius: 0;
   font-size: 1.08em;
   display: flex;
