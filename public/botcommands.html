@@ -259,7 +259,10 @@
                 <tr class="dropdown-details" style="display:none;">
                     <td colspan="2">
                         <code class="mod-command">!command add &lt;name&gt; &lt;response&gt;</code>
-                        <span>Creates a new command</span>
+                        <span>Creates a new text-based command</span>
+                        <code class="mod-command">!command addai &lt;name&gt; &lt;prompt&gt;</code>
+                        <span>Creates a new AI-powered command — generates a unique response each time using the
+                            prompt</span>
                         <code class="mod-command">!command edit &lt;name&gt; &lt;response&gt;</code>
                         <span>Updates an existing command's response</span>
                         <code class="mod-command">!command remove &lt;name&gt;</code>
@@ -271,6 +274,8 @@
                             broadcaster</span>
                         <code class="mod-command">!command options &lt;name&gt; cooldown=&lt;seconds&gt;</code>
                         <span>Set a cooldown between uses (in seconds)</span>
+                        <code class="mod-command">!command options &lt;name&gt; type=&lt;text|prompt&gt;</code>
+                        <span>Switch an existing command between text mode and AI mode</span>
                     </td>
                 </tr>
             </tbody>
@@ -645,6 +650,45 @@
                     </tr>
                 </tbody>
             </table>
+
+            <h3>AI Commands</h3>
+            <p style="margin-bottom: 6px;">AI commands use a prompt instead of a fixed response. The bot sends
+                the prompt to an AI model and returns a unique answer every time. You can mix response variables
+                into prompts too!</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Command to type in chat</th>
+                        <th>What happens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>!command addai vibe Tell $(user) what kind of vibe their message "$(args)" gives off in one sentence.</code>
+                        </td>
+                        <td>When someone types <code>!vibe I just ate an entire pizza</code>, the AI might reply:
+                            <em>"WildcatGamer your message gives off deeply respectable goblin energy."</em> — different
+                            every time!
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>!command addai hug Write a short, unique, and funny hug message from $(user) to $(1).</code>
+                        </td>
+                        <td>When someone types <code>!hug WildcatStreamer</code>, the AI might reply:
+                            <em>"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier."</em>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>!command addai fortune Give $(user) a short fortune cookie message.</code></td>
+                        <td>A unique fortune every time: <em>"WildcatGamer, today you will find a rare item in an
+                                unexpected place."</em></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 8px;"><strong>Tip:</strong> You can also convert an existing text command to
+                AI mode with <code>!command options &lt;name&gt; type=prompt</code>, or switch it back with
+                <code>!command options &lt;name&gt; type=text</code>.
+            </p>
         </section>
 
         <section id="web-dashboard" class="section">
