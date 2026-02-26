@@ -18,13 +18,13 @@
         .hero-section {
             position: relative;
             text-align: left;
-            padding: var(--spacing-large) var(--spacing-medium);
+            padding: var(--spacing-large) var(--spacing-large);
             margin-bottom: var(--spacing-large);
 
-            /* Full width breakout consistent with wildcat-home */
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
+            /* Full width breakout without 100vw scrollbar issue */
+            width: auto;
+            margin-left: calc(-1 * var(--spacing-large));
+            margin-right: calc(-1 * var(--spacing-large));
 
             display: flex;
             flex-direction: column;
@@ -33,21 +33,20 @@
             min-height: 50vh;
             border-bottom: 1px solid var(--color-grid-line);
             overflow: hidden;
+            box-sizing: border-box;
         }
 
         .hero-title {
-            font-size: var(--font-size-huge);
+            font-size: clamp(2.5rem, 8vw, 8rem);
             font-weight: 800;
             margin: 0 0 0.5rem 0;
             color: var(--color-text);
             letter-spacing: 0.02em;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 0.5rem;
+            display: block;
             text-transform: uppercase;
-            flex-wrap: wrap;
             line-height: 0.9;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .tagline {
@@ -128,11 +127,8 @@
             .hero-section {
                 min-height: auto;
                 padding: var(--spacing-large) var(--spacing-medium);
-            }
-
-            .hero-title {
-                font-size: 2.5rem;
-                word-wrap: break-word;
+                margin-left: calc(-1 * var(--spacing-medium));
+                margin-right: calc(-1 * var(--spacing-medium));
             }
         }
     </style>
