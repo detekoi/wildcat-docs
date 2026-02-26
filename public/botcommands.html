@@ -568,50 +568,53 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><code>$(user)</code></td>
+                        <td><span class="inline-code">$(user)</span></td>
                         <td>Name of the person who used the command</td>
                         <td>WildcatGamer</td>
                     </tr>
                     <tr>
-                        <td><code>$(channel)</code></td>
+                        <td><span class="inline-code">$(channel)</span></td>
                         <td>Channel name</td>
                         <td>WildcatStreamer</td>
                     </tr>
                     <tr>
-                        <td><code>$(args)</code></td>
+                        <td><span class="inline-code">$(args)</span></td>
                         <td>All text after the command name as one string</td>
-                        <td>If someone types <code>!shout hello world</code> $(args) = <strong>hello world</strong>
+                        <td>If someone types <span class="inline-code">!shout hello world</span>, $(args) =
+                            <strong>hello
+                                world</strong>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>$(1)</code> <code>$(2)</code> ...</td>
+                        <td><span class="inline-code">$(1)</span> <span class="inline-code">$(2)</span> ...</td>
                         <td>A single word by position — $(1) is the 1st word, $(2) is the 2nd, and so on</td>
-                        <td>If someone types <code>!shout hello world</code> $(1) = <strong>hello</strong>, $(2) =
+                        <td>If someone types <span class="inline-code">!shout hello world</span>, $(1) =
+                            <strong>hello</strong>, $(2) =
                             <strong>world</strong>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>$(count)</code></td>
+                        <td><span class="inline-code">$(count)</span></td>
                         <td>How many times this command has been used</td>
                         <td>42</td>
                     </tr>
                     <tr>
-                        <td><code>$(random X-Y)</code></td>
+                        <td><span class="inline-code">$(random X-Y)</span></td>
                         <td>A random number between X and Y</td>
-                        <td>17 from <code>$(random 1-20)</code></td>
+                        <td>17 from <span class="inline-code">$(random 1-20)</span></td>
                     </tr>
                     <tr>
-                        <td><code>$(uptime)</code></td>
+                        <td><span class="inline-code">$(uptime)</span></td>
                         <td>How long the stream has been live</td>
                         <td>2h 30m</td>
                     </tr>
                     <tr>
-                        <td><code>$(game)</code></td>
+                        <td><span class="inline-code">$(game)</span></td>
                         <td>The game currently being played</td>
                         <td>Metroid Prime</td>
                     </tr>
                     <tr>
-                        <td><code>$(followage)</code></td>
+                        <td><span class="inline-code">$(followage)</span></td>
                         <td>How long the user has been following the channel</td>
                         <td>2 years 3 months</td>
                     </tr>
@@ -629,23 +632,25 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><code>!command add hi Hello $(user)! Welcome!</code></td>
+                        <td><span class="inline-code">!command add hi Hello $(user)! Welcome!</span></td>
                         <td>Hello WildcatGamer! Welcome!</td>
                     </tr>
                     <tr>
-                        <td><code>!command add roll $(user) rolled a $(random 1-20)!</code></td>
+                        <td><span class="inline-code">!command add roll $(user) rolled a $(random 1-20)!</span></td>
                         <td>WildcatGamer rolled a 17!</td>
                     </tr>
                     <tr>
-                        <td><code>!command add live We've been live for $(uptime) playing $(game)!</code></td>
+                        <td><span class="inline-code">!command add live We've been live for $(uptime) playing
+                                $(game)!</span></td>
                         <td>We've been live for 2h 30m playing Metroid Prime!</td>
                     </tr>
                     <tr>
-                        <td><code>!command add hug $(user) hugs $(1)!</code></td>
+                        <td><span class="inline-code">!command add hug $(user) hugs $(1)!</span></td>
                         <td>WildcatGamer hugs WildcatStreamer!</td>
                     </tr>
                     <tr>
-                        <td><code>!command add uses This command has been used $(count) times!</code></td>
+                        <td><span class="inline-code">!command add uses This command has been used $(count)
+                                times!</span></td>
                         <td>This command has been used 42 times!</td>
                     </tr>
                 </tbody>
@@ -653,41 +658,52 @@
 
             <h3>AI Commands</h3>
             <p style="margin-bottom: 6px;">AI commands use a prompt instead of a fixed response. The bot sends
-                the prompt to an AI model and returns a unique answer every time. You can mix response variables
-                into prompts too!</p>
+                the prompt to an AI model and returns a unique answer every time. You can use response variables
+                in prompts too!</p>
+
+            <p style="margin-bottom: 6px;">The easiest way to create AI commands is through the
+                <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank">Web Dashboard</a>.
+                Click <strong>+ Add</strong>, flip on <strong>AI Mode</strong>, and write your prompt.
+                You can also create them in chat with <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.
+            </p>
+
             <table>
                 <thead>
                     <tr>
-                        <th>Command to type in chat</th>
+                        <th>AI Prompt</th>
                         <th>What happens</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><code>!command addai vibe Tell $(user) what kind of vibe their message "$(args)" gives off in one sentence.</code>
-                        </td>
-                        <td>When someone types <code>!vibe I just ate an entire pizza</code>, the AI might reply:
+                        <td>Name: <span class="inline-code">vibe</span><br>Prompt: <span class="inline-code">Tell
+                                $(user) what kind of vibe "$(args)" gives off in one sentence.</span></td>
+                        <td>When someone types <span class="inline-code">!vibe I just ate an entire pizza</span>, the AI
+                            might reply:
                             <em>"WildcatGamer your message gives off deeply respectable goblin energy."</em> — different
                             every time!
                         </td>
                     </tr>
                     <tr>
-                        <td><code>!command addai hug Write a short, unique, and funny hug message from $(user) to $(1).</code>
-                        </td>
-                        <td>When someone types <code>!hug WildcatStreamer</code>, the AI might reply:
+                        <td>Name: <span class="inline-code">hug</span><br>Prompt: <span class="inline-code">Write a
+                                short, funny hug message from $(user) to $(1).</span></td>
+                        <td>When someone types <span class="inline-code">!hug WildcatStreamer</span>, the AI might
+                            reply:
                             <em>"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier."</em>
                         </td>
                     </tr>
                     <tr>
-                        <td><code>!command addai fortune Give $(user) a short fortune cookie message.</code></td>
+                        <td>Name: <span class="inline-code">fortune</span><br>Prompt: <span class="inline-code">Give
+                                $(user) a short fortune cookie message.</span></td>
                         <td>A unique fortune every time: <em>"WildcatGamer, today you will find a rare item in an
                                 unexpected place."</em></td>
                     </tr>
                 </tbody>
             </table>
-            <p style="margin-top: 8px;"><strong>Tip:</strong> You can also convert an existing text command to
-                AI mode with <code>!command options &lt;name&gt; type=prompt</code>, or switch it back with
-                <code>!command options &lt;name&gt; type=text</code>.
+            <p style="margin-top: 8px;"><strong>Tip:</strong> You can convert any existing text command to
+                AI mode by editing it in the dashboard and enabling <strong>AI Mode</strong>, or in chat with
+                <span class="inline-code">!command options &lt;name&gt; type=prompt</span>. Switch back with <span
+                    class="inline-code">type=text</span>.
             </p>
         </section>
 
