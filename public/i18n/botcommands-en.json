@@ -21,6 +21,7 @@
     },
     "categories": {
       "general": "General",
+      "customCommands": "Custom Commands",
       "games": "Games",
       "config": "Config"
     }
@@ -93,6 +94,28 @@
         "deleteDesc": "Deletes a quote (mods/broadcaster only)",
         "edit": "!quote edit <id> <text [- author]>",
         "editDesc": "Edits an existing quote (mods/broadcaster only)"
+      }
+    },
+    "command": {
+      "name": "!command <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Create, edit, and manage custom commands for your channel. Custom commands can also be managed via the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
+      "usage": {
+        "addText": "Creates a new text-based command",
+        "addAi": "Creates a new AI-powered command — generates a unique response each time using the prompt",
+        "edit": "Updates an existing command's response",
+        "remove": "Deletes a command",
+        "show": "Shows the raw response template and current settings",
+        "optionsPerms": "Set who can use the command: everyone, subscriber, vip, moderator, or broadcaster",
+        "optionsCooldown": "Set a cooldown between uses (in seconds)",
+        "optionsType": "Switch an existing command between text mode and AI mode",
+        "addTextCmd": "!command add <name> <response>",
+        "addAiCmd": "!command addai <name> <prompt>",
+        "editCmd": "!command edit <name> <response>",
+        "removeCmd": "!command remove <name>",
+        "showCmd": "!command show <name>",
+        "optionsPermsCmd": "!command options <name> permission=<level>",
+        "optionsCooldownCmd": "!command options <name> cooldown=<seconds>",
+        "optionsTypeCmd": "!command options <name> type=<text|prompt>"
       }
     },
     "geo": {
@@ -249,9 +272,85 @@
   },
   "sidebar": {
     "generalCommands": "General Commands",
+    "customCommands": "Custom Commands",
     "games": "Games",
     "config": "Config",
     "webDashboard": "Web Dashboard"
+  },
+  "responseVariables": {
+    "title": "Response Variables",
+    "intro1": "When you create a custom command, you can use <strong>response variables</strong> to insert dynamic content. Write them in your response using the <code>$(variable)</code> format and they'll be replaced automatically when the command is used.",
+    "table": {
+      "variable": "Variable",
+      "whatItDoes": "What it does",
+      "exampleOutput": "Example output"
+    },
+    "variables": {
+      "user": {
+        "desc": "Name of the person who used the command"
+      },
+      "channel": {
+        "desc": "Channel name"
+      },
+      "args": {
+        "desc": "All text after the command name as one string",
+        "example": "If someone types <span class=\"inline-code\">!shout hello world</span>, $(args) = <strong>hello world</strong>"
+      },
+      "numbered": {
+        "desc": "A single word by position — $(1) is the 1st word, $(2) is the 2nd, and so on",
+        "example": "If someone types <span class=\"inline-code\">!shout hello world</span>, $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
+      },
+      "count": {
+        "desc": "How many times this command has been used"
+      },
+      "random": {
+        "desc": "A random number between X and Y",
+        "example": "17 from <span class=\"inline-code\">$(random 1-20)</span>"
+      },
+      "uptime": {
+        "desc": "How long the stream has been live",
+        "example": "2h 30m"
+      },
+      "game": {
+        "desc": "The game currently being played",
+        "example": "Metroid Prime"
+      },
+      "followage": {
+        "desc": "How long the user has been following the channel",
+        "example": "2 years 3 months"
+      }
+    },
+    "examplesTitle": "Examples",
+    "examplesIntro": "Here are some example commands you can create:",
+    "examplesTable": {
+      "command": "Command to type in chat",
+      "botSays": "What the bot says"
+    }
+  },
+  "aiCommands": {
+    "title": "AI Commands",
+    "intro1": "AI commands use a prompt instead of a fixed response. The bot sends the prompt to an AI model and returns a unique answer every time. You can use response variables in prompts too!",
+    "intro2": "The easiest way to create AI commands is through the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Click <strong>+ Add</strong>, flip on <strong>AI Mode</strong>, and write your prompt. You can also create them in chat with <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.",
+    "table": {
+      "prompt": "AI Prompt",
+      "whatHappens": "What happens"
+    },
+    "examples": {
+      "vibe": {
+        "prompt": "Name: <span class=\"inline-code\">vibe</span><br>Prompt: <span class=\"inline-code\">Tell $(user) what kind of vibe \"$(args)\" gives off in one sentence.</span>",
+        "result": "When someone types <span class=\"inline-code\">!vibe I just ate an entire pizza</span>, the AI might reply: <em>\"WildcatGamer your message gives off deeply respectable goblin energy.\"</em> — different every time!"
+      },
+      "hug": {
+        "prompt": "Name: <span class=\"inline-code\">hug</span><br>Prompt: <span class=\"inline-code\">Write a short, funny hug message from $(user) to $(1).</span>",
+        "result": "When someone types <span class=\"inline-code\">!hug WildcatStreamer</span>, the AI might reply: <em>\"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier.\"</em>"
+      },
+      "fortune": {
+        "prompt": "Name: <span class=\"inline-code\">fortune</span><br>Prompt: <span class=\"inline-code\">Give $(user) a short fortune cookie message.</span>",
+        "result": "A unique fortune every time: <em>\"WildcatGamer, today you will find a rare item in an unexpected place.\"</em>"
+      }
+    },
+    "tipLabel": "Tip:",
+    "tipText": "You can convert any existing text command to AI mode by editing it in the dashboard and enabling <strong>AI Mode</strong>, or in chat with <span class=\"inline-code\">!command options &lt;name&gt; type=prompt</span>. Switch back with <span class=\"inline-code\">type=text</span>."
   },
   "webDashboard": {
     "title": "Web Dashboard",

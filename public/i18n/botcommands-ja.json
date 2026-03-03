@@ -22,7 +22,8 @@
     "categories": {
       "general": "一般",
       "games": "ゲーム",
-      "config": "設定"
+      "config": "設定",
+      "customCommands": "カスタムコマンド"
     }
   },
   "commands": {
@@ -241,6 +242,28 @@
     "ping": {
       "name": "!ping",
       "description": "ボットが応答しているかを確認します。Pong!と応答します。"
+    },
+    "command": {
+      "name": "!コマンド <span class=\"mod-badge\">MOD</span>",
+      "description": "<span class=\"description-text\">チャンネルのカスタム コマンドを作成、編集、管理します。カスタム コマンドは、<a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ウェブ ダッシュボード</a>からも管理できます。</span>",
+      "usage": {
+        "addText": "新しいテキストベースのコマンドを作成します",
+        "addAi": "AI を利用した新しいコマンドを作成します。プロンプトを使用するたびに固有の応答を生成します。",
+        "edit": "既存のコマンドの応答を更新します",
+        "remove": "コマンドを削除します",
+        "show": "生の応答テンプレートと現在の設定を表示します",
+        "optionsPerms": "コマンドを使用できる人を設定します:全員、サブスクライバー、VIP、モデレーター、またはブロードキャスター",
+        "optionsCooldown": "使用間のクールダウンを設定します (秒単位)",
+        "optionsType": "既存のコマンドをテキスト モードと AI モードの間で切り替える",
+        "addTextCmd": "!command add <名前> <応答>",
+        "addAiCmd": "!command addai <名前> <プロンプト>",
+        "editCmd": "!command edit <名前> <応答>",
+        "removeCmd": "!command <名前> を削除します",
+        "showCmd": "!command show <名前>",
+        "optionsPermsCmd": "!コマンド オプション <名前> 権限=<レベル>",
+        "optionsCooldownCmd": "!コマンド オプション <名前> クールダウン=<秒>",
+        "optionsTypeCmd": "!コマンド オプション <名前> type=<テキスト|プロンプト>"
+      }
     }
   },
   "ui": {
@@ -251,7 +274,8 @@
     "generalCommands": "一般コマンド",
     "games": "ゲーム",
     "config": "設定",
-    "webDashboard": "Webダッシュボード"
+    "webDashboard": "Webダッシュボード",
+    "customCommands": "カスタムコマンド"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
@@ -304,5 +328,80 @@
     },
     "noteLabel": "注意:",
     "noteText": "ChatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、お問い合わせフォームからアクセスをリクエストしてください。"
+  },
+  "responseVariables": {
+    "title": "応答変数",
+    "intro1": "カスタム コマンドを作成するときは、<strong>応答変数</strong>を使用して動的コンテンツを挿入できます。 <code>$(variable)</code> 形式を使用して応答にこれらを記述すると、コマンドが使用されるときに自動的に置き換えられます。",
+    "table": {
+      "variable": "変数",
+      "whatItDoes": "何をするのか",
+      "exampleOutput": "出力例"
+    },
+    "variables": {
+      "user": {
+        "desc": "コマンドを使用した人の名前"
+      },
+      "channel": {
+        "desc": "チャンネル名"
+      },
+      "args": {
+        "desc": "コマンド名の後のすべてのテキストを 1 つの文字列として表示",
+        "example": "誰かが <span class=\"inline-code\">!shout hello world</span> と入力すると、$(args) = <strong>hello world</strong> となります。"
+      },
+      "numbered": {
+        "desc": "位置ごとの 1 つの単語 — $(1) が 1 番目の単語、$(2) が 2 番目の単語など",
+        "example": "誰かが <span class=\"inline-code\">! Shout hello world</span> と入力すると、$(1) = <strong>hello</strong>、$(2) = <strong>world</strong> となります。"
+      },
+      "count": {
+        "desc": "このコマンドが何回使用されたか"
+      },
+      "random": {
+        "desc": "X と Y の間の乱数",
+        "example": "<span class=\"inline-code\">$(ランダム 1 ～ 20)</span> から 17 個"
+      },
+      "uptime": {
+        "desc": "ストリームがライブになっている期間",
+        "example": "2時間30分"
+      },
+      "game": {
+        "desc": "現在プレイ中のゲーム",
+        "example": "メトロイドプライム"
+      },
+      "followage": {
+        "desc": "ユーザーがチャンネルをフォローし続けている期間",
+        "example": "2年3ヶ月"
+      }
+    },
+    "examplesTitle": "例",
+    "examplesIntro": "作成できるコマンドの例をいくつか示します。",
+    "examplesTable": {
+      "command": "チャットで入力するコマンド",
+      "botSays": "ボットの発言"
+    }
+  },
+  "aiCommands": {
+    "title": "AIコマンド",
+    "intro1": "AI コマンドは、固定応答の代わりにプロンプ​​トを使用します。ボットはプロンプトを AI モデルに送信し、毎回固有の回答を返します。プロンプトでも応答変数を使用できます。",
+    "intro2": "AI コマンドを作成する最も簡単な方法は、<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ウェブ ダッシュボード</a>を使用することです。 [<strong>+ 追加</strong>] をクリックし、<strong>AI モード</strong> をオンにして、プロンプトを作成します。 <code>!command addai <name> <prompt></code> を使用してチャットで作成することもできます。",
+    "table": {
+      "prompt": "AIプロンプト",
+      "whatHappens": "何が起こるのですか"
+    },
+    "examples": {
+      "vibe": {
+        "prompt": "名前: <span class=\"inline-code\">雰囲気</span><br>プロンプト: <span class=\"inline-code\">「$(args)」がどのような雰囲気を放つかを $(ユーザー) に一文で伝えてください。</span>",
+        "result": "誰かが「<span class=\"inline-code\">!雰囲気、ピザ丸ごと食べたばかり</span>」と入力すると、AI は次のように応答します。<em>「WildcatGamer、あなたのメッセージは非常に尊敬に値するゴブリンのエネルギーを放っています。」</em> - 毎回異なります。"
+      },
+      "hug": {
+        "prompt": "名前: <span class=\"inline-code\">ハグ</span><br>プロンプト: <span class=\"inline-code\">$(ユーザー) から $(1) への短くて面白いハグ メッセージを書きます。</span>",
+        "result": "誰かが「<span class=\"inline-code\">!hug WildcatStreamer</span>」と入力すると、AI は次のように応答します。<em>「WildcatGamer は、氷河が溶けるほど温かいハグで WildcatStreamer を包みます。」</em>"
+      },
+      "fortune": {
+        "prompt": "名前: <span class=\"inline-code\">フォーチュン</span><br>プロンプト: <span class=\"inline-code\">$(ユーザー) に短いフォーチュン クッキー メッセージを渡します。</span>",
+        "result": "毎回ユニークな幸運: <em>「WildcatGamer、今日は思いがけない場所で珍しいアイテムを見つけるでしょう。」</em>"
+      }
+    },
+    "tipLabel": "ヒント：",
+    "tipText": "既存のテキスト コマンドを AI モードに変換するには、ダッシュボードで編集して <strong>AI モード</strong> を有効にするか、チャットで <span class=\"inline-code\">!command options <name> type=prompt</span> を使用します。 <span class=\"inline-code\">type=text</span> で元に戻ります。"
   }
 }

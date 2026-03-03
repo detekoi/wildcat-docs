@@ -22,7 +22,8 @@
     "categories": {
       "general": "Allgemein",
       "games": "Spiele",
-      "config": "Konfiguration"
+      "config": "Konfiguration",
+      "customCommands": "Benutzerdefinierte Befehle"
     }
   },
   "commands": {
@@ -241,6 +242,28 @@
     "ping": {
       "name": "!ping",
       "description": "Überprüft, ob der Bot responsiv ist. Antwortet mit Pong!"
+    },
+    "command": {
+      "name": "!command <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Erstellen, bearbeiten und verwalten Sie benutzerdefinierte Befehle für Ihren Kanal. Benutzerdefinierte Befehle können auch über das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
+      "usage": {
+        "addText": "Erstellt einen neuen textbasierten Befehl",
+        "addAi": "Erstellt einen neuen KI-gestützten Befehl – ​​generiert bei jeder Verwendung der Eingabeaufforderung eine eindeutige Antwort",
+        "edit": "Aktualisiert die Antwort eines vorhandenen Befehls",
+        "remove": "Löscht einen Befehl",
+        "show": "Zeigt die Rohantwortvorlage und die aktuellen Einstellungen an",
+        "optionsPerms": "Legen Sie fest, wer den Befehl verwenden kann: jeder, Abonnent, VIP, Moderator oder Broadcaster",
+        "optionsCooldown": "Legen Sie eine Abklingzeit zwischen den Anwendungen fest (in Sekunden).",
+        "optionsType": "Schalten Sie einen vorhandenen Befehl zwischen Textmodus und AI-Modus um",
+        "addTextCmd": "!Befehl add <Name> <Antwort>",
+        "addAiCmd": "!command addai <name> <prompt>",
+        "editCmd": "!Befehl bearbeiten <Name> <Antwort>",
+        "removeCmd": "!Befehl <Name> entfernen",
+        "showCmd": "!command show <Name>",
+        "optionsPermsCmd": "!Befehlsoptionen <Name> Erlaubnis=<Stufe>",
+        "optionsCooldownCmd": "!Befehlsoptionen <Name> cooldown=<Sekunden>",
+        "optionsTypeCmd": "!Befehlsoptionen <name> type=<text|prompt>"
+      }
     }
   },
   "ui": {
@@ -251,7 +274,8 @@
     "generalCommands": "Allgemeine Befehle",
     "games": "Spiele",
     "config": "Konfiguration",
-    "webDashboard": "Web-Schaltpult"
+    "webDashboard": "Web-Schaltpult",
+    "customCommands": "Benutzerdefinierte Befehle"
   },
   "webDashboard": {
     "title": "Web-Schaltpult",
@@ -304,5 +328,80 @@
     },
     "noteLabel": "Hinweis:",
     "noteText": "ChatSage ist derzeit nur auf Einladung verfügbar. Wenn Sie Ihren Kanal im Schaltpult nicht sehen, beantragen Sie Zugriff über das Kontaktformular."
+  },
+  "responseVariables": {
+    "title": "Antwortvariablen",
+    "intro1": "Wenn Sie einen benutzerdefinierten Befehl erstellen, können Sie <strong>Antwortvariablen</strong> verwenden, um dynamische Inhalte einzufügen. Schreiben Sie sie in Ihre Antwort im Format <code>$(variable)</code> und sie werden automatisch ersetzt, wenn der Befehl verwendet wird.",
+    "table": {
+      "variable": "Variable",
+      "whatItDoes": "Was es bewirkt",
+      "exampleOutput": "Beispielausgabe"
+    },
+    "variables": {
+      "user": {
+        "desc": "Name der Person, die den Befehl verwendet hat"
+      },
+      "channel": {
+        "desc": "Kanalname"
+      },
+      "args": {
+        "desc": "Der gesamte Text nach dem Befehlsnamen als eine Zeichenfolge",
+        "example": "Wenn jemand <span class=\"inline-code\">!shout hello world</span> eingibt, ist $(args) = <strong>hello world</strong>"
+      },
+      "numbered": {
+        "desc": "Ein einzelnes Wort nach Position – $(1) ist das erste Wort, $(2) ist das zweite und so weiter",
+        "example": "Wenn jemand <span class=\"inline-code\">!shout hello world</span> eingibt, ist $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
+      },
+      "count": {
+        "desc": "Wie oft wurde dieser Befehl verwendet?"
+      },
+      "random": {
+        "desc": "Eine Zufallszahl zwischen X und Y",
+        "example": "17 aus <span class=\"inline-code\">$(zufällig 1-20)</span>"
+      },
+      "uptime": {
+        "desc": "Wie lange ist der Stream schon live?",
+        "example": "2h 30m"
+      },
+      "game": {
+        "desc": "Das Spiel, das gerade gespielt wird",
+        "example": "Metroid Prime"
+      },
+      "followage": {
+        "desc": "Wie lange der Benutzer dem Kanal folgt",
+        "example": "2 Jahre 3 Monate"
+      }
+    },
+    "examplesTitle": "Beispiele",
+    "examplesIntro": "Hier sind einige Beispielbefehle, die Sie erstellen können:",
+    "examplesTable": {
+      "command": "Befehl zum Eingeben im Chat",
+      "botSays": "Was der Bot sagt"
+    }
+  },
+  "aiCommands": {
+    "title": "KI-Befehle",
+    "intro1": "KI-Befehle verwenden eine Eingabeaufforderung anstelle einer festen Antwort. Der Bot sendet die Eingabeaufforderung an ein KI-Modell und gibt jedes Mal eine eindeutige Antwort zurück. Sie können Antwortvariablen auch in Eingabeaufforderungen verwenden!",
+    "intro2": "Der einfachste Weg, KI-Befehle zu erstellen, ist über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Klicken Sie auf <strong>+ Hinzufügen</strong>, schalten Sie den <strong>KI-Modus</strong> ein und schreiben Sie Ihre Eingabeaufforderung. Sie können sie auch im Chat mit <code>!command addai <name> <prompt></code> erstellen.",
+    "table": {
+      "prompt": "KI-Eingabeaufforderung",
+      "whatHappens": "Was geschieht"
+    },
+    "examples": {
+      "vibe": {
+        "prompt": "Name: <span class=\"inline-code\">Vibe</span><br>Eingabeaufforderung: <span class=\"inline-code\">Sagen Sie $(user) in einem Satz, welche Art von Vibe „$(args)“ ausstrahlt.</span>",
+        "result": "Wenn jemand <span class=\"inline-code\">!vibe I just eated a ganze Pizza</span> eingibt, antwortet die KI möglicherweise: <em>„WildcatGamer, deine Nachricht strahlt zutiefst respektable Goblin-Energie aus.“</em> – jedes Mal anders!"
+      },
+      "hug": {
+        "prompt": "Name: <span class=\"inline-code\">Umarmung</span><br>Eingabeaufforderung: <span class=\"inline-code\">Schreiben Sie eine kurze, lustige Umarmungsnachricht von $(user) an $(1).</span>",
+        "result": "Wenn jemand <span class=\"inline-code\">!hug WildcatStreamer</span> eingibt, antwortet die KI möglicherweise: <em>„WildcatGamer umarmt WildcatStreamer so warm, dass ein Gletscher schmelzen könnte.“</em>"
+      },
+      "fortune": {
+        "prompt": "Name: <span class=\"inline-code\">Glück</span><br>Eingabeaufforderung: <span class=\"inline-code\">Geben Sie $(user) eine kurze Glückskeks-Nachricht.</span>",
+        "result": "Jedes Mal ein einzigartiges Glück: <em>„WildcatGamer, heute findest du einen seltenen Gegenstand an einem unerwarteten Ort.“</em>"
+      }
+    },
+    "tipLabel": "Tipp:",
+    "tipText": "Sie können jeden vorhandenen Textbefehl in den KI-Modus konvertieren, indem Sie ihn im Dashboard bearbeiten und den <strong>KI-Modus</strong> aktivieren, oder im Chat mit <span class=\"inline-code\">!Befehlsoptionen <name> type=prompt</span>. Wechseln Sie zurück mit <span class=\"inline-code\">type=text</span>."
   }
 }

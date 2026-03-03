@@ -22,7 +22,8 @@
     "categories": {
       "general": "Geral",
       "games": "Jogos",
-      "config": "Configuração"
+      "config": "Configuração",
+      "customCommands": "Comandos personalizados"
     }
   },
   "commands": {
@@ -241,6 +242,28 @@
     "ping": {
       "name": "!ping",
       "description": "Verifica se o bot está responsivo. Responde com Pong!"
+    },
+    "command": {
+      "name": "!comando <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Crie, edite e gerencie comandos personalizados para seu canal. Comandos personalizados também podem ser gerenciados por meio do <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Painel da Web</a>.</span>",
+      "usage": {
+        "addText": "Cria um novo comando baseado em texto",
+        "addAi": "Cria um novo comando alimentado por IA – gera uma resposta única cada vez que usa o prompt",
+        "edit": "Atualiza a resposta de um comando existente",
+        "remove": "Exclui um comando",
+        "show": "Mostra o modelo de resposta bruto e as configurações atuais",
+        "optionsPerms": "Defina quem pode usar o comando: todos, assinante, vip, moderador ou locutor",
+        "optionsCooldown": "Defina um tempo de espera entre usos (em segundos)",
+        "optionsType": "Alternar um comando existente entre o modo de texto e o modo AI",
+        "addTextCmd": "!command add <nome> <resposta>",
+        "addAiCmd": "!command addai <nome> <prompt>",
+        "editCmd": "!comando editar <nome> <resposta>",
+        "removeCmd": "!comando remover <nome>",
+        "showCmd": "!comando mostrar <nome>",
+        "optionsPermsCmd": "!opções de comando <nome> permissão=<nível>",
+        "optionsCooldownCmd": "!opções de comando <nome> cooldown=<segundos>",
+        "optionsTypeCmd": "!opções de comando <nome> type=<text|prompt>"
+      }
     }
   },
   "ui": {
@@ -251,7 +274,8 @@
     "generalCommands": "Comandos Gerais",
     "games": "Jogos",
     "config": "Configuração",
-    "webDashboard": "Painel Web"
+    "webDashboard": "Painel Web",
+    "customCommands": "Comandos personalizados"
   },
   "webDashboard": {
     "title": "Painel Web",
@@ -304,5 +328,80 @@
     },
     "noteLabel": "Nota:",
     "noteText": "ChatSage é atualmente apenas por convite. Se você não vir seu canal no painel, solicite acesso através do formulário de contato."
+  },
+  "responseVariables": {
+    "title": "Variáveis ​​de Resposta",
+    "intro1": "Ao criar um comando personalizado, você pode usar <strong>variáveis ​​de resposta</strong> para inserir conteúdo dinâmico. Escreva-os em sua resposta usando o formato <code>$(variable)</code> e eles serão substituídos automaticamente quando o comando for usado.",
+    "table": {
+      "variable": "Variável",
+      "whatItDoes": "O que isso faz",
+      "exampleOutput": "Exemplo de saída"
+    },
+    "variables": {
+      "user": {
+        "desc": "Nome da pessoa que usou o comando"
+      },
+      "channel": {
+        "desc": "Nome do canal"
+      },
+      "args": {
+        "desc": "Todo o texto após o nome do comando como uma string",
+        "example": "Se alguém digitar <span class=\"inline-code\">!shout hello world</span>, $(args) = <strong>hello world</strong>"
+      },
+      "numbered": {
+        "desc": "Uma única palavra por posição — $(1) é a primeira palavra, $(2) é a segunda e assim por diante",
+        "example": "Se alguém digitar <span class=\"inline-code\">!shout hello world</span>, $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
+      },
+      "count": {
+        "desc": "Quantas vezes este comando foi usado"
+      },
+      "random": {
+        "desc": "Um número aleatório entre X e Y",
+        "example": "17 de <span class=\"inline-code\">$(random 1-20)</span>"
+      },
+      "uptime": {
+        "desc": "Há quanto tempo a transmissão está ao vivo",
+        "example": "2h30"
+      },
+      "game": {
+        "desc": "O jogo que está sendo jogado atualmente",
+        "example": "Metroid Prime"
+      },
+      "followage": {
+        "desc": "Há quanto tempo o usuário segue o canal",
+        "example": "2 anos 3 meses"
+      }
+    },
+    "examplesTitle": "Exemplos",
+    "examplesIntro": "Aqui estão alguns exemplos de comandos que você pode criar:",
+    "examplesTable": {
+      "command": "Comando para digitar no chat",
+      "botSays": "O que o bot diz"
+    }
+  },
+  "aiCommands": {
+    "title": "Comandos de IA",
+    "intro1": "Os comandos de IA usam um prompt em vez de uma resposta fixa. O bot envia o prompt para um modelo de IA e sempre retorna uma resposta exclusiva. Você também pode usar variáveis ​​de resposta em prompts!",
+    "intro2": "A maneira mais fácil de criar comandos de IA é por meio do <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Clique em <strong>+ Adicionar</strong>, ative o <strong>Modo AI</strong> e escreva sua solicitação. Você também pode criá-los no chat com <code>!command addai <name> <prompt></code>.",
+    "table": {
+      "prompt": "Alerta de IA",
+      "whatHappens": "O que acontece"
+    },
+    "examples": {
+      "vibe": {
+        "prompt": "Nome: <span class=\"inline-code\">vibe</span><br>Prompt: <span class=\"inline-code\">Diga ao $(user) que tipo de vibração \"$(args)\" emite em uma frase.</span>",
+        "result": "Quando alguém digita <span class=\"inline-code\">!vibe Acabei de comer uma pizza inteira</span>, a IA pode responder: <em>\"WildcatGamer, sua mensagem emite uma energia goblin profundamente respeitável.\"</em> — sempre diferente!"
+      },
+      "hug": {
+        "prompt": "Nome: <span class=\"inline-code\">abraço</span><br>Prompt: <span class=\"inline-code\">Escreva uma mensagem curta e engraçada de abraço de $(user) para $(1).</span>",
+        "result": "Quando alguém digita <span class=\"inline-code\">!hug WildcatStreamer</span>, a IA pode responder: <em>\"WildcatGamer envolve WildcatStreamer em um abraço tão quente que poderia derreter uma geleira.\"</em>"
+      },
+      "fortune": {
+        "prompt": "Nome: <span class=\"inline-code\">fortuna</span><br>Prompt: <span class=\"inline-code\">Envie a $(user) uma pequena mensagem de biscoito da sorte.</span>",
+        "result": "Sempre uma fortuna única: <em>\"WildcatGamer, hoje você encontrará um item raro em um lugar inesperado.\"</em>"
+      }
+    },
+    "tipLabel": "Dica:",
+    "tipText": "Você pode converter qualquer comando de texto existente para o modo AI editando-o no painel e ativando o <strong>Modo AI</strong> ou no bate-papo com <span class=\"inline-code\">!command options <name> type=prompt</span>. Volte com <span class=\"inline-code\">type=text</span>."
   }
 }
