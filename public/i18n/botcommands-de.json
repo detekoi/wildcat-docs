@@ -275,7 +275,8 @@
     "games": "Spiele",
     "config": "Konfiguration",
     "webDashboard": "Web-Schaltpult",
-    "customCommands": "Benutzerdefinierte Befehle"
+    "customCommands": "Benutzerdefinierte Befehle",
+    "responseVariables": "Antwortvariablen"
   },
   "webDashboard": {
     "title": "Web-Schaltpult",
@@ -377,6 +378,28 @@
     "examplesTable": {
       "command": "Befehl zum Eingeben im Chat",
       "botSays": "Was der Bot sagt"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!command add hi Hallo $(user)! Willkommen!</span>",
+        "result": "Hallo WildcatGamer! Willkommen!"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command add roll $(user) hat einen $(random 1-20) gewürfelt!</span>",
+        "result": "WildcatGamer hat eine 17 gewürfelt!"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live Wir sind seit $(uptime) live und spielen $(game)!</span>",
+        "result": "Wir sind seit 2 Stunden und 30 Minuten live und spielen Metroid Prime!"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!command add umarmung $(user) umarmt $(1)!</span>",
+        "result": "WildcatGamer umarmt WildcatStreamer!"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add verwendet Dieser Befehl wurde $(count) Mal verwendet!</span>",
+        "result": "Dieser Befehl wurde 42 Mal verwendet!"
+      }
     }
   },
   "aiCommands": {

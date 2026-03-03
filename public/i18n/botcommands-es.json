@@ -275,7 +275,8 @@
     "games": "Juegos",
     "config": "Configuración",
     "webDashboard": "Panel Web",
-    "customCommands": "Comandos personalizados"
+    "customCommands": "Comandos personalizados",
+    "responseVariables": "Variables de respuesta"
   },
   "webDashboard": {
     "title": "Panel Web",
@@ -377,6 +378,28 @@
     "examplesTable": {
       "command": "Comando para escribir en el chat",
       "botSays": "Lo que dice el robot"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!comando agregar hola ¡Hola $(user)! ¡Bienvenido!</span>",
+        "result": "¡Hola WildcatGamer! ¡Bienvenido!"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command add roll $(user) obtuvo un $(random 1-20)!</span>",
+        "result": "¡WildcatGamer obtuvo un 17!"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live ¡Hemos estado en vivo durante $(uptime) jugando $(game)!</span>",
+        "result": "¡Llevamos 2h 30m en vivo jugando Metroid Prime!"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!comando agregar abrazo $(user) abrazos $(1)!</span>",
+        "result": "¡WildcatGamer abraza a WildcatStreamer!"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add uses ¡Este comando se ha utilizado $(count) veces!</span>",
+        "result": "¡Este comando se ha utilizado 42 veces!"
+      }
     }
   },
   "aiCommands": {

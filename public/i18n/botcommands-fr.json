@@ -275,7 +275,8 @@
     "games": "Jeux",
     "config": "Config",
     "webDashboard": "Tableau de bord Web",
-    "customCommands": "Commandes personnalisées"
+    "customCommands": "Commandes personnalisées",
+    "responseVariables": "Variables de réponse"
   },
   "webDashboard": {
     "title": "Tableau de bord Web",
@@ -377,6 +378,28 @@
     "examplesTable": {
       "command": "Commande pour taper dans le chat",
       "botSays": "Ce que dit le robot"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!command add salut Bonjour $(user) ! Bienvenue !</span>",
+        "result": "Bonjour WildcatGamer ! Accueillir!"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command add roll $(user) a lancé un $(random 1-20) !</span>",
+        "result": "WildcatGamer a obtenu un 17 !"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live Nous sommes en direct depuis $(uptime) en train de jouer à $(game) !</span>",
+        "result": "Cela fait 2h30 que nous jouons en direct à Metroid Prime !"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!command add câlin $(user) câlins $(1) !</span>",
+        "result": "WildcatGamer embrasse WildcatStreamer !"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add utilise Cette commande a été utilisée $(count) fois !</span>",
+        "result": "Cette commande a été utilisée 42 fois !"
+      }
     }
   },
   "aiCommands": {

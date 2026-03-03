@@ -275,7 +275,8 @@
     "games": "Jogos",
     "config": "Configuração",
     "webDashboard": "Painel Web",
-    "customCommands": "Comandos personalizados"
+    "customCommands": "Comandos personalizados",
+    "responseVariables": "Variáveis ​​de Resposta"
   },
   "webDashboard": {
     "title": "Painel Web",
@@ -377,6 +378,28 @@
     "examplesTable": {
       "command": "Comando para digitar no chat",
       "botSays": "O que o bot diz"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!command add oi Olá $(user)! Bem-vindo!</span>",
+        "result": "Olá WildcatGamer! Bem-vindo!"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command add roll $(user) rolou um $(random 1-20)!</span>",
+        "result": "WildcatGamer tirou 17!"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live Estamos ao vivo há $(uptime) jogando $(game)!</span>",
+        "result": "Estamos ao vivo há 2h30m jogando Metroid Prime!"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!command add abraço $(user) abraços $(1)!</span>",
+        "result": "WildcatGamer abraça WildcatStreamer!"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add usa Este comando foi usado $(count) vezes!</span>",
+        "result": "Este comando foi usado 42 vezes!"
+      }
     }
   },
   "aiCommands": {

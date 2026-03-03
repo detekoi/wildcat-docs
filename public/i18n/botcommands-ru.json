@@ -275,7 +275,8 @@
     "games": "Игры",
     "config": "Настройка",
     "webDashboard": "Веб-Панель",
-    "customCommands": "Пользовательские команды"
+    "customCommands": "Пользовательские команды",
+    "responseVariables": "Переменные ответа"
   },
   "webDashboard": {
     "title": "Веб-Панель",
@@ -377,6 +378,28 @@
     "examplesTable": {
       "command": "Команда для ввода в чат",
       "botSays": "Что говорит бот"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!команда добавить привет Привет, $(user)! Добро пожаловать!</span>",
+        "result": "Привет WildcatGamer! Добро пожаловать!"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command addroll $(user) свернул $(random 1-20)!</span>",
+        "result": "WildcatGamer выкинул 17!"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live Мы уже в прямом эфире $(uptime) играем $(game)!</span>",
+        "result": "Мы играли в Metroid Prime уже 2 часа 30 минут!"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!команда добавить объятие $(user) объятия $(1)!</span>",
+        "result": "WildcatGamer обнимает WildcatStreamer!"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add использует Эта команда использовалась $(count) раз!</span>",
+        "result": "Эта команда использовалась 42 раза!"
+      }
     }
   },
   "aiCommands": {

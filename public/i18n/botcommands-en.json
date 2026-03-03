@@ -275,7 +275,8 @@
     "customCommands": "Custom Commands",
     "games": "Games",
     "config": "Config",
-    "webDashboard": "Web Dashboard"
+    "webDashboard": "Web Dashboard",
+    "responseVariables": "Response Variables"
   },
   "responseVariables": {
     "title": "Response Variables",
@@ -325,6 +326,28 @@
     "examplesTable": {
       "command": "Command to type in chat",
       "botSays": "What the bot says"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!command add hi Hello $(user)! Welcome!</span>",
+        "result": "Hello WildcatGamer! Welcome!"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command add roll $(user) rolled a $(random 1-20)!</span>",
+        "result": "WildcatGamer rolled a 17!"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live We've been live for $(uptime) playing $(game)!</span>",
+        "result": "We've been live for 2h 30m playing Metroid Prime!"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!command add hug $(user) hugs $(1)!</span>",
+        "result": "WildcatGamer hugs WildcatStreamer!"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add uses This command has been used $(count) times!</span>",
+        "result": "This command has been used 42 times!"
+      }
     }
   },
   "aiCommands": {

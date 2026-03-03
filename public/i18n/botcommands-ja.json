@@ -275,7 +275,8 @@
     "games": "ゲーム",
     "config": "設定",
     "webDashboard": "Webダッシュボード",
-    "customCommands": "カスタムコマンド"
+    "customCommands": "カスタムコマンド",
+    "responseVariables": "応答変数"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
@@ -377,6 +378,28 @@
     "examplesTable": {
       "command": "チャットで入力するコマンド",
       "botSays": "ボットの発言"
+    },
+    "examples": {
+      "hi": {
+        "command": "<span class=\"inline-code\">!command add こんにちは、$(user)!ようこそ!</span>",
+        "result": "こんにちは、WildcatGamer!いらっしゃいませ！"
+      },
+      "roll": {
+        "command": "<span class=\"inline-code\">!command add roll $(user) は $(random 1-20) をロールしました!</span>",
+        "result": "WildcatGamer は 17 を出しました!"
+      },
+      "live": {
+        "command": "<span class=\"inline-code\">!command add live $(uptime) のライブで $(game) をプレイしています!</span>",
+        "result": "メトロイドプライムを2時間30分生放送してきました！"
+      },
+      "hug": {
+        "command": "<span class=\"inline-code\">!command addhug $(user) は $(1) をハグします!</span>",
+        "result": "WildcatGamer が WildcatStreamer をハグします!"
+      },
+      "uses": {
+        "command": "<span class=\"inline-code\">!command add uses このコマンドは $(count) 回使用されました!</span>",
+        "result": "このコマンドは 42 回使用されました。"
+      }
     }
   },
   "aiCommands": {

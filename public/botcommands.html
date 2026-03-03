@@ -73,7 +73,7 @@
             <li><a href="#custom-commands" data-i18n="sidebar.customCommands">Custom Commands</a></li>
             <li><a href="#games" data-i18n="sidebar.games">Games</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config</a></li>
-            <li><a href="#response-variables">Response Variables</a></li>
+            <li><a href="#response-variables" data-i18n="sidebar.responseVariables">Response Variables</a></li>
             <li><a href="#web-dashboard" data-i18n="sidebar.webDashboard">Web Dashboard</a></li>
         </ul>
     </nav>
@@ -656,26 +656,30 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><span class="inline-code">!command add hi Hello $(user)! Welcome!</span></td>
-                        <td>Hello WildcatGamer! Welcome!</td>
+                        <td data-i18n="responseVariables.examples.hi.command"><span class="inline-code">!command add hi
+                                Hello $(user)! Welcome!</span></td>
+                        <td data-i18n="responseVariables.examples.hi.result">Hello WildcatGamer! Welcome!</td>
                     </tr>
                     <tr>
-                        <td><span class="inline-code">!command add roll $(user) rolled a $(random 1-20)!</span></td>
-                        <td>WildcatGamer rolled a 17!</td>
+                        <td data-i18n="responseVariables.examples.roll.command"><span class="inline-code">!command add
+                                roll $(user) rolled a $(random 1-20)!</span></td>
+                        <td data-i18n="responseVariables.examples.roll.result">WildcatGamer rolled a 17!</td>
                     </tr>
                     <tr>
-                        <td><span class="inline-code">!command add live We've been live for $(uptime) playing
-                                $(game)!</span></td>
-                        <td>We've been live for 2h 30m playing Metroid Prime!</td>
+                        <td data-i18n="responseVariables.examples.live.command"><span class="inline-code">!command add
+                                live We've been live for $(uptime) playing $(game)!</span></td>
+                        <td data-i18n="responseVariables.examples.live.result">We've been live for 2h 30m playing
+                            Metroid Prime!</td>
                     </tr>
                     <tr>
-                        <td><span class="inline-code">!command add hug $(user) hugs $(1)!</span></td>
-                        <td>WildcatGamer hugs WildcatStreamer!</td>
+                        <td data-i18n="responseVariables.examples.hug.command"><span class="inline-code">!command add
+                                hug $(user) hugs $(1)!</span></td>
+                        <td data-i18n="responseVariables.examples.hug.result">WildcatGamer hugs WildcatStreamer!</td>
                     </tr>
                     <tr>
-                        <td><span class="inline-code">!command add uses This command has been used $(count)
-                                times!</span></td>
-                        <td>This command has been used 42 times!</td>
+                        <td data-i18n="responseVariables.examples.uses.command"><span class="inline-code">!command add
+                                uses This command has been used $(count) times!</span></td>
+                        <td data-i18n="responseVariables.examples.uses.result">This command has been used 42 times!</td>
                     </tr>
                 </tbody>
             </table>
@@ -729,7 +733,8 @@
                                 $(user) a short fortune cookie message.</span></td>
                         <td data-i18n="aiCommands.examples.fortune.result">A unique fortune every time:
                             <em>"WildcatGamer, today you will find a rare item in an
-                                unexpected place."</em></td>
+                                unexpected place."</em>
+                        </td>
                     </tr>
                 </tbody>
             </table>
