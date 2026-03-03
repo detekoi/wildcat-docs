@@ -264,27 +264,11 @@
       },
       "channelConfig": {
         "title": "チャンネル設定:",
-        "desc": "ボットの言語、自動チャット設定、コマンド権限を設定"
-      },
-      "contextManagement": {
-        "title": "コンテキスト管理:",
-        "desc": "会話のコンテキスト、要約、チャット履歴を表示および管理"
-      },
-      "streamIntegration": {
-        "title": "ストリーム連携:",
-        "desc": "現在のゲーム、タイトル、ストリーム情報を監視"
+        "desc": "自動チャット設定と広告通知の切り替え"
       },
       "commandControl": {
         "title": "コマンド管理:",
-        "desc": "特定のコマンドを有効/無効にし、カスタム応答を設定"
-      },
-      "analytics": {
-        "title": "分析:",
-        "desc": "ボットの使用統計とインタラクションパターンを表示"
-      },
-      "settingsBackup": {
-        "title": "設定バックアップ:",
-        "desc": "チャンネル設定をエクスポート/インポート"
+        "desc": "カスタムコマンドの作成と管理、組み込みコマンドの有効/無効"
       }
     },
     "gettingStartedTitle": "はじめに",
@@ -306,18 +290,17 @@
         "desc": "ダッシュボードインターフェースから設定をカスタマイズ"
       },
       "grantPerms": {
-        "title": "権限を付与:",
-        "desc": "Twitchチャットで /mod ChatSageBot と入力してボットにモデレーターステータスを付与"
+        "title": "トラブルシューティング:",
+        "desc": "ボットが応答しない場合、Twitchチャットで /mod WildcatSage と入力してモデレーターステータスを付与"
       }
     },
     "oauthTitle": "OAuth権限",
     "oauthIntro": "ダッシュボードには以下のTwitch OAuthスコープが必要です:",
     "oauth": {
-      "chatRead": "チャットメッセージを読む",
-      "chatEdit": "チャットメッセージを送信",
-      "readSubs": "サブスクリプション情報にアクセス",
-      "manageRedemptions": "チャンネルポイント特典を管理",
-      "readEmail": "メールアドレスにアクセス"
+      "readEmail": "アカウント識別のためのメールアドレスへのアクセス",
+      "readAds": "チャンネルの広告休憩通知を受信",
+      "manageModerators": "ボットに自動的にモデレーターステータスを付与",
+      "readFollowers": "!followageなどのコマンド用にフォロワー情報にアクセス"
     },
     "noteLabel": "注意:",
     "noteText": "ChatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、お問い合わせフォームからアクセスをリクエストしてください。"

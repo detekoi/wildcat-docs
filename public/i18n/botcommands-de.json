@@ -264,27 +264,11 @@
       },
       "channelConfig": {
         "title": "Kanaleinstellungen:",
-        "desc": "Konfigurieren Sie Bot-Sprache, Auto-Chat-Einstellungen und Befehlsberechtigungen"
-      },
-      "contextManagement": {
-        "title": "Kontextverwaltung:",
-        "desc": "Ansicht und Verwaltung von Gesprächskontext, Zusammenfassungen und Chat-Verlauf"
-      },
-      "streamIntegration": {
-        "title": "Stream-Integration:",
-        "desc": "Überwachen Sie aktuelles Spiel, Titel und Stream-Informationen"
+        "desc": "Konfigurieren Sie Auto-Chat-Einstellungen und Werbebenachrichtigungen"
       },
       "commandControl": {
         "title": "Befehlskontrolle:",
-        "desc": "Aktivieren/deaktivieren Sie spezifische Befehle und legen Sie benutzerdefinierte Antworten fest"
-      },
-      "analytics": {
-        "title": "Analytik:",
-        "desc": "Zeigen Sie Bot-Nutzungsstatistiken und Interaktionsmuster an"
-      },
-      "settingsBackup": {
-        "title": "Einstellungssicherung:",
-        "desc": "Exportieren/importieren Sie Ihre Kanaleinstellungen"
+        "desc": "Erstellen und verwalten Sie benutzerdefinierte Befehle und aktivieren/deaktivieren Sie integrierte Befehle"
       }
     },
     "gettingStartedTitle": "Erste Schritte",
@@ -306,18 +290,17 @@
         "desc": "Passen Sie die Einstellungen über die Schaltpult-Schnittstelle an"
       },
       "grantPerms": {
-        "title": "Berechtigungen erteilen:",
-        "desc": "Geben Sie im Twitch-Chat /mod ChatSageBot ein, um dem Bot Moderatorstatus zu erteilen"
+        "title": "Fehlerbehebung:",
+        "desc": "Wenn der Bot nicht reagiert, geben Sie /mod WildcatSage in Ihrem Twitch-Chat ein, um den Moderatorstatus zu erteilen"
       }
     },
     "oauthTitle": "OAuth-Berechtigungen",
     "oauthIntro": "Das Schaltpult erfordert die folgenden Twitch OAuth-Bereiche:",
     "oauth": {
-      "chatRead": "Chat-Nachrichten lesen",
-      "chatEdit": "Chat-Nachrichten senden",
-      "readSubs": "Zugriff auf Aboinformationen",
-      "manageRedemptions": "Verwaltung von Kanal-Punkt-Einlösungen",
-      "readEmail": "Zugriff auf Ihre E-Mail-Adresse"
+      "readEmail": "Zugriff auf Ihre E-Mail-Adresse zur Kontoidentifikation",
+      "readAds": "Werbeunterbrechungsbenachrichtigungen für Ihren Kanal empfangen",
+      "manageModerators": "Dem Bot automatisch Moderatorstatus gewähren",
+      "readFollowers": "Zugriff auf Follower-Informationen für Befehle wie !followage"
     },
     "noteLabel": "Hinweis:",
     "noteText": "ChatSage ist derzeit nur auf Einladung verfügbar. Wenn Sie Ihren Kanal im Schaltpult nicht sehen, beantragen Sie Zugriff über das Kontaktformular."

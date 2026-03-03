@@ -719,23 +719,11 @@
                         data-i18n="webDashboard.features.botManagement.desc">Add or remove WildcatSage from your
                         channel</span></li>
                 <li><strong data-i18n="webDashboard.features.channelConfig.title">Channel Configuration:</strong> <span
-                        data-i18n="webDashboard.features.channelConfig.desc">Configure bot language, auto-chat settings,
-                        and command permissions</span></li>
-                <li><strong data-i18n="webDashboard.features.contextManagement.title">Context Management:</strong> <span
-                        data-i18n="webDashboard.features.contextManagement.desc">View and manage conversation context,
-                        summaries, and chat history</span></li>
-                <li><strong data-i18n="webDashboard.features.streamIntegration.title">Stream Integration:</strong> <span
-                        data-i18n="webDashboard.features.streamIntegration.desc">Monitor current game, title, and stream
-                        information</span></li>
+                        data-i18n="webDashboard.features.channelConfig.desc">Configure auto-chat settings and toggle ad
+                        notifications</span></li>
                 <li><strong data-i18n="webDashboard.features.commandControl.title">Command Control:</strong> <span
-                        data-i18n="webDashboard.features.commandControl.desc">Enable/disable specific commands and set
-                        custom responses</span></li>
-                <li><strong data-i18n="webDashboard.features.analytics.title">Analytics:</strong> <span
-                        data-i18n="webDashboard.features.analytics.desc">View bot usage statistics and interaction
-                        patterns</span></li>
-                <li><strong data-i18n="webDashboard.features.settingsBackup.title">Settings Backup:</strong> <span
-                        data-i18n="webDashboard.features.settingsBackup.desc">Export/import your channel
-                        configuration</span></li>
+                        data-i18n="webDashboard.features.commandControl.desc">Create and manage custom commands, and
+                        enable/disable built-in commands</span></li>
             </ul>
 
             <h3 data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
@@ -752,24 +740,24 @@
                 <li><strong data-i18n="webDashboard.steps.configure.title">Configure:</strong> <span
                         data-i18n="webDashboard.steps.configure.desc">Customize settings through the dashboard
                         interface</span></li>
-                <li><strong data-i18n="webDashboard.steps.grantPerms.title">Grant Permissions:</strong> <span
-                        data-i18n="webDashboard.steps.grantPerms.desc">In Twitch chat, type
-                        <code>/mod WildcatSage</code> to give the bot moderator status</span></li>
+                <li><strong data-i18n="webDashboard.steps.grantPerms.title">Troubleshooting:</strong> <span
+                        data-i18n="webDashboard.steps.grantPerms.desc">If the bot isn't responding, type
+                        <code>/mod WildcatSage</code> in your Twitch chat to grant moderator status</span></li>
             </ol>
 
             <h3 data-i18n="webDashboard.oauthTitle">OAuth Permissions</h3>
             <p data-i18n="webDashboard.oauthIntro">The dashboard requires the following Twitch OAuth scopes:</p>
             <ul>
-                <li><code>chat:read</code> - <span data-i18n="webDashboard.oauth.chatRead">Read chat messages</span>
-                </li>
-                <li><code>chat:edit</code> - <span data-i18n="webDashboard.oauth.chatEdit">Send chat messages</span>
-                </li>
-                <li><code>channel:read:subscriptions</code> - <span data-i18n="webDashboard.oauth.readSubs">Access
-                        subscription information</span></li>
-                <li><code>channel:manage:redemptions</code> - <span
-                        data-i18n="webDashboard.oauth.manageRedemptions">Manage channel point redemptions</span></li>
                 <li><code>user:read:email</code> - <span data-i18n="webDashboard.oauth.readEmail">Access your email
-                        address</span></li>
+                        address for account identification</span></li>
+                <li><code>channel:read:ads</code> - <span data-i18n="webDashboard.oauth.readAds">Receive ad break
+                        notifications for your channel</span></li>
+                <li><code>channel:manage:moderators</code> - <span
+                        data-i18n="webDashboard.oauth.manageModerators">Automatically grant the bot moderator
+                        status</span></li>
+                <li><code>moderator:read:followers</code> - <span data-i18n="webDashboard.oauth.readFollowers">Access
+                        follower information for commands like
+                        !followage</span></li>
             </ul>
 
             <p><strong data-i18n="webDashboard.noteLabel">Note:</strong> <span

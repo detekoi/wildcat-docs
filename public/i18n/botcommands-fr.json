@@ -264,27 +264,11 @@
       },
       "channelConfig": {
         "title": "Configuration du Canal :",
-        "desc": "Configurez la langue du bot, les paramètres du chat automatique et les permissions des commandes"
-      },
-      "contextManagement": {
-        "title": "Gestion du Contexte :",
-        "desc": "Affichage et gestion du contexte de conversation, des résumés et de l'historique du chat"
-      },
-      "streamIntegration": {
-        "title": "Intégration du Flux :",
-        "desc": "Surveillez le jeu actuel, le titre et les informations du flux"
+        "desc": "Configurez les paramètres du chat automatique et les notifications de publicité"
       },
       "commandControl": {
         "title": "Contrôle des Commandes :",
-        "desc": "Activez/désactivez les commandes spécifiques et définissez des réponses personnalisées"
-      },
-      "analytics": {
-        "title": "Analyse :",
-        "desc": "Affichage des statistiques d'utilisation du bot et des modèles d'interaction"
-      },
-      "settingsBackup": {
-        "title": "Sauvegarde des Paramètres :",
-        "desc": "Exportez/importez votre configuration de canal"
+        "desc": "Créez et gérez des commandes personnalisées, et activez/désactivez les commandes intégrées"
       }
     },
     "gettingStartedTitle": "Commencer",
@@ -306,18 +290,17 @@
         "desc": "Personnalisez les paramètres via l'interface du tableau de bord"
       },
       "grantPerms": {
-        "title": "Accordez les Permissions :",
-        "desc": "Dans le chat Twitch, tapez /mod ChatSageBot pour donner au bot le statut de modérateur"
+        "title": "Dépannage :",
+        "desc": "Si le bot ne répond pas, tapez /mod WildcatSage dans votre chat Twitch pour accorder le statut de modérateur"
       }
     },
     "oauthTitle": "Permissions OAuth",
     "oauthIntro": "Le tableau de bord nécessite les portées OAuth Twitch suivantes :",
     "oauth": {
-      "chatRead": "Lire les messages du chat",
-      "chatEdit": "Envoyer des messages du chat",
-      "readSubs": "Accéder aux informations d'abonnement",
-      "manageRedemptions": "Gérer les rachats de points de canal",
-      "readEmail": "Accéder à votre adresse e-mail"
+      "readEmail": "Accéder à votre adresse e-mail pour l'identification du compte",
+      "readAds": "Recevoir les notifications de coupures publicitaires pour votre canal",
+      "manageModerators": "Accorder automatiquement le statut de modérateur au bot",
+      "readFollowers": "Accéder aux informations des abonnés pour des commandes comme !followage"
     },
     "noteLabel": "Remarque :",
     "noteText": "ChatSage est actuellement en accès sur invitation uniquement. Si vous ne voyez pas votre canal dans le tableau de bord, veuillez demander l'accès via le formulaire de contact."

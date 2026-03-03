@@ -264,27 +264,11 @@
       },
       "channelConfig": {
         "title": "Channel Configuration:",
-        "desc": "Configure bot language, auto-chat settings, and command permissions"
-      },
-      "contextManagement": {
-        "title": "Context Management:",
-        "desc": "View and manage conversation context, summaries, and chat history"
-      },
-      "streamIntegration": {
-        "title": "Stream Integration:",
-        "desc": "Monitor current game, title, and stream information"
+        "desc": "Configure auto-chat settings and toggle ad notifications"
       },
       "commandControl": {
         "title": "Command Control:",
-        "desc": "Enable/disable specific commands and set custom responses"
-      },
-      "analytics": {
-        "title": "Analytics:",
-        "desc": "View bot usage statistics and interaction patterns"
-      },
-      "settingsBackup": {
-        "title": "Settings Backup:",
-        "desc": "Export/import your channel configuration"
+        "desc": "Create and manage custom commands, and enable/disable built-in commands"
       }
     },
     "gettingStartedTitle": "Getting Started",
@@ -306,18 +290,17 @@
         "desc": "Customize settings through the dashboard interface"
       },
       "grantPerms": {
-        "title": "Grant Permissions:",
-        "desc": "In Twitch chat, type /mod WildcatSage to give the bot moderator status"
+        "title": "Troubleshooting:",
+        "desc": "If the bot isn't responding, type /mod WildcatSage in your Twitch chat to grant moderator status"
       }
     },
     "oauthTitle": "OAuth Permissions",
     "oauthIntro": "The dashboard requires the following Twitch OAuth scopes:",
     "oauth": {
-      "chatRead": "Read chat messages",
-      "chatEdit": "Send chat messages",
-      "readSubs": "Access subscription information",
-      "manageRedemptions": "Manage channel point redemptions",
-      "readEmail": "Access your email address"
+      "readEmail": "Access your email address for account identification",
+      "readAds": "Receive ad break notifications for your channel",
+      "manageModerators": "Automatically grant the bot moderator status",
+      "readFollowers": "Access follower information for commands like !followage"
     },
     "noteLabel": "Note:",
     "noteText": "WildcatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."

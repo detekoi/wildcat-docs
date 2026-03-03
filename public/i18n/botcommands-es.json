@@ -264,27 +264,11 @@
       },
       "channelConfig": {
         "title": "Configuración del Canal:",
-        "desc": "Configurar el idioma del bot, ajustes de chat automático y permisos de comandos"
-      },
-      "contextManagement": {
-        "title": "Gestión de Contexto:",
-        "desc": "Ver y gestionar el contexto de conversación, resúmenes e historial del chat"
-      },
-      "streamIntegration": {
-        "title": "Integración del Stream:",
-        "desc": "Monitorear el juego actual, título e información del stream"
+        "desc": "Configurar ajustes de chat automático y notificaciones de anuncios"
       },
       "commandControl": {
         "title": "Control de Comandos:",
-        "desc": "Activar/desactivar comandos específicos y establecer respuestas personalizadas"
-      },
-      "analytics": {
-        "title": "Analíticas:",
-        "desc": "Ver estadísticas de uso del bot y patrones de interacción"
-      },
-      "settingsBackup": {
-        "title": "Respaldo de Configuración:",
-        "desc": "Exportar/importar la configuración de tu canal"
+        "desc": "Crear y gestionar comandos personalizados, y activar/desactivar comandos integrados"
       }
     },
     "gettingStartedTitle": "Primeros Pasos",
@@ -306,18 +290,17 @@
         "desc": "Personaliza la configuración a través de la interfaz del panel"
       },
       "grantPerms": {
-        "title": "Otorga Permisos:",
-        "desc": "En el chat de Twitch, escribe /mod ChatSageBot para dar al bot el estatus de moderador"
+        "title": "Solución de problemas:",
+        "desc": "Si el bot no responde, escribe /mod WildcatSage en tu chat de Twitch para otorgar el estatus de moderador"
       }
     },
     "oauthTitle": "Permisos OAuth",
     "oauthIntro": "El panel requiere los siguientes ámbitos OAuth de Twitch:",
     "oauth": {
-      "chatRead": "Leer mensajes del chat",
-      "chatEdit": "Enviar mensajes del chat",
-      "readSubs": "Acceder a información de suscripciones",
-      "manageRedemptions": "Gestionar canjes de puntos del canal",
-      "readEmail": "Acceder a tu dirección de correo electrónico"
+      "readEmail": "Acceder a tu dirección de correo electrónico para identificación de cuenta",
+      "readAds": "Recibir notificaciones de pausas publicitarias en tu canal",
+      "manageModerators": "Otorgar automáticamente al bot el estatus de moderador",
+      "readFollowers": "Acceder a información de seguidores para comandos como !followage"
     },
     "noteLabel": "Nota:",
     "noteText": "ChatSage está actualmente disponible solo por invitación. Si no ves tu canal en el panel, por favor solicita acceso a través del formulario de contacto."
