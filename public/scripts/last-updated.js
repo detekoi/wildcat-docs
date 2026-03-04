@@ -104,20 +104,10 @@
     try {
       const githubDate = await fetchLastCommitDate(owner, repo, filePath);
 
-      // Check if document.lastModified is newer than the GitHub commit date.
-      // This ensures the date is correct even if you deploy to Firebase without pushing to GitHub.
-      const docDate = new Date(document.lastModified);
-      const isDocNewer = githubDate && !isNaN(docDate.getTime()) && docDate > githubDate;
-
-      if (isDocNewer) {
-        setFooterDate(el, docDate);
-      } else if (githubDate) {
+      if (githubDate) {
         setFooterDate(el, githubDate);
+        return;
       }
-      // If we found a date (either one), we're done. 
-      // If githubDate was null and docDate was invalid, we fall through to the final fallback.
-      if (githubDate || isDocNewer) return;
-
     } catch (_) {
       // Ignore and fall back
     }
