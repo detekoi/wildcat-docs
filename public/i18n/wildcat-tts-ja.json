@@ -473,12 +473,12 @@
   "voices": {
     "title": "音声",
     "popularTitle": "人気の音声ID",
-    "completeListTitle": "完全な音声リスト（<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turboスキーマ</a>から）",
-    "introText": "以下の音声は、<strong>Wavespeed AI</strong>経由の<span class=\"inline-code\">minimax/speech-02-turbo</span>モデルから利用できます。ボットは、45言語にわたる自動言語分類を備えた472音声の包括的なハードコードされたリストを使用します。<span class=\"inline-code\">voice_id</span>は、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>などのコマンドで使用されます。",
-    "popularText": "<strong>Wavespeed AI</strong>経由の<span class=\"inline-code\">minimax/speech-02-turbo</span>モデルからの注目の音声。このリストの任意の音声について、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>コマンドを使用してそれを使用できます。",
+    "completeListTitle": "完全な音声リスト（<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turboスキーマ</a>から — フォールバックプロバイダー）",
+    "introText": "以下の音声は、<strong>302.ai</strong>経由のMiniMax <span class=\"inline-code\">speech-2.6-turbo</span>モデルから利用できます。<strong>Wavespeed AI</strong>経由の<span class=\"inline-code\">speech-02-turbo</span>への自動フォールバック機能付きです。ボットは、45言語にわたる自動言語分類を備えた472音声の包括的なハードコードされたリストを使用します。<span class=\"inline-code\">voice_id</span>は、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>などのコマンドで使用されます。",
+    "popularText": "302.ai経由のMiniMax <span class=\"inline-code\">speech-2.6-turbo</span>モデルからの注目の音声（Wavespeed AIフォールバック付き）。このリストの任意の音声について、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>コマンドを使用してそれを使用できます。",
     "completeListText": "これは言語別に整理された利用可能な472音声すべての完全なリストです。音声は簡単に識別できるように言語プレフィックスで自動的に分類されています。",
     "expandText": "クリックして完全な音声リストを展開(45言語で472音声)",
-    "completeListNote": "注: 完全なリストには、言語プレフィックスで自動的に分類された45言語にわたる472音声がすべて含まれています。チャットの<span class=\"inline-code\">!tts voices</span>コマンドはここにリンクします。最新のリストについては、<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AIスキーマAPI</a>を参照するか、設定を設定する際にボットの音声検証を使用してください。",
+    "completeListNote": "注: ボットは主に302.ai経由のMiniMax <span class=\"inline-code\">speech-2.6-turbo</span>を使用し、プライマリプロバイダーが利用できない場合はWavespeed AI経由の<span class=\"inline-code\">speech-02-turbo</span>にフォールバックします。完全なリストには、言語プレフィックスで自動的に分類された45言語にわたる472音声がすべて含まれています。チャットの<span class=\"inline-code\">!tts voices</span>コマンドはここにリンクします。最新のリストについては、<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AIスキーマAPI</a>を参照するか、設定を設定する際にボットの音声検証を使用してください。",
     "mossNote": "⚠️ 注: 一部のMossオーディオ音声には特別なアクセス権限が必要な場合があります。「このvoice_idにアクセスできません」というエラーが表示された場合は、このリストから別の音声を試してください。"
   },
   "languageBoost": {
@@ -545,7 +545,7 @@
     "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",
     "a3": "言語ブーストが正しい言語に設定されていることを確認してください。自分用には!tts language <言語名>、チャンネル用には!tts defaultlanguage <言語名>をTwitchチャットで入力することでこれを行えます。!tts defaultlanguageを使用して現在の言語ブーストを確認できます。",
     "q4": "TTS生成に時間がかかりすぎるか失敗する?",
-    "a4": "WildcatTTSは現在、最低レイテンシのために同期モードを有効にしたWavespeed AIを使用しています。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
+    "a4": "WildcatTTSは主に302.ai（speech-2.6-turbo）を使用し、Wavespeed AI（speech-02-turbo）への自動フォールバック機能付きです。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
     "q5": "音声が見つかりませんエラー?",
     "a5": "音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。!tts voicesで利用可能な音声へのリンクを取得してください。",
     "q6": "\"音声アクセスが拒否されました\"エラー?",

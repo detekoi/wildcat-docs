@@ -472,13 +472,13 @@
   },
   "voices": {
     "title": "Vozes",
-    "introText": "As seguintes vozes estão disponíveis do modelo <span class=\"inline-code\">minimax/speech-02-turbo</span> via <strong>Wavespeed AI</strong>. O bot usa uma lista completa hardcoded de 472 vozes com categorização automática de idiomas em 45 idiomas. O <span class=\"inline-code\">voice_id</span> é usado em comandos como <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
+    "introText": "As seguintes vozes estão disponíveis do modelo MiniMax <span class=\"inline-code\">speech-2.6-turbo</span> via <strong>302.ai</strong>, com fallback automático para <span class=\"inline-code\">speech-02-turbo</span> via <strong>Wavespeed AI</strong>. O bot usa uma lista completa hardcoded de 472 vozes com categorização automática de idiomas em 45 idiomas. O <span class=\"inline-code\">voice_id</span> é usado em comandos como <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
     "popularTitle": "IDs de Voz Populares",
-    "popularText": "Vozes em destaque do modelo <span class=\"inline-code\">minimax/speech-02-turbo</span> via <strong>Wavespeed AI</strong>. Para qualquer voz nesta lista, você pode usar o comando <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> para usá-la.",
-    "completeListTitle": "Lista completa de vozes (do <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Esquema Wavespeed AI minimax/speech-02-turbo</a>)",
+    "popularText": "Vozes em destaque do modelo MiniMax <span class=\"inline-code\">speech-2.6-turbo</span> via 302.ai (com fallback Wavespeed AI). Para qualquer voz nesta lista, você pode usar o comando <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> para usá-la.",
+    "completeListTitle": "Lista completa de vozes (do <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Esquema Wavespeed AI minimax/speech-02-turbo</a> — provedor de fallback)",
     "completeListText": "Esta é a lista completa de todas as 472 vozes disponíveis organizadas por idioma. As vozes são automaticamente categorizadas por prefixo de idioma para fácil identificação.",
     "expandText": "Clique para expandir a lista completa de vozes (472 vozes em 45 idiomas)",
-    "completeListNote": "Nota: A lista completa inclui todas as 472 vozes em 45 idiomas, automaticamente categorizadas por prefixo de idioma. O comando <span class=\"inline-code\">!tts voices</span> no chat vincula aqui. Para a lista mais atualizada, consulte a <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">API do esquema Wavespeed AI</a> ou use a validação de voz do bot ao definir preferências.",
+    "completeListNote": "Nota: O bot usa principalmente MiniMax <span class=\"inline-code\">speech-2.6-turbo</span> via 302.ai, com fallback para <span class=\"inline-code\">speech-02-turbo</span> via Wavespeed AI se o provedor primário não estiver disponível. A lista completa inclui todas as 472 vozes em 45 idiomas, automaticamente categorizadas por prefixo de idioma. O comando <span class=\"inline-code\">!tts voices</span> no chat vincula aqui. Para a lista mais atualizada, consulte a <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">API do esquema Wavespeed AI</a> ou use a validação de voz do bot ao definir preferências.",
     "mossNote": "⚠️ Nota: Algumas vozes de áudio Moss podem exigir permissões de acesso especiais. Se você receber um erro \"você não tem acesso a este voice_id\", tente uma voz diferente desta lista."
   },
   "languageBoost": {
@@ -545,7 +545,7 @@
     "q3": "O bot não está falando em um idioma específico, ou lendo números em chinês?",
     "a3": "Certifique-se de que o aumento de idioma esteja definido para o idioma correto. Você pode fazer isso digitando !tts language <nome_idioma> para você mesmo ou !tts defaultlanguage <nome_idioma> para o canal no seu chat Twitch. Você pode verificar o aumento de idioma atual usando !tts defaultlanguage.",
     "q4": "A geração de TTS está demorando muito ou falhando?",
-    "a4": "O WildcatTTS agora usa Wavespeed AI com modo sincronizado ativado para a menor latência. Se você tiver atrasos, verifique sua conexão com a internet e tente usar !tts stop para cancelar qualquer geração travada. O bot tenta automaticamente novamente pedidos falhados.",
+    "a4": "O WildcatTTS usa principalmente 302.ai (speech-2.6-turbo) com fallback automático para Wavespeed AI (speech-02-turbo). Se você tiver atrasos, verifique sua conexão com a internet e tente usar !tts stop para cancelar qualquer geração travada. O bot tenta automaticamente novamente pedidos falhados.",
     "q5": "Erro de voz não encontrada?",
     "a5": "Certifique-se de estar usando o voice ID correto da seção Vozes. Os voice IDs diferenciam maiúsculas de minúsculas e devem corresponder exatamente. Tente !tts voices para obter um link para vozes disponíveis.",
     "q6": "Erro \"Acesso à voz negado\"?",
