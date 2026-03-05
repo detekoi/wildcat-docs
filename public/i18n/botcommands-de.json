@@ -457,7 +457,7 @@
     "exampleOutput": "<strong>Ausgabe:</strong> <em>WildcatGamer hat eingecheckt! Tag #14 🎉</em>",
     "requirementLabel": "Voraussetzung:",
     "requirementText": "Twitch-Affiliate- oder Partner-Status ist erforderlich, um Channel-Punkte-Belohnungen zu erstellen.",
-    "aiExamplePrompt": "<strong>KI-Modus Prompt:</strong> <code>Schreibe eine lustige, kurze Glückwunschnachricht für $(user) zum $(checkin_count). täglichen Check-In.</code>",
+    "aiExamplePrompt": "<strong>KI-Modus Prompt:</strong> <code>Schreibe eine lustige, kurze Glückwunschnachricht für $(user) zum Check-In Nummer $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Ausgabe:</strong> <em>\"WildcatGamer, 14 Tage am Stück? Du bist on fire! Bei dem Tempo überlebst du die Sonne. ☀️\"</em> — jedes Mal anders!"
   }
 }

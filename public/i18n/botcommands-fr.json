@@ -457,7 +457,7 @@
     "exampleOutput": "<strong>Résultat :</strong> <em>WildcatGamer s'est enregistré ! Jour #14 🎉</em>",
     "requirementLabel": "Condition :",
     "requirementText": "Le statut d'Affilié ou Partenaire Twitch est requis pour créer des Récompenses de Points de Chaîne.",
-    "aiExamplePrompt": "<strong>Prompt Mode IA :</strong> <code>Écris un message court et amusant pour féliciter $(user) pour son $(checkin_count)e check-in quotidien.</code>",
+    "aiExamplePrompt": "<strong>Prompt Mode IA :</strong> <code>Écris un message court et amusant pour féliciter $(user) pour le check-in numéro $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Résultat :</strong> <em>\"WildcatGamer, 14 jours d'affilée ? Tu es en feu ! À ce rythme tu vas survivre au soleil. ☀️\"</em> — différent à chaque fois !"
   }
 }

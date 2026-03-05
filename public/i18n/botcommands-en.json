@@ -457,7 +457,7 @@
     "exampleOutput": "<strong>Output:</strong> <em>WildcatGamer checked in! Day #14 🎉</em>",
     "requirementLabel": "Requirement:",
     "requirementText": "Twitch Affiliate or Partner status is required to create Channel Point Rewards.",
-    "aiExamplePrompt": "<strong>AI Mode Prompt:</strong> <code>Write a fun, short congratulatory message for $(user) on their $(checkin_count)th daily check-in.</code>",
+    "aiExamplePrompt": "<strong>AI Mode Prompt:</strong> <code>Write a fun, short congratulatory message for $(user) on check-in number $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Output:</strong> <em>\"WildcatGamer, 14 days straight? You're on fire! At this rate you'll outlast the sun. ☀️\"</em> — different every time!"
   }
 }

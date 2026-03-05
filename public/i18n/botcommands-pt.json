@@ -457,7 +457,7 @@
     "exampleOutput": "<strong>Resultado:</strong> <em>WildcatGamer fez check-in! Dia #14 🎉</em>",
     "requirementLabel": "Requisito:",
     "requirementText": "O status de Afiliado ou Parceiro Twitch é necessário para criar Recompensas de Pontos de Canal.",
-    "aiExamplePrompt": "<strong>Prompt Modo IA:</strong> <code>Escreva uma mensagem curta e divertida parabenizando $(user) pelo seu $(checkin_count)° check-in diário.</code>",
+    "aiExamplePrompt": "<strong>Prompt Modo IA:</strong> <code>Escreva uma mensagem curta e divertida parabenizando $(user) pelo check-in número $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Resultado:</strong> <em>\"WildcatGamer, 14 dias seguidos? Você está pegando fogo! Nesse ritmo vai durar mais que o sol. ☀️\"</em> — diferente a cada vez!"
   }
 }
