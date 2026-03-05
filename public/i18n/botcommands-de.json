@@ -276,7 +276,8 @@
     "config": "Konfiguration",
     "webDashboard": "Web-Schaltpult",
     "customCommands": "Benutzerdefinierte Befehle",
-    "responseVariables": "Antwortvariablen"
+    "responseVariables": "Antwortvariablen",
+    "dailyCheckIn": "Täglicher Check-In"
   },
   "webDashboard": {
     "title": "Web-Schaltpult",
@@ -294,6 +295,10 @@
       "commandControl": {
         "title": "Befehlskontrolle:",
         "desc": "Erstellen und verwalten Sie benutzerdefinierte Befehle und aktivieren/deaktivieren Sie integrierte Befehle"
+      },
+      "dailyCheckIn": {
+        "title": "Täglicher Check-In:",
+        "desc": "Richte eine Channel-Punkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-generierten Nachrichten ein"
       }
     },
     "gettingStartedTitle": "Erste Schritte",
@@ -325,7 +330,8 @@
       "readEmail": "Zugriff auf Ihre E-Mail-Adresse zur Kontoidentifikation",
       "readAds": "Werbeunterbrechungsbenachrichtigungen für Ihren Kanal empfangen",
       "manageModerators": "Dem Bot automatisch Moderatorstatus gewähren",
-      "readFollowers": "Zugriff auf Follower-Informationen für Befehle wie !followage"
+      "readFollowers": "Zugriff auf Follower-Informationen für Befehle wie !followage",
+      "manageRedemptions": "Channel-Punkte-Belohnungen erstellen und verwalten für Funktionen wie den täglichen Check-In"
     },
     "noteLabel": "Hinweis:",
     "noteText": "ChatSage ist derzeit nur auf Einladung verfügbar. Wenn Sie Ihren Kanal im Schaltpult nicht sehen, beantragen Sie Zugriff über das Kontaktformular."
@@ -371,6 +377,9 @@
       "followage": {
         "desc": "Wie lange der Benutzer dem Kanal folgt",
         "example": "2 Jahre 3 Monate"
+      },
+      "checkinCount": {
+        "desc": "Die laufende tägliche Check-In-Anzahl des Zuschauers (nur Channel-Punkte-Belohnungen)"
       }
     },
     "examplesTitle": "Beispiele",
@@ -426,5 +435,27 @@
     },
     "tipLabel": "Tipp:",
     "tipText": "Sie können jeden vorhandenen Textbefehl in den KI-Modus konvertieren, indem Sie ihn im Dashboard bearbeiten und den <strong>KI-Modus</strong> aktivieren, oder im Chat mit <span class=\"inline-code\">!Befehlsoptionen <name> type=prompt</span>. Wechseln Sie zurück mit <span class=\"inline-code\">type=text</span>."
+  },
+  "dailyCheckIn": {
+    "title": "Täglicher Check-In",
+    "intro": "Der tägliche Check-In ist eine Channel-Punkte-Belohnung, mit der Zuschauer sich einmal pro Stream einchecken und ihren Streak verfolgen können. Die Belohnung wird automatisch über das Dashboard erstellt und verwaltet — kein manuelles Setup auf Twitch erforderlich.",
+    "setupTitle": "Einrichtung",
+    "steps": {
+      "open": "Öffne das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> und scrolle zum Abschnitt <strong>Täglicher Check-In</strong>.",
+      "enable": "Aktiviere den <strong>Einschalten</strong>-Schalter und lege einen Belohnungstitel und Channel-Punkte-Kosten fest.",
+      "template": "Schreibe eine Antwortvorlage mit Variablen wie <code>$(user)</code> und <code>$(checkin_count)</code>, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Nachrichten bei jedem Check-In.",
+      "save": "Klicke auf <strong>Speichern</strong>. Die Belohnung wird automatisch auf Twitch erstellt."
+    },
+    "variablesTitle": "Verfügbare Variablen",
+    "variables": {
+      "user": "Anzeigename des Zuschauers, der eingecheckt hat",
+      "checkinCount": "Die laufende Check-In-Gesamtzahl des Zuschauers",
+      "channel": "Kanalname"
+    },
+    "exampleTitle": "Beispiel",
+    "exampleTemplate": "<strong>Vorlage:</strong> <code>$(user) hat eingecheckt! Tag #$(checkin_count) 🎉</code>",
+    "exampleOutput": "<strong>Ausgabe:</strong> <em>WildcatGamer hat eingecheckt! Tag #14 🎉</em>",
+    "requirementLabel": "Voraussetzung:",
+    "requirementText": "Twitch-Affiliate- oder Partner-Status ist erforderlich, um Channel-Punkte-Belohnungen zu erstellen."
   }
 }

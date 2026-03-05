@@ -276,7 +276,8 @@
     "config": "設定",
     "webDashboard": "Webダッシュボード",
     "customCommands": "カスタムコマンド",
-    "responseVariables": "応答変数"
+    "responseVariables": "応答変数",
+    "dailyCheckIn": "デイリーチェックイン"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
@@ -294,6 +295,10 @@
       "commandControl": {
         "title": "コマンド管理:",
         "desc": "カスタムコマンドの作成と管理、組み込みコマンドの有効/無効"
+      },
+      "dailyCheckIn": {
+        "title": "デイリーチェックイン:",
+        "desc": "連続記録トラッキングとAI生成メッセージ（オプション）付きのデイリーチェックインのチャンネルポイント報酬を設定"
       }
     },
     "gettingStartedTitle": "はじめに",
@@ -325,7 +330,8 @@
       "readEmail": "アカウント識別のためのメールアドレスへのアクセス",
       "readAds": "チャンネルの広告休憩通知を受信",
       "manageModerators": "ボットに自動的にモデレーターステータスを付与",
-      "readFollowers": "!followageなどのコマンド用にフォロワー情報にアクセス"
+      "readFollowers": "!followageなどのコマンド用にフォロワー情報にアクセス",
+      "manageRedemptions": "デイリーチェックインなどの機能のためにチャンネルポイント報酬を作成・管理"
     },
     "noteLabel": "注意:",
     "noteText": "ChatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、お問い合わせフォームからアクセスをリクエストしてください。"
@@ -371,6 +377,9 @@
       "followage": {
         "desc": "ユーザーがチャンネルをフォローし続けている期間",
         "example": "2年3ヶ月"
+      },
+      "checkinCount": {
+        "desc": "視聴者の累計デイリーチェックイン回数（チャンネルポイント報酬のみ）"
       }
     },
     "examplesTitle": "例",
@@ -426,5 +435,27 @@
     },
     "tipLabel": "ヒント：",
     "tipText": "既存のテキスト コマンドを AI モードに変換するには、ダッシュボードで編集して <strong>AI モード</strong> を有効にするか、チャットで <span class=\"inline-code\">!command options <name> type=prompt</span> を使用します。 <span class=\"inline-code\">type=text</span> で元に戻ります。"
+  },
+  "dailyCheckIn": {
+    "title": "デイリーチェックイン",
+    "intro": "デイリーチェックインは、視聴者が配信ごとに1回チェックインし、連続記録を追跡できるチャンネルポイント報酬です。報酬はダッシュボードから自動的に作成・管理されます — Twitchでの手動設定は不要です。",
+    "setupTitle": "セットアップ",
+    "steps": {
+      "open": "<a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSageダッシュボード</a>を開き、<strong>デイリーチェックイン</strong>セクションまでスクロールします。",
+      "enable": "<strong>有効にする</strong>トグルをオンにし、報酬のタイトルとチャンネルポイントのコストを設定します。",
+      "template": "<code>$(user)</code>や<code>$(checkin_count)</code>などの変数を使って応答テンプレートを作成するか、<strong>AIモード</strong>を有効にして毎回ユニークなメッセージを生成します。",
+      "save": "<strong>保存</strong>をクリックします。報酬はTwitchに自動的に作成されます。"
+    },
+    "variablesTitle": "利用可能な変数",
+    "variables": {
+      "user": "チェックインした視聴者の表示名",
+      "checkinCount": "視聴者の累計チェックイン回数",
+      "channel": "チャンネル名"
+    },
+    "exampleTitle": "例",
+    "exampleTemplate": "<strong>テンプレート:</strong> <code>$(user)がチェックイン！ #$(checkin_count)日目 🎉</code>",
+    "exampleOutput": "<strong>出力:</strong> <em>WildcatGamerがチェックイン！ #14日目 🎉</em>",
+    "requirementLabel": "要件:",
+    "requirementText": "チャンネルポイント報酬を作成するには、Twitchアフィリエイトまたはパートナーのステータスが必要です。"
   }
 }

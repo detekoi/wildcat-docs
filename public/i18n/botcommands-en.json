@@ -276,7 +276,8 @@
     "games": "Games",
     "config": "Config",
     "webDashboard": "Web Dashboard",
-    "responseVariables": "Response Variables"
+    "responseVariables": "Response Variables",
+    "dailyCheckIn": "Daily Check-In"
   },
   "responseVariables": {
     "title": "Response Variables",
@@ -319,6 +320,9 @@
       "followage": {
         "desc": "How long the user has been following the channel",
         "example": "2 years 3 months"
+      },
+      "checkinCount": {
+        "desc": "The viewer's running daily check-in count (Channel Point Rewards only)"
       }
     },
     "examplesTitle": "Examples",
@@ -391,6 +395,10 @@
       "commandControl": {
         "title": "Command Control:",
         "desc": "Create and manage custom commands, and enable/disable built-in commands"
+      },
+      "dailyCheckIn": {
+        "title": "Daily Check-In:",
+        "desc": "Set up a Channel Point Reward for daily check-ins with streak tracking and optional AI-generated messages"
       }
     },
     "gettingStartedTitle": "Getting Started",
@@ -422,9 +430,32 @@
       "readEmail": "Access your email address for account identification",
       "readAds": "Receive ad break notifications for your channel",
       "manageModerators": "Automatically grant the bot moderator status",
-      "readFollowers": "Access follower information for commands like !followage"
+      "readFollowers": "Access follower information for commands like !followage",
+      "manageRedemptions": "Create and manage Channel Point Rewards for features like Daily Check-In"
     },
     "noteLabel": "Note:",
     "noteText": "WildcatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
+  },
+  "dailyCheckIn": {
+    "title": "Daily Check-In",
+    "intro": "Daily Check-In is a Channel Point Reward that lets viewers check in once per stream and track their streak. The reward is created and managed automatically from the dashboard \u2014 no manual setup on Twitch required.",
+    "setupTitle": "Setup",
+    "steps": {
+      "open": "Open the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> and scroll to the <strong>Daily Check-In</strong> section.",
+      "enable": "Flip the <strong>Enable</strong> toggle and set a reward title and Channel Point cost.",
+      "template": "Write a response template using variables like <code>$(user)</code> and <code>$(checkin_count)</code>, or enable <strong>AI Mode</strong> for unique messages every time.",
+      "save": "Click <strong>Save</strong>. The reward is created on Twitch automatically."
+    },
+    "variablesTitle": "Available Variables",
+    "variables": {
+      "user": "Display name of the viewer who checked in",
+      "checkinCount": "The viewer's running check-in total",
+      "channel": "Channel name"
+    },
+    "exampleTitle": "Example",
+    "exampleTemplate": "<strong>Template:</strong> <code>$(user) checked in! Day #$(checkin_count) \ud83c\udf89</code>",
+    "exampleOutput": "<strong>Output:</strong> <em>WildcatGamer checked in! Day #14 \ud83c\udf89</em>",
+    "requirementLabel": "Requirement:",
+    "requirementText": "Twitch Affiliate or Partner status is required to create Channel Point Rewards."
   }
 }

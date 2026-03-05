@@ -74,6 +74,7 @@
             <li><a href="#games" data-i18n="sidebar.games">Games</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config</a></li>
             <li><a href="#response-variables" data-i18n="sidebar.responseVariables">Response Variables</a></li>
+            <li><a href="#daily-check-in" data-i18n="sidebar.dailyCheckIn">Daily Check-In</a></li>
             <li><a href="#web-dashboard" data-i18n="sidebar.webDashboard">Web Dashboard</a></li>
         </ul>
     </nav>
@@ -641,6 +642,13 @@
                             the channel</td>
                         <td data-i18n="responseVariables.variables.followage.example">2 years 3 months</td>
                     </tr>
+                    <tr>
+                        <td><span class="inline-code">$(checkin_count)</span></td>
+                        <td data-i18n="responseVariables.variables.checkinCount.desc">The viewer's running daily
+                            check-in
+                            count (Channel Point Rewards only)</td>
+                        <td>14</td>
+                    </tr>
                 </tbody>
             </table>
 
@@ -763,6 +771,9 @@
                 <li><strong data-i18n="webDashboard.features.commandControl.title">Command Control:</strong> <span
                         data-i18n="webDashboard.features.commandControl.desc">Create and manage custom commands, and
                         enable/disable built-in commands</span></li>
+                <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
+                        data-i18n="webDashboard.features.dailyCheckIn.desc">Set up a Channel Point Reward for daily
+                        check-ins with streak tracking and optional AI-generated messages</span></li>
             </ul>
 
             <h3 data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
@@ -799,12 +810,76 @@
                         !followage</span></li>
             </ul>
 
+            <ul>
+                <li><code>channel:manage:redemptions</code> - <span
+                        data-i18n="webDashboard.oauth.manageRedemptions">Create and manage Channel Point Rewards for
+                        features like Daily Check-In</span></li>
+            </ul>
+
             <p><strong data-i18n="webDashboard.noteLabel">Note:</strong> <span
                     data-i18n="webDashboard.noteText">WildcatSage is currently invite-only. If you don't see your
                     channel
                     in the dashboard, please <a href="https://detekoi.github.io/index.html#contact-me"
                         class="default-link-style" target="_blank">request access through the contact form</a>.</span>
             </p>
+        </section>
+
+        <section id="daily-check-in" class="section">
+            <h2 data-i18n="dailyCheckIn.title">Daily Check-In</h2>
+            <p data-i18n="dailyCheckIn.intro">Daily Check-In is a Channel Point Reward that lets viewers check in
+                once per stream and track their streak. The reward is created and managed automatically from the
+                dashboard — no manual setup on Twitch required.</p>
+
+            <h3 data-i18n="dailyCheckIn.setupTitle">Setup</h3>
+            <ol>
+                <li data-i18n="dailyCheckIn.steps.open">Open the <a href="https://app.wildcat.chat/"
+                        class="default-link-style" target="_blank">WildcatSage Dashboard</a> and scroll to the
+                    <strong>Daily Check-In</strong> section.
+                </li>
+                <li data-i18n="dailyCheckIn.steps.enable">Flip the <strong>Enable</strong> toggle and set a reward title
+                    and Channel Point cost.</li>
+                <li data-i18n="dailyCheckIn.steps.template">Write a response template using variables like
+                    <code>$(user)</code> and <code>$(checkin_count)</code>, or enable <strong>AI Mode</strong> for
+                    unique messages every time.
+                </li>
+                <li data-i18n="dailyCheckIn.steps.save">Click <strong>Save</strong>. The reward is created on Twitch
+                    automatically.</li>
+            </ol>
+
+            <h3 data-i18n="dailyCheckIn.variablesTitle">Available Variables</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th data-i18n="responseVariables.table.variable">Variable</th>
+                        <th data-i18n="responseVariables.table.whatItDoes">What it does</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="inline-code">$(user)</span></td>
+                        <td data-i18n="dailyCheckIn.variables.user">Display name of the viewer who checked in</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">$(checkin_count)</span></td>
+                        <td data-i18n="dailyCheckIn.variables.checkinCount">The viewer's running check-in total</td>
+                    </tr>
+                    <tr>
+                        <td><span class="inline-code">$(channel)</span></td>
+                        <td data-i18n="dailyCheckIn.variables.channel">Channel name</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 data-i18n="dailyCheckIn.exampleTitle">Example</h3>
+            <p data-i18n="dailyCheckIn.exampleTemplate"><strong>Template:</strong>
+                <code>$(user) checked in! Day #$(checkin_count) 🎉</code>
+            </p>
+            <p data-i18n="dailyCheckIn.exampleOutput"><strong>Output:</strong> <em>WildcatGamer checked in! Day #14
+                    🎉</em></p>
+
+            <p><strong data-i18n="dailyCheckIn.requirementLabel">Requirement:</strong> <span
+                    data-i18n="dailyCheckIn.requirementText">Twitch Affiliate or Partner status is required to create
+                    Channel Point Rewards.</span></p>
         </section>
 
         <div id="last-updated"

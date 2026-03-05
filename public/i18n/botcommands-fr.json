@@ -276,7 +276,8 @@
     "config": "Config",
     "webDashboard": "Tableau de bord Web",
     "customCommands": "Commandes personnalisées",
-    "responseVariables": "Variables de réponse"
+    "responseVariables": "Variables de réponse",
+    "dailyCheckIn": "Check-In Quotidien"
   },
   "webDashboard": {
     "title": "Tableau de bord Web",
@@ -294,6 +295,10 @@
       "commandControl": {
         "title": "Contrôle des Commandes :",
         "desc": "Créez et gérez des commandes personnalisées, et activez/désactivez les commandes intégrées"
+      },
+      "dailyCheckIn": {
+        "title": "Check-In Quotidien :",
+        "desc": "Configurez une Récompense de Points de Chaîne pour les check-ins quotidiens avec suivi de série et messages optionnels générés par IA"
       }
     },
     "gettingStartedTitle": "Commencer",
@@ -325,7 +330,8 @@
       "readEmail": "Accéder à votre adresse e-mail pour l'identification du compte",
       "readAds": "Recevoir les notifications de coupures publicitaires pour votre canal",
       "manageModerators": "Accorder automatiquement le statut de modérateur au bot",
-      "readFollowers": "Accéder aux informations des abonnés pour des commandes comme !followage"
+      "readFollowers": "Accéder aux informations des abonnés pour des commandes comme !followage",
+      "manageRedemptions": "Créer et gérer les Récompenses de Points de Chaîne pour des fonctionnalités comme le Check-In Quotidien"
     },
     "noteLabel": "Remarque :",
     "noteText": "ChatSage est actuellement en accès sur invitation uniquement. Si vous ne voyez pas votre canal dans le tableau de bord, veuillez demander l'accès via le formulaire de contact."
@@ -371,6 +377,9 @@
       "followage": {
         "desc": "Depuis combien de temps l'utilisateur suit la chaîne",
         "example": "2 ans 3 mois"
+      },
+      "checkinCount": {
+        "desc": "Le compteur de check-ins quotidiens du spectateur (Récompenses de Points de Chaîne uniquement)"
       }
     },
     "examplesTitle": "Exemples",
@@ -426,5 +435,27 @@
     },
     "tipLabel": "Conseil:",
     "tipText": "Vous pouvez convertir n'importe quelle commande texte existante en mode IA en la modifiant dans le tableau de bord et en activant le <strong>Mode IA</strong>, ou dans le chat avec <span class=\"inline-code\">!command options <name> type=prompt</span>. Revenez en arrière avec <span class=\"inline-code\">type=text</span>."
+  },
+  "dailyCheckIn": {
+    "title": "Check-In Quotidien",
+    "intro": "Le Check-In Quotidien est une Récompense de Points de Chaîne qui permet aux spectateurs de s'enregistrer une fois par stream et de suivre leur série. La récompense est créée et gérée automatiquement depuis le tableau de bord — aucune configuration manuelle sur Twitch requise.",
+    "setupTitle": "Configuration",
+    "steps": {
+      "open": "Ouvrez le <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Tableau de bord WildcatSage</a> et faites défiler jusqu'à la section <strong>Check-In Quotidien</strong>.",
+      "enable": "Activez le bouton <strong>Activer</strong> et définissez un titre de récompense et un coût en Points de Chaîne.",
+      "template": "Rédigez un modèle de réponse en utilisant des variables comme <code>$(user)</code> et <code>$(checkin_count)</code>, ou activez le <strong>Mode IA</strong> pour des messages uniques à chaque fois.",
+      "save": "Cliquez sur <strong>Enregistrer</strong>. La récompense est créée automatiquement sur Twitch."
+    },
+    "variablesTitle": "Variables Disponibles",
+    "variables": {
+      "user": "Nom d'affichage du spectateur qui s'est enregistré",
+      "checkinCount": "Le total cumulé de check-ins du spectateur",
+      "channel": "Nom de la chaîne"
+    },
+    "exampleTitle": "Exemple",
+    "exampleTemplate": "<strong>Modèle :</strong> <code>$(user) s'est enregistré ! Jour #$(checkin_count) 🎉</code>",
+    "exampleOutput": "<strong>Résultat :</strong> <em>WildcatGamer s'est enregistré ! Jour #14 🎉</em>",
+    "requirementLabel": "Condition :",
+    "requirementText": "Le statut d'Affilié ou Partenaire Twitch est requis pour créer des Récompenses de Points de Chaîne."
   }
 }

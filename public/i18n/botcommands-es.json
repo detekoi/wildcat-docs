@@ -276,7 +276,8 @@
     "config": "Configuración",
     "webDashboard": "Panel Web",
     "customCommands": "Comandos personalizados",
-    "responseVariables": "Variables de respuesta"
+    "responseVariables": "Variables de respuesta",
+    "dailyCheckIn": "Check-In Diario"
   },
   "webDashboard": {
     "title": "Panel Web",
@@ -294,6 +295,10 @@
       "commandControl": {
         "title": "Control de Comandos:",
         "desc": "Crear y gestionar comandos personalizados, y activar/desactivar comandos integrados"
+      },
+      "dailyCheckIn": {
+        "title": "Check-In Diario:",
+        "desc": "Configura una Recompensa de Puntos de Canal para check-ins diarios con seguimiento de rachas y mensajes opcionales generados por IA"
       }
     },
     "gettingStartedTitle": "Primeros Pasos",
@@ -325,7 +330,8 @@
       "readEmail": "Acceder a tu dirección de correo electrónico para identificación de cuenta",
       "readAds": "Recibir notificaciones de pausas publicitarias en tu canal",
       "manageModerators": "Otorgar automáticamente al bot el estatus de moderador",
-      "readFollowers": "Acceder a información de seguidores para comandos como !followage"
+      "readFollowers": "Acceder a información de seguidores para comandos como !followage",
+      "manageRedemptions": "Crear y gestionar Recompensas de Puntos de Canal para funciones como el Check-In Diario"
     },
     "noteLabel": "Nota:",
     "noteText": "ChatSage está actualmente disponible solo por invitación. Si no ves tu canal en el panel, por favor solicita acceso a través del formulario de contacto."
@@ -371,6 +377,9 @@
       "followage": {
         "desc": "Cuánto tiempo lleva el usuario siguiendo el canal",
         "example": "2 años 3 meses"
+      },
+      "checkinCount": {
+        "desc": "El conteo acumulado de check-ins diarios del espectador (solo Recompensas de Puntos de Canal)"
       }
     },
     "examplesTitle": "Ejemplos",
@@ -426,5 +435,27 @@
     },
     "tipLabel": "Consejo:",
     "tipText": "Puede convertir cualquier comando de texto existente al modo AI editándolo en el panel y habilitando el <strong>Modo AI</strong>, o en el chat con <span class=\"inline-code\">!command options <name> type=prompt</span>. Vuelva atrás con <span class=\"inline-code\">type=text</span>."
+  },
+  "dailyCheckIn": {
+    "title": "Check-In Diario",
+    "intro": "El Check-In Diario es una Recompensa de Puntos de Canal que permite a los espectadores registrarse una vez por transmisión y rastrear su racha. La recompensa se crea y gestiona automáticamente desde el panel — no se necesita configuración manual en Twitch.",
+    "setupTitle": "Configuración",
+    "steps": {
+      "open": "Abre el <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel de WildcatSage</a> y desplázate hasta la sección <strong>Check-In Diario</strong>.",
+      "enable": "Activa el interruptor <strong>Habilitar</strong> y establece un título de recompensa y un costo en Puntos de Canal.",
+      "template": "Escribe una plantilla de respuesta usando variables como <code>$(user)</code> y <code>$(checkin_count)</code>, o activa el <strong>Modo IA</strong> para mensajes únicos cada vez.",
+      "save": "Haz clic en <strong>Guardar</strong>. La recompensa se crea en Twitch automáticamente."
+    },
+    "variablesTitle": "Variables Disponibles",
+    "variables": {
+      "user": "Nombre del espectador que hizo check-in",
+      "checkinCount": "El total acumulado de check-ins del espectador",
+      "channel": "Nombre del canal"
+    },
+    "exampleTitle": "Ejemplo",
+    "exampleTemplate": "<strong>Plantilla:</strong> <code>$(user) hizo check-in! Día #$(checkin_count) 🎉</code>",
+    "exampleOutput": "<strong>Resultado:</strong> <em>WildcatGamer hizo check-in! Día #14 🎉</em>",
+    "requirementLabel": "Requisito:",
+    "requirementText": "Se requiere el estado de Afiliado o Socio de Twitch para crear Recompensas de Puntos de Canal."
   }
 }
