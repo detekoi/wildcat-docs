@@ -443,7 +443,7 @@
     "steps": {
       "open": "Open the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> and scroll to the <strong>Daily Check-In</strong> section.",
       "enable": "Flip the <strong>Enable</strong> toggle and set a reward title and Channel Point cost.",
-      "template": "Write a response template using variables like <code>$(user)</code> and <code>$(checkin_count)</code>, or enable <strong>AI Mode</strong> for unique messages every time.",
+      "template": "Write a response template using variables like <span class=\"inline-code\">$(user)</span> and <span class=\"inline-code\">$(checkin_count)</span>, or enable <strong>AI Mode</strong> for unique messages every time.",
       "save": "Click <strong>Save</strong>. The reward is created on Twitch automatically."
     },
     "variablesTitle": "Available Variables",

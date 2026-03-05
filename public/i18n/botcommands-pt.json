@@ -443,7 +443,7 @@
     "steps": {
       "open": "Abra o <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Painel WildcatSage</a> e role até a seção <strong>Check-In Diário</strong>.",
       "enable": "Ative o botão <strong>Habilitar</strong> e defina um título de recompensa e um custo em Pontos de Canal.",
-      "template": "Escreva um modelo de resposta usando variáveis como <code>$(user)</code> e <code>$(checkin_count)</code>, ou ative o <strong>Modo IA</strong> para mensagens únicas a cada vez.",
+      "template": "Escreva um modelo de resposta usando variáveis como <span class=\"inline-code\">$(user)</span> e <span class=\"inline-code\">$(checkin_count)</span>, ou ative o <strong>Modo IA</strong> para mensagens únicas a cada vez.",
       "save": "Clique em <strong>Salvar</strong>. A recompensa é criada automaticamente no Twitch."
     },
     "variablesTitle": "Variáveis Disponíveis",

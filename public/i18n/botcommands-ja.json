@@ -443,7 +443,7 @@
     "steps": {
       "open": "<a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSageダッシュボード</a>を開き、<strong>デイリーチェックイン</strong>セクションまでスクロールします。",
       "enable": "<strong>有効にする</strong>トグルをオンにし、報酬のタイトルとチャンネルポイントのコストを設定します。",
-      "template": "<code>$(user)</code>や<code>$(checkin_count)</code>などの変数を使って応答テンプレートを作成するか、<strong>AIモード</strong>を有効にして毎回ユニークなメッセージを生成します。",
+      "template": "<span class=\"inline-code\">$(user)</span>や<span class=\"inline-code\">$(checkin_count)</span>などの変数を使って応答テンプレートを作成するか、<strong>AIモード</strong>を有効にして毎回ユニークなメッセージを生成します。",
       "save": "<strong>保存</strong>をクリックします。報酬はTwitchに自動的に作成されます。"
     },
     "variablesTitle": "利用可能な変数",

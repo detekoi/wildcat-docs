@@ -443,7 +443,7 @@
     "steps": {
       "open": "Откройте <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Панель управления WildcatSage</a> и прокрутите до раздела <strong>Ежедневная Отметка</strong>.",
       "enable": "Включите переключатель <strong>Включить</strong> и задайте название награды и стоимость в Баллах Канала.",
-      "template": "Напишите шаблон ответа, используя переменные вроде <code>$(user)</code> и <code>$(checkin_count)</code>, или включите <strong>Режим ИИ</strong> для уникальных сообщений каждый раз.",
+      "template": "Напишите шаблон ответа, используя переменные вроде <span class=\"inline-code\">$(user)</span> и <span class=\"inline-code\">$(checkin_count)</span>, или включите <strong>Режим ИИ</strong> для уникальных сообщений каждый раз.",
       "save": "Нажмите <strong>Сохранить</strong>. Награда автоматически создаётся на Twitch."
     },
     "variablesTitle": "Доступные Переменные",

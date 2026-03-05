@@ -443,7 +443,7 @@
     "steps": {
       "open": "Apri la <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Dashboard WildcatSage</a> e scorri fino alla sezione <strong>Check-In Giornaliero</strong>.",
       "enable": "Attiva l'interruttore <strong>Abilita</strong> e imposta un titolo del premio e un costo in Punti Canale.",
-      "template": "Scrivi un modello di risposta usando variabili come <code>$(user)</code> e <code>$(checkin_count)</code>, oppure attiva la <strong>Modalità IA</strong> per messaggi unici ogni volta.",
+      "template": "Scrivi un modello di risposta usando variabili come <span class=\"inline-code\">$(user)</span> e <span class=\"inline-code\">$(checkin_count)</span>, oppure attiva la <strong>Modalità IA</strong> per messaggi unici ogni volta.",
       "save": "Clicca su <strong>Salva</strong>. Il premio viene creato automaticamente su Twitch."
     },
     "variablesTitle": "Variabili Disponibili",

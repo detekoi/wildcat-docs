@@ -443,7 +443,7 @@
     "steps": {
       "open": "Öffne das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> und scrolle zum Abschnitt <strong>Täglicher Check-In</strong>.",
       "enable": "Aktiviere den <strong>Einschalten</strong>-Schalter und lege einen Belohnungstitel und Channel-Punkte-Kosten fest.",
-      "template": "Schreibe eine Antwortvorlage mit Variablen wie <code>$(user)</code> und <code>$(checkin_count)</code>, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Nachrichten bei jedem Check-In.",
+      "template": "Schreibe eine Antwortvorlage mit Variablen wie <span class=\"inline-code\">$(user)</span> und <span class=\"inline-code\">$(checkin_count)</span>, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Nachrichten bei jedem Check-In.",
       "save": "Klicke auf <strong>Speichern</strong>. Die Belohnung wird automatisch auf Twitch erstellt."
     },
     "variablesTitle": "Verfügbare Variablen",

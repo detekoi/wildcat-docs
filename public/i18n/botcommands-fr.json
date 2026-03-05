@@ -443,7 +443,7 @@
     "steps": {
       "open": "Ouvrez le <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Tableau de bord WildcatSage</a> et faites défiler jusqu'à la section <strong>Check-In Quotidien</strong>.",
       "enable": "Activez le bouton <strong>Activer</strong> et définissez un titre de récompense et un coût en Points de Chaîne.",
-      "template": "Rédigez un modèle de réponse en utilisant des variables comme <code>$(user)</code> et <code>$(checkin_count)</code>, ou activez le <strong>Mode IA</strong> pour des messages uniques à chaque fois.",
+      "template": "Rédigez un modèle de réponse en utilisant des variables comme <span class=\"inline-code\">$(user)</span> et <span class=\"inline-code\">$(checkin_count)</span>, ou activez le <strong>Mode IA</strong> pour des messages uniques à chaque fois.",
       "save": "Cliquez sur <strong>Enregistrer</strong>. La récompense est créée automatiquement sur Twitch."
     },
     "variablesTitle": "Variables Disponibles",
