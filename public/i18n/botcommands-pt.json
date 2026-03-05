@@ -452,10 +452,12 @@
       "checkinCount": "O total acumulado de check-ins do espectador",
       "channel": "Nome do canal"
     },
-    "exampleTitle": "Exemplo",
+    "exampleTitle": "Exemplos",
     "exampleTemplate": "<strong>Modelo:</strong> <code>$(user) fez check-in! Dia #$(checkin_count) 🎉</code>",
     "exampleOutput": "<strong>Resultado:</strong> <em>WildcatGamer fez check-in! Dia #14 🎉</em>",
     "requirementLabel": "Requisito:",
-    "requirementText": "O status de Afiliado ou Parceiro Twitch é necessário para criar Recompensas de Pontos de Canal."
+    "requirementText": "O status de Afiliado ou Parceiro Twitch é necessário para criar Recompensas de Pontos de Canal.",
+    "aiExamplePrompt": "<strong>Prompt Modo IA:</strong> <code>Escreva uma mensagem curta e divertida parabenizando $(user) pelo seu $(checkin_count)° check-in diário.</code>",
+    "aiExampleOutput": "<strong>Resultado:</strong> <em>\"WildcatGamer, 14 dias seguidos? Você está pegando fogo! Nesse ritmo vai durar mais que o sol. ☀️\"</em> — diferente a cada vez!"
   }
 }

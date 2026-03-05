@@ -456,6 +456,8 @@
     "exampleTemplate": "<strong>テンプレート:</strong> <code>$(user)がチェックイン！ #$(checkin_count)日目 🎉</code>",
     "exampleOutput": "<strong>出力:</strong> <em>WildcatGamerがチェックイン！ #14日目 🎉</em>",
     "requirementLabel": "要件:",
-    "requirementText": "チャンネルポイント報酬を作成するには、Twitchアフィリエイトまたはパートナーのステータスが必要です。"
+    "requirementText": "チャンネルポイント報酬を作成するには、Twitchアフィリエイトまたはパートナーのステータスが必要です。",
+    "aiExamplePrompt": "<strong>AIモードプロンプト:</strong> <code>$(user)の$(checkin_count)回目のデイリーチェックインを楽しく短く祝うメッセージを書いてください。</code>",
+    "aiExampleOutput": "<strong>出力:</strong> <em>「WildcatGamer、14日連続？すごい！この調子だと太陽より長持ちしそう。☀️」</em> — 毎回違うメッセージ！"
   }
 }

@@ -452,10 +452,12 @@
       "checkinCount": "Общий накопительный счёт отметок зрителя",
       "channel": "Название канала"
     },
-    "exampleTitle": "Пример",
+    "exampleTitle": "Примеры",
     "exampleTemplate": "<strong>Шаблон:</strong> <code>$(user) отметился! День #$(checkin_count) 🎉</code>",
     "exampleOutput": "<strong>Результат:</strong> <em>WildcatGamer отметился! День #14 🎉</em>",
     "requirementLabel": "Требование:",
-    "requirementText": "Для создания Наград за Баллы Канала необходим статус Компаньона или Партнёра Twitch."
+    "requirementText": "Для создания Наград за Баллы Канала необходим статус Компаньона или Партнёра Twitch.",
+    "aiExamplePrompt": "<strong>Промпт режима ИИ:</strong> <code>Напиши весёлое короткое поздравление для $(user) с $(checkin_count)-й ежедневной отметкой.</code>",
+    "aiExampleOutput": "<strong>Результат:</strong> <em>\"WildcatGamer, 14 дней подряд? Ты в ударе! С таким темпом переживёшь солнце. ☀️\"</em> — каждый раз разный!"
   }
 }
