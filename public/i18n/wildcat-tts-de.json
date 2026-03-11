@@ -456,7 +456,8 @@
       },
       "viewNote": "(zeigt die aktuelle gespeicherte Beschreibung)",
       "regenerateNote": "(löscht den Cache; KI beschreibt bei nächster Nutzung neu)",
-      "setNote": "(setzt eine benutzerdefinierte Beschreibung)"
+      "setNote": "(setzt eine benutzerdefinierte Beschreibung)",
+      "permission": "Moderator (Anzeigen/Regenerieren), nur Broadcaster (Setzen)"
     }
   },
   "table": {

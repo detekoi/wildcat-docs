@@ -456,7 +456,8 @@
       },
       "viewNote": "(affiche la description mise en cache actuelle)",
       "regenerateNote": "(efface le cache ; l'IA re-décrira lors de la prochaine utilisation)",
-      "setNote": "(définit une description personnalisée)"
+      "setNote": "(définit une description personnalisée)",
+      "permission": "Modérateur (afficher/régénérer), Diffuseur uniquement (définir)"
     }
   },
   "table": {

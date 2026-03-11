@@ -456,7 +456,8 @@
       },
       "viewNote": "(shows the current cached description)",
       "regenerateNote": "(clears cache; AI will re-describe on next use)",
-      "setNote": "(sets a custom description)"
+      "setNote": "(sets a custom description)",
+      "permission": "Moderator (view/regenerate), Broadcaster only (set)"
     }
   },
   "table": {

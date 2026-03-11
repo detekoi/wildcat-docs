@@ -602,6 +602,20 @@ code {
   letter-spacing: 0.5px;
 }
 
+.broadcaster-command::before {
+  content: "Broadcaster";
+  display: inline-block;
+  background: #7e57c2;
+  color: #fff;
+  font-size: 0.75em;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-right: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+
 /* Dropdown styles */
 .dropdown-summary {
   cursor: pointer;
@@ -804,6 +818,10 @@ footer {
 
   .mod-command::before {
     background: #b71c1c;
+  }
+
+  .broadcaster-command::before {
+    background: #4527a0;
   }
 
   .dropdown-summary:hover {
