@@ -78,6 +78,7 @@
             </li>
             <li><a href="#voices" data-i18n="sidebar.voices">Voices</a></li>
             <li><a href="#language-boost" data-i18n="sidebar.languageBoost">Language Boost</a></li>
+            <li><a href="#emote-descriptions" data-i18n="sidebar.emoteDescriptions">Emote Descriptions</a></li>
             <li><a href="#web-dashboard" data-i18n="sidebar.webDashboard">Web Dashboard</a></li>
             <li><a href="#troubleshooting" data-i18n="sidebar.troubleshooting">Troubleshooting</a></li>
         </ul>
@@ -912,6 +913,59 @@
 
                 <tbody>
                     <tr class="category-header">
+                        <td colspan="2" data-i18n="table.categories.emoteDescriptions">Emote Description Management (Moderator Only)
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody class="dropdown-group">
+                    <tr class="dropdown-summary">
+                        <td class="mod-command" data-i18n-key="commands.ttsEmote.name">!tts emote
+                            &lt;emoteName&gt;</td>
+                        <td data-i18n-key="commands.ttsEmote.description"><span class="description-text">View,
+                                regenerate, or manually set cached emote descriptions used by TTS.</span><span
+                                class="dropdown-toggle">&#x25BC;</span></td>
+                    </tr>
+                    <tr class="dropdown-details" style="display:none;">
+                        <td colspan="2">
+                            <strong data-i18n="commands.common.usage">Usage:</strong>
+                            <ul>
+                                <li><code class="mod-command"
+                                        data-i18n-cmd="commands.ttsEmote.usage.view">!tts emote LUL</code>
+                                    <span data-i18n="commands.ttsEmote.viewNote">(shows the current cached
+                                        description)</span>
+                                </li>
+                                <li><code class="mod-command"
+                                        data-i18n-cmd="commands.ttsEmote.usage.regenerate">!tts emote regenerate LUL</code>
+                                    <span data-i18n="commands.ttsEmote.regenerateNote">(clears cache; AI will
+                                        re-describe on next use)</span>
+                                </li>
+                                <li><code class="mod-command"
+                                        data-i18n-cmd="commands.ttsEmote.usage.set">!tts emote set LUL = a person laughing</code>
+                                    <span data-i18n="commands.ttsEmote.setNote">(sets a custom description)</span>
+                                </li>
+                            </ul>
+                            <p><strong data-i18n="commands.common.description">Description:</strong></p>
+                            <ul>
+                                <li data-i18n="commands.ttsEmote.viewDesc">View the current AI-generated description
+                                    for an emote.</li>
+                                <li data-i18n="commands.ttsEmote.regenerateDesc">Clear the cached description so it
+                                    will be re-described by AI next time.</li>
+                                <li data-i18n="commands.ttsEmote.setDesc">Manually set a custom description for an
+                                    emote.</li>
+                            </ul>
+                            <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                                    data-i18n="commands.ttsEmote.notes">Emotes in chat are automatically described by
+                                    AI when first encountered. These descriptions are cached permanently so they don't
+                                    need to be re-generated. Use this command to view, correct, or regenerate emote
+                                    descriptions.</span></p>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                                    data-i18n="commands.common.moderator">Moderator</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr class="category-header">
                         <td colspan="2" data-i18n="table.categories.directTTS">Direct TTS</td>
                     </tr>
                 </tbody>
@@ -1714,6 +1768,30 @@
                 automatic language detection. <span class="inline-code">English</span> is often a good default for
                 primarily English-speaking chats. Choosing a specific language can significantly improve pronunciation
                 for that language.</p>
+        </section>
+
+        <section id="emote-descriptions" class="section">
+            <h2 data-i18n="emoteDescriptions.title">Emote Descriptions</h2>
+            <p data-i18n="emoteDescriptions.introText">WildcatTTS uses AI (Google Gemini) to automatically
+                describe Twitch emotes when they appear in chat messages. Instead of reading the emote code
+                (e.g., "LUL"), TTS reads a natural description like "a person laughing." These descriptions are
+                cached permanently to avoid repeated AI processing.</p>
+
+            <h3 data-i18n="emoteDescriptions.howItWorksTitle">How It Works</h3>
+            <ol>
+                <li data-i18n="emoteDescriptions.step1">When an emote appears in a TTS message for the first time, the
+                    bot uses AI to analyze the emote image and generate a short text description.</li>
+                <li data-i18n="emoteDescriptions.step2">The description is permanently cached so it only needs to be
+                    generated once.</li>
+                <li data-i18n="emoteDescriptions.step3">Subsequent uses of the same emote use the cached description
+                    instantly, without any AI processing.</li>
+            </ol>
+
+            <h3 data-i18n="emoteDescriptions.managementTitle">Managing Descriptions</h3>
+            <p data-i18n="emoteDescriptions.managementText">Moderators can use the <span
+                    class="inline-code">!tts emote</span> command to view, regenerate, or manually set emote
+                descriptions. See the <a href="#tts-commands" class="default-link-style">Emote Description Management</a>
+                section in the commands table above for details.</p>
         </section>
 
         <section id="web-dashboard" class="section">

@@ -19,7 +19,8 @@
     "voices": "Stimmen",
     "languageBoost": "Sprachunterstützung",
     "webDashboard": "Web Dashboard",
-    "troubleshooting": "Fehlerbehebung"
+    "troubleshooting": "Fehlerbehebung",
+    "emoteDescriptions": "Emote-Beschreibungen"
   },
   "page": {
     "title": "WildcatTTS TTS Bot Dokumentation",
@@ -440,6 +441,22 @@
       "name": "!music ignored",
       "description": "(Nur Mod) Listet alle Benutzer auf, die sich derzeit auf der Musik-Ignorierliste des Kanals befinden.",
       "permission": "Moderator"
+    },
+    "ttsEmote": {
+      "name": "!tts emote <emoteName>",
+      "description": "Gespeicherte Emote-Beschreibungen anzeigen, neu generieren oder manuell setzen.",
+      "viewDesc": "Die aktuelle KI-generierte Beschreibung für ein Emote anzeigen.",
+      "regenerateDesc": "Die gespeicherte Beschreibung löschen, damit die KI sie beim nächsten Mal neu beschreibt.",
+      "setDesc": "Manuell eine benutzerdefinierte Beschreibung für ein Emote setzen.",
+      "notes": "Emotes im Chat werden beim ersten Auftreten automatisch von KI beschrieben. Diese Beschreibungen werden dauerhaft gespeichert, damit sie nicht erneut generiert werden müssen. Verwende diesen Befehl, um Emote-Beschreibungen anzuzeigen, zu korrigieren oder neu zu generieren.",
+      "usage": {
+        "view": "!tts emote LUL",
+        "regenerate": "!tts emote regenerate LUL",
+        "set": "!tts emote set LUL = eine lachende Person"
+      },
+      "viewNote": "(zeigt die aktuelle gespeicherte Beschreibung)",
+      "regenerateNote": "(löscht den Cache; KI beschreibt bei nächster Nutzung neu)",
+      "setNote": "(setzt eine benutzerdefinierte Beschreibung)"
     }
   },
   "table": {
@@ -454,7 +471,8 @@
       "queueManagement": "Warteschlange-Verwaltung (Nur Moderator)",
       "userEventPreferences": "Benutzer- & Ereignisvoreinstellungen",
       "channelDefaults": "Kanal-weite Standard-Konfiguration (Nur Moderator)",
-      "directTTS": "Direkte TTS"
+      "directTTS": "Direkte TTS",
+      "emoteDescriptions": "Emote-Beschreibungsverwaltung (nur Moderatoren)"
     }
   },
   "music": {
@@ -556,5 +574,15 @@
     "a8": "Beachte, dass die Emotion \"auto\" nicht mehr unterstützt wird. Verwende stattdessen neutral, happy, sad, angry, fearful, disgusted oder surprised.",
     "q9": "Benötigst du Hilfe?",
     "a9": "Kontaktiere den Entwickler über das Kontaktformular auf Henrys Portfolio-Website."
+  },
+  "emoteDescriptions": {
+    "title": "Emote-Beschreibungen",
+    "introText": "WildcatTTS verwendet KI (Google Gemini), um Twitch-Emotes automatisch zu beschreiben, wenn sie in Chat-Nachrichten erscheinen. Anstatt den Emote-Code (z. B. \"LUL\") vorzulesen, liest TTS eine natürliche Beschreibung wie \"eine lachende Person.\" Diese Beschreibungen werden dauerhaft gespeichert, um wiederholte KI-Verarbeitung zu vermeiden.",
+    "howItWorksTitle": "So funktioniert es",
+    "step1": "Wenn ein Emote zum ersten Mal in einer TTS-Nachricht erscheint, verwendet der Bot KI, um das Emote-Bild zu analysieren und eine kurze Textbeschreibung zu erstellen.",
+    "step2": "Die Beschreibung wird dauerhaft gespeichert, sodass sie nur einmal generiert werden muss.",
+    "step3": "Nachfolgende Verwendungen desselben Emotes nutzen die gespeicherte Beschreibung sofort, ohne KI-Verarbeitung.",
+    "managementTitle": "Beschreibungen verwalten",
+    "managementText": "Moderatoren können den Befehl <span class=\"inline-code\">!tts emote</span> verwenden, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder manuell zu setzen. Weitere Details finden Sie im Abschnitt <a href=\"#tts-commands\" class=\"default-link-style\">Emote-Beschreibungsverwaltung</a> in der Befehlstabelle oben."
   }
 }

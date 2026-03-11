@@ -19,7 +19,8 @@
     "voices": "音声",
     "languageBoost": "言語ブースト",
     "webDashboard": "Webダッシュボード",
-    "troubleshooting": "トラブルシューティング"
+    "troubleshooting": "トラブルシューティング",
+    "emoteDescriptions": "エモート説明"
   },
   "page": {
     "title": "WildcatTTS TTS ボット ドキュメント",
@@ -440,6 +441,22 @@
       "name": "!music ignored",
       "description": "(モデレーターのみ) チャンネルの音楽除外リストに現在登録されているすべてのユーザーを一覧表示します。",
       "permission": "モデレーター"
+    },
+    "ttsEmote": {
+      "name": "!tts emote <emoteName>",
+      "description": "TTSで使用されるキャッシュ済みエモート説明を表示、再生成、または手動で設定します。",
+      "viewDesc": "エモートの現在のAI生成済み説明を表示します。",
+      "regenerateDesc": "キャッシュ済み説明をクリアし、次回AIが再度説明します。",
+      "setDesc": "エモートのカスタム説明を手動で設定します。",
+      "notes": "チャット内のエモートは、初めて出現した際にAIによって自動的に説明されます。これらの説明は永続的にキャッシュされるため、再生成の必要はありません。このコマンドを使用して、エモート説明を表示、修正、または再生成できます。",
+      "usage": {
+        "view": "!tts emote LUL",
+        "regenerate": "!tts emote regenerate LUL",
+        "set": "!tts emote set LUL = 笑っている人"
+      },
+      "viewNote": "（現在のキャッシュ済み説明を表示）",
+      "regenerateNote": "（キャッシュをクリア；次回使用時にAIが再度説明）",
+      "setNote": "（カスタム説明を設定）"
     }
   },
   "table": {
@@ -454,7 +471,8 @@
       "queueManagement": "キュー管理(モデレーターのみ)",
       "userEventPreferences": "ユーザーとイベント設定",
       "channelDefaults": "チャンネル全体のデフォルト設定(モデレーターのみ)",
-      "directTTS": "直接TTS"
+      "directTTS": "直接TTS",
+      "emoteDescriptions": "エモート説明管理（モデレーターのみ）"
     }
   },
   "music": {
@@ -556,5 +574,15 @@
     "a8": "\"auto\"感情はサポートされなくなったことに注意してください。代わりにneutral、happy、sad、angry、fearful、disgusted、またはsurprisedを使用してください。",
     "q9": "ヘルプが必要?",
     "a9": "Henryのポートフォリオウェブサイトのお問い合わせフォームから開発者にお問い合わせください。"
+  },
+  "emoteDescriptions": {
+    "title": "エモート説明",
+    "introText": "WildcatTTSはAI（Google Gemini）を使用して、チャットメッセージにTwitchエモートが表示される際に自動的に説明を生成します。エモートコード（例：「LUL」）をそのまま読み上げる代わりに、TTSは「笑っている人」のような自然な説明を読み上げます。これらの説明は、AIの繰り返し処理を避けるために永続的にキャッシュされます。",
+    "howItWorksTitle": "仕組み",
+    "step1": "TTSメッセージにエモートが初めて出現すると、ボットはAIを使用してエモート画像を分析し、短いテキスト説明を生成します。",
+    "step2": "説明は永続的にキャッシュされるため、一度だけ生成すれば十分です。",
+    "step3": "同じエモートの後続使用は、AI処理なしにキャッシュ済み説明を即座に使用します。",
+    "managementTitle": "説明の管理",
+    "managementText": "モデレーターは<span class=\"inline-code\">!tts emote</span>コマンドを使用して、エモート説明を表示、再生成、または手動で設定できます。詳細については、上記のコマンドテーブルの<a href=\"#tts-commands\" class=\"default-link-style\">エモート説明管理</a>セクションを参照してください。"
   }
 }

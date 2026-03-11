@@ -19,7 +19,8 @@
     "voices": "Vozes",
     "languageBoost": "Aumento de Idioma",
     "webDashboard": "Painel Web",
-    "troubleshooting": "Solução de Problemas"
+    "troubleshooting": "Solução de Problemas",
+    "emoteDescriptions": "Descrições de Emotes"
   },
   "page": {
     "title": "Documentação do Bot TTS WildcatTTS",
@@ -440,6 +441,22 @@
       "name": "!music ignored",
       "description": "(Apenas Mod) Lista todos os usuários atualmente na lista de ignorados de música do canal.",
       "permission": "Moderador"
+    },
+    "ttsEmote": {
+      "name": "!tts emote <emoteName>",
+      "description": "Visualizar, regenerar ou definir manualmente as descrições de emotes em cache usadas pelo TTS.",
+      "viewDesc": "Visualizar a descrição atual gerada por IA para um emote.",
+      "regenerateDesc": "Limpar a descrição em cache para que a IA a descreva novamente na próxima vez.",
+      "setDesc": "Definir manualmente uma descrição personalizada para um emote.",
+      "notes": "Os emotes no chat são automaticamente descritos pela IA quando aparecem pela primeira vez. Essas descrições são armazenadas em cache permanentemente para que não precisem ser regeneradas. Use este comando para visualizar, corrigir ou regenerar descrições de emotes.",
+      "usage": {
+        "view": "!tts emote LUL",
+        "regenerate": "!tts emote regenerate LUL",
+        "set": "!tts emote set LUL = uma pessoa rindo"
+      },
+      "viewNote": "(mostra a descrição atualmente em cache)",
+      "regenerateNote": "(limpa o cache; a IA redescreverá no próximo uso)",
+      "setNote": "(define uma descrição personalizada)"
     }
   },
   "table": {
@@ -454,7 +471,8 @@
       "queueManagement": "Gerenciamento de Fila (Apenas Moderador)",
       "userEventPreferences": "Preferências de Usuário e Evento",
       "channelDefaults": "Configuração de Padrões em Nível de Canal (Apenas Moderador)",
-      "directTTS": "TTS Direto"
+      "directTTS": "TTS Direto",
+      "emoteDescriptions": "Gerenciamento de Descrições de Emotes (Apenas Moderadores)"
     }
   },
   "music": {
@@ -556,5 +574,15 @@
     "a8": "Observe que a emoção \"auto\" não é mais suportada. Use neutral, happy, sad, angry, fearful, disgusted ou surprised em vez disso.",
     "q9": "Precisa de ajuda?",
     "a9": "Entre em contato com o desenvolvedor através do formulário de contato no site do portfólio do Henry."
+  },
+  "emoteDescriptions": {
+    "title": "Descrições de Emotes",
+    "introText": "O WildcatTTS usa IA (Google Gemini) para descrever automaticamente os emotes do Twitch quando aparecem nas mensagens do chat. Em vez de ler o código do emote (por exemplo, \"LUL\"), o TTS lê uma descrição natural como \"uma pessoa rindo.\" Essas descrições são armazenadas em cache permanentemente para evitar o processamento repetido por IA.",
+    "howItWorksTitle": "Como Funciona",
+    "step1": "Quando um emote aparece em uma mensagem TTS pela primeira vez, o bot usa IA para analisar a imagem do emote e gerar uma breve descrição de texto.",
+    "step2": "A descrição é armazenada em cache permanentemente, então só precisa ser gerada uma vez.",
+    "step3": "Usos subsequentes do mesmo emote utilizam a descrição em cache instantaneamente, sem nenhum processamento de IA.",
+    "managementTitle": "Gerenciamento de Descrições",
+    "managementText": "Os moderadores podem usar o comando <span class=\"inline-code\">!tts emote</span> para visualizar, regenerar ou definir manualmente as descrições de emotes. Consulte a seção <a href=\"#tts-commands\" class=\"default-link-style\">Gerenciamento de Descrições de Emotes</a> na tabela de comandos acima para mais detalhes."
   }
 }

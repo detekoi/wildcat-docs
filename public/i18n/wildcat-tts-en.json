@@ -18,6 +18,7 @@
     "musicCommands": "Music Generation Commands",
     "voices": "Voices",
     "languageBoost": "Language Boost",
+    "emoteDescriptions": "Emote Descriptions",
     "webDashboard": "Web Dashboard",
     "troubleshooting": "Troubleshooting"
   },
@@ -440,6 +441,22 @@
       "name": "!music ignored",
       "description": "(Mod only) Lists all users currently on the music ignore list for the channel.",
       "permission": "Moderator"
+    },
+    "ttsEmote": {
+      "name": "!tts emote <emoteName>",
+      "description": "View, regenerate, or manually set cached emote descriptions used by TTS.",
+      "viewDesc": "View the current AI-generated description for an emote.",
+      "regenerateDesc": "Clear the cached description so it will be re-described by AI next time.",
+      "setDesc": "Manually set a custom description for an emote.",
+      "notes": "Emotes in chat are automatically described by AI when first encountered. These descriptions are cached permanently so they don't need to be re-generated. Use this command to view, correct, or regenerate emote descriptions.",
+      "usage": {
+        "view": "!tts emote LUL",
+        "regenerate": "!tts emote regenerate LUL",
+        "set": "!tts emote set LUL = a person laughing"
+      },
+      "viewNote": "(shows the current cached description)",
+      "regenerateNote": "(clears cache; AI will re-describe on next use)",
+      "setNote": "(sets a custom description)"
     }
   },
   "table": {
@@ -454,6 +471,7 @@
       "queueManagement": "Queue Management (Moderator Only)",
       "userEventPreferences": "User & Event Preferences",
       "channelDefaults": "Channel-Wide Default Configuration (Moderator Only)",
+      "emoteDescriptions": "Emote Description Management (Moderator Only)",
       "directTTS": "Direct TTS"
     }
   },
@@ -488,6 +506,16 @@
     "optionsTitle": "Available Language Boost Options",
     "optionsIntro": "The following values are accepted:",
     "usageText": "Using <span class=\"inline-code\">auto</span> will rely on the model's automatic language detection. <span class=\"inline-code\">English</span> is often a good default for primarily English-speaking chats. Choosing a specific language can significantly improve pronunciation for that language."
+  },
+  "emoteDescriptions": {
+    "title": "Emote Descriptions",
+    "introText": "WildcatTTS uses AI (Google Gemini) to automatically describe Twitch emotes when they appear in chat messages. Instead of reading the emote code (e.g., \"LUL\"), TTS reads a natural description like \"a person laughing.\" These descriptions are cached permanently to avoid repeated AI processing.",
+    "howItWorksTitle": "How It Works",
+    "step1": "When an emote appears in a TTS message for the first time, the bot uses AI to analyze the emote image and generate a short text description.",
+    "step2": "The description is permanently cached so it only needs to be generated once.",
+    "step3": "Subsequent uses of the same emote use the cached description instantly, without any AI processing.",
+    "managementTitle": "Managing Descriptions",
+    "managementText": "Moderators can use the <span class=\"inline-code\">!tts emote</span> command to view, regenerate, or manually set emote descriptions. See the <a href=\"#tts-commands\" class=\"default-link-style\">Emote Description Management</a> section in the commands table above for details."
   },
   "webDashboard": {
     "title": "Web Dashboard",
