@@ -456,8 +456,8 @@
       },
       "viewNote": "(mostra a descrição atualmente em cache)",
       "regenerateNote": "(limpa o cache; a IA redescreverá no próximo uso)",
-      "setNote": "(define uma descrição personalizada)",
-      "permission": "Moderador (visualizar/regenerar), apenas Broadcaster (definir)"
+      "setNote": "(define uma descrição personalizada — apenas emotes do canal)",
+      "permission": "Moderador (definir/regenerar apenas para os emotes deste canal)"
     }
   },
   "table": {

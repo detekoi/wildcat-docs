@@ -456,8 +456,8 @@
       },
       "viewNote": "(affiche la description mise en cache actuelle)",
       "regenerateNote": "(efface le cache ; l'IA re-décrira lors de la prochaine utilisation)",
-      "setNote": "(définit une description personnalisée)",
-      "permission": "Modérateur (afficher/régénérer), Diffuseur uniquement (définir)"
+      "setNote": "(définit une description personnalisée — emotes de la chaîne uniquement)",
+      "permission": "Modérateur (définir/régénérer uniquement pour les emotes de cette chaîne)"
     }
   },
   "table": {
