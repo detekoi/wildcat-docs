@@ -243,6 +243,16 @@
       "name": "!ping",
       "description": "Verifica se o bot está responsivo. Responde com Pong!"
     },
+    "followage": {
+      "name": "!followage",
+      "description": "Verifique há quanto tempo você ou outro usuário segue o canal.",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "Verifique seu tempo de seguimento",
+        "userCmd": "!followage <usuário>",
+        "userDesc": "Verifique o tempo de seguimento de outro usuário"
+      }
+    },
     "command": {
       "name": "!comando <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">Crie, edite e gerencie comandos personalizados para seu canal. Comandos personalizados também podem ser gerenciados por meio do <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Painel da Web</a>.</span>",

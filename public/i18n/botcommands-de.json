@@ -243,6 +243,16 @@
       "name": "!ping",
       "description": "Überprüft, ob der Bot responsiv ist. Antwortet mit Pong!"
     },
+    "followage": {
+      "name": "!followage",
+      "description": "Überprüfe, wie lange du oder ein anderer Benutzer dem Kanal folgst.",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "Eigene Follow-Dauer anzeigen",
+        "userCmd": "!followage <Benutzername>",
+        "userDesc": "Follow-Dauer eines anderen Benutzers anzeigen"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">Erstellen, bearbeiten und verwalten Sie benutzerdefinierte Befehle für Ihren Kanal. Benutzerdefinierte Befehle können auch über das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",

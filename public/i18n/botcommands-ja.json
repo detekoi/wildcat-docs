@@ -243,6 +243,16 @@
       "name": "!ping",
       "description": "ボットが応答しているかを確認します。Pong!と応答します。"
     },
+    "followage": {
+      "name": "!followage",
+      "description": "自分または他のユーザーがチャンネルをフォローしている期間を確認します。",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "自分のフォロー期間を確認",
+        "userCmd": "!followage <ユーザー名>",
+        "userDesc": "他のユーザーのフォロー期間を確認"
+      }
+    },
     "command": {
       "name": "!コマンド <span class=\"mod-badge\">MOD</span>",
       "description": "<span class=\"description-text\">チャンネルのカスタム コマンドを作成、編集、管理します。カスタム コマンドは、<a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ウェブ ダッシュボード</a>からも管理できます。</span>",

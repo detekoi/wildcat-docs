@@ -243,6 +243,16 @@
       "name": "!ping",
       "description": "Проверяет отзывчивость Бота. Отвечает с Pong!"
     },
+    "followage": {
+      "name": "!followage",
+      "description": "Проверьте, как давно вы или другой пользователь подписаны на канал.",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "Проверить свой срок подписки",
+        "userCmd": "!followage <имя пользователя>",
+        "userDesc": "Проверить срок подписки другого пользователя"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Мод</span>",
       "description": "<span class=\"description-text\">Создавайте, редактируйте и управляйте специальными командами для своего канала. Пользовательскими командами также можно управлять через <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">веб-панель</a>.</span>",

@@ -96,6 +96,16 @@
         "editDesc": "Edits an existing quote (mods/broadcaster only)"
       }
     },
+    "followage": {
+      "name": "!followage",
+      "description": "Check how long you or another user has been following the channel.",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "Check your own follow age",
+        "userCmd": "!followage <username>",
+        "userDesc": "Check another user's follow age"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">Create, edit, and manage custom commands for your channel. Custom commands can also be managed via the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
