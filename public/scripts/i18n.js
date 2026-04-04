@@ -34,6 +34,47 @@ let translations = {};
 // Global style element for mod-command::before
 let modCommandStyle;
 
+// Sanitize HTML translations to prevent XSS (defense-in-depth)
+const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'span', 'strong']);
+const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel']);
+
+function sanitizeHTML(html) {
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  sanitizeNode(template.content);
+  return template.innerHTML;
+}
+
+function sanitizeNode(node) {
+  const toRemove = [];
+  for (const child of node.childNodes) {
+    if (child.nodeType === Node.ELEMENT_NODE) {
+      if (!SAFE_TAGS.has(child.tagName.toLowerCase())) {
+        // Replace disallowed element with its text content
+        toRemove.push(child);
+      } else {
+        // Strip disallowed attributes
+        for (const attr of [...child.attributes]) {
+          if (!SAFE_ATTRS.has(attr.name.toLowerCase())) {
+            child.removeAttribute(attr.name);
+          }
+        }
+        // Also validate href to block javascript: URLs
+        if (child.hasAttribute('href')) {
+          const href = child.getAttribute('href').trim().toLowerCase();
+          if (href.startsWith('javascript:') || href.startsWith('data:')) {
+            child.removeAttribute('href');
+          }
+        }
+        sanitizeNode(child);
+      }
+    }
+  }
+  for (const el of toRemove) {
+    el.replaceWith(document.createTextNode(el.textContent));
+  }
+}
+
 // Initialize i18n
 async function initI18n() {
   // Try to get language from URL parameter, e.g., ?lang=es
@@ -146,7 +187,7 @@ function translatePage() {
     const translation = getTranslation(key, element.textContent);
     // Check if translation contains HTML tags
     if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = translation;
+      element.innerHTML = sanitizeHTML(translation);
     } else {
       element.textContent = translation;
     }
@@ -158,7 +199,7 @@ function translatePage() {
     const translation = getTranslation(key, element.innerHTML);
     // Check if translation contains HTML tags
     if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = translation;
+      element.innerHTML = sanitizeHTML(translation);
     } else {
       element.textContent = translation;
     }
@@ -174,7 +215,7 @@ function translatePage() {
 
     // Check if translation contains HTML tags
     if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = translation;
+      element.innerHTML = sanitizeHTML(translation);
     } else {
       // For all normal span elements, translate text content
       element.textContent = translation;
@@ -186,7 +227,7 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key, element.textContent);
     if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = translation;
+      element.innerHTML = sanitizeHTML(translation);
     } else {
       element.textContent = translation;
     }
@@ -197,7 +238,7 @@ function translatePage() {
     const key = element.getAttribute('data-i18n-key');
     const translation = getTranslation(key, element.textContent);
     if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = translation;
+      element.innerHTML = sanitizeHTML(translation);
     } else {
       element.textContent = translation;
     }
