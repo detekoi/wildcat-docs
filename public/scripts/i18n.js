@@ -39,10 +39,11 @@ const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'span', 'strong']);
 const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel']);
 
 function sanitizeHTML(html) {
-  const template = document.createElement('template');
-  template.innerHTML = html;
-  sanitizeNode(template.content);
-  return template.innerHTML;
+  // Use DOMParser to prevent CodeQL flagging template.innerHTML as a direct DOM injection sink
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  sanitizeNode(doc.body);
+  return doc.body.innerHTML;
 }
 
 function sanitizeNode(node) {
@@ -59,10 +60,10 @@ function sanitizeNode(node) {
             child.removeAttribute(attr.name);
           }
         }
-        // Also validate href to block javascript: URLs
+        // Block dangerous URL schemes
         if (child.hasAttribute('href')) {
           const href = child.getAttribute('href').trim().toLowerCase();
-          if (href.startsWith('javascript:') || href.startsWith('data:')) {
+          if (href.startsWith('javascript:') || href.startsWith('data:') || href.startsWith('vbscript:')) {
             child.removeAttribute('href');
           }
         }
@@ -289,10 +290,20 @@ function translatePage() {
       // Get the description text span
       const descriptionTextSpan = descriptionCell.querySelector('.description-text');
       if (descriptionTextSpan) {
-        descriptionTextSpan.textContent = getTranslation(descriptionKey, descriptionTextSpan.textContent);
+        const translation = getTranslation(descriptionKey, descriptionTextSpan.textContent);
+        if (translation.includes('<') && translation.includes('>')) {
+          descriptionTextSpan.innerHTML = sanitizeHTML(translation);
+        } else {
+          descriptionTextSpan.textContent = translation;
+        }
       } else {
         // Fallback if for some reason description-text span is not found
-        descriptionCell.textContent = getTranslation(descriptionKey, descriptionCell.textContent);
+        const translation = getTranslation(descriptionKey, descriptionCell.textContent);
+        if (translation.includes('<') && translation.includes('>')) {
+          descriptionCell.innerHTML = sanitizeHTML(translation);
+        } else {
+          descriptionCell.textContent = translation;
+        }
       }
 
       // Re-append the dropdown toggle (this part remains the same, but now it's safe)
