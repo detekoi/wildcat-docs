@@ -209,11 +209,11 @@
       "usage": {
         "status": "現在の自動チャットモード、頻度、カテゴリーを表示",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "自動チャットの積極性を設定(offで無効化)",
+        "mode": "自動チャットの頻度を設定します（offは定期メッセージのみ無効にします）",
         "freqCmd": "!auto config frequency:<分>",
         "freq": "自動メッセージ間の最小間隔を設定(分)",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "挨拶を有効/無効にする",
+        "greetings": "配信開始/終了の挨拶を有効/無効にする",
         "factsCmd": "!auto config facts:<on|off>",
         "facts": "豆知識とヒントを有効/無効にする",
         "questionsCmd": "!auto config questions:<on|off>",
@@ -221,7 +221,13 @@
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "広告休憩通知を有効/無効にする",
         "multiCmd": "!auto config frequency:<分> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "複数のオプションを一度に設定"
+        "multi": "複数のオプションを一度に設定",
+        "followsCmd": "!auto config follows:<on|off>",
+        "follows": "新しいフォロワーのお祝いを有効/無効にする",
+        "subscriptionsCmd": "!auto config subscriptions:<on|off>",
+        "subscriptions": "サブスクリプションのお祝いを有効/無効にする",
+        "raidsCmd": "!auto config raids:<on|off>",
+        "raids": "レイド歓迎メッセージを有効/無効にする"
       }
     },
     "disable": {
@@ -300,7 +306,11 @@
       },
       "channelConfig": {
         "title": "チャンネル設定:",
-        "desc": "自動チャット設定と広告通知の切り替え"
+        "desc": "自動チャット設定、ストリームイベント切替、広告通知を構成する"
+      },
+      "streamEvents": {
+        "title": "ストリームイベント：",
+        "desc": "フォロワー、サブスクリプション、レイドに対するAI生成の挨拶、お別れ、お祝いの切替 — 自動チャットモードとは独立して動作します"
       },
       "commandControl": {
         "title": "コマンド管理:",

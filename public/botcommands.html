@@ -525,10 +525,19 @@
                             categories</span>
                         <code class="mod-command"
                             data-i18n-cmd="commands.auto.usage.modeCmd">!auto &lt;off|low|medium|high&gt;</code> <span
-                            data-i18n="commands.auto.usage.mode">Sets auto-chat aggressiveness (off disables)</span>
+                            data-i18n="commands.auto.usage.mode">Sets auto-chat frequency (off disables periodic messages only)</span>
                         <code class="mod-command"
                             data-i18n-cmd="commands.auto.usage.greetingsCmd">!auto config greetings:&lt;on|off&gt;</code>
-                        <span data-i18n="commands.auto.usage.greetings">Enable/disable greetings</span>
+                        <span data-i18n="commands.auto.usage.greetings">Enable/disable stream start/end greetings</span>
+                        <code class="mod-command"
+                            data-i18n-cmd="commands.auto.usage.followsCmd">!auto config follows:&lt;on|off&gt;</code>
+                        <span data-i18n="commands.auto.usage.follows">Enable/disable new follower celebrations</span>
+                        <code class="mod-command"
+                            data-i18n-cmd="commands.auto.usage.subscriptionsCmd">!auto config subscriptions:&lt;on|off&gt;</code>
+                        <span data-i18n="commands.auto.usage.subscriptions">Enable/disable subscription celebrations</span>
+                        <code class="mod-command"
+                            data-i18n-cmd="commands.auto.usage.raidsCmd">!auto config raids:&lt;on|off&gt;</code>
+                        <span data-i18n="commands.auto.usage.raids">Enable/disable raid welcome messages</span>
                         <code class="mod-command"
                             data-i18n-cmd="commands.auto.usage.factsCmd">!auto config facts:&lt;on|off&gt;</code> <span
                             data-i18n="commands.auto.usage.facts">Enable/disable facts and tips</span>
@@ -784,8 +793,11 @@
                         data-i18n="webDashboard.features.botManagement.desc">Add or remove WildcatSage from your
                         channel</span></li>
                 <li><strong data-i18n="webDashboard.features.channelConfig.title">Channel Configuration:</strong> <span
-                        data-i18n="webDashboard.features.channelConfig.desc">Configure auto-chat settings and toggle ad
-                        notifications</span></li>
+                        data-i18n="webDashboard.features.channelConfig.desc">Configure auto-chat settings, stream event
+                        toggles, and ad notifications</span></li>
+                <li><strong data-i18n="webDashboard.features.streamEvents.title">Stream Events:</strong> <span
+                        data-i18n="webDashboard.features.streamEvents.desc">Toggle AI-generated greetings, farewells, and
+                        celebrations for follows, subscriptions, and raids — works independently of auto-chat mode</span></li>
                 <li><strong data-i18n="webDashboard.features.commandControl.title">Command Control:</strong> <span
                         data-i18n="webDashboard.features.commandControl.desc">Create and manage custom commands, and
                         enable/disable built-in commands</span></li>

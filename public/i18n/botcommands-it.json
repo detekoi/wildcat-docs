@@ -209,11 +209,11 @@
       "usage": {
         "status": "Mostra la modalità di chat automatica attuale, frequenza e categorie",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "Imposta l'aggressività della chat automatica (off disabilita)",
+        "mode": "Imposta la frequenza della chat automatica (off disabilita solo i messaggi periodici)",
         "freqCmd": "!auto config frequency:<minuti>",
         "freq": "Imposta l'intervallo minimo tra messaggi automatici (minuti)",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "Abilita/disabilita i saluti",
+        "greetings": "Abilita/disabilita i saluti di inizio/fine stream",
         "factsCmd": "!auto config facts:<on|off>",
         "facts": "Abilita/disabilita fatti e consigli",
         "questionsCmd": "!auto config questions:<on|off>",
@@ -221,7 +221,13 @@
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "Abilita/disabilita notifiche di pause pubblicitarie",
         "multiCmd": "!auto config frequency:<minuti> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Imposta più opzioni contemporaneamente"
+        "multi": "Imposta più opzioni contemporaneamente",
+        "followsCmd": "!auto config follows:<on|off>",
+        "follows": "Abilita/disabilita le celebrazioni per i nuovi follower",
+        "subscriptionsCmd": "!auto config subscriptions:<on|off>",
+        "subscriptions": "Abilita/disabilita le celebrazioni per gli abbonamenti",
+        "raidsCmd": "!auto config raids:<on|off>",
+        "raids": "Abilita/disabilita i messaggi di benvenuto per i raid"
       }
     },
     "disable": {
@@ -300,7 +306,11 @@
       },
       "channelConfig": {
         "title": "Configurazione del Canale:",
-        "desc": "Configura le impostazioni della chat automatica e le notifiche pubblicitarie"
+        "desc": "Configura le impostazioni della chat automatica, gli interruttori degli eventi stream e le notifiche pubblicitarie"
+      },
+      "streamEvents": {
+        "title": "Eventi Stream:",
+        "desc": "Attiva/disattiva saluti, congedi e celebrazioni generati dall'IA per follower, abbonati e raid — funziona indipendentemente dalla modalità chat automatica"
       },
       "commandControl": {
         "title": "Controllo dei Comandi:",

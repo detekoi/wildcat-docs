@@ -209,11 +209,11 @@
       "usage": {
         "status": "Zeigt aktuellen Auto-Chat-Modus, Häufigkeit und Kategorien",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "Stellt Auto-Chat-Aggressivität ein (off deaktiviert)",
+        "mode": "Legt die Auto-Chat-Frequenz fest (off deaktiviert nur periodische Nachrichten)",
         "freqCmd": "!auto config frequency:<Minuten>",
         "freq": "Stellt minimalen Abstand zwischen Auto-Nachrichten ein (Minuten)",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "Begrüßungen aktivieren/deaktivieren",
+        "greetings": "Stream-Start/End-Begrüßungen aktivieren/deaktivieren",
         "factsCmd": "!auto config facts:<on|off>",
         "facts": "Fakten und Tipps aktivieren/deaktivieren",
         "questionsCmd": "!auto config questions:<on|off>",
@@ -221,7 +221,13 @@
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "Werbepauset-Benachrichtigungen aktivieren/deaktivieren",
         "multiCmd": "!auto config frequency:<Minuten> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Mehrere Optionen auf einmal einstellen"
+        "multi": "Mehrere Optionen auf einmal einstellen",
+        "followsCmd": "!auto config follows:<on|off>",
+        "follows": "Feierlichkeiten für neue Follower aktivieren/deaktivieren",
+        "subscriptionsCmd": "!auto config subscriptions:<on|off>",
+        "subscriptions": "Feierlichkeiten für Abonnements aktivieren/deaktivieren",
+        "raidsCmd": "!auto config raids:<on|off>",
+        "raids": "Raid-Willkommensnachrichten aktivieren/deaktivieren"
       }
     },
     "disable": {
@@ -300,7 +306,11 @@
       },
       "channelConfig": {
         "title": "Kanaleinstellungen:",
-        "desc": "Konfigurieren Sie Auto-Chat-Einstellungen und Werbebenachrichtigungen"
+        "desc": "Auto-Chat-Einstellungen, Stream-Ereignis-Umschalter und Werbebenachrichtigungen konfigurieren"
+      },
+      "streamEvents": {
+        "title": "Stream-Ereignisse:",
+        "desc": "KI-generierte Begrüßungen, Verabschiedungen und Feierlichkeiten für Follower, Abonnements und Raids umschalten — funktioniert unabhängig vom Auto-Chat-Modus"
       },
       "commandControl": {
         "title": "Befehlskontrolle:",

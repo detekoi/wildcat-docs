@@ -241,11 +241,17 @@
       "usage": {
         "status": "Shows current auto-chat mode, frequency, and categories",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "Sets auto-chat aggressiveness (off disables)",
+        "mode": "Sets auto-chat frequency (off disables periodic messages only)",
         "freqCmd": "!auto config frequency:<minutes>",
         "freq": "Sets minimum gap between auto messages (minutes)",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "Enable/disable greetings",
+        "greetings": "Enable/disable stream start/end greetings",
+        "followsCmd": "!auto config follows:<on|off>",
+        "follows": "Enable/disable new follower celebrations",
+        "subscriptionsCmd": "!auto config subscriptions:<on|off>",
+        "subscriptions": "Enable/disable subscription celebrations",
+        "raidsCmd": "!auto config raids:<on|off>",
+        "raids": "Enable/disable raid welcome messages",
         "factsCmd": "!auto config facts:<on|off>",
         "facts": "Enable/disable facts and tips",
         "questionsCmd": "!auto config questions:<on|off>",
@@ -400,7 +406,11 @@
       },
       "channelConfig": {
         "title": "Channel Configuration:",
-        "desc": "Configure auto-chat settings and toggle ad notifications"
+        "desc": "Configure auto-chat settings, stream event toggles, and ad notifications"
+      },
+      "streamEvents": {
+        "title": "Stream Events:",
+        "desc": "Toggle AI-generated greetings, farewells, and celebrations for follows, subscriptions, and raids — works independently of auto-chat mode"
       },
       "commandControl": {
         "title": "Command Control:",
