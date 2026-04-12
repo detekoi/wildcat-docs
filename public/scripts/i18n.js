@@ -39,11 +39,10 @@ const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'span', 'strong']);
 const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel']);
 
 function sanitizeHTML(html) {
-  // Use DOMParser to prevent CodeQL flagging template.innerHTML as a direct DOM injection sink
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(html, 'text/html');
-  sanitizeNode(doc.body);
-  return doc.body.innerHTML;
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  sanitizeNode(template.content);
+  return template.innerHTML;
 }
 
 function sanitizeNode(node) {
@@ -173,7 +172,7 @@ function getTranslation(key, defaultValue = null) {
     if (result && result.hasOwnProperty(part)) {
       result = result[part];
     } else {
-      return defaultValue !== null ? defaultValue : key;
+      return defaultValue;
     }
   }
 
@@ -185,8 +184,8 @@ function translatePage() {
   // First translate non-span elements with data-i18n
   document.querySelectorAll('h1[data-i18n], h2[data-i18n], h3[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), a[data-i18n], button[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    const translation = getTranslation(key, element.textContent);
-    // Check if translation contains HTML tags
+    const translation = getTranslation(key);
+    if (translation === null) return;
     if (translation.includes('<') && translation.includes('>')) {
       element.innerHTML = sanitizeHTML(translation);
     } else {
@@ -197,8 +196,8 @@ function translatePage() {
   // Handle div elements with data-i18n that may contain HTML (like tip-text divs)
   document.querySelectorAll('div[data-i18n], p[data-i18n], em[data-i18n], li[data-i18n], strong[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    const translation = getTranslation(key, element.innerHTML);
-    // Check if translation contains HTML tags
+    const translation = getTranslation(key);
+    if (translation === null) return;
     if (translation.includes('<') && translation.includes('>')) {
       element.innerHTML = sanitizeHTML(translation);
     } else {
@@ -212,13 +211,12 @@ function translatePage() {
     if (element.querySelector('[data-i18n]')) return;
 
     const key = element.getAttribute('data-i18n');
-    const translation = getTranslation(key, element.textContent);
+    const translation = getTranslation(key);
+    if (translation === null) return;
 
-    // Check if translation contains HTML tags
     if (translation.includes('<') && translation.includes('>')) {
       element.innerHTML = sanitizeHTML(translation);
     } else {
-      // For all normal span elements, translate text content
       element.textContent = translation;
     }
   });
@@ -226,7 +224,8 @@ function translatePage() {
   // Handle nested translations (words inside descriptions)
   document.querySelectorAll('[data-i18n] [data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    const translation = getTranslation(key, element.textContent);
+    const translation = getTranslation(key);
+    if (translation === null) return;
     if (translation.includes('<') && translation.includes('>')) {
       element.innerHTML = sanitizeHTML(translation);
     } else {
@@ -237,7 +236,8 @@ function translatePage() {
   // Handle data-i18n-key on span and other elements (not just table cells)
   document.querySelectorAll('span[data-i18n-key], code[data-i18n-key], p[data-i18n-key], li[data-i18n-key], button[data-i18n-key]').forEach(element => {
     const key = element.getAttribute('data-i18n-key');
-    const translation = getTranslation(key, element.textContent);
+    const translation = getTranslation(key);
+    if (translation === null) return;
     if (translation.includes('<') && translation.includes('>')) {
       element.innerHTML = sanitizeHTML(translation);
     } else {
@@ -289,8 +289,10 @@ function translatePage() {
 
       // Get the description text span
       const descriptionTextSpan = descriptionCell.querySelector('.description-text');
+      const translation = getTranslation(descriptionKey);
+      if (translation === null) return;
+
       if (descriptionTextSpan) {
-        const translation = getTranslation(descriptionKey, descriptionTextSpan.textContent);
         if (translation.includes('<') && translation.includes('>')) {
           descriptionTextSpan.innerHTML = sanitizeHTML(translation);
         } else {
@@ -298,7 +300,6 @@ function translatePage() {
         }
       } else {
         // Fallback if for some reason description-text span is not found
-        const translation = getTranslation(descriptionKey, descriptionCell.textContent);
         if (translation.includes('<') && translation.includes('>')) {
           descriptionCell.innerHTML = sanitizeHTML(translation);
         } else {
