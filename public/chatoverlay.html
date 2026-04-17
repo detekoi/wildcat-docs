@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.chatOverlayTitle">Chat Overlay Documentation</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/unified.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <style>
+        .wildcat-svg {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--color-text);
+        }
+
+        .site-navbar-brand .wildcat-svg {
+            width: 5rem;
+            height: 5rem;
+            fill: var(--color-text);
+        }
+    </style>
+    <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
+</head>
+
+<body class="has-navbar has-sidebar">
+    <canvas id="staticCanvas"></canvas>
+
+    <!-- Unified Navigation Bar -->
+    <nav class="site-navbar">
+        <a href="index.html" class="site-navbar-brand">
+            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img"
+                aria-label="Kaomoji reading '- ˕ •マ'">
+                <style>
+                    .kaomoji {
+                        font-size: 250px;
+                        font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
+                        fill: currentColor;
+                        text-anchor: middle;
+                        dominant-baseline: central;
+                    }
+                </style>
+                <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
+            </svg>
+        </a>
+        <button class="navbar-toggle" aria-label="Toggle navigation" data-i18n="nav.toggleNav">☰</button>
+        <ul class="site-navbar-menu">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
+            <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
+            <li><a href="chatoverlay.html" class="active" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
+            <li><a href="https://detekoi.github.io/index.html#contact-me" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h2>Chat Overlay</h2>
+            <div id="sidenav-toggle-container">
+                <img src="assets/images/sidenav-icon.svg" id="sidenav-toggle" alt="Toggle Sidebar"
+                    title="Toggle Sidebar">
+            </div>
+        </div>
+        <ul>
+            <li><a href="#overview" data-i18n="sidebar.overview">Overview</a></li>
+            <li><a href="#platforms" data-i18n="sidebar.platforms">Platform Support</a></li>
+            <li><a href="#customization" data-i18n="sidebar.customization">Customization</a></li>
+            <li><a href="#config" data-i18n="sidebar.config">Config Panel</a></li>
+            <li><a href="#scenes" data-i18n="sidebar.scenes">Chat Scene Creator</a></li>
+            <li><a href="#obs-setup" data-i18n="sidebar.obsSetup">OBS Setup Setup</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="content">
+        <h1 data-i18n="chatOverlay.page.title">Wildcat Chat Overlay</h1>
+
+        <section id="overview" class="section">
+            <h2 data-i18n="chatOverlay.overview.title">Overview</h2>
+            <p data-i18n="chatOverlay.overview.desc">The Wildcat Chat Overlay is a highly customizable chat widget designed specifically for streamers to use inside OBS. No login or extensive setup is required; you simply add the URL as a Browser Source in OBS and configure everything on the screen through the settings panel. It natively supports both Twitch and YouTube Live chat.</p>
+        </section>
+
+        <section id="platforms" class="section">
+            <h2 data-i18n="chatOverlay.platforms.title">Platform Support</h2>
+            <p data-i18n="chatOverlay.platforms.desc">The chat overlay connects to various streaming platforms. You can configure your target platform from within the configuration panel in OBS.</p>
+            <ul>
+                <li><strong>Twitch:</strong> Enter your channel name (e.g. `wildcatgamer`). Badges and emotes are natively supported.</li>
+                <li><strong>YouTube:</strong> Supports YouTube live chat for both public and unlisted streams. For public streams, enter your <strong>channel username, channel ID, video URL or video ID</strong>. For unlisted streams, the <strong>video URL</strong> is required. (Note: Private streams are not supported).</li>
+            </ul>
+        </section>
+
+        <section id="customization" class="section">
+            <h2 data-i18n="chatOverlay.customization.title">Customization & Themes</h2>
+            <p data-i18n="chatOverlay.customization.desc">The chat overlay includes powerful aesthetic customization tools. You can change fundamental styling directly through the config menu.</p>
+            
+            <h3>Automatic AI Themes</h3>
+            <p data-i18n="chatOverlay.themes.desc">One of the most powerful features of the Wildcat Chat Overlay is its natural-language AI theme generator. Inside the config panel, simply type a description of the vibe, mood, or aesthetic you want (e.g., "cyberpunk neon night," "cozy wooden cabin in the snow," "vintage 90s vaporwave"). The overlay will intelligently generate the corresponding CSS variables, adjust the color palettes for ideal contrast, and apply the theme live!</p>
+        </section>
+
+        <section id="config" class="section">
+            <h2 data-i18n="chatOverlay.config.title">Config Panel Features</h2>
+            <p data-i18n="chatOverlay.config.desc">All of the modifications and customizations are handled directly using the on-page settings menu. In OBS, right-click the Browser Source and select <strong>Interact</strong> to open the menu. The options include:</p>
+            <ul>
+                <li><strong>Channel Selection:</strong> Select the streaming platform (Twitch/YouTube) and provide the relevant Channel ID or Video URL to connect.</li>
+                <li><strong>Font Settings:</strong> Choose from an array of included Google Fonts and adjust the font size up to the maximum constraints, ensuring ideal readability.</li>
+                <li><strong>Display Layout:</strong> Pick between standard list mode or popup chat bubbles mode. Adjust background opacities and borders.</li>
+                <li><strong>Badges & Emotes:</strong> Toggle platform badges natively for Twitch and YouTube to unify their design structures.</li>
+                <li><strong>Theme Management:</strong> Access your AI-generated Themes, select from presets, and adjust granular colors manually if needed.</li>
+            </ul>
+        </section>
+
+        <section id="scenes" class="section">
+            <h2 data-i18n="chatOverlay.scenes.title">Chat Scene Creator</h2>
+            <p data-i18n="chatOverlay.scenes.desc">The <a href="/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank">Chat Scene Creator</a> allows you to manage multiple instances of the chat overlay (e.g., one layout for "Just Chatting" and a different one for "Gaming").</p>
+            
+            <p><strong>Note on statelessness:</strong> The Chat Scene Creator acts only as a URL generator. When you create a new scene (e.g., "GamingScene"), it simply generates a unique URL parameter: <span class="inline-code">chat.html?scene=GamingScene</span>.</p>
+            <p>All aesthetic configurations and connection options are saved <strong>locally in the OBS Browser Source's cache</strong>, not on our servers. Therefore, you must configure the chat from within OBS by right-clicking it and selecting <strong>Interact</strong>. Changes to one scene (one specific parameter) will not affect the settings saved under a different URL parameter.</p>
+        </section>
+
+        <section id="obs-setup" class="section">
+            <h2 data-i18n="chatOverlay.obsSetup.title">OBS Setup Instructions</h2>
+            <p data-i18n="chatOverlay.obsSetup.desc">Follow these thorough instructions to successfully install the chat overlay in your streaming software.</p>
+            <ol>
+                <li>In OBS Studio, find the <strong>Sources</strong> panel, click the <strong>+</strong> button, and select <strong>Browser</strong>.</li>
+                <li>Name your source something recognizable (e.g., "Twitch Chat - Windowed").</li>
+                <li>Paste the URL generated from the Chat Scene Creator into the URL field. <strong>If you cannot paste:</strong> Ensure the "Local file" option is unchecked first.</li>
+                <li>Under the Width and Height properties, set Width to <strong>320</strong> and Height to <strong>600</strong> (This size is highly recommended for readability).</li>
+                <li>Click "OK" to add the browser source to your overlay canvas.</li>
+                <li><strong>Configuring the Chat:</strong> Right-click the Browser Source you just made and select <strong>Interact</strong>.</li>
+                <li>In the interactive window, enter your channel information, select your preferences by clicking the gear icon (⚙️) on the top-right, and hit "Connect".</li>
+            </ol>
+
+            <h3>Advanced OBS Tips</h3>
+            <ul>
+                <li>Enable <span class="inline-code">Shutdown source when not visible</span> to save CPU/Memory overhead.</li>
+                <li>To hide any scrollbars, add <span class="inline-code">body { overflow: hidden; }</span> to the Custom CSS field inside the properties window.</li>
+                <li>Settings are saved to OBS cache. If you ever "Clear Cache" in OBS for this source, you will need to reconfigure the aesthetic settings.</li>
+            </ul>
+        </section>
+        
+    </main>
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/static-background.js"></script>
+    <script src="scripts/i18n.js"></script>
+</body>
+
+</html>
