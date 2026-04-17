@@ -7,6 +7,7 @@
     "home": "Главная",
     "chatSageDocs": "Документация WildcatSage",
     "wildcatTtsDocs": "Документация WildcatTTS",
+    "chatOverlayDocs": "Документация Chat Overlay",
     "contact": "Контакты"
   },
   "hero": {
@@ -32,7 +33,16 @@
       "feature2": "Интеграция Channel Points",
       "feature3": "Генерация музыки с помощью ИИ",
       "feature4": "Веб-панель для настроек",
-      "button": "Посмотреть документацию WildcatTTS →"
+      "button": "Просмотреть доки WildcatTTS →"
+    },
+    "chatOverlay": {
+      "title": "Chat Overlay",
+      "description": "Настраиваемый чат-оверлей для Twitch и YouTube с темами, созданными ИИ для OBS.",
+      "feature1": "Поддержка живого чата Twitch и YouTube",
+      "feature2": "Темы, созданные ИИ с использованием естественного языка",
+      "feature3": "Простая интеграция источника браузера OBS",
+      "feature4": "Создатель сцен чата для нескольких профилей",
+      "button": "Просмотреть доки оверлея →"
     },
     "gettingStarted": {
       "title": "Начало работы",

@@ -7,6 +7,7 @@
     "home": "Accueil",
     "chatSageDocs": "Docs WildcatSage",
     "wildcatTtsDocs": "Docs WildcatTTS",
+    "chatOverlayDocs": "Docs Chat Overlay",
     "contact": "Contact"
   },
   "hero": {
@@ -33,6 +34,15 @@
       "feature3": "Génération musicale IA",
       "feature4": "Tableau de bord web pour les paramètres",
       "button": "Voir les Docs WildcatTTS →"
+    },
+    "chatOverlay": {
+      "title": "Chat Overlay",
+      "description": "Un overlay de chat personnalisable pour Twitch et YouTube avec des thèmes générés par IA pour OBS.",
+      "feature1": "Prend en charge le chat en direct Twitch et YouTube",
+      "feature2": "Thèmes générés par IA utilisant le langage naturel",
+      "feature3": "Intégration facile de la source de navigateur OBS",
+      "feature4": "Créateur de scènes de chat pour plusieurs profils",
+      "button": "Voir les Docs de l'Overlay →"
     },
     "gettingStarted": {
       "title": "Pour Commencer",

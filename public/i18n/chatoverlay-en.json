@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Chat Overlay Documentation"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Home",
+    "chatSageDocs": "WildcatSage Docs",
+    "wildcatTtsDocs": "WildcatTTS Docs",
+    "chatOverlayDocs": "Chat Overlay Docs",
+    "contact": "Contact"
+  },
+  "sidebar": {
+    "title": "Chat Overlay",
+    "overview": "Overview",
+    "platforms": "Platform Support",
+    "customization": "Customization",
+    "config": "Config Panel",
+    "scenes": "Chat Scene Creator",
+    "obsSetup": "OBS Setup"
+  },
+  "chatOverlay": {
+    "page": {
+      "title": "Wildcat Chat Overlay"
+    },
+    "overview": {
+      "title": "Overview",
+      "desc": "The Wildcat Chat Overlay is a highly customizable chat widget designed specifically for streamers to use inside OBS. No login or extensive setup is required; you simply add the URL as a Browser Source in OBS and configure everything on the screen through the settings panel. It natively supports both Twitch and YouTube Live chat."
+    },
+    "platforms": {
+      "title": "Platform Support",
+      "desc": "The chat overlay connects to various streaming platforms. You can configure your target platform from within the configuration panel in OBS.",
+      "twitch": "<strong>Twitch:</strong> Enter your channel name (e.g. `wildcatgamer`). Badges and emotes are natively supported.",
+      "youtube": "<strong>YouTube:</strong> Supports YouTube live chat for both public and unlisted streams. For public streams, enter your <strong>channel username, channel ID, video URL or video ID</strong>. For unlisted streams, the <strong>video URL</strong> is required. (Note: Private streams are not supported)."
+    },
+    "customization": {
+      "title": "Customization & Themes",
+      "desc": "The chat overlay includes powerful aesthetic customization tools. You can change fundamental styling directly through the config menu."
+    },
+    "themes": {
+      "title": "Automatic AI Themes",
+      "desc": "One of the most powerful features of the Wildcat Chat Overlay is its natural-language AI theme generator. Inside the config panel, simply type a description of the vibe, mood, or aesthetic you want (e.g., \"cyberpunk neon night,\" \"cozy wooden cabin in the snow,\" \"vintage 90s vaporwave\"). The overlay will intelligently generate the corresponding CSS variables, adjust the color palettes for ideal contrast, and apply the theme live!"
+    },
+    "config": {
+      "title": "Config Panel Features",
+      "desc": "All of the modifications and customizations are handled directly using the on-page settings menu. In OBS, right-click the Browser Source and select <strong>Interact</strong> to open the menu. The options include:",
+      "feature1": "<strong>Channel Selection:</strong> Select the streaming platform (Twitch/YouTube) and provide the relevant Channel ID or Video URL to connect.",
+      "feature2": "<strong>Font Settings:</strong> Choose from an array of included Google Fonts and adjust the font size up to the maximum constraints, ensuring ideal readability.",
+      "feature3": "<strong>Display Layout:</strong> Pick between standard list mode or popup chat bubbles mode. Adjust background opacities and borders.",
+      "feature4": "<strong>Badges & Emotes:</strong> Toggle platform badges natively for Twitch and YouTube to unify their design structures.",
+      "feature5": "<strong>Theme Management:</strong> Access your AI-generated Themes, select from presets, and adjust granular colors manually if needed."
+    },
+    "scenes": {
+      "title": "Chat Scene Creator",
+      "desc": "The <a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a> allows you to manage multiple instances of the chat overlay (e.g., one layout for \"Just Chatting\" and a different one for \"Gaming\").",
+      "stateless": "<strong>Note on statelessness:</strong> The Chat Scene Creator acts only as a URL generator. When you create a new scene (e.g., \"GamingScene\"), it simply generates a unique URL parameter: <span class=\"inline-code\">chat.html?scene=GamingScene</span>.",
+      "configNote": "All aesthetic configurations and connection options are saved <strong>locally in the OBS Browser Source's cache</strong>, not on our servers. Therefore, you must configure the chat from within OBS by right-clicking it and selecting <strong>Interact</strong>. Changes to one scene (one specific parameter) will not affect the settings saved under a different URL parameter."
+    },
+    "obsSetup": {
+      "title": "OBS Setup Instructions",
+      "desc": "Follow these thorough instructions to successfully install the chat overlay in your streaming software.",
+      "step1": "In OBS Studio, find the <strong>Sources</strong> panel, click the <strong>+</strong> button, and select <strong>Browser</strong>.",
+      "step2": "Name your source something recognizable (e.g., \"Twitch Chat - Windowed\").",
+      "step3": "Paste the URL generated from the Chat Scene Creator into the URL field. <strong>If you cannot paste:</strong> Ensure the \"Local file\" option is unchecked first.",
+      "step4": "Under the Width and Height properties, set Width to <strong>320</strong> and Height to <strong>600</strong> (This size is highly recommended for readability).",
+      "step5": "Click \"OK\" to add the browser source to your overlay canvas.",
+      "step6": "<strong>Configuring the Chat:</strong> Right-click the Browser Source you just made and select <strong>Interact</strong>.",
+      "step7": "In the interactive window, enter your channel information, select your preferences by clicking the gear icon (⚙️) on the top-right, and hit \"Connect\".",
+      "tips": {
+        "title": "Advanced OBS Tips",
+        "tip1": "Enable <span class=\"inline-code\">Shutdown source when not visible</span> to save CPU/Memory overhead.",
+        "tip2": "To hide any scrollbars, add <span class=\"inline-code\">body { overflow: hidden; }</span> to the Custom CSS field inside the properties window.",
+        "tip3": "Settings are saved to OBS cache. If you ever \"Clear Cache\" in OBS for this source, you will need to reconfigure the aesthetic settings."
+      }
+    }
+  }
+}

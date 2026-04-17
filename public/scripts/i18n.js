@@ -115,6 +115,8 @@ function getCurrentPageId() {
     return 'wildcat-tts';
   } else if (path.includes('botcommands')) {
     return 'botcommands';
+  } else if (path.includes('chatoverlay')) {
+    return 'chatoverlay';
   }
   // Default to botcommands for backward compatibility
   return 'botcommands';

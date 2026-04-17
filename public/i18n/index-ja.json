@@ -7,6 +7,7 @@
     "home": "ホーム",
     "chatSageDocs": "WildcatSage ドキュメント",
     "wildcatTtsDocs": "WildcatTTS ドキュメント",
+    "chatOverlayDocs": "Chat Overlay ドキュメント",
     "contact": "お問い合わせ"
   },
   "hero": {
@@ -33,6 +34,15 @@
       "feature3": "AI音楽生成",
       "feature4": "設定用ウェブダッシュボード",
       "button": "WildcatTTS ドキュメントを見る →"
+    },
+    "chatOverlay": {
+      "title": "Chat Overlay",
+      "description": "OBS向けのAI生成テーマを備えた、カスタマイズ可能なTwitchおよびYouTubeチャットオーバーレイ。",
+      "feature1": "TwitchとYouTubeのライブチャットをサポート",
+      "feature2": "自然言語を使用したAI生成テーマ",
+      "feature3": "簡単なOBSブラウザソース統合",
+      "feature4": "複数プロファイルに対応したチャットシーンクリエイター",
+      "button": "オーバーレイ ドキュメントを見る →"
     },
     "gettingStarted": {
       "title": "はじめに",

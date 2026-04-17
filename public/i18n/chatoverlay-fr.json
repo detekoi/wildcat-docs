@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Documentation Chat Overlay"
+  },
+  "nav": {
+    "toggleNav": "☰",
+    "home": "Accueil",
+    "chatSageDocs": "Docs WildcatSage",
+    "wildcatTtsDocs": "Docs WildcatTTS",
+    "chatOverlayDocs": "Docs Chat Overlay",
+    "contact": "Contact"
+  },
+  "sidebar": {
+    "title": "Chat Overlay",
+    "overview": "Aperçu",
+    "platforms": "Plateformes Supportées",
+    "customization": "Personnalisation",
+    "config": "Panneau de Configuration",
+    "scenes": "Créateur de Scènes de Chat",
+    "obsSetup": "Configuration OBS"
+  },
+  "chatOverlay": {
+    "page": {
+      "title": "Wildcat Chat Overlay"
+    },
+    "overview": {
+      "title": "Aperçu",
+      "desc": "Le Wildcat Chat Overlay est un widget de chat hautement personnalisable conçu spécifiquement pour les streamers au sein d'OBS. Aucun identifiant ou configuration complexe n'est requis ; il vous suffit d'ajouter l'URL comme Source de Navigateur dans OBS et de tout configurer à l'écran via le panneau de paramètres. Il prend en charge nativement le chat Twitch et YouTube Live."
+    },
+    "platforms": {
+      "title": "Plateformes Supportées",
+      "desc": "L'overlay de chat se connecte à diverses plateformes de streaming. Vous pouvez configurer votre plateforme cible à partir du panneau de configuration dans OBS.",
+      "twitch": "<strong>Twitch :</strong> Entrez le nom de votre chaîne (par exemple `wildcatgamer`). Les badges et les émoticônes sont pris en charge nativement.",
+      "youtube": "<strong>YouTube :</strong> Prend en charge le chat YouTube en direct pour les flux publics et non répertoriés. Pour les flux publics, entrez votre <strong>nom d'utilisateur de chaîne, ID de chaîne, URL de vidéo ou ID de vidéo</strong>. Pour les flux non répertoriés, l'<strong>URL de la vidéo</strong> est requise. (Note : Les flux privés ne sont pas pris en charge)."
+    },
+    "customization": {
+      "title": "Personnalisation & Thèmes",
+      "desc": "L'overlay de chat comprend de puissants outils de personnalisation esthétique. Vous pouvez modifier le style fondamental directement via le menu de configuration."
+    },
+    "themes": {
+      "title": "Thèmes IA Automatiques",
+      "desc": "L'une des fonctionnalités les plus puissantes du Wildcat Chat Overlay est son générateur de thèmes IA en langage naturel. Dans le panneau de configuration, tapez simplement une description de l'ambiance, de l'humeur ou de l'esthétique que vous souhaitez (par exemple, « cyberpunk neon night », « cozy wooden cabin in the snow », « vintage 90s vaporwave »). L'overlay générera intelligemment les variables CSS correspondantes, ajustera les palettes de couleurs pour un contraste idéal et appliquera le thème en direct !"
+    },
+    "config": {
+      "title": "Fonctionnalités du Panneau de Configuration",
+      "desc": "Toutes les modifications et personnalisations sont gérées directement à l'aide du menu de paramètres sur la page. Dans OBS, faites un clic droit sur la Source de Navigateur et sélectionnez <strong>Interagir</strong> pour ouvrir le menu. Les options incluent :",
+      "feature1": "<strong>Sélection de Chaîne :</strong> Sélectionnez la plateforme de streaming (Twitch/YouTube) et fournissez l'ID de chaîne ou l'URL de vidéo approprié pour vous connecter.",
+      "feature2": "<strong>Paramètres de Police :</strong> Choisissez parmi une gamme de polices Google incluses et ajustez la taille de la police selon les contraintes maximales, garantissant ainsi une lisibilité idéale.",
+      "feature3": "<strong>Disposition d'Affichage :</strong> Choisissez entre le mode liste standard ou le mode bulles de chat contextuelles. Ajustez l'opacité de l'arrière-plan et les bordures.",
+      "feature4": "<strong>Badges & Emotes :</strong> Activez les badges de plateforme nativement pour Twitch et YouTube afin d'unifier leurs structures de conception.",
+      "feature5": "<strong>Gestion des Thèmes :</strong> Accédez à vos thèmes générés par IA, sélectionnez parmi des préréglages et ajustez les couleurs granulaires manuellement si nécessaire."
+    },
+    "scenes": {
+      "title": "Créateur de Scènes de Chat",
+      "desc": "Le <a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Créateur de Scènes de Chat</a> vous permet de gérer plusieurs instances de l'overlay de chat (par exemple, une mise en page pour le « Just Chatting » et une différente pour le « Gaming »).",
+      "stateless": "<strong>Note sur l'absence d'état :</strong> Le Créateur de Scènes de Chat agit uniquement comme un générateur d'URL. Lorsque vous créez une nouvelle scène (par exemple, « GamingScene »), il génère simplement un paramètre d'URL unique : <span class=\"inline-code\">chat.html?scene=GamingScene</span>.",
+      "configNote": "Toutes les configurations esthétiques et options de connexion sont enregistrées <strong>localement dans le cache de la Source de Navigateur d'OBS</strong>, pas sur nos serveurs. Par conséquent, vous devez configurer le chat à partir d'OBS en faisant un clic droit dessus et en sélectionnant <strong>Interagir</strong>. Les modifications apportées à une scène (un paramètre spécifique) n'affecteront pas les paramètres enregistrés sous un paramètre d'URL différent."
+    },
+    "obsSetup": {
+      "title": "Instructions de Configuration OBS",
+      "desc": "Suivez ces instructions détaillées pour installer avec succès l'overlay de chat dans votre logiciel de streaming.",
+      "step1": "Dans OBS Studio, trouvez le panneau <strong>Sources</strong>, cliquez sur le bouton <strong>+</strong> et sélectionnez <strong>Navigateur</strong>.",
+      "step2": "Donnez à votre source un nom reconnaissable (par exemple, « Chat Twitch - Fenêtre »).",
+      "step3": "Collez l'URL générée à partir du Créateur de Scènes de Chat dans le champ URL. <strong>Si vous ne pouvez pas coller :</strong> Assurez-vous d'abord que l'option « Fichier local » est décochée.",
+      "step4": "Sous les propriétés Largeur et Hauteur, réglez la Largeur sur <strong>320</strong> et la Hauteur sur <strong>600</strong> (cette taille est fortement recommandée pour la lisibilité).",
+      "step5": "Cliquez sur « OK » pour ajouter la source de navigateur à votre canevas d'overlay.",
+      "step6": "<strong>Configuration du Chat :</strong> Faites un clic droit sur la Source de Navigateur que vous venez de créer et sélectionnez <strong>Interagir</strong>.",
+      "step7": "Dans la fenêtre interactive, entrez les informations de votre chaîne, sélectionnez vos préférences en cliquant sur l'icône d'engrenage (⚙️) en haut à droite, et appuyez sur « Connecter ».",
+      "tips": {
+        "title": "Conseils OBS Avancés",
+        "tip1": "Activez <span class=\"inline-code\">Désactiver la source lorsqu'elle n'est pas visible</span> pour économiser les ressources CPU/Mémoire.",
+        "tip2": "Pour masquer les barres de défilement, ajoutez <span class=\"inline-code\">body { overflow : hidden; }</span> au champ CSS personnalisé dans la fenêtre des propriétés.",
+        "tip3": "Les paramètres sont enregistrés dans le cache d'OBS. Si vous « Videz le cache » dans OBS pour cette source, vous devrez reconfigurer les paramètres esthétiques."
+      }
+    }
+  }
+}

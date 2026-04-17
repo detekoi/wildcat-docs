@@ -6,7 +6,8 @@
     "toggleNav": "☰",
     "home": "Startseite",
     "chatSageDocs": "WildcatSage Docs",
-    "wildcatTtsDocs": "WildcatTTS Docs",
+    "wildcatTtsDocs": "WildcatTTS Dokumentation",
+    "chatOverlayDocs": "Chat Overlay Dokumentation",
     "contact": "Kontakt"
   },
   "hero": {
@@ -32,7 +33,16 @@
       "feature2": "Channel Points Integration",
       "feature3": "KI-Musikgenerierung",
       "feature4": "Web-Dashboard für Einstellungen",
-      "button": "WildcatTTS Docs anzeigen →"
+      "button": "WildcatTTS Dokumentation anzeigen →"
+    },
+    "chatOverlay": {
+      "title": "Chat Overlay",
+      "description": "Ein anpassbares Twitch- und YouTube-Chat-Overlay mit KI-generierten Themes für OBS.",
+      "feature1": "Unterstützt Twitch- und YouTube-Live-Chat",
+      "feature2": "KI-generierte Themes mit natürlicher Sprache",
+      "feature3": "Einfache OBS-Browser-Source-Integration",
+      "feature4": "Chat-Scene-Creator für mehrere Profile",
+      "button": "Overlay-Docs anzeigen →"
     },
     "gettingStarted": {
       "title": "Erste Schritte",
