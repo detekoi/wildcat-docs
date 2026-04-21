@@ -14,17 +14,19 @@
   --font-mascot: 'Cabin Condensed', sans-serif;
   --font-carousel: var(--font-mascot);
 
-  /* Colors - Post-Industrial Dark Mode */
-  --color-background: #050505;
-  --color-text: #ffffff;
-  --color-secondary: #333333;
-  --color-border: #333333;
-  --color-card-bg: #0a0a0a;
-  --color-active-light: #1a1a1a;
-  --color-active-dark: #ffffff;
-  --color-accent: #fffdd9;
+  /* Colors - Post-Industrial Light Mode (Default) */
+  --color-background: #f4f4f4;
+  --color-text: #050505;
+  --color-secondary: #e0e0e0;
+  --color-border: #cccccc;
+  --color-card-bg: #ffffff;
+  --color-active-light: #f0f0f0;
+  --color-active-dark: #000000;
+  --color-accent: #7b1fa2; /* Warm purple */
   --color-accent-grey: #666666;
-  --color-grid-line: #333333;
+  --color-grid-line: #e0e0e0;
+  --color-text-bg: rgba(255, 255, 255, 0.85);
+
 
   /* Spacing */
   --spacing-unit: 8px;
@@ -43,8 +45,8 @@
   --shadow-size-default: 4px;
   --shadow-size-hover: 6px;
   --shadow-size-card: 8px;
-  --shadow-color: rgba(255, 255, 255, 0.2);
-  --shadow-color-hover: rgba(255, 255, 255, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.15);
+  --shadow-color-hover: rgba(0, 0, 0, 0.25);
   --hover-transform: translate(-2px, -2px);
   --active-transform: translate(2px, 2px);
 
@@ -103,6 +105,35 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
+
+/* Text Block Backgrounds for Readability */
+main p,
+main ul,
+main ol,
+.hero-title,
+.tagline {
+  background-color: var(--color-text-bg);
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+}
+
+/* Remove backgrounds from text blocks already inside containers with backgrounds */
+.bot-card p,
+.bot-card ul,
+.bot-card ol,
+.project p,
+.project ul,
+.project ol,
+.dropdown-details p,
+.dropdown-details ul,
+.dropdown-details ol,
+.expand-tip p,
+.expand-tip ul,
+.expand-tip ol {
+  background-color: transparent;
+  padding: 0;
+}
+
 
 /* =====================================================
    NAVIGATION BAR (Top)
@@ -477,148 +508,24 @@ footer a:active {
    Post-Industrial: Always dark, no media query needed
    ===================================================== */
 @media (prefers-color-scheme: dark) {
-  /* Post-Industrial: Always dark mode by default, no overrides needed */
+  :root {
+    --color-background: #050505;
+    --color-text: #ffffff;
+    --color-secondary: #333333;
+    --color-border: #333333;
+    --color-card-bg: #0a0a0a;
+    --color-active-light: #1a1a1a;
+    --color-active-dark: #ffffff;
+    --color-accent: #fffdd9;
+    --color-accent-grey: #666666;
+    --color-grid-line: #333333;
+    --color-text-bg: rgba(0, 0, 0, 0.75);
 
-  /* Navigation */
-  .site-navbar {
-    background-color: var(--color-background);
-    border-bottom-color: var(--color-border);
+    --shadow-color: rgba(255, 255, 255, 0.2);
+    --shadow-color-hover: rgba(255, 255, 255, 0.3);
   }
 
-  .site-navbar-brand {
-    color: var(--color-text);
-  }
 
-  .site-navbar-brand:hover {
-    color: var(--color-accent);
-  }
-
-  .site-navbar-menu a {
-    background-color: transparent;
-    color: var(--color-text);
-    border: 1px solid var(--color-grid-line);
-  }
-
-  .site-navbar-menu a:hover,
-  .site-navbar-menu a:focus {
-    background-color: var(--color-text);
-    color: var(--color-background);
-  }
-
-  .site-navbar-menu a:active {
-    background-color: var(--color-accent-grey);
-    color: var(--color-text);
-  }
-
-  .site-navbar-menu a.active {
-    background-color: var(--color-text);
-    color: var(--color-background);
-  }
-
-  .navbar-toggle {
-    background-color: transparent;
-    color: var(--color-text);
-    border: 1px solid var(--color-grid-line);
-  }
-
-  .navbar-toggle:hover,
-  .navbar-toggle:focus {
-    background-color: var(--color-text);
-    color: var(--color-background);
-  }
-
-  .navbar-toggle:active {
-    background-color: var(--color-accent-grey);
-    color: var(--color-text);
-  }
-
-  /* Sidebar */
-  #sidebar {
-    background: var(--color-card-bg);
-    color: var(--color-text);
-    border-right-color: var(--color-grid-line);
-  }
-
-  #sidenav-toggle-container {
-    background-color: var(--color-card-bg);
-    border-color: var(--color-grid-line);
-  }
-
-  #sidebar ul li a {
-    color: var(--color-text);
-    background-color: transparent;
-    border-color: var(--color-grid-line);
-  }
-
-  #sidebar ul li a:hover,
-  #sidebar ul li a:focus {
-    background-color: var(--color-card-bg);
-    color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
-  }
-
-  #sidebar ul li a:active {
-    background-color: var(--color-active-light);
-    color: var(--color-text);
-  }
-
-  #sidebar ul .submenu li a {
-    color: var(--color-accent);
-  }
-
-  #sidebar ul .submenu li a:hover,
-  #sidebar ul .submenu li a:focus {
-    color: var(--color-text);
-    background: var(--color-card-bg);
-  }
-
-  .submenu-caret {
-    color: var(--color-text);
-  }
-
-  #sidebar ul li.open>a.has-submenu .submenu-caret {
-    color: var(--color-text);
-  }
-
-  /* Links */
-  a {
-    background-color: transparent;
-    color: var(--color-text);
-    border: none;
-    text-decoration: underline;
-  }
-
-  a:hover,
-  a:focus {
-    color: var(--color-accent);
-  }
-
-  a:active {
-    color: var(--color-accent);
-  }
-
-  /* Footer links */
-  footer a {
-    background-color: transparent;
-    color: #ffffff;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  footer a:hover,
-  footer a:focus {
-    color: var(--color-accent);
-    transform: none;
-    box-shadow: none;
-  }
-
-  footer a:active {
-    color: #999999;
-    transform: none;
-    box-shadow: none;
-    background: none;
-  }
 }
 
 /* =====================================================
