@@ -22,7 +22,7 @@
   --color-card-bg: #ffffff;
   --color-active-light: #f0f0f0;
   --color-active-dark: #000000;
-  --color-accent: #7b1fa2; /* Warm purple */
+  --color-accent: #9b4d96; /* Purple matching chatvibes */
   --color-accent-grey: #666666;
   --color-grid-line: #e0e0e0;
   --color-text-bg: rgba(255, 255, 255, 0.85);
@@ -516,7 +516,7 @@ footer a:active {
     --color-card-bg: #0a0a0a;
     --color-active-light: #1a1a1a;
     --color-active-dark: #ffffff;
-    --color-accent: #fffdd9;
+    --color-accent: #b47fb4; /* Purple matching chatvibes */
     --color-accent-grey: #666666;
     --color-grid-line: #333333;
     --color-text-bg: rgba(0, 0, 0, 0.75);
