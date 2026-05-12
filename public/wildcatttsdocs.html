@@ -125,6 +125,29 @@
                 </thead>
                 <tbody>
                     <tr class="category-header">
+                        <td colspan="2" data-i18n="table.categories.directTTS">Direct TTS</td>
+                    </tr>
+                </tbody>
+                <tbody class="dropdown-group">
+                    <tr class="dropdown-summary">
+                        <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;</td>
+                        <td data-i18n-key="commands.ttsMessage.description"><span class="description-text">Immediately
+                                enqueues the provided message for TTS. This works in both all and command modes. Uses
+                                the requesting user's preferences (or channel defaults) for voice, pitch, speed, and
+                                emotion.</span><span class="dropdown-toggle">&#x25BC;</span></td>
+                    </tr>
+                    <tr class="dropdown-details" style="display:none;">
+                        <td colspan="2">
+                            <code
+                                data-i18n-cmd="commands.ttsMessage.usage.basic">!tts Welcome everyone to the stream!</code>
+                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                                    data-i18n="commands.common.everyone">Everyone</span></p>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr class="category-header">
                         <td colspan="2" data-i18n="table.categories.ttsGeneral">General</td>
                     </tr>
                 </tbody>
@@ -961,29 +984,6 @@
                                     descriptions.</span></p>
                             <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                                     data-i18n="commands.ttsEmote.permission">Moderator (set/regenerate only for this channel's emotes)</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-
-                <tbody>
-                    <tr class="category-header">
-                        <td colspan="2" data-i18n="table.categories.directTTS">Direct TTS</td>
-                    </tr>
-                </tbody>
-                <tbody class="dropdown-group">
-                    <tr class="dropdown-summary">
-                        <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;</td>
-                        <td data-i18n-key="commands.ttsMessage.description"><span class="description-text">Immediately
-                                enqueues the provided message for TTS. This works in both all and command modes. Uses
-                                the requesting user's preferences (or channel defaults) for voice, pitch, speed, and
-                                emotion.</span><span class="dropdown-toggle">&#x25BC;</span></td>
-                    </tr>
-                    <tr class="dropdown-details" style="display:none;">
-                        <td colspan="2">
-                            <code
-                                data-i18n-cmd="commands.ttsMessage.usage.basic">!tts Welcome everyone to the stream!</code>
-                            <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
-                                    data-i18n="commands.common.everyone">Everyone</span></p>
                         </td>
                     </tr>
                 </tbody>
