@@ -373,12 +373,10 @@
       }
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Alias: !tts say <message>)",
+      "name": "!tts <message>",
       "description": "Immediately enqueues the provided message for TTS. This works in both all and command modes. Uses the requesting user's preferences (or channel defaults) for voice, pitch, speed, and emotion.",
-      "alias": "(Alias: !tts say <message>)",
       "usage": {
-        "basic": "!tts Welcome everyone to the stream!",
-        "say": "!tts say Welcome everyone!"
+        "basic": "!tts Welcome everyone to the stream!"
       }
     },
     "musicPrompt": {

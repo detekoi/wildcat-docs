@@ -373,13 +373,11 @@
       }
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Alias : !tts say <message>)",
+      "name": "!tts <message>",
       "usage": {
-        "basic": "!tts Bienvenue à tous sur le stream !",
-        "say": "!tts say Bienvenue à tous !"
+        "basic": "!tts Bienvenue à tous sur le stream !"
       },
-      "description": "Met immédiatement le message fourni en file d'attente pour TTS. Cela fonctionne à la fois en mode all et command. Utilise les préférences de l'utilisateur demandeur (ou les valeurs par défaut du canal) pour la voix, la hauteur, la vitesse et l'émotion.",
-      "alias": "(Alias: !tts say <message>)"
+      "description": "Met immédiatement le message fourni en file d'attente pour TTS. Cela fonctionne à la fois en mode all et command. Utilise les préférences de l'utilisateur demandeur (ou les valeurs par défaut du canal) pour la voix, la hauteur, la vitesse et l'émotion."
     },
     "musicPrompt": {
       "name": "!music <prompt>",

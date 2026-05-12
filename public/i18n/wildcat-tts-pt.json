@@ -373,13 +373,11 @@
       }
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Apelido: !tts say <message>)",
+      "name": "!tts <message>",
       "usage": {
-        "basic": "!tts Bem-vindos todos à transmissão!",
-        "say": "!tts say Bem-vindos todos!"
+        "basic": "!tts Bem-vindos todos à transmissão!"
       },
-      "description": "Enfileira imediatamente a mensagem fornecida para TTS. Isso funciona tanto no modo all quanto no modo command. Usa as preferências do usuário solicitante (ou os padrões do canal) para voz, tom, velocidade e emoção.",
-      "alias": "(Alias: !tts say <message>)"
+      "description": "Enfileira imediatamente a mensagem fornecida para TTS. Isso funciona tanto no modo all quanto no modo command. Usa as preferências do usuário solicitante (ou os padrões do canal) para voz, tom, velocidade e emoção."
     },
     "musicPrompt": {
       "name": "!music <prompt>",

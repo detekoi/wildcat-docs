@@ -373,12 +373,10 @@
       }
     },
     "ttsMessage": {
-      "name": "!tts <message>\n(Alias: !tts say <message>)",
+      "name": "!tts <message>",
       "description": "Stellt die bereitgestellte Nachricht sofort für TTS in die Warteschlange. Funktioniert sowohl im all- als auch im command-Modus. Verwendet die Präferenzen des anfordernden Benutzers (oder Kanal-Standardwerte) für Stimme, Tonhöhe, Geschwindigkeit und Emotion.",
-      "alias": "(Alias: !tts say <message>)",
       "usage": {
-        "basic": "!tts Willkommen alle zum Stream!",
-        "say": "!tts say Willkommen alle!"
+        "basic": "!tts Willkommen alle zum Stream!"
       }
     },
     "musicPrompt": {
