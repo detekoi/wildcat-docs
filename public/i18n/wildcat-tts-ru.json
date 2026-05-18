@@ -551,7 +551,9 @@
     "obsMonitorOnlyTitle": "Только мониторинг",
     "obsMonitorOnlyDesc": "- Только вы слышите это (для тестирования)",
     "obsImportantTitle": "Важно:",
-    "obsImportantDesc": "Убедитесь, что источник не отключен в вашем аудиомикшере и громкость установлена соответствующим образом."
+    "obsImportantDesc": "Убедитесь, что источник не отключен в вашем аудиомикшере и громкость установлена соответствующим образом.",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
   },
   "troubleshooting": {
     "title": "Устранение неполадок",

@@ -551,7 +551,9 @@
     "obsMonitorOnlyTitle": "モニターのみ",
     "obsMonitorOnlyDesc": "- あなただけが聞こえます(テスト用)",
     "obsImportantTitle": "重要:",
-    "obsImportantDesc": "オーディオミキサーでソースがミュートされておらず、音量が適切に設定されていることを確認してください。"
+    "obsImportantDesc": "オーディオミキサーでソースがミュートされておらず、音量が適切に設定されていることを確認してください。",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
   },
   "troubleshooting": {
     "title": "トラブルシューティング",

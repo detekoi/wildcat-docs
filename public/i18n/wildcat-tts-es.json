@@ -551,7 +551,9 @@
     "obsMonitorOnlyTitle": "Solo Monitorizar",
     "obsMonitorOnlyDesc": "- Solo tú lo escuchas (para pruebas)",
     "obsImportantTitle": "Importante:",
-    "obsImportantDesc": "Asegúrate de que la fuente no esté silenciada en tu mezclador de audio y que el volumen esté configurado apropiadamente."
+    "obsImportantDesc": "Asegúrate de que la fuente no esté silenciada en tu mezclador de audio y que el volumen esté configurado apropiadamente.",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
   },
   "troubleshooting": {
     "title": "Solución de Problemas",

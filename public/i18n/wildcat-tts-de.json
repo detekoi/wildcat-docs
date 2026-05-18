@@ -551,7 +551,9 @@
     "obsMonitorOnlyTitle": "Nur Monitor",
     "obsMonitorOnlyDesc": "- Nur du hörst es (zum Testen)",
     "obsImportantTitle": "Wichtig:",
-    "obsImportantDesc": "Stelle sicher, dass die Quelle in deinem Audio-Mixer nicht stummgeschaltet ist und die Lautstärke angemessen eingestellt ist."
+    "obsImportantDesc": "Stelle sicher, dass die Quelle in deinem Audio-Mixer nicht stummgeschaltet ist und die Lautstärke angemessen eingestellt ist.",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
   },
   "troubleshooting": {
     "title": "Fehlerbehebung",

@@ -551,7 +551,9 @@
     "obsMonitorOnlyTitle": "Surveiller Uniquement",
     "obsMonitorOnlyDesc": "- Seulement vous l'entendez (pour tester)",
     "obsImportantTitle": "Important :",
-    "obsImportantDesc": "Assurez-vous que la source n'est pas muette dans votre mixeur audio et que le volume est réglé de manière appropriée."
+    "obsImportantDesc": "Assurez-vous que la source n'est pas muette dans votre mixeur audio et que le volume est réglé de manière appropriée.",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
   },
   "troubleshooting": {
     "title": "Dépannage",

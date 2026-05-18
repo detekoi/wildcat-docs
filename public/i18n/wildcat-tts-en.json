@@ -530,6 +530,8 @@
     "settingBitsDesc": "Require minimum bits for TTS messages",
     "settingChannelPointsTitle": "Channel Points → TTS:",
     "settingChannelPointsDesc": "Create and configure a custom Channel Point reward (see section above)",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
     "settingMusicTitle": "Music Generation:",
     "settingMusicDesc": "Enable/disable music, set permissions, require bits",
     "settingIgnoreTitle": "Ignore Lists:",
