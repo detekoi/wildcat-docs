@@ -37,7 +37,7 @@
       "title": "カスタマイズとテーマ",
       "desc": "チャットオーバーレイには強力な美的カスタマイズツールが含まれています。設定メニューから直接基本的なスタイリングを変更できます。",
       "obsConfig": {
-        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> OBSでの設定:</strong> このクリエイターはシーンのURLのみを管理します。すべてのチャット設定（チャンネル、テーマ、色、フォントなど）は <strong>OBS内</strong> で設定します：",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> OBSでの設定:</strong> ブラウザソースのURLはオーバーレイを読み込むだけです。すべてのチャット設定（チャンネル、テーマ、色、フォントなど）は <strong>OBS内</strong> で設定します：",
         "step1": "右クリック -> 相互作用（対話）、またはモニター/プレビューでブラウザソースを選択した状態で「相互作用」ボタンをクリックします。",
         "step2": "相互作用ウィンドウ内：",
         "substep1": "Twitchのチャンネル名を入力し、「接続」をクリックします。",

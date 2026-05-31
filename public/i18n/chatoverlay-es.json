@@ -37,7 +37,7 @@
       "title": "Personalización y Temas",
       "desc": "El overlay de chat incluye potentes herramientas de personalización estética. Puedes cambiar el estilo fundamental directamente a través del menú de configuración.",
       "obsConfig": {
-        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuración en OBS:</strong> Este creador solo gestiona la URL de la escena. Todos los ajustes del chat (canal, tema, colores, fuentes, etc.) se configuran <strong>dentro de OBS</strong>:",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuración en OBS:</strong> La URL de la fuente de navegador solo carga el overlay. Todos los ajustes del chat (canal, tema, colores, fuentes, etc.) se configuran <strong>dentro de OBS</strong>:",
         "step1": "Clic derecho -> interactuar, o haz clic en el botón Interactuar con la fuente de navegador seleccionada en el monitor/vista previa.",
         "step2": "En la ventana de interacción:",
         "substep1": "Ingresa el nombre de tu canal de Twitch y haz clic en \"Conectar\".",
