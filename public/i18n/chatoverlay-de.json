@@ -35,7 +35,15 @@
     },
     "customization": {
       "title": "Anpassung & Themes",
-      "desc": "Das Chat-Overlay enthält leistungsstarke ästhetische Anpassungswerkzeuge. Sie können das grundlegende Styling direkt über das Konfigurationsmenü ändern."
+      "desc": "Das Chat-Overlay enthält leistungsstarke ästhetische Anpassungswerkzeuge. Sie können das grundlegende Styling direkt über das Konfigurationsmenü ändern.",
+      "obsConfig": {
+        "title": "<strong>⚙️ Konfiguration in OBS:</strong> Dieser Creator verwaltet nur die URL der Scene. Alle Chat-Einstellungen (Kanal, Theme, Farben, Schriftarten usw.) werden <strong>in OBS</strong> konfiguriert:",
+        "step1": "Rechtsklick -> Interagieren (Interact) oder klicke auf die Schaltfläche 'Interagieren', wenn die Browserquelle im Monitor/Vorschaufenster ausgewählt ist.",
+        "step2": "Im Interaktionsfenster:",
+        "substep1": "Gib deinen Twitch-Kanalnamen ein und klicke auf 'Verbinden' (Connect).",
+        "substep2": "Bewege den Mauszeiger über den Chat und klicke auf das Einstellungszahnrad (⚙️), um das Erscheinungsbild anzupassen (Themes, Farben, Schriftarten usw.).",
+        "step3": "Einstellungen werden automatisch in OBS für diese spezifische Quelle gespeichert."
+      }
     },
     "themes": {
       "title": "Automatische KI-Themes",

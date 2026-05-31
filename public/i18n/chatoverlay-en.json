@@ -35,7 +35,15 @@
     },
     "customization": {
       "title": "Customization & Themes",
-      "desc": "The chat overlay includes powerful aesthetic customization tools. You can change fundamental styling directly through the config menu."
+      "desc": "The chat overlay includes powerful aesthetic customization tools. You can change fundamental styling directly through the config menu.",
+      "obsConfig": {
+        "title": "<strong>⚙️ Configuring in OBS:</strong> This creator only manages the scene's URL. All chat settings (channel, theme, colors, fonts, etc.) are configured <strong>inside OBS</strong>:",
+        "step1": "Right-click -> interact, or click the <strong>Interact</strong> button with the browser source selected in the monitor/preview.",
+        "step2": "In the interaction window:",
+        "substep1": "Enter your Twitch channel name and click \"Connect\".",
+        "substep2": "Hover over the chat and click the settings gear (⚙️) to customize appearance (themes, colors, fonts, etc.).",
+        "step3": "Settings are saved automatically within OBS for that specific source."
+      }
     },
     "themes": {
       "title": "Automatic AI Themes",

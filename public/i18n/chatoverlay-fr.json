@@ -35,7 +35,15 @@
     },
     "customization": {
       "title": "Personnalisation & Thèmes",
-      "desc": "L'overlay de chat comprend de puissants outils de personnalisation esthétique. Vous pouvez modifier le style fondamental directement via le menu de configuration."
+      "desc": "L'overlay de chat comprend de puissants outils de personnalisation esthétique. Vous pouvez modifier le style fondamental directement via le menu de configuration.",
+      "obsConfig": {
+        "title": "<strong>⚙️ Configuration dans OBS:</strong> Ce créateur gère uniquement l'URL de la scène. Tous les paramètres du chat (chaîne, thème, couleurs, polices, etc.) sont configurés <strong>dans OBS</strong>:",
+        "step1": "Clic droit -> interagir, ou cliquez sur le bouton Interagir lorsque la source de navigateur est sélectionnée dans le moniteur/l'aperçu.",
+        "step2": "Dans la fenêtre d'interaction:",
+        "substep1": "Entrez le nom de votre chaîne Twitch et cliquez sur « Connecter ».",
+        "substep2": "Survolez le chat et cliquez sur l'engrenage des paramètres (⚙️) pour personnaliser l'apparence (thèmes, couleurs, polices, etc.).",
+        "step3": "Les paramètres sont enregistrés automatiquement dans OBS pour cette source spécifique."
+      }
     },
     "themes": {
       "title": "Thèmes IA Automatiques",

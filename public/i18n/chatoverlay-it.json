@@ -35,7 +35,15 @@
     },
     "customization": {
       "title": "Personalizzazione e Temi",
-      "desc": "L'overlay di chat include potenti strumenti di personalizzazione estetica. Puoi cambiare lo stile fondamentale direttamente tramite il menu di configurazione."
+      "desc": "L'overlay di chat include potenti strumenti di personalizzazione estetica. Puoi cambiare lo stile fondamentale direttamente tramite il menu di configurazione.",
+      "obsConfig": {
+        "title": "<strong>⚙️ Configurazione in OBS:</strong> Questo creatore gestisce solo l'URL della scena. Tutte le impostazioni della chat (canale, tema, colori, font, ecc.) sono configurate <strong>all'interno di OBS</strong>:",
+        "step1": "Tasto destro -> intergisci, o fai clic sul pulsante Interagisci con la sorgente browser selezionata nel monitor/anteprima.",
+        "step2": "Nella finestra di interazione:",
+        "substep1": "Inserisci il nome del tuo canale Twitch e fai clic su \"Connetti\".",
+        "substep2": "Passa il mouse sopra la chat e fai clic sull'ingranaggio delle impostazioni (⚙️) per personalizzare l'aspetto (temi, colori, font, ecc.).",
+        "step3": "Le impostazioni vengono salvate automaticamente all'interno di OBS per quella sorgente specifica."
+      }
     },
     "themes": {
       "title": "Temi AI Automatici",
@@ -54,7 +62,7 @@
       "title": "Creatore di Scene Chat",
       "desc": "Il <a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Creatore di Scene Chat</a> ti consente di gestire più istanze dell'overlay di chat (es. un layout per \"Just Chatting\" e uno diverso per \"Gaming\").",
       "stateless": "<strong>Nota sulla mancanza di stato:</strong> Il Creatore di Scene Chat agisce solo come generatore di URL. Quando crei una nuova scena (es. \"GamingScene\"), genera semplicemente un parametro URL unico: <span class=\"inline-code\">chat.html?scene=GamingScene</span>.",
-      "configNote": "Tutte le configurazioni estetiche e le opzioni di connessione sono salvate <strong>localmente nella cache della Sorgente Browser di OBS</strong>, non sui nostri server. Pertanto, devi configurare la chat dall'interno di OBS facendo clic con il pulsante destro del mouse su di essa e selezionando <strong>Interagisci</strong>. Le modifiche a una scena (un parametro specifico) non influiranno sulle impostazioni salvate sotto un diverso parametro URL."
+      "configNote": "Tutte le configurazioni estetiche e le opzioni di connessione sono salvate <strong>localmente nella cache della Sorgente Browser di OBS</strong>, non sui nostri server. Pertanto, devi configurare la chat dall'interno di OBS facendo clic con il pulsante destro del mouse su di essa e selezionando <strong>Interact (Interagisci)</strong>. Le modifiche a una scena (un parametro specifico) non influiranno sulle impostazioni salvate sotto un diverso parametro URL."
     },
     "obsSetup": {
       "title": "Istruzioni per la Configurazione di OBS",
