@@ -37,11 +37,11 @@
       "title": "Personnalisation & Thèmes",
       "desc": "L'overlay de chat comprend de puissants outils de personnalisation esthétique. Vous pouvez modifier le style fondamental directement via le menu de configuration.",
       "obsConfig": {
-        "title": "<strong>⚙️ Configuration dans OBS:</strong> Ce créateur gère uniquement l'URL de la scène. Tous les paramètres du chat (chaîne, thème, couleurs, polices, etc.) sont configurés <strong>dans OBS</strong>:",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuration dans OBS:</strong> Ce créateur gère uniquement l'URL de la scène. Tous les paramètres du chat (chaîne, thème, couleurs, polices, etc.) sont configurés <strong>dans OBS</strong>:",
         "step1": "Clic droit -> interagir, ou cliquez sur le bouton Interagir lorsque la source de navigateur est sélectionnée dans le moniteur/l'aperçu.",
         "step2": "Dans la fenêtre d'interaction:",
         "substep1": "Entrez le nom de votre chaîne Twitch et cliquez sur « Connecter ».",
-        "substep2": "Survolez le chat et cliquez sur l'engrenage des paramètres (⚙️) pour personnaliser l'apparence (thèmes, couleurs, polices, etc.).",
+        "substep2": "Survolez le chat et cliquez sur l'engrenage des paramètres (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) pour personnaliser l'apparence (thèmes, couleurs, polices, etc.).",
         "step3": "Les paramètres sont enregistrés automatiquement dans OBS pour cette source spécifique."
       }
     },
@@ -73,7 +73,7 @@
       "step4": "Sous les propriétés Largeur et Hauteur, réglez la Largeur sur <strong>320</strong> et la Hauteur sur <strong>600</strong> (cette taille est fortement recommandée pour la lisibilité).",
       "step5": "Cliquez sur « OK » pour ajouter la source de navigateur à votre canevas d'overlay.",
       "step6": "<strong>Configuration du Chat :</strong> Faites un clic droit sur la Source de Navigateur que vous venez de créer et sélectionnez <strong>Interagir</strong>.",
-      "step7": "Dans la fenêtre interactive, entrez les informations de votre chaîne, sélectionnez vos préférences en cliquant sur l'icône d'engrenage (⚙️) en haut à droite, et appuyez sur « Connecter ».",
+      "step7": "Dans la fenêtre interactive, entrez les informations de votre chaîne, sélectionnez vos préférences en cliquant sur l'icône d'engrenage (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) en haut à droite, et appuyez sur « Connecter ».",
       "tips": {
         "title": "Conseils OBS Avancés",
         "tip1": "Activez <span class=\"inline-code\">Désactiver la source lorsqu'elle n'est pas visible</span> pour économiser les ressources CPU/Mémoire.",

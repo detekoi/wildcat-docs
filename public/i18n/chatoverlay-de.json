@@ -37,11 +37,11 @@
       "title": "Anpassung & Themes",
       "desc": "Das Chat-Overlay enthält leistungsstarke ästhetische Anpassungswerkzeuge. Sie können das grundlegende Styling direkt über das Konfigurationsmenü ändern.",
       "obsConfig": {
-        "title": "<strong>⚙️ Konfiguration in OBS:</strong> Dieser Creator verwaltet nur die URL der Scene. Alle Chat-Einstellungen (Kanal, Theme, Farben, Schriftarten usw.) werden <strong>in OBS</strong> konfiguriert:",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Konfiguration in OBS:</strong> Dieser Creator verwaltet nur die URL der Scene. Alle Chat-Einstellungen (Kanal, Theme, Farben, Schriftarten usw.) werden <strong>in OBS</strong> konfiguriert:",
         "step1": "Rechtsklick -> Interagieren (Interact) oder klicke auf die Schaltfläche 'Interagieren', wenn die Browserquelle im Monitor/Vorschaufenster ausgewählt ist.",
         "step2": "Im Interaktionsfenster:",
         "substep1": "Gib deinen Twitch-Kanalnamen ein und klicke auf 'Verbinden' (Connect).",
-        "substep2": "Bewege den Mauszeiger über den Chat und klicke auf das Einstellungszahnrad (⚙️), um das Erscheinungsbild anzupassen (Themes, Farben, Schriftarten usw.).",
+        "substep2": "Bewege den Mauszeiger über den Chat und klicke auf das Einstellungszahnrad (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>), um das Erscheinungsbild anzupassen (Themes, Farben, Schriftarten usw.).",
         "step3": "Einstellungen werden automatisch in OBS für diese spezifische Quelle gespeichert."
       }
     },
@@ -73,7 +73,7 @@
       "step4": "Stellen Sie unter den Eigenschaften Breite und Höhe die Breite auf <strong>320</strong> und die Höhe auf <strong>600</strong> ein (diese Größe wird für die Lesbarkeit dringend empfohlen).",
       "step5": "Klicken Sie auf „OK“, um die Browser-Quelle zu Ihrer Overlay-Leinwand hinzuzufügen.",
       "step6": "<strong>Konfigurieren des Chats:</strong> Klicken Sie mit der rechten Maustaste auf die soeben erstellte Browser-Quelle und wählen Sie <strong>Interagieren</strong>.",
-      "step7": "Geben Sie im interaktiven Fenster Ihre Kanalinformationen ein, wählen Sie Ihre Einstellungen aus, indem Sie oben rechts auf das Zahnrad-Symbol (⚙️) klicken, und klicken Sie auf „Verbinden“.",
+      "step7": "Geben Sie im interaktiven Fenster Ihre Kanalinformationen ein, wählen Sie Ihre Einstellungen aus, indem Sie oben rechts auf das Zahnrad-Symbol (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) klicken, und klicken Sie auf „Verbinden“.",
       "tips": {
         "title": "Fortgeschrittene OBS-Tipps",
         "tip1": "Aktivieren Sie <span class=\"inline-code\">Quelle bei Nicht-Sichtbarkeit herunterfahren</span>, um CPU- und Speicherressourcen zu sparen.",

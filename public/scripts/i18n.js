@@ -35,8 +35,8 @@ let translations = {};
 let modCommandStyle;
 
 // Sanitize HTML translations to prevent XSS (defense-in-depth)
-const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'span', 'strong']);
-const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel']);
+const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'i', 'span', 'strong']);
+const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel', 'data-lucide']);
 
 function sanitizeHTML(html) {
   const template = document.createElement('template');
@@ -103,6 +103,11 @@ async function initI18n() {
 
   // Apply translations
   translatePage();
+
+  // Re-render Lucide icons after translations replace innerHTML
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 }
 
 // Get the current page identifier for loading the correct translation file
@@ -367,6 +372,7 @@ function createLanguageSelector() {
       selector.classList.remove('open');
       await loadTranslations(code);
       translatePage();
+      if (typeof lucide !== 'undefined') { lucide.createIcons(); }
       updateLanguageSelector(code);
     });
     grid.appendChild(btn);

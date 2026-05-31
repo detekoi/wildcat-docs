@@ -37,11 +37,11 @@
       "title": "Personalización y Temas",
       "desc": "El overlay de chat incluye potentes herramientas de personalización estética. Puedes cambiar el estilo fundamental directamente a través del menú de configuración.",
       "obsConfig": {
-        "title": "<strong>⚙️ Configuración en OBS:</strong> Este creador solo gestiona la URL de la escena. Todos los ajustes del chat (canal, tema, colores, fuentes, etc.) se configuran <strong>dentro de OBS</strong>:",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuración en OBS:</strong> Este creador solo gestiona la URL de la escena. Todos los ajustes del chat (canal, tema, colores, fuentes, etc.) se configuran <strong>dentro de OBS</strong>:",
         "step1": "Clic derecho -> interactuar, o haz clic en el botón Interactuar con la fuente de navegador seleccionada en el monitor/vista previa.",
         "step2": "En la ventana de interacción:",
         "substep1": "Ingresa el nombre de tu canal de Twitch y haz clic en \"Conectar\".",
-        "substep2": "Pasa el cursor sobre el chat y haz clic en el engranaje de configuración (⚙️) para personalizar la apariencia (temas, colores, fuentes, etc.).",
+        "substep2": "Pasa el cursor sobre el chat y haz clic en el engranaje de configuración (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) para personalizar la apariencia (temas, colores, fuentes, etc.).",
         "step3": "Los ajustes se guardan automáticamente dentro de OBS para esa fuente específica."
       }
     },
@@ -73,7 +73,7 @@
       "step4": "Bajo las propiedades de Ancho y Alto, establece el Ancho en <strong>320</strong> y el Alto en <strong>600</strong> (Este tamaño es muy recomendable para la legibilidad).",
       "step5": "Haz clic en \"Aceptar\" para añadir la fuente de navegador a tu lienzo de overlay.",
       "step6": "<strong>Configurando el Chat:</strong> Haz clic derecho en la Fuente de Navegador que acabas de crear y selecciona <strong>Interactuar</strong>.",
-      "step7": "En la ventana interactiva, ingresa la información de tu canal, selecciona tus preferencias haciendo clic en el icono de engranaje (⚙️) en la parte superior derecha y presiona \"Conectar\".",
+      "step7": "En la ventana interactiva, ingresa la información de tu canal, selecciona tus preferencias haciendo clic en el icono de engranaje (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) en la parte superior derecha y presiona \"Conectar\".",
       "tips": {
         "title": "Consejos Avanzados de OBS",
         "tip1": "Activa <span class=\"inline-code\">Desactivar fuente cuando no sea visible</span> para ahorrar consumo de CPU/Memoria.",

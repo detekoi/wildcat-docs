@@ -37,11 +37,11 @@
       "title": "Customization & Themes",
       "desc": "The chat overlay includes powerful aesthetic customization tools. You can change fundamental styling directly through the config menu.",
       "obsConfig": {
-        "title": "<strong>⚙️ Configuring in OBS:</strong> This creator only manages the scene's URL. All chat settings (channel, theme, colors, fonts, etc.) are configured <strong>inside OBS</strong>:",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuring in OBS:</strong> This creator only manages the scene's URL. All chat settings (channel, theme, colors, fonts, etc.) are configured <strong>inside OBS</strong>:",
         "step1": "Right-click -> interact, or click the <strong>Interact</strong> button with the browser source selected in the monitor/preview.",
         "step2": "In the interaction window:",
         "substep1": "Enter your Twitch channel name and click \"Connect\".",
-        "substep2": "Hover over the chat and click the settings gear (⚙️) to customize appearance (themes, colors, fonts, etc.).",
+        "substep2": "Hover over the chat and click the settings gear (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) to customize appearance (themes, colors, fonts, etc.).",
         "step3": "Settings are saved automatically within OBS for that specific source."
       }
     },
@@ -73,7 +73,7 @@
       "step4": "Under the Width and Height properties, set Width to <strong>320</strong> and Height to <strong>600</strong> (This size is highly recommended for readability).",
       "step5": "Click \"OK\" to add the browser source to your overlay canvas.",
       "step6": "<strong>Configuring the Chat:</strong> Right-click the Browser Source you just made and select <strong>Interact</strong>.",
-      "step7": "In the interactive window, enter your channel information, select your preferences by clicking the gear icon (⚙️) on the top-right, and hit \"Connect\".",
+      "step7": "In the interactive window, enter your channel information, select your preferences by clicking the gear icon (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) on the top-right, and hit \"Connect\".",
       "tips": {
         "title": "Advanced OBS Tips",
         "tip1": "Enable <span class=\"inline-code\">Shutdown source when not visible</span> to save CPU/Memory overhead.",

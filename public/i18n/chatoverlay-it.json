@@ -37,11 +37,11 @@
       "title": "Personalizzazione e Temi",
       "desc": "L'overlay di chat include potenti strumenti di personalizzazione estetica. Puoi cambiare lo stile fondamentale direttamente tramite il menu di configurazione.",
       "obsConfig": {
-        "title": "<strong>⚙️ Configurazione in OBS:</strong> Questo creatore gestisce solo l'URL della scena. Tutte le impostazioni della chat (canale, tema, colori, font, ecc.) sono configurate <strong>all'interno di OBS</strong>:",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configurazione in OBS:</strong> Questo creatore gestisce solo l'URL della scena. Tutte le impostazioni della chat (canale, tema, colori, font, ecc.) sono configurate <strong>all'interno di OBS</strong>:",
         "step1": "Tasto destro -> intergisci, o fai clic sul pulsante Interagisci con la sorgente browser selezionata nel monitor/anteprima.",
         "step2": "Nella finestra di interazione:",
         "substep1": "Inserisci il nome del tuo canale Twitch e fai clic su \"Connetti\".",
-        "substep2": "Passa il mouse sopra la chat e fai clic sull'ingranaggio delle impostazioni (⚙️) per personalizzare l'aspetto (temi, colori, font, ecc.).",
+        "substep2": "Passa il mouse sopra la chat e fai clic sull'ingranaggio delle impostazioni (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) per personalizzare l'aspetto (temi, colori, font, ecc.).",
         "step3": "Le impostazioni vengono salvate automaticamente all'interno di OBS per quella sorgente specifica."
       }
     },
@@ -73,7 +73,7 @@
       "step4": "Nelle proprietà Larghezza e Altezza, imposta la Larghezza a <strong>320</strong> e l'Altezza a <strong>600</strong> (questa dimensione è caldamente consigliata per la leggibilità).",
       "step5": "Fai clic su \"OK\" per aggiungere la sorgente browser al tuo canvas dell'overlay.",
       "step6": "<strong>Configurazone della Chat:</strong> Fai clic con il pulsante destro del mouse sulla Sorgente Browser appena creata e seleziona <strong>Interagisci</strong>.",
-      "step7": "Nella finestra interattiva, inserisci le informazioni del tuo canale, seleziona le tue preferenze facendo clic sull'icona a forma di ingranaggio (⚙️) in alto a destra e premi \"Connetti\".",
+      "step7": "Nella finestra interattiva, inserisci le informazioni del tuo canale, seleziona le tue preferenze facendo clic sull'icona a forma di ingranaggio (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) in alto a destra e premi \"Connetti\".",
       "tips": {
         "title": "Suggerimenti Avanzati per OBS",
         "tip1": "Attiva <span class=\"inline-code\">Disattiva sorgente quando non visibile</span> per risparmiare risorse CPU/Memoria.",
