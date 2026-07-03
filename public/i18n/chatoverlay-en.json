@@ -25,7 +25,8 @@
     },
     "overview": {
       "title": "Overview",
-      "desc": "The Wildcat Chat Overlay is a highly customizable chat widget designed specifically for streamers to use inside OBS. No login or extensive setup is required; you simply add the URL as a Browser Source in OBS and configure everything on the screen through the settings panel. It natively supports both Twitch and YouTube Live chat."
+      "desc": "The Wildcat Chat Overlay is a highly customizable chat widget designed specifically for streamers to use inside OBS. No login or extensive setup is required; you simply add the URL as a Browser Source in OBS and configure everything on the screen through the settings panel. It natively supports both Twitch and YouTube Live chat.",
+      "getStarted": "Get Started with the Chat Overlay →"
     },
     "platforms": {
       "title": "Platform Support",
@@ -60,7 +61,7 @@
     },
     "scenes": {
       "title": "Chat Scene Creator",
-      "desc": "The <a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a> allows you to manage multiple instances of the chat overlay (e.g., one layout for \"Just Chatting\" and a different one for \"Gaming\").",
+      "desc": "The <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a> allows you to manage multiple instances of the chat overlay (e.g., one layout for \"Just Chatting\" and a different one for \"Gaming\").",
       "stateless": "<strong>Note on statelessness:</strong> The Chat Scene Creator acts only as a URL generator. When you create a new scene (e.g., \"GamingScene\"), it simply generates a unique URL parameter: <span class=\"inline-code\">chat.html?scene=GamingScene</span>.",
       "configNote": "All aesthetic configurations and connection options are saved <strong>locally in the OBS Browser Source's cache</strong>, not on our servers. Therefore, you must configure the chat from within OBS by right-clicking it and selecting <strong>Interact</strong>. Changes to one scene (one specific parameter) will not affect the settings saved under a different URL parameter."
     },

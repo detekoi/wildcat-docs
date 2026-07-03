@@ -25,7 +25,8 @@
     },
     "overview": {
       "title": "Aperçu",
-      "desc": "Le Wildcat Chat Overlay est un widget de chat hautement personnalisable conçu spécifiquement pour les streamers au sein d'OBS. Aucun identifiant ou configuration complexe n'est requis ; il vous suffit d'ajouter l'URL comme Source de Navigateur dans OBS et de tout configurer à l'écran via le panneau de paramètres. Il prend en charge nativement le chat Twitch et YouTube Live."
+      "desc": "Le Wildcat Chat Overlay est un widget de chat hautement personnalisable conçu spécifiquement pour les streamers au sein d'OBS. Aucun identifiant ou configuration complexe n'est requis ; il vous suffit d'ajouter l'URL comme Source de Navigateur dans OBS et de tout configurer à l'écran via le panneau de paramètres. Il prend en charge nativement le chat Twitch et YouTube Live.",
+      "getStarted": "Commencer avec l'Overlay de Chat →"
     },
     "platforms": {
       "title": "Plateformes Supportées",
@@ -60,7 +61,7 @@
     },
     "scenes": {
       "title": "Créateur de Scènes de Chat",
-      "desc": "Le <a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Créateur de Scènes de Chat</a> vous permet de gérer plusieurs instances de l'overlay de chat (par exemple, une mise en page pour le « Just Chatting » et une différente pour le « Gaming »).",
+      "desc": "Le <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Créateur de Scènes de Chat</a> vous permet de gérer plusieurs instances de l'overlay de chat (par exemple, une mise en page pour le « Just Chatting » et une différente pour le « Gaming »).",
       "stateless": "<strong>Note sur l'absence d'état :</strong> Le Créateur de Scènes de Chat agit uniquement comme un générateur d'URL. Lorsque vous créez une nouvelle scène (par exemple, « GamingScene »), il génère simplement un paramètre d'URL unique : <span class=\"inline-code\">chat.html?scene=GamingScene</span>.",
       "configNote": "Toutes les configurations esthétiques et options de connexion sont enregistrées <strong>localement dans le cache de la Source de Navigateur d'OBS</strong>, pas sur nos serveurs. Par conséquent, vous devez configurer le chat à partir d'OBS en faisant un clic droit dessus et en sélectionnant <strong>Interagir</strong>. Les modifications apportées à une scène (un paramètre spécifique) n'affecteront pas les paramètres enregistrés sous un paramètre d'URL différent."
     },

@@ -25,7 +25,8 @@
     },
     "overview": {
       "title": "概要",
-      "desc": "Wildcat Chat Overlayは、ストリーマーがOBS内で使用するために特別に設計された、高度にカスタマイズ可能なチャットウィジェットです。ログインや複雑なセットアップは不要です。OBSにブラウザソースとしてURLを追加し、設定パネルから画面上のすべてを構成するだけです。TwitchとYouTube Liveチャットの両方をネイティブにサポートしています。"
+      "desc": "Wildcat Chat Overlayは、ストリーマーがOBS内で使用するために特別に設計された、高度にカスタマイズ可能なチャットウィジェットです。ログインや複雑なセットアップは不要です。OBSにブラウザソースとしてURLを追加し、設定パネルから画面上のすべてを構成するだけです。TwitchとYouTube Liveチャットの両方をネイティブにサポートしています。",
+      "getStarted": "チャットオーバーレイを始める →"
     },
     "platforms": {
       "title": "プラットフォームのサポート",
@@ -60,7 +61,7 @@
     },
     "scenes": {
       "title": "チャットシーンクリエイター",
-      "desc": "<a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">チャットシーンクリエイター</a>を使用すると、チャットオーバーレイの複数のインスタンスを管理できます（例：「雑談」用のレイアウトと「ゲーム」用の別のレイアウト）。",
+      "desc": "<a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">チャットシーンクリエイター</a>を使用すると、チャットオーバーレイの複数のインスタンスを管理できます（例：「雑談」用のレイアウトと「ゲーム」用の別のレイアウト）。",
       "stateless": "<strong>ステートレス性に関する注意:</strong> チャットシーンクリエイターは、URLジェネレーターとしてのみ機能します。新しいシーン（例：「GamingScene」）を作成すると、一意のURLパラメーターが生成されます：<span class=\"inline-code\">chat.html?scene=GamingScene</span>。",
       "configNote": "すべての美的構成と接続オプションは、サーバーではなく、<strong>OBSブラウザソースのキャッシュにローカルに保存</strong>されます。したがって、OBS内で右クリックして<strong>相互作用</strong>を選択してチャットを構成する必要があります。1つのシーン（1つの特定のパラメーター）への変更は、別のURLパラメーターの下に保存された設定には影響しません。"
     },

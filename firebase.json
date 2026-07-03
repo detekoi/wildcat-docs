@@ -7,6 +7,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/chat-overlay/chat-scene-creator.html",
+        "destination": "https://wildcat.chat/chat-overlay/chat-scene-creator.html",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "/chatvibesdocs.html",

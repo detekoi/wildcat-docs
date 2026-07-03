@@ -25,7 +25,8 @@
     },
     "overview": {
       "title": "Resumen",
-      "desc": "El Wildcat Chat Overlay es un widget de chat altamente personalizable diseñado específicamente para que los streamers lo usen dentro de OBS. No se requiere inicio de sesión ni una configuración extensa; simplemente agregas la URL como una Fuente de Navegador en OBS y configuras todo en la pantalla a través del panel de configuración. Soporta nativamente chat de Twitch y YouTube Live."
+      "desc": "El Wildcat Chat Overlay es un widget de chat altamente personalizable diseñado específicamente para que los streamers lo usen dentro de OBS. No se requiere inicio de sesión ni una configuración extensa; simplemente agregas la URL como una Fuente de Navegador en OBS y configuras todo en la pantalla a través del panel de configuración. Soporta nativamente chat de Twitch y YouTube Live.",
+      "getStarted": "Comenzar con el Chat Overlay →"
     },
     "platforms": {
       "title": "Soporte de Plataformas",
@@ -60,7 +61,7 @@
     },
     "scenes": {
       "title": "Creador de Escenas de Chat",
-      "desc": "El <a href=\"/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Creador de Escenas de Chat</a> te permite gestionar múltiples instancias del overlay de chat (ej. un diseño para \"Just Chatting\" y uno diferente para \"Gaming\").",
+      "desc": "El <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Creador de Escenas de Chat</a> te permite gestionar múltiples instancias del overlay de chat (ej. un diseño para \"Just Chatting\" y uno diferente para \"Gaming\").",
       "stateless": "<strong>Nota sobre la falta de estado:</strong> El Creador de Escenas de Chat actúa solo como un generador de URLs. Cuando creas una nueva escena (ej. \"GamingScene\"), simplemente genera un parámetro de URL único: <span class=\"inline-code\">chat.html?scene=GamingScene</span>.",
       "configNote": "Todas las configuraciones estéticas y opciones de conexión se guardan <strong>localmente en el caché de la Fuente de Navegador de OBS</strong>, no en nuestros servidores. Por lo tanto, debes configurar el chat desde dentro de OBS haciendo clic derecho sobre él y seleccionando <strong>Interactuar</strong>. Los cambios en una escena (un parámetro específico) no afectarán a los ajustes guardados bajo un parámetro de URL diferente."
     },
