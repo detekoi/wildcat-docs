@@ -91,6 +91,8 @@
             <li><a href="#overview" data-i18n="sidebar.overview">Overview</a></li>
             <li><a href="#platforms" data-i18n="sidebar.platforms">Platform Support</a></li>
             <li><a href="#customization" data-i18n="sidebar.customization">Customization</a></li>
+            <li><a href="#colors" data-i18n="sidebar.colors">Color Customization</a></li>
+            <li><a href="#animations" data-i18n="sidebar.animations">Animations</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config Panel</a></li>
             <li><a href="#scenes" data-i18n="sidebar.scenes">Chat Scene Creator</a></li>
             <li><a href="#obs-setup" data-i18n="sidebar.obsSetup">OBS Setup</a></li>
@@ -166,6 +168,57 @@
                 palettes for ideal contrast, and apply the theme live!</p>
         </section>
 
+        <section id="colors" class="section">
+            <h2 data-i18n="chatOverlay.colors.title">Color Customization</h2>
+            <p data-i18n="chatOverlay.colors.desc">You have full control over the color of every element in the chat
+                overlay. Since standard color picker dialogs don't work inside the OBS browser source, all colors are
+                set by entering hex codes directly (e.g. <span class="inline-code">#FF5500</span>). Each color setting
+                also provides preset buttons with dynamic color swatches so you can see your current scheme at a
+                glance.</p>
+
+            <div class="expand-tip">
+                <i data-lucide="info" class="tip-icon"></i>
+                <div class="tip-content">
+                    <div class="tip-text" data-i18n="chatOverlay.colors.tip"><strong>Tip:</strong> You can search Google
+                        for "color picker" to use a built-in interactive color picker tool, then copy and paste the
+                        resulting hex codes directly into the settings fields.</div>
+                </div>
+            </div>
+
+            <h3 data-i18n="chatOverlay.colors.available.title">Available Color Settings</h3>
+            <ul>
+                <li data-i18n="chatOverlay.colors.available.bg"><strong>Background Color:</strong> The main background
+                    of chat messages. Works together with the background opacity slider for transparency control.</li>
+                <li data-i18n="chatOverlay.colors.available.border"><strong>Border Color:</strong> The border around chat
+                    message bubbles.</li>
+                <li data-i18n="chatOverlay.colors.available.text"><strong>Text Color:</strong> The color of chat message
+                    text.</li>
+                <li data-i18n="chatOverlay.colors.available.username"><strong>Username Color:</strong> The color of
+                    usernames displayed next to messages. You can also enable <strong>Override Username Colors</strong>
+                    to use your custom color instead of each user's Twitch name color.</li>
+                <li data-i18n="chatOverlay.colors.available.timestamp"><strong>Timestamp Color:</strong> The color of
+                    message timestamps (when timestamps are enabled).</li>
+                <li data-i18n="chatOverlay.colors.available.pronoun"><strong>Pronoun Badge Color:</strong> The color of
+                    pronoun badges displayed next to usernames (when pronouns are enabled). This can also be set to
+                    automatically match the timestamp color.</li>
+            </ul>
+        </section>
+
+        <section id="animations" class="section">
+            <h2 data-i18n="chatOverlay.animations.title">Animations</h2>
+            <p data-i18n="chatOverlay.animations.desc">Chat message entry and exit animations use the Web Animations API
+                for smooth, performant transitions. In window mode, new messages glide into view using a CSS
+                clipping-based offset animation on the entire message list, avoiding per-element height animations that
+                can cause jitter during busy chat. In popup mode, messages animate in and out with height and opacity
+                transitions.</p>
+
+            <h3 data-i18n="chatOverlay.animations.reducedMotion.title">Reduced Motion Support</h3>
+            <p data-i18n="chatOverlay.animations.reducedMotion.desc">The overlay respects the system-level
+                <span class="inline-code">prefers-reduced-motion</span> setting (e.g. the "Reduce motion" option in
+                macOS Accessibility settings). When enabled, entry animations are disabled for window-mode messages and
+                popup transition durations are minimized, providing a calmer viewing experience.</p>
+        </section>
+
         <section id="config" class="section">
             <h2 data-i18n="chatOverlay.config.title">Config Panel Features</h2>
             <p data-i18n="chatOverlay.config.desc">All of the modifications and customizations are handled directly
@@ -182,7 +235,8 @@
                 <li data-i18n="chatOverlay.config.feature4"><strong>Badges & Emotes:</strong> Toggle platform badges
                     natively for Twitch and YouTube to unify their design structures.</li>
                 <li data-i18n="chatOverlay.config.feature5"><strong>Theme Management:</strong> Access your AI-generated
-                    Themes, select from presets, and adjust granular colors manually if needed.</li>
+                    Themes, select from presets, and fine-tune individual colors via hex code input. See
+                    <a href="#colors" class="default-link-style">Color Customization</a> for details.</li>
             </ul>
         </section>
 

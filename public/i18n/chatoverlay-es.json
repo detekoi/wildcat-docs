@@ -17,7 +17,9 @@
     "customization": "Personalización",
     "config": "Panel de Configuración",
     "scenes": "Creador de Escenas de Chat",
-    "obsSetup": "Configuración de OBS"
+    "obsSetup": "Configuración de OBS",
+    "colors": "Personalización de colores",
+    "animations": "Animaciones"
   },
   "chatOverlay": {
     "page": {
@@ -80,6 +82,28 @@
         "tip1": "Activa <span class=\"inline-code\">Desactivar fuente cuando no sea visible</span> para ahorrar consumo de CPU/Memoria.",
         "tip2": "Para ocultar cualquier barra de desplazamiento, añade <span class=\"inline-code\">body { overflow: hidden; }</span> al campo CSS personalizado dentro de la ventana de propiedades.",
         "tip3": "Los ajustes se guardan en el caché de OBS. Si alguna vez \"Limpia el caché\" en OBS para esta fuente, deberás volver a configurar los ajustes estéticos."
+      }
+    },
+    "colors": {
+      "title": "Personalización de colores",
+      "desc": "Tienes control total sobre el color de cada elemento en la superposición de chat. Dado que los cuadros de diálogo de selección de color estándar no funcionan dentro de la fuente de navegador de OBS, todos los colores se configuran ingresando códigos hexadecimales directamente (por ejemplo, <span class=\"inline-code\">#FF5500</span>). Cada ajuste de color también proporciona botones preestablecidos con muestras de color dinámicas para que puedas ver tu esquema actual de un vistazo.",
+      "tip": "<strong>Consejo:</strong> Puedes buscar «selector de color» en Google para usar su herramienta interactiva integrada, luego copiar y pegar los códigos hexadecimales resultantes directamente en los campos de configuración.",
+      "available": {
+        "title": "Ajustes de color disponibles",
+        "bg": "<strong>Color de fondo:</strong> El fondo principal de los mensajes de chat. Funciona junto con el control deslizante de opacidad de fondo para el control de transparencia.",
+        "border": "<strong>Color del borde:</strong> El borde alrededor de las burbujas de mensajes de chat.",
+        "text": "<strong>Color del texto:</strong> El color del texto de los mensajes de chat.",
+        "username": "<strong>Color de nombre de usuario:</strong> El color de los nombres de usuario que se muestran junto a los mensajes. También puedes habilitar <strong>Anular colores de nombre de usuario</strong> para usar tu color personalizado en lugar del color de nombre de Twitch de cada usuario.",
+        "timestamp": "<strong>Color de marca de tiempo:</strong> El color de las marcas de tiempo de los mensajes (cuando las marcas de tiempo están habilitadas).",
+        "pronoun": "<strong>Color de la etiqueta de pronombre:</strong> El color de las etiquetas de pronombre que se muestran junto a los nombres de usuario (cuando los pronombres están habilitados). Esto también se puede configurar para que coincida automáticamente con el color de la marca de tiempo."
+      }
+    },
+    "animations": {
+      "title": "Animaciones",
+      "desc": "Las animaciones de entrada y salida de los mensajes de chat utilizan la API de Animaciones Web (WAAPI) para lograr transiciones suaves y eficientes. En el modo de ventana, los nuevos mensajes se deslizan en la vista mediante una animación de desplazamiento basada en el recorte de CSS en toda la lista de mensajes, evitando animaciones de altura por elemento que pueden causar parpadeos durante un chat muy activo. En el modo emergente, los mensajes aparecen y desaparecen con transiciones de altura y opacidad.",
+      "reducedMotion": {
+        "title": "Soporte de movimiento reducido",
+        "desc": "La superposición respeta la configuración del sistema <span class=\"inline-code\">prefers-reduced-motion</span> (por ejemplo, la opción «Reducir movimiento» en la configuración de accesibilidad de macOS). Cuando está habilitada, las animaciones de entrada se desactivan para los mensajes en modo ventana y las duradas de transición de los elementos emergentes se minimizan, proporcionando una experiencia de visualización más tranquila."
       }
     }
   }

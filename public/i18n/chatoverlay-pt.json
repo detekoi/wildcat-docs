@@ -17,7 +17,9 @@
     "customization": "Personalização",
     "config": "Painel de Configuração",
     "scenes": "Criador de Cenas de Chat",
-    "obsSetup": "Configuração do OBS"
+    "obsSetup": "Configuração do OBS",
+    "colors": "Personalização de Cores",
+    "animations": "Animações"
   },
   "chatOverlay": {
     "page": {
@@ -80,6 +82,28 @@
         "tip1": "Ative <span class=\"inline-code\">Desativar fonte quando não visível</span> para economizar recursos de CPU/Memória.",
         "tip2": "Para ocultar as barras de rolagem, adicione <span class=\"inline-code\">body { overflow: hidden; }</span> ao campo CSS personalizado dentro da janela de propriedades.",
         "tip3": "As configurações são salvas no cache do OBS. Se você algum dia \"Limpar o cache\" no OBS para esta fonte, precisará reconfigurar as definições estéticas."
+      }
+    },
+    "colors": {
+      "title": "Personalização de Cores",
+      "desc": "Você tem controle total sobre a cor de cada elemento na sobreposição de chat. Como as caixas de diálogo padrão de seleção de cores não funcionam dentro do navegador do OBS, todas as cores são definidas inserindo códigos hexadecimais diretamente (por exemplo, <span class=\"inline-code\">#FF5500</span>). Cada configuração de cor também oferece botões predefinidos com amostras dinâmicas de cores para que você possa ver seu esquema atual num relance.",
+      "tip": "<strong>Dica:</strong> Você pode pesquisar por \"seletor de cores\" no Google para usar a ferramenta de cores interativa integrada deles, depois copiar e colar os códigos hexadecimais resultantes diretamente nos campos de configuração.",
+      "available": {
+        "title": "Configurações de Cores Disponíveis",
+        "bg": "<strong>Cor de Fundo:</strong> O fundo principal das mensagens do chat. Funciona em conjunto com o controle deslizante de opacidade para controle de transparência.",
+        "border": "<strong>Cor da Borda:</strong> A borda ao redor dos balões de mensagens do chat.",
+        "text": "<strong>Cor do Texto:</strong> A cor do texto das mensagens do chat.",
+        "username": "<strong>Cor do Nome de Usuário:</strong> A cor dos nomes de usuário exibidos ao lado das mensagens. Você também pode habilitar <strong>Substituir Cores de Nome de Usuário</strong> para usar sua cor personalizada em vez da cor do Twitch de cada usuário.",
+        "timestamp": "<strong>Cor do Carimbo de Data/Hora:</strong> A cor dos carimbos de data/hora das mensagens (quando ativados).",
+        "pronoun": "<strong>Cor do Emblema de Pronome:</strong> A cor dos emblemas de pronomes exibidos ao lado dos nomes de usuário (quando ativados). Isso também pode ser configurado para corresponder automaticamente à cor do carimbo de data/hora."
+      }
+    },
+    "animations": {
+      "title": "Animações",
+      "desc": "As animações de entrada e saída das mensagens usam a API de Animações Web para transições suaves e eficientes. No modo de janela, as novas mensagens deslizam na tela usando uma animação de deslocamento baseada em recorte CSS em toda a lista de mensagens, evitando animações de altura por elemento que podem causar travamentos em chats movimentados. No modo popup, as mensagens aparecem e somem com transições de altura e opacidade.",
+      "reducedMotion": {
+        "title": "Suporte a Movimento Reduzido",
+        "desc": "A sobreposição respeita a configuração do sistema <span class=\"inline-code\">prefers-reduced-motion</span> (como a opção \"Reduzir movimento\" nas configurações de Acessibilidade do macOS). Quando ativada, as animações de entrada são desativas para mensagens em modo de janela e as durações de transição de popups são minimizadas, proporcionando uma experiência de visualização mais tranquila."
       }
     }
   }

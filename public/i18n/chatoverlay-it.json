@@ -17,7 +17,9 @@
     "customization": "Personalizzazione",
     "config": "Pannello di Configurazione",
     "scenes": "Creatore di Scene Chat",
-    "obsSetup": "Configurazione OBS"
+    "obsSetup": "Configurazione OBS",
+    "colors": "Personalizzazione Colori",
+    "animations": "Animazioni"
   },
   "chatOverlay": {
     "page": {
@@ -80,6 +82,28 @@
         "tip1": "Attiva <span class=\"inline-code\">Disattiva sorgente quando non visibile</span> per risparmiare risorse CPU/Memoria.",
         "tip2": "Per nascondere eventuali barre di scorrimento, aggiungi <span class=\"inline-code\">body { overflow: hidden; }</span> al campo CSS personalizzato all'interno della finestra delle proprietà.",
         "tip3": "Le impostazioni vengono salvate nella cache di OBS. Se mai dovessi \"Svuotare la cache\" in OBS per questa sorgente, dovrai riconfigurare le impostazioni estetiche."
+      }
+    },
+    "colors": {
+      "title": "Personalizzazione Colori",
+      "desc": "Hai il controllo completo sul colore di ogni elemento nell'overlay della chat. Poiché le finestre di dialogo standard di selezione del colore non funzionano all'interno della sorgente browser di OBS, tutti i colori vengono impostati inserendo direttamente i codici esadecimali (es. <span class=\"inline-code\">#FF5500</span>). Ogni impostazione del colore fornisce anche pulsanti preimpostati con campioni di colore dinamici per visualizzare lo schema corrente a colpo d'occhio.",
+      "tip": "<strong>Suggerimento:</strong> Puoi cercare \"selettore colore\" su Google per utilizzare lo strumento interattivo integrato, quindi copiare e incollare i codici esadecimali risultanti direttamente nei campi delle impostazioni.",
+      "available": {
+        "title": "Impostazioni Colore Disponibili",
+        "bg": "<strong>Colore di Sfondo:</strong> Lo sfondo principale dei messaggi di chat. Funziona insieme al cursore di opacità dello sfondo per il controllo della trasparenza.",
+        "border": "<strong>Colore del Bordo:</strong> Il bordo intorno alle bolle dei messaggi di chat.",
+        "text": "<strong>Colore del Testo:</strong> Il colore del testo del messaggio di chat.",
+        "username": "<strong>Colore Nome Utente:</strong> Il colore dei nomi utente visualizzati accanto ai messaggi. È anche possibile abilitare <strong>Sovrascrivi Colori Nome Utente</strong> per utilizzare il colore personalizzato al posto del colore del nome Twitch di ciascun utente.",
+        "timestamp": "<strong>Colore del Timestamp:</strong> Il colore dei timestamp dei messaggi (quando i timestamp sono abilitati).",
+        "pronoun": "<strong>Colore Badge Pronome:</strong> Il colore dei badge dei pronomi visualizzati accanto ai nomi utente (quando i pronomi sono abilitati). Può anche essere impostato per corrispondere automaticamente al colore del timestamp."
+      }
+    },
+    "animations": {
+      "title": "Animazioni",
+      "desc": "Le animazioni di ingresso e uscita dei messaggi di chat utilizzano la Web Animations API per transizioni fluide e performanti. In modalità finestra, i nuovi messaggi scivolano nella visualizzazione utilizzando un'animazione di offset basata sul ritaglio CSS sull'intero elenco dei messaggi, evitando animazioni di altezza per singolo elemento che possono causare rallentamenti durante le chat intense. In modalità popup, i messaggi si animano in entrata e in uscita con transizioni di altezza e opacità.",
+      "reducedMotion": {
+        "title": "Supporto Movimento Ridotto",
+        "desc": "L'overlay rispetta l'impostazione di sistema <span class=\"inline-code\">prefers-reduced-motion</span> (ad esempio l'opzione \"Riduci movimento\" nelle impostazioni di Accessibilità di macOS). Quando abilitata, le animazioni di ingresso sono disabilitate per i messaggi in modalità finestra e le durate delle transizioni popup sono ridotte al minimo, offrendo un'esperienza visiva più tranquilla."
       }
     }
   }

@@ -17,7 +17,9 @@
     "customization": "Anpassung",
     "config": "Konfigurations-Panel",
     "scenes": "Chat-Scene-Creator",
-    "obsSetup": "OBS-Setup"
+    "obsSetup": "OBS-Setup",
+    "colors": "Farbanpassung",
+    "animations": "Animationen"
   },
   "chatOverlay": {
     "page": {
@@ -80,6 +82,28 @@
         "tip1": "Aktivieren Sie <span class=\"inline-code\">Quelle bei Nicht-Sichtbarkeit herunterfahren</span>, um CPU- und Speicherressourcen zu sparen.",
         "tip2": "Um Scrollbalken auszublenden, fügen Sie <span class=\"inline-code\">body { overflow: hidden; }</span> in das Feld für benutzerdefiniertes CSS im Eigenschaftenfenster ein.",
         "tip3": "Einstellungen werden im OBS-Cache gespeichert. Wenn Sie für diese Quelle jemals den „Cache leeren“, müssen Sie die ästhetischen Einstellungen neu konfigurieren."
+      }
+    },
+    "colors": {
+      "title": "Farbanpassung",
+      "desc": "Sie haben die volle Kontrolle über die Farbe jedes Elements im Chat-Overlay. Da standardmäßige Farbauswahldialoge innerhalb der OBS-Browserquelle nicht funktionieren, werden alle Farben durch direkte Eingabe von Hex-Codes (z. B. <span class=\"inline-code\">#FF5500</span>) festgelegt. Jede Farbeinstellung bietet außerdem vordefinierte Schaltflächen mit dynamischen Farbfeldern, sodass Sie Ihr aktuelles Farbschema auf einen Blick sehen können.",
+      "tip": "<strong>Tipp:</strong> Sie können auf Google nach „Farbwähler“ suchen, um ein integriertes interaktives Farbauswahl-Tool zu nutzen, und die resultierenden Hex-Codes dann direkt in die Einstellungsfelder kopieren.",
+      "available": {
+        "title": "Verfügbare Farbeinstellungen",
+        "bg": "<strong>Hintergrundfarbe:</strong> Der Haupthintergrund von Chat-Nachrichten. Arbeitet mit dem Schieberegler für die Hintergrunddeckkraft zusammen, um die Transparenz zu steuern.",
+        "border": "<strong>Rahmenfarbe:</strong> Der Rahmen um die Chat-Nachrichtenblasen.",
+        "text": "<strong>Textfarbe:</strong> Die Farbe des Texts der Chat-Nachricht.",
+        "username": "<strong>Benutzername-Farbe:</strong> Die Farbe der Benutzernamen, die neben den Nachrichten angezeigt werden. Sie können auch <strong>Benutzername-Farben überschreiben</strong> aktivieren, um Ihre benutzerdefinierte Farbe anstelle der Twitch-Namensfarbe jedes Benutzers zu verwenden.",
+        "timestamp": "<strong>Zeitstempelfarbe:</strong> Die Farbe der Nachrichtenzeitstempel (wenn Zeitstempel aktiviert sind).",
+        "pronoun": "<strong>Pronomen-Abzeichenfarbe:</strong> Die Farbe der Pronomen-Abzeichen neben den Benutzernamen (wenn Pronomen aktiviert sind). Dies kann auch so eingestellt werden, dass es automatisch der Zeitstempelfarbe entspricht."
+      }
+    },
+    "animations": {
+      "title": "Animationen",
+      "desc": "Animationen zum Ein- und Ausblenden von Chat-Nachrichten verwenden die Web Animations API für reibungslose und performante Übergänge. Im Fenstermodus gleiten neue Nachrichten mithilfe einer CSS-Clipping-basierten Versatzanimation über die gesamte Nachrichtenliste in die Ansicht. Dies vermeidet Höhenanimationen pro Element, die bei aktivem Chat zu Rucklern führen können. Im Pop-up-Modus werden Nachrichten mit Höhen- und Deckkraftübergängen ein- und ausgeblendet.",
+      "reducedMotion": {
+        "title": "Unterstützung für reduzierte Bewegung",
+        "desc": "Das Overlay berücksichtigt die Systemeinstellung <span class=\"inline-code\">prefers-reduced-motion</span> (z. B. die Option „Bewegung reduzieren“ in den macOS-Bedienungshilfen). Wenn diese Option aktiviert ist, werden die Einblendanimationen für Nachrichten im Fenstermodus deaktiviert und die Übergangsdauern für Pop-ups minimiert, um ein ruhigeres Seherlebnis zu bieten."
       }
     }
   }

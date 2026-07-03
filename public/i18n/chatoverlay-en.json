@@ -17,7 +17,9 @@
     "customization": "Customization",
     "config": "Config Panel",
     "scenes": "Chat Scene Creator",
-    "obsSetup": "OBS Setup"
+    "obsSetup": "OBS Setup",
+    "colors": "Color Customization",
+    "animations": "Animations"
   },
   "chatOverlay": {
     "page": {
@@ -80,6 +82,28 @@
         "tip1": "Enable <span class=\"inline-code\">Shutdown source when not visible</span> to save CPU/Memory overhead.",
         "tip2": "To hide any scrollbars, add <span class=\"inline-code\">body { overflow: hidden; }</span> to the Custom CSS field inside the properties window.",
         "tip3": "Settings are saved to OBS cache. If you ever \"Clear Cache\" in OBS for this source, you will need to reconfigure the aesthetic settings."
+      }
+    },
+    "colors": {
+      "title": "Color Customization",
+      "desc": "You have full control over the color of every element in the chat overlay. Since standard color picker dialogs don't work inside the OBS browser source, all colors are set by entering hex codes directly (e.g. <span class=\"inline-code\">#FF5500</span>). Each color setting also provides preset buttons with dynamic color swatches so you can see your current scheme at a glance.",
+      "tip": "<strong>Tip:</strong> You can search Google for \"color picker\" to use a built-in interactive color picker tool, then copy and paste the resulting hex codes directly into the settings fields.",
+      "available": {
+        "title": "Available Color Settings",
+        "bg": "<strong>Background Color:</strong> The main background of chat messages. Works together with the background opacity slider for transparency control.",
+        "border": "<strong>Border Color:</strong> The border around chat message bubbles.",
+        "text": "<strong>Text Color:</strong> The color of chat message text.",
+        "username": "<strong>Username Color:</strong> The color of usernames displayed next to messages. You can also enable <strong>Override Username Colors</strong> to use your custom color instead of each user's Twitch name color.",
+        "timestamp": "<strong>Timestamp Color:</strong> The color of message timestamps (when timestamps are enabled).",
+        "pronoun": "<strong>Pronoun Badge Color:</strong> The color of pronoun badges displayed next to usernames (when pronouns are enabled). This can also be set to automatically match the timestamp color."
+      }
+    },
+    "animations": {
+      "title": "Animations",
+      "desc": "Chat message entry and exit animations use the Web Animations API for smooth, performant transitions. In window mode, new messages glide into view using a CSS clipping-based offset animation on the entire message list, avoiding per-element height animations that can cause jitter during busy chat. In popup mode, messages animate in and out with height and opacity transitions.",
+      "reducedMotion": {
+        "title": "Reduced Motion Support",
+        "desc": "The overlay respects the system-level <span class=\"inline-code\">prefers-reduced-motion</span> setting (e.g. the \"Reduce motion\" option in macOS Accessibility settings). When enabled, entry animations are disabled for window-mode messages and popup transition durations are minimized, providing a calmer viewing experience."
       }
     }
   }
