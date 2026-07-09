@@ -280,6 +280,32 @@
         "optionsCooldownCmd": "!command options <имя> Cooldown=<секунды>",
         "optionsTypeCmd": "!command options <имя> type=<текст|подсказка>"
       }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Создавайте, редактируйте и управляйте автоматическими таймерами чата. Таймерами также можно управлять через <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Веб-панель</a>.</span>",
+      "usage": {
+        "addCmd": "!timer add <имя> <интервал> <ответ>",
+        "add": "Создает новый текстовый таймер с заданным интервалом в минутах",
+        "addAiCmd": "!timer addai <имя> <интервал> <промпт>",
+        "addAi": "Создает новый таймер на базе ИИ с заданным интервалом в минутах",
+        "editCmd": "!timer edit <имя> <ответ>",
+        "edit": "Обновляет ответ существующего таймера",
+        "intervalCmd": "!timer interval <имя> <минуты>",
+        "interval": "Обновляет интервал срабатывания (минимальное количество минут)",
+        "linesCmd": "!timer lines <имя> <количество>",
+        "lines": "Обновляет минимально необходимое количество строк чата между срабатываниями",
+        "enableCmd": "!timer enable <имя>",
+        "enable": "Включает приостановленный таймер",
+        "disableCmd": "!timer disable <имя>",
+        "disable": "Приостанавливает активный таймер",
+        "removeCmd": "!timer remove <имя>",
+        "remove": "Удаляет таймер",
+        "showCmd": "!timer show <имя>",
+        "show": "Показывает текущие настройки для конкретного таймера",
+        "listCmd": "!timer list",
+        "list": "Показывает список всех таймеров для вашего канала"
+      }
     }
   },
   "ui": {

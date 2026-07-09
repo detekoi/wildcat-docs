@@ -280,6 +280,32 @@
         "optionsCooldownCmd": "!opções de comando <nome> cooldown=<segundos>",
         "optionsTypeCmd": "!opções de comando <nome> type=<text|prompt>"
       }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Crie, edite e gerencie temporizadores de chat automatizados. Os temporizadores também podem ser gerenciados via <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Painel Web</a>.</span>",
+      "usage": {
+        "addCmd": "!timer add <nome> <intervalo> <resposta>",
+        "add": "Cria um novo temporizador baseado em texto com o intervalo fornecido em minutos",
+        "addAiCmd": "!timer addai <nome> <intervalo> <prompt>",
+        "addAi": "Cria um novo temporizador com tecnologia de IA com o intervalo fornecido em minutos",
+        "editCmd": "!timer edit <nome> <resposta>",
+        "edit": "Atualiza a resposta de um temporizador existente",
+        "intervalCmd": "!timer interval <nome> <minutos>",
+        "interval": "Atualiza o intervalo de execução (minutos mínimos)",
+        "linesCmd": "!timer lines <nome> <número>",
+        "lines": "Atualiza as linhas de chat mínimas necessárias entre as execuções",
+        "enableCmd": "!timer enable <nome>",
+        "enable": "Habilita um temporizador pausado",
+        "disableCmd": "!timer disable <nome>",
+        "disable": "Pausa um temporizador ativo",
+        "removeCmd": "!timer remove <nome>",
+        "remove": "Exclui um temporizador",
+        "showCmd": "!timer show <nome>",
+        "show": "Mostra as configurações atuais de um temporizador específico",
+        "listCmd": "!timer list",
+        "list": "Lista todos os temporizadores para o seu canal"
+      }
     }
   },
   "ui": {

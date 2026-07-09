@@ -313,6 +313,36 @@
                     </td>
                 </tr>
             </tbody>
+            <tbody class="dropdown-group">
+                <tr class="dropdown-summary">
+                    <td data-i18n-key="commands.timer.name">!timer <span class="mod-badge">Mod</span></td>
+                    <td data-i18n-key="commands.timer.description"><span class="description-text">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href="https://app.wildcat.chat/" class="default-link-style" target="_blank">Web Dashboard</a>.</span><span class="dropdown-toggle">&#x25BC;</span></td>
+                </tr>
+                <tr class="dropdown-details" style="display:none;">
+                    <td colspan="2">
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.addCmd">!timer add &lt;name&gt; &lt;interval&gt; &lt;response&gt;</code>
+                        <span data-i18n="commands.timer.usage.add">Creates a new text-based timer with the given interval in minutes</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.addAiCmd">!timer addai &lt;name&gt; &lt;interval&gt; &lt;prompt&gt;</code>
+                        <span data-i18n="commands.timer.usage.addAi">Creates a new AI-powered timer with the given interval in minutes</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.editCmd">!timer edit &lt;name&gt; &lt;response&gt;</code>
+                        <span data-i18n="commands.timer.usage.edit">Updates an existing timer's response</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.intervalCmd">!timer interval &lt;name&gt; &lt;minutes&gt;</code>
+                        <span data-i18n="commands.timer.usage.interval">Updates the firing interval (minimum minutes)</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.linesCmd">!timer lines &lt;name&gt; &lt;number&gt;</code>
+                        <span data-i18n="commands.timer.usage.lines">Updates the minimum required chat lines between firings</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.enableCmd">!timer enable &lt;name&gt;</code>
+                        <span data-i18n="commands.timer.usage.enable">Enables a paused timer</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.disableCmd">!timer disable &lt;name&gt;</code>
+                        <span data-i18n="commands.timer.usage.disable">Pauses an active timer</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.removeCmd">!timer remove &lt;name&gt;</code>
+                        <span data-i18n="commands.timer.usage.remove">Deletes a timer</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.showCmd">!timer show &lt;name&gt;</code>
+                        <span data-i18n="commands.timer.usage.show">Shows the current settings for a specific timer</span>
+                        <code class="mod-command" data-i18n-cmd="commands.timer.usage.listCmd">!timer list</code>
+                        <span data-i18n="commands.timer.usage.list">Lists all timers for your channel</span>
+                    </td>
+                </tr>
+            </tbody>
             <tbody>
                 <tr class="category-header" id="games">
                     <td colspan="2" data-i18n="table.categories.games">Games</td>

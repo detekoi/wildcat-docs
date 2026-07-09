@@ -280,6 +280,32 @@
         "optionsCooldownCmd": "!command options <nom> cooldown=<secondes>",
         "optionsTypeCmd": "!options de commande <nom> type=<texte|invite>"
       }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Créez, modifiez et gérez des minuteurs de chat automatisés. Les minuteurs peuvent également être gérés via le <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Tableau de bord Web</a>.</span>",
+      "usage": {
+        "addCmd": "!timer add <nom> <intervalle> <réponse>",
+        "add": "Crée un nouveau minuteur textuel avec l'intervalle donné en minutes",
+        "addAiCmd": "!timer addai <nom> <intervalle> <prompt>",
+        "addAi": "Crée un nouveau minuteur géré par l'IA avec l'intervalle donné en minutes",
+        "editCmd": "!timer edit <nom> <réponse>",
+        "edit": "Met à jour la réponse d'un minuteur existant",
+        "intervalCmd": "!timer interval <nom> <minutes>",
+        "interval": "Met à jour l'intervalle d'exécution (minutes minimales)",
+        "linesCmd": "!timer lines <nom> <nombre>",
+        "lines": "Met à jour le nombre minimum de lignes de chat requises entre les exécutions",
+        "enableCmd": "!timer enable <nom>",
+        "enable": "Active un minuteur en pause",
+        "disableCmd": "!timer disable <nom>",
+        "disable": "Met en pause un minuteur actif",
+        "removeCmd": "!timer remove <nom>",
+        "remove": "Supprime un minuteur",
+        "showCmd": "!timer show <nom>",
+        "show": "Affiche les paramètres actuels pour un minuteur spécifique",
+        "listCmd": "!timer list",
+        "list": "Liste tous les minuteurs de votre chaîne"
+      }
     }
   },
   "ui": {

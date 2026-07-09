@@ -128,6 +128,32 @@
         "optionsTypeCmd": "!command options <name> type=<text|prompt>"
       }
     },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
+      "usage": {
+        "addCmd": "!timer add <name> <interval> <response>",
+        "add": "Creates a new text-based timer with the given interval in minutes",
+        "addAiCmd": "!timer addai <name> <interval> <prompt>",
+        "addAi": "Creates a new AI-powered timer with the given interval in minutes",
+        "editCmd": "!timer edit <name> <response>",
+        "edit": "Updates an existing timer's response",
+        "intervalCmd": "!timer interval <name> <minutes>",
+        "interval": "Updates the firing interval (minimum minutes)",
+        "linesCmd": "!timer lines <name> <number>",
+        "lines": "Updates the minimum required chat lines between firings",
+        "enableCmd": "!timer enable <name>",
+        "enable": "Enables a paused timer",
+        "disableCmd": "!timer disable <name>",
+        "disable": "Pauses an active timer",
+        "removeCmd": "!timer remove <name>",
+        "remove": "Deletes a timer",
+        "showCmd": "!timer show <name>",
+        "show": "Shows the current settings for a specific timer",
+        "listCmd": "!timer list",
+        "list": "Lists all timers for your channel"
+      }
+    },
     "geo": {
       "name": "!geo",
       "description": "Starts or manages Geo-Game, a geography guessing game for IRL or virtual worlds.",

@@ -280,6 +280,32 @@
         "optionsCooldownCmd": "!コマンド オプション <名前> クールダウン=<秒>",
         "optionsTypeCmd": "!コマンド オプション <名前> type=<テキスト|プロンプト>"
       }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">自動チャットタイマーを作成、編集、管理します。タイマーは、<a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Webダッシュボード</a>経由でも管理できます。</span>",
+      "usage": {
+        "addCmd": "!timer add <名前> <間隔> <応答>",
+        "add": "指定された間隔（分）で新しいテキストベースのタイマーを作成します",
+        "addAiCmd": "!timer addai <名前> <間隔> <プロンプト>",
+        "addAi": "指定された間隔（分）で新しいAI搭載のタイマーを作成します",
+        "editCmd": "!timer edit <名前> <応答>",
+        "edit": "既存のタイマーの応答を更新します",
+        "intervalCmd": "!timer interval <名前> <分数>",
+        "interval": "実行間隔（最小分数）を更新します",
+        "linesCmd": "!timer lines <名前> <数値>",
+        "lines": "実行間の最小チャット行数を更新します",
+        "enableCmd": "!timer enable <名前>",
+        "enable": "一時停止中のタイマーを有効にします",
+        "disableCmd": "!timer disable <名前>",
+        "disable": "アクティブなタイマーを一時停止します",
+        "removeCmd": "!timer remove <名前>",
+        "remove": "タイマーを削除します",
+        "showCmd": "!timer show <名前>",
+        "show": "特定のタイマーの現在の設定を表示します",
+        "listCmd": "!timer list",
+        "list": "チャンネルのすべてのタイマーをリストします"
+      }
     }
   },
   "ui": {

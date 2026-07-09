@@ -280,6 +280,32 @@
         "optionsCooldownCmd": "!Befehlsoptionen <Name> cooldown=<Sekunden>",
         "optionsTypeCmd": "!Befehlsoptionen <name> type=<text|prompt>"
       }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Erstelle, bearbeite und verwalte automatisierte Chat-Timer. Timer können auch über das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
+      "usage": {
+        "addCmd": "!timer add <name> <intervall> <antwort>",
+        "add": "Erstellt einen neuen textbasierten Timer mit dem angegebenen Intervall in Minuten",
+        "addAiCmd": "!timer addai <name> <intervall> <prompt>",
+        "addAi": "Erstellt einen neuen KI-gesteuerten Timer mit dem angegebenen Intervall in Minuten",
+        "editCmd": "!timer edit <name> <antwort>",
+        "edit": "Aktualisiert die Antwort eines bestehenden Timers",
+        "intervalCmd": "!timer interval <name> <minuten>",
+        "interval": "Aktualisiert das Ausführungsintervall (Mindestminuten)",
+        "linesCmd": "!timer lines <name> <anzahl>",
+        "lines": "Aktualisiert die erforderlichen Mindest-Chat-Zeilen zwischen Ausführungen",
+        "enableCmd": "!timer enable <name>",
+        "enable": "Aktiviert einen pausierten Timer",
+        "disableCmd": "!timer disable <name>",
+        "disable": "Pausiert einen aktiven Timer",
+        "removeCmd": "!timer remove <name>",
+        "remove": "Löscht einen Timer",
+        "showCmd": "!timer show <name>",
+        "show": "Zeigt die aktuellen Einstellungen für einen bestimmten Timer an",
+        "listCmd": "!timer list",
+        "list": "Listet alle Timer für deinen Kanal auf"
+      }
     }
   },
   "ui": {
