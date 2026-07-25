@@ -61,8 +61,8 @@
         "desc": "Emotes de largura zero (como chapéus, máscaras, efeitos de chuva ou sobreposições sazonais) sobrepõem-se dinamicamente ao emote anterior quando separados por um espaço (ex: <span class=\"inline-code\">catJAM cvHazmat</span>). Múltiplos emotes zero-width consecutivos podem encadear-se para criar camadas complexas. O ampliador de emotes individuais aplica-se automaticamente a combinações sobrepostas."
       },
       "precedence": {
-        "title": "Prioridade e Alternativas",
-        "desc": "A correspondência de emotes diferencia maiúsculas de minúsculas por palavra inteira. Emotes nativos da Twitch e cheermotes têm sempre prioridade sobre emotes de terceiros. Emotes de canal substituem os globais. Quando o mesmo código de emote existe em múltiplos provedores no mesmo escopo, o 7TV tem prioridade sobre o BTTV, que por sua vez tem prioridade sobre o FFZ."
+        "title": "Prioridade e Correspondência",
+        "desc": "Os emotes correspondem a palavras exatas diferenciando maiúsculas de minúsculas. Emotes nativos da Twitch têm prioridade sobre os de terceiros, e emotes de canal têm prioridade sobre conjuntos globais."
       },
       "safety": {
         "title": "Segurança de Conteúdo e Personalização",

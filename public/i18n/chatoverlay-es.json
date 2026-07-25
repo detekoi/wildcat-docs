@@ -61,8 +61,8 @@
         "desc": "Los emoticonos de ancho cero (como sombreros, máscaras, efectos de lluvia o capas estacionales) se superponen dinámicamente sobre el emoticono anterior cuando están separados por un espacio (p. ej. <span class=\"inline-code\">catJAM cvHazmat</span>). Varios emoticonos de ancho cero consecutivos pueden encadenarse para crear capas complejas. La ampliación de emoticonos individuales se aplica automáticamente a las combinaciones superpuestas."
       },
       "precedence": {
-        "title": "Prioridad y Alternativas",
-        "desc": "La coincidencia de emoticonos distingue entre mayúsculas y minúsculas por palabra completa. Los emoticonos nativos de Twitch y cheermotes siempre tienen prioridad sobre los de terceros. Los emoticonos del canal sobrescriben los globales. Si el mismo código de emoticono existe en varios proveedores de terceros dentro del mismo ámbito, 7TV tiene prioridad sobre BTTV, que a su vez tiene prioridad sobre FFZ."
+        "title": "Prioridad y Coincidencia",
+        "desc": "Los emoticonos coinciden con palabras exactas diferenciando mayúsculas de minúsculas. Los emoticonos nativos de Twitch tienen prioridad sobre los de terceros, y los emoticonos del canal tienen prioridad sobre los conjuntos globales."
       },
       "safety": {
         "title": "Seguridad de Contenido y Personalización",

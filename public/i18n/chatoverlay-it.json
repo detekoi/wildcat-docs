@@ -61,8 +61,8 @@
         "desc": "Le emote a larghezza zero (come cappelli, maschere, effetti di pioggia o sovrapposizioni stagionali) si sovrappongono dinamicamente sull'emote precedente se separate da uno spazio (es. <span class=\"inline-code\">catJAM cvHazmat</span>). Più emote zero-width consecutive possono concatenarsi per creare livelli complessi. L'ingrandimento delle emote singole si applica automaticamente anche alle combinazioni sovrapposte."
       },
       "precedence": {
-        "title": "Priorità e Alternative",
-        "desc": "La corrispondenza delle emote distingue tra maiuscole e minuscole per parola intera. Le emote native di Twitch e i cheermote hanno sempre la precedenza sulle emote di terze parti. Le emote del canale sovrascrivono quelle globali. Se lo stesso codice emote esiste su più fornitori di terze parti nello stesso ambito, 7TV ha la precedenza su BTTV, che a sua volta ha la precedenza su FFZ."
+        "title": "Priorità e Corrispondenza",
+        "desc": "Le emote vengono riconosciute come parole esatte con distinzione tra maiuscole e minuscole. Le emote native di Twitch hanno la priorità sulle emote di terze parti, e le emote del canale hanno la priorità sui set globali."
       },
       "safety": {
         "title": "Sicurezza dei Contenuti e Personalizzazione",

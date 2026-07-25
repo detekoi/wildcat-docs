@@ -61,8 +61,8 @@
         "desc": "Zero-width emotes (such as hats, masks, rain effects, or seasonal overlays) dynamically stack on top of the preceding emote when separated by a space (e.g. <span class=\"inline-code\">catJAM cvHazmat</span>). Consecutive zero-width emotes can chain to create complex multi-layered emote stacks. Single-emote enlargement automatically applies to stacked emote combinations."
       },
       "precedence": {
-        "title": "Precedence & Fallbacks",
-        "desc": "Emote matching is case-sensitive whole-token matching. Native Twitch emotes and cheermotes always take priority over third-party emotes. Channel-specific emote sets override global sets. When the same emote code exists across multiple third-party providers within the same scope, 7TV takes precedence over BTTV, which takes precedence over FFZ."
+        "title": "Priority & Matching",
+        "desc": "Emotes are matched as exact, case-sensitive words. Twitch native emotes take priority over third-party emotes, and channel emotes take priority over global sets."
       },
       "safety": {
         "title": "Content Safety & Customization",

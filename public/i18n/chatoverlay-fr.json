@@ -61,8 +61,8 @@
         "desc": "Les émotes de largeur zéro (tels que chapeaux, masques, effets de pluie ou superpositions saisonnières) se superposent dynamiquement sur l'émote précédente lorsqu'ils sont séparés par un espace (ex. <span class=\"inline-code\">catJAM cvHazmat</span>). Plusieurs émotes zero-width consécutifs peuvent s'enchaîner pour créer des superpositions complexes. L'agrandissement des émotes uniques s'applique automatiquement aux combinaisons superposées."
       },
       "precedence": {
-        "title": "Priorité & Replis",
-        "desc": "La correspondance des émotes est sensible à la casse sur les mots entiers. Les émotes natifs Twitch et cheermotes ont toujours la priorité sur les émotes tiers. Les émotes de chaîne remplacent les émotes globaux. Si le même code d'émote existe chez plusieurs fournisseurs tiers dans le même périmètre, 7TV prévaut sur BTTV, qui prévaut sur FFZ."
+        "title": "Priorité & Correspondance",
+        "desc": "Les émotes correspondent à des mots exacts respectant la casse. Les émotes natifs Twitch ont la priorité sur les émotes tiers, et les émotes de chaîne ont la priorité sur les ensembles globaux."
       },
       "safety": {
         "title": "Sécurité du Contenu & Personnalisation",

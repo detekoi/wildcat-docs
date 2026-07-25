@@ -61,8 +61,8 @@
         "desc": "Zero-Width-Emotes (wie Hüte, Masken, Regeneffekte oder saisonale Overlays) werden dynamisch über das vorherige Emote gestapelt, wenn sie durch ein Leerzeichen getrennt sind (z. B. <span class=\"inline-code\">catJAM cvHazmat</span>). Aufeinanderfolgende Zero-Width-Emotes können verkettet werden, um mehrschichtige Emote-Stapel zu erstellen. Die automatische Vergrößerung einzelner Emotes gilt auch für gestapelte Emote-Kombinationen."
       },
       "precedence": {
-        "title": "Rangfolge & Fallbacks",
-        "desc": "Die Emote-Zuweisung erfolgt als exakte, groß-/kleinschreibungssensitive Ganzwort-Übereinstimmung. Native Twitch-Emotes und Cheermotes haben immer Vorrang vor Drittanbieter-Emotes. Kanalspezifische Emote-Sets überschreiben globale Sets. Wenn derselbe Emote-Code bei mehreren Drittanbieter-Diensten innerhalb desselben Bereichs existiert, hat 7TV Vorrang vor BTTV, welches wiederum Vorrang vor FFZ hat."
+        "title": "Priorität & Erkennung",
+        "desc": "Emotes werden als exakte Wörter mit Unterscheidung von Groß- und Kleinschreibung erkannt. Native Twitch-Emotes haben Vorrang vor Drittanbieter-Emotes, und Kanal-Emotes haben Vorrang vor globalen Sets."
       },
       "safety": {
         "title": "Inhaltssicherheit & Anpassung",
