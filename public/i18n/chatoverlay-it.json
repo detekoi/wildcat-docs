@@ -18,7 +18,8 @@
     "config": "Pannello di Configurazione",
     "scenes": "Creatore di Scene Chat",
     "obsSetup": "Configurazione OBS",
-    "colors": "Personalizzazione Colori",
+    "colors": "Personalizzazione dei Colori",
+    "emotes": "Emote di Terze Parti",
     "animations": "Animazioni"
   },
   "chatOverlay": {
@@ -27,38 +28,57 @@
     },
     "overview": {
       "title": "Panoramica",
-      "desc": "Il Wildcat Chat Overlay è un widget di chat altamente personalizzabile progettato specificamente per gli streamer da utilizzare all'interno di OBS. Non è richiesto alcun login o configurazione estesa; è sufficiente aggiungere l'URL come Sorgente Browser in OBS e configurare tutto sullo schermo tramite il pannello delle impostazioni. Supporta nativamente la chat live di Twitch e YouTube.",
-      "getStarted": "Inizia con l'Overlay Chat →"
+      "desc": "Il Wildcat Chat Overlay è un widget di chat altamente personalizzabile progettato specificamente per gli streamer dentro OBS. Non è richiesto alcun accesso o configurazione complessa; basta aggiungere l'URL come sorgente browser in OBS e configurare tutto sullo schermo tramite il pannello delle impostazioni. Supporta nativamente la chat dal vivo di Twitch e YouTube.",
+      "getStarted": "Inizia con il Chat Overlay →"
     },
     "platforms": {
       "title": "Supporto Piattaforme",
-      "desc": "L'overlay di chat si connette a varie piattaforme di streaming. Puoi configurare la tua piattaforma di destinazione dal pannello di configurazione in OBS.",
+      "desc": "L'overlay di chat si connette a varie piattaforme di streaming. Puoi configurare la tua piattaforma dal pannello delle impostazioni in OBS.",
       "twitch": "<strong>Twitch:</strong> Inserisci il nome del tuo canale (es. `wildcatgamer`). Badge ed emote sono supportati nativamente.",
-      "youtube": "<strong>YouTube:</strong> Supporta la chat live di YouTube sia per stream pubblici che non in elenco. Per gli stream pubblici, inserisci il tuo <strong>nome utente del canale, ID del canale, URL del video o ID del video</strong>. Per gli stream non in elenco, è richiesto l'<strong>URL del video</strong>. (Nota: gli stream privati non sono supportati)."
+      "youtube": "<strong>YouTube:</strong> Supporta la chat dal vivo di YouTube per stream pubblici e non in elenco. Per gli stream pubblici, inserisci il tuo <strong>nome utente canale, ID canale, URL video o ID video</strong>. Per gli stream non in elenco, è richiesto l'<strong>URL video</strong>. (Nota: gli stream privati non sono supportati)."
     },
     "customization": {
       "title": "Personalizzazione e Temi",
-      "desc": "L'overlay di chat include potenti strumenti di personalizzazione estetica. Puoi cambiare lo stile fondamentale direttamente tramite il menu di configurazione.",
+      "desc": "L'overlay di chat include potenti strumenti di personalizzazione estetica. Puoi modificare lo stile fondamentale direttamente tramite il menu di configurazione.",
       "obsConfig": {
-        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configurazione in OBS:</strong> L'URL della sorgente browser carica solo l'overlay. Tutte le impostazioni della chat (canale, tema, colori, font, ecc.) sono configurate <strong>all'interno di OBS</strong>:",
-        "step1": "Tasto destro -> intergisci, o fai clic sul pulsante Interagisci con la sorgente browser selezionata nel monitor/anteprima.",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configurazione in OBS:</strong> L'URL della sorgente browser carica solo l'overlay. Tutte le impostazioni della chat (canale, tema, colori, font, ecc.) vengono configurate <strong>in OBS</strong>:",
+        "step1": "Tasto destro -> Interagisci, oppure fai clic sul pulsante <strong>Interagisci</strong> con la sorgente browser selezionata nell'anteprima.",
         "step2": "Nella finestra di interazione:",
         "substep1": "Inserisci il nome del tuo canale Twitch e fai clic su \"Connetti\".",
-        "substep2": "Passa il mouse sopra la chat e fai clic sull'ingranaggio delle impostazioni (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) per personalizzare l'aspetto (temi, colori, font, ecc.).",
-        "step3": "Le impostazioni vengono salvate automaticamente all'interno di OBS per quella sorgente specifica."
+        "substep2": "Passa il mouse sulla chat e fai clic sull'ingranaggio delle impostazioni (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) per personalizzare l'aspetto (temi, colori, font, ecc.).",
+        "step3": "Le impostazioni vengono salvate automaticamente in OBS per quella specifica sorgente."
       }
     },
     "themes": {
-      "title": "Temi AI Automatici",
-      "desc": "Una delle caratteristiche più potenti del Wildcat Chat Overlay è il suo generatore di temi AI in linguaggio naturale. All'interno del pannello di configurazione, scrivi semplicemente una descrizione dell'atmosfera, dell'umore o dell'estetica che desideri (es. \"notte neon cyberpunk\", \"accogliente baita di legno sulla neve\", \"vintage 90s vaporwave\"). L'overlay genererà in modo intelligente le variabili CSS corrispondenti, regolerà le tavolozze dei colori per un contrasto ideale e applicherà il tema dal vivo!"
+      "title": "Temi IA Automatici",
+      "desc": "Una delle funzionalità più potenti del Wildcat Chat Overlay è il suo generatore di temi IA in linguaggio naturale. Nel pannello di configurazione, basta digitare una descrizione dell'atmosfera o dello stile desiderato (es. \"cyberpunk neon night\", \"cozy wooden cabin in the snow\", \"vintage 90s vaporwave\"). L'overlay genererà intelligentemente le variabili CSS corrispondenti, adatterà le tavolozze dei colori per un contrasto ideale e applicherà il tema dal vivo!"
+    },
+    "emotes": {
+      "title": "Emote di Terze Parti e Sovrapposizione",
+      "desc": "Il Wildcat Chat Overlay supporta nativamente i fornitori di emote Twitch di terze parti, tra cui <strong>BetterTTV (BTTV)</strong>, <strong>FrankerFaceZ (FFZ)</strong> e <strong>7TV</strong>. I set di emote globali e del canale vengono caricati automaticamente per i canali Twitch.",
+      "zeroWidth": {
+        "title": "Zero-Width e Sovrapposizione",
+        "desc": "Le emote a larghezza zero (come cappelli, maschere, effetti di pioggia o sovrapposizioni stagionali) si sovrappongono dinamicamente sull'emote precedente se separate da uno spazio (es. <span class=\"inline-code\">catJAM cvHazmat</span>). Più emote zero-width consecutive possono concatenarsi per creare livelli complessi. L'ingrandimento delle emote singole si applica automaticamente anche alle combinazioni sovrapposte."
+      },
+      "precedence": {
+        "title": "Priorità e Alternative",
+        "desc": "La corrispondenza delle emote distingue tra maiuscole e minuscole per parola intera. Le emote native di Twitch e i cheermote hanno sempre la precedenza sulle emote di terze parti. Le emote del canale sovrascrivono quelle globali. Se lo stesso codice emote esiste su più fornitori di terze parti nello stesso ambito, 7TV ha la precedenza su BTTV, che a sua volta ha la precedenza su FFZ."
+      },
+      "safety": {
+        "title": "Sicurezza dei Contenuti e Personalizzazione",
+        "desc": "Puoi personalizzare il comportamento delle emote di terze parti direttamente dal pannello delle impostazioni:",
+        "toggle": "<strong>Attiva Emote di Terze Parti:</strong> Interruttore principale per abilitare o disabilitare tutte le emote di terze parti (abilitato di default).",
+        "channelToggle": "<strong>Mostra Emote del Canale:</strong> Scegli se mostrare le emote di terze parti specifiche del canale o limitarle ai soli set globali.",
+        "filters": "<strong>Filtri di Sicurezza 7TV:</strong> Filtra le emote potenzialmente sensibili o indesiderate per categoria, tra cui <em>Twitch Disallowed</em> (filtrato di default), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em> e <em>Edgy / Offensive</em>."
+      }
     },
     "config": {
       "title": "Caratteristiche del Pannello di Configurazione",
-      "desc": "Tutte le modifiche e le personalizzazioni sono gestite direttamente utilizzando il menu delle impostazioni sulla pagina. In OBS, fai clic con il pulsante destro del mouse sulla Sorgente Browser e seleziona <strong>Interagisci</strong> per aprire il menu. Le opzioni includono:",
-      "feature1": "<strong>Selezione Canale:</strong> Seleziona la piattaforma di streaming (Twitch/YouTube) e fornisci l'ID del canale o l'URL del video pertinente per connetterti.",
-      "feature2": "<strong>Impostazioni Carattere:</strong> Scegli tra una serie di caratteri Google inclusi e regola la dimensione del carattere fino ai vincoli massimi, garantendo una leggibilità ideale.",
-      "feature3": "<strong>Layout di Visualizzazione:</strong> Scegli tra la modalità elenco standard o la modalità bolle di chat popup. Regola l'opacità dello sfondo e i bordi.",
-      "feature4": "<strong>Badge ed Emote:</strong> Alterna i badge della piattaforma nativamente per Twitch e YouTube per unificare le loro strutture di design.",
+      "desc": "Tutte le modifiche e le personalizzazioni sono gestite direttamente usando il menu delle impostazioni sulla pagina. In OBS, fai clic con il tasto destro sulla sorgente browser e seleziona <strong>Interagisci</strong> per aprire il menu. Le opzioni includono:",
+      "feature1": "<strong>Selezione Canale:</strong> Seleziona la piattaforma di streaming (Twitch/YouTube) e fornisci l'ID canale o l'URL video rilevante per connetterti.",
+      "feature2": "<strong>Impostazioni Font:</strong> Scegli tra una serie di Google Fonts inclusi e adatta la dimensione del font fino ai limiti massimi per una leggibilità ideale.",
+      "feature3": "<strong>Layout di Visualizzazione:</strong> Scegli tra la modalità lista standard o la modalità bolle di chat popup. Regola l'opacità dello sfondo e i bordi.",
+      "feature4": "<strong>Badge ed Emote:</strong> Attiva i badge nativi per Twitch e YouTube e configura le emote di terze parti (BTTV, FFZ, 7TV), la sovrapposizione zero-width e i filtri di sicurezza.",
       "feature5": "<strong>Gestione Temi:</strong> Accedi ai tuoi temi generati dall'IA, seleziona tra i preset e regola i colori granulari manualmente se necessario."
     },
     "scenes": {

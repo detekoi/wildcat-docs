@@ -92,6 +92,7 @@
             <li><a href="#platforms" data-i18n="sidebar.platforms">Platform Support</a></li>
             <li><a href="#customization" data-i18n="sidebar.customization">Customization</a></li>
             <li><a href="#colors" data-i18n="sidebar.colors">Color Customization</a></li>
+            <li><a href="#emotes" data-i18n="sidebar.emotes">Third-Party Emotes</a></li>
             <li><a href="#animations" data-i18n="sidebar.animations">Animations</a></li>
             <li><a href="#config" data-i18n="sidebar.config">Config Panel</a></li>
             <li><a href="#scenes" data-i18n="sidebar.scenes">Chat Scene Creator</a></li>
@@ -204,6 +205,25 @@
             </ul>
         </section>
 
+        <section id="emotes" class="section">
+            <h2 data-i18n="chatOverlay.emotes.title">Third-Party Emotes & Stacking</h2>
+            <p data-i18n="chatOverlay.emotes.desc">The Wildcat Chat Overlay natively supports third-party Twitch emote providers, including <strong>BetterTTV (BTTV)</strong>, <strong>FrankerFaceZ (FFZ)</strong>, and <strong>7TV</strong>. Both global and channel-specific emote sets are loaded automatically for Twitch channels.</p>
+
+            <h3 data-i18n="chatOverlay.emotes.zeroWidth.title">Zero-Width & Overlay Stacking</h3>
+            <p data-i18n="chatOverlay.emotes.zeroWidth.desc">Zero-width emotes (such as hats, masks, rain effects, or seasonal overlays) dynamically stack on top of the preceding emote when separated by a space (e.g. <span class="inline-code">catJAM cvHazmat</span>). Consecutive zero-width emotes can chain to create complex multi-layered emote stacks. Single-emote enlargement automatically applies to stacked emote combinations.</p>
+
+            <h3 data-i18n="chatOverlay.emotes.precedence.title">Precedence & Fallbacks</h3>
+            <p data-i18n="chatOverlay.emotes.precedence.desc">Emote matching is case-sensitive whole-token matching. Native Twitch emotes and cheermotes always take priority over third-party emotes. Channel-specific emote sets override global sets. When the same emote code exists across multiple third-party providers within the same scope, 7TV takes precedence over BTTV, which takes precedence over FFZ.</p>
+
+            <h3 data-i18n="chatOverlay.emotes.safety.title">Content Safety & Customization</h3>
+            <p data-i18n="chatOverlay.emotes.safety.desc">You can fine-tune third-party emote behavior directly in the settings panel:</p>
+            <ul>
+                <li data-i18n="chatOverlay.emotes.safety.toggle"><strong>Third-Party Emotes Toggle:</strong> Master switch to enable or disable all third-party emotes (enabled by default).</li>
+                <li data-i18n="chatOverlay.emotes.safety.channelToggle"><strong>Show Channel Emotes:</strong> Toggle whether channel-specific third-party emotes are displayed or restricted to global sets only.</li>
+                <li data-i18n="chatOverlay.emotes.safety.filters"><strong>7TV Safety Filters:</strong> Filter out potentially sensitive or unwanted emotes by category, including <em>Twitch Disallowed</em> (filtered by default), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em>, and <em>Edgy / Offensive</em>.</li>
+            </ul>
+        </section>
+
         <section id="animations" class="section">
             <h2 data-i18n="chatOverlay.animations.title">Animations</h2>
             <p data-i18n="chatOverlay.animations.desc">Chat message entry and exit animations use the Web Animations API
@@ -233,7 +253,7 @@
                 <li data-i18n="chatOverlay.config.feature3"><strong>Display Layout:</strong> Pick between standard list
                     mode or popup chat bubbles mode. Adjust background opacities and borders.</li>
                 <li data-i18n="chatOverlay.config.feature4"><strong>Badges & Emotes:</strong> Toggle platform badges
-                    natively for Twitch and YouTube to unify their design structures.</li>
+                    natively for Twitch and YouTube, and configure third-party emotes (BTTV, FFZ, 7TV), zero-width stacking, and content safety filters.</li>
                 <li data-i18n="chatOverlay.config.feature5"><strong>Theme Management:</strong> Access your AI-generated
                     Themes, select from presets, and fine-tune individual colors via hex code input. See
                     <a href="#colors" class="default-link-style">Color Customization</a> for details.</li>

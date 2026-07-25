@@ -19,6 +19,7 @@
     "scenes": "Chat-Scene-Creator",
     "obsSetup": "OBS-Setup",
     "colors": "Farbanpassung",
+    "emotes": "Drittanbieter-Emotes",
     "animations": "Animationen"
   },
   "chatOverlay": {
@@ -52,13 +53,32 @@
       "title": "Automatische KI-Themes",
       "desc": "Eines der leistungsstärksten Features des Wildcat Chat Overlays ist der KI-Theme-Generator für natürliche Sprache. Geben Sie im Konfigurations-Panel einfach eine Beschreibung des Vibes, der Stimmung oder der Ästhetik ein, die Sie sich wünschen (z. B. „Cyberpunk Neon Night“, „Cozy Wooden Cabin in the Snow“, „Vintage 90s Vaporwave“). Das Overlay generiert intelligent die entsprechenden CSS-Variablen, passt die Farbpaletten für idealen Kontrast an und wendet das Theme live an!"
     },
+    "emotes": {
+      "title": "Drittanbieter-Emotes & Stacking",
+      "desc": "Das Wildcat Chat Overlay unterstützt nativ Drittanbieter-Twitch-Emote-Anbieter, einschließlich <strong>BetterTTV (BTTV)</strong>, <strong>FrankerFaceZ (FFZ)</strong> und <strong>7TV</strong>. Sowohl globale als auch kanalspezifische Emote-Sets werden für Twitch-Kanäle automatisch geladen.",
+      "zeroWidth": {
+        "title": "Zero-Width & Overlay-Stacking",
+        "desc": "Zero-Width-Emotes (wie Hüte, Masken, Regeneffekte oder saisonale Overlays) werden dynamisch über das vorherige Emote gestapelt, wenn sie durch ein Leerzeichen getrennt sind (z. B. <span class=\"inline-code\">catJAM cvHazmat</span>). Aufeinanderfolgende Zero-Width-Emotes können verkettet werden, um mehrschichtige Emote-Stapel zu erstellen. Die automatische Vergrößerung einzelner Emotes gilt auch für gestapelte Emote-Kombinationen."
+      },
+      "precedence": {
+        "title": "Rangfolge & Fallbacks",
+        "desc": "Die Emote-Zuweisung erfolgt als exakte, groß-/kleinschreibungssensitive Ganzwort-Übereinstimmung. Native Twitch-Emotes und Cheermotes haben immer Vorrang vor Drittanbieter-Emotes. Kanalspezifische Emote-Sets überschreiben globale Sets. Wenn derselbe Emote-Code bei mehreren Drittanbieter-Diensten innerhalb desselben Bereichs existiert, hat 7TV Vorrang vor BTTV, welches wiederum Vorrang vor FFZ hat."
+      },
+      "safety": {
+        "title": "Inhaltssicherheit & Anpassung",
+        "desc": "Sie können das Verhalten von Drittanbieter-Emotes direkt im Konfigurations-Panel anpassen:",
+        "toggle": "<strong>Drittanbieter-Emotes Umschalter:</strong> Hauptschalter zum Aktivieren oder Deaktivieren aller Drittanbieter-Emotes (standardmäßig aktiviert).",
+        "channelToggle": "<strong>Kanal-Emotes anzeigen:</strong> Schalten Sie um, ob kanalspezifische Drittanbieter-Emotes angezeigt oder auf globale Sets beschränkt werden.",
+        "filters": "<strong>7TV-Sicherheitsfilter:</strong> Filtern Sie potenziell sensible oder unerwünschte Emotes nach Kategorie heraus, einschließlich <em>Twitch Disallowed</em> (standardmäßig gefiltert), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em> und <em>Edgy / Offensive</em>."
+      }
+    },
     "config": {
       "title": "Funktionen des Konfigurations-Panels",
       "desc": "Alle Änderungen und Anpassungen werden direkt über das Einstellungsmenü auf der Seite vorgenommen. Klicken Sie in OBS mit der rechten Maustaste auf die Browser-Quelle und wählen Sie <strong>Interagieren</strong>, um das Menü zu öffnen. Die Optionen umfassen:",
       "feature1": "<strong>Kanalauswahl:</strong> Wählen Sie die Streaming-Plattform (Twitch/YouTube) und geben Sie die entsprechende Kanal-ID oder Video-URL ein, um eine Verbindung herzustellen.",
       "feature2": "<strong>Schrifteinstellungen:</strong> Wählen Sie aus einer Vielzahl integrierter Google-Fonts und passen Sie die Schriftgröße bis zu den maximalen Grenzwerten an, um eine ideale Lesbarkeit zu gewährleisten.",
       "feature3": "<strong>Anzeigelayout:</strong> Wählen Sie zwischen dem Standard-Listenmodus oder dem Popup-Chat-Bubble-Modus. Passen Sie Hintergrundtransparenz und Rahmen an.",
-      "feature4": "<strong>Badges & Emotes:</strong> Schalten Sie Plattform-Badges nativ für Twitch und YouTube um, um deren Designstruktur zu vereinheitlichen.",
+      "feature4": "<strong>Badges & Emotes:</strong> Schalten Sie Plattform-Badges nativ für Twitch und YouTube um und konfigurieren Sie Drittanbieter-Emotes (BTTV, FFZ, 7TV), Zero-Width-Overlay-Stacking und Inhalts-Sicherheitsfilter.",
       "feature5": "<strong>Theme-Management:</strong> Greifen Sie auf Ihre KI-generierten Themes zu, wählen Sie aus Voreinstellungen und passen Sie bei Bedarf feine Farbabstimmungen manuell an."
     },
     "scenes": {

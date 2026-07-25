@@ -18,7 +18,8 @@
     "config": "Panneau de Configuration",
     "scenes": "Créateur de Scènes de Chat",
     "obsSetup": "Configuration OBS",
-    "colors": "Personnalisation des couleurs",
+    "colors": "Personnalisation des Couleurs",
+    "emotes": "Émotes Tiers",
     "animations": "Animations"
   },
   "chatOverlay": {
@@ -27,38 +28,57 @@
     },
     "overview": {
       "title": "Aperçu",
-      "desc": "Le Wildcat Chat Overlay est un widget de chat hautement personnalisable conçu spécifiquement pour les streamers au sein d'OBS. Aucun identifiant ou configuration complexe n'est requis ; il vous suffit d'ajouter l'URL comme Source de Navigateur dans OBS et de tout configurer à l'écran via le panneau de paramètres. Il prend en charge nativement le chat Twitch et YouTube Live.",
-      "getStarted": "Commencer avec l'Overlay de Chat →"
+      "desc": "Le Wildcat Chat Overlay est un widget de chat hautement personnalisable conçu spécifiquement pour les streamers dans OBS. Aucune connexion ni configuration complexe n'est requise ; il vous suffit d'ajouter l'URL comme source navigateur dans OBS et de tout configurer à l'écran via le panneau de paramètres. Il prend en charge nativement les chats Twitch et YouTube Live.",
+      "getStarted": "Démarrer avec le Chat Overlay →"
     },
     "platforms": {
       "title": "Plateformes Supportées",
-      "desc": "L'overlay de chat se connecte à diverses plateformes de streaming. Vous pouvez configurer votre plateforme cible à partir du panneau de configuration dans OBS.",
-      "twitch": "<strong>Twitch :</strong> Entrez le nom de votre chaîne (par exemple `wildcatgamer`). Les badges et les émoticônes sont pris en charge nativement.",
-      "youtube": "<strong>YouTube :</strong> Prend en charge le chat YouTube en direct pour les flux publics et non répertoriés. Pour les flux publics, entrez votre <strong>nom d'utilisateur de chaîne, ID de chaîne, URL de vidéo ou ID de vidéo</strong>. Pour les flux non répertoriés, l'<strong>URL de la vidéo</strong> est requise. (Note : Les flux privés ne sont pas pris en charge)."
+      "desc": "Le chat overlay se connecte à différentes plateformes de streaming. Vous pouvez configurer votre plateforme cible depuis le panneau de configuration dans OBS.",
+      "twitch": "<strong>Twitch :</strong> Entrez le nom de votre chaîne (ex. `wildcatgamer`). Les badges et émotes sont pris en charge nativement.",
+      "youtube": "<strong>YouTube :</strong> Prend en charge le chat en direct YouTube pour les streams publics et non répertoriés. Pour les streams publics, entrez votre <strong>nom d'utilisateur de chaîne, ID de chaîne, URL de vidéo ou ID de vidéo</strong>. Pour les streams non répertoriés, l'<strong>URL de la vidéo</strong> est requise. (Remarque : les streams privés ne sont pas pris en charge)."
     },
     "customization": {
       "title": "Personnalisation & Thèmes",
-      "desc": "L'overlay de chat comprend de puissants outils de personnalisation esthétique. Vous pouvez modifier le style fondamental directement via le menu de configuration.",
+      "desc": "Le chat overlay inclut de puissants outils de personnalisation esthétique. Vous pouvez modifier le style fondamental directement via le menu de configuration.",
       "obsConfig": {
-        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuration dans OBS:</strong> L'URL de la source de navigateur charge uniquement l'overlay. Tous les paramètres du chat (chaîne, thème, couleurs, polices, etc.) sont configurés <strong>dans OBS</strong>:",
-        "step1": "Clic droit -> interagir, ou cliquez sur le bouton Interagir lorsque la source de navigateur est sélectionnée dans le moniteur/l'aperçu.",
-        "step2": "Dans la fenêtre d'interaction:",
-        "substep1": "Entrez le nom de votre chaîne Twitch et cliquez sur « Connecter ».",
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuration dans OBS :</strong> L'URL de la source navigateur charge uniquement l'overlay. Tous les paramètres du chat (chaîne, thème, couleurs, polices, etc.) sont configurés <strong>dans OBS</strong> :",
+        "step1": "Clic droit -> Interagir, ou cliquez sur le bouton <strong>Interagir</strong> avec la source navigateur sélectionnée dans l'aperçu.",
+        "step2": "Dans la fenêtre d'interaction :",
+        "substep1": "Entrez le nom de votre chaîne Twitch et cliquez sur \"Connecter\".",
         "substep2": "Survolez le chat et cliquez sur l'engrenage des paramètres (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) pour personnaliser l'apparence (thèmes, couleurs, polices, etc.).",
         "step3": "Les paramètres sont enregistrés automatiquement dans OBS pour cette source spécifique."
       }
     },
     "themes": {
       "title": "Thèmes IA Automatiques",
-      "desc": "L'une des fonctionnalités les plus puissantes du Wildcat Chat Overlay est son générateur de thèmes IA en langage naturel. Dans le panneau de configuration, tapez simplement une description de l'ambiance, de l'humeur ou de l'esthétique que vous souhaitez (par exemple, « cyberpunk neon night », « cozy wooden cabin in the snow », « vintage 90s vaporwave »). L'overlay générera intelligemment les variables CSS correspondantes, ajustera les palettes de couleurs pour un contraste idéal et appliquera le thème en direct !"
+      "desc": "L'une des fonctionnalités les plus puissantes du Wildcat Chat Overlay est son générateurs de thèmes IA en langage naturel. Dans le panneau de configuration, tapez simplement une description de l'ambiance ou du style souhaité (ex. \"cyberpunk neon night\", \"cozy wooden cabin in the snow\", \"vintage 90s vaporwave\"). L'overlay générera intelligemment les variables CSS correspondantes, ajustera les palettes de couleurs pour un contraste idéal et appliquera le thème en direct !"
+    },
+    "emotes": {
+      "title": "Émotes Tiers & Superposition",
+      "desc": "Le Wildcat Chat Overlay prend en charge nativement les fournisseurs d'émotes Twitch tiers, notamment <strong>BetterTTV (BTTV)</strong>, <strong>FrankerFaceZ (FFZ)</strong> et <strong>7TV</strong>. Les ensembles d'émotes globaux et spécifiques à la chaîne sont chargés automatiquement pour les chaînes Twitch.",
+      "zeroWidth": {
+        "title": "Zero-Width & Superposition d'Émotes",
+        "desc": "Les émotes de largeur zéro (tels que chapeaux, masques, effets de pluie ou superpositions saisonnières) se superposent dynamiquement sur l'émote précédente lorsqu'ils sont séparés par un espace (ex. <span class=\"inline-code\">catJAM cvHazmat</span>). Plusieurs émotes zero-width consécutifs peuvent s'enchaîner pour créer des superpositions complexes. L'agrandissement des émotes uniques s'applique automatiquement aux combinaisons superposées."
+      },
+      "precedence": {
+        "title": "Priorité & Replis",
+        "desc": "La correspondance des émotes est sensible à la casse sur les mots entiers. Les émotes natifs Twitch et cheermotes ont toujours la priorité sur les émotes tiers. Les émotes de chaîne remplacent les émotes globaux. Si le même code d'émote existe chez plusieurs fournisseurs tiers dans le même périmètre, 7TV prévaut sur BTTV, qui prévaut sur FFZ."
+      },
+      "safety": {
+        "title": "Sécurité du Contenu & Personnalisation",
+        "desc": "Vous pouvez affiner le comportement des émotes tiers directement dans le panneau de configuration :",
+        "toggle": "<strong>Activer les Émotes Tiers :</strong> Interrupteur principal pour activer ou désactiver tous les émotes tiers (activé par défaut).",
+        "channelToggle": "<strong>Afficher les Émotes de Chaîne :</strong> Choisissez d'afficher les émotes tiers spécifiques à la chaîne ou de restreindre uniquement aux ensembles globaux.",
+        "filters": "<strong>Filtres de Sécurité 7TV :</strong> Filtrez les émotes potentiellement sensibles ou indésirables par catégorie, incluant <em>Twitch Disallowed</em> (filtré par défaut), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em> et <em>Edgy / Offensive</em>."
+      }
     },
     "config": {
       "title": "Fonctionnalités du Panneau de Configuration",
-      "desc": "Toutes les modifications et personnalisations sont gérées directement à l'aide du menu de paramètres sur la page. Dans OBS, faites un clic droit sur la Source de Navigateur et sélectionnez <strong>Interagir</strong> pour ouvrir le menu. Les options incluent :",
-      "feature1": "<strong>Sélection de Chaîne :</strong> Sélectionnez la plateforme de streaming (Twitch/YouTube) et fournissez l'ID de chaîne ou l'URL de vidéo approprié pour vous connecter.",
-      "feature2": "<strong>Paramètres de Police :</strong> Choisissez parmi une gamme de polices Google incluses et ajustez la taille de la police selon les contraintes maximales, garantissant ainsi une lisibilité idéale.",
-      "feature3": "<strong>Disposition d'Affichage :</strong> Choisissez entre le mode liste standard ou le mode bulles de chat contextuelles. Ajustez l'opacité de l'arrière-plan et les bordures.",
-      "feature4": "<strong>Badges & Emotes :</strong> Activez les badges de plateforme nativement pour Twitch et YouTube afin d'unifier leurs structures de conception.",
+      "desc": "Toutes les modifications et personnalisations sont gérées directement via le menu de paramètres sur la page. Dans OBS, faites un clic droit sur la source navigateur et sélectionnez <strong>Interagir</strong> pour ouvrir le menu. Les options comprennent :",
+      "feature1": "<strong>Sélection de Chaîne :</strong> Sélectionnez la plateforme de streaming (Twitch/YouTube) et fournissez l'ID de chaîne ou l'URL de vidéo correspondante pour vous connecter.",
+      "feature2": "<strong>Paramètres de Police :</strong> Choisissez parmi une sélection de Google Fonts et ajustez la taille de police jusqu'aux limites maximales pour une lisibilité idéale.",
+      "feature3": "<strong>Disposion d'Affichage :</strong> Choisissez entre le mode liste standard ou le mode bulles de chat pop-up. Ajustez l'opacité du fond et les bordures.",
+      "feature4": "<strong>Badges & Émotes :</strong> Activez les badges natifs pour Twitch et YouTube, et configurez les émotes tiers (BTTV, FFZ, 7TV), la superposition zero-width et les filtres de sécurité.",
       "feature5": "<strong>Gestion des Thèmes :</strong> Accédez à vos thèmes générés par IA, sélectionnez parmi des préréglages et ajustez les couleurs granulaires manuellement si nécessaire."
     },
     "scenes": {
