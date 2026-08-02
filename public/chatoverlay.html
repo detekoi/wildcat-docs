@@ -245,6 +245,22 @@
             <h3 data-i18n="chatOverlay.scenes.syncTitle">Automatic Live Sync</h3>
             <p data-i18n="chatOverlay.scenes.syncDesc">The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class="inline-code">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.</p>
             <p data-i18n="chatOverlay.scenes.localNote">If you configure settings directly inside OBS, settings save locally in the OBS browser source cache.</p>
+
+            <h3 data-i18n="chatOverlay.scenes.ioTitle">Exporting & Importing Scene Files</h3>
+            <p data-i18n="chatOverlay.scenes.ioDesc">You can back up or transfer chat scene settings with JSON files.</p>
+            <ul>
+                <li data-i18n="chatOverlay.scenes.exportSingle"><strong>Export Single Scene:</strong> To export a single scene, select the scene and click <strong>Export</strong>.</li>
+                <li data-i18n="chatOverlay.scenes.exportAll"><strong>Export All Scenes:</strong> To back up all scenes, click <strong>Export All</strong> in the left panel.</li>
+                <li data-i18n="chatOverlay.scenes.importFile"><strong>Import Scene File:</strong> To restore scene settings, click <strong>Import</strong> and select a saved JSON file from your computer.</li>
+            </ul>
+
+            <h3 data-i18n="chatOverlay.scenes.linkTitle">Linking Existing Scenes (Sync Token)</h3>
+            <p data-i18n="chatOverlay.scenes.linkDesc">You can link an existing cloud-synced scene to a new browser or computer using its sync token.</p>
+            <ol>
+                <li data-i18n="chatOverlay.scenes.linkStep1">Click <strong>Link Scene</strong> in the left panel.</li>
+                <li data-i18n="chatOverlay.scenes.linkStep2">Enter the sync token from your OBS URL (the alphanumeric token after <span class="inline-code">sync=</span>).</li>
+                <li data-i18n="chatOverlay.scenes.linkStep3">Click <strong>Link</strong> to pull scene settings from the cloud. Linked scenes update live when you save changes on any device.</li>
+            </ol>
         </section>
 
         <section id="obs-setup" class="section">

@@ -135,7 +135,17 @@
       "feature4": "<strong>Interaktive Live-Vorschau:</strong> Testen Sie Einstellungen in einem Live-Vorschaufenster. Wechseln Sie die Hintergründe (Dunkel, Hell, Gitter/Schachbrett, Benutzerdefinierte Farbe). Änderungen werden in Echtzeit übertragen.",
       "syncTitle": "Automatische Live-Synchronisierung",
       "syncDesc": "Der Chat Scene Creator generiert automatisch ein eindeutiges Sync-Token in Ihrer OBS-URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Im Webinterface gespeicherte Änderungen aktualisieren Ihre OBS-Browserquelle live ohne Neuladen der Seite.",
-      "localNote": "Wenn Sie Einstellungen direkt in OBS konfigurieren, werden diese lokal im OBS-Browserquellencache gespeichert."
+      "localNote": "Wenn Sie Einstellungen direkt in OBS konfigurieren, werden diese lokal im OBS-Browserquellencache gespeichert.",
+      "ioTitle": "Szenendateien exportieren & importieren",
+      "ioDesc": "Sie können Chat-Szeneneinstellungen mit JSON-Dateien sichern oder übertragen.",
+      "exportSingle": "<strong>Einzelszene exportieren:</strong> Um eine einzelne Szene zu exportieren, wählen Sie die Szene aus und klicken Sie auf <strong>Exportieren</strong>.",
+      "exportAll": "<strong>Alle Szenen exportieren:</strong> Um alle Szenen zu sichern, klicken Sie im linken Bereich auf <strong>Alle exportieren</strong>.",
+      "importFile": "<strong>Szenendatei importieren:</strong> Um Szeneneinstellungen wiederherzustellen, klicken Sie auf <strong>Importieren</strong> und wählen Sie eine gespeicherte JSON-Datei von Ihrem Computer.",
+      "linkTitle": "Bestehende Szenen verknüpfen (Sync-Token)",
+      "linkDesc": "Sie können eine bestehende cloud-synchronisierte Szene mithilfe ihres Sync-Tokens mit einem neuen Browser oder Computer verknüpfen.",
+      "linkStep1": "Klicken Sie im linken Bereich auf <strong>Szene verknüpfen</strong>.",
+      "linkStep2": "Geben Sie das Sync-Token aus Ihrer OBS-URL ein (das alfanumerische Token nach <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Klicken Sie auf <strong>Verknüpfen</strong>, um Szeneneinstellungen aus der Cloud abzurufen. Verknüpfte Szenen werden live aktualisiert, wenn Sie Änderungen auf einem beliebigen Gerät speichern."
     },
     "obsSetup": {
       "title": "OBS-Setup-Anweisungen",

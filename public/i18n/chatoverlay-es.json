@@ -135,7 +135,17 @@
       "feature4": "<strong>Vista previa interactiva en vivo:</strong> Prueba ajustes en una caja de vista previa en vivo. Cambia el fondo entre Oscuro, Claro, Cuadrícula (tablero de ajedrez) y Color personalizado. Los cambios se transmiten en tiempo real.",
       "syncTitle": "Sincronización automática en vivo",
       "syncDesc": "El Chat Scene Creator genera automáticamente un token de sincronización único en tu URL de OBS: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Las ediciones guardadas en la interfaz web actualizan tu fuente de navegador de OBS en vivo sin recargar la página.",
-      "localNote": "Si configuras los ajustes directamente dentro de OBS, se guardarán localmente en la caché de la fuente de navegador de OBS."
+      "localNote": "Si configuras los ajustes directamente dentro de OBS, se guardarán localmente en la caché de la fuente de navegador de OBS.",
+      "ioTitle": "Exportar e importar archivos de escena",
+      "ioDesc": "Puedes realizar copias de seguridad o transferir ajustes de escenas de chat con archivos JSON.",
+      "exportSingle": "<strong>Exportar escena individual:</strong> Para exportar una sola escena, selecciónala y haz clic en <strong>Exportar</strong>.",
+      "exportAll": "<strong>Exportar todas las escenas:</strong> Para realizar una copia de seguridad de todas las escenas, haz clic en <strong>Exportar todo</strong> en el panel izquierdo.",
+      "importFile": "<strong>Importar archivo de escena:</strong> Para restaurar los ajustes de una escena, haz clic en <strong>Importar</strong> y selecciona un archivo JSON guardado en tu equipo.",
+      "linkTitle": "Vincular escenas existentes (Token de sincronización)",
+      "linkDesc": "Puedes vincular una escena existente sincronizada en la nube a un nuevo navegador o equipo usando su token de sincronización.",
+      "linkStep1": "Haz clic en <strong>Vincular escena</strong> en el panel izquierdo.",
+      "linkStep2": "Introduce el token de sincronización de tu URL de OBS (el token alfanumérico después de <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Haz clic en <strong>Vincular</strong> para obtener los ajustes de la escena desde la nube. Las escenas vinculadas se actualizan en vivo al guardar cambios en cualquier dispositivo."
     },
     "obsSetup": {
       "title": "Instrucciones de configuración de OBS",

@@ -135,7 +135,17 @@
       "feature4": "<strong>Aperçu interactif en direct :</strong> Testez les paramètres dans une zone d'aperçu en direct. Changez l'arrière-plan entre Sombre, Clair, Grille (Damier) et Couleur personnalisée. Les modifications sont transmises en temps réel.",
       "syncTitle": "Synchronisation automatique en direct",
       "syncDesc": "Le Chat Scene Creator génère automatiquement un jeton de synchronisation unique dans votre URL OBS : <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Les modifications enregistrées dans l'interface Web mettent à jour votre source navigateur OBS en direct sans rafraîchir la page.",
-      "localNote": "Si vous configurez les paramètres directement dans OBS, les réglages sont enregistrés localement dans le cache de la source navigateur OBS."
+      "localNote": "Si vous configurez les paramètres directement dans OBS, les réglages sont enregistrés localement dans le cache de la source navigateur OBS.",
+      "ioTitle": "Exportation et importation de fichiers de scène",
+      "ioDesc": "Vous pouvez sauvegarder ou transférer les paramètres de scène de chat avec des fichiers JSON.",
+      "exportSingle": "<strong>Exporter une scène :</strong> Pour exporter une seule scène, sélectionnez-la et cliquez sur <strong>Exporter</strong>.",
+      "exportAll": "<strong>Tout exporter :</strong> Pour sauvegarder toutes les scènes, cliquez sur <strong>Tout exporter</strong> dans le panneau de gauche.",
+      "importFile": "<strong>Importer un fichier de scène :</strong> Pour restaurer des paramètres de scène, cliquez sur <strong>Importer</strong> et sélectionnez un fichier JSON enregistré sur votre ordinateur.",
+      "linkTitle": "Lier des scènes existantes (Jeton de synchronisation)",
+      "linkDesc": "Vous pouvez lier une scène existante synchronisée sur le cloud à un nouveau navigateur ou ordinateur à l'aide de son jeton de synchronisation.",
+      "linkStep1": "Cliquez sur <strong>Lier une scène</strong> dans le panneau de gauche.",
+      "linkStep2": "Saisissez le jeton de synchronisation de votre URL OBS (le jeton alphanumérique après <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Cliquez sur <strong>Lier</strong> pour récupérer les paramètres de scène depuis le cloud. Les scènes liées se mettent à jour en direct lorsque vous enregistrez des modifications sur n'importe quel appareil."
     },
     "obsSetup": {
       "title": "Instructions de configuration OBS",

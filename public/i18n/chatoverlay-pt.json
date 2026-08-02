@@ -135,7 +135,17 @@
       "feature4": "<strong>Visualização interativa ao vivo:</strong> Teste as configurações em uma caixa de visualização ao vivo. Alterne os fundos entre Escuro, Claro, Grade (Xadrez) e Cor personalizada. As alterações são transmitidas em tempo real.",
       "syncTitle": "Sincronização automática ao vivo",
       "syncDesc": "O Chat Scene Creator gera automaticamente um token de sincronização exclusivo no seu URL do OBS: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. As edições salvas na interface web atualizam sua fonte de navegador do OBS ao vivo sem recarregar a página.",
-      "localNote": "Se você configurar as opções diretamente no OBS, as configurações serão salvas localmente no cache da fonte de navegador do OBS."
+      "localNote": "Se você configurar as opções diretamente no OBS, as configurações serão salvas localmente no cache da fonte de navegador do OBS.",
+      "ioTitle": "Exportação e importação de arquivos de cena",
+      "ioDesc": "Você pode fazer backup ou transferir configurações de cena de chat com arquivos JSON.",
+      "exportSingle": "<strong>Exportar cena única:</strong> Para exportar uma única cena, selecione a cena e clique em <strong>Exportar</strong>.",
+      "exportAll": "<strong>Exportar todas as cenas:</strong> Para fazer backup de todas as cenas, clique em <strong>Exportar tudo</strong> no painel esquerdo.",
+      "importFile": "<strong>Importar arquivo de cena:</strong> Para restaurar as configurações da cena, clique em <strong>Importar</strong> e selecione um arquivo JSON salvo no seu computador.",
+      "linkTitle": "Vincular cenas existentes (Token de sincronização)",
+      "linkDesc": "Você pode vincular uma cena existente sincronizada na nuvem a um novo navegador ou computador usando seu token de sincronização.",
+      "linkStep1": "Clique em <strong>Vincular cena</strong> no painel esquerdo.",
+      "linkStep2": "Insira o token de sincronização do seu URL do OBS (o token alfanumérico após <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Clique em <strong>Vincular</strong> para buscar as configurações da cena na nuvem. As cenas vinculadas são atualizadas ao vivo quando você salva alterações em qualquer dispositivo."
     },
     "obsSetup": {
       "title": "Instruções de configuração do OBS",

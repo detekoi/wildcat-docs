@@ -135,7 +135,17 @@
       "feature4": "<strong>Anteprima interattiva in tempo reale:</strong> Prova le impostazioni in un riquadro di anteprima dal vivo. Cambia lo sfondo tra Scuro, Chiaro, Griglia (scacchiera) e Colore personalizzato. Le modifiche si trasmettono in tempo reale.",
       "syncTitle": "Sincronizzazione automatica in tempo reale",
       "syncDesc": "Il Chat Scene Creator genera automaticamente un token di sincronizzazione unico nel tuo URL di OBS: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Le modifiche salvate nell'interfaccia web aggiornano la tua sorgente browser di OBS in tempo reale senza ricaricare la pagina.",
-      "localNote": "Se configuri le impostazioni direttamente all'interno di OBS, le impostazioni vengono salvate localmente nella cache della sorgente browser di OBS."
+      "localNote": "Se configuri le impostazioni direttamente all'interno di OBS, le impostazioni vengono salvate localmente nella cache della sorgente browser di OBS.",
+      "ioTitle": "Esportazione e importazione di file di scena",
+      "ioDesc": "Puoi eseguire il backup o trasferire le impostazioni della scena chat con file JSON.",
+      "exportSingle": "<strong>Esporta singola scena:</strong> Per esportare una singola scena, selezionala e fai clic su <strong>Esporta</strong>.",
+      "exportAll": "<strong>Esporta tutte le scene:</strong> Per eseguire il backup di tutte le scene, fai clic su <strong>Esporta tutto</strong> nel pannello di sinistra.",
+      "importFile": "<strong>Importa file di scena:</strong> Per ripristinare le impostazioni di una scena, fai clic su <strong>Importa</strong> e seleziona un file JSON salvato dal tuo computer.",
+      "linkTitle": "Collega scene esistenti (Token di sincronizzazione)",
+      "linkDesc": "Puoi collegare una scena esistente sincronizzata nel cloud a un nuovo browser o computer utilizzando il suo token di sincronizzazione.",
+      "linkStep1": "Fai clic su <strong>Collega scena</strong> nel pannello di sinistra.",
+      "linkStep2": "Inserisci il token di sincronizzazione dal tuo URL di OBS (il token alfanumerico dopo <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Fai clic su <strong>Collega</strong> per scaricare le impostazioni della scena dal cloud. Le scene collegate si aggiornano in tempo reale quando salvi le modifiche su qualsiasi dispositivo."
     },
     "obsSetup": {
       "title": "Istruzioni per l installazione su OBS",

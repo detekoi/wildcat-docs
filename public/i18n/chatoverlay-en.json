@@ -135,7 +135,17 @@
       "feature4": "<strong>Interactive Live Preview:</strong> Test settings in a live preview box. Switch preview backgrounds between Dark, Light, Grid (Checkerboard), and Custom color. Changes stream to the preview in real time.",
       "syncTitle": "Automatic Live Sync",
       "syncDesc": "The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.",
-      "localNote": "If you configure settings directly inside OBS, settings save locally in the OBS browser source cache."
+      "localNote": "If you configure settings directly inside OBS, settings save locally in the OBS browser source cache.",
+      "ioTitle": "Exporting & Importing Scene Files",
+      "ioDesc": "You can back up or transfer chat scene settings with JSON files.",
+      "exportSingle": "<strong>Export Single Scene:</strong> To export a single scene, select the scene and click <strong>Export</strong>.",
+      "exportAll": "<strong>Export All Scenes:</strong> To back up all scenes, click <strong>Export All</strong> in the left panel.",
+      "importFile": "<strong>Import Scene File:</strong> To restore scene settings, click <strong>Import</strong> and select a saved JSON file from your computer.",
+      "linkTitle": "Linking Existing Scenes (Sync Token)",
+      "linkDesc": "You can link an existing cloud-synced scene to a new browser or computer using its sync token.",
+      "linkStep1": "Click <strong>Link Scene</strong> in the left panel.",
+      "linkStep2": "Enter the sync token from your OBS URL (the alphanumeric token after <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Click <strong>Link</strong> to pull scene settings from the cloud. Linked scenes update live when you save changes on any device."
     },
     "obsSetup": {
       "title": "OBS Setup Instructions",
