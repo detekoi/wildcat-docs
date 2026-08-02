@@ -29,7 +29,7 @@
     },
     "overview": {
       "title": "Overview",
-      "desc": "The Wildcat Chat Overlay displays Twitch and YouTube Live chat messages inside OBS Studio. You can configure settings in the Chat Scene Creator on the web or directly inside the OBS browser source.",
+      "desc": "The Wildcat Chat Overlay displays Twitch and YouTube Live chat messages inside OBS Studio. You can configure settings in the <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a> on the web or directly inside the OBS browser source.",
       "getStarted": "Get Started with the Chat Overlay"
     },
     "platforms": {
@@ -50,9 +50,9 @@
     },
     "themes": {
       "title": "Automatic AI Themes",
-      "desc": "The overlay includes a natural-language AI theme generator. In the settings panel, type a text description of the aesthetic you want (for example, \"cyberpunk neon night\" or \"cozy wooden cabin\"). The overlay generates CSS variables, adjusts color contrast, and applies the theme live.",
+      "desc": "The overlay includes a natural-language AI theme generator. In the settings panel, type a text description of the aesthetic you want (for example, \"cyberpunk neon night\" or \"cozy wooden cabin\"). The overlay generates CSS variables, adjusts color contrast, sets matching pronoun badge colors, and applies the theme live.",
       "carouselTitle": "Theme Carousel & Custom Themes",
-      "carouselDesc": "Use the theme carousel to select preset themes or AI-generated themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages."
+      "carouselDesc": "Use the theme carousel to select preset themes or AI-generated themes. The carousel stores up to 50 saved themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages."
     },
     "colors": {
       "title": "Color Customization",
@@ -67,7 +67,7 @@
         "timestamp": "<strong>Timestamp Color:</strong> The color of message timestamps when timestamps are enabled.",
         "pronoun": "<strong>Pronoun Badge Color:</strong> The color of pronoun badges next to usernames. You can set this to match the timestamp color.",
         "bgOpacity": "<strong>Background Opacity:</strong> Adjust message background opacity from 0% (fully transparent) to 100%.",
-        "bgImageOpacity": "<strong>Background Image Opacity:</strong> Controls opacity for custom uploaded background images.",
+        "bgImageOpacity": "<strong>Background Image Upload & Opacity:</strong> Upload a custom background image directly in the Web Chat Scene Creator. Adjust image opacity with the background image opacity slider.",
         "chromaKey": "<strong>Chroma Key Mode:</strong> Sets a solid green background for green screen keying in OBS."
       }
     },
@@ -131,7 +131,7 @@
       "featuresTitle": "Key Features",
       "feature1": "<strong>Scene Management:</strong> Create, duplicate, delete, import JSON scene files, export JSON scene files, and link existing scenes using scene tokens.",
       "feature2": "<strong>Channel Connection:</strong> Enter Twitch channels and YouTube channel IDs or handles with instant application.",
-      "feature3": "<strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, color schemes, background opacities, chroma key mode, popup layouts, platform badges, and emote filters.",
+      "feature3": "<strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, color schemes, custom background image uploads, background opacities, chroma key mode, popup layouts, platform badges, and emote filters.",
       "feature4": "<strong>Interactive Live Preview:</strong> Test settings in a live preview box. Switch preview backgrounds between Dark, Light, Grid (Checkerboard), and Custom color. Changes stream to the preview in real time.",
       "syncTitle": "Automatic Live Sync",
       "syncDesc": "The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.",

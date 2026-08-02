@@ -50,9 +50,9 @@
     },
     "themes": {
       "title": "Automatische KI-Themes",
-      "desc": "Eines der leistungsstärksten Features des Wildcat Chat Overlays ist der KI-Theme-Generator für natürliche Sprache. Geben Sie im Konfigurations-Panel einfach eine Beschreibung des Vibes, der Stimmung oder der Ästhetik ein, die Sie sich wünschen (zum Beispiel „Cyberpunk Neon Night“, „Cozy Wooden Cabin in the Snow“, „Vintage 90s Vaporwave“). Das Overlay generiert intelligent die entsprechenden CSS-Variablen, passt die Farbpaletten für idealen Kontrast an und wendet das Theme live an!",
+      "desc": "Eines der leistungsstärksten Features des Wildcat Chat Overlays ist der KI-Theme-Generator für natürliche Sprache. Geben Sie im Konfigurations-Panel einfach eine Beschreibung der Ästhetik ein. Das Overlay generiert CSS-Variablen, passt den Farbkontrast an, stellt passende Pronom-Badge-Farben ein und wendet das Theme live an.",
       "carouselTitle": "Themen-Karussell & Eigene Themen",
-      "carouselDesc": "Verwenden Sie das Themen-Karussell, um vordefinierte oder KI-generierte Themen auszuwählen. Sie können eigene Themen über einen Bestätigungsdialog löschen. Aktive Themen werden seitenübergreifend synchronisiert."
+      "carouselDesc": "Verwenden Sie das Themen-Karussell, um vordefinierte oder KI-generierte Themen auszuwählen. Das Karussell speichert bis zu 50 eigene Themen. Sie können eigene Themen über einen Bestätigungsdialog löschen. Aktive Themen werden seitenübergreifend synchronisiert."
     },
     "colors": {
       "title": "Farbanpassung",

@@ -50,9 +50,9 @@
     },
     "themes": {
       "title": "Thèmes IA automatiques",
-      "desc": "L'une des fonctionnalités les plus puissantes du Wildcat Chat Overlay est son générateur de thèmes IA en langage naturel. Dans le panneau de configuration, saisissez simplement une description de l'ambiance ou du style souhaité (par exemple, \"cyberpunk neon night\", \"cozy wooden cabin in the snow\", \"vintage 90s vaporwave\"). L'overlay générera automatiquement les variables CSS correspondantes, ajustera les palettes de couleurs pour un contraste idéal et appliquera le thème en direct!",
+      "desc": "L'overlay inclut un générateur de thèmes IA en langage naturel. Saisissez une description du style souhaité. L'overlay génère des variables CSS, ajuste le contraste des couleurs, définit la couleur des badges de pronoms assortie et applique le thème en direct.",
       "carouselTitle": "Carrousel de thèmes et thèmes personnalisés",
-      "carouselDesc": "Utilisez le carrousel de thèmes pour sélectionner des thèmes prédéfinis ou générés par IA. Vous pouvez supprimer des thèmes personnalisés avec une boîte de dialogue de confirmation. Les thèmes actifs se synchronisent sur toutes les pages."
+      "carouselDesc": "Utilisez le carrousel de thèmes pour sélectionner des thèmes prédéfinis ou générés par IA. Le carrousel conserve jusqu'à 50 thèmes enregistrés. Vous pouvez supprimer des thèmes personnalisés avec une boîte de dialogue de confirmation. Les thèmes actifs se synchronisent sur toutes les pages."
     },
     "colors": {
       "title": "Personnalisation des couleurs",

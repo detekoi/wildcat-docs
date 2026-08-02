@@ -50,9 +50,9 @@
     },
     "themes": {
       "title": "自動AIテーマ",
-      "desc": "Wildcat Chat Overlayの最も強力な機能の1つは、自然言語AIテーマジェネレーターです。設定パネル内で希望する雰囲気やスタイル（例: 「cyberpunk neon night」、「cozy wooden cabin in the snow」）を入力するだけで、CSS変数が生成されテーマが適用されます。",
+      "desc": "Wildcat Chat Overlayの最も強力な機能の1つは、自然言語AIテーマジェネレーターです。設定パネル内で希望する雰囲気やスタイル（例: 「cyberpunk neon night」、「cozy wooden cabin in the snow」）を入力するだけで、CSS変数が生成され、代名詞バッジの色を含めてテーマが適用されます。",
       "carouselTitle": "テーマカルーセルとカスタムテーマ",
-      "carouselDesc": "テーマカルーセルを使用して、プリセットテーマやAI生成テーマを選択します。確認モーダルでカスタムテーマを削除できます。アクティブなテーマはページ間で同期されます。"
+      "carouselDesc": "テーマカルーセルを使用して、プリセットテーマやAI生成テーマを選択します。最大50個のテーマを保存できます。確認モーダルでカスタムテーマを削除できます。アクティブなテーマはページ間で同期されます。"
     },
     "colors": {
       "title": "カラーのカスタマイズ",
