@@ -30,7 +30,7 @@
     "overview": {
       "title": "概要",
       "desc": "Wildcat Chat Overlayは、OBS Studio内でTwitchおよびYouTube Liveチャットメッセージを表示します。Web上のChat Scene Creator、またはOBSブラウザソース内で設定を構成できます。",
-      "getStarted": "チャットオーバーレイを始める →"
+      "getStarted": "チャットオーバーレイを始める"
     },
     "platforms": {
       "title": "対応プラットフォーム",

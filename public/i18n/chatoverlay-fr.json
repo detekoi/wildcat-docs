@@ -30,7 +30,7 @@
     "overview": {
       "title": "Aperçu",
       "desc": "Le Wildcat Chat Overlay affiche les messages de chat Twitch et YouTube Live dans OBS Studio. Vous pouvez configurer les paramètres dans le Créateur de scènes de chat sur le Web ou directement dans la source navigateur OBS.",
-      "getStarted": "Commencer avec le Chat Overlay →"
+      "getStarted": "Commencer avec le Chat Overlay"
     },
     "platforms": {
       "title": "Plateformes prises en charge",
