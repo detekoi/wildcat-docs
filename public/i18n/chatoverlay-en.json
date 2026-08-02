@@ -14,13 +14,14 @@
     "title": "Chat Overlay",
     "overview": "Overview",
     "platforms": "Platform Support",
-    "customization": "Customization",
+    "customization": "Customization & Themes",
+    "colors": "Color Customization",
+    "fonts": "Fonts & Typography",
+    "emotes": "Third-Party Emotes",
+    "animations": "Display Modes & Animations",
     "config": "Config Panel",
     "scenes": "Chat Scene Creator",
-    "obsSetup": "OBS Setup",
-    "colors": "Color Customization",
-    "emotes": "Third-Party Emotes",
-    "animations": "Animations"
+    "obsSetup": "OBS Setup"
   },
   "chatOverlay": {
     "page": {
@@ -33,100 +34,124 @@
     },
     "platforms": {
       "title": "Platform Support",
-      "desc": "The chat overlay connects to various streaming platforms. You can configure your target platform from within the configuration panel in OBS.",
-      "twitch": "<strong>Twitch:</strong> Enter your channel name (for example, `wildcatgamer`). Badges and emotes are natively supported.",
-      "youtube": "<strong>YouTube:</strong> Supports YouTube live chat for both public and unlisted streams. For public streams, enter your <strong>channel username, channel ID, video URL, or video ID</strong>. For unlisted streams, the <strong>video URL</strong> is required. (Note: Private streams are not supported)."
+      "desc": "The chat overlay connects to streaming platforms. You can configure your target platform in the settings menu.",
+      "twitch": "<strong>Twitch:</strong> Enter your channel name (for example, <span class=\"inline-code\">wildcatgamer</span>). Badges and emotes load natively.",
+      "youtube": "<strong>YouTube:</strong> Supports YouTube live chat for public and unlisted streams. For public streams, enter your channel username, channel ID, video URL, or video ID. For unlisted streams, enter the video URL. (Note: Private streams are not supported)."
     },
     "customization": {
       "title": "Customization & Themes",
-      "desc": "The chat overlay includes powerful aesthetic customization tools. You can change fundamental styling directly through the config menu.",
+      "desc": "The chat overlay provides visual customization tools. You can change styling directly in the settings menu.",
       "obsConfig": {
         "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Configuration Options:</strong> You can configure chat settings in two ways:",
-        "step1": "<strong>Web Chat Scene Creator (Recommended):</strong> Configure channel connections, fonts, themes, colors, and layouts on the web. Enable <strong>Live Sync</strong> to stream edits live to OBS.",
+        "step1": "<strong>Web Chat Scene Creator (Recommended):</strong> Configure channel connections, fonts, themes, colors, and layouts on the web. The Chat Scene Creator automatically syncs your edits live to OBS.",
         "step2": "<strong>In OBS Settings Panel:</strong> Right-click the Browser Source in OBS and select <strong>Interact</strong>. Hover over the chat and click the settings gear (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) to customize settings locally.",
         "step3": "Settings save automatically for each scene source."
       }
     },
     "themes": {
       "title": "Automatic AI Themes",
-      "desc": "One of the most powerful features of the Wildcat Chat Overlay is its natural-language AI theme generator. Inside the config panel, simply type a description of the vibe, mood, or aesthetic you want (for example, \"cyberpunk neon night,\" \"cozy wooden cabin in the snow,\" \"vintage 90s vaporwave\"). The overlay will intelligently generate the corresponding CSS variables, adjust the color palettes for ideal contrast, and apply the theme live!"
+      "desc": "The overlay includes a natural-language AI theme generator. In the settings panel, type a text description of the aesthetic you want (for example, \"cyberpunk neon night\" or \"cozy wooden cabin\"). The overlay generates CSS variables, adjusts color contrast, and applies the theme live.",
+      "carouselTitle": "Theme Carousel & Custom Themes",
+      "carouselDesc": "Use the theme carousel to select preset themes or AI-generated themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages."
+    },
+    "colors": {
+      "title": "Color Customization",
+      "desc": "You can set the color of every chat element. Enter hex color codes directly (for example <span class=\"inline-code\">#FF5500</span>). Dynamic swatches show your current colors. You can also enter <span class=\"inline-code\">transparent</span> or hex codes with alpha values for transparent background colors.",
+      "tip": "<strong>Tip:</strong> You can search Google for \"color picker\" to use an interactive color picker tool. Copy and paste hex codes into the settings fields.",
+      "available": {
+        "title": "Available Color Settings",
+        "bg": "<strong>Background Color:</strong> The main background of chat messages. Combine with the background opacity slider for transparency control.",
+        "border": "<strong>Border Color:</strong> The border around chat message bubbles.",
+        "text": "<strong>Text Color:</strong> The color of chat message text.",
+        "username": "<strong>Username Color:</strong> The default color of usernames. Enable <strong>Override User Colors</strong> to apply your custom color to all usernames.",
+        "timestamp": "<strong>Timestamp Color:</strong> The color of message timestamps when timestamps are enabled.",
+        "pronoun": "<strong>Pronoun Badge Color:</strong> The color of pronoun badges next to usernames. You can set this to match the timestamp color.",
+        "bgOpacity": "<strong>Background Opacity:</strong> Adjust message background opacity from 0% (fully transparent) to 100%.",
+        "bgImageOpacity": "<strong>Background Image Opacity:</strong> Controls opacity for custom uploaded background images.",
+        "chromaKey": "<strong>Chroma Key Mode:</strong> Sets a solid green background for green screen keying in OBS."
+      }
+    },
+    "fonts": {
+      "title": "Google Fonts & Typography",
+      "desc": "Customize font styles, sizes, and layout constraints to match your broadcast layout.",
+      "searchTitle": "Searchable Google Fonts",
+      "searchDesc": "Use the searchable font picker UI to search and select from available Google Fonts. The font manager loads Google Font stylesheets live across preview and OBS sync.",
+      "settingsTitle": "Typography & Layout Settings",
+      "fontSize": "<strong>Font Size:</strong> Adjust font size from 10px to 40px.",
+      "fontWeight": "<strong>Font Weight:</strong> Select Normal, Bold, 500, 600, 700, or 800 Extra Bold font weight.",
+      "borderRadius": "<strong>Border Radius:</strong> Choose border radius presets (0px, 8px, 16px, or 24px).",
+      "boxShadow": "<strong>Box Shadow:</strong> Select shadow depth presets (None, Soft, Simple 3D, Intense 3D, or Sharp).",
+      "textShadow": "<strong>Text Shadow:</strong> Select text shadow style presets (None, Soft, Sharp, Outline, Strong, or Glow).",
+      "chatDimensions": "<strong>Chat Dimensions:</strong> Adjust chat container width (20% to 100%) and height (20% to 100%)."
     },
     "emotes": {
       "title": "Third-Party Emotes & Stacking",
-      "desc": "The Wildcat Chat Overlay natively supports third-party Twitch emote providers, including <strong>BetterTTV (BTTV)</strong>, <strong>FrankerFaceZ (FFZ)</strong>, and <strong>7TV</strong>. Both global and channel-specific emote sets are loaded automatically for Twitch channels.",
+      "desc": "The overlay supports third-party Twitch emote providers: BetterTTV (BTTV), FrankerFaceZ (FFZ), and 7TV. Global and channel emote sets load automatically for Twitch channels.",
       "zeroWidth": {
         "title": "Zero-Width & Overlay Stacking",
-        "desc": "Zero-width emotes (such as hats, masks, rain effects, or seasonal overlays) dynamically stack on top of the preceding emote when separated by a space (for example <span class=\"inline-code\">catJAM cvHazmat</span>). Consecutive zero-width emotes can chain to create complex multi-layered emote stacks. Single-emote enlargement automatically applies to stacked emote combinations."
+        "desc": "Zero-width emotes (like hats or rain effects) stack on top of the preceding emote when separated by a space (for example <span class=\"inline-code\">catJAM cvHazmat</span>). You can chain zero-width emotes to create multi-layered stacks. Single-emote enlargement applies automatically to stacked emote combinations."
       },
       "precedence": {
         "title": "Priority & Matching",
-        "desc": "Emotes are matched as exact, case-sensitive words. Twitch native emotes take priority over third-party emotes, and channel emotes take priority over global sets."
+        "desc": "Emotes match as exact case-sensitive words. Twitch native emotes take priority over third-party emotes. Channel emotes take priority over global sets."
       },
       "safety": {
         "title": "Content Safety & Customization",
-        "desc": "You can fine-tune third-party emote behavior directly in the settings panel:",
-        "toggle": "<strong>Third-Party Emotes Toggle:</strong> Master switch to enable or disable all third-party emotes (enabled by default).",
-        "channelToggle": "<strong>Show Channel Emotes:</strong> Toggle whether channel-specific third-party emotes are displayed or restricted to global sets only.",
-        "filters": "<strong>7TV Safety Filters:</strong> Filter out potentially sensitive or unwanted emotes by category, including <em>Twitch Disallowed</em> (filtered by default), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em>, and <em>Edgy / Offensive</em>."
+        "desc": "You can configure third-party emote settings in the settings panel:",
+        "toggle": "<strong>Third-Party Emotes Toggle:</strong> Master switch to enable or disable all third-party emotes.",
+        "channelToggle": "<strong>Show Channel Emotes:</strong> Toggle whether channel-specific third-party emotes display.",
+        "filters": "<strong>7TV Content Filters:</strong> Filter out sensitive emotes by category (Twitch Disallowed, Sexual Content, Epilepsy / Flashing, and Edgy / Offensive)."
+      }
+    },
+    "animations": {
+      "title": "Display Modes & Animations",
+      "desc": "Choose between Window mode (continuous scrolling list) and Popup mode (transient message bubbles). Message entry and exit animations use the Web Animations API for smooth performance.",
+      "popupDirections": {
+        "title": "Popup Animation Directions & Controls",
+        "desc": "In Popup mode, configure message entry directions: From Bottom, From Top, From Left, or From Right. You can also configure message duration (2 to 60 seconds) and maximum popup count (1 to 10). Popup messages stay visible during customization so you can preview changes."
+      },
+      "reducedMotion": {
+        "title": "Reduced Motion Support",
+        "desc": "The overlay respects system <span class=\"inline-code\">prefers-reduced-motion</span> settings. When enabled, window mode entry animations are disabled and popup transition durations are minimized."
       }
     },
     "config": {
       "title": "Config Panel Features",
-      "desc": "All of the modifications and customizations are handled directly using the on-page settings menu. In OBS, right-click the Browser Source and select <strong>Interact</strong> to open the menu. The options include:",
-      "feature1": "<strong>Channel Selection:</strong> Select the streaming platform (Twitch/YouTube) and provide the relevant Channel ID or Video URL to connect.",
-      "feature2": "<strong>Font Settings:</strong> Choose from an array of included Google Fonts and adjust the font size up to the maximum constraints, ensuring ideal readability.",
-      "feature3": "<strong>Display Layout:</strong> Pick between standard list mode or popup chat bubbles mode. Adjust background opacities and borders.",
-      "feature4": "<strong>Badges & Emotes:</strong> Toggle platform badges natively for Twitch and YouTube, and configure third-party emotes (BTTV, FFZ, 7TV), zero-width stacking, and content safety filters.",
-      "feature5": "<strong>Theme Management:</strong> Access your AI-generated Themes, select from presets, and adjust granular colors manually if needed."
+      "desc": "Right-click the Browser Source in OBS and select <strong>Interact</strong> to open the settings menu. Available options include:",
+      "feature1": "<strong>Channel Selection:</strong> Select Twitch or YouTube and enter your channel information to connect.",
+      "feature2": "<strong>Font Settings:</strong> Search Google Fonts, adjust font size, and set font weight.",
+      "feature3": "<strong>Display Layout:</strong> Choose Window mode or Popup mode. Set background colors, opacities, borders, and shadows.",
+      "feature4": "<strong>Message Elements & Events:</strong> Toggle platform badges, user badges, super chats, membership events, pronouns, timestamps, emote enlargement, and top gradient fade.",
+      "feature5": "<strong>Emotes & Safety:</strong> Enable third-party emotes and set 7TV content filters.",
+      "feature6": "<strong>Theme Management:</strong> Select preset themes, generate AI themes, and set custom hex colors."
     },
     "scenes": {
       "title": "Chat Scene Creator",
-      "desc": "The <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a> lets you create and manage chat scenes for different parts of your stream (for example, Gaming or Just Chatting).",
+      "desc": "The <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a> lets you create and manage named chat overlay scenes for different stream layouts (for example, Gaming or Just Chatting).",
       "featuresTitle": "Key Features",
-      "feature1": "<strong>Scene Management:</strong> Create, duplicate, delete, import, and export scene settings files in JSON format.",
-      "feature2": "<strong>Visual Web Customization:</strong> Set Twitch and YouTube channel connections, Google Fonts, preset themes, AI-generated themes, colors, background opacity, chroma key green screen mode, popup layout, platform badges, and third-party emotes.",
-      "feature3": "<strong>Live Preview:</strong> Test settings live in an interactive preview window before streaming.",
-      "syncTitle": "Live Web Sync",
-      "syncDesc": "When you enable <strong>Web Customization (Live Sync)</strong>, the Chat Scene Creator creates a unique sync token and includes it in your OBS URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web UI update your OBS browser source live in real time without refreshing the page.",
-      "localNote": "If Live Sync is disabled, settings save locally in your browser or in the OBS browser source cache."
+      "feature1": "<strong>Scene Management:</strong> Create, duplicate, delete, import JSON scene files, export JSON scene files, and link existing scenes using scene tokens.",
+      "feature2": "<strong>Channel Connection:</strong> Enter Twitch channels and YouTube channel IDs or handles with instant application.",
+      "feature3": "<strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, color schemes, background opacities, chroma key mode, popup layouts, platform badges, and emote filters.",
+      "feature4": "<strong>Interactive Live Preview:</strong> Test settings in a live preview box. Switch preview backgrounds between Dark, Light, Grid (Checkerboard), and Custom color. Changes stream to the preview in real time.",
+      "syncTitle": "Automatic Live Sync",
+      "syncDesc": "The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.",
+      "localNote": "If you configure settings directly inside OBS, settings save locally in the OBS browser source cache."
     },
     "obsSetup": {
       "title": "OBS Setup Instructions",
       "desc": "Follow these steps to add the chat overlay to OBS Studio:",
-      "step1": "In OBS Studio, go to the <strong>Sources</strong> panel, click the <strong>+</strong> button, and select <strong>Browser</strong>.",
+      "step1": "In OBS Studio, open the <strong>Sources</strong> panel, click <strong>+</strong>, and select <strong>Browser</strong>.",
       "step2": "Enter a recognizable source name (for example, \"Twitch Chat\").",
-      "step3": "Paste the URL generated from the Chat Scene Creator into the URL field. Uncheck \"Local file\" if you cannot paste the URL.",
+      "step3": "Paste the URL generated from the Chat Scene Creator into the URL field. If you cannot paste the URL, uncheck \"Local file\".",
       "step4": "Set Width to <strong>320</strong> and Height to <strong>600</strong>.",
-      "step5": "Click \"OK\" to add the browser source to your overlay canvas.",
-      "step6": "<strong>Configuring Settings:</strong> If Live Sync is enabled, save your settings in the Web Chat Scene Creator. If Live Sync is disabled, right-click the Browser Source in OBS and select <strong>Interact</strong> to open the settings panel.",
-      "step7": "In the interactive window, enter your channel information, select your preferences by clicking the gear icon (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) on the top-right, and click \"Connect\".",
+      "step5": "Click \"OK\" to add the browser source to your canvas.",
+      "step6": "<strong>Configuring Settings:</strong> Save your settings in the Web Chat Scene Creator to sync live to OBS. Alternatively, right-click the Browser Source in OBS and select <strong>Interact</strong> to adjust settings locally.",
+      "step7": "In the interactive window, enter your channel information, click the settings gear (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>), and click \"Connect\".",
       "tips": {
         "title": "Advanced OBS Tips",
-        "tip1": "Enable <span class=\"inline-code\">Shutdown source when not visible</span> to save CPU/Memory overhead.",
-        "tip2": "To hide any scrollbars, add <span class=\"inline-code\">body { overflow: hidden; }</span> to the Custom CSS field inside the properties window.",
-        "tip3": "Settings are saved to OBS cache. If you ever \"Clear Cache\" in OBS for this source, you will need to reconfigure the aesthetic settings."
-      }
-    },
-    "colors": {
-      "title": "Color Customization",
-      "desc": "You have full control over the color of every element in the chat overlay. Since standard color picker dialogs don't work inside the OBS browser source, all colors are set by entering hex codes directly (e.g. <span class=\"inline-code\">#FF5500</span>). Each color setting also provides preset buttons with dynamic color swatches so you can see your current scheme at a glance.",
-      "tip": "<strong>Tip:</strong> You can search Google for \"color picker\" to use a built-in interactive color picker tool, then copy and paste the resulting hex codes directly into the settings fields.",
-      "available": {
-        "title": "Available Color Settings",
-        "bg": "<strong>Background Color:</strong> The main background of chat messages. Works together with the background opacity slider for transparency control.",
-        "border": "<strong>Border Color:</strong> The border around chat message bubbles.",
-        "text": "<strong>Text Color:</strong> The color of chat message text.",
-        "username": "<strong>Username Color:</strong> The color of usernames displayed next to messages. You can also enable <strong>Override Username Colors</strong> to use your custom color instead of each user's Twitch name color.",
-        "timestamp": "<strong>Timestamp Color:</strong> The color of message timestamps (when timestamps are enabled).",
-        "pronoun": "<strong>Pronoun Badge Color:</strong> The color of pronoun badges displayed next to usernames (when pronouns are enabled). This can also be set to automatically match the timestamp color."
-      }
-    },
-    "animations": {
-      "title": "Animations",
-      "desc": "Chat message entry and exit animations use the Web Animations API for smooth, performant transitions. In window mode, new messages glide into view using a CSS clipping-based offset animation on the entire message list, avoiding per-element height animations that can cause jitter during busy chat. In popup mode, messages animate in and out with height and opacity transitions.",
-      "reducedMotion": {
-        "title": "Reduced Motion Support",
-        "desc": "The overlay respects the system-level <span class=\"inline-code\">prefers-reduced-motion</span> setting (e.g. the \"Reduce motion\" option in macOS Accessibility settings). When enabled, entry animations are disabled for window-mode messages and popup transition durations are minimized, providing a calmer viewing experience."
+        "tip1": "Enable <span class=\"inline-code\">Shutdown source when not visible</span> to save system resources.",
+        "tip2": "To hide scrollbars, add <span class=\"inline-code\">body { overflow: hidden; }</span> to the Custom CSS field.",
+        "tip3": "Settings save to the OBS cache. If you clear the OBS cache for this source, reconfigure your aesthetic settings."
       }
     }
   }

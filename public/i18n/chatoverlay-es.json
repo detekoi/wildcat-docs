@@ -14,13 +14,14 @@
     "title": "Chat Overlay",
     "overview": "Resumen",
     "platforms": "Soporte de Plataformas",
-    "customization": "Personalización",
+    "customization": "Personalización y temas",
+    "colors": "Personalización de Colores",
+    "fonts": "Fuentes y tipografía",
+    "emotes": "Emoticonos de Terceros",
+    "animations": "Modos de visualización y animaciones",
     "config": "Panel de Configuración",
     "scenes": "Creador de Escenas de Chat",
-    "obsSetup": "Configuración de OBS",
-    "colors": "Personalización de Colores",
-    "emotes": "Emoticonos de Terceros",
-    "animations": "Animaciones"
+    "obsSetup": "Configuración de OBS"
   },
   "chatOverlay": {
     "page": {
@@ -42,14 +43,46 @@
       "desc": "El overlay de chat incluye potentes herramientas de personalización estética. Puede cambiar el estilo fundamental directamente a través del menú de configuración.",
       "obsConfig": {
         "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Opciones de configuración:</strong> Puede configurar los ajustes de chat de dos maneras:",
-        "step1": "<strong>Creador de escenas de chat web (Recomendado):</strong> Configure las conexiones de canal, fuentes, temas, colores y diseños en la web. Active la <strong>Sincronización en vivo</strong> para enviar cambios en vivo a OBS.",
+        "step1": "<strong>Web Chat Scene Creator (Recomendado):</strong> Configura conexiones de canal, fuentes, temas, colores y diseños en la web. El Chat Scene Creator sincroniza automáticamente tus ediciones en vivo con OBS.",
         "step2": "<strong>En el panel de configuración de OBS:</strong> Haga clic con el botón derecho en la fuente de navegador en OBS y seleccione <strong>Interactuar</strong>. Pase el cursor sobre el chat y haga clic en el engranaje de configuración (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) para personalizar las opciones localmente.",
         "step3": "Los ajustes se guardan automáticamente para cada fuente de escena."
       }
     },
     "themes": {
       "title": "Temas automáticos de IA",
-      "desc": "Una de las funciones más potentes del Wildcat Chat Overlay es su generador de temas de IA en lenguaje natural. Dentro del panel de configuración, simplemente escriba una descripción del estilo o ambiente que desea (por ejemplo, \"cyberpunk neon night\", \"cozy wooden cabin in the snow\", \"vintage 90s vaporwave\"). El overlay generará de forma inteligente las variables CSS correspondientes, ajustará las paletas de colores para un contraste ideal y aplicará el tema en vivo."
+      "desc": "Una de las funciones más potentes del Wildcat Chat Overlay es su generador de temas de IA en lenguaje natural. Dentro del panel de configuración, simplemente escriba una descripción del estilo o ambiente que desea (por ejemplo, \"cyberpunk neon night\", \"cozy wooden cabin in the snow\", \"vintage 90s vaporwave\"). El overlay generará de forma inteligente las variables CSS correspondientes, ajustará las paletas de colores para un contraste ideal y aplicará el tema en vivo.",
+      "carouselTitle": "Carrusel de temas y temas personalizados",
+      "carouselDesc": "Usa el carrusel de temas para seleccionar temas predefinidos o generados por IA. Puedes eliminar temas personalizados mediante una ventana de confirmación. Los temas activos se sincronizan entre páginas."
+    },
+    "colors": {
+      "title": "Personalización de colores",
+      "desc": "Tienes control total sobre el color de cada elemento en la superposición de chat. Dado que los cuadros de diálogo de selección de color estándar no funcionan dentro de la fuente de navegador de OBS, todos los colores se configuran ingresando códigos hexadecimales directamente (por ejemplo, <span class=\"inline-code\">#FF5500</span>). Cada ajuste de color también proporciona botones preestablecidos con muestras de color dinámicas para que puedas ver tu esquema actual de un vistazo.",
+      "tip": "<strong>Consejo:</strong> Puedes buscar «selector de color» en Google para usar su herramienta interactiva integrada, luego copiar y pegar los códigos hexadecimales resultantes directamente en los campos de configuración.",
+      "available": {
+        "title": "Ajustes de color disponibles",
+        "bg": "<strong>Color de fondo:</strong> El fondo principal de los mensajes de chat. Funciona junto con el control deslizante de opacidad de fondo para el control de transparencia.",
+        "border": "<strong>Color del borde:</strong> El borde alrededor de las burbujas de mensajes de chat.",
+        "text": "<strong>Color del texto:</strong> El color del texto de los mensajes de chat.",
+        "username": "<strong>Color de nombre de usuario:</strong> El color de los nombres de usuario que se muestran junto a los mensajes. También puedes habilitar <strong>Anular colores de nombre de usuario</strong> para usar tu color personalizado en lugar del color de nombre de Twitch de cada usuario.",
+        "timestamp": "<strong>Color de marca de tiempo:</strong> El color de las marcas de tiempo de los mensajes (cuando las marcas de tiempo están habilitadas).",
+        "pronoun": "<strong>Color de la etiqueta de pronombre:</strong> El color de las etiquetas de pronombre que se muestran junto a los nombres de usuario (cuando los pronombres están habilitados). Esto también se puede configurar para que coincida automáticamente con el color de la marca de tiempo.",
+        "bgOpacity": "<strong>Opacidad del fondo:</strong> Ajusta la opacidad del fondo de los mensajes desde 0% (totalmente transparente) hasta 100%.",
+        "bgImageOpacity": "<strong>Opacidad de la imagen de fondo:</strong> Controla la opacidad de las imágenes de fondo personalizadas cargadas.",
+        "chromaKey": "<strong>Modo Chroma Key:</strong> Establece un fondo verde sólido para el uso de croma en OBS."
+      }
+    },
+    "fonts": {
+      "title": "Google Fonts y tipografía",
+      "desc": "Personaliza estilos de fuente, tamaños y límites de diseño para adaptarlos a tu transmisión.",
+      "searchTitle": "Google Fonts buscables",
+      "searchDesc": "Usa el selector de fuentes para buscar y seleccionar fuentes de Google Fonts disponibles. El administrador de fuentes carga hojas de estilo en vivo en la vista previa y sincronización de OBS.",
+      "settingsTitle": "Ajustes de tipografía y diseño",
+      "fontSize": "<strong>Tamaño de fuente:</strong> Ajusta el tamaño de fuente de 10px a 40px.",
+      "fontWeight": "<strong>Peso de fuente:</strong> Selecciona Normal, Negrita, 500, 600, 700 u 800 Extra Negrita.",
+      "borderRadius": "<strong>Radio de borde:</strong> Elige preajustes de radio de borde (0px, 8px, 16px o 24px).",
+      "boxShadow": "<strong>Sombra de caja:</strong> Selecciona preajustes de sombra (Ninguna, Suave, 3D simple, 3D intensa o Nítida).",
+      "textShadow": "<strong>Sombra de texto:</strong> Selecciona preajustes de sombra de texto (Ninguna, Suave, Nítida, Contorno, Fuerte o Resplandor).",
+      "chatDimensions": "<strong>Dimensiones del chat:</strong> Ajusta el ancho (20% a 100%) y el alto (20% a 100%) del contenedor de chat."
     },
     "emotes": {
       "title": "Emoticonos de terceros y apilamiento",
@@ -70,6 +103,18 @@
         "filters": "<strong>Filtros de seguridad de 7TV:</strong> Filtre los emoticonos potencialmente sensibles o no deseados por categoría, incluyendo <em>Twitch Disallowed</em> (filtrado por defecto), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em> y <em>Edgy / Offensive</em>."
       }
     },
+    "animations": {
+      "title": "Animaciones",
+      "desc": "Las animaciones de entrada y salida de los mensajes de chat utilizan la API de Animaciones Web (WAAPI) para lograr transiciones suaves y eficientes. En el modo de ventana, los nuevos mensajes se deslizan en la vista mediante una animación de desplazamiento basada en el recorte de CSS en toda la lista de mensajes, evitando animaciones de altura por elemento que pueden causar parpadeos durante un chat muy activo. En el modo emergente, los mensajes aparecen y desaparecen con transiciones de altura y opacidad.",
+      "popupDirections": {
+        "title": "Direcciones de animación y controles emergentes",
+        "desc": "En el modo emergente, configura las direcciones de entrada de los mensajes: Desde abajo, Desde arriba, Desde la izquierda o Desde la derecha. También puedes configurar la duración del mensaje (2 a 60 segundos) y la cantidad máxima de emergentes (1 a 10). Los mensajes emergentes permanecen visibles durante la personalización para previsualizar cambios."
+      },
+      "reducedMotion": {
+        "title": "Soporte de movimiento reducido",
+        "desc": "La superposición respeta la configuración del sistema <span class=\"inline-code\">prefers-reduced-motion</span> (por ejemplo, la opción «Reducir movimiento» en la configuración de accesibilidad de macOS). Cuando está habilitada, las animaciones de entrada se desactivan para los mensajes en modo ventana y las duradas de transición de los elementos emergentes se minimizan, proporcionando una experiencia de visualización más tranquila."
+      }
+    },
     "config": {
       "title": "Características del panel de configuración",
       "desc": "Todas las modificaciones y personalizaciones se manejan directamente usando el menú de opciones en la página. En OBS, haga clic con el botón derecho en la fuente de navegador y seleccione <strong>Interactuar</strong> para abrir el menú. Las opciones incluyen:",
@@ -77,18 +122,20 @@
       "feature2": "<strong>Configuración de fuentes:</strong> Elija entre una variedad de fuentes de Google incluidas y ajuste el tamaño de fuente hasta los límites máximos, garantizando una legibilidad ideal.",
       "feature3": "<strong>Diseño de pantalla:</strong> Elija entre el modo de lista estándar o el modo de burbujas de chat emergentes. Ajuste las opacidades de fondo y los bordes.",
       "feature4": "<strong>Insignias y emoticonos:</strong> Alterne las insignias de plataforma nativas para Twitch y YouTube, y configure emoticonos de terceros (BTTV, FFZ, 7TV), apilamiento de ancho cero y filtros de seguridad de contenido.",
-      "feature5": "<strong>Gestión de temas:</strong> Acceda a sus temas generados por IA, seleccione entre los preajustes y ajuste los colores de forma manual si es necesario."
+      "feature5": "<strong>Gestión de temas:</strong> Acceda a sus temas generados por IA, seleccione entre los preajustes y ajuste los colores de forma manual si es necesario.",
+      "feature6": "<strong>Gestión de temas:</strong> Selecciona temas predefinidos, genera temas mediante IA y establece colores hexadecimales personalizados."
     },
     "scenes": {
       "title": "Creador de escenas de chat",
       "desc": "El <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Creador de escenas de chat</a> le permite crear y gestionar escenas de chat para diferentes partes de su transmisión (por ejemplo, Gaming o Just Chatting).",
       "featuresTitle": "Características principales",
-      "feature1": "<strong>Gestión de escenas:</strong> Cree, duplique, elimine, importe y exporte archivos de configuración de escenas en formato JSON.",
-      "feature2": "<strong>Personalización web visual:</strong> Establezca conexiones de canal de Twitch y YouTube, fuentes de Google, temas preestablecidos, temas de IA, colores, opacidad de fondo, modo croma verde, diseño emergente, insignias de plataforma y emoticonos de terceros.",
-      "feature3": "<strong>Vista previa en vivo:</strong> Pruebe la configuración en vivo en una ventana de vista previa interactiva antes de transmitir.",
-      "syncTitle": "Sincronización web en vivo",
-      "syncDesc": "Cuando activa la <strong>Personalización web (Sincronización en vivo)</strong>, el Creador de escenas de chat crea un token de sincronización único y lo incluye en la URL de OBS: <span class=\"inline-code\">chat.html?scene=NOMBRE&sync=TOKEN</span>. Los cambios guardados en la web actualizan la fuente de navegador de OBS en vivo en tiempo real.",
-      "localNote": "Si la Sincronización en vivo está desactivada, la configuración se guarda localmente en su navegador o en la caché de la fuente de navegador de OBS."
+      "feature1": "<strong>Gestión de escenas:</strong> Crea, duplica, elimina, importa y exporta archivos JSON de escena, y vincula escenas existentes mediante tokens de escena.",
+      "feature2": "<strong>Conexión de canal:</strong> Introduce canales de Twitch e ID o nombres de usuario de YouTube con aplicación instantánea.",
+      "feature3": "<strong>Ajustes visuales:</strong> Configura Google Fonts, temas predefinidos, temas IA, esquemas de color, opacidad, croma, diseños emergentes, insignias y filtros de emoticonos.",
+      "feature4": "<strong>Vista previa interactiva en vivo:</strong> Prueba ajustes en una caja de vista previa en vivo. Cambia el fondo entre Oscuro, Claro, Cuadrícula (tablero de ajedrez) y Color personalizado. Los cambios se transmiten en tiempo real.",
+      "syncTitle": "Sincronización automática en vivo",
+      "syncDesc": "El Chat Scene Creator genera automáticamente un token de sincronización único en tu URL de OBS: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Las ediciones guardadas en la interfaz web actualizan tu fuente de navegador de OBS en vivo sin recargar la página.",
+      "localNote": "Si configuras los ajustes directamente dentro de OBS, se guardarán localmente en la caché de la fuente de navegador de OBS."
     },
     "obsSetup": {
       "title": "Instrucciones de configuración de OBS",
@@ -98,35 +145,13 @@
       "step3": "Pegue la URL generada por el Creador de escenas de chat en el campo URL. Desmarque \"Archivo local\" si no puede pegar la URL.",
       "step4": "Establezca el Ancho en <strong>320</strong> y el Alto en <strong>600</strong>.",
       "step5": "Haga clic en \"Aceptar\" para agregar la fuente de navegador.",
-      "step6": "<strong>Configuración de opciones:</strong> Si la Sincronización en vivo está activada, guarde su configuración en el Creador de escenas de chat web. Si la Sincronización en vivo está desactivada, haga clic con el botón derecho en la fuente de navegador en OBS y seleccione <strong>Interactuar</strong>.",
+      "step6": "<strong>Configuración de ajustes:</strong> Guarda tus ajustes en el Web Chat Scene Creator para sincronizar en vivo con OBS. Como alternativa, haz clic con el botón derecho en la fuente de navegador en OBS y selecciona <strong>Interactuar</strong> para ajustar la configuración localmente.",
       "step7": "En la ventana interactiva, ingrese la información de su canal, seleccione sus preferencias haciendo clic en el icono de engranaje (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) en la parte superior derecha y haga clic en \"Conectar\".",
       "tips": {
         "title": "Consejos avanzados de OBS",
         "tip1": "Active <span class=\"inline-code\">Apagar la fuente cuando no sea visible</span> para ahorrar uso de CPU y memoria.",
         "tip2": "Para ocultar las barras de desplazamiento, agregue <span class=\"inline-code\">body { overflow: hidden; }</span> al campo CSS personalizado dentro de la ventana de propiedades.",
         "tip3": "La configuración se guarda en la caché de OBS. Si borra la caché en OBS para esta fuente, deberá volver a configurar las opciones estéticas."
-      }
-    },
-    "colors": {
-      "title": "Personalización de colores",
-      "desc": "Tienes control total sobre el color de cada elemento en la superposición de chat. Dado que los cuadros de diálogo de selección de color estándar no funcionan dentro de la fuente de navegador de OBS, todos los colores se configuran ingresando códigos hexadecimales directamente (por ejemplo, <span class=\"inline-code\">#FF5500</span>). Cada ajuste de color también proporciona botones preestablecidos con muestras de color dinámicas para que puedas ver tu esquema actual de un vistazo.",
-      "tip": "<strong>Consejo:</strong> Puedes buscar «selector de color» en Google para usar su herramienta interactiva integrada, luego copiar y pegar los códigos hexadecimales resultantes directamente en los campos de configuración.",
-      "available": {
-        "title": "Ajustes de color disponibles",
-        "bg": "<strong>Color de fondo:</strong> El fondo principal de los mensajes de chat. Funciona junto con el control deslizante de opacidad de fondo para el control de transparencia.",
-        "border": "<strong>Color del borde:</strong> El borde alrededor de las burbujas de mensajes de chat.",
-        "text": "<strong>Color del texto:</strong> El color del texto de los mensajes de chat.",
-        "username": "<strong>Color de nombre de usuario:</strong> El color de los nombres de usuario que se muestran junto a los mensajes. También puedes habilitar <strong>Anular colores de nombre de usuario</strong> para usar tu color personalizado en lugar del color de nombre de Twitch de cada usuario.",
-        "timestamp": "<strong>Color de marca de tiempo:</strong> El color de las marcas de tiempo de los mensajes (cuando las marcas de tiempo están habilitadas).",
-        "pronoun": "<strong>Color de la etiqueta de pronombre:</strong> El color de las etiquetas de pronombre que se muestran junto a los nombres de usuario (cuando los pronombres están habilitados). Esto también se puede configurar para que coincida automáticamente con el color de la marca de tiempo."
-      }
-    },
-    "animations": {
-      "title": "Animaciones",
-      "desc": "Las animaciones de entrada y salida de los mensajes de chat utilizan la API de Animaciones Web (WAAPI) para lograr transiciones suaves y eficientes. En el modo de ventana, los nuevos mensajes se deslizan en la vista mediante una animación de desplazamiento basada en el recorte de CSS en toda la lista de mensajes, evitando animaciones de altura por elemento que pueden causar parpadeos durante un chat muy activo. En el modo emergente, los mensajes aparecen y desaparecen con transiciones de altura y opacidad.",
-      "reducedMotion": {
-        "title": "Soporte de movimiento reducido",
-        "desc": "La superposición respeta la configuración del sistema <span class=\"inline-code\">prefers-reduced-motion</span> (por ejemplo, la opción «Reducir movimiento» en la configuración de accesibilidad de macOS). Cuando está habilitada, las animaciones de entrada se desactivan para los mensajes en modo ventana y las duradas de transición de los elementos emergentes se minimizan, proporcionando una experiencia de visualización más tranquila."
       }
     }
   }
