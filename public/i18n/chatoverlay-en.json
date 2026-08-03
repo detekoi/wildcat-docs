@@ -52,7 +52,11 @@
       "title": "Automatic AI Themes",
       "desc": "The overlay includes a natural-language AI theme generator. In the settings panel, type a text description of the aesthetic you want (for example, \"cyberpunk neon night\" or \"cozy wooden cabin\"). The overlay generates CSS variables, adjusts color contrast, sets matching pronoun badge colors, and applies the theme live.",
       "carouselTitle": "Theme Carousel & Custom Themes",
-      "carouselDesc": "Use the theme carousel to select preset themes or AI-generated themes. The carousel stores up to 50 saved themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages."
+      "carouselDesc": "Use the theme carousel to select preset themes, AI-generated themes, or user-created themes. The carousel stores up to 50 saved themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages.",
+      "userPresetsTitle": "Saving Custom Theme Presets",
+      "userPresetsDesc": "You can save your current visual settings as a named theme preset. Save presets from the Chat Scene Creator or the OBS settings panel. Presets save to the cloud theme carousel.",
+      "presetSync": "<strong>Cloud Sync & Deletion:</strong> Presets receive automatic deduplication, cloud backup, and deletion support.",
+      "presetBgImage": "<strong>Background Image Support:</strong> In the Chat Scene Creator, presets save your uploaded background image. In the OBS settings panel, presets use the background image from the active theme."
     },
     "colors": {
       "title": "Color Customization",
@@ -123,7 +127,7 @@
       "feature3": "<strong>Display Layout:</strong> Choose Window mode or Popup mode. Set background colors, opacities, borders, and shadows.",
       "feature4": "<strong>Message Elements & Events:</strong> Toggle platform badges, user badges, super chats, membership events, pronouns, timestamps, emote enlargement, and top gradient fade.",
       "feature5": "<strong>Emotes & Safety:</strong> Enable third-party emotes and set 7TV content filters.",
-      "feature6": "<strong>Theme Management:</strong> Select preset themes, generate AI themes, and set custom hex colors."
+      "feature6": "<strong>Theme Management:</strong> Select preset themes, generate AI themes, save custom theme presets, and set custom hex colors."
     },
     "scenes": {
       "title": "Chat Scene Creator",
@@ -131,7 +135,7 @@
       "featuresTitle": "Key Features",
       "feature1": "<strong>Scene Management:</strong> Create, duplicate, delete, import JSON scene files, export JSON scene files, and link existing scenes using scene tokens.",
       "feature2": "<strong>Channel Connection:</strong> Enter Twitch channels and YouTube channel IDs or handles with instant application.",
-      "feature3": "<strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, color schemes, custom background image uploads, background opacities, chroma key mode, popup layouts, platform badges, and emote filters.",
+      "feature3": "<strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, custom theme presets, color schemes, background image uploads, opacities, chroma key, popup layouts, badges, and emote filters.",
       "feature4": "<strong>Interactive Live Preview:</strong> Test settings in a live preview box. Switch preview backgrounds between Dark, Light, Grid (Checkerboard), and Custom color. Changes stream to the preview in real time.",
       "syncTitle": "Automatic Live Sync",
       "syncDesc": "The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.",

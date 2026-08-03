@@ -52,7 +52,11 @@
       "title": "Automatische KI-Themes",
       "desc": "Eines der leistungsstärksten Features des Wildcat Chat Overlays ist der KI-Theme-Generator für natürliche Sprache. Geben Sie im Konfigurations-Panel einfach eine Beschreibung der Ästhetik ein. Das Overlay generiert CSS-Variablen, passt den Farbkontrast an, stellt passende Pronom-Badge-Farben ein und wendet das Theme live an.",
       "carouselTitle": "Themen-Karussell & Eigene Themen",
-      "carouselDesc": "Verwenden Sie das Themen-Karussell, um vordefinierte oder KI-generierte Themen auszuwählen. Das Karussell speichert bis zu 50 eigene Themen. Sie können eigene Themen über einen Bestätigungsdialog löschen. Aktive Themen werden seitenübergreifend synchronisiert."
+      "carouselDesc": "Verwenden Sie das Themen-Karussell, um vordefinierte Themen, KI-generierte Themen oder eigene Themen auszuwählen. Das Karussell speichert bis zu 50 eigene Themen. Sie können eigene Themen über einen Bestätigungsdialog löschen. Aktive Themen werden seitenübergreifend synchronisiert.",
+      "userPresetsTitle": "Speichern eigener Themen-Vorgaben",
+      "userPresetsDesc": "Sie können Ihre aktuellen visuellen Einstellungen als benannte Themen-Vorgabe speichern. Speichern Sie Vorgaben über den Chat-Scene-Creator oder das OBS-Einstellungs-Panel. Themen-Vorgaben werden im Cloud-Themen-Karussell gespeichert.",
+      "presetSync": "<strong>Cloud-Synchronisierung & Löschung:</strong> Themen-Vorgaben werden automatisch dedupliziert, in der Cloud gesichert und können gelöscht werden.",
+      "presetBgImage": "<strong>Hintergrundbild-Unterstützung:</strong> Im Chat-Scene-Creator speichern Themen-Vorgaben Ihr hochgeladenes Hintergrundbild. Im OBS-Einstellungs-Panel verwenden Themen-Vorgaben das Hintergrundbild des aktiven Themas."
     },
     "colors": {
       "title": "Farbanpassung",
@@ -123,7 +127,7 @@
       "feature3": "<strong>Anzeigelayout:</strong> Wählen Sie zwischen dem Standard-Listenmodus oder dem Popup-Chat-Bubble-Modus. Passen Sie Hintergrundtransparenz und Rahmen an.",
       "feature4": "<strong>Badges & Emotes:</strong> Schalten Sie Plattform-Badges nativ für Twitch und YouTube um und konfigurieren Sie Drittanbieter-Emotes (BTTV, FFZ, 7TV), Zero-Width-Overlay-Stacking und Inhalts-Sicherheitsfilter.",
       "feature5": "<strong>Theme-Management:</strong> Greifen Sie auf Ihre KI-generierten Themes zu, wählen Sie aus Voreinstellungen und passen Sie bei Bedarf feine Farbabstimmungen manuell an.",
-      "feature6": "<strong>Themen-Verwaltung:</strong> Wählen Sie Themen-Vorgaben, generieren Sie KI-Themen und legen Sie benutzerdefinierte Hex-Farben fest."
+      "feature6": "<strong>Themen-Verwaltung:</strong> Wählen Sie Themen-Vorgaben, generieren Sie KI-Themen, speichern Sie eigene Themen-Vorgaben und legen Sie benutzerdefinierte Hex-Farben fest."
     },
     "scenes": {
       "title": "Chat-Scene-Creator",
@@ -131,7 +135,7 @@
       "featuresTitle": "Hauptfunktionen",
       "feature1": "<strong>Szenen-Verwaltung:</strong> Erstellen, duplizieren, löschen, importieren und exportieren Sie Szeneneinstellungsdateien im JSON-Format und verknüpfen Sie bestehende Szenen über Tokens.",
       "feature2": "<strong>Kanalverbindung:</strong> Geben Sie Twitch-Kanäle und YouTube-Kanal-IDs oder Handles mit sofortiger Übernahme ein.",
-      "feature3": "<strong>Visuelle Einstellungen:</strong> Konfigurieren Sie Google Fonts, Themen-Vorgaben, KI-Themen, Farbschemata, Deckkraft, Chroma-Key-Modus, Popup-Layouts, Plattform-Badges und Emote-Filter.",
+      "feature3": "<strong>Visuelle Einstellungen:</strong> Konfigurieren Sie Google Fonts, Themen-Vorgaben, KI-Themen, eigene Themen-Vorgaben, Farbschemata, Hintergrundbilder, Deckkraft, Chroma-Key-Modus, Popup-Layouts, Badges und Emote-Filter.",
       "feature4": "<strong>Interaktive Live-Vorschau:</strong> Testen Sie Einstellungen in einem Live-Vorschaufenster. Wechseln Sie die Hintergründe (Dunkel, Hell, Gitter/Schachbrett, Benutzerdefinierte Farbe). Änderungen werden in Echtzeit übertragen.",
       "syncTitle": "Automatische Live-Synchronisierung",
       "syncDesc": "Der Chat Scene Creator generiert automatisch ein eindeutiges Sync-Token in Ihrer OBS-URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Im Webinterface gespeicherte Änderungen aktualisieren Ihre OBS-Browserquelle live ohne Neuladen der Seite.",

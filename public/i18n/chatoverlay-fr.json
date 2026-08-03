@@ -52,7 +52,11 @@
       "title": "Thèmes IA automatiques",
       "desc": "L'overlay inclut un générateur de thèmes IA en langage naturel. Saisissez une description du style souhaité. L'overlay génère des variables CSS, ajuste le contraste des couleurs, définit la couleur des badges de pronoms assortie et applique le thème en direct.",
       "carouselTitle": "Carrousel de thèmes et thèmes personnalisés",
-      "carouselDesc": "Utilisez le carrousel de thèmes pour sélectionner des thèmes prédéfinis ou générés par IA. Le carrousel conserve jusqu'à 50 thèmes enregistrés. Vous pouvez supprimer des thèmes personnalisés avec une boîte de dialogue de confirmation. Les thèmes actifs se synchronisent sur toutes les pages."
+      "carouselDesc": "Utilisez le carrousel de thèmes pour sélectionner des thèmes prédéfinis, générés par IA ou créés par l'utilisateur. Le carrousel conserve jusqu'à 50 thèmes enregistrés. Vous pouvez supprimer des thèmes personnalisés avec une boîte de dialogue de confirmation. Les thèmes actifs se synchronisent sur toutes les pages.",
+      "userPresetsTitle": "Enregistrer des préréglages de thèmes personnalisés",
+      "userPresetsDesc": "Vous pouvez enregistrer vos paramètres visuels actuels sous forme de préréglage nommé. Enregistrez des préréglages depuis le Créateur de scènes de chat ou le panneau de configuration OBS. Les préréglages s'enregistrent dans le carrousel de thèmes cloud.",
+      "presetSync": "<strong>Synchronisation cloud et suppression :</strong> Les préréglages bénéficient de la déduplication automatique, de la sauvegarde cloud et de la suppression.",
+      "presetBgImage": "<strong>Prise en charge de l'image de fond :</strong> Dans le Créateur de scènes de chat, les préréglages enregistrent votre image de fond téléversée. Dans le panneau de configuration OBS, les préréglages utilisent l'image de fond du thème actif."
     },
     "colors": {
       "title": "Personnalisation des couleurs",
@@ -123,7 +127,7 @@
       "feature3": "<strong>Disposition d'affichage:</strong> Choisissez entre le mode liste standard et le mode bulles de chat pop-up. Ajustez les opacités de fond et les bordures.",
       "feature4": "<strong>Badges et émotes:</strong> Activez les badges natifs pour Twitch et YouTube, et configurez les émotes tierces (BTTV, FFZ, 7TV), l'empilement à largeur zéro et les filtres de sécurité.",
       "feature5": "<strong>Gestion des thèmes:</strong> Accédez à vos thèmes générés par IA, sélectionnez parmi les préréglages et ajustez manuellement les couleurs si nécessaire.",
-      "feature6": "<strong>Gestion des thèmes :</strong> Sélectionnez des thèmes prédéfinis, générez des thèmes par IA et définissez des couleurs hexadécimales personnalisées."
+      "feature6": "<strong>Gestion des thèmes :</strong> Sélectionnez des thèmes prédéfinis, générez des thèmes IA, enregistrez des préréglages de thèmes personnalisés et définissez des couleurs hexadécimales."
     },
     "scenes": {
       "title": "Créateur de scènes de chat",
@@ -131,7 +135,7 @@
       "featuresTitle": "Fonctionnalités clés",
       "feature1": "<strong>Gestion des scènes :</strong> Créez, dupliquez, supprimez, importez et exportez des fichiers de scène JSON, et liez des scènes existantes à l'aide de jetons.",
       "feature2": "<strong>Connexion de chaîne :</strong> Saisissez les chaînes Twitch et les identifiants ou alias YouTube avec application instantanée.",
-      "feature3": "<strong>Paramètres visuels :</strong> Configurez Google Fonts, les thèmes prédéfinis, les thèmes IA, les palettes de couleurs, l'opacité, le fond vert, les dispositions pop-up, les badges et les filtres d'émoticônes.",
+      "feature3": "<strong>Paramètres visuels :</strong> Configurez Google Fonts, les thèmes prédéfinis, les thèmes IA, les préréglages personnalisés, les palettes de couleurs, les images de fond, l'opacité, le fond vert, les dispositions pop-up, les badges et les filtres d'émoticônes.",
       "feature4": "<strong>Aperçu interactif en direct :</strong> Testez les paramètres dans une zone d'aperçu en direct. Changez l'arrière-plan entre Sombre, Clair, Grille (Damier) et Couleur personnalisée. Les modifications sont transmises en temps réel.",
       "syncTitle": "Synchronisation automatique en direct",
       "syncDesc": "Le Chat Scene Creator génère automatiquement un jeton de synchronisation unique dans votre URL OBS : <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Les modifications enregistrées dans l'interface Web mettent à jour votre source navigateur OBS en direct sans rafraîchir la page.",

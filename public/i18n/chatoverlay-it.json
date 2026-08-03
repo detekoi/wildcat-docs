@@ -52,7 +52,11 @@
       "title": "Temi IA automatici",
       "desc": "L'overlay include un generatore di temi IA in linguaggio naturale. Scrivi una descrizione dello stile desiderato. L'overlay genera variabili CSS, regola il contrasto dei colori, imposta il colore dei badge dei pronomi e applica il tema dal vivo.",
       "carouselTitle": "Carosello dei temi e temi personalizzati",
-      "carouselDesc": "Usa il carosello dei temi per selezionare temi predefiniti o generati dall'IA. Il carosello salva fino a 50 temi personalizzati. Puoi eliminare i temi personalizzati tramite una finestra di conferma. I temi attivi si sincronizzano tra le pagine."
+      "carouselDesc": "Usa il carosello dei temi per selezionare temi predefiniti, generati dall'IA o creati dall'utente. Il carosello salva fino a 50 temi personalizzati. Puoi eliminare i temi personalizzati tramite una finestra di conferma. I temi attivi si sincronizzano tra le pagine.",
+      "userPresetsTitle": "Salvataggio dei preset di temi personalizzati",
+      "userPresetsDesc": "Puoi salvare le tue impostazioni visive correnti come preset di tema con nome. Salva i preset dal Creatore di scene chat o dal pannello di impostazioni OBS. I preset vengono salvati nel carosello temi in cloud.",
+      "presetSync": "<strong>Sincronizzazione cloud ed eliminazione:</strong> I preset supportano deduplicazione automatica, backup in cloud ed eliminazione.",
+      "presetBgImage": "<strong>Supporto immagine di sfondo:</strong> Nel Creatore di scene chat, i preset salvano l'immagine di sfondo caricata. Nel pannello impostazioni OBS, i preset utilizzano l'immagine di sfondo del tema attivo."
     },
     "colors": {
       "title": "Personalizzazione Colori",
@@ -123,7 +127,7 @@
       "feature3": "<strong>Layout di visualizzazione:</strong> Scegli tra la modalità elenco standard e la modalità bolle di chat pop-up. Regola l opacità dello sfondo e i bordi.",
       "feature4": "<strong>Stemmisti ed emote:</strong> Attiva gli stemmi nativi per Twitch e YouTube e configura le emote di terze parti (BTTV, FFZ, 7TV), la sovrapposizione a larghezza zero e i filtri di sicurezza.",
       "feature5": "<strong>Gestione dei temi:</strong> Accedi ai temi generati dall IA, seleziona i temi predefiniti e regola manualmente i colori se necessario.",
-      "feature6": "<strong>Gestione dei temi:</strong> Seleziona temi predefinita, genera temi con l'IA e imposta colori esadecimali personalizzati."
+      "feature6": "<strong>Gestione dei temi:</strong> Seleziona temi predefiniti, genera temi con l'IA, salva preset di temi personalizzati e imposta colori esadecimali personalizzati."
     },
     "scenes": {
       "title": "Chat Scene Creator",
@@ -131,7 +135,7 @@
       "featuresTitle": "Caratteristiche principali",
       "feature1": "<strong>Gestione delle scene:</strong> Crea, duplica, elimina, importa ed esporta file di scena JSON, e collega scene esistenti utilizzando i token di scena.",
       "feature2": "<strong>Connessione canale:</strong> Inserisci canali Twitch e ID o handle di YouTube con applicazione immediata.",
-      "feature3": "<strong>Impostazioni visive:</strong> Configura Google Fonts, temi predefiniti, temi IA, schemi di colore, opacità, croma key, layout popup, badge e filtri per le emoji.",
+      "feature3": "<strong>Impostazioni visive:</strong> Configura Google Fonts, temi predefiniti, temi IA, preset di temi personalizzati, schemi di colore, immagini di sfondo, opacità, croma key, layout popup, badge e filtri per le emoji.",
       "feature4": "<strong>Anteprima interattiva in tempo reale:</strong> Prova le impostazioni in un riquadro di anteprima dal vivo. Cambia lo sfondo tra Scuro, Chiaro, Griglia (scacchiera) e Colore personalizzato. Le modifiche si trasmettono in tempo reale.",
       "syncTitle": "Sincronizzazione automatica in tempo reale",
       "syncDesc": "Il Chat Scene Creator genera automaticamente un token di sincronizzazione unico nel tuo URL di OBS: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Le modifiche salvate nell'interfaccia web aggiornano la tua sorgente browser di OBS in tempo reale senza ricaricare la pagina.",

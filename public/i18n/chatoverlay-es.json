@@ -52,7 +52,11 @@
       "title": "Temas automáticos de IA",
       "desc": "El overlay incluye un generador de temas de IA en lenguaje natural. Escribe una descripción del estilo que deseas. El overlay genera variables CSS, ajusta el contraste de color, establece colores de insignias de pronombres acordes y aplica el tema en vivo.",
       "carouselTitle": "Carrusel de temas y temas personalizados",
-      "carouselDesc": "Usa el carrusel de temas para seleccionar temas predefinidos o generados por IA. El carrusel almacena hasta 50 temas guardados. Puedes eliminar temas personalizados mediante una ventana de confirmación. Los temas activos se sincronizan entre páginas."
+      "carouselDesc": "Usa el carrusel de temas para seleccionar temas predefinidos, generados por IA o creados por el usuario. El carrusel almacena hasta 50 temas guardados. Puedes eliminar temas personalizados mediante una ventana de confirmación. Los temas activos se sincronizan entre páginas.",
+      "userPresetsTitle": "Guardar ajustes preestablecidos de temas",
+      "userPresetsDesc": "Puedes guardar tu configuración visual actual como un ajuste preestablecido con nombre. Guarda ajustes desde el Creador de escenas de chat o el panel de configuración de OBS. Los ajustes se guardan en el carrusel de temas en la nube.",
+      "presetSync": "<strong>Sincronización en la nube y eliminación:</strong> Los ajustes cuentan con deduplicación automática, copia de seguridad en la nube y opción de eliminación.",
+      "presetBgImage": "<strong>Compatibilidad con imágenes de fondo:</strong> En el Creador de escenas de chat, los ajustes guardan la imagen de fondo subida. En el panel de configuración de OBS, los ajustes usan la imagen de fondo del tema activo."
     },
     "colors": {
       "title": "Personalización de colores",
@@ -123,7 +127,7 @@
       "feature3": "<strong>Diseño de pantalla:</strong> Elija entre el modo de lista estándar o el modo de burbujas de chat emergentes. Ajuste las opacidades de fondo y los bordes.",
       "feature4": "<strong>Insignias y emoticonos:</strong> Alterne las insignias de plataforma nativas para Twitch y YouTube, y configure emoticonos de terceros (BTTV, FFZ, 7TV), apilamiento de ancho cero y filtros de seguridad de contenido.",
       "feature5": "<strong>Gestión de temas:</strong> Acceda a sus temas generados por IA, seleccione entre los preajustes y ajuste los colores de forma manual si es necesario.",
-      "feature6": "<strong>Gestión de temas:</strong> Selecciona temas predefinidos, genera temas mediante IA y establece colores hexadecimales personalizados."
+      "feature6": "<strong>Gestión de temas:</strong> Selecciona temas predefinidos, genera temas mediante IA, guarda ajustes preestablecidos personalizados y establece colores hexadecimales personalizados."
     },
     "scenes": {
       "title": "Creador de escenas de chat",
@@ -131,7 +135,7 @@
       "featuresTitle": "Características principales",
       "feature1": "<strong>Gestión de escenas:</strong> Crea, duplica, elimina, importa y exporta archivos JSON de escena, y vincula escenas existentes mediante tokens de escena.",
       "feature2": "<strong>Conexión de canal:</strong> Introduce canales de Twitch e ID o nombres de usuario de YouTube con aplicación instantánea.",
-      "feature3": "<strong>Ajustes visuales:</strong> Configura Google Fonts, temas predefinidos, temas IA, esquemas de color, opacidad, croma, diseños emergentes, insignias y filtros de emoticonos.",
+      "feature3": "<strong>Ajustes visuales:</strong> Configura fuentes de Google, temas predefinidos, temas IA, ajustes preestablecidos personalizados, esquemas de color, imágenes de fondo, opacidad, croma, diseños emergentes, insignias y filtros de emoticonos.",
       "feature4": "<strong>Vista previa interactiva en vivo:</strong> Prueba ajustes en una caja de vista previa en vivo. Cambia el fondo entre Oscuro, Claro, Cuadrícula (tablero de ajedrez) y Color personalizado. Los cambios se transmiten en tiempo real.",
       "syncTitle": "Sincronización automática en vivo",
       "syncDesc": "El Chat Scene Creator genera automáticamente un token de sincronización único en tu URL de OBS: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Las ediciones guardadas en la interfaz web actualizan tu fuente de navegador de OBS en vivo sin recargar la página.",
