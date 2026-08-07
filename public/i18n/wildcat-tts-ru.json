@@ -1,19 +1,23 @@
 {
   "meta": {
-    "title": "Команды бота WildcatTTS для синтеза речи"
+    "title": "Документация бота WildcatTTS для синтеза речи"
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Перейти к основному содержанию",
+    "mainNav": "Основная",
     "home": "Главная",
     "chatSageDocs": "Документация WildcatSage",
     "wildcatTtsDocs": "Документация WildcatTTS",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "toggleNavLabel": "Переключить навигацию",
+    "homeLink": "Главная Wildcat.chat"
   },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Переключить боковую панель",
     "commands": "Команды",
-    "toggleSubmenu": "",
+    "toggleSubmenu": "Переключить подменю",
     "ttsCommands": "Команды синтеза речи",
     "musicCommands": "Команды генерации музыки",
     "voices": "Голоса",
@@ -25,7 +29,8 @@
   "page": {
     "title": "Документация бота WildcatTTS для синтеза речи",
     "inviteNote": "WildcatTTS в настоящее время работает по приглашениям.",
-    "requestAccess": "Запросить доступ"
+    "requestAccess": "Запросить доступ",
+    "footer": "© 2026 Wildcat.chat. Все права защищены."
   },
   "commands": {
     "title": "Команды",
@@ -585,5 +590,10 @@
     "step3": "Последующие использования того же эмоута мгновенно используют кешированное описание без какой-либо обработки ИИ.",
     "managementTitle": "Управление описаниями",
     "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, повторной генерации или ручной установки описаний эмоутов. Подробности см. в разделе <a href=\"#tts-commands\" class=\"default-link-style\">Управление описаниями эмоутов</a> в таблице команд выше."
+  },
+  "ui": {
+    "languageSelector": "Язык",
+    "mod": "Модератор",
+    "opensInNewTab": "(откроется в новой вкладке)"
   }
 }

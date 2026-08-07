@@ -135,21 +135,22 @@
 </head>
 
 <body class="has-navbar">
-    <canvas id="staticCanvas"
+    <a href="#main-content" class="skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
+    <canvas id="staticCanvas" aria-hidden="true"
         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
     <div class="container">
-        <div class="hero-section">
+        <header class="hero-section">
             <h1 class="hero-title">
                 <span data-i18n="hero.title">Wildcat.chat Documentation</span>
             </h1>
             <p class="tagline" data-i18n="hero.tagline">AI-Powered Twitch Bot Platform</p>
-        </div>
+        </header>
 
         <!-- Unified Navigation Bar -->
-        <nav class="site-navbar">
-            <a href="index.html" class="site-navbar-brand">
-                <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img"
-                    aria-label="Kaomoji reading '- ˕ •マ'">
+        <nav class="site-navbar" aria-label="Main" data-i18n-aria-label="nav.mainNav">
+            <a href="index.html" class="site-navbar-brand" aria-label="Wildcat.chat home"
+            data-i18n-aria-label="nav.homeLink">
+                <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <style>
                         .kaomoji {
                             font-size: 250px;
@@ -162,8 +163,10 @@
                     <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
                 </svg>
             </a>
-            <button class="navbar-toggle" aria-label="Toggle navigation" data-i18n="nav.toggleNav">☰</button>
-            <ul class="site-navbar-menu">
+            <button class="navbar-toggle" type="button" aria-expanded="false"
+            aria-controls="site-navbar-menu" aria-label="Toggle navigation"
+            data-i18n-aria-label="nav.toggleNavLabel"><span aria-hidden="true">☰</span></button>
+            <ul class="site-navbar-menu" id="site-navbar-menu">
                 <li><a href="index.html" data-i18n="nav.home">Home</a></li>
                 <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
                 <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
@@ -172,7 +175,7 @@
             </ul>
         </nav>
 
-        <main>
+        <main id="main-content" tabindex="-1">
             <section id="bots">
                 <h2 data-i18n="page.botsTitle">Bot Documentation</h2>
                 <p data-i18n="page.welcome">Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS
@@ -228,8 +231,8 @@
                 <h3 data-i18n="page.gettingStarted.quickStartTitle" style="text-transform: none; font-weight: 600;">
                     Quick Start</h3>
                 <ol>
-                    <li data-i18n="page.gettingStarted.step1">Visit <a href="https://app.wildcat.chat"
-                            class="default-link-style">app.wildcat.chat</a> to set up your ChatSage bot</li>
+                    <li data-i18n="page.gettingStarted.step1">Visit <a href="https://bot.wildcat.chat"
+                            class="default-link-style">bot.wildcat.chat</a> to set up your ChatSage bot</li>
                     <li data-i18n="page.gettingStarted.step2">Visit <a href="https://tts.wildcat.chat/"
                             class="default-link-style">tts.wildcat.chat</a> for WildcatTTS dashboard</li>
                     <li data-i18n="page.gettingStarted.step3">Authenticate with your Twitch account</li>

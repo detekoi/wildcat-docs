@@ -49,13 +49,14 @@
 </head>
 
 <body class="has-navbar has-sidebar">
-    <canvas id="staticCanvas"></canvas>
+    <a href="#content" class="skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
+    <canvas id="staticCanvas" aria-hidden="true"></canvas>
 
     <!-- Unified Navigation Bar -->
-    <nav class="site-navbar">
-        <a href="index.html" class="site-navbar-brand">
-            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" role="img"
-                aria-label="Kaomoji reading '- ˕ •マ'">
+    <nav class="site-navbar" aria-label="Main" data-i18n-aria-label="nav.mainNav">
+        <a href="index.html" class="site-navbar-brand" aria-label="Wildcat.chat home"
+            data-i18n-aria-label="nav.homeLink">
+            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                 <style>
                     .kaomoji {
                         font-size: 250px;
@@ -68,26 +69,31 @@
                 <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
             </svg>
         </a>
-        <button class="navbar-toggle" aria-label="Toggle navigation" data-i18n="nav.toggleNav">☰</button>
-        <ul class="site-navbar-menu">
+        <button class="navbar-toggle" type="button" aria-expanded="false"
+            aria-controls="site-navbar-menu" aria-label="Toggle navigation"
+            data-i18n-aria-label="nav.toggleNavLabel"><span aria-hidden="true">☰</span></button>
+        <ul class="site-navbar-menu" id="site-navbar-menu">
             <li><a href="index.html" data-i18n="nav.home">Home</a></li>
             <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
             <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
-            <li><a href="chatoverlay.html" class="active" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
+            <li><a href="chatoverlay.html" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
             <li><a href="https://parfaitfair.com/#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Sidebar Navigation -->
-    <nav id="sidebar">
+    <nav id="sidebar" aria-labelledby="sidebar-title">
         <div class="sidebar-header">
-            <h2 data-i18n="sidebar.title">Chat Overlay</h2>
-            <div id="sidenav-toggle-container">
-                <img src="assets/images/sidenav-icon.svg" id="sidenav-toggle" alt="Toggle Sidebar"
-                    title="Toggle Sidebar">
-            </div>
+            <p class="sidebar-title" id="sidebar-title" data-i18n="sidebar.title">Chat Overlay</p>
+            <button type="button" id="sidenav-toggle" aria-expanded="true" aria-controls="sidebar-nav-list"
+                aria-label="Toggle sidebar" data-i18n-aria-label="sidebar.toggleSidebar">
+                <svg class="sidenav-toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
-        <ul>
+        <ul id="sidebar-nav-list">
             <li><a href="#overview" data-i18n="sidebar.overview">Overview</a></li>
             <li><a href="#platforms" data-i18n="sidebar.platforms">Platform Support</a></li>
             <li><a href="#customization" data-i18n="sidebar.customization">Customization & Themes</a></li>
@@ -102,13 +108,13 @@
     </nav>
 
     <!-- Main Content -->
-    <main id="content">
+    <main id="content" tabindex="-1">
         <h1 data-i18n="chatOverlay.page.title">Wildcat Chat Overlay</h1>
 
         <section id="overview" class="section">
             <h2 data-i18n="chatOverlay.overview.title">Overview</h2>
-            <p data-i18n="chatOverlay.overview.desc">The Wildcat Chat Overlay displays Twitch and YouTube Live chat messages inside OBS Studio. You can configure settings in the <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank">Chat Scene Creator</a> on the web or directly inside the OBS browser source.</p>
-            <p><a href="https://wildcat.chat/chat-overlay/" class="default-link-style" target="_blank"
+            <p data-i18n="chatOverlay.overview.desc">The Wildcat Chat Overlay displays Twitch and YouTube Live chat messages inside OBS Studio. You can configure settings in the <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> on the web or directly inside the OBS browser source.</p>
+            <p><a href="https://wildcat.chat/chat-overlay/" class="default-link-style" target="_blank" rel="noopener noreferrer"
                     data-i18n="chatOverlay.overview.getStarted">Get Started with the Chat Overlay</a></p>
         </section>
 
@@ -239,7 +245,7 @@
 
         <section id="scenes" class="section">
             <h2 data-i18n="chatOverlay.scenes.title">Chat Scene Creator</h2>
-            <p data-i18n="chatOverlay.scenes.desc">The <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank">Chat Scene Creator</a> lets you create and manage named chat overlay scenes for different stream layouts (for example, Gaming or Just Chatting).</p>
+            <p data-i18n="chatOverlay.scenes.desc">The <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> lets you create and manage named chat overlay scenes for different stream layouts (for example, Gaming or Just Chatting).</p>
 
             <h3 data-i18n="chatOverlay.scenes.featuresTitle">Key Features</h3>
             <ul>
@@ -292,9 +298,14 @@
         </section>
 
         <div id="last-updated"
-            style="text-align:center; margin-top:2rem; color:var(--color-border, #888); font-size:0.95em;">
+            style="text-align:center; margin-top:2rem; color:var(--color-text-muted); font-size:0.95em;">
         </div>
     </main>
+
+    <footer>
+        <p data-i18n="page.footer">© 2026 Wildcat.chat. All rights reserved.</p>
+    </footer>
+
 
     <script src="scripts/navigation.js"></script>
     <script src="scripts/sidenav.js"></script>

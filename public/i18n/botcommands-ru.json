@@ -4,15 +4,20 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Перейти к основному содержанию",
+    "mainNav": "Основная",
     "home": "Главная",
     "chatSageDocs": "Документация WildcatSage",
     "wildcatTtsDocs": "Документация WildcatTTS",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "toggleNavLabel": "Переключить навигацию",
+    "homeLink": "Главная Wildcat.chat"
   },
   "page": {
     "title": "Команды ChatSage Бота",
     "expandTip": "Нажмите на любую строку команды ниже, чтобы развернуть и увидеть детали использования.",
-    "lastUpdated": "Последнее обновление"
+    "lastUpdated": "Последнее обновление",
+    "footer": "© 2026 Wildcat.chat. Все права защищены."
   },
   "table": {
     "headers": {
@@ -24,7 +29,8 @@
       "games": "Игры",
       "config": "Настройка",
       "customCommands": "Пользовательские команды"
-    }
+    },
+    "caption": "Команды бота"
   },
   "commands": {
     "ask": {
@@ -261,7 +267,7 @@
     },
     "command": {
       "name": "!command <span class=\"mod-badge\">Мод</span>",
-      "description": "<span class=\"description-text\">Создавайте, редактируйте и управляйте специальными командами для своего канала. Пользовательскими командами также можно управлять через <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">веб-панель</a>.</span>",
+      "description": "<span class=\"description-text\">Создавайте, редактируйте и управляйте специальными командами для своего канала. Пользовательскими командами также можно управлять через <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">веб-панель</a>.</span>",
       "usage": {
         "addText": "Создает новую текстовую команду",
         "addAi": "Создает новую команду на основе искусственного интеллекта — каждый раз генерирует уникальный ответ с помощью подсказки.",
@@ -283,7 +289,7 @@
     },
     "timer": {
       "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Создавайте, редактируйте и управляйте автоматическими таймерами чата. Таймерами также можно управлять через <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Веб-панель</a>.</span>",
+      "description": "<span class=\"description-text\">Создавайте, редактируйте и управляйте автоматическими таймерами чата. Таймерами также можно управлять через <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Веб-панель</a>.</span>",
       "usage": {
         "addCmd": "!timer add <имя> <интервал> <ответ>",
         "add": "Создает новый текстовый таймер с заданным интервалом в минутах",
@@ -310,7 +316,8 @@
   },
   "ui": {
     "languageSelector": "Язык",
-    "mod": "Модератор"
+    "mod": "Модератор",
+    "opensInNewTab": "(откроется в новой вкладке)"
   },
   "sidebar": {
     "generalCommands": "Основные Команды",
@@ -319,7 +326,9 @@
     "webDashboard": "Веб-Панель",
     "customCommands": "Пользовательские команды",
     "responseVariables": "Переменные ответа",
-    "dailyCheckIn": "Ежедневная Отметка"
+    "dailyCheckIn": "Ежедневная Отметка",
+    "title": "WildcatSage",
+    "toggleSidebar": "Переключить боковую панель"
   },
   "webDashboard": {
     "title": "Веб-Панель",
@@ -351,7 +360,7 @@
     "steps": {
       "visit": {
         "title": "Посетите Панель:",
-        "desc": "Перейдите на https://app.wildcat.chat/"
+        "desc": "Перейдите на https://bot.wildcat.chat/"
       },
       "authorize": {
         "title": "Авторизация:",
@@ -455,7 +464,8 @@
         "command": "<span class=\"inline-code\">!command add использует Эта команда использовалась $(count) раз!</span>",
         "result": "Эта команда использовалась 42 раза!"
       }
-    }
+    },
+    "examplesCaption": "Примеры переменных ответа"
   },
   "aiCommands": {
     "title": "ИИ-команды",
@@ -463,7 +473,8 @@
     "intro2": "Самый простой способ создавать команды ИИ — через <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">веб-панель</a>. Нажмите <strong>+ Добавить</strong>, включите <strong>Режим AI</strong> и напишите приглашение. Вы также можете создать их в чате с помощью <code>!command addai <name> <prompt></code>.",
     "table": {
       "prompt": "AI-подсказка",
-      "whatHappens": "Что происходит"
+      "whatHappens": "Что происходит",
+      "caption": "Примеры команд ИИ"
     },
     "examples": {
       "vibe": {
@@ -487,7 +498,7 @@
     "intro": "Ежедневная Отметка — это Награда за Баллы Канала, которая позволяет зрителям отмечаться раз за стрим и отслеживать свою серию. Награда создаётся и управляется автоматически через панель управления — ручная настройка на Twitch не требуется.",
     "setupTitle": "Настройка",
     "steps": {
-      "open": "Откройте <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Панель управления WildcatSage</a> и прокрутите до раздела <strong>Ежедневная Отметка</strong>.",
+      "open": "Откройте <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Панель управления WildcatSage</a> и прокрутите до раздела <strong>Ежедневная Отметка</strong>.",
       "enable": "Включите переключатель <strong>Включить</strong> и задайте название награды и стоимость в Баллах Канала.",
       "template": "Напишите шаблон ответа, используя переменные вроде <span class=\"inline-code\">$(user)</span> и <span class=\"inline-code\">$(checkin_count)</span>, или включите <strong>Режим ИИ</strong> для уникальных сообщений каждый раз.",
       "save": "Нажмите <strong>Сохранить</strong>. Награда автоматически создаётся на Twitch."

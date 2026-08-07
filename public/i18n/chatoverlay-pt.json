@@ -4,11 +4,15 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Ir para o conteúdo principal",
+    "mainNav": "Principal",
     "home": "Início",
     "chatSageDocs": "Docs do WildcatSage",
     "wildcatTtsDocs": "Docs do WildcatTTS",
     "chatOverlayDocs": "Docs do Chat Overlay",
-    "contact": "Contato"
+    "contact": "Contato",
+    "toggleNavLabel": "Alternar navegação",
+    "homeLink": "Início do Wildcat.chat"
   },
   "sidebar": {
     "title": "Chat Overlay",
@@ -21,7 +25,8 @@
     "animations": "Modos de exibição e Animações",
     "config": "Painel de Configuração",
     "scenes": "Criador de Cenas de Chat",
-    "obsSetup": "Configuração do OBS"
+    "obsSetup": "Configuração do OBS",
+    "toggleSidebar": "Alternar barra lateral"
   },
   "chatOverlay": {
     "page": {
@@ -168,5 +173,12 @@
         "tip3": "As configurações são salvas no cache do OBS. Se você algum dia \"Limpar o cache\" no OBS para esta fonte, precisará reconfigurar as definições estéticas."
       }
     }
+  },
+  "ui": {
+    "languageSelector": "Idioma",
+    "opensInNewTab": "(abre em uma nova aba)"
+  },
+  "page": {
+    "footer": "© 2026 Wildcat.chat. Todos os direitos reservados."
   }
 }

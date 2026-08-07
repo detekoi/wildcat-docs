@@ -257,7 +257,7 @@ header .tagline {
 
 .invite-note {
   margin: 2px 0 var(--spacing-unit) 0;
-  color: var(--color-border);
+  color: var(--color-text-muted);
   font-size: var(--font-size-small);
 }
 
@@ -574,10 +574,17 @@ code {
   color: var(--color-text);
 }
 
-/* Mod badge styling */
-.mod-badge {
+/* Permission badges.
+   These were previously injected with `content:` on .mod-command::before /
+   .broadcaster-command::before -- the only signal that a command needs
+   elevated permissions, delivered in a way screen readers announce
+   inconsistently. They are real DOM elements now, which also means i18n
+   translates them like any other text instead of rewriting a <style> element.
+   #e57373 was 2.99:1 against white; #c62828 is 5.6:1. */
+.mod-badge,
+.broadcaster-badge {
   display: inline-block;
-  background: #e57373;
+  background: #c62828;
   color: #fff;
   font-size: 0.75em;
   font-weight: 600;
@@ -588,32 +595,15 @@ code {
   letter-spacing: 0.5px;
 }
 
-.mod-command::before {
-  content: "Mod";
-  display: inline-block;
-  background: #e57373;
-  color: #fff;
-  font-size: 0.75em;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 8px;
-  margin-right: 6px;
-  vertical-align: middle;
-  letter-spacing: 0.5px;
+.broadcaster-badge {
+  background: #5e35b1;
 }
 
-.broadcaster-command::before {
-  content: "Broadcaster";
-  display: inline-block;
-  background: #7e57c2;
-  color: #fff;
-  font-size: 0.75em;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 8px;
+/* Badge that precedes the command rather than following it */
+.mod-badge-leading,
+.broadcaster-badge-leading {
+  margin-left: 0;
   margin-right: 6px;
-  vertical-align: middle;
-  letter-spacing: 0.5px;
 }
 
 /* Dropdown styles */
@@ -625,6 +615,23 @@ code {
 
 .dropdown-summary:hover {
   background: var(--color-card-bg);
+}
+
+/* The expand control is a real <button> filling the description cell so the
+   detail rows are keyboard-reachable. It is styled to read as the cell's own
+   text -- the affordance stays the caret and the row hover. */
+.dropdown-trigger {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .dropdown-toggle {
@@ -648,6 +655,18 @@ code {
 
 tr:last-child:not(.dropdown-details) td {
   border-bottom: none;
+}
+
+/* Real heading inside the category separator row. The row already carries the
+   visual treatment, so this inherits it wholesale -- the text looks identical,
+   but the page now has an outline and the sidebar links land on a heading
+   instead of a bare <tr>. */
+.category-header .category-heading {
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
 }
 
 /* Category headers */
@@ -692,7 +711,6 @@ tr:last-child:not(.dropdown-details) td {
 /* Default link style (for docs pages) */
 .default-link-style {
   border: none !important;
-  outline: none !important;
   box-shadow: none !important;
   background: none !important;
   padding: 0 !important;
@@ -741,9 +759,8 @@ footer {
     background-color: #444444;
   }
 
-  .invite-note {
-    color: #cccccc;
-  }
+  /* .invite-note now takes --color-text-muted, which already has a dark
+     branch, so no colour override is needed here. */
 
   .invite-note a {
     color: #ffffff !important;
@@ -806,15 +823,12 @@ footer {
     color: var(--color-text);
   }
 
-  .mod-badge {
+  .mod-badge,
+  .broadcaster-badge {
     background: #b71c1c;
   }
 
-  .mod-command::before {
-    background: #b71c1c;
-  }
-
-  .broadcaster-command::before {
+  .broadcaster-badge {
     background: #4527a0;
   }
 

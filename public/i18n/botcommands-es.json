@@ -4,15 +4,20 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Saltar al contenido principal",
+    "mainNav": "Principal",
     "home": "Inicio",
     "chatSageDocs": "Docs de WildcatSage",
     "wildcatTtsDocs": "Docs de WildcatTTS",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "toggleNavLabel": "Alternar navegación",
+    "homeLink": "Inicio de Wildcat.chat"
   },
   "page": {
     "title": "Comandos del Bot ChatSage",
     "expandTip": "Haz clic en cualquier fila de comando a continuación para expandir y ver los detalles de uso.",
-    "lastUpdated": "Última actualización"
+    "lastUpdated": "Última actualización",
+    "footer": "© 2026 Wildcat.chat. Todos los derechos reservados."
   },
   "table": {
     "headers": {
@@ -24,7 +29,8 @@
       "games": "Juegos",
       "config": "Configuración",
       "customCommands": "Comandos personalizados"
-    }
+    },
+    "caption": "Comandos del bot"
   },
   "commands": {
     "ask": {
@@ -261,7 +267,7 @@
     },
     "command": {
       "name": "!comando <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Crea, edita y administra comandos personalizados para tu canal. Los comandos personalizados también se pueden administrar a través del <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel web</a>.</span>",
+      "description": "<span class=\"description-text\">Crea, edita y administra comandos personalizados para tu canal. Los comandos personalizados también se pueden administrar a través del <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel web</a>.</span>",
       "usage": {
         "addText": "Crea un nuevo comando basado en texto",
         "addAi": "Crea un nuevo comando impulsado por IA: genera una respuesta única cada vez que utiliza el mensaje",
@@ -283,7 +289,7 @@
     },
     "timer": {
       "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Crea, edita y gestiona temporizadores automáticos en el chat. Los temporizadores también se pueden gestionar a través del <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel Web</a>.</span>",
+      "description": "<span class=\"description-text\">Crea, edita y gestiona temporizadores automáticos en el chat. Los temporizadores también se pueden gestionar a través del <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel Web</a>.</span>",
       "usage": {
         "addCmd": "!timer add <nombre> <intervalo> <respuesta>",
         "add": "Crea un nuevo temporizador de texto con el intervalo dado en minutos",
@@ -310,7 +316,8 @@
   },
   "ui": {
     "languageSelector": "Idioma",
-    "mod": "Mod"
+    "mod": "Mod",
+    "opensInNewTab": "(se abre en una pestaña nueva)"
   },
   "sidebar": {
     "generalCommands": "Comandos Generales",
@@ -319,7 +326,9 @@
     "webDashboard": "Panel Web",
     "customCommands": "Comandos personalizados",
     "responseVariables": "Variables de respuesta",
-    "dailyCheckIn": "Check-In Diario"
+    "dailyCheckIn": "Check-In Diario",
+    "title": "WildcatSage",
+    "toggleSidebar": "Alternar barra lateral"
   },
   "webDashboard": {
     "title": "Panel Web",
@@ -351,7 +360,7 @@
     "steps": {
       "visit": {
         "title": "Visita el Panel:",
-        "desc": "Ve a https://app.wildcat.chat/"
+        "desc": "Ve a https://bot.wildcat.chat/"
       },
       "authorize": {
         "title": "Autoriza:",
@@ -455,7 +464,8 @@
         "command": "<span class=\"inline-code\">!command add uses ¡Este comando se ha utilizado $(count) veces!</span>",
         "result": "¡Este comando se ha utilizado 42 veces!"
       }
-    }
+    },
+    "examplesCaption": "Ejemplos de variables de respuesta"
   },
   "aiCommands": {
     "title": "Comandos de IA",
@@ -463,7 +473,8 @@
     "intro2": "La forma más sencilla de crear comandos de IA es a través del <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel web</a>. Haga clic en <strong>+ Agregar</strong>, active el <strong>Modo AI</strong> y escriba su mensaje. También puedes crearlos en el chat con <code>!command addai <name> <prompt></code>.",
     "table": {
       "prompt": "Aviso de IA",
-      "whatHappens": "Lo que sucede"
+      "whatHappens": "Lo que sucede",
+      "caption": "Ejemplos de comandos de IA"
     },
     "examples": {
       "vibe": {
@@ -487,7 +498,7 @@
     "intro": "El Check-In Diario es una Recompensa de Puntos de Canal que permite a los espectadores registrarse una vez por transmisión y rastrear su racha. La recompensa se crea y gestiona automáticamente desde el panel — no se necesita configuración manual en Twitch.",
     "setupTitle": "Configuración",
     "steps": {
-      "open": "Abre el <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel de WildcatSage</a> y desplázate hasta la sección <strong>Check-In Diario</strong>.",
+      "open": "Abre el <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Panel de WildcatSage</a> y desplázate hasta la sección <strong>Check-In Diario</strong>.",
       "enable": "Activa el interruptor <strong>Habilitar</strong> y establece un título de recompensa y un costo en Puntos de Canal.",
       "template": "Escribe una plantilla de respuesta usando variables como <span class=\"inline-code\">$(user)</span> y <span class=\"inline-code\">$(checkin_count)</span>, o activa el <strong>Modo IA</strong> para mensajes únicos cada vez.",
       "save": "Haz clic en <strong>Guardar</strong>. La recompensa se crea en Twitch automáticamente."

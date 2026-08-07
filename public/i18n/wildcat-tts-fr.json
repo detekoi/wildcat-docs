@@ -1,19 +1,23 @@
 {
   "meta": {
-    "title": "Commandes du Bot WildcatTTS TTS"
+    "title": "Documentation du Bot WildcatTTS"
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Aller au contenu principal",
+    "mainNav": "Principale",
     "home": "Accueil",
     "chatSageDocs": "Documentation WildcatSage",
     "wildcatTtsDocs": "Documentation WildcatTTS",
-    "contact": "Contact"
+    "contact": "Contact",
+    "toggleNavLabel": "Basculer la navigation",
+    "homeLink": "Accueil Wildcat.chat"
   },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Basculer la Barre Latérale",
     "commands": "Commandes",
-    "toggleSubmenu": "",
+    "toggleSubmenu": "Basculer le sous-menu",
     "ttsCommands": "Commandes Text-To-Speech",
     "musicCommands": "Commandes de Génération de Musique",
     "voices": "Voix",
@@ -23,9 +27,10 @@
     "emoteDescriptions": "Descriptions d'Emotes"
   },
   "page": {
-    "title": "Documentation du Bot WildcatTTS TTS",
+    "title": "Documentation du Bot WildcatTTS",
     "inviteNote": "WildcatTTS est actuellement sur invitation uniquement.",
-    "requestAccess": "Demander l'accès"
+    "requestAccess": "Demander l'accès",
+    "footer": "© 2026 Wildcat.chat. Tous droits réservés."
   },
   "commands": {
     "title": "Commandes",
@@ -585,5 +590,10 @@
     "step3": "Les utilisations ultérieures du même emote utilisent la description mise en cache instantanément, sans aucun traitement IA.",
     "managementTitle": "Gestion des Descriptions",
     "managementText": "Les modérateurs peuvent utiliser la commande <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir manuellement les descriptions d'emotes. Consultez la section <a href=\"#tts-commands\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> dans le tableau des commandes ci-dessus pour plus de détails."
+  },
+  "ui": {
+    "languageSelector": "Langue",
+    "mod": "Modérateur",
+    "opensInNewTab": "(s'ouvre dans un nouvel onglet)"
   }
 }

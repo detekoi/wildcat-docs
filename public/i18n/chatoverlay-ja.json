@@ -4,11 +4,15 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "メインコンテンツへスキップ",
+    "mainNav": "メイン",
     "home": "ホーム",
     "chatSageDocs": "WildcatSage ドキュメント",
     "wildcatTtsDocs": "WildcatTTS ドキュメント",
     "chatOverlayDocs": "Chat Overlay ドキュメント",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "toggleNavLabel": "ナビゲーションの切り替え",
+    "homeLink": "Wildcat.chat ホーム"
   },
   "sidebar": {
     "title": "Chat Overlay",
@@ -21,7 +25,8 @@
     "animations": "表示モードとアニメーション",
     "config": "設定パネル",
     "scenes": "チャットシーンクリエイター",
-    "obsSetup": "OBSの設定"
+    "obsSetup": "OBSの設定",
+    "toggleSidebar": "サイドバーの切り替え"
   },
   "chatOverlay": {
     "page": {
@@ -168,5 +173,12 @@
         "tip3": "設定はOBSのキャッシュに保存されます。このソースの「キャッシュをクリア」を実行した場合は、見た目の設定を再構成する必要があります。"
       }
     }
+  },
+  "ui": {
+    "languageSelector": "言語",
+    "opensInNewTab": "(新しいタブで開きます)"
+  },
+  "page": {
+    "footer": "© 2026 Wildcat.chat. 全著作権所有。"
   }
 }

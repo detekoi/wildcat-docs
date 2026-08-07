@@ -1,19 +1,23 @@
 {
   "meta": {
-    "title": "WildcatTTS TTS Bot Commands"
+    "title": "WildcatTTS Bot Documentation"
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main",
     "home": "Home",
     "chatSageDocs": "WildcatSage Docs",
     "wildcatTtsDocs": "WildcatTTS Docs",
-    "contact": "Contact"
+    "contact": "Contact",
+    "toggleNavLabel": "Toggle navigation",
+    "homeLink": "Wildcat.chat home"
   },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Toggle Sidebar",
     "commands": "Commands",
-    "toggleSubmenu": "",
+    "toggleSubmenu": "Toggle submenu",
     "ttsCommands": "Text-To-Speech Commands",
     "musicCommands": "Music Generation Commands",
     "voices": "Voices",
@@ -23,9 +27,10 @@
     "troubleshooting": "Troubleshooting"
   },
   "page": {
-    "title": "WildcatTTS TTS Bot Documentation",
+    "title": "WildcatTTS Bot Documentation",
     "inviteNote": "WildcatTTS is currently invite-only.",
-    "requestAccess": "Request access"
+    "requestAccess": "Request access",
+    "footer": "© 2026 Wildcat.chat. All rights reserved."
   },
   "commands": {
     "title": "Commands",
@@ -585,5 +590,10 @@
     "a8": "Note that \"auto\" emotion is no longer supported. Use neutral, happy, sad, angry, fearful, disgusted, or surprised instead.",
     "q9": "Need help?",
     "a9": "Contact the developer via the contact form at Henry's portfolio website."
+  },
+  "ui": {
+    "languageSelector": "Language",
+    "mod": "Mod",
+    "opensInNewTab": "(opens in a new tab)"
   }
 }

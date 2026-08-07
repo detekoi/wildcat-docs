@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use prefers-color-scheme to sync with your CSS :root variables
     let isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
+    // Full-viewport noise redrawn ~25 times a second is a migraine and
+    // vestibular trigger, and there is no control to stop it (WCAG 2.2.2).
+    // When reduced motion is preferred we paint a single still frame and never
+    // start the loop -- the texture survives, the animation does not.
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let prefersReducedMotion = reducedMotionQuery.matches;
+
     // --- Configurable Parameters ---
     // Basic static effect configuration
     const config = {
@@ -67,7 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function drawStatic(timestamp) {
         // --- Frame Rate Limiting ---
-        if (timestamp - lastFrameTime < config.frameInterval) {
+        // Skipped under reduced motion so the one frame we do draw is not
+        // deferred by the limiter into scheduling another.
+        if (!prefersReducedMotion && timestamp - lastFrameTime < config.frameInterval) {
             animationFrameId = requestAnimationFrame(drawStatic);
             return;
         }
@@ -92,7 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Request the next frame
-        animationFrameId = requestAnimationFrame(drawStatic);
+        if (!prefersReducedMotion) {
+            animationFrameId = requestAnimationFrame(drawStatic);
+        }
     }
     
     // Function to draw full static pattern (original approach but optimized)
@@ -421,7 +432,14 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeCanvas(); // Set initial size
 
     // Event Listeners
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        // With the loop suppressed there is nothing to repaint the cleared canvas
+        if (prefersReducedMotion) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = requestAnimationFrame(drawStatic);
+        }
+    });
 
     // Initialize system to normal state
     config.effectState = 'normal';
@@ -506,11 +524,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
             cancelAnimationFrame(animationFrameId);
-        } else {
-            // Restart the animation loop
+        } else if (!prefersReducedMotion) {
+            // Restart the animation loop. Guarded so returning to the tab
+            // cannot resurrect a loop that reduced motion had stopped.
             lastFrameTime = performance.now();
             animationFrameId = requestAnimationFrame(drawStatic);
         }
+    });
+
+    // Honour the preference changing at runtime, in either direction
+    reducedMotionQuery.addEventListener('change', (event) => {
+        prefersReducedMotion = event.matches;
+        cancelAnimationFrame(animationFrameId);
+        lastFrameTime = performance.now();
+        // Draws a single frame and stops when reduce is on; resumes when off
+        animationFrameId = requestAnimationFrame(drawStatic);
     });
     
     // Note: Magic mode is now explicitly controlled by gemini-mascot.js

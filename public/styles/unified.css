@@ -23,7 +23,12 @@
   --color-active-light: #f0f0f0;
   --color-active-dark: #000000;
   --color-accent: #9b4d96; /* Purple matching chatvibes */
-  --color-accent-grey: #666666;
+  /* Used as a *background* under --color-text. #666666 gave only 3.55:1
+     against the near-black light-mode text; #8a8a8a gives 5.9:1. */
+  --color-accent-grey: #8a8a8a;
+  /* De-emphasised body text. Replaces the widespread misuse of --color-border
+     (a 1px rule colour) as a text colour, which read at 1.46:1. */
+  --color-text-muted: #595959;
   --color-grid-line: #e0e0e0;
   --color-text-bg: rgba(255, 255, 255, 0.85);
 
@@ -60,8 +65,14 @@
    BASE STYLES
    ===================================================== */
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-height) + 20px);
+}
+
+/* Smooth scrolling is motion; opt in only when it has not been declined */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -75,6 +86,66 @@ body {
   /* Post-Industrial: Sharp corners everywhere */
   border-radius: 0;
   overflow-x: hidden;
+}
+
+/* =====================================================
+   SKIP LINK
+   First focusable element on every page. Colours are derived
+   from the theme tokens so it inverts correctly in both schemes
+   (18.5:1 light / 20.4:1 dark).
+   ===================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 10000;
+  /* Inverted chip, matching `.site-navbar-menu a.active`. Token-derived so it
+     flips correctly in both schemes — 18.5:1 light / 20.4:1 dark. */
+  background-color: var(--color-text);
+  color: var(--color-background);
+  border: 2px solid var(--color-text);
+  box-shadow: var(--shadow-size-default) var(--shadow-size-default) 0 var(--shadow-color);
+  padding: 12px 24px;
+  font-size: var(--font-size-regular);
+  font-weight: 700;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+/* `a:focus` sets `color: var(--color-accent)` at a higher specificity than
+   `.skip-link`, which would repaint the focused link accent-on-near-black
+   (3.78:1). Restate the colour here so the focused state stays legible. */
+.skip-link:focus {
+  top: 16px;
+  color: var(--color-background);
+}
+
+.skip-link:focus:hover {
+  transform: var(--hover-transform);
+  box-shadow: var(--shadow-size-hover) var(--shadow-size-hover) 1px var(--shadow-color-hover);
+}
+
+.skip-link:active {
+  transform: var(--active-transform) !important;
+  box-shadow: 1px 1px 0 var(--shadow-color) !important;
+}
+
+/* Available to assistive technology, not to sighted users. Used for the
+   language-change live region. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Body padding when navigation is present */
@@ -280,7 +351,7 @@ main ol {
   padding-left: 10px;
 }
 
-#sidebar.collapsed h2,
+#sidebar.collapsed .sidebar-title,
 #sidebar.collapsed ul {
   display: none;
 }
@@ -290,7 +361,9 @@ main ol {
   margin-bottom: 0;
 }
 
-#sidenav-toggle-container {
+/* The toggle is a real <button>; the former wrapper div's chrome lives on it
+   directly so the whole 40x40 box is the hit target (WCAG 2.5.8). */
+#sidenav-toggle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -298,15 +371,25 @@ main ol {
   height: 40px;
   min-width: 40px;
   min-height: 40px;
+  padding: 0;
   border-radius: 0;
   transition: all 0.3s ease;
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-grid-line);
+  color: var(--color-text);
   position: relative;
   cursor: pointer;
 }
 
-#sidebar.collapsed #sidenav-toggle-container {
+/* Inverted hover/focus, matching .navbar-toggle and .site-navbar-menu a */
+#sidenav-toggle:hover,
+#sidenav-toggle:focus {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  border-color: var(--color-text);
+}
+
+#sidebar.collapsed #sidenav-toggle {
   position: fixed;
   top: calc(var(--nav-height) + 15px);
   left: 10px;
@@ -320,25 +403,32 @@ main ol {
   gap: 10px;
 }
 
-#sidenav-toggle {
+/* The chevron is inlined SVG so `currentColor` inherits --color-text. It was
+   previously an <img>, where currentColor resolved to black regardless of
+   scheme — the `filter: invert(1)` that compensated rendered it white-on-white
+   (1:1) in light mode. */
+.sidenav-toggle-icon {
   width: 24px;
   height: 24px;
-  cursor: pointer;
-  z-index: 100;
-  filter: invert(1);
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
-#sidebar.collapsed #sidenav-toggle {
+#sidebar.collapsed .sidenav-toggle-icon {
   transform: rotate(0deg);
 }
 
-#sidebar h2 {
-  margin-top: 0;
+/* Was an <h2>, which put a heading above the page's <h1> in the document
+   outline. It is a label, not a section heading, so it is now a <p> that
+   names the sidebar landmark via aria-labelledby. Type styling is restated
+   here because <p> does not inherit the global h1-h6 rules. */
+#sidebar .sidebar-title {
+  margin: 0;
   font-size: 1.5rem;
+  line-height: 1.2;
   text-transform: uppercase;
   font-weight: 800;
+  letter-spacing: 0.02em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -398,7 +488,8 @@ main ol {
   border: none;
   box-shadow: none;
   color: var(--color-accent);
-  opacity: 0.85;
+  /* `opacity: 0.85` was purely decorative de-emphasis and dropped this link to
+     4.01:1 in light mode. Full-strength accent is 5.4:1 on the sidebar card. */
   text-transform: none;
 }
 
@@ -411,34 +502,52 @@ main ol {
   transform: none;
 }
 
-#sidebar ul li>a.has-submenu {
+/* The section link and its caret share a row. This wrapper is the positioning
+   context for the caret, which used to be nested inside the <a> itself. */
+#sidebar .submenu-row {
   position: relative;
-  padding-right: 2.2em;
 }
 
+#sidebar .submenu-row>a.has-submenu {
+  padding-right: 2.6em;
+}
+
+/* A real <button>, not a role="button" span inside the link. Centring is done
+   with a margin offset so `transform` stays free for the rotation, and the
+   `outline: none` that used to sit here is gone -- :focus-visible now paints
+   the ring. */
 .submenu-caret {
   position: absolute;
-  right: 1em;
+  right: 0.5em;
   top: 50%;
-  transform: translateY(-50%) rotate(0deg);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
+  margin-top: -12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 24x24 minimum pointer target (WCAG 2.5.8) */
+  width: 24px;
+  height: 24px;
+  padding: 0;
   font-size: 1.25em;
+  line-height: 1;
   color: var(--color-text);
-  pointer-events: auto;
   background: none;
   border: none;
-  outline: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: color 0.2s;
   z-index: 1;
 }
 
 .submenu-caret::before {
   content: '\25BC';
   display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#sidebar ul li.open>a.has-submenu .submenu-caret {
-  transform: translateY(-50%) rotate(180deg);
-  color: var(--color-text);
+/* Rotate the glyph rather than the button, so the focus ring stays put */
+#sidebar ul li.open .submenu-caret::before {
+  transform: rotate(180deg);
 }
 
 /* Content adjustment when sidebar is present */
@@ -453,6 +562,17 @@ main ol {
   margin-left: var(--sidebar-collapsed-width);
   width: calc(100% - var(--sidebar-collapsed-width));
   padding: 20px 20px 20px 30px;
+}
+
+/* =====================================================
+   FOCUS INDICATOR
+   Single global focus ring for every interactive element.
+   --color-accent is 4.9:1 light / 6.4:1 dark against the page
+   background, clearing the 3:1 required for UI components.
+   ===================================================== */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
 /* =====================================================
@@ -562,7 +682,8 @@ footer a:active {
     --color-active-light: #1a1a1a;
     --color-active-dark: #ffffff;
     --color-accent: #b47fb4; /* Purple matching chatvibes */
-    --color-accent-grey: #666666;
+    --color-accent-grey: #666666; /* 5.7:1 under white text */
+    --color-text-muted: #a0a0a0;
     --color-grid-line: #333333;
     --color-text-bg: rgba(0, 0, 0, 0.75);
 
@@ -631,7 +752,7 @@ footer a:active {
     z-index: 10;
   }
 
-  #sidebar.collapsed #sidenav-toggle-container {
+  #sidebar.collapsed #sidenav-toggle {
     left: 12px;
   }
 

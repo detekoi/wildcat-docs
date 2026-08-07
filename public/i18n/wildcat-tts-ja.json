@@ -1,19 +1,23 @@
 {
   "meta": {
-    "title": "WildcatTTS TTS ボットコマンド"
+    "title": "WildcatTTS ボット ドキュメント"
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "メインコンテンツへスキップ",
+    "mainNav": "メイン",
     "home": "ホーム",
     "chatSageDocs": "WildcatSage ドキュメント",
     "wildcatTtsDocs": "WildcatTTS ドキュメント",
-    "contact": "お問い合わせ"
+    "contact": "お問い合わせ",
+    "toggleNavLabel": "ナビゲーションの切り替え",
+    "homeLink": "Wildcat.chat ホーム"
   },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "サイドバーを切り替え",
     "commands": "コマンド",
-    "toggleSubmenu": "",
+    "toggleSubmenu": "サブメニューの切り替え",
     "ttsCommands": "読み上げコマンド",
     "musicCommands": "音楽生成コマンド",
     "voices": "音声",
@@ -23,9 +27,10 @@
     "emoteDescriptions": "エモート説明"
   },
   "page": {
-    "title": "WildcatTTS TTS ボット ドキュメント",
+    "title": "WildcatTTS ボット ドキュメント",
     "inviteNote": "WildcatTTSは現在招待制です。",
-    "requestAccess": "アクセスをリクエスト"
+    "requestAccess": "アクセスをリクエスト",
+    "footer": "© 2026 Wildcat.chat. 全著作権所有。"
   },
   "commands": {
     "title": "コマンド",
@@ -585,5 +590,10 @@
     "step3": "同じエモートの後続使用は、AI処理なしにキャッシュ済み説明を即座に使用します。",
     "managementTitle": "説明の管理",
     "managementText": "モデレーターは<span class=\"inline-code\">!tts emote</span>コマンドを使用して、エモート説明を表示、再生成、または手動で設定できます。詳細については、上記のコマンドテーブルの<a href=\"#tts-commands\" class=\"default-link-style\">エモート説明管理</a>セクションを参照してください。"
+  },
+  "ui": {
+    "languageSelector": "言語",
+    "mod": "モデレーター",
+    "opensInNewTab": "(新しいタブで開きます)"
   }
 }

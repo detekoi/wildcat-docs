@@ -4,11 +4,15 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main",
     "home": "Home",
     "chatSageDocs": "WildcatSage Docs",
     "wildcatTtsDocs": "WildcatTTS Docs",
     "chatOverlayDocs": "Chat Overlay Docs",
-    "contact": "Contact"
+    "contact": "Contact",
+    "toggleNavLabel": "Toggle navigation",
+    "homeLink": "Wildcat.chat home"
   },
   "hero": {
     "title": "Wildcat.chat Documentation",
@@ -47,12 +51,16 @@
     "gettingStarted": {
       "title": "Getting Started",
       "quickStartTitle": "Quick Start",
-      "step1": "Visit <a href=\"https://app.wildcat.chat\" class=\"default-link-style\">app.wildcat.chat</a> to set up your WildcatSage bot",
+      "step1": "Visit <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a> to set up your WildcatSage bot",
       "step2": "Visit <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> for WildcatTTS TTS dashboard",
       "step3": "Authenticate with your Twitch account",
       "step4": "Configure your bot settings",
       "step5": "Check the documentation pages for detailed command references"
     },
     "footer": "© 2026 Wildcat.chat. All rights reserved."
+  },
+  "ui": {
+    "languageSelector": "Language",
+    "opensInNewTab": "(opens in a new tab)"
   }
 }

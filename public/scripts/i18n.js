@@ -31,9 +31,6 @@ const DEFAULT_LANGUAGE = 'en';
 let currentLanguage = DEFAULT_LANGUAGE;
 let translations = {};
 
-// Global style element for mod-command::before
-let modCommandStyle;
-
 // Sanitize HTML translations to prevent XSS (defense-in-depth)
 const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'i', 'span', 'strong']);
 const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel', 'data-lucide']);
@@ -61,8 +58,15 @@ function sanitizeNode(node) {
         }
         // Block dangerous URL schemes
         if (child.hasAttribute('href')) {
-          const href = child.getAttribute('href').trim().toLowerCase();
-          if (href.startsWith('javascript:') || href.startsWith('data:') || href.startsWith('vbscript:')) {
+          // Entities are decoded by the time the value is read back, so a
+          // payload like `java&#x09;script:` arrives carrying a literal control
+          // character. Browsers strip those before resolving the scheme, so
+          // strip them here too and match on the scheme rather than relying on
+          // startsWith() against the raw value.
+          const href = child.getAttribute('href')
+            .replace(/[\u0000-\u0020\u007f-\u009f]/g, '')
+            .toLowerCase();
+          if (/^(?:javascript|data|vbscript):/.test(href)) {
             child.removeAttribute('href');
           }
         }
@@ -189,7 +193,7 @@ function getTranslation(key, defaultValue = null) {
 // Translate the entire page
 function translatePage() {
   // First translate non-span elements with data-i18n
-  document.querySelectorAll('h1[data-i18n], h2[data-i18n], h3[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), a[data-i18n], button[data-i18n]').forEach(element => {
+  document.querySelectorAll('h1[data-i18n], h2[data-i18n], h3[data-i18n], th[data-i18n], td[data-i18n]:not(.dropdown-summary td), caption[data-i18n], a[data-i18n], button[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key);
     if (translation === null) return;
@@ -265,6 +269,43 @@ function translatePage() {
     }
   });
 
+  // Translate attributes. Every pass above writes textContent or innerHTML, so
+  // accessible names supplied by aria-label/alt/title stayed in English -- and
+  // a hardcoded aria-label *outranks* the translated text for the accessible
+  // name, so those elements announced as English no matter the locale.
+  // setAttribute with the raw string: never route a translation into an
+  // attribute through innerHTML.
+  const TRANSLATED_ATTRIBUTES = {
+    'data-i18n-aria-label': 'aria-label',
+    'data-i18n-alt': 'alt',
+    'data-i18n-title': 'title'
+  };
+
+  Object.keys(TRANSLATED_ATTRIBUTES).forEach(sourceAttr => {
+    const targetAttr = TRANSLATED_ATTRIBUTES[sourceAttr];
+    document.querySelectorAll('[' + sourceAttr + ']').forEach(element => {
+      const translation = getTranslation(element.getAttribute(sourceAttr));
+      if (translation === null) return;
+      element.setAttribute(targetAttr, translation);
+    });
+  });
+
+  // New-tab links. 73 of these are injected by translation strings rather than
+  // written in the markup, and every pass above replaces innerHTML, so this has
+  // to run after translation and re-apply every time. The existing visual
+  // affordance is a CSS mask arrow with no text equivalent, hence the hint.
+  document.querySelectorAll('a[target="_blank"]').forEach(link => {
+    link.setAttribute('rel', 'noopener noreferrer');
+
+    let hint = link.querySelector('.new-tab-hint');
+    if (!hint) {
+      hint = document.createElement('span');
+      hint.className = 'visually-hidden new-tab-hint';
+      link.appendChild(hint);
+    }
+    hint.textContent = ' ' + getTranslation('ui.opensInNewTab', '(opens in a new tab)');
+  });
+
   // Special handling for elements with HTML content or specific needs
 
   // Translate title
@@ -291,11 +332,17 @@ function translatePage() {
     if (descriptionKey) { // Changed condition from (commandKey && descriptionKey)
       // No translation for commandCell here, it remains static HTML
 
+      // The expand control wraps the cell's content. Write inside it, not into
+      // the cell -- re-appending the caret to the cell would pull it out of the
+      // button on every language switch, and the innerHTML fallback below would
+      // destroy the button outright.
+      const trigger = descriptionCell.querySelector('.dropdown-trigger') || descriptionCell;
+
       // Get the dropdown toggle element if it exists
-      const dropdownToggle = descriptionCell.querySelector('.dropdown-toggle');
+      const dropdownToggle = trigger.querySelector('.dropdown-toggle');
 
       // Get the description text span
-      const descriptionTextSpan = descriptionCell.querySelector('.description-text');
+      const descriptionTextSpan = trigger.querySelector('.description-text');
       const translation = getTranslation(descriptionKey);
       if (translation === null) return;
 
@@ -308,32 +355,31 @@ function translatePage() {
       } else {
         // Fallback if for some reason description-text span is not found
         if (translation.includes('<') && translation.includes('>')) {
-          descriptionCell.innerHTML = sanitizeHTML(translation);
+          trigger.innerHTML = sanitizeHTML(translation);
         } else {
-          descriptionCell.textContent = translation;
+          trigger.textContent = translation;
         }
       }
 
       // Re-append the dropdown toggle (this part remains the same, but now it's safe)
       if (dropdownToggle) {
-        descriptionCell.appendChild(dropdownToggle);
+        trigger.appendChild(dropdownToggle);
       }
     } else {
       // console.log('Skipping row due to missing descriptionKey.');
     }
   });
 
-  // Translate "Mod" badge
+  // Translate permission badges. These are real elements now, so the <style>
+  // element that used to rewrite `.mod-command::before { content: ... }` is
+  // gone -- this one pass covers every badge on the page.
   document.querySelectorAll('.mod-badge').forEach(badge => {
     badge.textContent = getTranslation('ui.mod', 'Mod');
-    // console.log('Mod badge translated:', badge.outerHTML);
   });
 
-  // Update mod-command::before with CSS
-  if (modCommandStyle) { // Ensure modCommandStyle is initialized
-    modCommandStyle.textContent = `.mod-command::before { content: "${getTranslation('ui.mod', 'Mod')}"; }`;
-    // console.log('Updated mod-command-style.');
-  }
+  document.querySelectorAll('.broadcaster-badge').forEach(badge => {
+    badge.textContent = getTranslation('ui.broadcaster', 'Broadcaster');
+  });
 
   // Translate "Last updated" text
   const lastUpdatedEl = document.getElementById('last-updated');
@@ -352,41 +398,76 @@ function createLanguageSelector() {
 
   const selector = document.createElement('div');
   selector.className = 'language-selector';
+  // Appended to <body>, so it sits outside every other landmark. Making it a
+  // labelled region keeps it discoverable instead of orphaned content.
+  selector.setAttribute('role', 'region');
 
   const currentBtn = document.createElement('button');
   currentBtn.className = 'current-lang';
   currentBtn.type = 'button';
+  currentBtn.setAttribute('aria-expanded', 'false');
+  currentBtn.setAttribute('aria-haspopup', 'true');
+  currentBtn.setAttribute('aria-controls', 'language-grid');
   currentBtn.textContent = LANGUAGE_ICONS[currentLanguage] || currentLanguage;
   selector.appendChild(currentBtn);
 
   const grid = document.createElement('div');
   grid.className = 'language-grid';
+  grid.id = 'language-grid';
+
+  // The whole page rewrites on selection with no other signal that anything
+  // happened, so announce the change politely.
+  const status = document.createElement('div');
+  status.className = 'visually-hidden';
+  status.setAttribute('role', 'status');
+  status.setAttribute('aria-live', 'polite');
+
+  function setOpen(open) {
+    selector.classList.toggle('open', open);
+    currentBtn.setAttribute('aria-expanded', String(open));
+  }
 
   for (const code of Object.keys(AVAILABLE_LANGUAGES)) {
     const btn = document.createElement('button');
     btn.className = 'grid-item';
     btn.type = 'button';
     btn.dataset.lang = code;
+    // The visible label is an abbreviation, sometimes in another script
+    // ("ру", "日本"). `lang` gets it pronounced with the right voice, and
+    // aria-label announces the full language name rather than the fragment.
+    btn.lang = code;
+    btn.setAttribute('aria-label', AVAILABLE_LANGUAGES[code]);
     btn.textContent = LANGUAGE_ICONS[code] || code;
     btn.addEventListener('click', async () => {
-      selector.classList.remove('open');
+      setOpen(false);
       await loadTranslations(code);
       translatePage();
       if (typeof lucide !== 'undefined') { lucide.createIcons(); }
       updateLanguageSelector(code);
+      // Selection collapses the grid, which would drop focus to <body>
+      currentBtn.focus();
+      status.textContent = AVAILABLE_LANGUAGES[code];
     });
     grid.appendChild(btn);
   }
 
   selector.appendChild(grid);
+  selector.appendChild(status);
 
   currentBtn.addEventListener('click', () => {
-    selector.classList.toggle('open');
+    setOpen(!selector.classList.contains('open'));
   });
 
   document.addEventListener('click', (e) => {
-    if (!selector.contains(e.target)) {
-      selector.classList.remove('open');
+    if (!selector.contains(e.target)) setOpen(false);
+  });
+
+  // Escape closes the grid and returns focus to the trigger
+  selector.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && selector.classList.contains('open')) {
+      e.stopPropagation();
+      setOpen(false);
+      currentBtn.focus();
     }
   });
 
@@ -397,22 +478,30 @@ function createLanguageSelector() {
 // Update language selector to reflect current language
 function updateLanguageSelector(lang) {
   const selector = document.querySelector('.language-selector');
-  if (selector) {
-    const currentBtn = selector.querySelector('.current-lang');
-    if (currentBtn) {
-      currentBtn.textContent = LANGUAGE_ICONS[lang] || lang;
-    }
+  if (!selector) return;
+
+  const label = getTranslation('ui.languageSelector', 'Language');
+  selector.setAttribute('aria-label', label);
+
+  const currentBtn = selector.querySelector('.current-lang');
+  if (currentBtn) {
+    currentBtn.textContent = LANGUAGE_ICONS[lang] || lang;
+    // The visible text is a bare abbreviation; name the control properly
+    currentBtn.setAttribute('aria-label', `${label}: ${AVAILABLE_LANGUAGES[lang] || lang}`);
   }
+
+  // Mark the active language in the grid
+  selector.querySelectorAll('.grid-item').forEach(btn => {
+    if (btn.dataset.lang === lang) {
+      btn.setAttribute('aria-current', 'true');
+    } else {
+      btn.removeAttribute('aria-current');
+    }
+  });
 }
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Create modCommandStyle element once
-  modCommandStyle = document.createElement('style');
-  modCommandStyle.id = 'mod-command-style';
-  document.head.appendChild(modCommandStyle);
-  // console.log('Created mod-command-style element once.');
-
   createLanguageSelector();
-  initI18n();
+  initI18n().catch(error => console.error('Error initializing i18n:', error));
 });

@@ -4,15 +4,20 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Zum Hauptinhalt springen",
+    "mainNav": "Hauptnavigation",
     "home": "Startseite",
     "chatSageDocs": "WildcatSage Docs",
     "wildcatTtsDocs": "WildcatTTS Docs",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "toggleNavLabel": "Navigation umschalten",
+    "homeLink": "Wildcat.chat Startseite"
   },
   "page": {
     "title": "ChatSage Bot-Befehle",
     "expandTip": "Klicken Sie auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails zu sehen.",
-    "lastUpdated": "Zuletzt aktualisiert"
+    "lastUpdated": "Zuletzt aktualisiert",
+    "footer": "© 2026 Wildcat.chat. Alle Rechte vorbehalten."
   },
   "table": {
     "headers": {
@@ -24,7 +29,8 @@
       "games": "Spiele",
       "config": "Konfiguration",
       "customCommands": "Benutzerdefinierte Befehle"
-    }
+    },
+    "caption": "Bot-Befehle"
   },
   "commands": {
     "ask": {
@@ -261,7 +267,7 @@
     },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Erstellen, bearbeiten und verwalten Sie benutzerdefinierte Befehle für Ihren Kanal. Benutzerdefinierte Befehle können auch über das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
+      "description": "<span class=\"description-text\">Erstellen, bearbeiten und verwalten Sie benutzerdefinierte Befehle für Ihren Kanal. Benutzerdefinierte Befehle können auch über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
       "usage": {
         "addText": "Erstellt einen neuen textbasierten Befehl",
         "addAi": "Erstellt einen neuen KI-gestützten Befehl – ​​generiert bei jeder Verwendung der Eingabeaufforderung eine eindeutige Antwort",
@@ -283,7 +289,7 @@
     },
     "timer": {
       "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Erstelle, bearbeite und verwalte automatisierte Chat-Timer. Timer können auch über das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
+      "description": "<span class=\"description-text\">Erstelle, bearbeite und verwalte automatisierte Chat-Timer. Timer können auch über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
       "usage": {
         "addCmd": "!timer add <name> <intervall> <antwort>",
         "add": "Erstellt einen neuen textbasierten Timer mit dem angegebenen Intervall in Minuten",
@@ -310,7 +316,8 @@
   },
   "ui": {
     "languageSelector": "Sprache",
-    "mod": "Moderator"
+    "mod": "Moderator",
+    "opensInNewTab": "(wird in einem neuen Tab geöffnet)"
   },
   "sidebar": {
     "generalCommands": "Allgemeine Befehle",
@@ -319,7 +326,9 @@
     "webDashboard": "Web-Schaltpult",
     "customCommands": "Benutzerdefinierte Befehle",
     "responseVariables": "Antwortvariablen",
-    "dailyCheckIn": "Täglicher Check-In"
+    "dailyCheckIn": "Täglicher Check-In",
+    "title": "WildcatSage",
+    "toggleSidebar": "Seitenleiste umschalten"
   },
   "webDashboard": {
     "title": "Web-Schaltpult",
@@ -351,7 +360,7 @@
     "steps": {
       "visit": {
         "title": "Besuchen Sie das Schaltpult:",
-        "desc": "Gehen Sie zu https://app.wildcat.chat/"
+        "desc": "Gehen Sie zu https://bot.wildcat.chat/"
       },
       "authorize": {
         "title": "Genehmigen:",
@@ -455,7 +464,8 @@
         "command": "<span class=\"inline-code\">!command add verwendet Dieser Befehl wurde $(count) Mal verwendet!</span>",
         "result": "Dieser Befehl wurde 42 Mal verwendet!"
       }
-    }
+    },
+    "examplesCaption": "Beispiele für Antwortvariablen"
   },
   "aiCommands": {
     "title": "KI-Befehle",
@@ -463,7 +473,8 @@
     "intro2": "Der einfachste Weg, KI-Befehle zu erstellen, ist über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Klicken Sie auf <strong>+ Hinzufügen</strong>, schalten Sie den <strong>KI-Modus</strong> ein und schreiben Sie Ihre Eingabeaufforderung. Sie können sie auch im Chat mit <code>!command addai <name> <prompt></code> erstellen.",
     "table": {
       "prompt": "KI-Eingabeaufforderung",
-      "whatHappens": "Was geschieht"
+      "whatHappens": "Was geschieht",
+      "caption": "Beispiele für KI-Befehle"
     },
     "examples": {
       "vibe": {
@@ -487,7 +498,7 @@
     "intro": "Der tägliche Check-In ist eine Channel-Punkte-Belohnung, mit der Zuschauer sich einmal pro Stream einchecken und ihren Streak verfolgen können. Die Belohnung wird automatisch über das Dashboard erstellt und verwaltet — kein manuelles Setup auf Twitch erforderlich.",
     "setupTitle": "Einrichtung",
     "steps": {
-      "open": "Öffne das <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> und scrolle zum Abschnitt <strong>Täglicher Check-In</strong>.",
+      "open": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> und scrolle zum Abschnitt <strong>Täglicher Check-In</strong>.",
       "enable": "Aktiviere den <strong>Einschalten</strong>-Schalter und lege einen Belohnungstitel und Channel-Punkte-Kosten fest.",
       "template": "Schreibe eine Antwortvorlage mit Variablen wie <span class=\"inline-code\">$(user)</span> und <span class=\"inline-code\">$(checkin_count)</span>, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Nachrichten bei jedem Check-In.",
       "save": "Klicke auf <strong>Speichern</strong>. Die Belohnung wird automatisch auf Twitch erstellt."

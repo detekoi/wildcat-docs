@@ -4,15 +4,20 @@
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Skip to main content",
+    "mainNav": "Main",
     "home": "Home",
     "chatSageDocs": "WildcatSage Docs",
     "wildcatTtsDocs": "WildcatTTS Docs",
-    "contact": "Contact"
+    "contact": "Contact",
+    "toggleNavLabel": "Toggle navigation",
+    "homeLink": "Wildcat.chat home"
   },
   "page": {
     "title": "WildcatSage Bot Commands",
     "expandTip": "Click any command row below to expand and see usage details.",
-    "lastUpdated": "Last updated"
+    "lastUpdated": "Last updated",
+    "footer": "© 2026 Wildcat.chat. All rights reserved."
   },
   "table": {
     "headers": {
@@ -24,7 +29,8 @@
       "customCommands": "Custom Commands",
       "games": "Games",
       "config": "Config"
-    }
+    },
+    "caption": "Bot commands"
   },
   "commands": {
     "ask": {
@@ -108,7 +114,7 @@
     },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Create, edit, and manage custom commands for your channel. Custom commands can also be managed via the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
+      "description": "<span class=\"description-text\">Create, edit, and manage custom commands for your channel. Custom commands can also be managed via the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
       "usage": {
         "addText": "Creates a new text-based command",
         "addAi": "Creates a new AI-powered command — generates a unique response each time using the prompt",
@@ -130,7 +136,7 @@
     },
     "timer": {
       "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
+      "description": "<span class=\"description-text\">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
       "usage": {
         "addCmd": "!timer add <name> <interval> <response>",
         "add": "Creates a new text-based timer with the given interval in minutes",
@@ -310,7 +316,8 @@
   },
   "ui": {
     "languageSelector": "Language",
-    "mod": "Mod"
+    "mod": "Mod",
+    "opensInNewTab": "(opens in a new tab)"
   },
   "sidebar": {
     "generalCommands": "General Commands",
@@ -319,7 +326,9 @@
     "config": "Config",
     "webDashboard": "Web Dashboard",
     "responseVariables": "Response Variables",
-    "dailyCheckIn": "Daily Check-In"
+    "dailyCheckIn": "Daily Check-In",
+    "title": "WildcatSage",
+    "toggleSidebar": "Toggle sidebar"
   },
   "responseVariables": {
     "title": "Response Variables",
@@ -394,7 +403,8 @@
         "command": "<span class=\"inline-code\">!command add uses This command has been used $(count) times!</span>",
         "result": "This command has been used 42 times!"
       }
-    }
+    },
+    "examplesCaption": "Response variable examples"
   },
   "aiCommands": {
     "title": "AI Commands",
@@ -402,7 +412,8 @@
     "intro2": "The easiest way to create AI commands is through the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Click <strong>+ Add</strong>, flip on <strong>AI Mode</strong>, and write your prompt. You can also create them in chat with <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.",
     "table": {
       "prompt": "AI Prompt",
-      "whatHappens": "What happens"
+      "whatHappens": "What happens",
+      "caption": "AI command examples"
     },
     "examples": {
       "vibe": {
@@ -451,7 +462,7 @@
     "steps": {
       "visit": {
         "title": "Visit the Dashboard:",
-        "desc": "Go to https://app.wildcat.chat/"
+        "desc": "Go to https://bot.wildcat.chat/"
       },
       "authorize": {
         "title": "Authorize:",
@@ -487,7 +498,7 @@
     "intro": "Daily Check-In is a Channel Point Reward that lets viewers check in once per stream and track their streak. The reward is created and managed automatically from the dashboard — no manual setup on Twitch required.",
     "setupTitle": "Setup",
     "steps": {
-      "open": "Open the <a href=\"https://app.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> and scroll to the <strong>Daily Check-In</strong> section.",
+      "open": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> and scroll to the <strong>Daily Check-In</strong> section.",
       "enable": "Flip the <strong>Enable</strong> toggle and set a reward title and Channel Point cost.",
       "template": "Write a response template using variables like <span class=\"inline-code\">$(user)</span> and <span class=\"inline-code\">$(checkin_count)</span>, or enable <strong>AI Mode</strong> for unique messages every time.",
       "save": "Click <strong>Save</strong>. The reward is created on Twitch automatically."

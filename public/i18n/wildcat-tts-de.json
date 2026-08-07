@@ -1,19 +1,23 @@
 {
   "meta": {
-    "title": "WildcatTTS TTS Bot Befehle"
+    "title": "WildcatTTS Bot Dokumentation"
   },
   "nav": {
     "toggleNav": "☰",
+    "skipToContent": "Zum Hauptinhalt springen",
+    "mainNav": "Hauptnavigation",
     "home": "Startseite",
     "chatSageDocs": "WildcatSage Dokumentation",
     "wildcatTtsDocs": "WildcatTTS Dokumentation",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "toggleNavLabel": "Navigation umschalten",
+    "homeLink": "Wildcat.chat Startseite"
   },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Seitenleiste umschalten",
     "commands": "Befehle",
-    "toggleSubmenu": "",
+    "toggleSubmenu": "Untermenü umschalten",
     "ttsCommands": "Text-zu-Sprache Befehle",
     "musicCommands": "Musikgenerierungs-Befehle",
     "voices": "Stimmen",
@@ -23,9 +27,10 @@
     "emoteDescriptions": "Emote-Beschreibungen"
   },
   "page": {
-    "title": "WildcatTTS TTS Bot Dokumentation",
+    "title": "WildcatTTS Bot Dokumentation",
     "inviteNote": "WildcatTTS ist derzeit nur auf Einladung verfügbar.",
-    "requestAccess": "Zugriff anfordern"
+    "requestAccess": "Zugriff anfordern",
+    "footer": "© 2026 Wildcat.chat. Alle Rechte vorbehalten."
   },
   "commands": {
     "title": "Befehle",
@@ -585,5 +590,10 @@
     "step3": "Nachfolgende Verwendungen desselben Emotes nutzen die gespeicherte Beschreibung sofort, ohne KI-Verarbeitung.",
     "managementTitle": "Beschreibungen verwalten",
     "managementText": "Moderatoren können den Befehl <span class=\"inline-code\">!tts emote</span> verwenden, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder manuell zu setzen. Weitere Details finden Sie im Abschnitt <a href=\"#tts-commands\" class=\"default-link-style\">Emote-Beschreibungsverwaltung</a> in der Befehlstabelle oben."
+  },
+  "ui": {
+    "languageSelector": "Sprache",
+    "mod": "Moderator",
+    "opensInNewTab": "(wird in einem neuen Tab geöffnet)"
   }
 }

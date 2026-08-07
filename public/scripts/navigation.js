@@ -32,14 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Process internal links only
         const linkPage = href.split('/').pop() || (href === '/' || href === '' ? 'index.html' : '');
 
+        // `active` is styling only; aria-current is what conveys "you are here"
+        // to assistive technology.
         if (linkPage === currentPage) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
         }
 
         // Also handle index.html vs root
         if ((currentPage === '' || currentPage === 'index.html') &&
             (linkPage === 'index.html' || linkPage === '' || href === '/' || href === '')) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
         }
     });
 
@@ -47,24 +51,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarToggle = document.querySelector('.navbar-toggle');
     const navbarMenu = document.querySelector('.site-navbar-menu');
 
+    // The glyph lives in an aria-hidden child span and the accessible name comes
+    // from aria-label, so the button's own textContent must never be written --
+    // doing so would delete the span.
+    function setMenuOpen(open) {
+        if (!navbarMenu || !navbarToggle) return;
+        navbarMenu.classList.toggle('active', open);
+        navbarToggle.setAttribute('aria-expanded', String(open));
+        const glyph = navbarToggle.querySelector('span') || navbarToggle;
+        glyph.textContent = open ? '✕' : '☰';
+    }
+
     if (navbarToggle && navbarMenu) {
         navbarToggle.addEventListener('click', function() {
-            navbarMenu.classList.toggle('active');
-
-            // Update button text
-            if (navbarMenu.classList.contains('active')) {
-                navbarToggle.textContent = '✕';
-            } else {
-                navbarToggle.textContent = '☰';
-            }
+            setMenuOpen(!navbarMenu.classList.contains('active'));
         });
 
         // Close mobile menu when clicking a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
-                    navbarMenu.classList.remove('active');
-                    navbarToggle.textContent = '☰';
+                    setMenuOpen(false);
                 }
             });
         });
@@ -74,8 +81,15 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!navbarToggle.contains(event.target) &&
                 !navbarMenu.contains(event.target) &&
                 navbarMenu.classList.contains('active')) {
-                navbarMenu.classList.remove('active');
-                navbarToggle.textContent = '☰';
+                setMenuOpen(false);
+            }
+        });
+
+        // Escape closes the menu and returns focus to the control that opened it
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navbarMenu.classList.contains('active')) {
+                setMenuOpen(false);
+                navbarToggle.focus();
             }
         });
     }
@@ -86,10 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
             if (window.innerWidth > 768 && navbarMenu && navbarMenu.classList.contains('active')) {
-                navbarMenu.classList.remove('active');
-                if (navbarToggle) {
-                    navbarToggle.textContent = '☰';
-                }
+                setMenuOpen(false);
             }
         }, 250);
     });
