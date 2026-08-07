@@ -1,982 +1,891 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: base.njk
+title: Bot Commands
+bodyClass: has-navbar has-sidebar
+mainId: content
+sidebarTitle: WildcatSage
+sidebarTitleKey: sidebar.title
+sidebarLinks:
+  - { href: "#general",            key: sidebar.generalCommands,   label: "General Commands" }
+  - { href: "#custom-commands",    key: sidebar.customCommands,    label: "Custom Commands" }
+  - { href: "#games",              key: sidebar.games,             label: "Games" }
+  - { href: "#config",             key: sidebar.config,            label: "Config" }
+  - { href: "#response-variables", key: sidebar.responseVariables, label: "Response Variables" }
+  - { href: "#web-dashboard",      key: sidebar.webDashboard,      label: "Web Dashboard" }
+  - { href: "#daily-check-in",     key: sidebar.dailyCheckIn,      label: "Daily Check-In" }
+extraScripts:
+  - scripts/sidenav.js
+  - scripts/last-updated.js
+  - scripts/dropdown-table.js
+---
+<h1 data-i18n="page.title">WildcatSage Bot Commands</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">Bot Commands</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/unified.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <style>
-        .wildcat-svg {
-            width: 2rem;
-            height: 2rem;
-            fill: var(--color-text);
-        }
+<div class="expand-tip">
+    <span data-i18n="page.expandTip">Click any command row below to expand and see usage details.</span>
+</div>
 
-        .site-navbar-brand .wildcat-svg {
-            width: 5rem;
-            height: 5rem;
-            fill: var(--color-text);
-        }
-    </style>
-    <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
-</head>
+<table>
+    <caption class="visually-hidden" data-i18n="table.caption">Bot commands</caption>
+    <thead>
+        <tr>
+            <th scope="col" data-i18n="table.headers.command">Command</th>
+            <th scope="col" data-i18n="table.headers.description">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="category-header">
+            <td colspan="2" ><h2 class="category-heading" id="general" data-i18n="table.categories.general">General</h2></td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.ask.name">!ask / !sage</td>
+            <td data-i18n-key="commands.ask.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ask"><span class="description-text">Ask Sage a question. Uses search intelligently.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-ask" hidden>
+            <td colspan="2">
+                <code data-i18n-cmd="commands.ask.usage.question">!ask &lt;your question&gt;</code>
+                <div style="margin-top: 8px;">
+                    <strong>Special Features:</strong>
+                    <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+                        <li><strong>Multilingual Time Queries:</strong> Ask for current time in locations using
+                            your preferred language</li>
+                        <li><strong>Examples:</strong> "what time is it in Tokyo?", "quelle heure est-il à
+                            Paris?", "che ora è a Roma?", "東京は何時ですか？"</li>
+                        <li><strong>Supported Languages:</strong> English, Spanish, Portuguese, German, French,
+                            Italian, Russian, Japanese</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.search.name">!search</td>
+            <td data-i18n-key="commands.search.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-search"><span class="description-text">Searches the web for
+                    information on a topic.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-search" hidden>
+            <td colspan="2">
+                <code data-i18n-cmd="commands.search.usage.query">!search &lt;your query&gt;</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.game.name">!game</td>
+            <td data-i18n-key="commands.game.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-game"><span class="description-text">Provides researched information about the game currently being played. Add "analyze" to use AI image recognition on the stream (uses Twitch thumbnail that updates every 5 minutes).</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-game" hidden>
+            <td colspan="2">
+                <div style="margin-bottom: 8px;">
+                    <strong>Modes:</strong>
+                    <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+                        <li><code>!game</code> - Shows current game info and interesting facts</li>
+                        <li><code>!game analyze</code> - Uses AI to analyze stream visuals and describe gameplay
+                        </li>
+                        <li><code>!game &lt;question&gt;</code> - Answers specific questions about the current
+                            game</li>
+                        <li><code>!game analyze &lt;question&gt;</code> - Analyzes visuals and answers your
+                            specific question</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 8px;">
+                    <strong>Image Analysis Features:</strong>
+                    <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+                        <li>Uses Twitch stream thumbnails (updates every 5 minutes)</li>
+                        <li>AI analyzes in-game elements and ignores overlays</li>
+                        <li>Search verification ensures accurate descriptions</li>
+                        <li>Automatic summarization for longer responses</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.translate.name">!translate</td>
+            <td data-i18n-key="commands.translate.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-translate"><span class="description-text">Manage automatic message translation for users.</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-translate" hidden>
+            <td colspan="2">
+                <code data-i18n-cmd="commands.translate.usage.lang">!translate &lt;lang&gt;</code>
+                <code>!translate &lt;stop&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.translate.usage.modUser">!translate &lt;lang|stop&gt; [user]</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!translate [user] &lt;lang|stop&gt;</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.help.name">!commands / !help</td>
+            <td data-i18n-key="commands.help.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-help"><span class="description-text">Shows where to find the
+                    list of available commands.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-help" hidden>
+            <td colspan="2">
+                <code data-i18n-cmd="commands.help.usage.basic">!help or !commands</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td>!lurk</td>
+            <td data-i18n-key="commands.lurk.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-lurk"><span class="description-text">Let the chat know you
+                    are lurking. Provide an optional reason for a custom send-off.</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-lurk" hidden>
+            <td colspan="2">
+                <code>!lurk [your reason for lurking]</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.quote.name">!quote</td>
+            <td data-i18n-key="commands.quote.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-quote"><span class="description-text">Add, view, or search
+                    quotes from the channel. Quotes are stored per-channel and can include an optional author
+                    attribution.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-quote" hidden>
+            <td colspan="2">
+                <code data-i18n-cmd="commands.quote.usage.random">!quote</code> <span
+                    data-i18n="commands.quote.usage.randomDesc">Shows a random quote</span>
+                <code data-i18n-cmd="commands.quote.usage.id">!quote &lt;id&gt;</code> <span
+                    data-i18n="commands.quote.usage.idDesc">Shows quote by ID number, e.g. !quote 12</span>
+                <code data-i18n-cmd="commands.quote.usage.last">!quote last</code> <span
+                    data-i18n="commands.quote.usage.lastDesc">Shows the most recently added quote</span>
+                <code data-i18n-cmd="commands.quote.usage.search">!quote &lt;search term&gt;</code> <span
+                    data-i18n="commands.quote.usage.searchDesc">Searches quotes by text or author, e.g. !quote
+                    parfait</span>
+                <code data-i18n-cmd="commands.quote.usage.searchExplicit">!quote search &lt;term&gt;</code>
+                <span data-i18n="commands.quote.usage.searchExplicitDesc">Explicit search command</span>
+                <code data-i18n-cmd="commands.quote.usage.add">!quote add &lt;text [- author]&gt;</code> <span
+                    data-i18n="commands.quote.usage.addDesc">Adds a new quote. Optional author after " - ", e.g.
+                    !quote add "hello world - parfait"</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.quote.usage.delete">!quote delete &lt;id&gt;</code> <span
+                    data-i18n="commands.quote.usage.deleteDesc">Deletes a quote (mods/broadcaster only)</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.quote.usage.edit">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code>
+                <span data-i18n="commands.quote.usage.editDesc">Edits an existing quote (mods/broadcaster
+                    only)</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.followage.name">!followage</td>
+            <td data-i18n-key="commands.followage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-followage"><span class="description-text">Check how
+                    long you or another user has been following the channel.</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-followage" hidden>
+            <td colspan="2">
+                <code data-i18n-cmd="commands.followage.usage.basic">!followage</code> <span
+                    data-i18n="commands.followage.usage.basicDesc">Check your own follow age</span>
+                <code
+                    data-i18n-cmd="commands.followage.usage.userCmd">!followage &lt;username&gt;</code>
+                <span data-i18n="commands.followage.usage.userDesc">Check another user's follow
+                    age</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr class="category-header">
+            <td colspan="2" ><h2 class="category-heading" id="custom-commands" data-i18n="table.categories.customCommands">Custom Commands</h2></td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.command.name">!command <span class="mod-badge">Mod</span></td>
+            <td data-i18n-key="commands.command.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-command"><span class="description-text">Create, edit, and
+                    manage custom commands for your channel.
+                    Custom commands can also be managed via the <a href="https://bot.wildcat.chat/"
+                        class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-command" hidden>
+            <td colspan="2">
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.addTextCmd">!command add &lt;name&gt; &lt;response&gt;</code>
+                <span data-i18n="commands.command.usage.addText">Creates a new text-based command</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.addAiCmd">!command addai &lt;name&gt; &lt;prompt&gt;</code>
+                <span data-i18n="commands.command.usage.addAi">Creates a new AI-powered command — generates a
+                    unique response each time using the
+                    prompt</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.editCmd">!command edit &lt;name&gt; &lt;response&gt;</code>
+                <span data-i18n="commands.command.usage.edit">Updates an existing command's response</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.removeCmd">!command remove &lt;name&gt;</code>
+                <span data-i18n="commands.command.usage.remove">Deletes a command</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.showCmd">!command show &lt;name&gt;</code>
+                <span data-i18n="commands.command.usage.show">Shows the raw response template and current
+                    settings</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.optionsPermsCmd">!command options &lt;name&gt; permission=&lt;level&gt;</code>
+                <span data-i18n="commands.command.usage.optionsPerms">Set who can use the command: everyone,
+                    subscriber, vip, moderator, or
+                    broadcaster</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.optionsCooldownCmd">!command options &lt;name&gt; cooldown=&lt;seconds&gt;</code>
+                <span data-i18n="commands.command.usage.optionsCooldown">Set a cooldown between uses (in
+                    seconds)</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.command.usage.optionsTypeCmd">!command options &lt;name&gt; type=&lt;text|prompt&gt;</code>
+                <span data-i18n="commands.command.usage.optionsType">Switch an existing command between text
+                    mode and AI mode</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.timer.name">!timer <span class="mod-badge">Mod</span></td>
+            <td data-i18n-key="commands.timer.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-timer"><span class="description-text">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-timer" hidden>
+            <td colspan="2">
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addCmd">!timer add &lt;name&gt; &lt;interval&gt; &lt;response&gt;</code>
+                <span data-i18n="commands.timer.usage.add">Creates a new text-based timer with the given interval in minutes</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addAiCmd">!timer addai &lt;name&gt; &lt;interval&gt; &lt;prompt&gt;</code>
+                <span data-i18n="commands.timer.usage.addAi">Creates a new AI-powered timer with the given interval in minutes</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.editCmd">!timer edit &lt;name&gt; &lt;response&gt;</code>
+                <span data-i18n="commands.timer.usage.edit">Updates an existing timer's response</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.intervalCmd">!timer interval &lt;name&gt; &lt;minutes&gt;</code>
+                <span data-i18n="commands.timer.usage.interval">Updates the firing interval (minimum minutes)</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.linesCmd">!timer lines &lt;name&gt; &lt;number&gt;</code>
+                <span data-i18n="commands.timer.usage.lines">Updates the minimum required chat lines between firings</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.enableCmd">!timer enable &lt;name&gt;</code>
+                <span data-i18n="commands.timer.usage.enable">Enables a paused timer</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.disableCmd">!timer disable &lt;name&gt;</code>
+                <span data-i18n="commands.timer.usage.disable">Pauses an active timer</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.removeCmd">!timer remove &lt;name&gt;</code>
+                <span data-i18n="commands.timer.usage.remove">Deletes a timer</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.showCmd">!timer show &lt;name&gt;</code>
+                <span data-i18n="commands.timer.usage.show">Shows the current settings for a specific timer</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.listCmd">!timer list</code>
+                <span data-i18n="commands.timer.usage.list">Lists all timers for your channel</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr class="category-header">
+            <td colspan="2" ><h2 class="category-heading" id="games" data-i18n="table.categories.games">Games</h2></td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.geo.name">!geo</td>
+            <td data-i18n-key="commands.geo.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-geo"><span class="description-text">Starts or manages
+                    Geo-Game, a geography guessing game for IRL or virtual worlds.</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-geo" hidden>
+            <td colspan="2">
+                <code>!geo</code> <span data-i18n="commands.geo.usage.basic">Starts a global real-world
+                    game</span>
+                <code data-i18n-cmd="commands.geo.usage.regionCmd">!geo &lt;region&gt;</code> <span
+                    data-i18n="commands.geo.usage.region">Starts a region-specific real-world game, e.g. !geo
+                    <span data-i18n="commands.geo.usage.japan">Japan</span></span>
+                <code>!geo game</code> <span data-i18n="commands.geo.usage.game">Starts a game-world game using
+                    current stream's game</span>
+                <code data-i18n-cmd="commands.geo.usage.gameTitleCmd">!geo game [Game Title]</code> <span
+                    data-i18n="commands.geo.usage.gameTitle">Starts a game-world game with specified game, e.g.
+                    !geo game "<span data-i18n="commands.geo.usage.metroidPrime">Metroid Prime</span>"</span>
+                <code data-i18n-cmd="commands.geo.usage.commandRounds">!geo &lt;command&gt; N</code> <span
+                    data-i18n="commands.geo.usage.rounds">Runs any game command with N rounds, e.g. !geo <span
+                        data-i18n="commands.geo.usage.japan">Japan</span> 3</span>
+                <code>!geo leaderboard</code>
+                <code>!geo stop</code> <span data-i18n="commands.geo.usage.stop">Game initiator, mods, or
+                    broadcaster can stop</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.configDifficultyCmd">!geo config difficulty &lt;easy|normal|hard&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.intervalCmd">!geo config interval &lt;seconds&gt;</code>
+                <span data-i18n="commands.geo.usage.interval">Sets time between clues to 30-300 seconds</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.durationCmd">!geo config duration &lt;minutes&gt;</code>
+                <span data-i18n="commands.geo.usage.duration">Sets round duration to 3-20 minutes</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.configRegionCmd">!geo config region &lt;regions&gt;</code>
+                <span data-i18n="commands.geo.usage.configRegion">Sets regions like <span
+                        data-i18n="commands.geo.usage.europe">Europe</span>,<span
+                        data-i18n="commands.geo.usage.asia">Asia</span> or <span
+                        data-i18n="commands.geo.usage.usa">USA</span>,<span
+                        data-i18n="commands.geo.usage.canada">Canada</span></span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.configGameCmd">!geo config game &lt;titles&gt;</code>
+                <span data-i18n="commands.geo.usage.configGame">Sets preferred game titles,
+                    comma-separated</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.pointsBaseCmd">!geo config pointsbase &lt;number&gt;</code>
+                <span data-i18n="commands.geo.usage.pointsBase">Sets base points from 1-100</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointstimebonus &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointsdifficultymultiplier &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config scoretracking &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.geo.usage.maxRoundsCmd">!geo config maxrounds &lt;number&gt;</code>
+                <span data-i18n="commands.geo.usage.maxRounds">Sets maximum rounds from 1-10</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo resetconfig</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo clearleaderboard</code> <span
+                    data-i18n="commands.geo.usage.clearLeaderboard">Or resetstats</span>
+                <code data-i18n-cmd="commands.geo.usage.reportCmd">!geo report &lt;reason&gt;</code> <span
+                    data-i18n="commands.geo.usage.report">Reports problematic locations or clues</span>
+                <code>!geo help</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.riddle.name">!riddle</td>
+            <td data-i18n-key="commands.riddle.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-riddle"><span class="description-text">Starts or manages a
+                    Riddle game. Riddles can be general, about the current stream game, or a specific
+                    subject.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-riddle" hidden>
+            <td colspan="2">
+                <code>!riddle</code> <span data-i18n="commands.riddle.usage.basic">Starts a general knowledge
+                    riddle</span>
+                <code data-i18n-cmd="commands.riddle.usage.subjectCmd">!riddle &lt;subject&gt;</code> <span
+                    data-i18n="commands.riddle.usage.subject">Example: !riddle <span
+                        data-i18n="commands.riddle.usage.animals">animals</span></span>
+                <code data-i18n-cmd="commands.riddle.usage.roundsCmd">!riddle &lt;rounds&gt;</code> <span
+                    data-i18n="commands.riddle.usage.rounds">Example: !riddle 3 for 3 general rounds</span>
+                <code
+                    data-i18n-cmd="commands.riddle.usage.subjectRoundsCmd">!riddle &lt;subject&gt; &lt;rounds&gt;</code>
+                <span data-i18n="commands.riddle.usage.subjectRounds">Example: !riddle <span
+                        data-i18n="commands.riddle.usage.history">history</span> 5</span>
+                <code>!riddle game</code> <span data-i18n="commands.riddle.usage.game">Riddle about the current
+                    stream game</span>
+                <code data-i18n-cmd="commands.riddle.usage.gameRoundsCmd">!riddle game &lt;rounds&gt;</code>
+                <code>!riddle leaderboard</code>
+                <code data-i18n-cmd="commands.riddle.usage.reportCmd">!riddle report &lt;reason...&gt;</code>
+                <span data-i18n="commands.riddle.usage.report">Reports problematic riddles</span>
+                <code>!riddle stop</code> <span data-i18n="commands.riddle.usage.stop">Game initiator, mods, or
+                    broadcaster can stop</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.riddle.usage.configDifficultyCmd">!riddle config difficulty &lt;easy|normal|hard&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.riddle.usage.questionTimeCmd">!riddle config questiontime &lt;seconds&gt;</code>
+                <span data-i18n="commands.riddle.usage.questionTime">Sets time per riddle to 15-120
+                    seconds</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.riddle.usage.pointsBaseCmd">!riddle config pointsbase &lt;number&gt;</code>
+                <span data-i18n="commands.riddle.usage.pointsBase">Sets base points from 1-100</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointstimebonus &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointsdifficultymultiplier &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config scoretracking &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.riddle.usage.maxRoundsCmd">!riddle config maxrounds &lt;number&gt;</code>
+                <span data-i18n="commands.riddle.usage.maxRounds">Sets maximum rounds from 1-20</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.riddle.usage.keywordsLimitCmd">!riddle config keywordslimit &lt;number&gt;</code>
+                <span data-i18n="commands.riddle.usage.keywordsLimit">Sets recent keywords to exclude, e.g.
+                    20-100</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.riddle.usage.roundDelayCmd">!riddle config rounddelay &lt;milliseconds&gt;</code>
+                <span data-i18n="commands.riddle.usage.roundDelay">Sets delay between rounds</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle resetconfig</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle clearleaderboard</code> <span
+                    data-i18n="commands.riddle.usage.clearLeaderboard">Or cleardata</span>
+                <code>!riddle help</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.trivia.name">!trivia</td>
+            <td data-i18n-key="commands.trivia.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-trivia"><span class="description-text">Starts or manages
+                    Trivia games with factual questions on various topics, including the current stream
+                    game.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-trivia" hidden>
+            <td colspan="2">
+                <code>!trivia</code> <span data-i18n="commands.trivia.usage.basic">Starts general knowledge
+                    trivia</span>
+                <code data-i18n-cmd="commands.trivia.usage.topicCmd">!trivia &lt;topic&gt;</code> <span
+                    data-i18n="commands.trivia.usage.topic">Starts topic-specific trivia, e.g. !trivia <span
+                        data-i18n="commands.trivia.usage.science">science</span></span>
+                <code>!trivia game</code> <span data-i18n="commands.trivia.usage.game">Starts trivia about the
+                    current stream game</span>
+                <code data-i18n-cmd="commands.trivia.usage.roundsCmd">!trivia &lt;rounds&gt;</code> <span
+                    data-i18n="commands.trivia.usage.rounds">Specifies number of rounds, e.g. !trivia 3</span>
+                <code
+                    data-i18n-cmd="commands.trivia.usage.topicRoundsCmd">!trivia &lt;topic&gt; &lt;rounds&gt;</code>
+                <span data-i18n="commands.trivia.usage.topicRounds">Example: !trivia <span
+                        data-i18n="commands.trivia.usage.history">history</span> 5</span>
+                <code>!trivia leaderboard</code>
+                <code data-i18n-cmd="commands.trivia.usage.reportCmd">!trivia report &lt;reason&gt;</code> <span
+                    data-i18n="commands.trivia.usage.report">Reports problematic questions</span>
+                <code>!trivia stop</code> <span data-i18n="commands.trivia.usage.stop">Game initiator, mods, or
+                    broadcaster can stop</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.trivia.usage.configDifficultyCmd">!trivia config difficulty &lt;easy|normal|hard&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.trivia.usage.timeCmd">!trivia config time &lt;seconds&gt;</code>
+                <span data-i18n="commands.trivia.usage.time">Sets time per question to 10-120 seconds</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.trivia.usage.pointsBaseCmd">!trivia config pointsbase &lt;number&gt;</code>
+                <span data-i18n="commands.trivia.usage.pointsBase">Sets base points from 1-100</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointstimebonus &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointsdifficultymultiplier &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config scoretracking &lt;true|false&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.trivia.usage.configTopicCmd">!trivia config topic &lt;topics&gt;</code>
+                <span data-i18n="commands.trivia.usage.configTopic">Sets preferred topics,
+                    comma-separated</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.trivia.usage.maxRoundsCmd">!trivia config maxrounds &lt;number&gt;</code>
+                <span data-i18n="commands.trivia.usage.maxRounds">Sets maximum rounds from 1-10</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia resetconfig</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia clearleaderboard</code>
+                <code>!trivia help</code>
+            </td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr class="category-header">
+            <td colspan="2" ><h2 class="category-heading" id="config" data-i18n="table.categories.config">Config</h2></td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td><span data-i18n-key="commands.botlang.name">!botlang</span> <span class="mod-badge">Mod</span>
+            </td>
+            <td data-i18n-key="commands.botlang.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-botlang"><span class="description-text">Configure the bot to
+                    speak in a specific language for the entire channel.</span><span
+                    class="dropdown-toggle">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-botlang" hidden>
+            <td colspan="2">
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.botlang.usage.langCmd">!botlang &lt;language&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang status</code> <span
+                    data-i18n="commands.botlang.usage.status">Checks current language</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang off</code> <span
+                    data-i18n="commands.botlang.usage.off">Resets to English</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang default</code> <span
+                    data-i18n="commands.botlang.usage.default">Resets to English</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.auto.name">!auto <span class="mod-badge">Mod</span></td>
+            <td data-i18n-key="commands.auto.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-auto"><span class="description-text">Configure auto-chat
+                    mode and options.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-auto" hidden>
+            <td colspan="2">
+                <code>!auto</code> <span data-i18n="commands.auto.usage.status">Shows current auto-chat mode and
+                    categories</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.modeCmd">!auto &lt;off|low|medium|high&gt;</code> <span
+                    data-i18n="commands.auto.usage.mode">Sets auto-chat frequency (off disables periodic messages only)</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.greetingsCmd">!auto config greetings:&lt;on|off&gt;</code>
+                <span data-i18n="commands.auto.usage.greetings">Enable/disable stream start/end greetings</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.followsCmd">!auto config follows:&lt;on|off&gt;</code>
+                <span data-i18n="commands.auto.usage.follows">Enable/disable new follower celebrations</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.subscriptionsCmd">!auto config subscriptions:&lt;on|off&gt;</code>
+                <span data-i18n="commands.auto.usage.subscriptions">Enable/disable subscription celebrations</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.raidsCmd">!auto config raids:&lt;on|off&gt;</code>
+                <span data-i18n="commands.auto.usage.raids">Enable/disable raid welcome messages</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.factsCmd">!auto config facts:&lt;on|off&gt;</code> <span
+                    data-i18n="commands.auto.usage.facts">Enable/disable facts and tips</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.questionsCmd">!auto config questions:&lt;on|off&gt;</code>
+                <span data-i18n="commands.auto.usage.questions">Enable/disable engagement questions</span>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.auto.usage.adsCmd">!auto config ads:&lt;on|off&gt;</code> <span
+                    data-i18n="commands.auto.usage.ads">Enable/disable ad break notifications</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td>!disable <span class="mod-badge">Mod</span></td>
+            <td data-i18n-key="commands.disable.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-disable"><span class="description-text">Disables a command
+                    in this channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-disable" hidden>
+            <td colspan="2">
+                <code>!disable &lt;command&gt;</code>
+                <code>!disable lurk</code> <span data-i18n="commands.disable.usage.lurk">Disables the !lurk
+                    command</span>
+                <code>!disable trivia</code> <span data-i18n="commands.disable.usage.trivia">Disables the
+                    !trivia command</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td>!enable <span class="mod-badge">Mod</span></td>
+            <td data-i18n-key="commands.enable.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-enable"><span class="description-text">Enables a previously
+                    disabled command in this channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-enable" hidden>
+            <td colspan="2">
+                <code>!enable &lt;command&gt;</code>
+                <code>!enable trivia</code> <span data-i18n="commands.enable.usage.trivia">Enables the !trivia
+                    command</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td>!ping</td>
+            <td data-i18n-key="commands.ping.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ping"><span class="description-text">Checks if the bot is
+                    responsive. Responds with Pong!</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-ping" hidden>
+            <td colspan="2">
+                <code>!ping</code>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
-<body class="has-navbar has-sidebar">
-    <a href="#content" class="skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
-    <canvas id="staticCanvas" aria-hidden="true"></canvas>
+<section id="response-variables" class="section">
+    <h2 data-i18n="responseVariables.title">Response Variables</h2>
+    <p><span data-i18n="responseVariables.intro1">When you create a custom command, you can use <strong>response
+                variables</strong> to insert
+            dynamic content. Write them in your response using the <code>$(variable)</code> format and they'll
+            be replaced automatically when the command is used.</span></p>
 
-    <!-- Unified Navigation Bar -->
-    <nav class="site-navbar" aria-label="Main" data-i18n-aria-label="nav.mainNav">
-        <a href="index.html" class="site-navbar-brand" aria-label="Wildcat.chat home"
-            data-i18n-aria-label="nav.homeLink">
-            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <style>
-                    .kaomoji {
-                        font-size: 250px;
-                        font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
-                        fill: currentColor;
-                        text-anchor: middle;
-                        dominant-baseline: central;
-                    }
-                </style>
-                <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
-            </svg>
-        </a>
-        <button class="navbar-toggle" type="button" aria-expanded="false"
-            aria-controls="site-navbar-menu" aria-label="Toggle navigation"
-            data-i18n-aria-label="nav.toggleNavLabel"><span aria-hidden="true">☰</span></button>
-        <ul class="site-navbar-menu" id="site-navbar-menu">
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
-            <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
-            <li><a href="chatoverlay.html" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
-            <li><a href="https://parfaitfair.com/#contact" data-i18n="nav.contact">Contact</a></li>
-        </ul>
-    </nav>
+    <table>
+        <caption class="visually-hidden" data-i18n="responseVariables.title">Response Variables</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="responseVariables.table.variable">Variable</th>
+                <th scope="col" data-i18n="responseVariables.table.whatItDoes">What it does</th>
+                <th scope="col" data-i18n="responseVariables.table.exampleOutput">Example output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="inline-code">$(user)</span></td>
+                <td data-i18n="responseVariables.variables.user.desc">Name of the person who used the command
+                </td>
+                <td>WildcatGamer</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(channel)</span></td>
+                <td data-i18n="responseVariables.variables.channel.desc">Channel name</td>
+                <td>WildcatStreamer</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(args)</span></td>
+                <td data-i18n="responseVariables.variables.args.desc">All text after the command name as one
+                    string</td>
+                <td data-i18n="responseVariables.variables.args.example">If someone types <span
+                        class="inline-code">!shout hello world</span>, $(args) =
+                    <strong>hello
+                        world</strong>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(1)</span> <span class="inline-code">$(2)</span> ...</td>
+                <td data-i18n="responseVariables.variables.numbered.desc">A single word by position — $(1) is
+                    the 1st word, $(2) is the 2nd, and so on</td>
+                <td data-i18n="responseVariables.variables.numbered.example">If someone types <span
+                        class="inline-code">!shout hello world</span>, $(1) =
+                    <strong>hello</strong>, $(2) =
+                    <strong>world</strong>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(count)</span></td>
+                <td data-i18n="responseVariables.variables.count.desc">How many times this command has been used
+                </td>
+                <td>42</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(random X-Y)</span></td>
+                <td data-i18n="responseVariables.variables.random.desc">A random number between X and Y</td>
+                <td data-i18n="responseVariables.variables.random.example">17 from <span
+                        class="inline-code">$(random 1-20)</span></td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(uptime)</span></td>
+                <td data-i18n="responseVariables.variables.uptime.desc">How long the stream has been live</td>
+                <td data-i18n="responseVariables.variables.uptime.example">2h 30m</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(game)</span></td>
+                <td data-i18n="responseVariables.variables.game.desc">The game currently being played</td>
+                <td data-i18n="responseVariables.variables.game.example">Metroid Prime</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(followage)</span></td>
+                <td data-i18n="responseVariables.variables.followage.desc">How long the user has been following
+                    the channel</td>
+                <td data-i18n="responseVariables.variables.followage.example">2 years 3 months</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(checkin_count)</span></td>
+                <td data-i18n="responseVariables.variables.checkinCount.desc">The viewer's running daily
+                    check-in
+                    count (Channel Point Rewards only)</td>
+                <td>14</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- Sidebar Navigation -->
-    <nav id="sidebar" aria-labelledby="sidebar-title">
-        <div class="sidebar-header">
-            <p class="sidebar-title" id="sidebar-title" data-i18n="sidebar.title">WildcatSage</p>
-            <button type="button" id="sidenav-toggle" aria-expanded="true" aria-controls="sidebar-nav-list"
-                aria-label="Toggle sidebar" data-i18n-aria-label="sidebar.toggleSidebar">
-                <svg class="sidenav-toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-        </div>
-        <ul id="sidebar-nav-list">
-            <li><a href="#general" data-i18n="sidebar.generalCommands">General Commands</a></li>
-            <li><a href="#custom-commands" data-i18n="sidebar.customCommands">Custom Commands</a></li>
-            <li><a href="#games" data-i18n="sidebar.games">Games</a></li>
-            <li><a href="#config" data-i18n="sidebar.config">Config</a></li>
-            <li><a href="#response-variables" data-i18n="sidebar.responseVariables">Response Variables</a></li>
-            <li><a href="#web-dashboard" data-i18n="sidebar.webDashboard">Web Dashboard</a></li>
-            <li><a href="#daily-check-in" data-i18n="sidebar.dailyCheckIn">Daily Check-In</a></li>
-        </ul>
-    </nav>
+    <h3 data-i18n="responseVariables.examplesTitle">Examples</h3>
+    <p style="margin-bottom: 6px;" data-i18n="responseVariables.examplesIntro">Here are some example commands
+        you can create:</p>
+    <table>
+        <caption class="visually-hidden" data-i18n="responseVariables.examplesCaption">Response variable examples</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="responseVariables.examplesTable.command">Command to type in chat</th>
+                <th scope="col" data-i18n="responseVariables.examplesTable.botSays">What the bot says</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-i18n="responseVariables.examples.hi.command"><span class="inline-code">!command add hi
+                        Hello $(user)! Welcome!</span></td>
+                <td data-i18n="responseVariables.examples.hi.result">Hello WildcatGamer! Welcome!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.roll.command"><span class="inline-code">!command add
+                        roll $(user) rolled a $(random 1-20)!</span></td>
+                <td data-i18n="responseVariables.examples.roll.result">WildcatGamer rolled a 17!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.live.command"><span class="inline-code">!command add
+                        live We've been live for $(uptime) playing $(game)!</span></td>
+                <td data-i18n="responseVariables.examples.live.result">We've been live for 2h 30m playing
+                    Metroid Prime!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.hug.command"><span class="inline-code">!command add
+                        hug $(user) hugs $(1)!</span></td>
+                <td data-i18n="responseVariables.examples.hug.result">WildcatGamer hugs WildcatStreamer!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.uses.command"><span class="inline-code">!command add
+                        uses This command has been used $(count) times!</span></td>
+                <td data-i18n="responseVariables.examples.uses.result">This command has been used 42 times!</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- Main Content -->
-    <main id="content" tabindex="-1">
-        <h1 data-i18n="page.title">WildcatSage Bot Commands</h1>
+    <h3 data-i18n="aiCommands.title">AI Commands</h3>
+    <p style="margin-bottom: 6px;"><span data-i18n="aiCommands.intro1">AI commands use a prompt instead of a
+            fixed response. The bot sends
+            the prompt to an AI model and returns a unique answer every time. You can use response variables
+            in prompts too!</span></p>
 
-        <div class="expand-tip">
-            <span data-i18n="page.expandTip">Click any command row below to expand and see usage details.</span>
-        </div>
+    <p style="margin-bottom: 6px;"><span data-i18n="aiCommands.intro2">The easiest way to create AI commands is
+            through the
+            <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.
+            Click <strong>+ Add</strong>, flip on <strong>AI Mode</strong>, and write your prompt.
+            You can also create them in chat with
+            <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.</span>
+    </p>
 
-        <table>
-            <caption class="visually-hidden" data-i18n="table.caption">Bot commands</caption>
-            <thead>
-                <tr>
-                    <th scope="col" data-i18n="table.headers.command">Command</th>
-                    <th scope="col" data-i18n="table.headers.description">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="category-header">
-                    <td colspan="2" ><h2 class="category-heading" id="general" data-i18n="table.categories.general">General</h2></td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.ask.name">!ask / !sage</td>
-                    <td data-i18n-key="commands.ask.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ask"><span class="description-text">Ask Sage a question.
-                            Uses search intelligently. Supports multilingual time queries for locations
-                            worldwide.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-ask" hidden>
-                    <td colspan="2">
-                        <code data-i18n-cmd="commands.ask.usage.question">!ask &lt;your question&gt;</code>
-                        <div style="margin-top: 8px;">
-                            <strong>Special Features:</strong>
-                            <ul style="margin: 4px 0 0 16px; padding-left: 0;">
-                                <li><strong>Multilingual Time Queries:</strong> Ask for current time in locations using
-                                    your preferred language</li>
-                                <li><strong>Examples:</strong> "what time is it in Tokyo?", "quelle heure est-il à
-                                    Paris?", "che ora è a Roma?", "東京は何時ですか？"</li>
-                                <li><strong>Supported Languages:</strong> English, Spanish, Portuguese, German, French,
-                                    Italian, Russian, Japanese</li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.search.name">!search</td>
-                    <td data-i18n-key="commands.search.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-search"><span class="description-text">Searches the web for
-                            information on a topic.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-search" hidden>
-                    <td colspan="2">
-                        <code data-i18n-cmd="commands.search.usage.query">!search &lt;your query&gt;</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.game.name">!game</td>
-                    <td data-i18n-key="commands.game.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-game"><span class="description-text">Provides researched
-                            information about the game currently being played. Supports multiple modes including AI
-                            image analysis and specific gameplay questions.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-game" hidden>
-                    <td colspan="2">
-                        <div style="margin-bottom: 8px;">
-                            <strong>Modes:</strong>
-                            <ul style="margin: 4px 0 0 16px; padding-left: 0;">
-                                <li><code>!game</code> - Shows current game info and interesting facts</li>
-                                <li><code>!game analyze</code> - Uses AI to analyze stream visuals and describe gameplay
-                                </li>
-                                <li><code>!game &lt;question&gt;</code> - Answers specific questions about the current
-                                    game</li>
-                                <li><code>!game analyze &lt;question&gt;</code> - Analyzes visuals and answers your
-                                    specific question</li>
-                            </ul>
-                        </div>
-                        <div style="margin-top: 8px;">
-                            <strong>Image Analysis Features:</strong>
-                            <ul style="margin: 4px 0 0 16px; padding-left: 0;">
-                                <li>Uses Twitch stream thumbnails (updates every 5 minutes)</li>
-                                <li>AI analyzes in-game elements and ignores overlays</li>
-                                <li>Search verification ensures accurate descriptions</li>
-                                <li>Automatic summarization for longer responses</li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.translate.name">!translate</td>
-                    <td data-i18n-key="commands.translate.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-translate"><span class="description-text">Manage automatic
-                            message translation into the specified target language.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-translate" hidden>
-                    <td colspan="2">
-                        <code data-i18n-cmd="commands.translate.usage.lang">!translate &lt;lang&gt;</code>
-                        <code>!translate &lt;stop&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.translate.usage.modUser">!translate &lt;lang|stop&gt; [user]</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!translate [user] &lt;lang|stop&gt;</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.help.name">!commands / !help</td>
-                    <td data-i18n-key="commands.help.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-help"><span class="description-text">Shows where to find the
-                            list of available commands.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-help" hidden>
-                    <td colspan="2">
-                        <code data-i18n-cmd="commands.help.usage.basic">!help or !commands</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td>!lurk</td>
-                    <td data-i18n-key="commands.lurk.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-lurk"><span class="description-text">Let the chat know you
-                            are lurking. Provide an optional reason for a custom send-off.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-lurk" hidden>
-                    <td colspan="2">
-                        <code>!lurk [your reason for lurking]</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.quote.name">!quote</td>
-                    <td data-i18n-key="commands.quote.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-quote"><span class="description-text">Add, view, or search
-                            quotes from the channel. Quotes are stored per-channel and can include an optional author
-                            attribution.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-quote" hidden>
-                    <td colspan="2">
-                        <code data-i18n-cmd="commands.quote.usage.random">!quote</code> <span
-                            data-i18n="commands.quote.usage.randomDesc">Shows a random quote</span>
-                        <code data-i18n-cmd="commands.quote.usage.id">!quote &lt;id&gt;</code> <span
-                            data-i18n="commands.quote.usage.idDesc">Shows quote by ID number, e.g. !quote 12</span>
-                        <code data-i18n-cmd="commands.quote.usage.last">!quote last</code> <span
-                            data-i18n="commands.quote.usage.lastDesc">Shows the most recently added quote</span>
-                        <code data-i18n-cmd="commands.quote.usage.search">!quote &lt;search term&gt;</code> <span
-                            data-i18n="commands.quote.usage.searchDesc">Searches quotes by text or author, e.g. !quote
-                            parfait</span>
-                        <code data-i18n-cmd="commands.quote.usage.searchExplicit">!quote search &lt;term&gt;</code>
-                        <span data-i18n="commands.quote.usage.searchExplicitDesc">Explicit search command</span>
-                        <code data-i18n-cmd="commands.quote.usage.add">!quote add &lt;text [- author]&gt;</code> <span
-                            data-i18n="commands.quote.usage.addDesc">Adds a new quote. Optional author after " - ", e.g.
-                            !quote add "hello world - parfait"</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.quote.usage.delete">!quote delete &lt;id&gt;</code> <span
-                            data-i18n="commands.quote.usage.deleteDesc">Deletes a quote (mods/broadcaster only)</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.quote.usage.edit">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code>
-                        <span data-i18n="commands.quote.usage.editDesc">Edits an existing quote (mods/broadcaster
-                            only)</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.followage.name">!followage</td>
-                    <td data-i18n-key="commands.followage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-followage"><span class="description-text">Check how
-                            long you or another user has been following the channel.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-followage" hidden>
-                    <td colspan="2">
-                        <code data-i18n-cmd="commands.followage.usage.basic">!followage</code> <span
-                            data-i18n="commands.followage.usage.basicDesc">Check your own follow age</span>
-                        <code
-                            data-i18n-cmd="commands.followage.usage.userCmd">!followage &lt;username&gt;</code>
-                        <span data-i18n="commands.followage.usage.userDesc">Check another user's follow
-                            age</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="category-header">
-                    <td colspan="2" ><h2 class="category-heading" id="custom-commands" data-i18n="table.categories.customCommands">Custom Commands</h2></td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.command.name">!command <span class="mod-badge">Mod</span></td>
-                    <td data-i18n-key="commands.command.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-command"><span class="description-text">Create, edit, and
-                            manage custom commands for your channel.
-                            Custom commands can also be managed via the <a href="https://bot.wildcat.chat/"
-                                class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-command" hidden>
-                    <td colspan="2">
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.addTextCmd">!command add &lt;name&gt; &lt;response&gt;</code>
-                        <span data-i18n="commands.command.usage.addText">Creates a new text-based command</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.addAiCmd">!command addai &lt;name&gt; &lt;prompt&gt;</code>
-                        <span data-i18n="commands.command.usage.addAi">Creates a new AI-powered command — generates a
-                            unique response each time using the
-                            prompt</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.editCmd">!command edit &lt;name&gt; &lt;response&gt;</code>
-                        <span data-i18n="commands.command.usage.edit">Updates an existing command's response</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.removeCmd">!command remove &lt;name&gt;</code>
-                        <span data-i18n="commands.command.usage.remove">Deletes a command</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.showCmd">!command show &lt;name&gt;</code>
-                        <span data-i18n="commands.command.usage.show">Shows the raw response template and current
-                            settings</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.optionsPermsCmd">!command options &lt;name&gt; permission=&lt;level&gt;</code>
-                        <span data-i18n="commands.command.usage.optionsPerms">Set who can use the command: everyone,
-                            subscriber, vip, moderator, or
-                            broadcaster</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.optionsCooldownCmd">!command options &lt;name&gt; cooldown=&lt;seconds&gt;</code>
-                        <span data-i18n="commands.command.usage.optionsCooldown">Set a cooldown between uses (in
-                            seconds)</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.command.usage.optionsTypeCmd">!command options &lt;name&gt; type=&lt;text|prompt&gt;</code>
-                        <span data-i18n="commands.command.usage.optionsType">Switch an existing command between text
-                            mode and AI mode</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.timer.name">!timer <span class="mod-badge">Mod</span></td>
-                    <td data-i18n-key="commands.timer.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-timer"><span class="description-text">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-timer" hidden>
-                    <td colspan="2">
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addCmd">!timer add &lt;name&gt; &lt;interval&gt; &lt;response&gt;</code>
-                        <span data-i18n="commands.timer.usage.add">Creates a new text-based timer with the given interval in minutes</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addAiCmd">!timer addai &lt;name&gt; &lt;interval&gt; &lt;prompt&gt;</code>
-                        <span data-i18n="commands.timer.usage.addAi">Creates a new AI-powered timer with the given interval in minutes</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.editCmd">!timer edit &lt;name&gt; &lt;response&gt;</code>
-                        <span data-i18n="commands.timer.usage.edit">Updates an existing timer's response</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.intervalCmd">!timer interval &lt;name&gt; &lt;minutes&gt;</code>
-                        <span data-i18n="commands.timer.usage.interval">Updates the firing interval (minimum minutes)</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.linesCmd">!timer lines &lt;name&gt; &lt;number&gt;</code>
-                        <span data-i18n="commands.timer.usage.lines">Updates the minimum required chat lines between firings</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.enableCmd">!timer enable &lt;name&gt;</code>
-                        <span data-i18n="commands.timer.usage.enable">Enables a paused timer</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.disableCmd">!timer disable &lt;name&gt;</code>
-                        <span data-i18n="commands.timer.usage.disable">Pauses an active timer</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.removeCmd">!timer remove &lt;name&gt;</code>
-                        <span data-i18n="commands.timer.usage.remove">Deletes a timer</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.showCmd">!timer show &lt;name&gt;</code>
-                        <span data-i18n="commands.timer.usage.show">Shows the current settings for a specific timer</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.listCmd">!timer list</code>
-                        <span data-i18n="commands.timer.usage.list">Lists all timers for your channel</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="category-header">
-                    <td colspan="2" ><h2 class="category-heading" id="games" data-i18n="table.categories.games">Games</h2></td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.geo.name">!geo</td>
-                    <td data-i18n-key="commands.geo.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-geo"><span class="description-text">Starts or manages
-                            Geo-Game, a geography guessing game for IRL or virtual worlds.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-geo" hidden>
-                    <td colspan="2">
-                        <code>!geo</code> <span data-i18n="commands.geo.usage.basic">Starts a global real-world
-                            game</span>
-                        <code data-i18n-cmd="commands.geo.usage.regionCmd">!geo &lt;region&gt;</code> <span
-                            data-i18n="commands.geo.usage.region">Starts a region-specific real-world game, e.g. !geo
-                            <span data-i18n="commands.geo.usage.japan">Japan</span></span>
-                        <code>!geo game</code> <span data-i18n="commands.geo.usage.game">Starts a game-world game using
-                            current stream's game</span>
-                        <code data-i18n-cmd="commands.geo.usage.gameTitleCmd">!geo game [Game Title]</code> <span
-                            data-i18n="commands.geo.usage.gameTitle">Starts a game-world game with specified game, e.g.
-                            !geo game "<span data-i18n="commands.geo.usage.metroidPrime">Metroid Prime</span>"</span>
-                        <code data-i18n-cmd="commands.geo.usage.commandRounds">!geo &lt;command&gt; N</code> <span
-                            data-i18n="commands.geo.usage.rounds">Runs any game command with N rounds, e.g. !geo <span
-                                data-i18n="commands.geo.usage.japan">Japan</span> 3</span>
-                        <code>!geo leaderboard</code>
-                        <code>!geo stop</code> <span data-i18n="commands.geo.usage.stop">Game initiator, mods, or
-                            broadcaster can stop</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.configDifficultyCmd">!geo config difficulty &lt;easy|normal|hard&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.intervalCmd">!geo config interval &lt;seconds&gt;</code>
-                        <span data-i18n="commands.geo.usage.interval">Sets time between clues to 30-300 seconds</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.durationCmd">!geo config duration &lt;minutes&gt;</code>
-                        <span data-i18n="commands.geo.usage.duration">Sets round duration to 3-20 minutes</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.configRegionCmd">!geo config region &lt;regions&gt;</code>
-                        <span data-i18n="commands.geo.usage.configRegion">Sets regions like <span
-                                data-i18n="commands.geo.usage.europe">Europe</span>,<span
-                                data-i18n="commands.geo.usage.asia">Asia</span> or <span
-                                data-i18n="commands.geo.usage.usa">USA</span>,<span
-                                data-i18n="commands.geo.usage.canada">Canada</span></span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.configGameCmd">!geo config game &lt;titles&gt;</code>
-                        <span data-i18n="commands.geo.usage.configGame">Sets preferred game titles,
-                            comma-separated</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.pointsBaseCmd">!geo config pointsbase &lt;number&gt;</code>
-                        <span data-i18n="commands.geo.usage.pointsBase">Sets base points from 1-100</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointstimebonus &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointsdifficultymultiplier &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config scoretracking &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.geo.usage.maxRoundsCmd">!geo config maxrounds &lt;number&gt;</code>
-                        <span data-i18n="commands.geo.usage.maxRounds">Sets maximum rounds from 1-10</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!geo resetconfig</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!geo clearleaderboard</code> <span
-                            data-i18n="commands.geo.usage.clearLeaderboard">Or resetstats</span>
-                        <code data-i18n-cmd="commands.geo.usage.reportCmd">!geo report &lt;reason&gt;</code> <span
-                            data-i18n="commands.geo.usage.report">Reports problematic locations or clues</span>
-                        <code>!geo help</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.riddle.name">!riddle</td>
-                    <td data-i18n-key="commands.riddle.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-riddle"><span class="description-text">Starts or manages a
-                            Riddle game. Riddles can be general, about the current stream game, or a specific
-                            subject.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-riddle" hidden>
-                    <td colspan="2">
-                        <code>!riddle</code> <span data-i18n="commands.riddle.usage.basic">Starts a general knowledge
-                            riddle</span>
-                        <code data-i18n-cmd="commands.riddle.usage.subjectCmd">!riddle &lt;subject&gt;</code> <span
-                            data-i18n="commands.riddle.usage.subject">Example: !riddle <span
-                                data-i18n="commands.riddle.usage.animals">animals</span></span>
-                        <code data-i18n-cmd="commands.riddle.usage.roundsCmd">!riddle &lt;rounds&gt;</code> <span
-                            data-i18n="commands.riddle.usage.rounds">Example: !riddle 3 for 3 general rounds</span>
-                        <code
-                            data-i18n-cmd="commands.riddle.usage.subjectRoundsCmd">!riddle &lt;subject&gt; &lt;rounds&gt;</code>
-                        <span data-i18n="commands.riddle.usage.subjectRounds">Example: !riddle <span
-                                data-i18n="commands.riddle.usage.history">history</span> 5</span>
-                        <code>!riddle game</code> <span data-i18n="commands.riddle.usage.game">Riddle about the current
-                            stream game</span>
-                        <code data-i18n-cmd="commands.riddle.usage.gameRoundsCmd">!riddle game &lt;rounds&gt;</code>
-                        <code>!riddle leaderboard</code>
-                        <code data-i18n-cmd="commands.riddle.usage.reportCmd">!riddle report &lt;reason...&gt;</code>
-                        <span data-i18n="commands.riddle.usage.report">Reports problematic riddles</span>
-                        <code>!riddle stop</code> <span data-i18n="commands.riddle.usage.stop">Game initiator, mods, or
-                            broadcaster can stop</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.riddle.usage.configDifficultyCmd">!riddle config difficulty &lt;easy|normal|hard&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.riddle.usage.questionTimeCmd">!riddle config questiontime &lt;seconds&gt;</code>
-                        <span data-i18n="commands.riddle.usage.questionTime">Sets time per riddle to 15-120
-                            seconds</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.riddle.usage.pointsBaseCmd">!riddle config pointsbase &lt;number&gt;</code>
-                        <span data-i18n="commands.riddle.usage.pointsBase">Sets base points from 1-100</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointstimebonus &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointsdifficultymultiplier &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config scoretracking &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.riddle.usage.maxRoundsCmd">!riddle config maxrounds &lt;number&gt;</code>
-                        <span data-i18n="commands.riddle.usage.maxRounds">Sets maximum rounds from 1-20</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.riddle.usage.keywordsLimitCmd">!riddle config keywordslimit &lt;number&gt;</code>
-                        <span data-i18n="commands.riddle.usage.keywordsLimit">Sets recent keywords to exclude, e.g.
-                            20-100</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.riddle.usage.roundDelayCmd">!riddle config rounddelay &lt;milliseconds&gt;</code>
-                        <span data-i18n="commands.riddle.usage.roundDelay">Sets delay between rounds</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle resetconfig</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle clearleaderboard</code> <span
-                            data-i18n="commands.riddle.usage.clearLeaderboard">Or cleardata</span>
-                        <code>!riddle help</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.trivia.name">!trivia</td>
-                    <td data-i18n-key="commands.trivia.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-trivia"><span class="description-text">Starts or manages
-                            Trivia games with factual questions on various topics, including the current stream
-                            game.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-trivia" hidden>
-                    <td colspan="2">
-                        <code>!trivia</code> <span data-i18n="commands.trivia.usage.basic">Starts general knowledge
-                            trivia</span>
-                        <code data-i18n-cmd="commands.trivia.usage.topicCmd">!trivia &lt;topic&gt;</code> <span
-                            data-i18n="commands.trivia.usage.topic">Starts topic-specific trivia, e.g. !trivia <span
-                                data-i18n="commands.trivia.usage.science">science</span></span>
-                        <code>!trivia game</code> <span data-i18n="commands.trivia.usage.game">Starts trivia about the
-                            current stream game</span>
-                        <code data-i18n-cmd="commands.trivia.usage.roundsCmd">!trivia &lt;rounds&gt;</code> <span
-                            data-i18n="commands.trivia.usage.rounds">Specifies number of rounds, e.g. !trivia 3</span>
-                        <code
-                            data-i18n-cmd="commands.trivia.usage.topicRoundsCmd">!trivia &lt;topic&gt; &lt;rounds&gt;</code>
-                        <span data-i18n="commands.trivia.usage.topicRounds">Example: !trivia <span
-                                data-i18n="commands.trivia.usage.history">history</span> 5</span>
-                        <code>!trivia leaderboard</code>
-                        <code data-i18n-cmd="commands.trivia.usage.reportCmd">!trivia report &lt;reason&gt;</code> <span
-                            data-i18n="commands.trivia.usage.report">Reports problematic questions</span>
-                        <code>!trivia stop</code> <span data-i18n="commands.trivia.usage.stop">Game initiator, mods, or
-                            broadcaster can stop</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.trivia.usage.configDifficultyCmd">!trivia config difficulty &lt;easy|normal|hard&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.trivia.usage.timeCmd">!trivia config time &lt;seconds&gt;</code>
-                        <span data-i18n="commands.trivia.usage.time">Sets time per question to 10-120 seconds</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.trivia.usage.pointsBaseCmd">!trivia config pointsbase &lt;number&gt;</code>
-                        <span data-i18n="commands.trivia.usage.pointsBase">Sets base points from 1-100</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointstimebonus &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointsdifficultymultiplier &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config scoretracking &lt;true|false&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.trivia.usage.configTopicCmd">!trivia config topic &lt;topics&gt;</code>
-                        <span data-i18n="commands.trivia.usage.configTopic">Sets preferred topics,
-                            comma-separated</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.trivia.usage.maxRoundsCmd">!trivia config maxrounds &lt;number&gt;</code>
-                        <span data-i18n="commands.trivia.usage.maxRounds">Sets maximum rounds from 1-10</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia resetconfig</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia clearleaderboard</code>
-                        <code>!trivia help</code>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr class="category-header">
-                    <td colspan="2" ><h2 class="category-heading" id="config" data-i18n="table.categories.config">Config</h2></td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td><span data-i18n-key="commands.botlang.name">!botlang</span> <span class="mod-badge">Mod</span>
-                    </td>
-                    <td data-i18n-key="commands.botlang.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-botlang"><span class="description-text">Configure the bot to
-                            speak in a specific language for the entire channel.</span><span
-                            class="dropdown-toggle">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-botlang" hidden>
-                    <td colspan="2">
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.botlang.usage.langCmd">!botlang &lt;language&gt;</code>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang status</code> <span
-                            data-i18n="commands.botlang.usage.status">Checks current language</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang off</code> <span
-                            data-i18n="commands.botlang.usage.off">Resets to English</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang default</code> <span
-                            data-i18n="commands.botlang.usage.default">Resets to English</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td data-i18n-key="commands.auto.name">!auto <span class="mod-badge">Mod</span></td>
-                    <td data-i18n-key="commands.auto.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-auto"><span class="description-text">Configure auto-chat
-                            mode and options.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-auto" hidden>
-                    <td colspan="2">
-                        <code>!auto</code> <span data-i18n="commands.auto.usage.status">Shows current auto-chat mode and
-                            categories</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.modeCmd">!auto &lt;off|low|medium|high&gt;</code> <span
-                            data-i18n="commands.auto.usage.mode">Sets auto-chat frequency (off disables periodic messages only)</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.greetingsCmd">!auto config greetings:&lt;on|off&gt;</code>
-                        <span data-i18n="commands.auto.usage.greetings">Enable/disable stream start/end greetings</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.followsCmd">!auto config follows:&lt;on|off&gt;</code>
-                        <span data-i18n="commands.auto.usage.follows">Enable/disable new follower celebrations</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.subscriptionsCmd">!auto config subscriptions:&lt;on|off&gt;</code>
-                        <span data-i18n="commands.auto.usage.subscriptions">Enable/disable subscription celebrations</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.raidsCmd">!auto config raids:&lt;on|off&gt;</code>
-                        <span data-i18n="commands.auto.usage.raids">Enable/disable raid welcome messages</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.factsCmd">!auto config facts:&lt;on|off&gt;</code> <span
-                            data-i18n="commands.auto.usage.facts">Enable/disable facts and tips</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.questionsCmd">!auto config questions:&lt;on|off&gt;</code>
-                        <span data-i18n="commands.auto.usage.questions">Enable/disable engagement questions</span>
-                        <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.auto.usage.adsCmd">!auto config ads:&lt;on|off&gt;</code> <span
-                            data-i18n="commands.auto.usage.ads">Enable/disable ad break notifications</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td>!disable <span class="mod-badge">Mod</span></td>
-                    <td data-i18n-key="commands.disable.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-disable"><span class="description-text">Disables a command
-                            in this channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-disable" hidden>
-                    <td colspan="2">
-                        <code>!disable &lt;command&gt;</code>
-                        <code>!disable lurk</code> <span data-i18n="commands.disable.usage.lurk">Disables the !lurk
-                            command</span>
-                        <code>!disable trivia</code> <span data-i18n="commands.disable.usage.trivia">Disables the
-                            !trivia command</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td>!enable <span class="mod-badge">Mod</span></td>
-                    <td data-i18n-key="commands.enable.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-enable"><span class="description-text">Enables a previously
-                            disabled command in this channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-enable" hidden>
-                    <td colspan="2">
-                        <code>!enable &lt;command&gt;</code>
-                        <code>!enable trivia</code> <span data-i18n="commands.enable.usage.trivia">Enables the !trivia
-                            command</span>
-                    </td>
-                </tr>
-            </tbody>
-            <tbody class="dropdown-group">
-                <tr class="dropdown-summary">
-                    <td>!ping</td>
-                    <td data-i18n-key="commands.ping.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ping"><span class="description-text">Checks if the bot is
-                            responsive. Responds with Pong!</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
-                </tr>
-                <tr class="dropdown-details" id="dd-commands-ping" hidden>
-                    <td colspan="2">
-                        <code>!ping</code>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <table>
+        <caption class="visually-hidden" data-i18n="aiCommands.table.caption">AI command examples</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="aiCommands.table.prompt">AI Prompt</th>
+                <th scope="col" data-i18n="aiCommands.table.whatHappens">What happens</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-i18n="aiCommands.examples.vibe.prompt">Name: <span
+                        class="inline-code">vibe</span><br>Prompt: <span class="inline-code">Tell
+                        $(user) what kind of vibe "$(args)" gives off in one sentence.</span></td>
+                <td data-i18n="aiCommands.examples.vibe.result">When someone types <span
+                        class="inline-code">!vibe I just ate an entire pizza</span>, the AI
+                    might reply:
+                    <em>"WildcatGamer your message gives off deeply respectable goblin energy."</em> — different
+                    every time!
+                </td>
+            </tr>
+            <tr>
+                <td data-i18n="aiCommands.examples.hug.prompt">Name: <span
+                        class="inline-code">hug</span><br>Prompt: <span class="inline-code">Write a
+                        short, funny hug message from $(user) to $(1).</span></td>
+                <td data-i18n="aiCommands.examples.hug.result">When someone types <span class="inline-code">!hug
+                        WildcatStreamer</span>, the AI might
+                    reply:
+                    <em>"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier."</em>
+                </td>
+            </tr>
+            <tr>
+                <td data-i18n="aiCommands.examples.fortune.prompt">Name: <span
+                        class="inline-code">fortune</span><br>Prompt: <span class="inline-code">Give
+                        $(user) a short fortune cookie message.</span></td>
+                <td data-i18n="aiCommands.examples.fortune.result">A unique fortune every time:
+                    <em>"WildcatGamer, today you will find a rare item in an
+                        unexpected place."</em>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 8px;"><strong data-i18n="aiCommands.tipLabel">Tip:</strong> <span
+            data-i18n="aiCommands.tipText">You can convert any existing text command to
+            AI mode by editing it in the dashboard and enabling <strong>AI Mode</strong>, or in chat with
+            <span class="inline-code">!command options &lt;name&gt; type=prompt</span>. Switch back with <span
+                class="inline-code">type=text</span>.</span>
+    </p>
+</section>
 
-        <section id="response-variables" class="section">
-            <h2 data-i18n="responseVariables.title">Response Variables</h2>
-            <p><span data-i18n="responseVariables.intro1">When you create a custom command, you can use <strong>response
-                        variables</strong> to insert
-                    dynamic content. Write them in your response using the <code>$(variable)</code> format and they'll
-                    be replaced automatically when the command is used.</span></p>
+<section id="web-dashboard" class="section">
+    <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
+    <p data-i18n="webDashboard.intro">The <a href="https://bot.wildcat.chat/" class="default-link-style"
+            target="_blank" rel="noopener noreferrer">WildcatSage Web Dashboard</a> provides streamers with a comprehensive interface to
+        manage the bot in their channel. Access it by logging in with your Twitch account.</p>
 
-            <table>
-                <caption class="visually-hidden" data-i18n="responseVariables.title">Response Variables</caption>
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n="responseVariables.table.variable">Variable</th>
-                        <th scope="col" data-i18n="responseVariables.table.whatItDoes">What it does</th>
-                        <th scope="col" data-i18n="responseVariables.table.exampleOutput">Example output</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="inline-code">$(user)</span></td>
-                        <td data-i18n="responseVariables.variables.user.desc">Name of the person who used the command
-                        </td>
-                        <td>WildcatGamer</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(channel)</span></td>
-                        <td data-i18n="responseVariables.variables.channel.desc">Channel name</td>
-                        <td>WildcatStreamer</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(args)</span></td>
-                        <td data-i18n="responseVariables.variables.args.desc">All text after the command name as one
-                            string</td>
-                        <td data-i18n="responseVariables.variables.args.example">If someone types <span
-                                class="inline-code">!shout hello world</span>, $(args) =
-                            <strong>hello
-                                world</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(1)</span> <span class="inline-code">$(2)</span> ...</td>
-                        <td data-i18n="responseVariables.variables.numbered.desc">A single word by position — $(1) is
-                            the 1st word, $(2) is the 2nd, and so on</td>
-                        <td data-i18n="responseVariables.variables.numbered.example">If someone types <span
-                                class="inline-code">!shout hello world</span>, $(1) =
-                            <strong>hello</strong>, $(2) =
-                            <strong>world</strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(count)</span></td>
-                        <td data-i18n="responseVariables.variables.count.desc">How many times this command has been used
-                        </td>
-                        <td>42</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(random X-Y)</span></td>
-                        <td data-i18n="responseVariables.variables.random.desc">A random number between X and Y</td>
-                        <td data-i18n="responseVariables.variables.random.example">17 from <span
-                                class="inline-code">$(random 1-20)</span></td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(uptime)</span></td>
-                        <td data-i18n="responseVariables.variables.uptime.desc">How long the stream has been live</td>
-                        <td data-i18n="responseVariables.variables.uptime.example">2h 30m</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(game)</span></td>
-                        <td data-i18n="responseVariables.variables.game.desc">The game currently being played</td>
-                        <td data-i18n="responseVariables.variables.game.example">Metroid Prime</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(followage)</span></td>
-                        <td data-i18n="responseVariables.variables.followage.desc">How long the user has been following
-                            the channel</td>
-                        <td data-i18n="responseVariables.variables.followage.example">2 years 3 months</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(checkin_count)</span></td>
-                        <td data-i18n="responseVariables.variables.checkinCount.desc">The viewer's running daily
-                            check-in
-                            count (Channel Point Rewards only)</td>
-                        <td>14</td>
-                    </tr>
-                </tbody>
-            </table>
+    <h3 data-i18n="webDashboard.featuresTitle">Available Dashboard Features</h3>
+    <ul>
+        <li><strong data-i18n="webDashboard.features.botManagement.title">Bot Management:</strong> <span
+                data-i18n="webDashboard.features.botManagement.desc">Add or remove WildcatSage from your
+                channel</span></li>
+        <li><strong data-i18n="webDashboard.features.channelConfig.title">Channel Configuration:</strong> <span
+                data-i18n="webDashboard.features.channelConfig.desc">Configure auto-chat settings, stream event
+                toggles, and ad notifications</span></li>
+        <li><strong data-i18n="webDashboard.features.streamEvents.title">Stream Events:</strong> <span
+                data-i18n="webDashboard.features.streamEvents.desc">Toggle AI-generated greetings, farewells, and
+                celebrations for follows, subscriptions, and raids — works independently of auto-chat mode</span></li>
+        <li><strong data-i18n="webDashboard.features.commandControl.title">Command Control:</strong> <span
+                data-i18n="webDashboard.features.commandControl.desc">Create and manage custom commands, and
+                enable/disable built-in commands</span></li>
+        <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
+                data-i18n="webDashboard.features.dailyCheckIn.desc">Set up a Channel Point Reward for daily
+                check-ins with streak tracking and optional AI-generated messages</span></li>
+    </ul>
 
-            <h3 data-i18n="responseVariables.examplesTitle">Examples</h3>
-            <p style="margin-bottom: 6px;" data-i18n="responseVariables.examplesIntro">Here are some example commands
-                you can create:</p>
-            <table>
-                <caption class="visually-hidden" data-i18n="responseVariables.examplesCaption">Response variable examples</caption>
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n="responseVariables.examplesTable.command">Command to type in chat</th>
-                        <th scope="col" data-i18n="responseVariables.examplesTable.botSays">What the bot says</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-i18n="responseVariables.examples.hi.command"><span class="inline-code">!command add hi
-                                Hello $(user)! Welcome!</span></td>
-                        <td data-i18n="responseVariables.examples.hi.result">Hello WildcatGamer! Welcome!</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="responseVariables.examples.roll.command"><span class="inline-code">!command add
-                                roll $(user) rolled a $(random 1-20)!</span></td>
-                        <td data-i18n="responseVariables.examples.roll.result">WildcatGamer rolled a 17!</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="responseVariables.examples.live.command"><span class="inline-code">!command add
-                                live We've been live for $(uptime) playing $(game)!</span></td>
-                        <td data-i18n="responseVariables.examples.live.result">We've been live for 2h 30m playing
-                            Metroid Prime!</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="responseVariables.examples.hug.command"><span class="inline-code">!command add
-                                hug $(user) hugs $(1)!</span></td>
-                        <td data-i18n="responseVariables.examples.hug.result">WildcatGamer hugs WildcatStreamer!</td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="responseVariables.examples.uses.command"><span class="inline-code">!command add
-                                uses This command has been used $(count) times!</span></td>
-                        <td data-i18n="responseVariables.examples.uses.result">This command has been used 42 times!</td>
-                    </tr>
-                </tbody>
-            </table>
+    <h3 data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
+    <ol>
+        <li><strong data-i18n="webDashboard.steps.visit.title">Visit the Dashboard:</strong> <span
+                data-i18n="webDashboard.steps.visit.desc">Go to <a href="https://bot.wildcat.chat/"
+                    class="default-link-style" target="_blank" rel="noopener noreferrer">https://bot.wildcat.chat/</a></span></li>
+        <li><strong data-i18n="webDashboard.steps.authorize.title">Authorize:</strong> <span
+                data-i18n="webDashboard.steps.authorize.desc">Click "Login with Twitch" and grant the required
+                permissions</span></li>
+        <li><strong data-i18n="webDashboard.steps.addBot.title">Add the Bot:</strong> <span
+                data-i18n="webDashboard.steps.addBot.desc">Use the "Add Bot to My Channel" button to invite
+                WildcatSage to your channel</span></li>
+        <li><strong data-i18n="webDashboard.steps.configure.title">Configure:</strong> <span
+                data-i18n="webDashboard.steps.configure.desc">Customize settings through the dashboard
+                interface</span></li>
+        <li><strong data-i18n="webDashboard.steps.grantPerms.title">Troubleshooting:</strong> <span
+                data-i18n="webDashboard.steps.grantPerms.desc">If the bot isn't responding, type
+                <code>/mod WildcatSage</code> in your Twitch chat to grant moderator status</span></li>
+    </ol>
 
-            <h3 data-i18n="aiCommands.title">AI Commands</h3>
-            <p style="margin-bottom: 6px;"><span data-i18n="aiCommands.intro1">AI commands use a prompt instead of a
-                    fixed response. The bot sends
-                    the prompt to an AI model and returns a unique answer every time. You can use response variables
-                    in prompts too!</span></p>
+    <h3 data-i18n="webDashboard.oauthTitle">OAuth Permissions</h3>
+    <p data-i18n="webDashboard.oauthIntro">The dashboard requires the following Twitch OAuth scopes:</p>
+    <ul>
+        <li><code>user:read:email</code> - <span data-i18n="webDashboard.oauth.readEmail">Access your email
+                address for account identification</span></li>
+        <li><code>channel:read:ads</code> - <span data-i18n="webDashboard.oauth.readAds">Receive ad break
+                notifications for your channel</span></li>
+        <li><code>channel:manage:moderators</code> - <span
+                data-i18n="webDashboard.oauth.manageModerators">Automatically grant the bot moderator
+                status</span></li>
+        <li><code>moderator:read:followers</code> - <span data-i18n="webDashboard.oauth.readFollowers">Access
+                follower information for commands like
+                !followage</span></li>
+    </ul>
 
-            <p style="margin-bottom: 6px;"><span data-i18n="aiCommands.intro2">The easiest way to create AI commands is
-                    through the
-                    <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.
-                    Click <strong>+ Add</strong>, flip on <strong>AI Mode</strong>, and write your prompt.
-                    You can also create them in chat with
-                    <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.</span>
-            </p>
+    <ul>
+        <li><code>channel:manage:redemptions</code> - <span
+                data-i18n="webDashboard.oauth.manageRedemptions">Create and manage Channel Point Rewards for
+                features like Daily Check-In</span></li>
+    </ul>
 
-            <table>
-                <caption class="visually-hidden" data-i18n="aiCommands.table.caption">AI command examples</caption>
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n="aiCommands.table.prompt">AI Prompt</th>
-                        <th scope="col" data-i18n="aiCommands.table.whatHappens">What happens</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td data-i18n="aiCommands.examples.vibe.prompt">Name: <span
-                                class="inline-code">vibe</span><br>Prompt: <span class="inline-code">Tell
-                                $(user) what kind of vibe "$(args)" gives off in one sentence.</span></td>
-                        <td data-i18n="aiCommands.examples.vibe.result">When someone types <span
-                                class="inline-code">!vibe I just ate an entire pizza</span>, the AI
-                            might reply:
-                            <em>"WildcatGamer your message gives off deeply respectable goblin energy."</em> — different
-                            every time!
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="aiCommands.examples.hug.prompt">Name: <span
-                                class="inline-code">hug</span><br>Prompt: <span class="inline-code">Write a
-                                short, funny hug message from $(user) to $(1).</span></td>
-                        <td data-i18n="aiCommands.examples.hug.result">When someone types <span class="inline-code">!hug
-                                WildcatStreamer</span>, the AI might
-                            reply:
-                            <em>"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier."</em>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-i18n="aiCommands.examples.fortune.prompt">Name: <span
-                                class="inline-code">fortune</span><br>Prompt: <span class="inline-code">Give
-                                $(user) a short fortune cookie message.</span></td>
-                        <td data-i18n="aiCommands.examples.fortune.result">A unique fortune every time:
-                            <em>"WildcatGamer, today you will find a rare item in an
-                                unexpected place."</em>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="margin-top: 8px;"><strong data-i18n="aiCommands.tipLabel">Tip:</strong> <span
-                    data-i18n="aiCommands.tipText">You can convert any existing text command to
-                    AI mode by editing it in the dashboard and enabling <strong>AI Mode</strong>, or in chat with
-                    <span class="inline-code">!command options &lt;name&gt; type=prompt</span>. Switch back with <span
-                        class="inline-code">type=text</span>.</span>
-            </p>
-        </section>
+    <p><strong data-i18n="webDashboard.noteLabel">Note:</strong> <span
+            data-i18n="webDashboard.noteText">WildcatSage is currently invite-only. If you don't see your
+            channel
+            in the dashboard, please <a href="https://parfaitfair.com/#contact"
+                class="default-link-style" target="_blank" rel="noopener noreferrer">request access through the contact form</a>.</span>
+    </p>
+</section>
 
-        <section id="web-dashboard" class="section">
-            <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
-            <p data-i18n="webDashboard.intro">The <a href="https://bot.wildcat.chat/" class="default-link-style"
-                    target="_blank" rel="noopener noreferrer">WildcatSage Web Dashboard</a> provides streamers with a comprehensive interface to
-                manage the bot in their channel. Access it by logging in with your Twitch account.</p>
+<section id="daily-check-in" class="section">
+    <h2 data-i18n="dailyCheckIn.title">Daily Check-In</h2>
+    <p data-i18n="dailyCheckIn.intro">Daily Check-In is a Channel Point Reward that lets viewers check in
+        once per stream and track their streak. The reward is created and managed automatically from the
+        dashboard — no manual setup on Twitch required.</p>
 
-            <h3 data-i18n="webDashboard.featuresTitle">Available Dashboard Features</h3>
-            <ul>
-                <li><strong data-i18n="webDashboard.features.botManagement.title">Bot Management:</strong> <span
-                        data-i18n="webDashboard.features.botManagement.desc">Add or remove WildcatSage from your
-                        channel</span></li>
-                <li><strong data-i18n="webDashboard.features.channelConfig.title">Channel Configuration:</strong> <span
-                        data-i18n="webDashboard.features.channelConfig.desc">Configure auto-chat settings, stream event
-                        toggles, and ad notifications</span></li>
-                <li><strong data-i18n="webDashboard.features.streamEvents.title">Stream Events:</strong> <span
-                        data-i18n="webDashboard.features.streamEvents.desc">Toggle AI-generated greetings, farewells, and
-                        celebrations for follows, subscriptions, and raids — works independently of auto-chat mode</span></li>
-                <li><strong data-i18n="webDashboard.features.commandControl.title">Command Control:</strong> <span
-                        data-i18n="webDashboard.features.commandControl.desc">Create and manage custom commands, and
-                        enable/disable built-in commands</span></li>
-                <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
-                        data-i18n="webDashboard.features.dailyCheckIn.desc">Set up a Channel Point Reward for daily
-                        check-ins with streak tracking and optional AI-generated messages</span></li>
-            </ul>
+    <h3 data-i18n="dailyCheckIn.setupTitle">Setup</h3>
+    <ol>
+        <li data-i18n="dailyCheckIn.steps.open">Open the <a href="https://bot.wildcat.chat/"
+                class="default-link-style" target="_blank" rel="noopener noreferrer">WildcatSage Dashboard</a> and scroll to the
+            <strong>Daily Check-In</strong> section.
+        </li>
+        <li data-i18n="dailyCheckIn.steps.enable">Flip the <strong>Enable</strong> toggle and set a reward title
+            and Channel Point cost.</li>
+        <li data-i18n="dailyCheckIn.steps.template">Write a response template using variables like
+            <span class="inline-code">$(user)</span> and <span class="inline-code">$(checkin_count)</span>, or
+            enable <strong>AI Mode</strong> for
+            unique messages every time.
+        </li>
+        <li data-i18n="dailyCheckIn.steps.save">Click <strong>Save</strong>. The reward is created on Twitch
+            automatically.</li>
+    </ol>
 
-            <h3 data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
-            <ol>
-                <li><strong data-i18n="webDashboard.steps.visit.title">Visit the Dashboard:</strong> <span
-                        data-i18n="webDashboard.steps.visit.desc">Go to <a href="https://bot.wildcat.chat/"
-                            class="default-link-style" target="_blank" rel="noopener noreferrer">https://bot.wildcat.chat/</a></span></li>
-                <li><strong data-i18n="webDashboard.steps.authorize.title">Authorize:</strong> <span
-                        data-i18n="webDashboard.steps.authorize.desc">Click "Login with Twitch" and grant the required
-                        permissions</span></li>
-                <li><strong data-i18n="webDashboard.steps.addBot.title">Add the Bot:</strong> <span
-                        data-i18n="webDashboard.steps.addBot.desc">Use the "Add Bot to My Channel" button to invite
-                        WildcatSage to your channel</span></li>
-                <li><strong data-i18n="webDashboard.steps.configure.title">Configure:</strong> <span
-                        data-i18n="webDashboard.steps.configure.desc">Customize settings through the dashboard
-                        interface</span></li>
-                <li><strong data-i18n="webDashboard.steps.grantPerms.title">Troubleshooting:</strong> <span
-                        data-i18n="webDashboard.steps.grantPerms.desc">If the bot isn't responding, type
-                        <code>/mod WildcatSage</code> in your Twitch chat to grant moderator status</span></li>
-            </ol>
+    <h3 data-i18n="dailyCheckIn.variablesTitle">Available Variables</h3>
+    <table>
+        <caption class="visually-hidden" data-i18n="dailyCheckIn.variablesTitle">Available Variables</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="responseVariables.table.variable">Variable</th>
+                <th scope="col" data-i18n="responseVariables.table.whatItDoes">What it does</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="inline-code">$(user)</span></td>
+                <td data-i18n="dailyCheckIn.variables.user">Display name of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(checkin_count)</span></td>
+                <td data-i18n="dailyCheckIn.variables.checkinCount">The viewer's running check-in total</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(channel)</span></td>
+                <td data-i18n="dailyCheckIn.variables.channel">Channel name</td>
+            </tr>
+        </tbody>
+    </table>
 
-            <h3 data-i18n="webDashboard.oauthTitle">OAuth Permissions</h3>
-            <p data-i18n="webDashboard.oauthIntro">The dashboard requires the following Twitch OAuth scopes:</p>
-            <ul>
-                <li><code>user:read:email</code> - <span data-i18n="webDashboard.oauth.readEmail">Access your email
-                        address for account identification</span></li>
-                <li><code>channel:read:ads</code> - <span data-i18n="webDashboard.oauth.readAds">Receive ad break
-                        notifications for your channel</span></li>
-                <li><code>channel:manage:moderators</code> - <span
-                        data-i18n="webDashboard.oauth.manageModerators">Automatically grant the bot moderator
-                        status</span></li>
-                <li><code>moderator:read:followers</code> - <span data-i18n="webDashboard.oauth.readFollowers">Access
-                        follower information for commands like
-                        !followage</span></li>
-            </ul>
+    <h3 data-i18n="dailyCheckIn.exampleTitle">Examples</h3>
+    <p data-i18n="dailyCheckIn.exampleTemplate"><strong>Template:</strong>
+        <code>$(user) checked in! Day #$(checkin_count) 🎉</code>
+    </p>
+    <p data-i18n="dailyCheckIn.exampleOutput"><strong>Output:</strong> <em>WildcatGamer checked in! Day #14
+            🎉</em></p>
 
-            <ul>
-                <li><code>channel:manage:redemptions</code> - <span
-                        data-i18n="webDashboard.oauth.manageRedemptions">Create and manage Channel Point Rewards for
-                        features like Daily Check-In</span></li>
-            </ul>
+    <p data-i18n="dailyCheckIn.aiExamplePrompt"><strong>AI Mode Prompt:</strong>
+        <code>Write a fun, short congratulatory message for $(user) on check-in number $(checkin_count).</code>
+    </p>
+    <p data-i18n="dailyCheckIn.aiExampleOutput"><strong>Output:</strong> <em>"WildcatGamer, 14 days straight?
+            You're on fire! At this rate you'll outlast the sun. ☀️"</em> — different every time!</p>
 
-            <p><strong data-i18n="webDashboard.noteLabel">Note:</strong> <span
-                    data-i18n="webDashboard.noteText">WildcatSage is currently invite-only. If you don't see your
-                    channel
-                    in the dashboard, please <a href="https://parfaitfair.com/#contact"
-                        class="default-link-style" target="_blank" rel="noopener noreferrer">request access through the contact form</a>.</span>
-            </p>
-        </section>
+    <p><strong data-i18n="dailyCheckIn.requirementLabel">Requirement:</strong> <span
+            data-i18n="dailyCheckIn.requirementText">Twitch Affiliate or Partner status is required to create
+            Channel Point Rewards.</span></p>
+</section>
 
-        <section id="daily-check-in" class="section">
-            <h2 data-i18n="dailyCheckIn.title">Daily Check-In</h2>
-            <p data-i18n="dailyCheckIn.intro">Daily Check-In is a Channel Point Reward that lets viewers check in
-                once per stream and track their streak. The reward is created and managed automatically from the
-                dashboard — no manual setup on Twitch required.</p>
-
-            <h3 data-i18n="dailyCheckIn.setupTitle">Setup</h3>
-            <ol>
-                <li data-i18n="dailyCheckIn.steps.open">Open the <a href="https://bot.wildcat.chat/"
-                        class="default-link-style" target="_blank" rel="noopener noreferrer">WildcatSage Dashboard</a> and scroll to the
-                    <strong>Daily Check-In</strong> section.
-                </li>
-                <li data-i18n="dailyCheckIn.steps.enable">Flip the <strong>Enable</strong> toggle and set a reward title
-                    and Channel Point cost.</li>
-                <li data-i18n="dailyCheckIn.steps.template">Write a response template using variables like
-                    <span class="inline-code">$(user)</span> and <span class="inline-code">$(checkin_count)</span>, or
-                    enable <strong>AI Mode</strong> for
-                    unique messages every time.
-                </li>
-                <li data-i18n="dailyCheckIn.steps.save">Click <strong>Save</strong>. The reward is created on Twitch
-                    automatically.</li>
-            </ol>
-
-            <h3 data-i18n="dailyCheckIn.variablesTitle">Available Variables</h3>
-            <table>
-                <caption class="visually-hidden" data-i18n="dailyCheckIn.variablesTitle">Available Variables</caption>
-                <thead>
-                    <tr>
-                        <th scope="col" data-i18n="responseVariables.table.variable">Variable</th>
-                        <th scope="col" data-i18n="responseVariables.table.whatItDoes">What it does</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="inline-code">$(user)</span></td>
-                        <td data-i18n="dailyCheckIn.variables.user">Display name of the viewer who checked in</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(checkin_count)</span></td>
-                        <td data-i18n="dailyCheckIn.variables.checkinCount">The viewer's running check-in total</td>
-                    </tr>
-                    <tr>
-                        <td><span class="inline-code">$(channel)</span></td>
-                        <td data-i18n="dailyCheckIn.variables.channel">Channel name</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3 data-i18n="dailyCheckIn.exampleTitle">Examples</h3>
-            <p data-i18n="dailyCheckIn.exampleTemplate"><strong>Template:</strong>
-                <code>$(user) checked in! Day #$(checkin_count) 🎉</code>
-            </p>
-            <p data-i18n="dailyCheckIn.exampleOutput"><strong>Output:</strong> <em>WildcatGamer checked in! Day #14
-                    🎉</em></p>
-
-            <p data-i18n="dailyCheckIn.aiExamplePrompt"><strong>AI Mode Prompt:</strong>
-                <code>Write a fun, short congratulatory message for $(user) on check-in number $(checkin_count).</code>
-            </p>
-            <p data-i18n="dailyCheckIn.aiExampleOutput"><strong>Output:</strong> <em>"WildcatGamer, 14 days straight?
-                    You're on fire! At this rate you'll outlast the sun. ☀️"</em> — different every time!</p>
-
-            <p><strong data-i18n="dailyCheckIn.requirementLabel">Requirement:</strong> <span
-                    data-i18n="dailyCheckIn.requirementText">Twitch Affiliate or Partner status is required to create
-                    Channel Point Rewards.</span></p>
-        </section>
-
-        <div id="last-updated"
-            style="text-align:center; margin-top:2rem; color:var(--color-text-muted); font-size:0.95em;">
-        </div>
-    </main>
-
-    <footer>
-        <p data-i18n="page.footer">© 2026 Wildcat.chat. All rights reserved.</p>
-    </footer>
-
-
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/sidenav.js"></script>
-    <script src="scripts/static-background.js"></script>
-    <script src="scripts/i18n.js"></script>
-    <script src="scripts/last-updated.js"></script>
-    <script src="scripts/dropdown-table.js"></script>
-</body>
-
-</html>
+<div id="last-updated"
+    style="text-align:center; margin-top:2rem; color:var(--color-text-muted); font-size:0.95em;">
+</div>

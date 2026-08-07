@@ -1,0 +1,118 @@
+/* =====================================================
+   HOME PAGE
+   Hero and bot-card styles, previously an inline <head> block.
+   ===================================================== */
+
+/* These three rules used to share this element with `header`, `header h1` and
+   `header .tagline` in components.css — a leftover portfolio-site section whose
+   0,1,1 selectors quietly outranked the classes here. The winning declarations
+   have been folded in below so this file is now the sole authority on the hero,
+   and that section could be deleted. */
+
+.hero-section {
+    position: relative;
+    text-align: left;
+    padding: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+    /* was inherited from the bare `header {}` rule */
+    gap: var(--spacing-medium);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 50vh;
+    border-bottom: 1px solid var(--color-grid-line);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 8rem);
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    color: var(--color-text);
+    letter-spacing: 0.02em;
+    display: block;
+    text-transform: uppercase;
+    line-height: 0.9;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding: 8px 16px;
+}
+
+.tagline {
+    font-size: var(--font-size-regular);
+    color: var(--color-text);
+    font-weight: 400;
+    text-transform: none;
+    line-height: 1.8;
+    /* folded in from `header .tagline`, which won on specificity */
+    margin: var(--spacing-medium) 0 0 0;
+    max-width: 80%;
+    background-color: var(--color-text-bg);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Bot cards grid */
+.bot-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+    margin-top: 2rem;
+    border: 1px solid var(--color-grid-line);
+}
+
+.bot-card {
+    border: 1px solid var(--color-grid-line);
+    padding: 1.5rem;
+    background-color: var(--color-card-bg);
+    border-radius: 0;
+}
+
+.bot-card h3 {
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.bot-card-button {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-text);
+    box-shadow: 4px 4px 0 var(--shadow-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none !important;
+    border-radius: 0;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.bot-card-button:hover,
+.bot-card-button:focus {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--shadow-color-hover);
+    text-decoration: none !important;
+}
+
+.bot-card-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--shadow-color);
+    text-decoration: none !important;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding: var(--spacing-large) var(--spacing-medium);
+    }
+}
+    

@@ -3,6 +3,10 @@
 firebase-debug.log
 firebase-debug.*.log
 
+# Eleventy build output — src/ is the source of truth, public/ is generated.
+# firebase.json runs `npm run build` on predeploy.
+public/
+
 # Node
 node_modules/
 npm-debug.log

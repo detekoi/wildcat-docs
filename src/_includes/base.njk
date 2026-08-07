@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">{{ title }}</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/unified.css">
+    <link rel="stylesheet" href="styles/components.css">
+    {# Page-specific CSS. Must stay after the site stylesheets above so page rules
+       win by source order rather than by escalating specificity.
+       Nunjucks blocks do not work here: Eleventy renders the page first and
+       injects it as `content`, so a child's {% block %} never reaches this head. #}
+    {%- for href in extraStyles %}
+    <link rel="stylesheet" href="{{ href }}">
+    {%- endfor %}
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="logo192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    {%- if useLucide %}
+    <script src="https://unpkg.com/lucide@latest"></script>
+    {%- endif %}
+    <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
+</head>
+
+<body class="{{ bodyClass }}">
+    {# The skip link must stay the first child of <body>, before the canvas, or it
+       stops being the first tab stop. `mainId` also drives <main>'s id below, so
+       the two cannot drift apart. #}
+    <a href="#{{ mainId }}" class="skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
+    {# Decorative noise. aria-hidden keeps it out of the accessibility tree; the
+       positioning lives in components.css #staticCanvas, not in a style attribute. #}
+    <canvas id="staticCanvas" aria-hidden="true"></canvas>
+
+    <!-- Unified Navigation Bar -->
+    <nav class="site-navbar" aria-label="Main" data-i18n-aria-label="nav.mainNav">
+        <a href="index.html" class="site-navbar-brand" aria-label="Wildcat.chat home"
+            data-i18n-aria-label="nav.homeLink">
+            {# aria-hidden + focusable="false": the link is named by its own aria-label,
+               so the kaomoji must not supply the accessible name. #}
+            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <style>
+                    .kaomoji {
+                        font-size: 250px;
+                        font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
+                        fill: currentColor;
+                        text-anchor: middle;
+                        dominant-baseline: central;
+                    }
+                </style>
+                <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
+            </svg>
+        </a>
+        {# The glyph lives in an aria-hidden child because navigation.js swaps it on
+           open/close; writing the button's own textContent would delete the span. #}
+        <button class="navbar-toggle" type="button" aria-expanded="false"
+            aria-controls="site-navbar-menu" aria-label="Toggle navigation"
+            data-i18n-aria-label="nav.toggleNavLabel"><span aria-hidden="true">☰</span></button>
+        <ul class="site-navbar-menu" id="site-navbar-menu">
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
+            <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
+            <li><a href="chatoverlay.html" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
+            <li><a href="https://parfaitfair.com/#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+    </nav>
+    {%- if sidebarLinks %}
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar" aria-labelledby="sidebar-title">
+        <div class="sidebar-header">
+            {# A <p>, not a heading: it labels the landmark rather than opening a
+               section, and as an <h2> it preceded the page's <h1> in the outline. #}
+            <p class="sidebar-title" id="sidebar-title" data-i18n="{{ sidebarTitleKey }}">{{ sidebarTitle }}</p>
+            <button type="button" id="sidenav-toggle" aria-expanded="true" aria-controls="sidebar-nav-list"
+                aria-label="Toggle sidebar" data-i18n-aria-label="sidebar.toggleSidebar">
+                <svg class="sidenav-toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+        <ul id="sidebar-nav-list">
+            {%- for link in sidebarLinks %}
+            {%- if link.submenu %}
+            {# The caret is a sibling of the link, not a child: nesting it made an
+               interactive control inside another, and translatePage()'s textContent
+               write on a[data-i18n] deleted it on every language switch. #}
+            <li>
+                <div class="submenu-row">
+                    <a href="{{ link.href }}" class="has-submenu" data-i18n="{{ link.key }}">{{ link.label }}</a>
+                    <button type="button" class="submenu-caret" aria-expanded="false"
+                        aria-controls="submenu-{{ link.slug }}" aria-label="Toggle submenu"
+                        data-i18n-aria-label="sidebar.toggleSubmenu"></button>
+                </div>
+                <ul class="submenu" id="submenu-{{ link.slug }}">
+                    {%- for sub in link.submenu %}
+                    <li><a href="{{ sub.href }}" data-i18n="{{ sub.key }}">{{ sub.label }}</a></li>
+                    {%- endfor %}
+                </ul>
+            </li>
+            {%- else %}
+            <li><a href="{{ link.href }}" data-i18n="{{ link.key }}">{{ link.label }}</a></li>
+            {%- endif %}
+            {%- endfor %}
+        </ul>
+    </nav>
+    {%- endif %}
+
+    <!-- Main Content -->
+    {%- if ownMain %}
+    {# index opts out: its hero carries its own max-width and large padding, so
+       nesting it inside <main> (which has both) would double the inset. That page
+       emits its own <header> + <main> and must reuse `mainId`. #}
+{{ content | safe }}
+    {%- else %}
+    <main id="{{ mainId }}" tabindex="-1">
+{{ content | safe }}
+    </main>
+    {%- endif %}
+
+    <footer>
+        <p data-i18n="page.footer">&copy; 2026 Wildcat.chat. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/static-background.js"></script>
+    <script src="scripts/i18n.js"></script>
+    {%- for src in extraScripts %}
+    <script src="{{ src }}"></script>
+    {%- endfor %}
+    {%- if useLucide %}
+    <script>lucide.createIcons();</script>
+    {%- endif %}
+</body>
+
+</html>

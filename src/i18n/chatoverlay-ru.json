@@ -2,18 +2,6 @@
   "meta": {
     "title": "Документация Chat Overlay"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Перейти к основному содержанию",
-    "mainNav": "Основная",
-    "home": "Главная",
-    "chatSageDocs": "Документация WildcatSage",
-    "wildcatTtsDocs": "Документация WildcatTTS",
-    "chatOverlayDocs": "Документация Chat Overlay",
-    "contact": "Контакты",
-    "toggleNavLabel": "Переключить навигацию",
-    "homeLink": "Главная Wildcat.chat"
-  },
   "sidebar": {
     "title": "Chat Overlay",
     "overview": "Обзор",
@@ -173,12 +161,5 @@
         "tip3": "Настройки сохраняются в кэше OBS. Если вы когда-нибудь выберете «Очистить кэш» в OBS для этого источника, вам потребуется заново настроить эстетические параметры."
       }
     }
-  },
-  "ui": {
-    "languageSelector": "Язык",
-    "opensInNewTab": "(откроется в новой вкладке)"
-  },
-  "page": {
-    "footer": "© 2026 Wildcat.chat. Все права защищены."
   }
 }

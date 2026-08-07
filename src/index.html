@@ -1,255 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: base.njk
+title: Wildcat.chat Documentation
+bodyClass: has-navbar
+mainId: main-content
+ownMain: true
+extraStyles:
+  - styles/home.css
+---
+<header class="hero-section">
+    <h1 class="hero-title">
+        <span data-i18n="hero.title">Wildcat.chat Documentation</span>
+    </h1>
+    <p class="tagline" data-i18n="hero.tagline">AI-Powered Twitch Bot Platform</p>
+</header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">Wildcat.chat Documentation</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/unified.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="logo192.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <style>
-        .hero-section {
-            position: relative;
-            text-align: left;
-            padding: var(--spacing-large);
-            margin-bottom: var(--spacing-large);
-            max-width: 1400px;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            min-height: 50vh;
-            border-bottom: 1px solid var(--color-grid-line);
-            overflow: hidden;
-            box-sizing: border-box;
-        }
+<main id="main-content" tabindex="-1">
+    <section id="bots">
+        <h2 data-i18n="page.botsTitle">Bot Documentation</h2>
+        <p data-i18n="page.welcome">Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS
+            services for Twitch streamers.</p>
 
-        .hero-title {
-            font-size: clamp(2.5rem, 8vw, 8rem);
-            font-weight: 800;
-            margin: 0 0 0.5rem 0;
-            color: var(--color-text);
-            letter-spacing: 0.02em;
-            display: block;
-            text-transform: uppercase;
-            line-height: 0.9;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            padding: 8px 16px;
-        }
+        <div class="bot-cards-grid">
+            <div class="bot-card">
+                <h3 data-i18n="page.chatsage.title">ChatSage Bot</h3>
+                <p data-i18n="page.chatsage.description">AI-powered chatbot with contextual responses, web
+                    search, games, and more.</p>
+                <ul style="margin: 1rem 0;">
+                    <li data-i18n="page.chatsage.feature1">Ask questions and get AI responses</li>
+                    <li data-i18n="page.chatsage.feature2">Web search integration</li>
+                    <li data-i18n="page.chatsage.feature3">Interactive games (trivia, geo-game, riddles)</li>
+                    <li data-i18n="page.chatsage.feature4">Auto-chat and translation features</li>
+                </ul>
+                <a href="botcommands.html" class="bot-card-button" data-i18n="page.chatsage.button">View
+                    ChatSage Docs →</a>
+            </div>
 
-        .tagline {
-            font-size: var(--font-size-regular);
-            color: var(--color-text);
-            margin: 0;
-            font-weight: 400;
-            text-transform: none;
-            max-width: 800px;
-            line-height: 1.8;
-            padding: 8px 16px;
-        }
+            <div class="bot-card">
+                <h3 data-i18n="page.wildcatTts.title">WildcatTTS Bot</h3>
+                <p data-i18n="page.wildcatTts.description">Advanced Text-to-Speech bot with music generation
+                    capabilities.</p>
+                <ul style="margin: 1rem 0;">
+                    <li data-i18n="page.wildcatTts.feature1">Natural-sounding TTS with 300+ voices</li>
+                    <li data-i18n="page.wildcatTts.feature2">Channel points integration</li>
+                    <li data-i18n="page.wildcatTts.feature3">AI music generation</li>
+                    <li data-i18n="page.wildcatTts.feature4">Web dashboard for settings</li>
+                </ul>
+                <a href="wildcatttsdocs.html" class="bot-card-button" data-i18n="page.wildcatTts.button">View
+                    WildcatTTS Docs →</a>
+            </div>
 
-        .wildcat-svg {
-            width: 5rem;
-            height: 5rem;
-            fill: var(--color-text);
-            flex-shrink: 0;
-        }
+            <div class="bot-card">
+                <h3 data-i18n="page.chatOverlay.title">Chat Overlay</h3>
+                <p data-i18n="page.chatOverlay.description">A customizable Twitch and YouTube chat overlay with AI-generated themes for OBS.</p>
+                <ul style="margin: 1rem 0;">
+                    <li data-i18n="page.chatOverlay.feature1">Supports Twitch and YouTube live chat</li>
+                    <li data-i18n="page.chatOverlay.feature2">AI-generated themes using natural language</li>
+                    <li data-i18n="page.chatOverlay.feature3">Easy OBS browser source integration</li>
+                    <li data-i18n="page.chatOverlay.feature4">Chat Scene creator for multiple profiles</li>
+                </ul>
+                <a href="chatoverlay.html" class="bot-card-button" data-i18n="page.chatOverlay.button">View
+                    Overlay Docs →</a>
+            </div>
+        </div>
+    </section>
 
-        .site-navbar-brand .wildcat-svg {
-            width: 5rem;
-            height: 5rem;
-            fill: var(--color-text);
-        }
-
-        /* Bot cards grid */
-        .bot-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 0;
-            margin-top: 2rem;
-            border: 1px solid var(--color-grid-line);
-        }
-
-        .bot-card {
-            border: 1px solid var(--color-grid-line);
-            padding: 1.5rem;
-            background-color: var(--color-card-bg);
-            border-radius: 0;
-        }
-
-        .bot-card h3 {
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-top: 0;
-        }
-
-        .bot-card-button {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--color-text);
-            border: 2px solid var(--color-text);
-            box-shadow: 4px 4px 0 var(--shadow-color);
-            padding: 0.5rem 1rem;
-            text-decoration: none !important;
-            border-radius: 0;
-            margin-top: 1rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            transition: all 0.2s ease;
-        }
-
-        .bot-card-button:hover,
-        .bot-card-button:focus {
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0 var(--shadow-color-hover);
-            text-decoration: none !important;
-        }
-
-        .bot-card-button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--shadow-color);
-            text-decoration: none !important;
-        }
-
-        @media (max-width: 768px) {
-            .hero-section {
-                min-height: auto;
-                padding: var(--spacing-large) var(--spacing-medium);
-            }
-        }
-    </style>
-    <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
-</head>
-
-<body class="has-navbar">
-    <a href="#main-content" class="skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
-    <canvas id="staticCanvas" aria-hidden="true"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
-    <div class="container">
-        <header class="hero-section">
-            <h1 class="hero-title">
-                <span data-i18n="hero.title">Wildcat.chat Documentation</span>
-            </h1>
-            <p class="tagline" data-i18n="hero.tagline">AI-Powered Twitch Bot Platform</p>
-        </header>
-
-        <!-- Unified Navigation Bar -->
-        <nav class="site-navbar" aria-label="Main" data-i18n-aria-label="nav.mainNav">
-            <a href="index.html" class="site-navbar-brand" aria-label="Wildcat.chat home"
-            data-i18n-aria-label="nav.homeLink">
-                <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                    <style>
-                        .kaomoji {
-                            font-size: 250px;
-                            font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
-                            fill: currentColor;
-                            text-anchor: middle;
-                            dominant-baseline: central;
-                        }
-                    </style>
-                    <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
-                </svg>
-            </a>
-            <button class="navbar-toggle" type="button" aria-expanded="false"
-            aria-controls="site-navbar-menu" aria-label="Toggle navigation"
-            data-i18n-aria-label="nav.toggleNavLabel"><span aria-hidden="true">☰</span></button>
-            <ul class="site-navbar-menu" id="site-navbar-menu">
-                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-                <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
-                <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
-                <li><a href="chatoverlay.html" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
-                <li><a href="https://parfaitfair.com/#contact" data-i18n="nav.contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <main id="main-content" tabindex="-1">
-            <section id="bots">
-                <h2 data-i18n="page.botsTitle">Bot Documentation</h2>
-                <p data-i18n="page.welcome">Welcome to Wildcat.chat! This platform provides AI-powered chat bots and TTS
-                    services for Twitch streamers.</p>
-
-                <div class="bot-cards-grid">
-                    <div class="bot-card">
-                        <h3 data-i18n="page.chatsage.title">ChatSage Bot</h3>
-                        <p data-i18n="page.chatsage.description">AI-powered chatbot with contextual responses, web
-                            search, games, and more.</p>
-                        <ul style="margin: 1rem 0;">
-                            <li data-i18n="page.chatsage.feature1">Ask questions and get AI responses</li>
-                            <li data-i18n="page.chatsage.feature2">Web search integration</li>
-                            <li data-i18n="page.chatsage.feature3">Interactive games (trivia, geo-game, riddles)</li>
-                            <li data-i18n="page.chatsage.feature4">Auto-chat and translation features</li>
-                        </ul>
-                        <a href="botcommands.html" class="bot-card-button" data-i18n="page.chatsage.button">View
-                            ChatSage Docs →</a>
-                    </div>
-
-                    <div class="bot-card">
-                        <h3 data-i18n="page.wildcatTts.title">WildcatTTS Bot</h3>
-                        <p data-i18n="page.wildcatTts.description">Advanced Text-to-Speech bot with music generation
-                            capabilities.</p>
-                        <ul style="margin: 1rem 0;">
-                            <li data-i18n="page.wildcatTts.feature1">Natural-sounding TTS with 300+ voices</li>
-                            <li data-i18n="page.wildcatTts.feature2">Channel points integration</li>
-                            <li data-i18n="page.wildcatTts.feature3">AI music generation</li>
-                            <li data-i18n="page.wildcatTts.feature4">Web dashboard for settings</li>
-                        </ul>
-                        <a href="wildcatttsdocs.html" class="bot-card-button" data-i18n="page.wildcatTts.button">View
-                            WildcatTTS Docs →</a>
-                    </div>
-
-                    <div class="bot-card">
-                        <h3 data-i18n="page.chatOverlay.title">Chat Overlay</h3>
-                        <p data-i18n="page.chatOverlay.description">A customizable Twitch and YouTube chat overlay with AI-generated themes for OBS.</p>
-                        <ul style="margin: 1rem 0;">
-                            <li data-i18n="page.chatOverlay.feature1">Supports Twitch and YouTube live chat</li>
-                            <li data-i18n="page.chatOverlay.feature2">AI-generated themes using natural language</li>
-                            <li data-i18n="page.chatOverlay.feature3">Easy OBS browser source integration</li>
-                            <li data-i18n="page.chatOverlay.feature4">Chat Scene creator for multiple profiles</li>
-                        </ul>
-                        <a href="chatoverlay.html" class="bot-card-button" data-i18n="page.chatOverlay.button">View
-                            Overlay Docs →</a>
-                    </div>
-                </div>
-            </section>
-
-            <section id="getting-started"
-                style="margin-top: 3rem; border-top: 1px solid var(--color-grid-line); padding-top: 2rem;">
-                <h2 data-i18n="page.gettingStarted.title">Getting Started</h2>
-                <h3 data-i18n="page.gettingStarted.quickStartTitle" style="text-transform: none; font-weight: 600;">
-                    Quick Start</h3>
-                <ol>
-                    <li data-i18n="page.gettingStarted.step1">Visit <a href="https://bot.wildcat.chat"
-                            class="default-link-style">bot.wildcat.chat</a> to set up your ChatSage bot</li>
-                    <li data-i18n="page.gettingStarted.step2">Visit <a href="https://tts.wildcat.chat/"
-                            class="default-link-style">tts.wildcat.chat</a> for WildcatTTS dashboard</li>
-                    <li data-i18n="page.gettingStarted.step3">Authenticate with your Twitch account</li>
-                    <li data-i18n="page.gettingStarted.step4">Configure your bot settings</li>
-                    <li data-i18n="page.gettingStarted.step5">Check the documentation pages for detailed command
-                        references</li>
-                </ol>
-            </section>
-        </main>
-
-        <footer>
-            <p data-i18n="page.footer">© 2026 Wildcat.chat. All rights reserved.</p>
-        </footer>
-    </div>
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/static-background.js"></script>
-    <script src="scripts/i18n.js"></script>
-</body>
-
-</html>
+    <section id="getting-started"
+        style="margin-top: 3rem; border-top: 1px solid var(--color-grid-line); padding-top: 2rem;">
+        <h2 data-i18n="page.gettingStarted.title">Getting Started</h2>
+        <h3 data-i18n="page.gettingStarted.quickStartTitle" style="text-transform: none; font-weight: 600;">
+            Quick Start</h3>
+        <ol>
+            <li data-i18n="page.gettingStarted.step1">Visit <a href="https://bot.wildcat.chat"
+                    class="default-link-style">bot.wildcat.chat</a> to set up your ChatSage bot</li>
+            <li data-i18n="page.gettingStarted.step2">Visit <a href="https://tts.wildcat.chat/"
+                    class="default-link-style">tts.wildcat.chat</a> for WildcatTTS dashboard</li>
+            <li data-i18n="page.gettingStarted.step3">Authenticate with your Twitch account</li>
+            <li data-i18n="page.gettingStarted.step4">Configure your bot settings</li>
+            <li data-i18n="page.gettingStarted.step5">Check the documentation pages for detailed command
+                references</li>
+        </ol>
+    </section>
+</main>

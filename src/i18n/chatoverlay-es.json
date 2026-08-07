@@ -2,18 +2,6 @@
   "meta": {
     "title": "Documentación de Chat Overlay"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Saltar al contenido principal",
-    "mainNav": "Principal",
-    "home": "Inicio",
-    "chatSageDocs": "Docs de WildcatSage",
-    "wildcatTtsDocs": "Docs de WildcatTTS",
-    "chatOverlayDocs": "Docs de Chat Overlay",
-    "contact": "Contacto",
-    "toggleNavLabel": "Alternar navegación",
-    "homeLink": "Inicio de Wildcat.chat"
-  },
   "sidebar": {
     "title": "Chat Overlay",
     "overview": "Resumen",
@@ -173,12 +161,5 @@
         "tip3": "La configuración se guarda en la caché de OBS. Si borra la caché en OBS para esta fuente, deberá volver a configurar las opciones estéticas."
       }
     }
-  },
-  "ui": {
-    "languageSelector": "Idioma",
-    "opensInNewTab": "(se abre en una pestaña nueva)"
-  },
-  "page": {
-    "footer": "© 2026 Wildcat.chat. Todos los derechos reservados."
   }
 }

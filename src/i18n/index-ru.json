@@ -2,18 +2,6 @@
   "meta": {
     "title": "Документация Wildcat.chat"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Перейти к основному содержанию",
-    "mainNav": "Основная",
-    "home": "Главная",
-    "chatSageDocs": "Документация WildcatSage",
-    "wildcatTtsDocs": "Документация WildcatTTS",
-    "chatOverlayDocs": "Документация Chat Overlay",
-    "contact": "Контакты",
-    "toggleNavLabel": "Переключить навигацию",
-    "homeLink": "Главная Wildcat.chat"
-  },
   "hero": {
     "title": "Документация Wildcat.chat",
     "tagline": "Платформа ботов Twitch на базе ИИ"
@@ -56,11 +44,6 @@
       "step3": "Аутентифицируйтесь с помощью вашей учетной записи Twitch",
       "step4": "Настройте параметры вашего бота",
       "step5": "Проверьте страницы документации для подробных справочников команд"
-    },
-    "footer": "© 2026 Wildcat.chat. Все права защищены."
-  },
-  "ui": {
-    "languageSelector": "Язык",
-    "opensInNewTab": "(откроется в новой вкладке)"
+    }
   }
 }

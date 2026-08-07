@@ -131,15 +131,52 @@ function getCurrentPageId() {
   return 'botcommands';
 }
 
-// Load translations from JSON file
+// Merge two translation trees, with the page's values winning.
+//
+// This has to be a deep merge. `nav`, `ui`, `page` and `table` all exist in
+// both the common file and the page file, so Object.assign would replace whole
+// branches -- taking `page.title`, `table.categories.*` and `meta.title` with
+// it.
+function mergeTranslations(base, override) {
+  const isPlainObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v);
+  const out = { ...base };
+  for (const [key, value] of Object.entries(override)) {
+    out[key] = (isPlainObject(value) && isPlainObject(out[key]))
+      ? mergeTranslations(out[key], value)
+      : value;
+  }
+  return out;
+}
+
+// Load translations from JSON files
 async function loadTranslations(lang) {
   try {
     const pageId = getCurrentPageId();
-    const response = await fetch(`./i18n/${pageId}-${lang}.json`);
-    if (!response.ok) {
+    // Shared site chrome (nav, footer, badges) lives in one file per language
+    // instead of being copied into all four page files -- which is how
+    // nav.chatOverlayDocs and page.lastUpdated ended up missing on some pages,
+    // and how the nav wording drifted between them. Fetched in parallel, so the
+    // second request costs no extra latency.
+    const [commonResponse, pageResponse] = await Promise.all([
+      fetch(`./i18n/common-${lang}.json`),
+      fetch(`./i18n/${pageId}-${lang}.json`)
+    ]);
+
+    if (!pageResponse.ok) {
       throw new Error(`Failed to load translations for ${lang}`);
     }
-    translations = await response.json();
+    const pageTranslations = await pageResponse.json();
+
+    // The common file only carries chrome. If it alone is missing, the page is
+    // still usable, so degrade instead of falling back to English wholesale.
+    let commonTranslations = {};
+    if (commonResponse.ok) {
+      commonTranslations = await commonResponse.json();
+    } else {
+      console.error(`Failed to load shared translations for ${lang}`);
+    }
+
+    translations = mergeTranslations(commonTranslations, pageTranslations);
     currentLanguage = lang;
 
     // Store the preferred language
@@ -152,7 +189,10 @@ async function loadTranslations(lang) {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('lang') !== lang) {
       urlParams.set('lang', lang);
-      const newUrl = window.location.pathname + '?' + urlParams.toString();
+      // Preserve the fragment. Sidebar and in-page links are all anchors, so
+      // dropping it here would bounce a reader from e.g. #lurk back to the top
+      // of the page on load and on every language switch.
+      const newUrl = window.location.pathname + '?' + urlParams.toString() + window.location.hash;
       window.history.replaceState({}, '', newUrl);
     }
 
@@ -377,17 +417,33 @@ function translatePage() {
     badge.textContent = getTranslation('ui.mod', 'Mod');
   });
 
-  document.querySelectorAll('.broadcaster-badge').forEach(badge => {
-    badge.textContent = getTranslation('ui.broadcaster', 'Broadcaster');
+  renderLastUpdated();
+}
+
+// Render the "Last updated" line. last-updated.js owns *when* the date is known
+// and publishes it as an ISO string in `data-iso`; this owns how it reads. The
+// two used to write the element independently, each recovering the other's half
+// by string-parsing textContent, which made the result order-dependent.
+function renderLastUpdated() {
+  const el = document.getElementById('last-updated');
+  if (!el || !el.dataset.iso) return;
+
+  const date = new Date(el.dataset.iso);
+  if (isNaN(date.getTime())) return;
+
+  // Format in the active language rather than a hardcoded 'en-US', which left
+  // the date in US format on all 8 locales.
+  const locale = document.documentElement.lang || DEFAULT_LANGUAGE;
+  const formatted = date.toLocaleDateString(locale, {
+    year: 'numeric', month: 'long', day: 'numeric'
   });
 
-  // Translate "Last updated" text
-  const lastUpdatedEl = document.getElementById('last-updated');
-  if (lastUpdatedEl) {
-    const dateStr = lastUpdatedEl.textContent.replace(/^.*?: /, '');
-    lastUpdatedEl.textContent = `${getTranslation('page.lastUpdated', 'Last updated')}: ${dateStr}`;
-  }
+  el.textContent = `${getTranslation('page.lastUpdated', 'Last updated')}: ${formatted}`;
 }
+
+// The date arrives asynchronously (GitHub API), so it can land after
+// translatePage() has already run.
+document.addEventListener('lastupdated:change', renderLastUpdated);
 
 // Create language selector
 function createLanguageSelector() {

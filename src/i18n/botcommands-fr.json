@@ -2,28 +2,11 @@
   "meta": {
     "title": "Commandes du Bot"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Aller au contenu principal",
-    "mainNav": "Principale",
-    "home": "Accueil",
-    "chatSageDocs": "Docs WildcatSage",
-    "wildcatTtsDocs": "Docs WildcatTTS",
-    "contact": "Contact",
-    "toggleNavLabel": "Basculer la navigation",
-    "homeLink": "Accueil Wildcat.chat"
-  },
   "page": {
     "title": "Commandes ChatSage Bot",
-    "expandTip": "Cliquez sur n'importe quelle ligne de commande ci-dessous pour développer et voir les détails d'utilisation.",
-    "lastUpdated": "Dernière mise à jour",
-    "footer": "© 2026 Wildcat.chat. Tous droits réservés."
+    "expandTip": "Cliquez sur n'importe quelle ligne de commande ci-dessous pour développer et voir les détails d'utilisation."
   },
   "table": {
-    "headers": {
-      "command": "Commande",
-      "description": "Description"
-    },
     "categories": {
       "general": "Général",
       "games": "Jeux",
@@ -37,8 +20,7 @@
       "name": "!ask / !sage",
       "description": "Posez une question à Sage. Utilise la recherche intelligente.",
       "usage": {
-        "question": "!ask <votre question>",
-        "analyzeQuestion": "!game analyze <votre question>"
+        "question": "!ask <votre question>"
       }
     },
     "search": {
@@ -50,23 +32,14 @@
     },
     "game": {
       "name": "!game",
-      "description": "Fournit des informations recherchées sur le jeu actuellement joué. Ajoutez « analyze » pour utiliser la reconnaissance d'images IA sur le flux (utilise la miniature Twitch qui se met à jour toutes les 5 minutes).",
-      "usage": {
-        "analyzeText": "Analyse les éléments visuels du flux avec l'IA",
-        "questionText": "Répond aux questions spécifiques de gameplay",
-        "analyzeQuestionText": "Analyse les éléments visuels et répond à la question",
-        "question": "!game <votre question>",
-        "analyzeQuestion": "!game analyze <votre question>"
-      }
+      "description": "Fournit des informations recherchées sur le jeu actuellement joué. Ajoutez « analyze » pour utiliser la reconnaissance d'images IA sur le flux (utilise la miniature Twitch qui se met à jour toutes les 5 minutes)."
     },
     "translate": {
       "name": "!translate",
       "description": "Gérez la traduction automatique des messages pour les utilisateurs.",
       "usage": {
         "lang": "!translate <lang>",
-        "stop": "!translate stop",
-        "modUser": "!translate <lang|stop> [user]",
-        "modAll": "!translate stop all"
+        "modUser": "!translate <lang|stop> [user]"
       }
     },
     "help": {
@@ -77,7 +50,6 @@
       }
     },
     "lurk": {
-      "name": "!lurk",
       "description": "Informez le chat que vous êtes en lurk. Fournissez une raison optionnelle pour un message personnalisé."
     },
     "quote": {
@@ -216,8 +188,6 @@
         "status": "Affiche le mode auto-chat actuel, la fréquence et les catégories",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "Définit la fréquence du chat automatique (off désactive uniquement les messages périodiques)",
-        "freqCmd": "!auto config frequency:<minutes>",
-        "freq": "Définit l'intervalle minimum entre les messages auto (minutes)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "Activer/désactiver les salutations de début/fin de stream",
         "factsCmd": "!auto config facts:<on|off>",
@@ -226,8 +196,6 @@
         "questions": "Activer/désactiver les questions d'engagement",
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "Activer/désactiver les notifications de pause publicitaire",
-        "multiCmd": "!auto config frequency:<minutes> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Définissez plusieurs options à la fois",
         "followsCmd": "!auto config follows:<on|off>",
         "follows": "Activer/désactiver les célébrations de nouveaux followers",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
@@ -237,7 +205,6 @@
       }
     },
     "disable": {
-      "name": "!disable",
       "description": "Désactive une commande dans ce canal.",
       "usage": {
         "lurk": "Désactive la commande !lurk",
@@ -245,14 +212,12 @@
       }
     },
     "enable": {
-      "name": "!enable",
       "description": "Active une commande précédemment désactivée dans ce canal.",
       "usage": {
         "trivia": "Active la commande !trivia"
       }
     },
     "ping": {
-      "name": "!ping",
       "description": "Vérifie si le bot est réactif. Répond par Pong !"
     },
     "followage": {
@@ -313,11 +278,6 @@
         "list": "Liste tous les minuteurs de votre chaîne"
       }
     }
-  },
-  "ui": {
-    "languageSelector": "Langue",
-    "mod": "Modérateur",
-    "opensInNewTab": "(s'ouvre dans un nouvel onglet)"
   },
   "sidebar": {
     "generalCommands": "Commandes générales",

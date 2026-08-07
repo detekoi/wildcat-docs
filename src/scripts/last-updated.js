@@ -1,12 +1,14 @@
 (function () {
-  function formatDate(dateLike) {
-    try {
-      const d = new Date(dateLike);
-      if (isNaN(d.getTime())) return null;
-      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-    } catch (_) {
-      return null;
-    }
+  // Publish the date as a machine-readable ISO string and let i18n.js render it.
+  // Both the label and the date format are language-dependent, so this file
+  // deliberately does no formatting -- it used to call
+  // toLocaleDateString('en-US', ...), which left the date US-formatted in every
+  // locale, and then recovered the label by splitting the element's textContent.
+  function publishDate(el, dateLike) {
+    const d = new Date(dateLike);
+    if (isNaN(d.getTime())) return;
+    el.dataset.iso = d.toISOString();
+    document.dispatchEvent(new CustomEvent('lastupdated:change'));
   }
 
   function deriveRepoInfo(scriptEl) {
@@ -45,9 +47,12 @@
       path = path + 'index.html';
     }
 
-    // For Firebase Hosting, files are served from the repo's public/ directory
-    if (!path.startsWith('public/')) {
-      path = 'public/' + path;
+    // Source files live in src/; public/ is Eleventy's build output and is
+    // gitignored, so asking the commits API about a public/ path returns zero
+    // commits and the date silently falls back to the deploy time.
+    // Keep this in step with `dir.input` in .eleventy.js.
+    if (!path.startsWith('src/')) {
+      path = 'src/' + path;
     }
 
     return path;
@@ -78,13 +83,6 @@
     return dateLike ? new Date(dateLike) : null;
   }
 
-  function setFooterDate(el, date) {
-    const label = (el.textContent.split(':')[0] || 'Last updated').trim();
-    const formatted = formatDate(date) || formatDate(document.lastModified) || '';
-    if (!formatted) return;
-    el.textContent = `${label}: ${formatted}`;
-  }
-
   async function updateLastUpdated() {
     const el = document.getElementById('last-updated');
     if (!el) return;
@@ -93,7 +91,7 @@
     // to reflect local changes instead of fetching the old date from GitHub.
     const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname) || window.location.protocol === 'file:';
     if (isLocal) {
-      setFooterDate(el, document.lastModified);
+      publishDate(el, document.lastModified);
       return;
     }
 
@@ -105,7 +103,7 @@
       const githubDate = await fetchLastCommitDate(owner, repo, filePath);
 
       if (githubDate) {
-        setFooterDate(el, githubDate);
+        publishDate(el, githubDate);
         return;
       }
     } catch (_) {
@@ -113,7 +111,7 @@
     }
 
     // Fallback to document.lastModified if API fails or returns nothing
-    setFooterDate(el, document.lastModified);
+    publishDate(el, document.lastModified);
   }
 
   document.addEventListener('DOMContentLoaded', updateLastUpdated);

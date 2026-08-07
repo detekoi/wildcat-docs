@@ -2,28 +2,11 @@
   "meta": {
     "title": "Bot-Befehle"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Zum Hauptinhalt springen",
-    "mainNav": "Hauptnavigation",
-    "home": "Startseite",
-    "chatSageDocs": "WildcatSage Docs",
-    "wildcatTtsDocs": "WildcatTTS Docs",
-    "contact": "Kontakt",
-    "toggleNavLabel": "Navigation umschalten",
-    "homeLink": "Wildcat.chat Startseite"
-  },
   "page": {
     "title": "ChatSage Bot-Befehle",
-    "expandTip": "Klicken Sie auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails zu sehen.",
-    "lastUpdated": "Zuletzt aktualisiert",
-    "footer": "© 2026 Wildcat.chat. Alle Rechte vorbehalten."
+    "expandTip": "Klicken Sie auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails zu sehen."
   },
   "table": {
-    "headers": {
-      "command": "Befehl",
-      "description": "Beschreibung"
-    },
     "categories": {
       "general": "Allgemein",
       "games": "Spiele",
@@ -37,8 +20,7 @@
       "name": "!ask / !sage",
       "description": "Stellen Sie Sage eine Frage. Nutzt intelligente Suche.",
       "usage": {
-        "question": "!ask <deine Frage>",
-        "analyzeQuestion": "!game analyze <deine Frage>"
+        "question": "!ask <deine Frage>"
       }
     },
     "search": {
@@ -50,23 +32,14 @@
     },
     "game": {
       "name": "!game",
-      "description": "Bietet recherchierte Informationen über das aktuell gespielte Spiel. Fügen Sie \"analyze\" hinzu, um KI-Bilderkennung im Stream zu nutzen (verwendet Twitch-Thumbnail, das sich alle 5 Minuten aktualisiert).",
-      "usage": {
-        "analyzeText": "Analysiert Stream-Visuals mit KI",
-        "questionText": "Beantwortet spezifische Gameplay-Fragen",
-        "analyzeQuestionText": "Analysiert Visuals und beantwortet Fragen",
-        "question": "!game <deine Frage>",
-        "analyzeQuestion": "!game analyze <deine Frage>"
-      }
+      "description": "Bietet recherchierte Informationen über das aktuell gespielte Spiel. Fügen Sie \"analyze\" hinzu, um KI-Bilderkennung im Stream zu nutzen (verwendet Twitch-Thumbnail, das sich alle 5 Minuten aktualisiert)."
     },
     "translate": {
       "name": "!translate",
       "description": "Verwalten Sie die automatische Nachrichtenübersetzung für Benutzer.",
       "usage": {
         "lang": "!translate <Sprache>",
-        "stop": "!translate stop",
-        "modUser": "!translate <Sprache|stop> [Benutzer]",
-        "modAll": "!translate stop all"
+        "modUser": "!translate <Sprache|stop> [Benutzer]"
       }
     },
     "help": {
@@ -77,7 +50,6 @@
       }
     },
     "lurk": {
-      "name": "!lurk",
       "description": "Teilen Sie dem Chat mit, dass Sie lurken. Geben Sie einen optionalen Grund für eine benutzerdefinierte Verabschiedung an."
     },
     "quote": {
@@ -216,8 +188,6 @@
         "status": "Zeigt aktuellen Auto-Chat-Modus, Häufigkeit und Kategorien",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "Legt die Auto-Chat-Frequenz fest (off deaktiviert nur periodische Nachrichten)",
-        "freqCmd": "!auto config frequency:<Minuten>",
-        "freq": "Stellt minimalen Abstand zwischen Auto-Nachrichten ein (Minuten)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "Stream-Start/End-Begrüßungen aktivieren/deaktivieren",
         "factsCmd": "!auto config facts:<on|off>",
@@ -226,8 +196,6 @@
         "questions": "Engagement-Fragen aktivieren/deaktivieren",
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "Werbepauset-Benachrichtigungen aktivieren/deaktivieren",
-        "multiCmd": "!auto config frequency:<Minuten> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Mehrere Optionen auf einmal einstellen",
         "followsCmd": "!auto config follows:<on|off>",
         "follows": "Feierlichkeiten für neue Follower aktivieren/deaktivieren",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
@@ -237,7 +205,6 @@
       }
     },
     "disable": {
-      "name": "!disable",
       "description": "Deaktiviert einen Befehl in diesem Kanal.",
       "usage": {
         "lurk": "Deaktiviert den Befehl !lurk",
@@ -245,14 +212,12 @@
       }
     },
     "enable": {
-      "name": "!enable",
       "description": "Aktiviert einen zuvor deaktivierten Befehl in diesem Kanal.",
       "usage": {
         "trivia": "Aktiviert den Befehl !trivia"
       }
     },
     "ping": {
-      "name": "!ping",
       "description": "Überprüft, ob der Bot responsiv ist. Antwortet mit Pong!"
     },
     "followage": {
@@ -313,11 +278,6 @@
         "list": "Listet alle Timer für deinen Kanal auf"
       }
     }
-  },
-  "ui": {
-    "languageSelector": "Sprache",
-    "mod": "Moderator",
-    "opensInNewTab": "(wird in einem neuen Tab geöffnet)"
   },
   "sidebar": {
     "generalCommands": "Allgemeine Befehle",

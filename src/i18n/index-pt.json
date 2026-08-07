@@ -2,18 +2,6 @@
   "meta": {
     "title": "Documentação Wildcat.chat"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Ir para o conteúdo principal",
-    "mainNav": "Principal",
-    "home": "Início",
-    "chatSageDocs": "Docs WildcatSage",
-    "wildcatTtsDocs": "Docs do WildcatTTS",
-    "chatOverlayDocs": "Docs de Chat Overlay",
-    "contact": "Contato",
-    "toggleNavLabel": "Alternar navegação",
-    "homeLink": "Início do Wildcat.chat"
-  },
   "hero": {
     "title": "Documentação Wildcat.chat",
     "tagline": "Plataforma de Bots Twitch com IA"
@@ -56,11 +44,6 @@
       "step3": "Autentique-se com sua conta do Twitch",
       "step4": "Configure as configurações do seu bot",
       "step5": "Verifique as páginas de documentação para referências detalhadas de comandos"
-    },
-    "footer": "© 2026 Wildcat.chat. Todos os direitos reservados."
-  },
-  "ui": {
-    "languageSelector": "Idioma",
-    "opensInNewTab": "(abre em uma nova aba)"
+    }
   }
 }

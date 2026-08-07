@@ -1,0 +1,22 @@
+/* =====================================================
+   CHAT OVERLAY PAGE
+   Lucide icon sizing, previously an inline <head> block.
+   ===================================================== */
+
+/* Lucide Icon Utilities */
+.lucide-inline {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    stroke-width: 2;
+}
+
+.expand-tip .tip-icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-accent);
+    stroke-width: 2;
+}
+    

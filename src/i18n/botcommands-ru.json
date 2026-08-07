@@ -2,28 +2,11 @@
   "meta": {
     "title": "Команды Бота"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Перейти к основному содержанию",
-    "mainNav": "Основная",
-    "home": "Главная",
-    "chatSageDocs": "Документация WildcatSage",
-    "wildcatTtsDocs": "Документация WildcatTTS",
-    "contact": "Контакты",
-    "toggleNavLabel": "Переключить навигацию",
-    "homeLink": "Главная Wildcat.chat"
-  },
   "page": {
     "title": "Команды ChatSage Бота",
-    "expandTip": "Нажмите на любую строку команды ниже, чтобы развернуть и увидеть детали использования.",
-    "lastUpdated": "Последнее обновление",
-    "footer": "© 2026 Wildcat.chat. Все права защищены."
+    "expandTip": "Нажмите на любую строку команды ниже, чтобы развернуть и увидеть детали использования."
   },
   "table": {
-    "headers": {
-      "command": "Команда",
-      "description": "Описание"
-    },
     "categories": {
       "general": "Основные",
       "games": "Игры",
@@ -37,8 +20,7 @@
       "name": "!ask / !sage",
       "description": "Задайте Sage вопрос. Использует интеллектуальный поиск.",
       "usage": {
-        "question": "!ask <ваш вопрос>",
-        "analyzeQuestion": "!game analyze <ваш вопрос>"
+        "question": "!ask <ваш вопрос>"
       }
     },
     "search": {
@@ -50,23 +32,14 @@
     },
     "game": {
       "name": "!game",
-      "description": "Предоставляет исследованную информацию об игре, в которую в данный момент играют. Добавьте \"analyze\", чтобы использовать распознавание изображений AI на трансляции (использует миниатюру Twitch, которая обновляется каждые 5 минут).",
-      "usage": {
-        "analyzeText": "Анализирует визуальные элементы трансляции с помощью AI",
-        "questionText": "Отвечает на конкретные вопросы об игре",
-        "analyzeQuestionText": "Анализирует визуальные элементы и отвечает на вопрос",
-        "question": "!game <ваш вопрос>",
-        "analyzeQuestion": "!game analyze <ваш вопрос>"
-      }
+      "description": "Предоставляет исследованную информацию об игре, в которую в данный момент играют. Добавьте \"analyze\", чтобы использовать распознавание изображений AI на трансляции (использует миниатюру Twitch, которая обновляется каждые 5 минут)."
     },
     "translate": {
       "name": "!translate",
       "description": "Управление автоматическим переводом сообщений для пользователей.",
       "usage": {
         "lang": "!translate <язык>",
-        "stop": "!translate stop",
-        "modUser": "!translate <язык|stop> [пользователь]",
-        "modAll": "!translate stop all"
+        "modUser": "!translate <язык|stop> [пользователь]"
       }
     },
     "help": {
@@ -77,7 +50,6 @@
       }
     },
     "lurk": {
-      "name": "!lurk",
       "description": "Дайте чату знать, что вы слушаете. Укажите необязательную причину для пользовательского сообщения."
     },
     "quote": {
@@ -216,8 +188,6 @@
         "status": "Показывает текущий режим автоматического чата, частоту и категории",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "Устанавливает частоту авточата (off отключает только периодические сообщения)",
-        "freqCmd": "!auto config frequency:<минуты>",
-        "freq": "Устанавливает минимальный промежуток между автоматическими сообщениями (минуты)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "Включить/выключить приветствия начала/конца стрима",
         "factsCmd": "!auto config facts:<on|off>",
@@ -226,8 +196,6 @@
         "questions": "Включить/отключить вопросы для взаимодействия",
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "Включить/отключить уведомления о перерывах на рекламу",
-        "multiCmd": "!auto config frequency:<минуты> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Установить несколько опций одновременно",
         "followsCmd": "!auto config follows:<on|off>",
         "follows": "Включить/выключить празднование новых подписчиков",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
@@ -237,7 +205,6 @@
       }
     },
     "disable": {
-      "name": "!disable",
       "description": "Отключает команду в этом канале.",
       "usage": {
         "lurk": "Отключает команду !lurk",
@@ -245,14 +212,12 @@
       }
     },
     "enable": {
-      "name": "!enable",
       "description": "Включает ранее отключённую команду в этом канале.",
       "usage": {
         "trivia": "Включает команду !trivia"
       }
     },
     "ping": {
-      "name": "!ping",
       "description": "Проверяет отзывчивость Бота. Отвечает с Pong!"
     },
     "followage": {
@@ -313,11 +278,6 @@
         "list": "Показывает список всех таймеров для вашего канала"
       }
     }
-  },
-  "ui": {
-    "languageSelector": "Язык",
-    "mod": "Модератор",
-    "opensInNewTab": "(откроется в новой вкладке)"
   },
   "sidebar": {
     "generalCommands": "Основные Команды",

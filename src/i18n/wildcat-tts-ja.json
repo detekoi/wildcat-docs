@@ -2,24 +2,12 @@
   "meta": {
     "title": "WildcatTTS ボット ドキュメント"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "メインコンテンツへスキップ",
-    "mainNav": "メイン",
-    "home": "ホーム",
-    "chatSageDocs": "WildcatSage ドキュメント",
-    "wildcatTtsDocs": "WildcatTTS ドキュメント",
-    "contact": "お問い合わせ",
-    "toggleNavLabel": "ナビゲーションの切り替え",
-    "homeLink": "Wildcat.chat ホーム"
-  },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "サイドバーを切り替え",
     "commands": "コマンド",
     "toggleSubmenu": "サブメニューの切り替え",
     "ttsCommands": "読み上げコマンド",
-    "musicCommands": "音楽生成コマンド",
     "voices": "音声",
     "languageBoost": "言語ブースト",
     "webDashboard": "Webダッシュボード",
@@ -29,8 +17,7 @@
   "page": {
     "title": "WildcatTTS ボット ドキュメント",
     "inviteNote": "WildcatTTSは現在招待制です。",
-    "requestAccess": "アクセスをリクエスト",
-    "footer": "© 2026 Wildcat.chat. 全著作権所有。"
+    "requestAccess": "アクセスをリクエスト"
   },
   "commands": {
     "title": "コマンド",
@@ -49,9 +36,7 @@
       "everyone": "全員",
       "everyoneOwnPreference": "全員(自分の設定のみ)",
       "moderator": "モデレーター",
-      "streamerBroadcaster": "配信者(Webダッシュボード経由)",
-      "alias": "エイリアス:",
-      "aliases": "エイリアス:"
+      "streamerBroadcaster": "配信者(Webダッシュボード経由)"
     },
     "ttsStatus": {
       "name": "!tts status",
@@ -150,7 +135,8 @@
       "usage": {
         "everyone": "!tts permission everyone",
         "mods": "!tts permission mods",
-        "status": "!tts permission"
+        "status": "!tts permission",
+        "vip": "!tts permission vip"
       }
     },
     "ttsBits": {
@@ -285,8 +271,6 @@
     },
     "ttsIgnore": {
       "name": "!tts ignore <ユーザー名>\n!tts ignore add <ユーザー名>",
-      "usageDescUser": "すべてのユーザー向け: チャンネルのTTS除外リストに自分を追加します。あなたのメッセージは読み上げられません。",
-      "usageDescMod": "モデレーターまたは配信者向け: 指定したTwitchユーザーをチャンネルのTTS除外リストに追加します。",
       "permission": "全員(自分自身を追加する場合)、モデレーター(他のユーザーを追加する場合)",
       "usage": {
         "self": "!tts ignore あなたのユーザー名",
@@ -384,67 +368,6 @@
       },
       "description": "提供されたメッセージをTTS用にすぐにキューに入れます。これはallモードとcommandモードの両方で機能します。リクエストしたユーザーの設定（またはチャンネルのデフォルト値）を音声、ピッチ、速度、感情に使用します。"
     },
-    "musicPrompt": {
-      "name": "!music <プロンプト>",
-      "description": "プロンプトに基づいて短い音楽を生成します。",
-      "permission": "モデレーターが設定可能(デフォルト: 全員、モデレーターのみに変更可能)。ユーザーは音楽除外リストに登録されていないこと。"
-    },
-    "musicOnOff": {
-      "name": "!music on\n!music off",
-      "description": "(モデレーターのみ) チャンネルの音楽生成機能を有効または無効にします。",
-      "permission": "モデレーター"
-    },
-    "musicMode": {
-      "name": "!music mode <all|mods>",
-      "description": "(モデレーターのみ) !music <prompt>コマンドを使用できる人を設定します。\nall: 誰でも音楽を生成できます。\nmods: モデレーターと配信者のみが音楽を生成できます。",
-      "permission": "モデレーター"
-    },
-    "musicBits": {
-      "name": "!music bits [on|off|min <金額>]",
-      "description": "(モデレーターのみ) Bits-for-Musicを設定します。有効にすると、ユーザーは音楽を生成するためにプロンプトと一緒にチアする必要があります。",
-      "permission": "モデレーター",
-      "statusNote": "(現在のステータスを表示)",
-      "optionOn": "<span class=\"inline-code\">on</span>: Bits-for-Musicモードを有効にします。",
-      "optionOff": "<span class=\"inline-code\">off</span>: Bits-for-Musicモードを無効にします。",
-      "optionMin": "<span class=\"inline-code\">min &lt;amount&gt;</span>: 必要な最小Bits数を設定します（例：<span class=\"inline-code\">min 100</span>）。"
-    },
-    "musicHelp": {
-      "name": "!music help",
-      "description": "すべての音楽サブコマンドとその使用方法のリストを提供します。",
-      "permission": "全員",
-      "notes": "このドキュメントと同様に、すべての<span class=\"inline-code\">!music</span>サブコマンドとその使用方法を一覧表示します。"
-    },
-    "musicStatus": {
-      "name": "!music status",
-      "description": "音楽生成の現在のステータスを表示します(有効/無効、モード、キューの長さ)。",
-      "permission": "全員"
-    },
-    "musicClear": {
-      "name": "!music clear",
-      "description": "(モデレーターのみ) キューからすべての保留中の音楽生成リクエストをクリアします。",
-      "permission": "モデレーター"
-    },
-    "musicIgnore": {
-      "name": "!music ignore <ユーザー名>\n!music ignore add <ユーザー名>",
-      "permission": "全員(自分を追加)、モデレーター(他人を追加)",
-      "descriptionUser": "<strong>任意のユーザー:</strong> 音楽無視リストに<em>自分自身</em>を追加します。あなたの<span class=\"inline-code\">!music &lt;prompt&gt;</span>リクエストは無視されます。",
-      "descriptionMod": "<strong>モデレーターまたはブロードキャスター:</strong> 音楽無視リストに<em>指定された任意のTwitchユーザー</em>を追加します。",
-      "usageSelf": "!music ignore あなたのユーザー名 (自分自身を無視したい場合)",
-      "usageMod": "!music ignore add 他のユーザー (mod/配信者の場合)",
-      "usageSelfNote": "(自分を無視したい場合)",
-      "usageModNote": "(あなたがモデレーター/配信者の場合)"
-    },
-    "musicIgnoreDel": {
-      "name": "!music ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
-      "description": "(モデレーターのみ) 指定したTwitchユーザーを音楽除外リストから削除します。",
-      "aliases": "(エイリアス: delete, rem, remove)",
-      "permission": "モデレーター"
-    },
-    "musicIgnored": {
-      "name": "!music ignored",
-      "description": "(モデレーターのみ) チャンネルの音楽除外リストに現在登録されているすべてのユーザーを一覧表示します。",
-      "permission": "モデレーター"
-    },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
       "description": "TTSで使用されるキャッシュ済みエモート説明を表示、再生成、または手動で設定します。",
@@ -464,10 +387,6 @@
     }
   },
   "table": {
-    "headers": {
-      "command": "コマンド",
-      "description": "説明"
-    },
     "categories": {
       "ttsGeneral": "一般",
       "engineModeControl": "エンジンとモード制御(モデレーターのみ)",
@@ -478,19 +397,6 @@
       "directTTS": "直接TTS",
       "emoteDescriptions": "エモート説明管理（モデレーターのみ）"
     }
-  },
-  "music": {
-    "title": "音楽生成コマンド",
-    "prefixTip": "すべての音楽生成コマンドは <span class=\"inline-code\">!music</span> で始まります",
-    "exampleTip": "例: <span class=\"inline-code\">!music 90s soulful house</span>",
-    "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
-    "commandsTitle": "音楽生成コマンド",
-    "tableCommand": "コマンド",
-    "tableDescription": "説明",
-    "labelPermission": "権限:",
-    "labelNotes": "注意事項:",
-    "labelUsage": "使用方法:",
-    "labelDescription": "説明:"
   },
   "voices": {
     "title": "音声",
@@ -526,8 +432,6 @@
     "settingBitsDesc": "TTSメッセージに最小bitsを要求",
     "settingChannelPointsTitle": "チャンネルポイント → TTS:",
     "settingChannelPointsDesc": "カスタムチャンネルポイント報酬を作成および設定(上記のセクションを参照)",
-    "settingMusicTitle": "音楽生成:",
-    "settingMusicDesc": "音楽の有効/無効、権限の設定、bitsの要求",
     "settingIgnoreTitle": "除外リスト:",
     "settingIgnoreDesc": "追加/削除インターフェースでTTSおよび音楽除外リストを管理",
     "settingVoiceTitle": "デフォルト音声設定:",
@@ -558,7 +462,14 @@
     "obsImportantTitle": "重要:",
     "obsImportantDesc": "オーディオミキサーでソースがミュートされておらず、音量が適切に設定されていることを確認してください。",
     "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
+    "voiceCalibrationTitle": "音声キャリブレーション",
+    "voiceCalibrationIntro": "音声によっては、他よりも自然に大きく、または小さく聞こえる場合があります。音声キャリブレーション機能では、個々の音声に固有の音量を設定でき、配信全体で一貫した音声体験を実現できます。",
+    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 任意の音声を選び、独自の音量倍率（0.1倍～10.0倍）を設定できます。<em>（注意: 1.0を超える値は大きくなりすぎる場合があります）</em>",
+    "voiceCalibrationFeature2": "<strong>自動適用:</strong> ユーザーが <span class=\"inline-code\">!myvoice</span> でキャリブレーション済みの音声を選択すると、設定した音量が自動的に適用されます。",
+    "voiceCalibrationFeature3": "<strong>優先順位:</strong> キャリブレーションした音量は、その音声についてはチャンネルの既定の音量設定より優先されます。",
+    "settingCalibrationTitle": "音声キャリブレーション:",
+    "settingCalibrationDesc": "個々の音声に固有の音量を設定して、音量レベルを均一にします"
   },
   "troubleshooting": {
     "title": "トラブルシューティング",
@@ -589,11 +500,6 @@
     "step2": "説明は永続的にキャッシュされるため、一度だけ生成すれば十分です。",
     "step3": "同じエモートの後続使用は、AI処理なしにキャッシュ済み説明を即座に使用します。",
     "managementTitle": "説明の管理",
-    "managementText": "モデレーターは<span class=\"inline-code\">!tts emote</span>コマンドを使用して、エモート説明を表示、再生成、または手動で設定できます。詳細については、上記のコマンドテーブルの<a href=\"#tts-commands\" class=\"default-link-style\">エモート説明管理</a>セクションを参照してください。"
-  },
-  "ui": {
-    "languageSelector": "言語",
-    "mod": "モデレーター",
-    "opensInNewTab": "(新しいタブで開きます)"
+    "managementText": "モデレーターは<span class=\"inline-code\">!tts emote</span>コマンドを使用して、エモート説明を表示、再生成、または手動で設定できます。詳細については、上記のコマンドテーブルの<a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a>セクションを参照してください。"
   }
 }

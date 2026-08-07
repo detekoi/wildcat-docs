@@ -2,6 +2,9 @@
   "hosting": {
     "site": "wildcat-docs",
     "public": "public",
+    "predeploy": [
+      "npm run build"
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,14 +15,14 @@
         "source": "/chat-overlay/chat-scene-creator.html",
         "destination": "https://wildcat.chat/chat-overlay/chat-scene-creator.html",
         "type": 301
-      }
-    ],
-    "rewrites": [
+      },
       {
         "source": "/chatvibesdocs.html",
         "destination": "/wildcatttsdocs.html",
         "type": 301
-      },
+      }
+    ],
+    "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"

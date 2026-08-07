@@ -2,24 +2,12 @@
   "meta": {
     "title": "WildcatTTS Bot Documentation"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Skip to main content",
-    "mainNav": "Main",
-    "home": "Home",
-    "chatSageDocs": "WildcatSage Docs",
-    "wildcatTtsDocs": "WildcatTTS Docs",
-    "contact": "Contact",
-    "toggleNavLabel": "Toggle navigation",
-    "homeLink": "Wildcat.chat home"
-  },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Toggle Sidebar",
     "commands": "Commands",
     "toggleSubmenu": "Toggle submenu",
     "ttsCommands": "Text-To-Speech Commands",
-    "musicCommands": "Music Generation Commands",
     "voices": "Voices",
     "languageBoost": "Language Boost",
     "emoteDescriptions": "Emote Descriptions",
@@ -29,8 +17,7 @@
   "page": {
     "title": "WildcatTTS Bot Documentation",
     "inviteNote": "WildcatTTS is currently invite-only.",
-    "requestAccess": "Request access",
-    "footer": "© 2026 Wildcat.chat. All rights reserved."
+    "requestAccess": "Request access"
   },
   "commands": {
     "title": "Commands",
@@ -46,8 +33,6 @@
       "permission": "Permission:",
       "description": "Description:",
       "usage": "Usage:",
-      "alias": "Alias:",
-      "aliases": "Aliases:",
       "everyone": "Everyone",
       "everyoneOwnPreference": "Everyone (for their own preference)",
       "moderator": "Moderator",
@@ -150,7 +135,8 @@
       "usage": {
         "everyone": "!tts permission everyone",
         "mods": "!tts permission mods",
-        "status": "!tts permission"
+        "status": "!tts permission",
+        "vip": "!tts permission vip"
       }
     },
     "ttsBits": {
@@ -287,8 +273,6 @@
       "name": "!tts ignore <username>\n!tts ignore add <username>",
       "descriptionUser": "For any user: Add yourself to the TTS ignore list for the channel. Your messages will not be spoken.",
       "descriptionMod": "For Moderators or Broadcaster: Add any specified Twitch user to the TTS ignore list for the channel.",
-      "usageDescUser": "For any user: Add yourself to the TTS ignore list for the channel. Your messages will not be spoken.",
-      "usageDescMod": "For Moderators or Broadcaster: Add any specified Twitch user to the TTS ignore list for the channel.",
       "usageSelfNote": "(if you want to ignore yourself)",
       "usageModNote": "(if you are a mod/broadcaster)",
       "permission": "Everyone (to add themselves), Moderator (to add others)",
@@ -384,67 +368,6 @@
         "basic": "!tts Welcome everyone to the stream!"
       }
     },
-    "musicPrompt": {
-      "name": "!music <prompt>",
-      "description": "Generates a short piece of music based on your prompt.",
-      "permission": "Configurable by mods (default: everyone, can be mods only). User must not be on music ignore list."
-    },
-    "musicOnOff": {
-      "name": "!music on\n!music off",
-      "description": "(Mod only) Enables or disables the music generation feature for the channel.",
-      "permission": "Moderator"
-    },
-    "musicMode": {
-      "name": "!music mode <all|mods>",
-      "description": "(Mod only) Sets who can use the !music <prompt> command.\nall: Everyone can generate music.\nmods: Only moderators and the broadcaster can generate music.",
-      "permission": "Moderator"
-    },
-    "musicBits": {
-      "name": "!music bits [on|off|min <amount>]",
-      "description": "(Mod only) Configures Bits-for-Music. When enabled, users must cheer with their prompt to generate music.",
-      "permission": "Moderator",
-      "statusNote": "(displays current status)",
-      "optionOn": "<span class=\"inline-code\">on</span>: Enables Bits-for-Music mode.",
-      "optionOff": "<span class=\"inline-code\">off</span>: Disables Bits-for-Music mode.",
-      "optionMin": "<span class=\"inline-code\">min &lt;amount&gt;</span>: Sets the minimum number of Bits required (e.g., <span class=\"inline-code\">min 100</span>)."
-    },
-    "musicHelp": {
-      "name": "!music help",
-      "description": "Provides a list of all music subcommands and their usage.",
-      "permission": "Everyone",
-      "notes": "Lists all <span class=\"inline-code\">!music</span> subcommands and their usage, similar to this documentation."
-    },
-    "musicStatus": {
-      "name": "!music status",
-      "description": "Shows the current status of music generation (enabled/disabled, mode, queue length).",
-      "permission": "Everyone"
-    },
-    "musicClear": {
-      "name": "!music clear",
-      "description": "(Mod only) Clears all pending music generation requests from the queue.",
-      "permission": "Moderator"
-    },
-    "musicIgnore": {
-      "name": "!music ignore <username>\n!music ignore add <username>",
-      "permission": "Everyone (to add themselves), Moderator (to add others)",
-      "descriptionUser": "<strong>For any user:</strong> Add <em>yourself</em> to the music ignore list. Your <span class=\"inline-code\">!music &lt;prompt&gt;</span> requests will be ignored.",
-      "descriptionMod": "<strong>For Moderators or Broadcaster:</strong> Add <em>any specified Twitch user</em> to the music ignore list.",
-      "usageSelf": "!music ignore yourusername (if you want to ignore yourself)",
-      "usageMod": "!music ignore add SomeOtherUser (if you are a mod/broadcaster)",
-      "usageSelfNote": "(if you want to ignore yourself)",
-      "usageModNote": "(if you are a mod/broadcaster)"
-    },
-    "musicIgnoreDel": {
-      "name": "!music ignore del <username>\n(Aliases: delete, rem, remove)",
-      "description": "(Mod only) Removes the specified Twitch user from the music ignore list.",
-      "aliases": "(Aliases: delete, rem, remove)",
-      "permission": "Moderator"
-    },
-    "musicIgnored": {
-      "name": "!music ignored",
-      "description": "(Mod only) Lists all users currently on the music ignore list for the channel.",
-      "permission": "Moderator"
-    },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
       "description": "View, regenerate, or manually set cached emote descriptions used by TTS.",
@@ -464,10 +387,6 @@
     }
   },
   "table": {
-    "headers": {
-      "command": "Command",
-      "description": "Description"
-    },
     "categories": {
       "ttsGeneral": "General",
       "engineModeControl": "Engine & Mode Control (Moderator Only)",
@@ -478,19 +397,6 @@
       "emoteDescriptions": "Emote Description Management (Moderator Only)",
       "directTTS": "Direct TTS"
     }
-  },
-  "music": {
-    "title": "Music Generation Commands",
-    "prefixTip": "All music generation commands are prefixed with <span class=\"inline-code\">!music</span>",
-    "exampleTip": "For example: <span class=\"inline-code\">!music 90s soulful house</span>",
-    "expandTip": "Click any command row below to expand and see usage details.",
-    "commandsTitle": "Music Generation Commands",
-    "tableCommand": "Command",
-    "tableDescription": "Description",
-    "labelPermission": "Permission:",
-    "labelNotes": "Notes:",
-    "labelUsage": "Usage:",
-    "labelDescription": "Description:"
   },
   "voices": {
     "title": "Voices",
@@ -519,7 +425,7 @@
     "step2": "The description is permanently cached so it only needs to be generated once.",
     "step3": "Subsequent uses of the same emote use the cached description instantly, without any AI processing.",
     "managementTitle": "Managing Descriptions",
-    "managementText": "Moderators can use the <span class=\"inline-code\">!tts emote</span> command to view, regenerate, or manually set emote descriptions. See the <a href=\"#tts-commands\" class=\"default-link-style\">Emote Description Management</a> section in the commands table above for details."
+    "managementText": "Moderators can use the <span class=\"inline-code\">!tts emote</span> command to view, regenerate, or manually set emote descriptions. See the <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Emote Description Management</a> section in the commands table above for details."
   },
   "webDashboard": {
     "title": "Web Dashboard",
@@ -537,8 +443,6 @@
     "settingChannelPointsDesc": "Create and configure a custom Channel Point reward (see section above)",
     "settingYoutubeTitle": "YouTube Integration:",
     "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
-    "settingMusicTitle": "Music Generation:",
-    "settingMusicDesc": "Enable/disable music, set permissions, require bits",
     "settingIgnoreTitle": "Ignore Lists:",
     "settingIgnoreDesc": "Manage TTS and music ignore lists with add/remove interface",
     "settingVoiceTitle": "Default Voice Settings:",
@@ -568,7 +472,14 @@
     "obsMonitorOnlyTitle": "Monitor Only",
     "obsMonitorOnlyDesc": "- Only you hear it (for testing)",
     "obsImportantTitle": "Important:",
-    "obsImportantDesc": "Make sure the source is unmuted in your audio mixer and volume is set appropriately."
+    "obsImportantDesc": "Make sure the source is unmuted in your audio mixer and volume is set appropriately.",
+    "voiceCalibrationTitle": "Voice Calibration",
+    "voiceCalibrationIntro": "Some voices may be naturally louder or quieter than others. The Voice Calibration feature allows you to set specific volume levels for individual voices, ensuring a consistent audio experience across your stream.",
+    "voiceCalibrationFeature1": "<strong>Per-Voice Volume:</strong> Select any voice and assign a custom volume multiplier (0.1x to 10.0x). <em>(Warning: Values over 1.0 may be loud)</em>",
+    "voiceCalibrationFeature2": "<strong>Auto-Apply:</strong> When a user selects a calibrated voice via <span class=\"inline-code\">!myvoice</span>, the custom volume is automatically applied.",
+    "voiceCalibrationFeature3": "<strong>Overrides:</strong> Calibrated volumes take precedence over the channel's default volume setting for that specific voice.",
+    "settingCalibrationTitle": "Voice Calibration:",
+    "settingCalibrationDesc": "Set specific volume overrides for individual voices to normalize audio levels"
   },
   "troubleshooting": {
     "title": "Troubleshooting",
@@ -590,10 +501,5 @@
     "a8": "Note that \"auto\" emotion is no longer supported. Use neutral, happy, sad, angry, fearful, disgusted, or surprised instead.",
     "q9": "Need help?",
     "a9": "Contact the developer via the contact form at Henry's portfolio website."
-  },
-  "ui": {
-    "languageSelector": "Language",
-    "mod": "Mod",
-    "opensInNewTab": "(opens in a new tab)"
   }
 }

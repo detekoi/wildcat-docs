@@ -2,28 +2,11 @@
   "meta": {
     "title": "ボットコマンド"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "メインコンテンツへスキップ",
-    "mainNav": "メイン",
-    "home": "ホーム",
-    "chatSageDocs": "WildcatSage ドキュメント",
-    "wildcatTtsDocs": "WildcatTTS ドキュメント",
-    "contact": "お問い合わせ",
-    "toggleNavLabel": "ナビゲーションの切り替え",
-    "homeLink": "Wildcat.chat ホーム"
-  },
   "page": {
     "title": "ChatSage ボットコマンド",
-    "expandTip": "下のコマンド行をクリックすると、詳細な使用方法が表示されます。",
-    "lastUpdated": "最終更新",
-    "footer": "© 2026 Wildcat.chat. 全著作権所有。"
+    "expandTip": "下のコマンド行をクリックすると、詳細な使用方法が表示されます。"
   },
   "table": {
-    "headers": {
-      "command": "コマンド",
-      "description": "説明"
-    },
     "categories": {
       "general": "一般",
       "games": "ゲーム",
@@ -37,8 +20,7 @@
       "name": "!ask / !sage",
       "description": "Sageに質問します。検索機能をインテリジェントに使用します。",
       "usage": {
-        "question": "!ask <質問>",
-        "analyzeQuestion": "!game analyze <質問>"
+        "question": "!ask <質問>"
       }
     },
     "search": {
@@ -50,23 +32,14 @@
     },
     "game": {
       "name": "!game",
-      "description": "現在プレイ中のゲームに関する調査された情報を提供します。「analyze」を追加すると、ストリームでAI画像認識を使用します(5分ごとに更新されるTwitchサムネイルを使用)。",
-      "usage": {
-        "analyzeText": "AIでストリームの映像を分析",
-        "questionText": "ゲームプレイに関する具体的な質問に回答",
-        "analyzeQuestionText": "映像を分析して質問に回答",
-        "question": "!game <質問>",
-        "analyzeQuestion": "!game analyze <質問>"
-      }
+      "description": "現在プレイ中のゲームに関する調査された情報を提供します。「analyze」を追加すると、ストリームでAI画像認識を使用します(5分ごとに更新されるTwitchサムネイルを使用)。"
     },
     "translate": {
       "name": "!translate",
       "description": "ユーザーの自動メッセージ翻訳を管理します。",
       "usage": {
         "lang": "!translate <言語>",
-        "stop": "!translate stop",
-        "modUser": "!translate <言語|stop> [ユーザー]",
-        "modAll": "!translate stop all"
+        "modUser": "!translate <言語|stop> [ユーザー]"
       }
     },
     "help": {
@@ -77,7 +50,6 @@
       }
     },
     "lurk": {
-      "name": "!lurk",
       "description": "チャットに潜伏中であることを知らせます。カスタムメッセージのために理由を追加することもできます。"
     },
     "quote": {
@@ -216,8 +188,6 @@
         "status": "現在の自動チャットモード、頻度、カテゴリーを表示",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "自動チャットの頻度を設定します（offは定期メッセージのみ無効にします）",
-        "freqCmd": "!auto config frequency:<分>",
-        "freq": "自動メッセージ間の最小間隔を設定(分)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "配信開始/終了の挨拶を有効/無効にする",
         "factsCmd": "!auto config facts:<on|off>",
@@ -226,8 +196,6 @@
         "questions": "エンゲージメント質問を有効/無効にする",
         "adsCmd": "!auto config ads:<on|off>",
         "ads": "広告休憩通知を有効/無効にする",
-        "multiCmd": "!auto config frequency:<分> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "複数のオプションを一度に設定",
         "followsCmd": "!auto config follows:<on|off>",
         "follows": "新しいフォロワーのお祝いを有効/無効にする",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
@@ -237,7 +205,6 @@
       }
     },
     "disable": {
-      "name": "!disable",
       "description": "このチャンネルでコマンドを無効にします。",
       "usage": {
         "lurk": "!lurkコマンドを無効にする",
@@ -245,14 +212,12 @@
       }
     },
     "enable": {
-      "name": "!enable",
       "description": "このチャンネルで以前無効にしたコマンドを有効にします。",
       "usage": {
         "trivia": "!triviaコマンドを有効にする"
       }
     },
     "ping": {
-      "name": "!ping",
       "description": "ボットが応答しているかを確認します。Pong!と応答します。"
     },
     "followage": {
@@ -313,11 +278,6 @@
         "list": "チャンネルのすべてのタイマーをリストします"
       }
     }
-  },
-  "ui": {
-    "languageSelector": "言語",
-    "mod": "モデレーター",
-    "opensInNewTab": "(新しいタブで開きます)"
   },
   "sidebar": {
     "generalCommands": "一般コマンド",

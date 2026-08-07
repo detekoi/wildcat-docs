@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "skipToContent": "Перейти к основному содержанию",
+    "mainNav": "Основная",
+    "home": "Главная",
+    "chatSageDocs": "Документация WildcatSage",
+    "wildcatTtsDocs": "Документация WildcatTTS",
+    "chatOverlayDocs": "Документация Chat Overlay",
+    "contact": "Контакты",
+    "toggleNavLabel": "Переключить навигацию",
+    "homeLink": "Главная Wildcat.chat"
+  },
+  "ui": {
+    "languageSelector": "Язык",
+    "opensInNewTab": "(откроется в новой вкладке)",
+    "mod": "Модератор"
+  },
+  "page": {
+    "footer": "© 2026 Wildcat.chat. Все права защищены.",
+    "lastUpdated": "Последнее обновление"
+  },
+  "table": {
+    "headers": {
+      "command": "Команда",
+      "description": "Описание"
+    }
+  }
+}

@@ -1,318 +1,216 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: base.njk
+title: Chat Overlay Documentation
+bodyClass: has-navbar has-sidebar
+mainId: content
+useLucide: true
+sidebarTitle: Chat Overlay
+sidebarTitleKey: sidebar.title
+sidebarLinks:
+  - { href: "#overview",      key: sidebar.overview,      label: "Overview" }
+  - { href: "#platforms",     key: sidebar.platforms,     label: "Platform Support" }
+  - { href: "#customization", key: sidebar.customization, label: "Customization & Themes" }
+  - { href: "#colors",        key: sidebar.colors,        label: "Color Customization" }
+  - { href: "#fonts",         key: sidebar.fonts,         label: "Fonts & Typography" }
+  - { href: "#emotes",        key: sidebar.emotes,        label: "Third-Party Emotes" }
+  - { href: "#animations",    key: sidebar.animations,    label: "Display Modes & Animations" }
+  - { href: "#config",        key: sidebar.config,        label: "Config Panel" }
+  - { href: "#scenes",        key: sidebar.scenes,        label: "Chat Scene Creator" }
+  - { href: "#obs-setup",     key: sidebar.obsSetup,      label: "OBS Setup" }
+extraStyles:
+  - styles/chatoverlay.css
+extraScripts:
+  - scripts/sidenav.js
+  - scripts/last-updated.js
+---
+<h1 data-i18n="chatOverlay.page.title">Wildcat Chat Overlay</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="meta.title">Chat Overlay Documentation</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/unified.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    <style>
-        .wildcat-svg {
-            width: 2rem;
-            height: 2rem;
-            fill: var(--color-text);
-        }
+<section id="overview" class="section">
+    <h2 data-i18n="chatOverlay.overview.title">Overview</h2>
+    <p data-i18n="chatOverlay.overview.desc">The Wildcat Chat Overlay displays Twitch and YouTube Live chat messages inside OBS Studio. You can configure settings in the <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> on the web or directly inside the OBS browser source.</p>
+    <p><a href="https://wildcat.chat/chat-overlay/" class="default-link-style" target="_blank" rel="noopener noreferrer"
+            data-i18n="chatOverlay.overview.getStarted">Get Started with the Chat Overlay</a></p>
+</section>
 
-        .site-navbar-brand .wildcat-svg {
-            width: 5rem;
-            height: 5rem;
-            fill: var(--color-text);
-        }
+<section id="platforms" class="section">
+    <h2 data-i18n="chatOverlay.platforms.title">Platform Support</h2>
+    <p data-i18n="chatOverlay.platforms.desc">The chat overlay connects to streaming platforms. You can configure your target platform in the settings menu.</p>
+    <ul>
+        <li data-i18n="chatOverlay.platforms.twitch"><strong>Twitch:</strong> Enter your channel name (for example, <span class="inline-code">wildcatgamer</span>). Badges and emotes load natively.</li>
+        <li data-i18n="chatOverlay.platforms.youtube"><strong>YouTube:</strong> Supports YouTube live chat for public and unlisted streams. For public streams, enter your channel username, channel ID, video URL, or video ID. For unlisted streams, enter the video URL. (Note: Private streams are not supported).</li>
+    </ul>
+</section>
 
-        /* Lucide Icon Utilities */
-        .lucide-inline {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.125em;
-            stroke-width: 2;
-        }
+<section id="customization" class="section">
+    <h2 data-i18n="chatOverlay.customization.title">Customization & Themes</h2>
+    <p data-i18n="chatOverlay.customization.desc">The chat overlay provides visual customization tools. You can change styling directly in the settings menu.</p>
 
-        .expand-tip .tip-icon {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 1.5rem;
-            color: var(--color-accent);
-            stroke-width: 2;
-        }
-    </style>
-    <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
-</head>
-
-<body class="has-navbar has-sidebar">
-    <a href="#content" class="skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
-    <canvas id="staticCanvas" aria-hidden="true"></canvas>
-
-    <!-- Unified Navigation Bar -->
-    <nav class="site-navbar" aria-label="Main" data-i18n-aria-label="nav.mainNav">
-        <a href="index.html" class="site-navbar-brand" aria-label="Wildcat.chat home"
-            data-i18n-aria-label="nav.homeLink">
-            <svg class="wildcat-svg" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <style>
-                    .kaomoji {
-                        font-size: 250px;
-                        font-family: 'Segoe UI Symbol', 'Arial Unicode MS', 'Noto Sans CJK JP', sans-serif;
-                        fill: currentColor;
-                        text-anchor: middle;
-                        dominant-baseline: central;
-                    }
-                </style>
-                <text x="50%" y="50%" class="kaomoji">- ˕ •マ</text>
-            </svg>
-        </a>
-        <button class="navbar-toggle" type="button" aria-expanded="false"
-            aria-controls="site-navbar-menu" aria-label="Toggle navigation"
-            data-i18n-aria-label="nav.toggleNavLabel"><span aria-hidden="true">☰</span></button>
-        <ul class="site-navbar-menu" id="site-navbar-menu">
-            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
-            <li><a href="botcommands.html" data-i18n="nav.chatSageDocs">WildcatSage Docs</a></li>
-            <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
-            <li><a href="chatoverlay.html" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
-            <li><a href="https://parfaitfair.com/#contact" data-i18n="nav.contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Sidebar Navigation -->
-    <nav id="sidebar" aria-labelledby="sidebar-title">
-        <div class="sidebar-header">
-            <p class="sidebar-title" id="sidebar-title" data-i18n="sidebar.title">Chat Overlay</p>
-            <button type="button" id="sidenav-toggle" aria-expanded="true" aria-controls="sidebar-nav-list"
-                aria-label="Toggle sidebar" data-i18n-aria-label="sidebar.toggleSidebar">
-                <svg class="sidenav-toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-        </div>
-        <ul id="sidebar-nav-list">
-            <li><a href="#overview" data-i18n="sidebar.overview">Overview</a></li>
-            <li><a href="#platforms" data-i18n="sidebar.platforms">Platform Support</a></li>
-            <li><a href="#customization" data-i18n="sidebar.customization">Customization & Themes</a></li>
-            <li><a href="#colors" data-i18n="sidebar.colors">Color Customization</a></li>
-            <li><a href="#fonts" data-i18n="sidebar.fonts">Fonts & Typography</a></li>
-            <li><a href="#emotes" data-i18n="sidebar.emotes">Third-Party Emotes</a></li>
-            <li><a href="#animations" data-i18n="sidebar.animations">Display Modes & Animations</a></li>
-            <li><a href="#config" data-i18n="sidebar.config">Config Panel</a></li>
-            <li><a href="#scenes" data-i18n="sidebar.scenes">Chat Scene Creator</a></li>
-            <li><a href="#obs-setup" data-i18n="sidebar.obsSetup">OBS Setup</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Content -->
-    <main id="content" tabindex="-1">
-        <h1 data-i18n="chatOverlay.page.title">Wildcat Chat Overlay</h1>
-
-        <section id="overview" class="section">
-            <h2 data-i18n="chatOverlay.overview.title">Overview</h2>
-            <p data-i18n="chatOverlay.overview.desc">The Wildcat Chat Overlay displays Twitch and YouTube Live chat messages inside OBS Studio. You can configure settings in the <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> on the web or directly inside the OBS browser source.</p>
-            <p><a href="https://wildcat.chat/chat-overlay/" class="default-link-style" target="_blank" rel="noopener noreferrer"
-                    data-i18n="chatOverlay.overview.getStarted">Get Started with the Chat Overlay</a></p>
-        </section>
-
-        <section id="platforms" class="section">
-            <h2 data-i18n="chatOverlay.platforms.title">Platform Support</h2>
-            <p data-i18n="chatOverlay.platforms.desc">The chat overlay connects to streaming platforms. You can configure your target platform in the settings menu.</p>
-            <ul>
-                <li data-i18n="chatOverlay.platforms.twitch"><strong>Twitch:</strong> Enter your channel name (for example, <span class="inline-code">wildcatgamer</span>). Badges and emotes load natively.</li>
-                <li data-i18n="chatOverlay.platforms.youtube"><strong>YouTube:</strong> Supports YouTube live chat for public and unlisted streams. For public streams, enter your channel username, channel ID, video URL, or video ID. For unlisted streams, enter the video URL. (Note: Private streams are not supported).</li>
-            </ul>
-        </section>
-
-        <section id="customization" class="section">
-            <h2 data-i18n="chatOverlay.customization.title">Customization & Themes</h2>
-            <p data-i18n="chatOverlay.customization.desc">The chat overlay provides visual customization tools. You can change styling directly in the settings menu.</p>
-
-            <div class="expand-tip">
-                <i data-lucide="info" class="tip-icon"></i>
-                <div class="tip-content">
-                    <div class="tip-text" data-i18n="chatOverlay.customization.obsConfig.title"><strong><i data-lucide="settings" class="lucide-inline"></i> Configuration Options:</strong> You can configure chat settings in two ways:</div>
-                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem; list-style-type: decimal;">
-                        <li data-i18n="chatOverlay.customization.obsConfig.step1"><strong>Web Chat Scene Creator (Recommended):</strong> Configure channel connections, fonts, themes, colors, and layouts on the web. The Chat Scene Creator automatically syncs your edits live to OBS.</li>
-                        <li data-i18n="chatOverlay.customization.obsConfig.step2"><strong>In OBS Settings Panel:</strong> Right-click the Browser Source in OBS and select <strong>Interact</strong>. Hover over the chat and click the settings gear (<i data-lucide="settings" class="lucide-inline"></i>) to customize settings locally.</li>
-                        <li data-i18n="chatOverlay.customization.obsConfig.step3">Settings save automatically for each scene source.</li>
-                    </ol>
-                </div>
-            </div>
-
-            <h3 data-i18n="chatOverlay.themes.title">Automatic AI Themes</h3>
-            <p data-i18n="chatOverlay.themes.desc">The overlay includes a natural-language AI theme generator. In the settings panel, type a text description of the aesthetic you want (for example, "cyberpunk neon night" or "cozy wooden cabin"). The overlay generates CSS variables, adjusts color contrast, sets matching pronoun badge colors, and applies the theme live.</p>
-
-            <h3 data-i18n="chatOverlay.themes.carouselTitle">Theme Carousel & Custom Themes</h3>
-            <p data-i18n="chatOverlay.themes.carouselDesc">Use the theme carousel to select preset themes, AI-generated themes, or user-created themes. The carousel stores up to 50 saved themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages.</p>
-
-            <h3 data-i18n="chatOverlay.themes.userPresetsTitle">Saving Custom Theme Presets</h3>
-            <p data-i18n="chatOverlay.themes.userPresetsDesc">You can save your current visual settings as a named theme preset. Save presets from the Chat Scene Creator or the OBS settings panel. Presets save to the cloud theme carousel.</p>
-            <ul>
-                <li data-i18n="chatOverlay.themes.presetSync"><strong>Cloud Sync & Deletion:</strong> Presets receive automatic deduplication, cloud backup, and deletion support.</li>
-                <li data-i18n="chatOverlay.themes.presetBgImage"><strong>Background Image Support:</strong> In the Chat Scene Creator, presets save your uploaded background image. In the OBS settings panel, presets use the background image from the active theme.</li>
-            </ul>
-        </section>
-
-        <section id="colors" class="section">
-            <h2 data-i18n="chatOverlay.colors.title">Color Customization</h2>
-            <p data-i18n="chatOverlay.colors.desc">You can set the color of every chat element. Enter hex color codes directly (for example <span class="inline-code">#FF5500</span>). Dynamic swatches show your current colors. You can also enter <span class="inline-code">transparent</span> or hex codes with alpha values for transparent background colors.</p>
-
-            <div class="expand-tip">
-                <i data-lucide="info" class="tip-icon"></i>
-                <div class="tip-content">
-                    <div class="tip-text" data-i18n="chatOverlay.colors.tip"><strong>Tip:</strong> You can search Google for "color picker" to use an interactive color picker tool. Copy and paste hex codes into the settings fields.</div>
-                </div>
-            </div>
-
-            <h3 data-i18n="chatOverlay.colors.available.title">Available Color Settings</h3>
-            <ul>
-                <li data-i18n="chatOverlay.colors.available.bg"><strong>Background Color:</strong> The main background of chat messages. Combine with the background opacity slider for transparency control.</li>
-                <li data-i18n="chatOverlay.colors.available.border"><strong>Border Color:</strong> The border around chat message bubbles.</li>
-                <li data-i18n="chatOverlay.colors.available.text"><strong>Text Color:</strong> The color of chat message text.</li>
-                <li data-i18n="chatOverlay.colors.available.username"><strong>Username Color:</strong> The default color of usernames. Enable <strong>Override User Colors</strong> to apply your custom color to all usernames.</li>
-                <li data-i18n="chatOverlay.colors.available.timestamp"><strong>Timestamp Color:</strong> The color of message timestamps when timestamps are enabled.</li>
-                <li data-i18n="chatOverlay.colors.available.pronoun"><strong>Pronoun Badge Color:</strong> The color of pronoun badges next to usernames. You can set this to match the timestamp color.</li>
-                <li data-i18n="chatOverlay.colors.available.bgOpacity"><strong>Background Opacity:</strong> Adjust message background opacity from 0% (fully transparent) to 100%.</li>
-                <li data-i18n="chatOverlay.colors.available.bgImageOpacity"><strong>Background Image Upload & Opacity:</strong> Upload a custom background image directly in the Web Chat Scene Creator. Adjust image opacity with the background image opacity slider.</li>
-                <li data-i18n="chatOverlay.colors.available.chromaKey"><strong>Chroma Key Mode:</strong> Sets a solid green background for green screen keying in OBS.</li>
-            </ul>
-        </section>
-
-        <section id="fonts" class="section">
-            <h2 data-i18n="chatOverlay.fonts.title">Google Fonts & Typography</h2>
-            <p data-i18n="chatOverlay.fonts.desc">Customize font styles, sizes, and layout constraints to match your broadcast layout.</p>
-
-            <h3 data-i18n="chatOverlay.fonts.searchTitle">Searchable Google Fonts</h3>
-            <p data-i18n="chatOverlay.fonts.searchDesc">Use the searchable font picker UI to search and select from available Google Fonts. The font manager loads Google Font stylesheets live across preview and OBS sync.</p>
-
-            <h3 data-i18n="chatOverlay.fonts.settingsTitle">Typography & Layout Settings</h3>
-            <ul>
-                <li data-i18n="chatOverlay.fonts.fontSize"><strong>Font Size:</strong> Adjust font size from 10px to 40px.</li>
-                <li data-i18n="chatOverlay.fonts.fontWeight"><strong>Font Weight:</strong> Select Normal, Bold, 500, 600, 700, or 800 Extra Bold font weight.</li>
-                <li data-i18n="chatOverlay.fonts.borderRadius"><strong>Border Radius:</strong> Choose border radius presets (0px, 8px, 16px, or 24px).</li>
-                <li data-i18n="chatOverlay.fonts.boxShadow"><strong>Box Shadow:</strong> Select shadow depth presets (None, Soft, Simple 3D, Intense 3D, or Sharp).</li>
-                <li data-i18n="chatOverlay.fonts.textShadow"><strong>Text Shadow:</strong> Select text shadow style presets (None, Soft, Sharp, Outline, Strong, or Glow).</li>
-                <li data-i18n="chatOverlay.fonts.chatDimensions"><strong>Chat Dimensions:</strong> Adjust chat container width (20% to 100%) and height (20% to 100%).</li>
-            </ul>
-        </section>
-
-        <section id="emotes" class="section">
-            <h2 data-i18n="chatOverlay.emotes.title">Third-Party Emotes & Stacking</h2>
-            <p data-i18n="chatOverlay.emotes.desc">The overlay supports third-party Twitch emote providers: BetterTTV (BTTV), FrankerFaceZ (FFZ), and 7TV. Global and channel emote sets load automatically for Twitch channels.</p>
-
-            <h3 data-i18n="chatOverlay.emotes.zeroWidth.title">Zero-Width & Overlay Stacking</h3>
-            <p data-i18n="chatOverlay.emotes.zeroWidth.desc">Zero-width emotes (like hats or rain effects) stack on top of the preceding emote when separated by a space (for example <span class="inline-code">catJAM cvHazmat</span>). You can chain zero-width emotes to create multi-layered stacks. Single-emote enlargement applies automatically to stacked emote combinations.</p>
-
-            <h3 data-i18n="chatOverlay.emotes.precedence.title">Priority & Matching</h3>
-            <p data-i18n="chatOverlay.emotes.precedence.desc">Emotes match as exact case-sensitive words. Twitch native emotes take priority over third-party emotes. Channel emotes take priority over global sets.</p>
-
-            <h3 data-i18n="chatOverlay.emotes.safety.title">Content Safety & Customization</h3>
-            <p data-i18n="chatOverlay.emotes.safety.desc">You can configure third-party emote settings in the settings panel:</p>
-            <ul>
-                <li data-i18n="chatOverlay.emotes.safety.toggle"><strong>Third-Party Emotes Toggle:</strong> Master switch to enable or disable all third-party emotes.</li>
-                <li data-i18n="chatOverlay.emotes.safety.channelToggle"><strong>Show Channel Emotes:</strong> Toggle whether channel-specific third-party emotes display.</li>
-                <li data-i18n="chatOverlay.emotes.safety.filters"><strong>7TV Content Filters:</strong> Filter out sensitive emotes by category (Twitch Disallowed, Sexual Content, Epilepsy / Flashing, and Edgy / Offensive).</li>
-            </ul>
-        </section>
-
-        <section id="animations" class="section">
-            <h2 data-i18n="chatOverlay.animations.title">Display Modes & Animations</h2>
-            <p data-i18n="chatOverlay.animations.desc">Choose between Window mode (continuous scrolling list) and Popup mode (transient message bubbles). Message entry and exit animations use the Web Animations API for smooth performance.</p>
-
-            <h3 data-i18n="chatOverlay.animations.popupDirections.title">Popup Animation Directions & Controls</h3>
-            <p data-i18n="chatOverlay.animations.popupDirections.desc">In Popup mode, configure message entry directions: From Bottom, From Top, From Left, or From Right. You can also configure message duration (2 to 60 seconds) and maximum popup count (1 to 10). Popup messages stay visible during customization so you can preview changes.</p>
-
-            <h3 data-i18n="chatOverlay.animations.reducedMotion.title">Reduced Motion Support</h3>
-            <p data-i18n="chatOverlay.animations.reducedMotion.desc">The overlay respects system <span class="inline-code">prefers-reduced-motion</span> settings. When enabled, window mode entry animations are disabled and popup transition durations are minimized.</p>
-        </section>
-
-        <section id="config" class="section">
-            <h2 data-i18n="chatOverlay.config.title">Config Panel Features</h2>
-            <p data-i18n="chatOverlay.config.desc">Right-click the Browser Source in OBS and select <strong>Interact</strong> to open the settings menu. Available options include:</p>
-            <ul>
-                <li data-i18n="chatOverlay.config.feature1"><strong>Channel Selection:</strong> Select Twitch or YouTube and enter your channel information to connect.</li>
-                <li data-i18n="chatOverlay.config.feature2"><strong>Font Settings:</strong> Search Google Fonts, adjust font size, and set font weight.</li>
-                <li data-i18n="chatOverlay.config.feature3"><strong>Display Layout:</strong> Choose Window mode or Popup mode. Set background colors, opacities, borders, and shadows.</li>
-                <li data-i18n="chatOverlay.config.feature4"><strong>Message Elements & Events:</strong> Toggle platform badges, user badges, super chats, membership events, pronouns, timestamps, emote enlargement, and top gradient fade.</li>
-                <li data-i18n="chatOverlay.config.feature5"><strong>Emotes & Safety:</strong> Enable third-party emotes and set 7TV content filters.</li>
-                <li data-i18n="chatOverlay.config.feature6"><strong>Theme Management:</strong> Select preset themes, generate AI themes, save custom theme presets, and set custom hex colors.</li>
-            </ul>
-        </section>
-
-        <section id="scenes" class="section">
-            <h2 data-i18n="chatOverlay.scenes.title">Chat Scene Creator</h2>
-            <p data-i18n="chatOverlay.scenes.desc">The <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> lets you create and manage named chat overlay scenes for different stream layouts (for example, Gaming or Just Chatting).</p>
-
-            <h3 data-i18n="chatOverlay.scenes.featuresTitle">Key Features</h3>
-            <ul>
-                <li data-i18n="chatOverlay.scenes.feature1"><strong>Scene Management:</strong> Create, duplicate, delete, import JSON scene files, export JSON scene files, and link existing scenes using scene tokens.</li>
-                <li data-i18n="chatOverlay.scenes.feature2"><strong>Channel Connection:</strong> Enter Twitch channels and YouTube channel IDs or handles with instant application.</li>
-                <li data-i18n="chatOverlay.scenes.feature3"><strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, custom theme presets, color schemes, background image uploads, opacities, chroma key, popup layouts, badges, and emote filters.</li>
-                <li data-i18n="chatOverlay.scenes.feature4"><strong>Interactive Live Preview:</strong> Test settings in a live preview box. Switch preview backgrounds between Dark, Light, Grid (Checkerboard), and Custom color. Changes stream to the preview in real time.</li>
-            </ul>
-
-            <h3 data-i18n="chatOverlay.scenes.syncTitle">Automatic Live Sync</h3>
-            <p data-i18n="chatOverlay.scenes.syncDesc">The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class="inline-code">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.</p>
-            <p data-i18n="chatOverlay.scenes.localNote">If you configure settings directly inside OBS, settings save locally in the OBS browser source cache.</p>
-
-            <h3 data-i18n="chatOverlay.scenes.ioTitle">Exporting & Importing Scene Files</h3>
-            <p data-i18n="chatOverlay.scenes.ioDesc">You can back up or transfer chat scene settings with JSON files.</p>
-            <ul>
-                <li data-i18n="chatOverlay.scenes.exportSingle"><strong>Export Single Scene:</strong> To export a single scene, select the scene and click <strong>Export</strong>.</li>
-                <li data-i18n="chatOverlay.scenes.exportAll"><strong>Export All Scenes:</strong> To back up all scenes, click <strong>Export All</strong> in the left panel.</li>
-                <li data-i18n="chatOverlay.scenes.importFile"><strong>Import Scene File:</strong> To restore scene settings, click <strong>Import</strong> and select a saved JSON file from your computer.</li>
-            </ul>
-
-            <h3 data-i18n="chatOverlay.scenes.linkTitle">Linking Existing Scenes (Sync Token)</h3>
-            <p data-i18n="chatOverlay.scenes.linkDesc">You can link an existing cloud-synced scene to a new browser or computer using its sync token.</p>
-            <ol>
-                <li data-i18n="chatOverlay.scenes.linkStep1">Click <strong>Link Scene</strong> in the left panel.</li>
-                <li data-i18n="chatOverlay.scenes.linkStep2">Enter the sync token from your OBS URL (the alphanumeric token after <span class="inline-code">sync=</span>).</li>
-                <li data-i18n="chatOverlay.scenes.linkStep3">Click <strong>Link</strong> to pull scene settings from the cloud. Linked scenes update live when you save changes on any device.</li>
+    <div class="expand-tip">
+        <i data-lucide="info" class="tip-icon"></i>
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="chatOverlay.customization.obsConfig.title"><strong><i data-lucide="settings" class="lucide-inline"></i> Configuration Options:</strong> You can configure chat settings in two ways:</div>
+            <ol style="margin-left: 1.5rem; margin-top: 0.5rem; list-style-type: decimal;">
+                <li data-i18n="chatOverlay.customization.obsConfig.step1"><strong>Web Chat Scene Creator (Recommended):</strong> Configure channel connections, fonts, themes, colors, and layouts on the web. The Chat Scene Creator automatically syncs your edits live to OBS.</li>
+                <li data-i18n="chatOverlay.customization.obsConfig.step2"><strong>In OBS Settings Panel:</strong> Right-click the Browser Source in OBS and select <strong>Interact</strong>. Hover over the chat and click the settings gear (<i data-lucide="settings" class="lucide-inline"></i>) to customize settings locally.</li>
+                <li data-i18n="chatOverlay.customization.obsConfig.step3">Settings save automatically for each scene source.</li>
             </ol>
-        </section>
-
-        <section id="obs-setup" class="section">
-            <h2 data-i18n="chatOverlay.obsSetup.title">OBS Setup Instructions</h2>
-            <p data-i18n="chatOverlay.obsSetup.desc">Follow these steps to add the chat overlay to OBS Studio:</p>
-            <ol>
-                <li data-i18n="chatOverlay.obsSetup.step1">In OBS Studio, open the <strong>Sources</strong> panel, click <strong>+</strong>, and select <strong>Browser</strong>.</li>
-                <li data-i18n="chatOverlay.obsSetup.step2">Enter a recognizable source name (for example, "Twitch Chat").</li>
-                <li data-i18n="chatOverlay.obsSetup.step3">Paste the URL generated from the Chat Scene Creator into the URL field. If you cannot paste the URL, uncheck "Local file".</li>
-                <li data-i18n="chatOverlay.obsSetup.step4">Set Width to <strong>320</strong> and Height to <strong>600</strong>.</li>
-                <li data-i18n="chatOverlay.obsSetup.step5">Click "OK" to add the browser source to your canvas.</li>
-                <li data-i18n="chatOverlay.obsSetup.step6"><strong>Configuring Settings:</strong> Save your settings in the Web Chat Scene Creator to sync live to OBS. Alternatively, right-click the Browser Source in OBS and select <strong>Interact</strong> to adjust settings locally.</li>
-                <li data-i18n="chatOverlay.obsSetup.step7">In the interactive window, enter your channel information, click the settings gear (<i data-lucide="settings" class="lucide-inline"></i>), and click "Connect".</li>
-            </ol>
-
-            <h3 data-i18n="chatOverlay.obsSetup.tips.title">Advanced OBS Tips</h3>
-            <ul>
-                <li data-i18n="chatOverlay.obsSetup.tips.tip1">Enable <span class="inline-code">Shutdown source when not visible</span> to save system resources.</li>
-                <li data-i18n="chatOverlay.obsSetup.tips.tip2">To hide scrollbars, add <span class="inline-code">body { overflow: hidden; }</span> to the Custom CSS field.</li>
-                <li data-i18n="chatOverlay.obsSetup.tips.tip3">Settings save to the OBS cache. If you clear the OBS cache for this source, reconfigure your aesthetic settings.</li>
-            </ul>
-        </section>
-
-        <div id="last-updated"
-            style="text-align:center; margin-top:2rem; color:var(--color-text-muted); font-size:0.95em;">
         </div>
-    </main>
+    </div>
 
-    <footer>
-        <p data-i18n="page.footer">© 2026 Wildcat.chat. All rights reserved.</p>
-    </footer>
+    <h3 data-i18n="chatOverlay.themes.title">Automatic AI Themes</h3>
+    <p data-i18n="chatOverlay.themes.desc">The overlay includes a natural-language AI theme generator. In the settings panel, type a text description of the aesthetic you want (for example, "cyberpunk neon night" or "cozy wooden cabin"). The overlay generates CSS variables, adjusts color contrast, sets matching pronoun badge colors, and applies the theme live.</p>
 
+    <h3 data-i18n="chatOverlay.themes.carouselTitle">Theme Carousel & Custom Themes</h3>
+    <p data-i18n="chatOverlay.themes.carouselDesc">Use the theme carousel to select preset themes, AI-generated themes, or user-created themes. The carousel stores up to 50 saved themes. You can delete custom themes with a confirmation modal. Active themes synchronize across pages.</p>
 
-    <script src="scripts/navigation.js"></script>
-    <script src="scripts/sidenav.js"></script>
-    <script src="scripts/static-background.js"></script>
-    <script src="scripts/i18n.js"></script>
-    <script src="scripts/last-updated.js"></script>
-    <script>lucide.createIcons();</script>
-</body>
+    <h3 data-i18n="chatOverlay.themes.userPresetsTitle">Saving Custom Theme Presets</h3>
+    <p data-i18n="chatOverlay.themes.userPresetsDesc">You can save your current visual settings as a named theme preset. Save presets from the Chat Scene Creator or the OBS settings panel. Presets save to the cloud theme carousel.</p>
+    <ul>
+        <li data-i18n="chatOverlay.themes.presetSync"><strong>Cloud Sync & Deletion:</strong> Presets receive automatic deduplication, cloud backup, and deletion support.</li>
+        <li data-i18n="chatOverlay.themes.presetBgImage"><strong>Background Image Support:</strong> In the Chat Scene Creator, presets save your uploaded background image. In the OBS settings panel, presets use the background image from the active theme.</li>
+    </ul>
+</section>
 
-</html>
+<section id="colors" class="section">
+    <h2 data-i18n="chatOverlay.colors.title">Color Customization</h2>
+    <p data-i18n="chatOverlay.colors.desc">You can set the color of every chat element. Enter hex color codes directly (for example <span class="inline-code">#FF5500</span>). Dynamic swatches show your current colors. You can also enter <span class="inline-code">transparent</span> or hex codes with alpha values for transparent background colors.</p>
+
+    <div class="expand-tip">
+        <i data-lucide="info" class="tip-icon"></i>
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="chatOverlay.colors.tip"><strong>Tip:</strong> You can search Google for "color picker" to use an interactive color picker tool. Copy and paste hex codes into the settings fields.</div>
+        </div>
+    </div>
+
+    <h3 data-i18n="chatOverlay.colors.available.title">Available Color Settings</h3>
+    <ul>
+        <li data-i18n="chatOverlay.colors.available.bg"><strong>Background Color:</strong> The main background of chat messages. Combine with the background opacity slider for transparency control.</li>
+        <li data-i18n="chatOverlay.colors.available.border"><strong>Border Color:</strong> The border around chat message bubbles.</li>
+        <li data-i18n="chatOverlay.colors.available.text"><strong>Text Color:</strong> The color of chat message text.</li>
+        <li data-i18n="chatOverlay.colors.available.username"><strong>Username Color:</strong> The default color of usernames. Enable <strong>Override User Colors</strong> to apply your custom color to all usernames.</li>
+        <li data-i18n="chatOverlay.colors.available.timestamp"><strong>Timestamp Color:</strong> The color of message timestamps when timestamps are enabled.</li>
+        <li data-i18n="chatOverlay.colors.available.pronoun"><strong>Pronoun Badge Color:</strong> The color of pronoun badges next to usernames. You can set this to match the timestamp color.</li>
+        <li data-i18n="chatOverlay.colors.available.bgOpacity"><strong>Background Opacity:</strong> Adjust message background opacity from 0% (fully transparent) to 100%.</li>
+        <li data-i18n="chatOverlay.colors.available.bgImageOpacity"><strong>Background Image Upload & Opacity:</strong> Upload a custom background image directly in the Web Chat Scene Creator. Adjust image opacity with the background image opacity slider.</li>
+        <li data-i18n="chatOverlay.colors.available.chromaKey"><strong>Chroma Key Mode:</strong> Sets a solid green background for green screen keying in OBS.</li>
+    </ul>
+</section>
+
+<section id="fonts" class="section">
+    <h2 data-i18n="chatOverlay.fonts.title">Google Fonts & Typography</h2>
+    <p data-i18n="chatOverlay.fonts.desc">Customize font styles, sizes, and layout constraints to match your broadcast layout.</p>
+
+    <h3 data-i18n="chatOverlay.fonts.searchTitle">Searchable Google Fonts</h3>
+    <p data-i18n="chatOverlay.fonts.searchDesc">Use the searchable font picker UI to search and select from available Google Fonts. The font manager loads Google Font stylesheets live across preview and OBS sync.</p>
+
+    <h3 data-i18n="chatOverlay.fonts.settingsTitle">Typography & Layout Settings</h3>
+    <ul>
+        <li data-i18n="chatOverlay.fonts.fontSize"><strong>Font Size:</strong> Adjust font size from 10px to 40px.</li>
+        <li data-i18n="chatOverlay.fonts.fontWeight"><strong>Font Weight:</strong> Select Normal, Bold, 500, 600, 700, or 800 Extra Bold font weight.</li>
+        <li data-i18n="chatOverlay.fonts.borderRadius"><strong>Border Radius:</strong> Choose border radius presets (0px, 8px, 16px, or 24px).</li>
+        <li data-i18n="chatOverlay.fonts.boxShadow"><strong>Box Shadow:</strong> Select shadow depth presets (None, Soft, Simple 3D, Intense 3D, or Sharp).</li>
+        <li data-i18n="chatOverlay.fonts.textShadow"><strong>Text Shadow:</strong> Select text shadow style presets (None, Soft, Sharp, Outline, Strong, or Glow).</li>
+        <li data-i18n="chatOverlay.fonts.chatDimensions"><strong>Chat Dimensions:</strong> Adjust chat container width (20% to 100%) and height (20% to 100%).</li>
+    </ul>
+</section>
+
+<section id="emotes" class="section">
+    <h2 data-i18n="chatOverlay.emotes.title">Third-Party Emotes & Stacking</h2>
+    <p data-i18n="chatOverlay.emotes.desc">The overlay supports third-party Twitch emote providers: BetterTTV (BTTV), FrankerFaceZ (FFZ), and 7TV. Global and channel emote sets load automatically for Twitch channels.</p>
+
+    <h3 data-i18n="chatOverlay.emotes.zeroWidth.title">Zero-Width & Overlay Stacking</h3>
+    <p data-i18n="chatOverlay.emotes.zeroWidth.desc">Zero-width emotes (like hats or rain effects) stack on top of the preceding emote when separated by a space (for example <span class="inline-code">catJAM cvHazmat</span>). You can chain zero-width emotes to create multi-layered stacks. Single-emote enlargement applies automatically to stacked emote combinations.</p>
+
+    <h3 data-i18n="chatOverlay.emotes.precedence.title">Priority & Matching</h3>
+    <p data-i18n="chatOverlay.emotes.precedence.desc">Emotes match as exact case-sensitive words. Twitch native emotes take priority over third-party emotes. Channel emotes take priority over global sets.</p>
+
+    <h3 data-i18n="chatOverlay.emotes.safety.title">Content Safety & Customization</h3>
+    <p data-i18n="chatOverlay.emotes.safety.desc">You can configure third-party emote settings in the settings panel:</p>
+    <ul>
+        <li data-i18n="chatOverlay.emotes.safety.toggle"><strong>Third-Party Emotes Toggle:</strong> Master switch to enable or disable all third-party emotes.</li>
+        <li data-i18n="chatOverlay.emotes.safety.channelToggle"><strong>Show Channel Emotes:</strong> Toggle whether channel-specific third-party emotes display.</li>
+        <li data-i18n="chatOverlay.emotes.safety.filters"><strong>7TV Content Filters:</strong> Filter out sensitive emotes by category (Twitch Disallowed, Sexual Content, Epilepsy / Flashing, and Edgy / Offensive).</li>
+    </ul>
+</section>
+
+<section id="animations" class="section">
+    <h2 data-i18n="chatOverlay.animations.title">Display Modes & Animations</h2>
+    <p data-i18n="chatOverlay.animations.desc">Choose between Window mode (continuous scrolling list) and Popup mode (transient message bubbles). Message entry and exit animations use the Web Animations API for smooth performance.</p>
+
+    <h3 data-i18n="chatOverlay.animations.popupDirections.title">Popup Animation Directions & Controls</h3>
+    <p data-i18n="chatOverlay.animations.popupDirections.desc">In Popup mode, configure message entry directions: From Bottom, From Top, From Left, or From Right. You can also configure message duration (2 to 60 seconds) and maximum popup count (1 to 10). Popup messages stay visible during customization so you can preview changes.</p>
+
+    <h3 data-i18n="chatOverlay.animations.reducedMotion.title">Reduced Motion Support</h3>
+    <p data-i18n="chatOverlay.animations.reducedMotion.desc">The overlay respects system <span class="inline-code">prefers-reduced-motion</span> settings. When enabled, window mode entry animations are disabled and popup transition durations are minimized.</p>
+</section>
+
+<section id="config" class="section">
+    <h2 data-i18n="chatOverlay.config.title">Config Panel Features</h2>
+    <p data-i18n="chatOverlay.config.desc">Right-click the Browser Source in OBS and select <strong>Interact</strong> to open the settings menu. Available options include:</p>
+    <ul>
+        <li data-i18n="chatOverlay.config.feature1"><strong>Channel Selection:</strong> Select Twitch or YouTube and enter your channel information to connect.</li>
+        <li data-i18n="chatOverlay.config.feature2"><strong>Font Settings:</strong> Search Google Fonts, adjust font size, and set font weight.</li>
+        <li data-i18n="chatOverlay.config.feature3"><strong>Display Layout:</strong> Choose Window mode or Popup mode. Set background colors, opacities, borders, and shadows.</li>
+        <li data-i18n="chatOverlay.config.feature4"><strong>Message Elements & Events:</strong> Toggle platform badges, user badges, super chats, membership events, pronouns, timestamps, emote enlargement, and top gradient fade.</li>
+        <li data-i18n="chatOverlay.config.feature5"><strong>Emotes & Safety:</strong> Enable third-party emotes and set 7TV content filters.</li>
+        <li data-i18n="chatOverlay.config.feature6"><strong>Theme Management:</strong> Select preset themes, generate AI themes, save custom theme presets, and set custom hex colors.</li>
+    </ul>
+</section>
+
+<section id="scenes" class="section">
+    <h2 data-i18n="chatOverlay.scenes.title">Chat Scene Creator</h2>
+    <p data-i18n="chatOverlay.scenes.desc">The <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> lets you create and manage named chat overlay scenes for different stream layouts (for example, Gaming or Just Chatting).</p>
+
+    <h3 data-i18n="chatOverlay.scenes.featuresTitle">Key Features</h3>
+    <ul>
+        <li data-i18n="chatOverlay.scenes.feature1"><strong>Scene Management:</strong> Create, duplicate, delete, import JSON scene files, export JSON scene files, and link existing scenes using scene tokens.</li>
+        <li data-i18n="chatOverlay.scenes.feature2"><strong>Channel Connection:</strong> Enter Twitch channels and YouTube channel IDs or handles with instant application.</li>
+        <li data-i18n="chatOverlay.scenes.feature3"><strong>Visual Settings:</strong> Configure Google Fonts, preset themes, AI themes, custom theme presets, color schemes, background image uploads, opacities, chroma key, popup layouts, badges, and emote filters.</li>
+        <li data-i18n="chatOverlay.scenes.feature4"><strong>Interactive Live Preview:</strong> Test settings in a live preview box. Switch preview backgrounds between Dark, Light, Grid (Checkerboard), and Custom color. Changes stream to the preview in real time.</li>
+    </ul>
+
+    <h3 data-i18n="chatOverlay.scenes.syncTitle">Automatic Live Sync</h3>
+    <p data-i18n="chatOverlay.scenes.syncDesc">The Chat Scene Creator automatically generates a unique sync token in your OBS URL: <span class="inline-code">chat.html?scene=NAME&sync=TOKEN</span>. Edits saved in the web interface update your OBS browser source live without refreshing the page.</p>
+    <p data-i18n="chatOverlay.scenes.localNote">If you configure settings directly inside OBS, settings save locally in the OBS browser source cache.</p>
+
+    <h3 data-i18n="chatOverlay.scenes.ioTitle">Exporting & Importing Scene Files</h3>
+    <p data-i18n="chatOverlay.scenes.ioDesc">You can back up or transfer chat scene settings with JSON files.</p>
+    <ul>
+        <li data-i18n="chatOverlay.scenes.exportSingle"><strong>Export Single Scene:</strong> To export a single scene, select the scene and click <strong>Export</strong>.</li>
+        <li data-i18n="chatOverlay.scenes.exportAll"><strong>Export All Scenes:</strong> To back up all scenes, click <strong>Export All</strong> in the left panel.</li>
+        <li data-i18n="chatOverlay.scenes.importFile"><strong>Import Scene File:</strong> To restore scene settings, click <strong>Import</strong> and select a saved JSON file from your computer.</li>
+    </ul>
+
+    <h3 data-i18n="chatOverlay.scenes.linkTitle">Linking Existing Scenes (Sync Token)</h3>
+    <p data-i18n="chatOverlay.scenes.linkDesc">You can link an existing cloud-synced scene to a new browser or computer using its sync token.</p>
+    <ol>
+        <li data-i18n="chatOverlay.scenes.linkStep1">Click <strong>Link Scene</strong> in the left panel.</li>
+        <li data-i18n="chatOverlay.scenes.linkStep2">Enter the sync token from your OBS URL (the alphanumeric token after <span class="inline-code">sync=</span>).</li>
+        <li data-i18n="chatOverlay.scenes.linkStep3">Click <strong>Link</strong> to pull scene settings from the cloud. Linked scenes update live when you save changes on any device.</li>
+    </ol>
+</section>
+
+<section id="obs-setup" class="section">
+    <h2 data-i18n="chatOverlay.obsSetup.title">OBS Setup Instructions</h2>
+    <p data-i18n="chatOverlay.obsSetup.desc">Follow these steps to add the chat overlay to OBS Studio:</p>
+    <ol>
+        <li data-i18n="chatOverlay.obsSetup.step1">In OBS Studio, open the <strong>Sources</strong> panel, click <strong>+</strong>, and select <strong>Browser</strong>.</li>
+        <li data-i18n="chatOverlay.obsSetup.step2">Enter a recognizable source name (for example, "Twitch Chat").</li>
+        <li data-i18n="chatOverlay.obsSetup.step3">Paste the URL generated from the Chat Scene Creator into the URL field. If you cannot paste the URL, uncheck "Local file".</li>
+        <li data-i18n="chatOverlay.obsSetup.step4">Set Width to <strong>320</strong> and Height to <strong>600</strong>.</li>
+        <li data-i18n="chatOverlay.obsSetup.step5">Click "OK" to add the browser source to your canvas.</li>
+        <li data-i18n="chatOverlay.obsSetup.step6"><strong>Configuring Settings:</strong> Save your settings in the Web Chat Scene Creator to sync live to OBS. Alternatively, right-click the Browser Source in OBS and select <strong>Interact</strong> to adjust settings locally.</li>
+        <li data-i18n="chatOverlay.obsSetup.step7">In the interactive window, enter your channel information, click the settings gear (<i data-lucide="settings" class="lucide-inline"></i>), and click "Connect".</li>
+    </ol>
+
+    <h3 data-i18n="chatOverlay.obsSetup.tips.title">Advanced OBS Tips</h3>
+    <ul>
+        <li data-i18n="chatOverlay.obsSetup.tips.tip1">Enable <span class="inline-code">Shutdown source when not visible</span> to save system resources.</li>
+        <li data-i18n="chatOverlay.obsSetup.tips.tip2">To hide scrollbars, add <span class="inline-code">body { overflow: hidden; }</span> to the Custom CSS field.</li>
+        <li data-i18n="chatOverlay.obsSetup.tips.tip3">Settings save to the OBS cache. If you clear the OBS cache for this source, reconfigure your aesthetic settings.</li>
+    </ul>
+</section>
+
+<div id="last-updated"
+    style="text-align:center; margin-top:2rem; color:var(--color-text-muted); font-size:0.95em;">
+</div>

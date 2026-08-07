@@ -2,18 +2,6 @@
   "meta": {
     "title": "Wildcat.chat Dokumentation"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Zum Hauptinhalt springen",
-    "mainNav": "Hauptnavigation",
-    "home": "Startseite",
-    "chatSageDocs": "WildcatSage Docs",
-    "wildcatTtsDocs": "WildcatTTS Dokumentation",
-    "chatOverlayDocs": "Chat Overlay Dokumentation",
-    "contact": "Kontakt",
-    "toggleNavLabel": "Navigation umschalten",
-    "homeLink": "Wildcat.chat Startseite"
-  },
   "hero": {
     "title": "Wildcat.chat Dokumentation",
     "tagline": "KI-gestützte Twitch-Bot-Plattform"
@@ -56,11 +44,6 @@
       "step3": "Authentifizieren Sie sich mit Ihrem Twitch-Konto",
       "step4": "Konfigurieren Sie Ihre Bot-Einstellungen",
       "step5": "Überprüfen Sie die Dokumentationsseiten für detaillierte Befehlsreferenzen"
-    },
-    "footer": "© 2026 Wildcat.chat. Alle Rechte vorbehalten."
-  },
-  "ui": {
-    "languageSelector": "Sprache",
-    "opensInNewTab": "(wird in einem neuen Tab geöffnet)"
+    }
   }
 }

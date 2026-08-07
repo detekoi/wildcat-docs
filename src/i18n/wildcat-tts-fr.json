@@ -2,24 +2,12 @@
   "meta": {
     "title": "Documentation du Bot WildcatTTS"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Aller au contenu principal",
-    "mainNav": "Principale",
-    "home": "Accueil",
-    "chatSageDocs": "Documentation WildcatSage",
-    "wildcatTtsDocs": "Documentation WildcatTTS",
-    "contact": "Contact",
-    "toggleNavLabel": "Basculer la navigation",
-    "homeLink": "Accueil Wildcat.chat"
-  },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Basculer la Barre Latérale",
     "commands": "Commandes",
     "toggleSubmenu": "Basculer le sous-menu",
     "ttsCommands": "Commandes Text-To-Speech",
-    "musicCommands": "Commandes de Génération de Musique",
     "voices": "Voix",
     "languageBoost": "Amélioration de Langue",
     "webDashboard": "Tableau de Bord Web",
@@ -29,8 +17,7 @@
   "page": {
     "title": "Documentation du Bot WildcatTTS",
     "inviteNote": "WildcatTTS est actuellement sur invitation uniquement.",
-    "requestAccess": "Demander l'accès",
-    "footer": "© 2026 Wildcat.chat. Tous droits réservés."
+    "requestAccess": "Demander l'accès"
   },
   "commands": {
     "title": "Commandes",
@@ -49,9 +36,7 @@
       "everyone": "Tout le monde",
       "everyoneOwnPreference": "Tout le monde (pour leur propre préférence)",
       "moderator": "Modérateur",
-      "streamerBroadcaster": "Diffuseur/Animateur (via Tableau de Bord Web)",
-      "alias": "Alias:",
-      "aliases": "Alias:"
+      "streamerBroadcaster": "Diffuseur/Animateur (via Tableau de Bord Web)"
     },
     "ttsStatus": {
       "name": "!tts status",
@@ -150,7 +135,8 @@
       "usage": {
         "everyone": "!tts permission everyone",
         "mods": "!tts permission mods",
-        "status": "!tts permission"
+        "status": "!tts permission",
+        "vip": "!tts permission vip"
       }
     },
     "ttsBits": {
@@ -285,8 +271,6 @@
     },
     "ttsIgnore": {
       "name": "!tts ignore <username>\n!tts ignore add <username>",
-      "usageDescUser": "Pour tout utilisateur : Ajoutez-vous à la liste d'ignorés TTS pour le canal. Vos messages ne seront pas parlés.",
-      "usageDescMod": "Pour les Modérateurs ou l'Animateur : Ajoutez tout utilisateur Twitch spécifié à la liste d'ignorés TTS pour le canal.",
       "permission": "Tout le monde (pour s'ajouter eux-mêmes), Modérateur (pour ajouter d'autres)",
       "usage": {
         "self": "!tts ignore votrenom",
@@ -384,67 +368,6 @@
       },
       "description": "Met immédiatement le message fourni en file d'attente pour TTS. Cela fonctionne à la fois en mode all et command. Utilise les préférences de l'utilisateur demandeur (ou les valeurs par défaut du canal) pour la voix, la hauteur, la vitesse et l'émotion."
     },
-    "musicPrompt": {
-      "name": "!music <prompt>",
-      "description": "Génère un court morceau de musique en fonction de votre demande.",
-      "permission": "Configurable par les modérateurs (par défaut : tout le monde, peut être réservé aux modérateurs). L'utilisateur ne doit pas être sur la liste d'ignorés de musique."
-    },
-    "musicOnOff": {
-      "name": "!music on\n!music off",
-      "description": "(Modérateur uniquement) Active ou désactive la fonctionnalité de génération de musique pour le canal.",
-      "permission": "Modérateur"
-    },
-    "musicMode": {
-      "name": "!music mode <all|mods>",
-      "description": "(Mod uniquement) Définit qui peut utiliser la commande !music <prompt>.\nall: Tout le monde peut générer de la musique.\nmods: Seuls les modérateurs et le diffuseur peuvent générer de la musique.",
-      "permission": "Modérateur"
-    },
-    "musicBits": {
-      "name": "!music bits [on|off|min <amount>]",
-      "description": "(Modérateur uniquement) Configure Bits-pour-Musique. Lorsqu'elle est activée, les utilisateurs doivent faire une acclamation avec leur demande pour générer de la musique.",
-      "permission": "Modérateur",
-      "statusNote": "(affiche l'état actuel)",
-      "optionOn": "<span class=\"inline-code\">on</span>: Active le mode Bits pour la musique.",
-      "optionOff": "<span class=\"inline-code\">off</span>: Désactive le mode Bits pour la musique.",
-      "optionMin": "<span class=\"inline-code\">min &lt;amount&gt;</span>: Définit le nombre minimum de Bits requis (par ex., <span class=\"inline-code\">min 100</span>)."
-    },
-    "musicHelp": {
-      "name": "!music help",
-      "description": "Fournit une liste de toutes les sous-commandes de musique et leur utilisation.",
-      "permission": "Tout le monde",
-      "notes": "Liste tous les sous-commandes <span class=\"inline-code\">!music</span> et leur utilisation, similaire à cette documentation."
-    },
-    "musicStatus": {
-      "name": "!music status",
-      "description": "Affiche l'état actuel de la génération de musique (activée/désactivée, mode, longueur de la file d'attente).",
-      "permission": "Tout le monde"
-    },
-    "musicClear": {
-      "name": "!music clear",
-      "description": "(Modérateur uniquement) Efface toutes les demandes de génération de musique en attente de la file d'attente.",
-      "permission": "Modérateur"
-    },
-    "musicIgnore": {
-      "name": "!music ignore <username>\n!music ignore add <username>",
-      "permission": "Tout le monde (pour s'ajouter soi-même), Modérateur (pour ajouter d'autres)",
-      "descriptionUser": "<strong>Pour tout utilisateur:</strong> Ajoutez <em>vous-même</em> à la liste d'ignorer la musique. Vos demandes <span class=\"inline-code\">!music &lt;prompt&gt;</span> seront ignorées.",
-      "descriptionMod": "<strong>Pour les modérateurs ou le diffuseur:</strong> Ajoutez <em>tout utilisateur Twitch spécifié</em> à la liste d'ignorer la musique.",
-      "usageSelf": "!music ignore votrenom (si vous voulez vous ignorer)",
-      "usageMod": "!music ignore add AutreUtilisateur (si vous êtes mod/diffuseur)",
-      "usageSelfNote": "(si vous voulez vous ignorer vous-même)",
-      "usageModNote": "(si vous êtes mod/diffuseur)"
-    },
-    "musicIgnoreDel": {
-      "name": "!music ignore del <username>\n(Alias : delete, rem, remove)",
-      "description": "(Modérateur uniquement) Supprime l'utilisateur Twitch spécifié de la liste d'ignorés de musique.",
-      "aliases": "(Alias : delete, rem, remove)",
-      "permission": "Modérateur"
-    },
-    "musicIgnored": {
-      "name": "!music ignored",
-      "description": "(Modérateur uniquement) Liste tous les utilisateurs actuellement sur la liste d'ignorés de musique pour le canal.",
-      "permission": "Modérateur"
-    },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
       "description": "Afficher, régénérer ou définir manuellement les descriptions d'emotes mises en cache utilisées par le TTS.",
@@ -464,10 +387,6 @@
     }
   },
   "table": {
-    "headers": {
-      "command": "Commande",
-      "description": "Description"
-    },
     "categories": {
       "ttsGeneral": "Général",
       "engineModeControl": "Contrôle du Moteur et Mode (Modérateur Uniquement)",
@@ -478,19 +397,6 @@
       "directTTS": "TTS Direct",
       "emoteDescriptions": "Gestion des Descriptions d'Emotes (Modérateurs uniquement)"
     }
-  },
-  "music": {
-    "title": "Commandes de Génération de Musique",
-    "prefixTip": "Toutes les commandes de génération de musique sont préfixées avec <span class=\"inline-code\">!music</span>",
-    "exampleTip": "Par exemple : <span class=\"inline-code\">!music 90s soulful house</span>",
-    "expandTip": "Cliquez sur n'importe quelle ligne de commande ci-dessous pour développer et voir les détails d'utilisation.",
-    "commandsTitle": "Commandes de Génération de Musique",
-    "tableCommand": "Commande",
-    "tableDescription": "Description",
-    "labelPermission": "Permission :",
-    "labelNotes": "Remarques :",
-    "labelUsage": "Utilisation :",
-    "labelDescription": "Description :"
   },
   "voices": {
     "title": "Voix",
@@ -525,8 +431,6 @@
     "settingBitsDesc": "Exiger un minimum de bits pour les messages TTS",
     "settingChannelPointsTitle": "Points de Canal → TTS :",
     "settingChannelPointsDesc": "Créer et configurer une récompense personnalisée de Points de Canal (voir section ci-dessus)",
-    "settingMusicTitle": "Génération de Musique :",
-    "settingMusicDesc": "Activer/désactiver la musique, définir les permissions, exiger des bits",
     "settingIgnoreTitle": "Listes d'Ignorés :",
     "settingIgnoreDesc": "Gérer les listes d'ignorés TTS et musique avec interface d'ajout/suppression",
     "settingVoiceTitle": "Paramètres de Voix par Défaut :",
@@ -558,7 +462,14 @@
     "obsImportantTitle": "Important :",
     "obsImportantDesc": "Assurez-vous que la source n'est pas muette dans votre mixeur audio et que le volume est réglé de manière appropriée.",
     "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
+    "voiceCalibrationTitle": "Calibrage des voix",
+    "voiceCalibrationIntro": "Certaines voix sont naturellement plus fortes ou plus faibles que d'autres. Le calibrage des voix vous permet de définir des niveaux de volume précis pour chaque voix, afin de garantir une expérience audio homogène sur tout votre stream.",
+    "voiceCalibrationFeature1": "<strong>Volume par voix :</strong> Sélectionnez une voix et attribuez-lui un multiplicateur de volume personnalisé (de 0,1x à 10,0x). <em>(Attention : les valeurs supérieures à 1,0 peuvent être très fortes)</em>",
+    "voiceCalibrationFeature2": "<strong>Application automatique :</strong> Lorsqu'un utilisateur choisit une voix calibrée via <span class=\"inline-code\">!myvoice</span>, le volume personnalisé est appliqué automatiquement.",
+    "voiceCalibrationFeature3": "<strong>Priorité :</strong> Les volumes calibrés priment sur le volume par défaut de la chaîne pour cette voix précise.",
+    "settingCalibrationTitle": "Calibrage des voix :",
+    "settingCalibrationDesc": "Définissez des volumes spécifiques pour certaines voix afin de normaliser les niveaux audio"
   },
   "troubleshooting": {
     "title": "Dépannage",
@@ -589,11 +500,6 @@
     "step2": "La description est mise en cache de manière permanente, elle ne doit donc être générée qu'une seule fois.",
     "step3": "Les utilisations ultérieures du même emote utilisent la description mise en cache instantanément, sans aucun traitement IA.",
     "managementTitle": "Gestion des Descriptions",
-    "managementText": "Les modérateurs peuvent utiliser la commande <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir manuellement les descriptions d'emotes. Consultez la section <a href=\"#tts-commands\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> dans le tableau des commandes ci-dessus pour plus de détails."
-  },
-  "ui": {
-    "languageSelector": "Langue",
-    "mod": "Modérateur",
-    "opensInNewTab": "(s'ouvre dans un nouvel onglet)"
+    "managementText": "Les modérateurs peuvent utiliser la commande <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir manuellement les descriptions d'emotes. Consultez la section <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> dans le tableau des commandes ci-dessus pour plus de détails."
   }
 }

@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "skipToContent": "メインコンテンツへスキップ",
+    "mainNav": "メイン",
+    "home": "ホーム",
+    "chatSageDocs": "WildcatSage ドキュメント",
+    "wildcatTtsDocs": "WildcatTTS ドキュメント",
+    "chatOverlayDocs": "Chat Overlay ドキュメント",
+    "contact": "お問い合わせ",
+    "toggleNavLabel": "ナビゲーションの切り替え",
+    "homeLink": "Wildcat.chat ホーム"
+  },
+  "ui": {
+    "languageSelector": "言語",
+    "opensInNewTab": "(新しいタブで開きます)",
+    "mod": "モデレーター"
+  },
+  "page": {
+    "footer": "© 2026 Wildcat.chat. 全著作権所有。",
+    "lastUpdated": "最終更新"
+  },
+  "table": {
+    "headers": {
+      "command": "コマンド",
+      "description": "説明"
+    }
+  }
+}

@@ -2,28 +2,11 @@
   "meta": {
     "title": "Bot Commands"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Skip to main content",
-    "mainNav": "Main",
-    "home": "Home",
-    "chatSageDocs": "WildcatSage Docs",
-    "wildcatTtsDocs": "WildcatTTS Docs",
-    "contact": "Contact",
-    "toggleNavLabel": "Toggle navigation",
-    "homeLink": "Wildcat.chat home"
-  },
   "page": {
     "title": "WildcatSage Bot Commands",
-    "expandTip": "Click any command row below to expand and see usage details.",
-    "lastUpdated": "Last updated",
-    "footer": "© 2026 Wildcat.chat. All rights reserved."
+    "expandTip": "Click any command row below to expand and see usage details."
   },
   "table": {
-    "headers": {
-      "command": "Command",
-      "description": "Description"
-    },
     "categories": {
       "general": "General",
       "customCommands": "Custom Commands",
@@ -37,8 +20,7 @@
       "name": "!ask / !sage",
       "description": "Ask Sage a question. Uses search intelligently.",
       "usage": {
-        "question": "!ask <your question>",
-        "analyzeQuestion": "!game analyze <your question>"
+        "question": "!ask <your question>"
       }
     },
     "search": {
@@ -50,23 +32,14 @@
     },
     "game": {
       "name": "!game",
-      "description": "Provides researched information about the game currently being played. Add \"analyze\" to use AI image recognition on the stream (uses Twitch thumbnail that updates every 5 minutes).",
-      "usage": {
-        "analyzeText": "Analyzes stream visuals with AI",
-        "questionText": "Answers specific gameplay questions",
-        "analyzeQuestionText": "Analyzes visuals and answers question",
-        "question": "!game <your question>",
-        "analyzeQuestion": "!game analyze <your question>"
-      }
+      "description": "Provides researched information about the game currently being played. Add \"analyze\" to use AI image recognition on the stream (uses Twitch thumbnail that updates every 5 minutes)."
     },
     "translate": {
       "name": "!translate",
       "description": "Manage automatic message translation for users.",
       "usage": {
         "lang": "!translate <lang>",
-        "stop": "!translate stop",
-        "modUser": "!translate <lang|stop> [user]",
-        "modAll": "!translate stop all"
+        "modUser": "!translate <lang|stop> [user]"
       }
     },
     "help": {
@@ -77,7 +50,6 @@
       }
     },
     "lurk": {
-      "name": "!lurk",
       "description": "Let the chat know you are lurking. Provide an optional reason for a custom send-off."
     },
     "quote": {
@@ -274,8 +246,6 @@
         "status": "Shows current auto-chat mode, frequency, and categories",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "Sets auto-chat frequency (off disables periodic messages only)",
-        "freqCmd": "!auto config frequency:<minutes>",
-        "freq": "Sets minimum gap between auto messages (minutes)",
         "greetingsCmd": "!auto config greetings:<on|off>",
         "greetings": "Enable/disable stream start/end greetings",
         "followsCmd": "!auto config follows:<on|off>",
@@ -289,13 +259,10 @@
         "questionsCmd": "!auto config questions:<on|off>",
         "questions": "Enable/disable engagement questions",
         "adsCmd": "!auto config ads:<on|off>",
-        "ads": "Enable/disable ad break notifications",
-        "multiCmd": "!auto config frequency:<minutes> greetings:<on|off> facts:<on|off> questions:<on|off>",
-        "multi": "Set multiple options at once"
+        "ads": "Enable/disable ad break notifications"
       }
     },
     "disable": {
-      "name": "!disable",
       "description": "Disables a command in this channel.",
       "usage": {
         "lurk": "Disables the !lurk command",
@@ -303,21 +270,14 @@
       }
     },
     "enable": {
-      "name": "!enable",
       "description": "Enables a previously disabled command in this channel.",
       "usage": {
         "trivia": "Enables the !trivia command"
       }
     },
     "ping": {
-      "name": "!ping",
       "description": "Checks if the bot is responsive. Responds with Pong!"
     }
-  },
-  "ui": {
-    "languageSelector": "Language",
-    "mod": "Mod",
-    "opensInNewTab": "(opens in a new tab)"
   },
   "sidebar": {
     "generalCommands": "General Commands",

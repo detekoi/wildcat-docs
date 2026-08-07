@@ -11,17 +11,13 @@
   /* Typography */
   --font-primary: 'Atkinson Hyperlegible Next', sans-serif;
   --font-code: 'Atkinson Hyperlegible Mono', monospace;
-  --font-mascot: 'Cabin Condensed', sans-serif;
-  --font-carousel: var(--font-mascot);
 
   /* Colors - Post-Industrial Light Mode (Default) */
   --color-background: #f4f4f4;
   --color-text: #050505;
-  --color-secondary: #e0e0e0;
   --color-border: #cccccc;
   --color-card-bg: #ffffff;
   --color-active-light: #f0f0f0;
-  --color-active-dark: #000000;
   --color-accent: #9b4d96; /* Purple matching chatvibes */
   /* Used as a *background* under --color-text. #666666 gave only 3.55:1
      against the near-black light-mode text; #8a8a8a gives 5.9:1. */
@@ -32,7 +28,6 @@
   --color-grid-line: #e0e0e0;
   --color-text-bg: rgba(255, 255, 255, 0.85);
 
-
   /* Spacing */
   --spacing-unit: 8px;
   --spacing-small: var(--spacing-unit);
@@ -40,8 +35,6 @@
   --spacing-large: calc(var(--spacing-unit) * 8);
 
   /* Typography Scale - Massive for Post-Industrial */
-  --font-size-huge: 8rem;
-  --font-size-large: 4rem;
   --font-size-medium: 2rem;
   --font-size-regular: 1rem;
   --font-size-small: 0.875rem;
@@ -49,7 +42,6 @@
   /* Shadow and Transform Variables - Hard, High-Contrast */
   --shadow-size-default: 4px;
   --shadow-size-hover: 6px;
-  --shadow-size-card: 8px;
   --shadow-color: rgba(0, 0, 0, 0.15);
   --shadow-color-hover: rgba(0, 0, 0, 0.25);
   --hover-transform: translate(-2px, -2px);
@@ -197,9 +189,6 @@ main ol {
 .bot-card p,
 .bot-card ul,
 .bot-card ol,
-.project p,
-.project ul,
-.project ol,
 .dropdown-details p,
 .dropdown-details ul,
 .dropdown-details ol,
@@ -209,7 +198,6 @@ main ol {
   background-color: transparent;
   padding: 0;
 }
-
 
 /* =====================================================
    NAVIGATION BAR (Top)
@@ -249,6 +237,17 @@ main ol {
   color: var(--color-accent);
   transform: none;
   box-shadow: none;
+}
+
+/* The brand kaomoji. This lived in an inline <style> block on all four pages,
+   alongside a bare `.wildcat-svg` rule that never applied: every .wildcat-svg
+   element sits inside .site-navbar-brand, so this 0,2,0 selector always beat
+   the 0,1,0 one. `flex-shrink` was the single declaration that survived there. */
+.site-navbar-brand .wildcat-svg {
+  width: 5rem;
+  height: 5rem;
+  fill: var(--color-text);
+  flex-shrink: 0;
 }
 
 .site-navbar-menu {
@@ -634,9 +633,7 @@ a[target="_blank"]:focus::after {
 /* Exclude specific links that don't need arrows (buttons, images, brands, overlays) */
 a[target="_blank"]:has(img)::after,
 a[target="_blank"]:has(svg)::after,
-a[target="_blank"].twitch-button::after,
-a[target="_blank"].site-navbar-brand::after,
-a[target="_blank"].no-arrow::after {
+a[target="_blank"].site-navbar-brand::after {
   display: none !important;
 }
 
@@ -676,11 +673,9 @@ footer a:active {
   :root {
     --color-background: #050505;
     --color-text: #ffffff;
-    --color-secondary: #333333;
     --color-border: #333333;
     --color-card-bg: #0a0a0a;
     --color-active-light: #1a1a1a;
-    --color-active-dark: #ffffff;
     --color-accent: #b47fb4; /* Purple matching chatvibes */
     --color-accent-grey: #666666; /* 5.7:1 under white text */
     --color-text-muted: #a0a0a0;
@@ -691,7 +686,6 @@ footer a:active {
     --shadow-color-hover: rgba(255, 255, 255, 0.3);
   }
 
-
 }
 
 /* =====================================================
@@ -699,8 +693,6 @@ footer a:active {
    ===================================================== */
 @media (max-width: 768px) {
   :root {
-    --font-size-huge: 3.5rem;
-    --font-size-large: 2rem;
   }
 
   main {

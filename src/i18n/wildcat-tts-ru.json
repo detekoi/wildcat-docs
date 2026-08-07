@@ -2,24 +2,12 @@
   "meta": {
     "title": "Документация бота WildcatTTS для синтеза речи"
   },
-  "nav": {
-    "toggleNav": "☰",
-    "skipToContent": "Перейти к основному содержанию",
-    "mainNav": "Основная",
-    "home": "Главная",
-    "chatSageDocs": "Документация WildcatSage",
-    "wildcatTtsDocs": "Документация WildcatTTS",
-    "contact": "Контакты",
-    "toggleNavLabel": "Переключить навигацию",
-    "homeLink": "Главная Wildcat.chat"
-  },
   "sidebar": {
     "wildcatTts": "WildcatTTS",
     "toggleSidebar": "Переключить боковую панель",
     "commands": "Команды",
     "toggleSubmenu": "Переключить подменю",
     "ttsCommands": "Команды синтеза речи",
-    "musicCommands": "Команды генерации музыки",
     "voices": "Голоса",
     "languageBoost": "Языковое усиление",
     "webDashboard": "Веб-панель управления",
@@ -29,8 +17,7 @@
   "page": {
     "title": "Документация бота WildcatTTS для синтеза речи",
     "inviteNote": "WildcatTTS в настоящее время работает по приглашениям.",
-    "requestAccess": "Запросить доступ",
-    "footer": "© 2026 Wildcat.chat. Все права защищены."
+    "requestAccess": "Запросить доступ"
   },
   "commands": {
     "title": "Команды",
@@ -49,9 +36,7 @@
       "everyone": "Все",
       "everyoneOwnPreference": "Все (для их собственного предпочтения)",
       "moderator": "Модератор",
-      "streamerBroadcaster": "Стример/Вещатель (через веб-панель управления)",
-      "alias": "Псевдоним:",
-      "aliases": "Псевдонимы:"
+      "streamerBroadcaster": "Стример/Вещатель (через веб-панель управления)"
     },
     "ttsStatus": {
       "name": "!tts status",
@@ -150,7 +135,8 @@
       "usage": {
         "everyone": "!tts permission everyone",
         "mods": "!tts permission mods",
-        "status": "!tts permission"
+        "status": "!tts permission",
+        "vip": "!tts permission vip"
       }
     },
     "ttsBits": {
@@ -285,8 +271,6 @@
     },
     "ttsIgnore": {
       "name": "!tts ignore <username>\n!tts ignore add <username>",
-      "usageDescUser": "Для любого пользователя: Добавьте себя в список игнорирования синтеза речи для канала. Ваши сообщения не будут произноситься.",
-      "usageDescMod": "Для модераторов или вещателя: Добавьте указанного пользователя Twitch в список игнорирования синтеза речи для канала.",
       "permission": "Все (чтобы добавить себя), Модератор (чтобы добавить других)",
       "usage": {
         "self": "!tts ignore вашеимя",
@@ -384,67 +368,6 @@
       },
       "description": "Немедленно ставит предоставленное сообщение в очередь для TTS. Работает как в режиме all, так и в режиме command. Использует предпочтения запрашивающего пользователя (или значения по умолчанию канала) для голоса, высоты тона, скорости и эмоции."
     },
-    "musicPrompt": {
-      "name": "!music <prompt>",
-      "description": "Генерирует короткий фрагмент музыки на основе вашей подсказки.",
-      "permission": "Настраивается модераторами (по умолчанию: все, может быть только модераторы). Пользователь не должен находиться в списке игнорирования музыки."
-    },
-    "musicOnOff": {
-      "name": "!music on\n!music off",
-      "description": "(Только модератор) Включает или отключает функцию генерации музыки для канала.",
-      "permission": "Модератор"
-    },
-    "musicMode": {
-      "name": "!music mode <all|mods>",
-      "description": "(Только мод) Устанавливает, кто может использовать команду !music <prompt>.\nall: Все могут генерировать музыку.\nmods: Только модераторы и вещатель могут генерировать музыку.",
-      "permission": "Модератор"
-    },
-    "musicBits": {
-      "name": "!music bits [on|off|min <amount>]",
-      "description": "(Только модератор) Настраивает Bits-для-Музыки. При включении пользователи должны сделать cheer со своим запросом для генерации музыки.",
-      "permission": "Модератор",
-      "statusNote": "(отображает текущий статус)",
-      "optionOn": "<span class=\"inline-code\">on</span>: Включает режим Bits для музыки.",
-      "optionOff": "<span class=\"inline-code\">off</span>: Отключает режим Bits для музыки.",
-      "optionMin": "<span class=\"inline-code\">min &lt;amount&gt;</span>: Устанавливает минимальное количество требуемых Bits (например, <span class=\"inline-code\">min 100</span>)."
-    },
-    "musicHelp": {
-      "name": "!music help",
-      "description": "Предоставляет список всех подкоманд генерации музыки и их использования.",
-      "permission": "Все",
-      "notes": "Перечисляет все подкоманды <span class=\"inline-code\">!music</span> и их использование, аналогично этой документации."
-    },
-    "musicStatus": {
-      "name": "!music status",
-      "description": "Показывает текущий статус генерации музыки (включено/отключено, режим, длина очереди).",
-      "permission": "Все"
-    },
-    "musicClear": {
-      "name": "!music clear",
-      "description": "(Только модератор) Очищает все ожидающие запросы генерации музыки из очереди.",
-      "permission": "Модератор"
-    },
-    "musicIgnore": {
-      "name": "!music ignore <username>\n!music ignore add <username>",
-      "permission": "Все (для добавления себя), Модератор (для добавления других)",
-      "descriptionUser": "<strong>Для любого пользователя:</strong> Добавьте <em>себя</em> в список игнорирования музыки. Ваши запросы <span class=\"inline-code\">!music &lt;prompt&gt;</span> будут проигнорированы.",
-      "descriptionMod": "<strong>Для модераторов или вещателя:</strong> Добавьте <em>любого указанного пользователя Twitch</em> в список игнорирования музыки.",
-      "usageSelf": "!music ignore вашеимя (если вы хотите игнорировать себя)",
-      "usageMod": "!music ignore add ДругойПользователь (если вы модератор/вещатель)",
-      "usageSelfNote": "(если вы хотите игнорировать себя)",
-      "usageModNote": "(если вы мод/вещатель)"
-    },
-    "musicIgnoreDel": {
-      "name": "!music ignore del <username>\n(Псевдонимы: delete, rem, remove)",
-      "description": "(Только модератор) Удаляет указанного пользователя Twitch из списка игнорирования музыки.",
-      "aliases": "(Псевдонимы: delete, rem, remove)",
-      "permission": "Модератор"
-    },
-    "musicIgnored": {
-      "name": "!music ignored",
-      "description": "(Только модератор) Список всех пользователей в списке игнорирования музыки для канала.",
-      "permission": "Модератор"
-    },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
       "description": "Просмотр, повторная генерация или ручная установка кешированных описаний эмоутов, используемых TTS.",
@@ -464,10 +387,6 @@
     }
   },
   "table": {
-    "headers": {
-      "command": "Команда",
-      "description": "Описание"
-    },
     "categories": {
       "ttsGeneral": "Общие",
       "engineModeControl": "Управление движком и режимом (только модератор)",
@@ -478,19 +397,6 @@
       "directTTS": "Прямой синтез речи",
       "emoteDescriptions": "Управление описаниями эмоутов (только модераторы)"
     }
-  },
-  "music": {
-    "title": "Команды генерации музыки",
-    "prefixTip": "Все команды генерации музыки имеют префикс <span class=\"inline-code\">!music</span>",
-    "exampleTip": "Например: <span class=\"inline-code\">!music 90s soulful house</span>",
-    "expandTip": "Щелкните любую строку команды ниже, чтобы развернуть и увидеть детали использования.",
-    "commandsTitle": "Команды генерации музыки",
-    "tableCommand": "Команда",
-    "tableDescription": "Описание",
-    "labelPermission": "Разрешение:",
-    "labelNotes": "Примечания:",
-    "labelUsage": "Использование:",
-    "labelDescription": "Описание:"
   },
   "voices": {
     "title": "Голоса",
@@ -526,8 +432,6 @@
     "settingBitsDesc": "Требовать минимум bits для сообщений TTS",
     "settingChannelPointsTitle": "Точки канала → TTS:",
     "settingChannelPointsDesc": "Создать и настроить пользовательское вознаграждение за точки канала (см. раздел выше)",
-    "settingMusicTitle": "Генерация музыки:",
-    "settingMusicDesc": "Включить/отключить музыку, установить разрешения, требовать bits",
     "settingIgnoreTitle": "Списки игнорирования:",
     "settingIgnoreDesc": "Управление списками игнорирования TTS и музыки с интерфейсом добавления/удаления",
     "settingVoiceTitle": "Настройки голоса по умолчанию:",
@@ -558,7 +462,14 @@
     "obsImportantTitle": "Важно:",
     "obsImportantDesc": "Убедитесь, что источник не отключен в вашем аудиомикшере и громкость установлена соответствующим образом.",
     "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID"
+    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
+    "voiceCalibrationTitle": "Калибровка голосов",
+    "voiceCalibrationIntro": "Некоторые голоса от природы звучат громче или тише других. Функция калибровки голосов позволяет задать определённый уровень громкости для отдельных голосов, обеспечивая единообразное звучание на всей трансляции.",
+    "voiceCalibrationFeature1": "<strong>Громкость для каждого голоса:</strong> Выберите любой голос и задайте для него собственный множитель громкости (от 0,1x до 10,0x). <em>(Внимание: значения выше 1,0 могут звучать слишком громко)</em>",
+    "voiceCalibrationFeature2": "<strong>Автоприменение:</strong> Когда пользователь выбирает откалиброванный голос с помощью <span class=\"inline-code\">!myvoice</span>, заданная громкость применяется автоматически.",
+    "voiceCalibrationFeature3": "<strong>Приоритет:</strong> Откалиброванная громкость имеет приоритет над стандартной громкостью канала для этого голоса.",
+    "settingCalibrationTitle": "Калибровка голосов:",
+    "settingCalibrationDesc": "Задайте отдельную громкость для конкретных голосов, чтобы выровнять уровни звука"
   },
   "troubleshooting": {
     "title": "Устранение неполадок",
@@ -589,11 +500,6 @@
     "step2": "Описание кешируется навсегда, поэтому его нужно генерировать только один раз.",
     "step3": "Последующие использования того же эмоута мгновенно используют кешированное описание без какой-либо обработки ИИ.",
     "managementTitle": "Управление описаниями",
-    "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, повторной генерации или ручной установки описаний эмоутов. Подробности см. в разделе <a href=\"#tts-commands\" class=\"default-link-style\">Управление описаниями эмоутов</a> в таблице команд выше."
-  },
-  "ui": {
-    "languageSelector": "Язык",
-    "mod": "Модератор",
-    "opensInNewTab": "(откроется в новой вкладке)"
+    "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, повторной генерации или ручной установки описаний эмоутов. Подробности см. в разделе <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Управление описаниями эмоутов</a> в таблице команд выше."
   }
 }

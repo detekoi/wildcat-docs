@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "skipToContent": "Vai al contenuto principale",
+    "mainNav": "Principale",
+    "home": "Home",
+    "chatSageDocs": "Docs WildcatSage",
+    "wildcatTtsDocs": "Docs WildcatTTS",
+    "chatOverlayDocs": "Docs Chat Overlay",
+    "contact": "Contatti",
+    "toggleNavLabel": "Attiva/disattiva navigazione",
+    "homeLink": "Home di Wildcat.chat"
+  },
+  "ui": {
+    "languageSelector": "Lingua",
+    "opensInNewTab": "(si apre in una nuova scheda)",
+    "mod": "Moderatore"
+  },
+  "page": {
+    "footer": "© 2026 Wildcat.chat. Tutti i diritti riservati.",
+    "lastUpdated": "Ultimo aggiornamento"
+  },
+  "table": {
+    "headers": {
+      "command": "Comando",
+      "description": "Descrizione"
+    }
+  }
+}
