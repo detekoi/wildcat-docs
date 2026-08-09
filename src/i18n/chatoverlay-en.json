@@ -13,6 +13,7 @@
     "animations": "Display Modes & Animations",
     "config": "Config Panel",
     "scenes": "Chat Scene Creator",
+    "urlParameters": "URL Parameters",
     "obsSetup": "OBS Setup",
     "toggleSidebar": "Toggle sidebar"
   },
@@ -143,6 +144,25 @@
       "linkStep1": "Click <strong>Link Scene</strong> in the left panel.",
       "linkStep2": "Enter the sync token from your OBS URL (the alphanumeric token after <span class=\"inline-code\">sync=</span>).",
       "linkStep3": "Click <strong>Link</strong> to pull scene settings from the cloud. Linked scenes update live when you save changes on any device."
+    },
+    "urlParams": {
+      "title": "URL Parameters",
+      "desc": "The overlay URL accepts query parameters. The Chat Scene Creator adds the scene and sync parameters for you. You can add the other parameters by hand.",
+      "tableCaption": "Chat overlay URL parameters",
+      "colName": "Parameter",
+      "colEffect": "What it does",
+      "colExample": "Example",
+      "sceneEffect": "Loads a named scene. The overlay loads the scene named <span class=\"inline-code\">default</span> when you omit this parameter.",
+      "syncEffect": "Links the browser source to a cloud-synced scene. Read <strong>Automatic Live Sync</strong> for more information.",
+      "demoEffect": "Shows sample chat messages. The overlay does not connect to Twitch or YouTube in this mode.",
+      "debugEffect": "Shows status and diagnostic messages on screen. The overlay hides these messages by default.",
+      "debugTitle": "Diagnostic Messages",
+      "debugDesc": "The overlay hides all status messages by default. Connection notices and error text stay off your stream. The parameter <span class=\"inline-code\">debug=1</span> shows these messages on top of your chat.",
+      "debugConsole": "The overlay always writes the same messages to the browser console. The console keeps a record of them even when the URL has no <span class=\"inline-code\">debug</span> parameter.",
+      "debugStatus": "The connection status for Twitch and YouTube is in the config panel. Right-click the browser source in OBS and select <strong>Interact</strong> to see it. The status shows <strong>Connected</strong>, <strong>Connecting</strong>, <strong>Reconnecting</strong>, or <strong>Disconnected</strong>.",
+      "debugTip": "Remove <span class=\"inline-code\">debug=1</span> from the URL before you stream. The messages are visible to your viewers.",
+      "demoTitle": "Demo Mode",
+      "demoDesc": "The parameter <span class=\"inline-code\">demo=1</span> shows sample chat messages in a loop. The overlay does not connect to a chat platform, and it hides the connection prompt. The Chat Scene Creator uses this mode for the live preview."
     },
     "obsSetup": {
       "title": "OBS Setup Instructions",

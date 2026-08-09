@@ -13,6 +13,7 @@
     "animations": "表示モードとアニメーション",
     "config": "設定パネル",
     "scenes": "チャットシーンクリエイター",
+    "urlParameters": "URLパラメータ",
     "obsSetup": "OBSの設定",
     "toggleSidebar": "サイドバーの切り替え"
   },
@@ -143,6 +144,25 @@
       "linkStep1": "左パネルの<strong>シーンをリンク</strong>をクリックします。",
       "linkStep2": "OBSのURLから同期トークン（<span class=\"inline-code\">sync=</span>の後ろの英数字トークン）を入力します。",
       "linkStep3": "<strong>リンク</strong>をクリックしてクラウドからシーン設定を取得します。リンクされたシーンは、いずれかのデバイスで変更を保存するとリアルタイムで更新されます。"
+    },
+    "urlParams": {
+      "title": "URLパラメータ",
+      "desc": "オーバーレイのURLはクエリパラメータを受け付けます。Chat Scene Creatorがsceneとsyncのパラメータを自動的に追加します。その他のパラメータは手動で追加できます。",
+      "tableCaption": "チャットオーバーレイのURLパラメータ",
+      "colName": "パラメータ",
+      "colEffect": "機能",
+      "colExample": "例",
+      "sceneEffect": "指定した名前のシーンを読み込みます。このパラメータを省略すると、オーバーレイは<span class=\"inline-code\">default</span>という名前のシーンを読み込みます。",
+      "syncEffect": "ブラウザソースをクラウド同期されたシーンにリンクします。詳しくは<strong>自動ライブ同期</strong>をお読みください。",
+      "demoEffect": "サンプルのチャットメッセージを表示します。このモードではTwitchやYouTubeに接続しません。",
+      "debugEffect": "ステータスメッセージと診断メッセージを画面に表示します。オーバーレイは既定でこれらのメッセージを非表示にします。",
+      "debugTitle": "診断メッセージ",
+      "debugDesc": "オーバーレイは既定ですべてのステータスメッセージを非表示にします。接続の通知やエラーテキストは配信に表示されません。<span class=\"inline-code\">debug=1</span>パラメータを付けると、これらのメッセージがチャットの上に表示されます。",
+      "debugConsole": "オーバーレイは同じメッセージを常にブラウザのコンソールに書き込みます。URLに<span class=\"inline-code\">debug</span>パラメータがない場合でも、コンソールには記録が残ります。",
+      "debugStatus": "TwitchとYouTubeの接続状態は設定パネルにあります。OBSでブラウザソースを右クリックし、<strong>相互作用</strong>を選択すると確認できます。状態は<strong>接続済み</strong>、<strong>接続中</strong>、<strong>再接続中</strong>、<strong>切断</strong>のいずれかを表示します。",
+      "debugTip": "配信を始める前にURLから<span class=\"inline-code\">debug=1</span>を削除してください。これらのメッセージは視聴者にも見えます。",
+      "demoTitle": "デモモード",
+      "demoDesc": "<span class=\"inline-code\">demo=1</span>パラメータは、サンプルのチャットメッセージを繰り返し表示します。オーバーレイはチャットプラットフォームに接続せず、接続プロンプトも非表示にします。Chat Scene Creatorはライブプレビューにこのモードを使用します。"
     },
     "obsSetup": {
       "title": "OBSセットアップ手順",

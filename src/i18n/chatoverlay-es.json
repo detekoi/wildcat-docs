@@ -13,6 +13,7 @@
     "animations": "Modos de visualización y animaciones",
     "config": "Panel de Configuración",
     "scenes": "Creador de Escenas de Chat",
+    "urlParameters": "Parámetros de URL",
     "obsSetup": "Configuración de OBS",
     "toggleSidebar": "Alternar barra lateral"
   },
@@ -143,6 +144,25 @@
       "linkStep1": "Haz clic en <strong>Vincular escena</strong> en el panel izquierdo.",
       "linkStep2": "Introduce el token de sincronización de tu URL de OBS (el token alfanumérico después de <span class=\"inline-code\">sync=</span>).",
       "linkStep3": "Haz clic en <strong>Vincular</strong> para obtener los ajustes de la escena desde la nube. Las escenas vinculadas se actualizan en vivo al guardar cambios en cualquier dispositivo."
+    },
+    "urlParams": {
+      "title": "Parámetros de URL",
+      "desc": "La URL de la superposición acepta parámetros de consulta. El Creador de escenas de chat agrega los parámetros scene y sync por usted. Puede agregar los demás parámetros manualmente.",
+      "tableCaption": "Parámetros de URL de la superposición de chat",
+      "colName": "Parámetro",
+      "colEffect": "Qué hace",
+      "colExample": "Ejemplo",
+      "sceneEffect": "Carga una escena con nombre. La superposición carga la escena llamada <span class=\"inline-code\">default</span> cuando omite este parámetro.",
+      "syncEffect": "Vincula la fuente de navegador con una escena sincronizada en la nube. Lea <strong>Sincronización automática en vivo</strong> para más información.",
+      "demoEffect": "Muestra mensajes de chat de ejemplo. La superposición no se conecta a Twitch ni a YouTube en este modo.",
+      "debugEffect": "Muestra mensajes de estado y de diagnóstico en pantalla. La superposición oculta estos mensajes de forma predeterminada.",
+      "debugTitle": "Mensajes de diagnóstico",
+      "debugDesc": "La superposición oculta todos los mensajes de estado de forma predeterminada. Los avisos de conexión y los textos de error no aparecen en su transmisión. El parámetro <span class=\"inline-code\">debug=1</span> muestra estos mensajes sobre su chat.",
+      "debugConsole": "La superposición siempre escribe los mismos mensajes en la consola del navegador. La consola conserva un registro de ellos incluso cuando la URL no tiene el parámetro <span class=\"inline-code\">debug</span>.",
+      "debugStatus": "El estado de conexión de Twitch y YouTube está en el panel de configuración. En OBS, haga clic con el botón derecho en la fuente de navegador y seleccione <strong>Interactuar</strong> para verlo. El estado muestra <strong>Conectado</strong>, <strong>Conectando</strong>, <strong>Reconectando</strong> o <strong>Desconectado</strong>.",
+      "debugTip": "Quite <span class=\"inline-code\">debug=1</span> de la URL antes de transmitir. Los mensajes son visibles para sus espectadores.",
+      "demoTitle": "Modo de demostración",
+      "demoDesc": "El parámetro <span class=\"inline-code\">demo=1</span> muestra mensajes de chat de ejemplo en bucle. La superposición no se conecta a ninguna plataforma de chat y oculta el aviso de conexión. El Creador de escenas de chat usa este modo para la vista previa en vivo."
     },
     "obsSetup": {
       "title": "Instrucciones de configuración de OBS",

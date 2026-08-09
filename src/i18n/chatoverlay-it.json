@@ -13,6 +13,7 @@
     "animations": "Modalità di visualizzazione e Animazioni",
     "config": "Pannello di Configurazione",
     "scenes": "Creatore di Scene Chat",
+    "urlParameters": "Parametri URL",
     "obsSetup": "Configurazione OBS",
     "toggleSidebar": "Attiva/disattiva barra laterale"
   },
@@ -143,6 +144,25 @@
       "linkStep1": "Fai clic su <strong>Collega scena</strong> nel pannello di sinistra.",
       "linkStep2": "Inserisci il token di sincronizzazione dal tuo URL di OBS (il token alfanumerico dopo <span class=\"inline-code\">sync=</span>).",
       "linkStep3": "Fai clic su <strong>Collega</strong> per scaricare le impostazioni della scena dal cloud. Le scene collegate si aggiornano in tempo reale quando salvi le modifiche su qualsiasi dispositivo."
+    },
+    "urlParams": {
+      "title": "Parametri URL",
+      "desc": "L'URL dell'overlay accetta parametri di query. Il Chat Scene Creator aggiunge i parametri scene e sync per te. Puoi aggiungere gli altri parametri manualmente.",
+      "tableCaption": "Parametri URL dell'overlay chat",
+      "colName": "Parametro",
+      "colEffect": "Funzione",
+      "colExample": "Esempio",
+      "sceneEffect": "Carica una scena con nome. Senza questo parametro, l'overlay carica la scena chiamata <span class=\"inline-code\">default</span>.",
+      "syncEffect": "Collega la sorgente browser a una scena sincronizzata nel cloud. Leggi <strong>Sincronizzazione automatica in tempo reale</strong> per maggiori informazioni.",
+      "demoEffect": "Mostra messaggi di chat di esempio. In questa modalità l'overlay non si connette a Twitch né a YouTube.",
+      "debugEffect": "Mostra messaggi di stato e di diagnostica sullo schermo. L'overlay nasconde questi messaggi per impostazione predefinita.",
+      "debugTitle": "Messaggi di diagnostica",
+      "debugDesc": "L'overlay nasconde tutti i messaggi di stato per impostazione predefinita. Gli avvisi di connessione e i testi di errore non compaiono nel tuo streaming. Il parametro <span class=\"inline-code\">debug=1</span> mostra questi messaggi sopra la tua chat.",
+      "debugConsole": "L'overlay scrive sempre gli stessi messaggi nella console del browser. La console ne conserva una registrazione anche quando l'URL non ha il parametro <span class=\"inline-code\">debug</span>.",
+      "debugStatus": "Lo stato della connessione per Twitch e YouTube si trova nel pannello di configurazione. In OBS, fai clic con il tasto destro sulla sorgente browser e seleziona <strong>Interagisci</strong> per vederlo. Lo stato mostra <strong>Connesso</strong>, <strong>Connessione</strong>, <strong>Riconnessione</strong> o <strong>Disconnesso</strong>.",
+      "debugTip": "Rimuovi <span class=\"inline-code\">debug=1</span> dall'URL prima di trasmettere. I messaggi sono visibili ai tuoi spettatori.",
+      "demoTitle": "Modalità demo",
+      "demoDesc": "Il parametro <span class=\"inline-code\">demo=1</span> mostra messaggi di chat di esempio in ciclo. L'overlay non si connette a nessuna piattaforma di chat e nasconde la richiesta di connessione. Il Chat Scene Creator usa questa modalità per l'anteprima in tempo reale."
     },
     "obsSetup": {
       "title": "Istruzioni per l installazione su OBS",
