@@ -12,7 +12,9 @@
     "languageBoost": "Potenziamento Lingua",
     "webDashboard": "Web Dashboard",
     "troubleshooting": "Risoluzione Problemi",
-    "emoteDescriptions": "Descrizioni Emote"
+    "emoteDescriptions": "Descrizioni Emote",
+    "pronunciation": "Dizionario di Pronuncia",
+    "profanityFilter": "Filtro Volgarità"
   },
   "page": {
     "title": "Documentazione Bot WildcatTTS",
@@ -384,6 +386,42 @@
       "regenerateNote": "(cancella la cache; l'IA ri-descriverà al prossimo utilizzo)",
       "setNote": "(imposta una descrizione personalizzata — solo emote del canale)",
       "permission": "Moderatore (imposta/rigenera solo per le emote di questo canale)"
+    },
+    "ttsPronounce": {
+      "name": "!tts pronounce <word> = <how to say it>",
+      "description": "Controlla il modo in cui TTS pronuncia una parola specifica o un'abbreviazione.",
+      "usage": {
+        "add": "!tts pronounce wcat = wildcat",
+        "list": "!tts pronounce list",
+        "remove": "!tts pronounce remove wcat",
+        "off": "!tts pronounce off lfg",
+        "test": "!tts pronounce test ngl that was wild",
+        "defaults": "!tts pronounce defaults"
+      },
+      "addNote": "(aggiunge o modifica una voce)",
+      "listNote": "(mostra le voci per questo canale)",
+      "removeNote": "(rimuove una voce)",
+      "offNote": "(disattiva una voce predefinita)",
+      "testNote": "(mostra il risultato senza pronunciarlo)",
+      "defaultsNote": "(elenca le voci predefinite)",
+      "addDesc": "Aggiunge una parola e il testo che TTS pronuncerà al suo posto. La tua voce sostituisce una voce predefinita con la stessa parola.",
+      "removeDesc": "Rimuove la tua voce. Se una voce predefinita ha la stessa parola, quella voce predefinita torna attiva.",
+      "offDesc": "Disattiva una voce predefinita. Per riattivarla, usa il sottocomando remove.",
+      "testDesc": "Mostra cosa direbbe TTS per un determinato testo. Il bot non pronuncia il testo.",
+      "clearDesc": "Il broadcaster può usare !tts pronounce clear per rimuovere tutte le voci del canale. Le voci predefinite rimangono attive.",
+      "notes": "La parola non fa distinzione tra maiuscole e minuscole e deve corrispondere a una parola intera. Un canale può avere un massimo di 100 voci. Una parola può contenere fino a 40 caratteri. Una forma parlata può contenere fino a 120 caratteri. Puoi modificare queste voci anche nella Web Dashboard.",
+      "permission": "Moderatore (solo broadcaster per clear)"
+    },
+    "ttsProfanity": {
+      "name": "!tts profanity <on|off|status>",
+      "description": "Attiva o disattiva il filtro volgarità, che sostituisce le parole volgari con termini più attenuati.",
+      "usage": {
+        "on": "!tts profanity on",
+        "off": "!tts profanity off",
+        "status": "!tts profanity status"
+      },
+      "statusNote": "(mostra lo stato, la lingua e il numero di parole)",
+      "notes": "Il filtro è disattivato finché non lo attivi. Sostituisce le parole volgari con termini più attenuati. Non rimuove il messaggio. L'elenco delle parole vietate nella Web Dashboard rimuove l'intero messaggio."
     }
   },
   "table": {
@@ -395,7 +433,8 @@
       "userEventPreferences": "Preferenze Utente e Evento",
       "channelDefaults": "Configurazione Predefinita per Canale (Solo Moderatore)",
       "directTTS": "TTS Diretto",
-      "emoteDescriptions": "Gestione Descrizioni Emote (Solo Moderatori)"
+      "emoteDescriptions": "Gestione Descrizioni Emote (Solo Moderatori)",
+      "pronunciationFiltering": "Pronuncia e Filtro (Solo Moderatore)"
     }
   },
   "voices": {
@@ -501,5 +540,38 @@
     "step3": "Gli utilizzi successivi della stessa emote utilizzano la descrizione memorizzata nella cache istantaneamente, senza alcuna elaborazione IA.",
     "managementTitle": "Gestione delle Descrizioni",
     "managementText": "I moderatori possono utilizzare il comando <span class=\"inline-code\">!tts emote</span> per visualizzare, rigenerare o impostare manualmente le descrizioni delle emote. Consulta la sezione <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestione Descrizioni Emote</a> nella tabella dei comandi sopra per i dettagli."
+  },
+  "pronunciation": {
+    "title": "Dizionario di Pronuncia",
+    "introText": "La chat utilizza molte abbreviazioni che TTS legge lettera per lettera. Il dizionario di pronuncia le trasforma in parole complete. Ad esempio, TTS pronuncia ngl come \"not gonna lie\" e glhf come \"good luck have fun\". WildcatTTS dispone di un elenco integrato di circa 70 abbreviazioni comuni. Puoi anche aggiungere le tue.",
+    "howItWorksTitle": "Come Funziona",
+    "rule1": "La parola non fa distinzione tra maiuscole e minuscole. Una voce per lfg corrisponde anche a LFG.",
+    "rule2": "Una voce deve corrispondere a una parola intera. Una voce per fr non modifica la parola \"friend\".",
+    "rule3": "Il dizionario non modifica il testo presente all'interno di un link.",
+    "rule4": "Il dizionario modifica ogni parola una sola volta. TTS non rilegge il nuovo testo alla ricerca di ulteriori corrispondenze.",
+    "customTitle": "Le Tue Voci",
+    "customText": "I moderatori possono aggiungere voci con il comando !tts pronounce. Puoi anche aggiungere voci nella scheda Dizionario di Pronuncia nella Web Dashboard. Le tue voci sono utili per i nomi dei canali, i titoli dei giochi o qualsiasi parola che TTS pronuncia in modo errato.",
+    "custom1": "La tua voce sostituisce una voce predefinita con la stessa parola.",
+    "custom2": "Per disattivare una voce predefinita, usa !tts pronounce off <parola>. Per riattivarla, usa !tts pronounce remove <parola>.",
+    "custom3": "Un canale può contenere un massimo di 100 voci.",
+    "switchTitle": "Come Disattivarlo",
+    "switchText": "Il dizionario è attivo per tutti i canali. Per disattivarlo, disattiva il controllo \"Espandi acronimi della chat\" nella Web Dashboard. TTS leggerà quindi ogni abbreviazione lettera per lettera.",
+    "lolTip": "TTS pronuncia già lol come \"el oh el\". Questo è il comportamento standard e non è presente alcuna voce di dizionario a riguardo."
+  },
+  "profanityFilter": {
+    "title": "Filtro Volgarità",
+    "introText": "Il filtro volgarità sostituisce le parole volgari con termini più attenuati prima che TTS le pronunci. Ad esempio, TTS pronuncia \"what the fuck\" come \"what the freak\". Il filtro è disattivato finché un moderatore non lo attiva.",
+    "startTitle": "Come Attivarlo",
+    "startText": "Usa !tts profanity on in chat o attiva il controllo \"Filtro Volgarità\" nella Web Dashboard. Usa !tts profanity status per visualizzare lo stato, la lingua e il numero di parole nell'elenco.",
+    "behaviorTitle": "Cosa Fa",
+    "behavior1": "Il filtro sostituisce una parola volgare con un termine più attenuato. Non rimuove il messaggio e non emette alcun segnale acustico.",
+    "behavior2": "Il filtro sostituisce un insulto discriminatorio (slur) con la parola \"slur\". Questa sostituzione impedisce la pronuncia del termine offensivo nell'audio.",
+    "behavior3": "Il filtro si applica anche alle abbreviazioni del dizionario di pronuncia. Quando il filtro è attivo, TTS pronuncia lfg come \"let's freaking go\".",
+    "behavior4": "La parola deve corrispondere esattamente e per intero. Il filtro non modifica la parola \"class\".",
+    "languageTitle": "Lingue",
+    "languageText": "Il filtro dispone di elenchi di parole per tutte le 40 lingue supportate da Potenziamento Lingua. Il filtro utilizza l'elenco della lingua del tuo canale. Se uno spettatore seleziona una lingua diversa per i propri messaggi, il filtro utilizzerà entrambi gli elenchi. Il filtro include sempre l'elenco in inglese, poiché il dizionario di pronuncia è in inglese.",
+    "languageAutoText": "Se il tuo Potenziamento Lingua è impostato su \"Automatico\", il filtro utilizzerà l'elenco in inglese. Il bot non è in grado di identificare la lingua di ogni singolo messaggio.",
+    "languageCoverageText": "L'elenco in inglese è il più completo. Gli elenchi per le altre lingue sono più ridotti. Gli insulti discriminatori sono presenti solo nell'elenco in inglese.",
+    "bannedWordsTip": "Il filtro volgarità non è la stessa cosa dell'elenco delle parole vietate. Le parole vietate rimuovono l'intero messaggio. Il filtro volgarità legge il messaggio, ma con parole più moderate."
   }
 }

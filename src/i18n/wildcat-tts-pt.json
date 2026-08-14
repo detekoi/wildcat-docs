@@ -12,7 +12,9 @@
     "languageBoost": "Aumento de Idioma",
     "webDashboard": "Painel Web",
     "troubleshooting": "Solução de Problemas",
-    "emoteDescriptions": "Descrições de Emotes"
+    "emoteDescriptions": "Descrições de Emotes",
+    "pronunciation": "Dicionário de Pronúncia",
+    "profanityFilter": "Filtro de Palavrões"
   },
   "page": {
     "title": "Documentação do Bot TTS WildcatTTS",
@@ -384,6 +386,42 @@
       "regenerateNote": "(limpa o cache; a IA redescreverá no próximo uso)",
       "setNote": "(define uma descrição personalizada — apenas emotes do canal)",
       "permission": "Moderador (definir/regenerar apenas para os emotes deste canal)"
+    },
+    "ttsPronounce": {
+      "name": "!tts pronounce <word> = <how to say it>",
+      "description": "Controla como o TTS pronuncia uma palavra específica ou abreviação.",
+      "usage": {
+        "add": "!tts pronounce wcat = wildcat",
+        "list": "!tts pronounce list",
+        "remove": "!tts pronounce remove wcat",
+        "off": "!tts pronounce off lfg",
+        "test": "!tts pronounce test ngl that was wild",
+        "defaults": "!tts pronounce defaults"
+      },
+      "addNote": "(adiciona ou altera uma entrada)",
+      "listNote": "(mostra as entradas para este canal)",
+      "removeNote": "(remove uma entrada)",
+      "offNote": "(desativa uma entrada integrada)",
+      "testNote": "(mostra o resultado, mas não o pronuncia)",
+      "defaultsNote": "(lista as entradas integradas)",
+      "addDesc": "Adiciona uma palavra e o texto que o TTS falará em seu lugar. Sua entrada substitui uma entrada integrada com a mesma palavra.",
+      "removeDesc": "Remove sua entrada. Se uma entrada integrada tiver a mesma palavra, essa entrada integrada torna-se ativa novamente.",
+      "offDesc": "Desativa uma entrada integrada. Para ativá-la novamente, use o subcomando remove.",
+      "testDesc": "Mostra o que o TTS dirá para determinado texto. O bot não fala o texto.",
+      "clearDesc": "O transmissor pode usar !tts pronounce clear para remover todas as entradas do canal. As entradas integradas permanecem ativas.",
+      "notes": "A palavra não diferencia maiúsculas de minúsculas e deve corresponder a uma palavra inteira. Um canal pode ter no máximo 100 entradas. Uma palavra pode ter no máximo 40 caracteres. Uma forma falada pode ter no máximo 120 caracteres. Você também pode alterar essas entradas no Painel Web.",
+      "permission": "Moderador (apenas transmissor para clear)"
+    },
+    "ttsProfanity": {
+      "name": "!tts profanity <on|off|status>",
+      "description": "Ativa ou desativa o filtro de palavrões, que substitui palavras rudes por palavras mais suaves.",
+      "usage": {
+        "on": "!tts profanity on",
+        "off": "!tts profanity off",
+        "status": "!tts profanity status"
+      },
+      "statusNote": "(mostra o estado, o idioma e a quantidade de palavras)",
+      "notes": "O filtro fica desativado até que você o ative. Ele substitui palavras rudes por palavras mais suaves. Ele não remove a mensagem. A lista de palavras banidas no Painel Web remove a mensagem completa."
     }
   },
   "table": {
@@ -395,7 +433,8 @@
       "userEventPreferences": "Preferências de Usuário e Evento",
       "channelDefaults": "Configuração de Padrões em Nível de Canal (Apenas Moderador)",
       "directTTS": "TTS Direto",
-      "emoteDescriptions": "Gerenciamento de Descrições de Emotes (Apenas Moderadores)"
+      "emoteDescriptions": "Gerenciamento de Descrições de Emotes (Apenas Moderadores)",
+      "pronunciationFiltering": "Pronúncia e Filtragem (Apenas Moderador)"
     }
   },
   "voices": {
@@ -501,5 +540,38 @@
     "step3": "Usos subsequentes do mesmo emote utilizam a descrição em cache instantaneamente, sem nenhum processamento de IA.",
     "managementTitle": "Gerenciamento de Descrições",
     "managementText": "Os moderadores podem usar o comando <span class=\"inline-code\">!tts emote</span> para visualizar, regenerar ou definir manualmente as descrições de emotes. Consulte a seção <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gerenciamento de Descrições de Emotes</a> na tabela de comandos acima para mais detalhes."
+  },
+  "pronunciation": {
+    "title": "Dicionário de Pronúncia",
+    "introText": "O chat usa muitas abreviações que o TTS lê letra por letra. O dicionário de pronúncia as transforma em palavras. Por exemplo, o TTS pronuncia ngl como \"not gonna lie\" e glhf como \"good luck have fun\". O WildcatTTS tem uma lista integrada de cerca de 70 abreviações comuns. Você também pode adicionar as suas próprias.",
+    "howItWorksTitle": "Como Funciona",
+    "rule1": "A palavra não diferencia maiúsculas de minúsculas. Uma entrada para lfg também corresponde a LFG.",
+    "rule2": "Uma entrada deve corresponder a uma palavra inteira. Uma entrada para fr não altera a palavra \"friend\".",
+    "rule3": "O dicionário não altera o texto dentro de um link.",
+    "rule4": "O dicionário altera cada palavra apenas uma vez. O TTS não relê o novo texto para procurar mais correspondências.",
+    "customTitle": "Suas Próprias Entradas",
+    "customText": "Os moderadores podem adicionar entradas com o comando !tts pronounce. Você também pode adicionar entradas no cartão Dicionário de Pronúncia no Painel Web. Suas próprias entradas são úteis para nomes de canais, nomes de jogos ou qualquer palavra que o TTS pronuncie incorretamente.",
+    "custom1": "Sua entrada substitui uma entrada integrada que tenha a mesma palavra.",
+    "custom2": "Para desativar uma entrada integrada, use !tts pronounce off <palavra>. Para reativá-la, use !tts pronounce remove <palavra>.",
+    "custom3": "Um canal pode ter no máximo 100 entradas.",
+    "switchTitle": "Como Desativar",
+    "switchText": "O dicionário está ativado para todos os canais. Para desativá-lo, defina o controle \"Expandir Acrônimos do Chat\" como desativado no Painel Web. O TTS passará a falar cada abreviação letra por letra.",
+    "lolTip": "O TTS já pronuncia lol como \"el oh el\". Este é o comportamento padrão e não há entrada de dicionário para isso."
+  },
+  "profanityFilter": {
+    "title": "Filtro de Palavrões",
+    "introText": "O filtro de palavrões substitui palavras rudes por palavras mais suaves antes que o TTS as pronuncie. Por exemplo, o TTS pronuncia \"what the fuck\" como \"what the freak\". O filtro fica desativado até que um moderador o ative.",
+    "startTitle": "Como Ativar",
+    "startText": "Use !tts profanity on no chat ou ative o controle \"Filtro de Palavrões\" no Painel Web. Use !tts profanity status para ver o estado, o idioma e a quantidade de palavras na lista.",
+    "behaviorTitle": "O Que Ele Faz",
+    "behavior1": "O filtro substitui uma palavra rude por uma palavra mais suave. Ele não remove a mensagem e não emite um bipe.",
+    "behavior2": "O filtro substitui uma ofensa discriminatória (slur) pela palavra \"slur\". Essa substituição mantém o significado ofensivo fora do áudio.",
+    "behavior3": "O filtro também se aplica a abreviações do dicionário de pronúncia. Quando o filtro está ativado, o TTS pronuncia lfg como \"let's freaking go\".",
+    "behavior4": "A palavra deve corresponder por completo. O filtro não altera a palavra \"class\".",
+    "languageTitle": "Idiomas",
+    "languageText": "O filtro possui listas de palavras para todos os 40 idiomas compatíveis com o Aumento de Idioma. O filtro usa a lista correspondente ao idioma do seu canal. Se um espectador selecionar um idioma diferente para suas próprias mensagens, o filtro usará ambas as listas. O filtro sempre inclui a lista em inglês, porque o dicionário de pronúncia está em inglês.",
+    "languageAutoText": "Se o seu Aumento de Idioma estiver em \"Automático\", o filtro usará a lista em inglês. O bot não consegue identificar o idioma de cada mensagem individual.",
+    "languageCoverageText": "A lista em inglês é a maior. As listas para outros idiomas são menores. Ofensas discriminatórias estão presentes apenas na lista em inglês.",
+    "bannedWordsTip": "O filtro de palavrões não é a mesma coisa que a lista de palavras banidas. Palavras banidas removem a mensagem completa. O filtro de palavrões fala a mensagem, mas com palavras atenuadas."
   }
 }

@@ -12,7 +12,9 @@
     "languageBoost": "Sprachunterstützung",
     "webDashboard": "Web Dashboard",
     "troubleshooting": "Fehlerbehebung",
-    "emoteDescriptions": "Emote-Beschreibungen"
+    "emoteDescriptions": "Emote-Beschreibungen",
+    "pronunciation": "Aussprache-Wörterbuch",
+    "profanityFilter": "Profanitätsfilter"
   },
   "page": {
     "title": "WildcatTTS Bot Dokumentation",
@@ -384,6 +386,42 @@
       "regenerateNote": "(löscht den Cache; KI beschreibt bei nächster Nutzung neu)",
       "setNote": "(setzt eine benutzerdefinierte Beschreibung — nur Kanal-Emotes)",
       "permission": "Moderator (Setzen/Regenerieren nur für die Emotes dieses Kanals)"
+    },
+    "ttsPronounce": {
+      "name": "!tts pronounce <word> = <how to say it>",
+      "description": "Steuert, wie TTS ein bestimmtes Wort oder eine Kurzform ausspricht.",
+      "usage": {
+        "add": "!tts pronounce wcat = wildcat",
+        "list": "!tts pronounce list",
+        "remove": "!tts pronounce remove wcat",
+        "off": "!tts pronounce off lfg",
+        "test": "!tts pronounce test ngl that was wild",
+        "defaults": "!tts pronounce defaults"
+      },
+      "addNote": "(fügt einen Eintrag hinzu oder ändert ihn)",
+      "listNote": "(zeigt die Einträge für diesen Kanal)",
+      "removeNote": "(entfernt einen Eintrag)",
+      "offNote": "(deaktiviert einen integrierten Eintrag)",
+      "testNote": "(zeigt das Ergebnis an, spricht es aber nicht aus)",
+      "defaultsNote": "(listet die integrierten Einträge auf)",
+      "addDesc": "Füge ein Wort und den Text hinzu, den TTS stattdessen ausspricht. Dein Eintrag ersetzt einen integrierten Eintrag mit demselben Wort.",
+      "removeDesc": "Entferne deinen Eintrag. Wenn ein integrierter Eintrag dasselbe Wort hat, wird dieser wieder aktiv.",
+      "offDesc": "Deaktiviere einen integrierten Eintrag. Verwende den remove-Unterbefehl, um ihn wieder zu aktivieren.",
+      "testDesc": "Zeige an, was TTS für einen Text sagen würde. Der Bot spricht den Text nicht aus.",
+      "clearDesc": "Der Broadcaster kann mit !tts pronounce clear alle Einträge für den Kanal entfernen. Integrierte Einträge bleiben aktiv.",
+      "notes": "Das Wort unterscheidet nicht zwischen Groß- und Kleinschreibung und muss mit einem vollständigen Wort übereinstimmen. Ein Kanal kann maximal 100 Einträge haben. Ein Wort darf maximal 40 Zeichen lang sein. Eine gesprochene Form darf maximal 120 Zeichen lang sein. Du kannst diese Einträge auch im Web Dashboard ändern.",
+      "permission": "Moderator (nur Broadcaster für clear)"
+    },
+    "ttsProfanity": {
+      "name": "!tts profanity <on|off|status>",
+      "description": "Aktiviert oder deaktiviert den Profanitätsfilter, der anstößige Wörter durch mildere Wörter ersetzt.",
+      "usage": {
+        "on": "!tts profanity on",
+        "off": "!tts profanity off",
+        "status": "!tts profanity status"
+      },
+      "statusNote": "(zeigt den Status, die Sprache und die Anzahl der Wörter an)",
+      "notes": "Der Filter ist deaktiviert, bis du ihn aktivierst. Er ersetzt anstößige Wörter durch mildere Wörter. Er entfernt die Nachricht nicht. Die Liste verbotener Wörter im Web Dashboard entfernt die gesamte Nachricht."
     }
   },
   "table": {
@@ -395,7 +433,8 @@
       "userEventPreferences": "Benutzer- & Ereignisvoreinstellungen",
       "channelDefaults": "Kanal-weite Standard-Konfiguration (Nur Moderator)",
       "directTTS": "Direkte TTS",
-      "emoteDescriptions": "Emote-Beschreibungsverwaltung (nur Moderatoren)"
+      "emoteDescriptions": "Emote-Beschreibungsverwaltung (nur Moderatoren)",
+      "pronunciationFiltering": "Aussprache & Filterung (Nur Moderator)"
     }
   },
   "voices": {
@@ -501,5 +540,38 @@
     "step3": "Nachfolgende Verwendungen desselben Emotes nutzen die gespeicherte Beschreibung sofort, ohne KI-Verarbeitung.",
     "managementTitle": "Beschreibungen verwalten",
     "managementText": "Moderatoren können den Befehl <span class=\"inline-code\">!tts emote</span> verwenden, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder manuell zu setzen. Weitere Details finden Sie im Abschnitt <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Emote-Beschreibungsverwaltung</a> in der Befehlstabelle oben."
+  },
+  "pronunciation": {
+    "title": "Aussprache-Wörterbuch",
+    "introText": "Im Chat werden viele Abkürzungen verwendet, die TTS Buchstabe für Buchstabe vorliest. Das Aussprache-Wörterbuch wandelt sie in Wörter um. Zum Beispiel spricht TTS ngl als „not gonna lie\" und glhf als „good luck have fun\" aus. WildcatTTS verfügt über eine integrierte Liste von etwa 70 gängigen Abkürzungen. Du kannst auch deine eigenen hinzufügen.",
+    "howItWorksTitle": "So funktioniert es",
+    "rule1": "Das Wort unterscheidet nicht zwischen Groß- und Kleinschreibung. Ein Eintrag für lfg passt auch auf LFG.",
+    "rule2": "Ein Eintrag muss mit einem vollständigen Wort übereinstimmen. Ein Eintrag für fr ändert nicht das Wort „friend\".",
+    "rule3": "Das Wörterbuch ändert keinen Text in Links.",
+    "rule4": "Das Wörterbuch ändert jedes Wort einmal. TTS liest den neuen Text nicht erneut, um nach weiteren Einträgen zu suchen.",
+    "customTitle": "Eigene Einträge",
+    "customText": "Moderatoren können Einträge mit dem Befehl !tts pronounce hinzufügen. Du kannst Einträge auch auf der Karte „Aussprache-Wörterbuch\" im Web Dashboard hinzufügen. Eigene Einträge sind nützlich für Kanalnamen, Spielnamen oder jedes Wort, das TTS falsch ausspricht.",
+    "custom1": "Dein Eintrag ersetzt einen integrierten Eintrag mit demselben Wort.",
+    "custom2": "Um einen integrierten Eintrag zu deaktivieren, verwende !tts pronounce off <Wort>. Um ihn wieder zu aktivieren, verwende !tts pronounce remove <Wort>.",
+    "custom3": "Ein Kanal kann maximal 100 Einträge haben.",
+    "switchTitle": "Deaktivieren des Wörterbuchs",
+    "switchText": "Das Wörterbuch ist für alle Kanäle standardmäßig aktiviert. Um es zu deaktivieren, setze die Option „Chat-Akronyme erweitern\" im Web Dashboard auf Aus. TTS liest dann jede Abkürzung Buchstabe für Buchstabe vor.",
+    "lolTip": "TTS spricht lol bereits als „el oh el\" aus. Dies ist das übliche Verhalten und es gibt keinen Wörterbucheintrag dafür."
+  },
+  "profanityFilter": {
+    "title": "Profanitätsfilter",
+    "introText": "Der Profanitätsfilter ersetzt anstößige Wörter durch mildere Wörter, bevor TTS sie ausspricht. Zum Beispiel spricht TTS „what the fuck\" als „what the freak\" aus. Der Filter ist deaktiviert, bis ein Moderator ihn aktiviert.",
+    "startTitle": "Aktivierung des Filters",
+    "startText": "Verwende !tts profanity on im Chat oder schalte die Option „Profanitätsfilter\" im Web Dashboard ein. Verwende !tts profanity status, um den Status, die Sprache und die Anzahl der Wörter in der Liste anzuzeigen.",
+    "behaviorTitle": "Funktionsweise",
+    "behavior1": "Der Filter ersetzt ein anstößiges Wort durch ein milderes Wort. Er entfernt die Nachricht nicht und erzeugt keinen Piepton.",
+    "behavior2": "Der Filter ersetzt eine Beleidigung (Slur) durch das Wort „slur\". Dieser Ersatz hält die Bedeutung der Beleidigung aus der Audioausgabe heraus.",
+    "behavior3": "Der Filter gilt auch für Kurzformen aus dem Aussprache-Wörterbuch. Wenn der Filter aktiviert ist, spricht TTS lfg als „let's freaking go\" aus.",
+    "behavior4": "Ein Wort muss vollständig übereinstimmen. Der Filter ändert nicht das Wort „class\".",
+    "languageTitle": "Sprachen",
+    "languageText": "Der Filter verfügt über Wortlisten für alle 40 Sprachen, die von Sprachunterstützung unterstützt werden. Der Filter verwendet die Liste für deine Kanalsprache. Wenn ein Zuschauer eine andere Sprache für seine eigenen Nachrichten wählt, verwendet der Filter beide Listen. Der Filter enthält immer die englische Liste, da das Aussprache-Wörterbuch auf Englisch ist.",
+    "languageAutoText": "Wenn deine Sprachunterstützung auf „Automatisch\" eingestellt ist, verwendet der Filter die englische Liste. Der Bot kann die Sprache jeder einzelnen Nachricht nicht erkennen.",
+    "languageCoverageText": "Die englische Liste ist die umfangreichste. Die Listen für andere Sprachen sind kleiner. Beleidigungen (Slurs) sind nur in der englischen Liste enthalten.",
+    "bannedWordsTip": "Der Profanitätsfilter ist nicht dasselbe wie die Liste verbotener Wörter. Die Liste verbotener Wörter entfernt die gesamte Nachricht. Der Profanitätsfilter liest die Nachricht vor, jedoch mit milderen Wörtern."
   }
 }

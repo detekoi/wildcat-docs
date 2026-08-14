@@ -12,7 +12,9 @@
     "languageBoost": "言語ブースト",
     "webDashboard": "Webダッシュボード",
     "troubleshooting": "トラブルシューティング",
-    "emoteDescriptions": "エモート説明"
+    "emoteDescriptions": "エモート説明",
+    "pronunciation": "発音辞書",
+    "profanityFilter": "不適切表現フィルター"
   },
   "page": {
     "title": "WildcatTTS ボット ドキュメント",
@@ -384,6 +386,42 @@
       "regenerateNote": "（キャッシュをクリア；次回使用時にAIが再度説明）",
       "setNote": "（カスタム説明を設定 — チャンネルエモートのみ）",
       "permission": "モデレーター（このチャンネルのエモートのみ設定/再生成可能）"
+    },
+    "ttsPronounce": {
+      "name": "!tts pronounce <word> = <how to say it>",
+      "description": "TTSが特定の単語や略語をどのように読み上げるかを設定します。",
+      "usage": {
+        "add": "!tts pronounce wcat = wildcat",
+        "list": "!tts pronounce list",
+        "remove": "!tts pronounce remove wcat",
+        "off": "!tts pronounce off lfg",
+        "test": "!tts pronounce test ngl that was wild",
+        "defaults": "!tts pronounce defaults"
+      },
+      "addNote": "（エントリを追加または変更）",
+      "listNote": "（このチャンネルのエントリを表示）",
+      "removeNote": "（エントリを削除）",
+      "offNote": "（組み込みエントリを無効化）",
+      "testNote": "（結果を表示するが読み上げない）",
+      "defaultsNote": "（組み込みエントリを一覧表示）",
+      "addDesc": "単語と、TTSが代わりに読み上げるテキストを追加します。設定したエントリは同じ単語の組み込みエントリを上書きします。",
+      "removeDesc": "カスタムエントリを削除します。同じ単語の組み込みエントリが存在する場合、その組み込みエントリが再び有効になります。",
+      "offDesc": "組み込みエントリを無効化します。再度有効にするには、removeサブコマンドを使用します。",
+      "testDesc": "指定したテキストに対してTTSがどのように読み上げるかを表示します。ボットは音声を再生しません。",
+      "clearDesc": "配信者は !tts pronounce clear を使用してチャンネルのすべてのカスタムエントリを削除できます。組み込みエントリは有効なまま維持されます。",
+      "notes": "単語は大文字・小文字を区別せず、完全な単語として一致する必要があります。1チャンネルあたり最大100エントリまで登録可能です。単語は最大40文字、読み上げテキストは最大120文字までです。これらのエントリはWebダッシュボードでも変更できます。",
+      "permission": "モデレーター（clearは配信者のみ）"
+    },
+    "ttsProfanity": {
+      "name": "!tts profanity <on|off|status>",
+      "description": "下品な単語をより穏やかな言葉に置き換える不適切表現フィルターのオン/オフを切り替えます。",
+      "usage": {
+        "on": "!tts profanity on",
+        "off": "!tts profanity off",
+        "status": "!tts profanity status"
+      },
+      "statusNote": "（状態、言語、登録単語数を表示）",
+      "notes": "フィルターは有効化するまでオフになっています。下品な単語を穏やかな言葉に置き換えます。メッセージ全体は削除されません。メッセージ全体を削除したい場合は、Webダッシュボードの禁止ワードリストを使用してください。"
     }
   },
   "table": {
@@ -395,7 +433,8 @@
       "userEventPreferences": "ユーザーとイベント設定",
       "channelDefaults": "チャンネル全体のデフォルト設定(モデレーターのみ)",
       "directTTS": "直接TTS",
-      "emoteDescriptions": "エモート説明管理（モデレーターのみ）"
+      "emoteDescriptions": "エモート説明管理（モデレーターのみ）",
+      "pronunciationFiltering": "発音とフィルター（モデレーターのみ）"
     }
   },
   "voices": {
@@ -501,5 +540,38 @@
     "step3": "同じエモートの後続使用は、AI処理なしにキャッシュ済み説明を即座に使用します。",
     "managementTitle": "説明の管理",
     "managementText": "モデレーターは<span class=\"inline-code\">!tts emote</span>コマンドを使用して、エモート説明を表示、再生成、または手動で設定できます。詳細については、上記のコマンドテーブルの<a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a>セクションを参照してください。"
+  },
+  "pronunciation": {
+    "title": "発音辞書",
+    "introText": "チャットでは多くの略語が使われますが、TTSは通常それらを1文字ずつ読み上げます。発音辞書はこれらを自然な単語に変換します。例えば、TTSは ngl を「not gonna lie」、glhf を「good luck have fun」として読み上げます。WildcatTTSには約70個の一般的な略語が組み込まれています。また、独自のカスタムエントリを追加することもできます。",
+    "howItWorksTitle": "仕組み",
+    "rule1": "単語は大文字・小文字を区別しません。lfg のエントリは LFG にも一致します。",
+    "rule2": "エントリは単語全体に一致する必要があります。fr のエントリが \"friend\" という単語を変更することはありません。",
+    "rule3": "辞書はリンク（URL）内のテキストを変更しません。",
+    "rule4": "辞書は各単語を1回だけ変換します。TTSは変換後の新しいテキストを再度読み直して追加のエントリを探すことはありません。",
+    "customTitle": "カスタムエントリ",
+    "customText": "モデレーターは !tts pronounce コマンドでエントリを追加できます。また、Webダッシュボードの発音辞書カードから追加することも可能です。カスタムエントリは、チャンネル名、ゲームタイトル、TTSが正しく発音できない単語などに便利です。",
+    "custom1": "カスタムエントリは、同じ単語を持つ組み込みエントリを上書きします。",
+    "custom2": "組み込みエントリを無効化するには !tts pronounce off <単語> を使用します。再び有効にするには !tts pronounce remove <単語> を使用します。",
+    "custom3": "1チャンネルあたり最大100件のエントリを登録できます。",
+    "switchTitle": "辞書を無効にする方法",
+    "switchText": "発音辞書はすべてのチャンネルで有効になっています。無効にするには、Webダッシュボードで「チャット頭字語を展開」コントロールをオフに設定します。TTSは各略語を1文字ずつ読み上げるようになります。",
+    "lolTip": "TTSはすでに lol を「el oh el」として読み上げます。これは標準の挙動であり、辞書エントリはありません。"
+  },
+  "profanityFilter": {
+    "title": "不適切表現フィルター",
+    "introText": "不適切表現フィルターは、TTSが読み上げる前に下品な単語をより穏やかな言葉に置き換えます。例えば、TTSは「what the fuck」を「what the freak」として読み上げます。フィルターはモデレーターが有効化するまでオフになっています。",
+    "startTitle": "開始方法",
+    "startText": "チャットで !tts profanity on を使用するか、Webダッシュボードで「不適切表現フィルター」コントロールをオンに設定します。!tts profanity status で状態、言語、リスト内の単語数を確認できます。",
+    "behaviorTitle": "動作内容",
+    "behavior1": "フィルターは下品な単語を穏やかな言葉に置き換えます。メッセージは削除されず、ビープ音も鳴りません。",
+    "behavior2": "フィルターは差別用語（スラ―）を単語「slur」に置き換えます。この置換により、差別用語の意味が音声に含まれるのを防ぎます。",
+    "behavior3": "フィルターは発音辞書の略語にも適用されます。フィルターがオンのとき、TTSは lfg を「let's freaking go」として読み上げます。",
+    "behavior4": "単語は完全一致する必要があります。フィルターが「class」という単語を変更することはありません。",
+    "languageTitle": "対応言語",
+    "languageText": "フィルターには言語ブーストがサポートする40言語すべての単語リストがあります。フィルターはチャンネル言語のリストを使用します。視聴者が自身のメッセージに別の言語を選択した場合、フィルターは両方のリストを使用します。発音辞書が英語であるため、フィルターには常に英語リストが含まれます。",
+    "languageAutoText": "言語ブーストが「自動」の場合、フィルターは英語リストを使用します。ボットは各メッセージの言語を個別に識別することはできません。",
+    "languageCoverageText": "英語のリストが最も充実しています。他の言語のリストは比較的小規模です。差別用語は英語リストのみに含まれています。",
+    "bannedWordsTip": "不適切表現フィルターは禁止ワードリストとは異なります。禁止ワードはメッセージ全体を削除します。不適切表現フィルターはメッセージを読み上げますが、穏やかな言葉に置き換えます。"
   }
 }

@@ -15,6 +15,8 @@ sidebarLinks:
   - { href: "#voices",             key: sidebar.voices,             label: "Voices" }
   - { href: "#language-boost",     key: sidebar.languageBoost,      label: "Language Boost" }
   - { href: "#emote-descriptions", key: sidebar.emoteDescriptions,  label: "Emote Descriptions" }
+  - { href: "#pronunciation",      key: sidebar.pronunciation,      label: "Pronunciation Dictionary" }
+  - { href: "#profanity-filter",   key: sidebar.profanityFilter,    label: "Profanity Filter" }
   - { href: "#web-dashboard",      key: sidebar.webDashboard,       label: "Web Dashboard" }
   - { href: "#troubleshooting",    key: sidebar.troubleshooting,    label: "Troubleshooting" }
 extraScripts:
@@ -925,6 +927,105 @@ extraScripts:
             </tr>
         </tbody>
 
+        <tbody>
+            <tr class="category-row">
+                <td colspan="2" ><h2 class="category-heading" id="cat-pronunciationFiltering" data-i18n="table.categories.pronunciationFiltering">Pronunciation &amp; Filtering (Moderator Only)
+                </h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsPronounce.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts pronounce
+                    &lt;word&gt; = &lt;how to say it&gt;</td>
+                <td data-i18n-key="commands.ttsPronounce.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPronounce"><span class="description-text">Controls
+                        how TTS says a specific word or short form.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsPronounce" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <ul>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsPronounce.usage.add">!tts pronounce wcat = wildcat</code>
+                            <span data-i18n="commands.ttsPronounce.addNote">(adds or changes an entry)</span>
+                        </li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsPronounce.usage.list">!tts pronounce list</code>
+                            <span data-i18n="commands.ttsPronounce.listNote">(shows the entries for this channel)</span>
+                        </li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsPronounce.usage.remove">!tts pronounce remove wcat</code>
+                            <span data-i18n="commands.ttsPronounce.removeNote">(removes an entry)</span>
+                        </li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsPronounce.usage.off">!tts pronounce off lfg</code>
+                            <span data-i18n="commands.ttsPronounce.offNote">(stops a built-in entry)</span>
+                        </li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsPronounce.usage.test">!tts pronounce test ngl that was wild</code>
+                            <span data-i18n="commands.ttsPronounce.testNote">(shows the result, but does not speak it)</span>
+                        </li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsPronounce.usage.defaults">!tts pronounce defaults</code>
+                            <span data-i18n="commands.ttsPronounce.defaultsNote">(lists the built-in entries)</span>
+                        </li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.description">Description:</strong></p>
+                    <ul>
+                        <li data-i18n="commands.ttsPronounce.addDesc">Add a word and the text that TTS speaks
+                            in its place. Your entry replaces a built-in entry with the same word.</li>
+                        <li data-i18n="commands.ttsPronounce.removeDesc">Remove your entry. If a built-in entry
+                            has the same word, that built-in entry becomes active again.</li>
+                        <li data-i18n="commands.ttsPronounce.offDesc">Stop a built-in entry. To start it again,
+                            use the remove sub-command.</li>
+                        <li data-i18n="commands.ttsPronounce.testDesc">Show what TTS will say for some text.
+                            The bot does not speak the text.</li>
+                        <li data-i18n="commands.ttsPronounce.clearDesc">The broadcaster can use <span
+                                class="inline-code">!tts pronounce clear</span> to remove all entries for the
+                            channel. Built-in entries stay active.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsPronounce.notes">The word is not case-sensitive, and it must
+                            match a full word. A channel can have a maximum of 100 entries. A word can have a
+                            maximum of 40 characters. A spoken form can have a maximum of 120 characters. You
+                            can also change these entries in the Web Dashboard.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.ttsPronounce.permission">Moderator (broadcaster only for clear)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsProfanity.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts profanity
+                    &lt;on|off|status&gt;</td>
+                <td data-i18n-key="commands.ttsProfanity.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsProfanity"><span class="description-text">Starts
+                        or stops the profanity filter, which replaces rude words with milder
+                        words.</span><span class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsProfanity" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <ul>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsProfanity.usage.on">!tts profanity on</code></li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsProfanity.usage.off">!tts profanity off</code></li>
+                        <li><span class="mod-badge mod-badge-leading">Mod</span><code
+                                data-i18n-cmd="commands.ttsProfanity.usage.status">!tts profanity status</code>
+                            <span data-i18n="commands.ttsProfanity.statusNote">(shows the state, the language,
+                                and the number of words)</span>
+                        </li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsProfanity.notes">The filter is off until you start it. It
+                            replaces rude words with milder words. It does not remove the message. The Banned
+                            Words list in the Web Dashboard removes a full message.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+
     </table>
 </section>
 
@@ -1722,6 +1823,95 @@ extraScripts:
             class="inline-code">!tts emote</span> command to view, regenerate, or manually set emote
         descriptions. See the <a href="#cat-emoteDescriptions" class="default-link-style">Emote Description Management</a>
         section in the commands table above for details.</p>
+</section>
+
+<section id="pronunciation" class="section">
+    <h2 data-i18n="pronunciation.title">Pronunciation Dictionary</h2>
+    <p data-i18n="pronunciation.introText">Chat uses many short forms that TTS speaks one letter at a time.
+        The pronunciation dictionary changes them into words. For example, TTS speaks
+        <span class="inline-code">ngl</span> as "not gonna lie" and <span class="inline-code">glhf</span> as
+        "good luck have fun". WildcatTTS has a built-in list of about 70 common short forms. You can also add
+        your own.</p>
+
+    <h3 data-i18n="pronunciation.howItWorksTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="pronunciation.rule1">The word is not case-sensitive. An entry for
+            <span class="inline-code">lfg</span> also matches <span class="inline-code">LFG</span>.</li>
+        <li data-i18n="pronunciation.rule2">An entry must match a full word. An entry for
+            <span class="inline-code">fr</span> does not change the word "friend".</li>
+        <li data-i18n="pronunciation.rule3">The dictionary does not change text in a link.</li>
+        <li data-i18n="pronunciation.rule4">The dictionary changes each word one time. TTS does not read the
+            new text again to look for more entries.</li>
+    </ul>
+
+    <h3 data-i18n="pronunciation.customTitle">Your Own Entries</h3>
+    <p data-i18n="pronunciation.customText">Moderators can add entries with the <span class="inline-code">!tts
+            pronounce</span> command. You can also add entries in the Pronunciation Dictionary card in the Web
+        Dashboard. Your own entries are useful for channel names, game names, or any word that TTS speaks
+        incorrectly.</p>
+    <ul>
+        <li data-i18n="pronunciation.custom1">Your entry replaces a built-in entry that has the same word.</li>
+        <li data-i18n="pronunciation.custom2">To stop a built-in entry, use <span class="inline-code">!tts
+                pronounce off &lt;word&gt;</span>. To start it again, use <span class="inline-code">!tts
+                pronounce remove &lt;word&gt;</span>.</li>
+        <li data-i18n="pronunciation.custom3">A channel can have a maximum of 100 entries.</li>
+    </ul>
+
+    <h3 data-i18n="pronunciation.switchTitle">How To Stop It</h3>
+    <p data-i18n="pronunciation.switchText">The dictionary is on for all channels. To stop it, set the
+        "Expand Chat Acronyms" control to off in the Web Dashboard. TTS then speaks each short form one letter
+        at a time.</p>
+
+    <div class="expand-tip">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="pronunciation.lolTip">TTS already speaks
+                <span class="inline-code">lol</span> as "el oh el". This is the usual result, and there is no
+                dictionary entry for it.</div>
+        </div>
+    </div>
+</section>
+
+<section id="profanity-filter" class="section">
+    <h2 data-i18n="profanityFilter.title">Profanity Filter</h2>
+    <p data-i18n="profanityFilter.introText">The profanity filter replaces rude words with milder words before
+        TTS speaks them. For example, TTS speaks "what the fuck" as "what the freak". The filter is off until a
+        moderator starts it.</p>
+
+    <h3 data-i18n="profanityFilter.startTitle">How To Start It</h3>
+    <p data-i18n="profanityFilter.startText">Use <span class="inline-code">!tts profanity on</span> in chat, or
+        set the "Profanity Filter" control to on in the Web Dashboard. Use <span class="inline-code">!tts
+            profanity status</span> to see the state, the language, and the number of words in the list.</p>
+
+    <h3 data-i18n="profanityFilter.behaviorTitle">What It Does</h3>
+    <ul>
+        <li data-i18n="profanityFilter.behavior1">The filter replaces a rude word with a milder word. It does
+            not remove the message, and it does not make a bleep sound.</li>
+        <li data-i18n="profanityFilter.behavior2">The filter replaces a slur with the word "slur". This
+            replacement keeps the meaning of the slur out of the audio.</li>
+        <li data-i18n="profanityFilter.behavior3">The filter also applies to short forms from the pronunciation
+            dictionary. When the filter is on, TTS speaks <span class="inline-code">lfg</span> as "let's
+            freaking go".</li>
+        <li data-i18n="profanityFilter.behavior4">A word must match fully. The filter does not change the word
+            "class".</li>
+    </ul>
+
+    <h3 data-i18n="profanityFilter.languageTitle">Languages</h3>
+    <p data-i18n="profanityFilter.languageText">The filter has word lists for all 40 languages that Language
+        Boost supports. The filter uses the list for your channel language. If a viewer selects a different
+        language for their own messages, the filter uses both lists. The filter always includes the English
+        list, because the pronunciation dictionary is in English.</p>
+    <p data-i18n="profanityFilter.languageAutoText">If your Language Boost is "Automatic", the filter uses the
+        English list. The bot cannot identify the language of each message.</p>
+    <p data-i18n="profanityFilter.languageCoverageText">The English list is the largest. The lists for other
+        languages are smaller. Slurs are in the English list only.</p>
+
+    <div class="expand-tip">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="profanityFilter.bannedWordsTip">The profanity filter is not the same
+                as the Banned Words list. Banned Words removes the full message. The profanity filter speaks
+                the message, but with milder words.</div>
+        </div>
+    </div>
 </section>
 
 <section id="web-dashboard" class="section">

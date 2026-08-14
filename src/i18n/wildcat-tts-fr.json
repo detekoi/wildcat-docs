@@ -12,7 +12,9 @@
     "languageBoost": "Amélioration de Langue",
     "webDashboard": "Tableau de Bord Web",
     "troubleshooting": "Dépannage",
-    "emoteDescriptions": "Descriptions d'Emotes"
+    "emoteDescriptions": "Descriptions d'Emotes",
+    "pronunciation": "Dictionnaire de Prononciation",
+    "profanityFilter": "Filtre Anti-Grossièretés"
   },
   "page": {
     "title": "Documentation du Bot WildcatTTS",
@@ -384,6 +386,42 @@
       "regenerateNote": "(efface le cache ; l'IA re-décrira lors de la prochaine utilisation)",
       "setNote": "(définit une description personnalisée — emotes de la chaîne uniquement)",
       "permission": "Modérateur (définir/régénérer uniquement pour les emotes de cette chaîne)"
+    },
+    "ttsPronounce": {
+      "name": "!tts pronounce <word> = <how to say it>",
+      "description": "Contrôle la façon dont le TTS prononce un mot spécifique ou une abréviation.",
+      "usage": {
+        "add": "!tts pronounce wcat = wildcat",
+        "list": "!tts pronounce list",
+        "remove": "!tts pronounce remove wcat",
+        "off": "!tts pronounce off lfg",
+        "test": "!tts pronounce test ngl that was wild",
+        "defaults": "!tts pronounce defaults"
+      },
+      "addNote": "(ajoute ou modifie une entrée)",
+      "listNote": "(affiche les entrées pour cette chaîne)",
+      "removeNote": "(supprime une entrée)",
+      "offNote": "(désactive une entrée intégrée)",
+      "testNote": "(affiche le résultat sans le prononcer)",
+      "defaultsNote": "(liste les entrées intégrées)",
+      "addDesc": "Ajoute un mot et le texte que le TTS prononcera à sa place. Votre entrée remplace une entrée intégrée avec le même mot.",
+      "removeDesc": "Supprime votre entrée. Si une entrée intégrée a le même mot, cette entrée intégrée redevient active.",
+      "offDesc": "Désactive une entrée intégrée. Pour la réactiver, utilisez la sous-commande remove.",
+      "testDesc": "Affiche ce que le TTS dira pour un texte donné. Le bot ne prononce pas le texte.",
+      "clearDesc": "Le diffuseur peut utiliser !tts pronounce clear pour supprimer toutes les entrées de la chaîne. Les entrées intégrées restent actives.",
+      "notes": "Le mot n'est pas sensible à la casse et doit correspondre à un mot complet. Une chaîne peut avoir un maximum de 100 entrées. Un mot peut contenir jusqu'à 40 caractères. Une forme parlée peut contenir jusqu'à 120 caractères. Vous pouvez également modifier ces entrées dans le Tableau de Bord Web.",
+      "permission": "Modérateur (diffuseur uniquement pour clear)"
+    },
+    "ttsProfanity": {
+      "name": "!tts profanity <on|off|status>",
+      "description": "Active ou désactive le filtre anti-grossièretés, qui remplace les mots vulgaires par des termes plus doux.",
+      "usage": {
+        "on": "!tts profanity on",
+        "off": "!tts profanity off",
+        "status": "!tts profanity status"
+      },
+      "statusNote": "(affiche l'état, la langue et le nombre de mots)",
+      "notes": "Le filtre est désactivé jusqu'à ce que vous l'activiez. Il remplace les mots vulgaires par des termes plus doux. Il ne supprime pas le message. La liste de mots interdits dans le Tableau de Bord Web supprime le message entier."
     }
   },
   "table": {
@@ -395,7 +433,8 @@
       "userEventPreferences": "Préférences de l'Utilisateur et Événements",
       "channelDefaults": "Configuration des Défauts du Canal (Modérateur Uniquement)",
       "directTTS": "TTS Direct",
-      "emoteDescriptions": "Gestion des Descriptions d'Emotes (Modérateurs uniquement)"
+      "emoteDescriptions": "Gestion des Descriptions d'Emotes (Modérateurs uniquement)",
+      "pronunciationFiltering": "Prononciation et Filtrage (Modérateur Uniquement)"
     }
   },
   "voices": {
@@ -501,5 +540,38 @@
     "step3": "Les utilisations ultérieures du même emote utilisent la description mise en cache instantanément, sans aucun traitement IA.",
     "managementTitle": "Gestion des Descriptions",
     "managementText": "Les modérateurs peuvent utiliser la commande <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir manuellement les descriptions d'emotes. Consultez la section <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> dans le tableau des commandes ci-dessus pour plus de détails."
+  },
+  "pronunciation": {
+    "title": "Dictionnaire de Prononciation",
+    "introText": "Le chat utilise de nombreuses formes abrégées que le TTS lit lettre par lettre. Le dictionnaire de prononciation les transforme en mots complets. Par exemple, le TTS prononce ngl comme « not gonna lie » et glhf comme « good luck have fun ». WildcatTTS intègre une liste d'environ 70 abréviations courantes. Vous pouvez également ajouter les vôtres.",
+    "howItWorksTitle": "Comment ça fonctionne",
+    "rule1": "Le mot n'est pas sensible à la casse. Une entrée pour lfg correspond également à LFG.",
+    "rule2": "Une entrée doit correspondre à un mot complet. Une entrée pour fr ne modifie pas le mot « friend ».",
+    "rule3": "Le dictionnaire ne modifie pas le texte présent dans un lien.",
+    "rule4": "Le dictionnaire ne remplace chaque mot qu'une seule fois. Le TTS ne relit pas le nouveau texte pour chercher d'autres correspondances.",
+    "customTitle": "Vos Propres Entrées",
+    "customText": "Les modérateurs peuvent ajouter des entrées avec la commande !tts pronounce. Vous pouvez également en ajouter dans la carte Dictionnaire de Prononciation du Tableau de Bord Web. Vos propres entrées sont utiles pour les noms de chaînes, de jeux ou tout mot que le TTS prononce mal.",
+    "custom1": "Votre entrée remplace une entrée intégrée ayant le même mot.",
+    "custom2": "Pour désactiver une entrée intégrée, utilisez !tts pronounce off <mot>. Pour la réactiver, utilisez !tts pronounce remove <mot>.",
+    "custom3": "Une chaîne peut contenir un maximum de 100 entrées.",
+    "switchTitle": "Comment le désactiver",
+    "switchText": "Le dictionnaire est activé pour toutes les chaînes. Pour le désactiver, réglez le contrôle « Développer les acronymes du chat » sur désactivé dans le Tableau de Bord Web. Le TTS épellera alors chaque abréviation lettre par lettre.",
+    "lolTip": "Le TTS prononce déjà lol comme « el oh el ». C'est le résultat habituel et aucune entrée de dictionnaire n'est nécessaire pour cela."
+  },
+  "profanityFilter": {
+    "title": "Filtre Anti-Grossièretés",
+    "introText": "Le filtre anti-grossièretés remplace les mots vulgaires par des termes plus doux avant que le TTS ne les prononce. Par exemple, le TTS prononce « what the fuck » comme « what the freak ». Le filtre est désactivé jusqu'à ce qu'un modérateur l'active.",
+    "startTitle": "Comment l'activer",
+    "startText": "Utilisez !tts profanity on dans le chat ou activez le contrôle « Filtre Anti-Grossièretés » dans le Tableau de Bord Web. Utilisez !tts profanity status pour voir l'état, la langue et le nombre de mots dans la liste.",
+    "behaviorTitle": "Ce qu'il fait",
+    "behavior1": "Le filtre remplace un mot grossier par un terme plus doux. Il ne supprime pas le message et ne produit pas de bip sonore.",
+    "behavior2": "Le filtre remplace une insulte discriminatoire (slur) par le mot « slur ». Ce remplacement empêche la diffusion du terme offensant dans l'audio.",
+    "behavior3": "Le filtre s'applique également aux abréviations du dictionnaire de prononciation. Lorsque le filtre est activé, le TTS prononce lfg comme « let's freaking go ».",
+    "behavior4": "Un mot doit correspondre exactement et en entier. Le filtre ne modifie pas le mot « class ».",
+    "languageTitle": "Langues",
+    "languageText": "Le filtre possède des listes de mots pour les 40 langues prises en charge par l'Amélioration de Langue. Le filtre utilise la liste de la langue de votre chaîne. Si un spectateur choisit une langue différente pour ses messages, le filtre utilise les deux listes. Le filtre inclut toujours la liste anglaise, car le dictionnaire de prononciation est en anglais.",
+    "languageAutoText": "Si votre Amélioration de Langue est définie sur « Automatique », le filtre utilise la liste anglaise. Le bot ne peut pas identifier la langue de chaque message individuel.",
+    "languageCoverageText": "La liste anglaise est la plus complète. Les listes des autres langues sont plus réduites. Les insultes discriminatoires (slurs) ne figurent que dans la liste anglaise.",
+    "bannedWordsTip": "Le filtre anti-grossièretés est différent de la liste des mots interdits. Les mots interdits suppriment l'intégralité du message. Le filtre anti-grossièretés lit le message, mais avec des termes adoucis."
   }
 }

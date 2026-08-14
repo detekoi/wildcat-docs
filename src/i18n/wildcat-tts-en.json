@@ -12,7 +12,9 @@
     "languageBoost": "Language Boost",
     "emoteDescriptions": "Emote Descriptions",
     "webDashboard": "Web Dashboard",
-    "troubleshooting": "Troubleshooting"
+    "troubleshooting": "Troubleshooting",
+    "pronunciation": "Pronunciation Dictionary",
+    "profanityFilter": "Profanity Filter"
   },
   "page": {
     "title": "WildcatTTS Bot Documentation",
@@ -384,6 +386,42 @@
       "regenerateNote": "(clears cache; AI will re-describe on next use)",
       "setNote": "(sets a custom description — channel emotes only)",
       "permission": "Moderator (set/regenerate only for this channel's emotes)"
+    },
+    "ttsPronounce": {
+      "name": "!tts pronounce <word> = <how to say it>",
+      "description": "Controls how TTS says a specific word or short form.",
+      "usage": {
+        "add": "!tts pronounce wcat = wildcat",
+        "list": "!tts pronounce list",
+        "remove": "!tts pronounce remove wcat",
+        "off": "!tts pronounce off lfg",
+        "test": "!tts pronounce test ngl that was wild",
+        "defaults": "!tts pronounce defaults"
+      },
+      "addNote": "(adds or changes an entry)",
+      "listNote": "(shows the entries for this channel)",
+      "removeNote": "(removes an entry)",
+      "offNote": "(stops a built-in entry)",
+      "testNote": "(shows the result, but does not speak it)",
+      "defaultsNote": "(lists the built-in entries)",
+      "addDesc": "Add a word and the text that TTS speaks in its place. Your entry replaces a built-in entry with the same word.",
+      "removeDesc": "Remove your entry. If a built-in entry has the same word, that built-in entry becomes active again.",
+      "offDesc": "Stop a built-in entry. To start it again, use the remove sub-command.",
+      "testDesc": "Show what TTS will say for some text. The bot does not speak the text.",
+      "clearDesc": "The broadcaster can use !tts pronounce clear to remove all entries for the channel. Built-in entries stay active.",
+      "notes": "The word is not case-sensitive, and it must match a full word. A channel can have a maximum of 100 entries. A word can have a maximum of 40 characters. A spoken form can have a maximum of 120 characters. You can also change these entries in the Web Dashboard.",
+      "permission": "Moderator (broadcaster only for clear)"
+    },
+    "ttsProfanity": {
+      "name": "!tts profanity <on|off|status>",
+      "description": "Starts or stops the profanity filter, which replaces rude words with milder words.",
+      "usage": {
+        "on": "!tts profanity on",
+        "off": "!tts profanity off",
+        "status": "!tts profanity status"
+      },
+      "statusNote": "(shows the state, the language, and the number of words)",
+      "notes": "The filter is off until you start it. It replaces rude words with milder words. It does not remove the message. The Banned Words list in the Web Dashboard removes a full message."
     }
   },
   "table": {
@@ -395,7 +433,8 @@
       "userEventPreferences": "User & Event Preferences",
       "channelDefaults": "Channel-Wide Default Configuration (Moderator Only)",
       "emoteDescriptions": "Emote Description Management (Moderator Only)",
-      "directTTS": "Direct TTS"
+      "directTTS": "Direct TTS",
+      "pronunciationFiltering": "Pronunciation & Filtering (Moderator Only)"
     }
   },
   "voices": {
@@ -501,5 +540,38 @@
     "a8": "Note that \"auto\" emotion is no longer supported. Use neutral, happy, sad, angry, fearful, disgusted, or surprised instead.",
     "q9": "Need help?",
     "a9": "Contact the developer via the contact form at Henry's portfolio website."
+  },
+  "pronunciation": {
+    "title": "Pronunciation Dictionary",
+    "introText": "Chat uses many short forms that TTS speaks one letter at a time. The pronunciation dictionary changes them into words. For example, TTS speaks ngl as \"not gonna lie\" and glhf as \"good luck have fun\". WildcatTTS has a built-in list of about 70 common short forms. You can also add your own.",
+    "howItWorksTitle": "How It Works",
+    "rule1": "The word is not case-sensitive. An entry for lfg also matches LFG.",
+    "rule2": "An entry must match a full word. An entry for fr does not change the word \"friend\".",
+    "rule3": "The dictionary does not change text in a link.",
+    "rule4": "The dictionary changes each word one time. TTS does not read the new text again to look for more entries.",
+    "customTitle": "Your Own Entries",
+    "customText": "Moderators can add entries with the !tts pronounce command. You can also add entries in the Pronunciation Dictionary card in the Web Dashboard. Your own entries are useful for channel names, game names, or any word that TTS speaks incorrectly.",
+    "custom1": "Your entry replaces a built-in entry that has the same word.",
+    "custom2": "To stop a built-in entry, use !tts pronounce off <word>. To start it again, use !tts pronounce remove <word>.",
+    "custom3": "A channel can have a maximum of 100 entries.",
+    "switchTitle": "How To Stop It",
+    "switchText": "The dictionary is on for all channels. To stop it, set the \"Expand Chat Acronyms\" control to off in the Web Dashboard. TTS then speaks each short form one letter at a time.",
+    "lolTip": "TTS already speaks lol as \"el oh el\". This is the usual result, and there is no dictionary entry for it."
+  },
+  "profanityFilter": {
+    "title": "Profanity Filter",
+    "introText": "The profanity filter replaces rude words with milder words before TTS speaks them. For example, TTS speaks \"what the fuck\" as \"what the freak\". The filter is off until a moderator starts it.",
+    "startTitle": "How To Start It",
+    "startText": "Use !tts profanity on in chat, or set the \"Profanity Filter\" control to on in the Web Dashboard. Use !tts profanity status to see the state, the language, and the number of words in the list.",
+    "behaviorTitle": "What It Does",
+    "behavior1": "The filter replaces a rude word with a milder word. It does not remove the message, and it does not make a bleep sound.",
+    "behavior2": "The filter replaces a slur with the word \"slur\". This replacement keeps the meaning of the slur out of the audio.",
+    "behavior3": "The filter also applies to short forms from the pronunciation dictionary. When the filter is on, TTS speaks lfg as \"let's freaking go\".",
+    "behavior4": "A word must match fully. The filter does not change the word \"class\".",
+    "languageTitle": "Languages",
+    "languageText": "The filter has word lists for all 40 languages that Language Boost supports. The filter uses the list for your channel language. If a viewer selects a different language for their own messages, the filter uses both lists. The filter always includes the English list, because the pronunciation dictionary is in English.",
+    "languageAutoText": "If your Language Boost is \"Automatic\", the filter uses the English list. The bot cannot identify the language of each message.",
+    "languageCoverageText": "The English list is the largest. The lists for other languages are smaller. Slurs are in the English list only.",
+    "bannedWordsTip": "The profanity filter is not the same as the Banned Words list. Banned Words removes the full message. The profanity filter speaks the message, but with milder words."
   }
 }
