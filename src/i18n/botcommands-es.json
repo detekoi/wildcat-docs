@@ -39,7 +39,9 @@
       "description": "Administra la traducción automática del chat para los usuarios.",
       "usage": {
         "lang": "!translate <idioma>",
-        "modUser": "!translate <idioma|stop> [usuario]"
+        "modUser": "!translate <idioma|stop> [usuario]",
+        "stopAll": "!translate stop all",
+        "stopAllDesc": "Detiene todas las traducciones activas en el canal"
       }
     },
     "help": {
@@ -334,8 +336,23 @@
       },
       "checkinCount": {
         "desc": "Total acumulado de check-ins del espectador (solo recompensas de puntos de canal)"
+      },
+      "pronouns": {
+        "desc": "Pronombres del usuario que ejecutó el comando"
+      },
+      "pronounSubject": {
+        "desc": "Pronombre de sujeto del usuario que ejecutó el comando"
+      },
+      "pronounObject": {
+        "desc": "Pronombre de objeto del usuario que ejecutó el comando"
+      },
+      "pronounPossessive": {
+        "desc": "Pronombre posesivo del usuario que ejecutó el comando"
       }
     },
+    "compatibilityTitle": "Compatibilidad de variables:",
+    "compatibilityCustom": "<strong>Comandos personalizados y Check-in diario:</strong> Admiten todas las variables, incluidas las específicas del usuario.",
+    "compatibilityTimers": "<strong>Mensajes programados (Temporizadores):</strong> Se ejecutan según un horario sin un usuario activo. Solo admiten variables de canal y stream (<code>$(channel)</code>, <code>$(game)</code>, <code>$(uptime)</code>, <code>$(count)</code>, <code>$(random X-Y)</code>).",
     "examplesTitle": "Ejemplos",
     "examplesIntro": "Aquí tienes ejemplos de comandos personalizados:",
     "examplesTable": {
@@ -358,6 +375,10 @@
       "hug": {
         "command": "<span class=\"inline-code\">!command add hug ¡$(user) abraza a $(1)!</span>",
         "result": "¡WildcatGamer abraza a WildcatStreamer!"
+      },
+      "cheer": {
+        "command": "<span class=\"inline-code\">!command add cheer ¡$(user) llegó! ¡Bienvenida/o $(pronoun_object)!</span>",
+        "result": "¡WildcatGamer llegó! ¡Bienvenida/o them!"
       },
       "uses": {
         "command": "<span class=\"inline-code\">!command add uses ¡Este comando se usó $(count) veces!</span>",
@@ -413,6 +434,10 @@
         "title": "Gestión de comandos:",
         "desc": "Crea comandos personalizados y activa o desactiva comandos integrados."
       },
+      "timers": {
+        "title": "Mensajes programados:",
+        "desc": "Crea y administra mensajes de chat programados con ajustes de intervalo y líneas de chat."
+      },
       "dailyCheckIn": {
         "title": "Check-In diario:",
         "desc": "Configura una recompensa de puntos de canal para check-ins diarios con seguimiento de rachas y respuestas opcionales de IA."
@@ -467,7 +492,11 @@
     "variables": {
       "user": "Nombre visible del espectador que hizo check-in",
       "checkinCount": "Total de check-ins acumulados del espectador",
-      "channel": "Nombre del canal"
+      "channel": "Nombre del canal",
+      "pronouns": "Pronombres del espectador que hizo check-in",
+      "pronounSubject": "Pronombre de sujeto del espectador que hizo check-in",
+      "pronounObject": "Pronombre de objeto del espectador que hizo check-in",
+      "pronounPossessive": "Pronombre posesivo del espectador que hizo check-in"
     },
     "exampleTitle": "Ejemplos",
     "exampleTemplate": "<strong>Plantilla:</strong> <code>¡$(user) ha hecho check-in! Día #$(checkin_count) 🎉</code>",

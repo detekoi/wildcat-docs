@@ -111,6 +111,9 @@ extraScripts:
                 <span class="mod-badge mod-badge-leading">Mod</span><code
                     data-i18n-cmd="commands.translate.usage.modUser">!translate &lt;lang|stop&gt; [user]</code>
                 <span class="mod-badge mod-badge-leading">Mod</span><code>!translate [user] &lt;lang|stop&gt;</code>
+                <span class="mod-badge mod-badge-leading">Mod</span><code
+                    data-i18n-cmd="commands.translate.usage.stopAll">!translate stop all</code> <span
+                    data-i18n="commands.translate.usage.stopAllDesc">Stops all active translations in the channel</span>
             </td>
         </tr>
     </tbody>
@@ -571,8 +574,36 @@ extraScripts:
                 <td data-i18n="responseVariables.variables.checkinCount.desc">The viewer daily check-in total (Channel Point Rewards only)</td>
                 <td>14</td>
             </tr>
+            <tr>
+                <td><span class="inline-code">$(pronouns)</span></td>
+                <td data-i18n="responseVariables.variables.pronouns.desc">Pronouns of the user who ran the command</td>
+                <td>They/Them</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_subject)</span></td>
+                <td data-i18n="responseVariables.variables.pronounSubject.desc">Subject pronoun of the user who ran the command</td>
+                <td>they</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_object)</span></td>
+                <td data-i18n="responseVariables.variables.pronounObject.desc">Object pronoun of the user who ran the command</td>
+                <td>them</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_possessive)</span></td>
+                <td data-i18n="responseVariables.variables.pronounPossessive.desc">Possessive pronoun of the user who ran the command</td>
+                <td>their</td>
+            </tr>
         </tbody>
     </table>
+
+    <div class="tip-box" style="margin-top: 12px; margin-bottom: 12px;">
+        <strong data-i18n="responseVariables.compatibilityTitle">Variable Compatibility:</strong>
+        <ul style="margin: 4px 0 0 16px; padding-left: 0;">
+            <li data-i18n="responseVariables.compatibilityCustom"><strong>Custom Commands and Daily Check-In:</strong> Support all variables, including user-specific variables.</li>
+            <li data-i18n="responseVariables.compatibilityTimers"><strong>Timed Messages (Timers):</strong> Run on a schedule without an active user. Timers support only channel and stream variables (<code>$(channel)</code>, <code>$(game)</code>, <code>$(uptime)</code>, <code>$(count)</code>, <code>$(random X-Y)</code>).</li>
+        </ul>
+    </div>
 
     <h3 data-i18n="responseVariables.examplesTitle">Examples</h3>
     <p style="margin-bottom: 6px;" data-i18n="responseVariables.examplesIntro">Here are example custom commands:</p>
@@ -604,6 +635,11 @@ extraScripts:
                 <td data-i18n="responseVariables.examples.hug.command"><span class="inline-code">!command add
                         hug $(user) hugs $(1)!</span></td>
                 <td data-i18n="responseVariables.examples.hug.result">WildcatGamer hugs WildcatStreamer!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.cheer.command"><span class="inline-code">!command add
+                        cheer $(user) arrived! Welcome $(pronoun_object)!</span></td>
+                <td data-i18n="responseVariables.examples.cheer.result">WildcatGamer arrived! Welcome them!</td>
             </tr>
             <tr>
                 <td data-i18n="responseVariables.examples.uses.command"><span class="inline-code">!command add
@@ -672,6 +708,8 @@ extraScripts:
                 data-i18n="webDashboard.features.streamEvents.desc">Enable AI greetings, farewells, and celebration messages for new followers, subscribers, and incoming raids.</span></li>
         <li><strong data-i18n="webDashboard.features.commandControl.title">Command Management:</strong> <span
                 data-i18n="webDashboard.features.commandControl.desc">Create custom commands and enable or disable built-in commands.</span></li>
+        <li><strong data-i18n="webDashboard.features.timers.title">Timed Messages:</strong> <span
+                data-i18n="webDashboard.features.timers.desc">Create and manage scheduled chat messages with interval and chat line settings.</span></li>
         <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
                 data-i18n="webDashboard.features.dailyCheckIn.desc">Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses.</span></li>
     </ul>
@@ -751,6 +789,22 @@ extraScripts:
             <tr>
                 <td><span class="inline-code">$(channel)</span></td>
                 <td data-i18n="dailyCheckIn.variables.channel">Channel name</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronouns)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronouns">Pronouns of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_subject)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronounSubject">Subject pronoun of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_object)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronounObject">Object pronoun of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_possessive)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronounPossessive">Possessive pronoun of the viewer who checked in</td>
             </tr>
         </tbody>
     </table>

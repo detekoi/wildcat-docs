@@ -39,7 +39,9 @@
       "description": "Manages automatic chat translation for users.",
       "usage": {
         "lang": "!translate <lang>",
-        "modUser": "!translate <lang|stop> [user]"
+        "modUser": "!translate <lang|stop> [user]",
+        "stopAll": "!translate stop all",
+        "stopAllDesc": "Stops all active translations in the channel"
       }
     },
     "help": {
@@ -334,8 +336,23 @@
       },
       "checkinCount": {
         "desc": "The viewer daily check-in total (Channel Point Rewards only)"
+      },
+      "pronouns": {
+        "desc": "Pronouns of the user who ran the command"
+      },
+      "pronounSubject": {
+        "desc": "Subject pronoun of the user who ran the command"
+      },
+      "pronounObject": {
+        "desc": "Object pronoun of the user who ran the command"
+      },
+      "pronounPossessive": {
+        "desc": "Possessive pronoun of the user who ran the command"
       }
     },
+    "compatibilityTitle": "Variable Compatibility:",
+    "compatibilityCustom": "<strong>Custom Commands and Daily Check-In:</strong> Support all variables, including user-specific variables.",
+    "compatibilityTimers": "<strong>Timed Messages (Timers):</strong> Run on a schedule without an active user. Timers support only channel and stream variables (<code>$(channel)</code>, <code>$(game)</code>, <code>$(uptime)</code>, <code>$(count)</code>, <code>$(random X-Y)</code>).",
     "examplesTitle": "Examples",
     "examplesIntro": "Here are example custom commands:",
     "examplesTable": {
@@ -358,6 +375,10 @@
       "hug": {
         "command": "<span class=\"inline-code\">!command add hug $(user) hugs $(1)!</span>",
         "result": "WildcatGamer hugs WildcatStreamer!"
+      },
+      "cheer": {
+        "command": "<span class=\"inline-code\">!command add cheer $(user) arrived! Welcome $(pronoun_object)!</span>",
+        "result": "WildcatGamer arrived! Welcome them!"
       },
       "uses": {
         "command": "<span class=\"inline-code\">!command add uses This command was used $(count) times!</span>",
@@ -413,6 +434,10 @@
         "title": "Command Management:",
         "desc": "Create custom commands and enable or disable built-in commands."
       },
+      "timers": {
+        "title": "Timed Messages:",
+        "desc": "Create and manage scheduled chat messages with interval and chat line settings."
+      },
       "dailyCheckIn": {
         "title": "Daily Check-In:",
         "desc": "Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses."
@@ -467,7 +492,11 @@
     "variables": {
       "user": "Display name of the viewer who checked in",
       "checkinCount": "Total number of check-ins for the viewer",
-      "channel": "Channel name"
+      "channel": "Channel name",
+      "pronouns": "Pronouns of the viewer who checked in",
+      "pronounSubject": "Subject pronoun of the viewer who checked in",
+      "pronounObject": "Object pronoun of the viewer who checked in",
+      "pronounPossessive": "Possessive pronoun of the viewer who checked in"
     },
     "exampleTitle": "Examples",
     "exampleTemplate": "<strong>Template:</strong> <code>$(user) checked in! Day #$(checkin_count) 🎉</code>",

@@ -39,7 +39,9 @@
       "description": "ユーザー向けの自動チャット翻訳を管理します。",
       "usage": {
         "lang": "!translate <言語>",
-        "modUser": "!translate <言語|stop> [ユーザー]"
+        "modUser": "!translate <言語|stop> [ユーザー]",
+        "stopAll": "!translate stop all",
+        "stopAllDesc": "チャンネル内のすべてのアクティブな翻訳を停止します"
       }
     },
     "help": {
@@ -334,8 +336,23 @@
       },
       "checkinCount": {
         "desc": "視聴者の通算デイリーチェックイン回数（チャンネルポイント報酬のみ）"
+      },
+      "pronouns": {
+        "desc": "コマンドを実行したユーザーの代名詞"
+      },
+      "pronounSubject": {
+        "desc": "コマンドを実行したユーザーの主格代名詞"
+      },
+      "pronounObject": {
+        "desc": "コマンドを実行したユーザーの目的格代名詞"
+      },
+      "pronounPossessive": {
+        "desc": "コマンドを実行したユーザーの所有代名詞"
       }
     },
+    "compatibilityTitle": "変数の互換性:",
+    "compatibilityCustom": "<strong>カスタムコマンドとデイリーチェックイン:</strong> ユーザー固有の変数を含むすべての変数をサポートします。",
+    "compatibilityTimers": "<strong>タイマーメッセージ (タイマー):</strong> 特定のユーザーなしで定期的に実行されます。タイマーはチャンネルおよび配信変数 (<code>$(channel)</code>、<code>$(game)</code>、<code>$(uptime)</code>、<code>$(count)</code>、<code>$(random X-Y)</code>) のみをサポートします。",
     "examplesTitle": "例",
     "examplesIntro": "カスタムコマンドの作成例です:",
     "examplesTable": {
@@ -358,6 +375,10 @@
       "hug": {
         "command": "<span class=\"inline-code\">!command add hug $(user) が $(1) をハグ！</span>",
         "result": "WildcatGamer が WildcatStreamer をハグ！"
+      },
+      "cheer": {
+        "command": "<span class=\"inline-code\">!command add cheer $(user) が来ました！歓迎しましょう！</span>",
+        "result": "WildcatGamer が来ました！歓迎しましょう！"
       },
       "uses": {
         "command": "<span class=\"inline-code\">!command add uses このコマンドは $(count) 回使用されました！</span>",
@@ -413,6 +434,10 @@
         "title": "コマンド管理:",
         "desc": "カスタムコマンドを作成し、組み込みコマンドを有効または無効にします。"
       },
+      "timers": {
+        "title": "タイマーメッセージ:",
+        "desc": "間隔とチャット行数の設定を使用して、スケジュールされたチャットメッセージを作成および管理します。"
+      },
       "dailyCheckIn": {
         "title": "デイリーチェックイン:",
         "desc": "連続記録のトラッキングとAI応答を備えたデイリーチェックイン用チャンネルポイント報酬を設定します。"
@@ -467,7 +492,11 @@
     "variables": {
       "user": "チェックインした視聴者の表示名",
       "checkinCount": "視聴者の通算チェックイン回数",
-      "channel": "チャンネル名"
+      "channel": "チャンネル名",
+      "pronouns": "チェックインした視聴者の代名詞",
+      "pronounSubject": "チェックインした視聴者の主格代名詞",
+      "pronounObject": "チェックインした視聴者の目的格代名詞",
+      "pronounPossessive": "チェックインした視聴者の所有代名詞"
     },
     "exampleTitle": "例",
     "exampleTemplate": "<strong>テンプレート:</strong> <code>$(user) がチェックインしました！ #$(checkin_count) 日目 🎉</code>",
