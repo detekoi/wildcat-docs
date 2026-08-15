@@ -14,7 +14,8 @@
     "troubleshooting": "Solução de Problemas",
     "emoteDescriptions": "Descrições de Emotes",
     "pronunciation": "Dicionário de Pronúncia",
-    "profanityFilter": "Filtro de Palavrões"
+    "profanityFilter": "Filtro de Palavrões",
+    "bannedWords": "Palavras Banidas"
   },
   "page": {
     "title": "Documentação do Bot TTS WildcatTTS",
@@ -472,6 +473,8 @@
     "settingChannelPointsDesc": "Criar e configurar uma recompensa personalizada de Pontos de Canal (ver seção acima)",
     "settingIgnoreTitle": "Listas de Ignorados:",
     "settingIgnoreDesc": "Gerenciar listas de ignorados de TTS e música com interface de adicionar/remover",
+    "settingBannedWordsTitle": "Palavras Banidas:",
+    "settingBannedWordsDesc": "Bloquear palavras ou frases específicas para que o TTS ignore mensagens correspondentes",
     "settingVoiceTitle": "Configurações de Voz Padrão:",
     "settingVoiceDesc": "Definir padrões do canal para voz, emoção, tom, velocidade, idioma e normalização de texto",
     "settingObsTitle": "Configuração OBS:",
@@ -573,5 +576,29 @@
     "languageAutoText": "Se o seu Aumento de Idioma estiver em \"Automático\", o filtro usará a lista em inglês. O bot não consegue identificar o idioma de cada mensagem individual.",
     "languageCoverageText": "A lista em inglês é a maior. As listas para outros idiomas são menores. Ofensas discriminatórias estão presentes apenas na lista em inglês.",
     "bannedWordsTip": "O filtro de palavrões não é a mesma coisa que a lista de palavras banidas. Palavras banidas removem a mensagem completa. O filtro de palavrões fala a mensagem, mas com palavras atenuadas."
+  },
+  "bannedWords": {
+    "title": "Palavras Banidas",
+    "introText": "O recurso Palavras Banidas impede que o WildcatTTS leia mensagens indesejadas. Se uma mensagem de chat contiver uma palavra ou frase banida, o TTS ignora a mensagem completamente. O bot não gera áudio para mensagens ignoradas.",
+    "howItWorksTitle": "Como Funciona",
+    "rule1": "A correspondência não diferencia maiúsculas de minúsculas. Se você banir \"badword\", o TTS também captura \"BadWord\" e \"BADWORD\".",
+    "rule2": "O TTS verifica partes de palavras. Se você banir \"spam\", o TTS também ignora mensagens contendo \"spammer\" ou \"spammy\".",
+    "rule3": "Você pode banir frases com várias palavras. Por exemplo, você pode banir frases como \"follow my link\" ou \"free followers\".",
+    "rule4": "O TTS ignora o nome de usuário nas respostas. Se uma resposta mencionar um usuário que tenha uma palavra banida no nome, o TTS não ignora a mensagem.",
+    "eventsTitle": "Eventos de Transmissão e Resgates",
+    "eventsIntro": "O bot lida com eventos e mensagens de chat de forma diferente quando uma mensagem contém uma palavra banida:",
+    "eventChat": "<strong>Mensagens de Chat:</strong> O TTS ignora a mensagem completa. Nenhum áudio de voz é reproduzido.",
+    "eventResub": "<strong>Reinscrições:</strong> O bot anuncia a reinscrição, mas omite a mensagem anexada do espectador.",
+    "eventStreak": "<strong>Sequências de Visualização:</strong> O bot anuncia a sequência, mas omite a mensagem anexada do espectador.",
+    "eventRedemption": "<strong>Resgates de Pontos de Canal:</strong> O bot anuncia o resgate da recompensa, mas omite o texto personalizado digitado.",
+    "eventRewardPolicy": "<strong>Política de Recompensas:</strong> Se uma recompensa de Pontos de Canal tiver uma política de conteúdo, o bot rejeita resgates que contenham palavras banidas.",
+    "manageTitle": "Como Gerenciar Palavras Banidas",
+    "manageIntro": "Você pode configurar palavras banidas no Painel Web. As alterações entram em vigor imediatamente.",
+    "step1": "Faça login no Painel Web em tts.wildcat.chat com sua conta da Twitch.",
+    "step2": "Role até o cartão Banned Words / Phrases abaixo da seção Ignore List.",
+    "step3": "Digite uma palavra ou frase no campo de entrada.",
+    "step4": "Clique em Add ou pressione Enter no teclado.",
+    "step5": "Se quiser remover uma entrada, clique em Remove ao lado da palavra na lista.",
+    "comparisonTip": "Palavras Banidas ignora a mensagem completa. O Filtro de Palavrões pronuncia a mensagem com palavras atenuadas. Se uma mensagem contiver palavras de ambas as listas, o TTS ignora a mensagem."
   }
 }

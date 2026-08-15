@@ -14,7 +14,8 @@
     "troubleshooting": "Dépannage",
     "emoteDescriptions": "Descriptions d'Emotes",
     "pronunciation": "Dictionnaire de Prononciation",
-    "profanityFilter": "Filtre Anti-Grossièretés"
+    "profanityFilter": "Filtre Anti-Grossièretés",
+    "bannedWords": "Mots Interdits"
   },
   "page": {
     "title": "Documentation du Bot WildcatTTS",
@@ -472,6 +473,8 @@
     "settingChannelPointsDesc": "Créer et configurer une récompense personnalisée de Points de Canal (voir section ci-dessus)",
     "settingIgnoreTitle": "Listes d'Ignorés :",
     "settingIgnoreDesc": "Gérer les listes d'ignorés TTS et musique avec interface d'ajout/suppression",
+    "settingBannedWordsTitle": "Mots Interdits :",
+    "settingBannedWordsDesc": "Bloquer des mots ou des expressions spécifiques pour que TTS ignore les messages correspondants",
     "settingVoiceTitle": "Paramètres de Voix par Défaut :",
     "settingVoiceDesc": "Définir les défauts du canal pour la voix, l'émotion, la tonalité, la vitesse, la langue et la normalisation du texte",
     "settingObsTitle": "Configuration OBS :",
@@ -573,5 +576,29 @@
     "languageAutoText": "Si votre Amélioration de Langue est définie sur « Automatique », le filtre utilise la liste anglaise. Le bot ne peut pas identifier la langue de chaque message individuel.",
     "languageCoverageText": "La liste anglaise est la plus complète. Les listes des autres langues sont plus réduites. Les insultes discriminatoires (slurs) ne figurent que dans la liste anglaise.",
     "bannedWordsTip": "Le filtre anti-grossièretés est différent de la liste des mots interdits. Les mots interdits suppriment l'intégralité du message. Le filtre anti-grossièretés lit le message, mais avec des termes adoucis."
+  },
+  "bannedWords": {
+    "title": "Mots Interdits",
+    "introText": "La fonctionnalité des Mots Interdits empêche WildcatTTS de lire les messages indésirables. Si un message de chat contient un mot ou une expression interdite, le TTS ignore le message complètement. Le bot ne génère aucun son pour les messages ignorés.",
+    "howItWorksTitle": "Comment ça fonctionne",
+    "rule1": "La casse n'est pas prise en compte. Si vous interdisez « badword », le TTS filtre aussi « BadWord » et « BADWORD ».",
+    "rule2": "Le TTS recherche des correspondances partielles. Si vous interdisez « spam », le TTS ignore aussi les messages contenant « spammer » ou « spammy ».",
+    "rule3": "Vous pouvez interdire des expressions de plusieurs mots. Par exemple, vous pouvez interdire des phrases comme « follow my link » ou « free followers ».",
+    "rule4": "Le TTS ignore le nom d'utilisateur dans les réponses. Si une réponse mentionne un utilisateur dont le pseudonyme contient un mot interdit, le TTS n'ignore pas le message.",
+    "eventsTitle": "Événements de Stream et Récompenses",
+    "eventsIntro": "Le bot traite les événements et les messages de chat différemment lorsqu'un message contient un mot interdit :",
+    "eventChat": "<strong>Messages du Chat :</strong> Le TTS ignore l'intégralité du message. Aucun audio n'est joué.",
+    "eventResub": "<strong>Réabonnements :</strong> Le bot annonce le réabonnement, mais omet le message personnalisé attaché du spectateur.",
+    "eventStreak": "<strong>Séries de Visionnage :</strong> Le bot annonce la série, mais omet le message personnalisé attaché du spectateur.",
+    "eventRedemption": "<strong>Échanges de Points de Chaîne :</strong> Le bot annonce l'échange de la récompense, mais omet le texte personnalisé saisi.",
+    "eventRewardPolicy": "<strong>Politique de Récompense :</strong> Si une récompense de points possède une politique de contenu, le bot refuse les échanges contenant des mots interdits.",
+    "manageTitle": "Comment Gérer les Mots Interdits",
+    "manageIntro": "Vous pouvez configurer les mots interdits dans le Tableau de Bord Web. Les modifications s'appliquent immédiatement.",
+    "step1": "Connectez-vous au Tableau de Bord Web sur tts.wildcat.chat avec votre compte Twitch.",
+    "step2": "Faites défiler jusqu'à la carte Banned Words / Phrases sous la section Ignore List.",
+    "step3": "Saisissez un mot ou une expression dans le champ de saisie.",
+    "step4": "Cliquez sur Add ou appuyez sur Entrée sur votre clavier.",
+    "step5": "Si vous souhaitez supprimer une entrée, cliquez sur Remove à côté du mot dans la liste.",
+    "comparisonTip": "Les Mots Interdits suppriment le message en entier. Le Filtre Anti-Grossièretés lit le message avec des termes adoucis. Si un message contient des mots des deux listes, le TTS ignore le message."
   }
 }

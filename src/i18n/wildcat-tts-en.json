@@ -14,7 +14,8 @@
     "webDashboard": "Web Dashboard",
     "troubleshooting": "Troubleshooting",
     "pronunciation": "Pronunciation Dictionary",
-    "profanityFilter": "Profanity Filter"
+    "profanityFilter": "Profanity Filter",
+    "bannedWords": "Banned Words"
   },
   "page": {
     "title": "WildcatTTS Bot Documentation",
@@ -484,6 +485,8 @@
     "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
     "settingIgnoreTitle": "Ignore Lists:",
     "settingIgnoreDesc": "Manage TTS and music ignore lists with add/remove interface",
+    "settingBannedWordsTitle": "Banned Words:",
+    "settingBannedWordsDesc": "Block specific words or phrases so TTS skips matching messages",
     "settingVoiceTitle": "Default Voice Settings:",
     "settingVoiceDesc": "Set channel defaults for voice, emotion, pitch, speed, language, and text normalization",
     "settingObsTitle": "OBS Setup:",
@@ -573,5 +576,29 @@
     "languageAutoText": "If your Language Boost is \"Automatic\", the filter uses the English list. The bot cannot identify the language of each message.",
     "languageCoverageText": "The English list is the largest. The lists for other languages are smaller. Slurs are in the English list only.",
     "bannedWordsTip": "The profanity filter is not the same as the Banned Words list. Banned Words removes the full message. The profanity filter speaks the message, but with milder words."
+  },
+  "bannedWords": {
+    "title": "Banned Words",
+    "introText": "The Banned Words feature stops WildcatTTS from speaking unwanted messages. If a chat message contains a banned word or phrase, TTS skips the message completely. The bot does not generate audio for skipped messages.",
+    "howItWorksTitle": "How It Works",
+    "rule1": "Matching is not case-sensitive. If you ban \"badword\", TTS also catches \"BadWord\" and \"BADWORD\".",
+    "rule2": "TTS matches parts of words. If you ban \"spam\", TTS also skips messages that contain \"spammer\" or \"spammy\".",
+    "rule3": "You can ban multi-word phrases. For example, you can ban phrases such as \"follow my link\" or \"free followers\".",
+    "rule4": "TTS ignores the username in replies. If a reply mentions a user with a banned word in their name, TTS does not skip the message.",
+    "eventsTitle": "Stream Events and Redemptions",
+    "eventsIntro": "The bot handles events and chat messages differently when a message contains a banned word:",
+    "eventChat": "<strong>Chat Messages:</strong> TTS skips the full message. No voice audio plays.",
+    "eventResub": "<strong>Resubscriptions:</strong> The bot announces the resubscription, but omits the attached viewer message.",
+    "eventStreak": "<strong>Watch Streaks:</strong> The bot announces the streak count, but omits the attached viewer message.",
+    "eventRedemption": "<strong>Channel Point Redemptions:</strong> The bot announces the reward redemption, but omits the custom text input.",
+    "eventRewardPolicy": "<strong>Custom Reward Policy:</strong> If a Channel Point reward has a content policy, the bot rejects redemptions that contain banned words.",
+    "manageTitle": "How To Manage Banned Words",
+    "manageIntro": "You can configure banned words in the Web Dashboard. Changes take effect immediately.",
+    "step1": "Log in to the Web Dashboard at tts.wildcat.chat with your Twitch account.",
+    "step2": "Scroll to the Banned Words / Phrases card below the Ignore List section.",
+    "step3": "Type a word or phrase into the input field.",
+    "step4": "Click Add, or press Enter on your keyboard.",
+    "step5": "If you want to remove an entry, click Remove next to the word in the list.",
+    "comparisonTip": "Banned Words skips the full message. The Profanity Filter speaks the message with milder words. If a message contains words on both lists, TTS skips the message."
   }
 }

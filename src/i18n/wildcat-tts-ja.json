@@ -14,7 +14,8 @@
     "troubleshooting": "トラブルシューティング",
     "emoteDescriptions": "エモート説明",
     "pronunciation": "発音辞書",
-    "profanityFilter": "不適切表現フィルター"
+    "profanityFilter": "不適切表現フィルター",
+    "bannedWords": "禁止ワード"
   },
   "page": {
     "title": "WildcatTTS ボット ドキュメント",
@@ -473,6 +474,8 @@
     "settingChannelPointsDesc": "カスタムチャンネルポイント報酬を作成および設定(上記のセクションを参照)",
     "settingIgnoreTitle": "除外リスト:",
     "settingIgnoreDesc": "追加/削除インターフェースでTTSおよび音楽除外リストを管理",
+    "settingBannedWordsTitle": "禁止ワード:",
+    "settingBannedWordsDesc": "特定の単語やフレーズをブロックし、該当するメッセージの読み上げをスキップします",
     "settingVoiceTitle": "デフォルト音声設定:",
     "settingVoiceDesc": "音声、感情、ピッチ、速度、言語、テキスト正規化のチャンネルデフォルトを設定",
     "settingObsTitle": "OBS設定:",
@@ -573,5 +576,29 @@
     "languageAutoText": "言語ブーストが「自動」の場合、フィルターは英語リストを使用します。ボットは各メッセージの言語を個別に識別することはできません。",
     "languageCoverageText": "英語のリストが最も充実しています。他の言語のリストは比較的小規模です。差別用語は英語リストのみに含まれています。",
     "bannedWordsTip": "不適切表現フィルターは禁止ワードリストとは異なります。禁止ワードはメッセージ全体を削除します。不適切表現フィルターはメッセージを読み上げますが、穏やかな言葉に置き換えます。"
+  },
+  "bannedWords": {
+    "title": "禁止ワード",
+    "introText": "禁止ワード機能は、WildcatTTSが不要なメッセージを読み上げるのを防ぎます。チャットメッセージに禁止された単語やフレーズが含まれている場合、TTSはメッセージの読み上げを完全にスキップします。スキップされたメッセージに対してボットは音声を生成しません。",
+    "howItWorksTitle": "仕組み",
+    "rule1": "大文字と小文字を区別しません。「badword」を禁止すると、TTSは「BadWord」や「BADWORD」も検出します。",
+    "rule2": "単語の部分一致を判定します。「spam」を禁止すると、TTSは「spammer」や「spammy」を含むメッセージもスキップします。",
+    "rule3": "複数単語からなるフレーズを禁止できます。例えば、「follow my link」や「free followers」といったフレーズを登録できます。",
+    "rule4": "返信時のユーザー名は無視されます。返信先ユーザーの名前に禁止ワードが含まれていても、TTSはメッセージをスキップしません。",
+    "eventsTitle": "配信イベントと報酬の引き換え",
+    "eventsIntro": "メッセージに禁止ワードが含まれている場合、ボットはイベントとチャットメッセージを以下のように処理します:",
+    "eventChat": "<strong>チャットメッセージ:</strong> TTSはメッセージ全体をスキップします。音声は再生されません。",
+    "eventResub": "<strong>再サブスクリプション:</strong> ボットは再サブスクを読み上げますが、添付された視聴者のメッセージは省略します。",
+    "eventStreak": "<strong>視聴ストリーク:</strong> ボットはストリーク数を読み上げますが、添付された視聴者のメッセージは省略します。",
+    "eventRedemption": "<strong>チャンネルポイント引き換え:</strong> ボットは報酬の引き換えを読み上げますが、カスタムテキスト入力は省略します。",
+    "eventRewardPolicy": "<strong>カスタム報酬ポリシー:</strong> チャンネルポイント報酬にコンテンツポリシーが設定されている場合、禁止ワードを含む引き換えは拒否されます。",
+    "manageTitle": "禁止ワードの管理方法",
+    "manageIntro": "Webダッシュボードで禁止ワードを設定できます。変更は即座に反映されます。",
+    "step1": "Twitchアカウントを使用して、tts.wildcat.chat のWebダッシュボードにログインします。",
+    "step2": "「Ignore List」セクションの下にある「Banned Words / Phrases」カードまでスクロールします。",
+    "step3": "入力欄に単語またはフレーズを入力します。",
+    "step4": "「Add」をクリックするか、キーボードのEnterキーを押します。",
+    "step5": "登録を削除したい場合は、リスト内の単語の横にある「Remove」をクリックします。",
+    "comparisonTip": "禁止ワードはメッセージ全体をスキップします。不適切表現フィルターは穏やかな言葉に置き換えて読み上げます。メッセージに両方のリストの単語が含まれている場合、TTSはメッセージをスキップします。"
   }
 }

@@ -14,7 +14,8 @@
     "troubleshooting": "Fehlerbehebung",
     "emoteDescriptions": "Emote-Beschreibungen",
     "pronunciation": "Aussprache-Wörterbuch",
-    "profanityFilter": "Profanitätsfilter"
+    "profanityFilter": "Profanitätsfilter",
+    "bannedWords": "Verbotene Wörter"
   },
   "page": {
     "title": "WildcatTTS Bot Dokumentation",
@@ -473,6 +474,8 @@
     "settingChannelPointsDesc": "Erstelle und konfiguriere eine benutzerdefinierte Channel Point Belohnung (siehe Abschnitt oben)",
     "settingIgnoreTitle": "Ignorierlisten:",
     "settingIgnoreDesc": "TTS- und Musik-Ignorierlisten mit Hinzufügen/Entfernen-Oberfläche verwalten",
+    "settingBannedWordsTitle": "Verbotene Wörter:",
+    "settingBannedWordsDesc": "Bestimmte Wörter oder Ausdrücke blockieren, sodass TTS passende Nachrichten überspringt",
     "settingVoiceTitle": "Standard-Spracheinstellungen:",
     "settingVoiceDesc": "Kanal-Standardwerte für Stimme, Emotion, Tonhöhe, Geschwindigkeit, Sprache und Textnormalisierung festlegen",
     "settingObsTitle": "OBS-Einrichtung:",
@@ -573,5 +576,29 @@
     "languageAutoText": "Wenn deine Sprachunterstützung auf „Automatisch\" eingestellt ist, verwendet der Filter die englische Liste. Der Bot kann die Sprache jeder einzelnen Nachricht nicht erkennen.",
     "languageCoverageText": "Die englische Liste ist die umfangreichste. Die Listen für andere Sprachen sind kleiner. Beleidigungen (Slurs) sind nur in der englischen Liste enthalten.",
     "bannedWordsTip": "Der Profanitätsfilter ist nicht dasselbe wie die Liste verbotener Wörter. Die Liste verbotener Wörter entfernt die gesamte Nachricht. Der Profanitätsfilter liest die Nachricht vor, jedoch mit milderen Wörtern."
+  },
+  "bannedWords": {
+    "title": "Verbotene Wörter",
+    "introText": "Die Funktion für verbotene Wörter verhindert, dass WildcatTTS unerwünschte Nachrichten vorliest. Wenn eine Chat-Nachricht ein verbotenes Wort oder einen verbotenen Ausdruck enthält, überspringt TTS die Nachricht vollständig. Der Bot erzeugt kein Audio für übersprungene Nachrichten.",
+    "howItWorksTitle": "So funktioniert es",
+    "rule1": "Die Groß-/Kleinschreibung wird nicht berücksichtigt. Wenn du „badword\" sperrst, erfasst TTS auch „BadWord\" und „BADWORD\".",
+    "rule2": "TTS prüft Wortteile. Wenn du „spam\" sperrst, überspringt TTS auch Nachrichten, die „spammer\" oder „spammy\" enthalten.",
+    "rule3": "Du kannst mehrteilige Ausdrücke sperren. Du kannst beispielsweise Ausdrücke wie „follow my link\" oder „free followers\" sperren.",
+    "rule4": "TTS ignoriert den Benutzernamen in Antworten. Wenn eine Antwort einen Benutzer erwähnt, dessen Name ein verbotenes Wort enthält, überspringt TTS die Nachricht nicht.",
+    "eventsTitle": "Stream-Ereignisse und Kanalpunkte",
+    "eventsIntro": "Der Bot behandelt Ereignisse und Chat-Nachrichten unterschiedlich, wenn eine Nachricht ein verbotenes Wort enthält:",
+    "eventChat": "<strong>Chat-Nachrichten:</strong> TTS überspringt die gesamte Nachricht. Es wird kein Audio abgespielt.",
+    "eventResub": "<strong>Erneute Abonnements:</strong> Der Bot kündigt das Abonnement an, lässt jedoch die angehängte Nachricht des Zuschauers weg.",
+    "eventStreak": "<strong>Watch-Streaks:</strong> Der Bot kündigt die Serie an, lässt jedoch die angehängte Nachricht des Zuschauers weg.",
+    "eventRedemption": "<strong>Kanalpunkt-Einlösungen:</strong> Der Bot kündigt die Belohnungseinlösung an, lässt jedoch den benutzerdefinierten Texteingabe weg.",
+    "eventRewardPolicy": "<strong>Richtlinie für Belohnungen:</strong> Wenn eine Kanalpunkt-Belohnung eine Inhaltsrichtlinie hat, lehnt der Bot Einlösungen ab, die verbotene Wörter enthalten.",
+    "manageTitle": "Verbotene Wörter verwalten",
+    "manageIntro": "Du kannst verbotene Wörter im Web Dashboard konfigurieren. Änderungen werden sofort wirksam.",
+    "step1": "Melde dich mit deinem Twitch-Konto im Web Dashboard unter tts.wildcat.chat an.",
+    "step2": "Scrolle zur Karte „Banned Words / Phrases\" unter dem Abschnitt „Ignore List\".",
+    "step3": "Gib ein Wort oder einen Ausdruck in das Eingabefeld ein.",
+    "step4": "Klicke auf „Add\" oder drücke die Eingabetaste auf deiner Tastatur.",
+    "step5": "Wenn du einen Eintrag entfernen möchtest, klicke neben dem Wort in der Liste auf „Remove\".",
+    "comparisonTip": "Verbotene Wörter überspringen die gesamte Nachricht. Der Profanitätsfilter liest die Nachricht mit milderen Wörtern vor. Wenn eine Nachricht Wörter aus beiden Listen enthält, überspringt TTS die Nachricht."
   }
 }

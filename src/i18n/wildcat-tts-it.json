@@ -14,7 +14,8 @@
     "troubleshooting": "Risoluzione Problemi",
     "emoteDescriptions": "Descrizioni Emote",
     "pronunciation": "Dizionario di Pronuncia",
-    "profanityFilter": "Filtro Volgarità"
+    "profanityFilter": "Filtro Volgarità",
+    "bannedWords": "Parole Vietate"
   },
   "page": {
     "title": "Documentazione Bot WildcatTTS",
@@ -472,6 +473,8 @@
     "settingChannelPointsDesc": "Crea e configura un premio personalizzato dei Punti Canale (vedi sezione sopra)",
     "settingIgnoreTitle": "Elenchi Ignorati:",
     "settingIgnoreDesc": "Gestisci elenchi ignorati TTS e musica con interfaccia aggiungi/rimuovi",
+    "settingBannedWordsTitle": "Parole Vietate:",
+    "settingBannedWordsDesc": "Blocca parole o frasi specifiche in modo che TTS ignori i messaggi corrispondenti",
     "settingVoiceTitle": "Impostazioni Voce Predefinita:",
     "settingVoiceDesc": "Imposta valori predefiniti del canale per voce, emozione, tono, velocità, lingua e normalizzazione testo",
     "settingObsTitle": "Configurazione OBS:",
@@ -573,5 +576,29 @@
     "languageAutoText": "Se il tuo Potenziamento Lingua è impostato su \"Automatico\", il filtro utilizzerà l'elenco in inglese. Il bot non è in grado di identificare la lingua di ogni singolo messaggio.",
     "languageCoverageText": "L'elenco in inglese è il più completo. Gli elenchi per le altre lingue sono più ridotti. Gli insulti discriminatori sono presenti solo nell'elenco in inglese.",
     "bannedWordsTip": "Il filtro volgarità non è la stessa cosa dell'elenco delle parole vietate. Le parole vietate rimuovono l'intero messaggio. Il filtro volgarità legge il messaggio, ma con parole più moderate."
+  },
+  "bannedWords": {
+    "title": "Parole Vietate",
+    "introText": "La funzionalità Parole Vietate impedisce a WildcatTTS di leggere messaggi indesiderati. Se un messaggio di chat contiene una parola o una frase vietata, TTS ignora il messaggio completamente. Il bot non genera audio per i messaggi ignorati.",
+    "howItWorksTitle": "Come Funziona",
+    "rule1": "Non fa distinzione tra maiuscole e minuscole. Se blocchi \"badword\", TTS rileva anche \"BadWord\" e \"BADWORD\".",
+    "rule2": "TTS controlla anche parti di parole. Se blocchi \"spam\", TTS ignora anche i messaggi contenenti \"spammer\" o \"spammy\".",
+    "rule3": "Puoi bloccare frasi composte da più parole. Ad esempio, puoi bloccare frasi come \"follow my link\" o \"free followers\".",
+    "rule4": "TTS ignora il nome utente nelle risposte. Se una risposta menziona un utente con una parola vietata nel nome, TTS non ignora il messaggio.",
+    "eventsTitle": "Eventi di Stream e Riscatti",
+    "eventsIntro": "Il bot gestisce gli eventi e i messaggi di chat in modo diverso quando un messaggio contiene una parola vietata:",
+    "eventChat": "<strong>Messaggi di Chat:</strong> TTS ignora l'intero messaggio. Non viene riprodotto alcun audio vocale.",
+    "eventResub": "<strong>Rinnovi di Abbonamento:</strong> Il bot annuncia il rinnovo, ma omette il messaggio personalizzato allegato dello spettatore.",
+    "eventStreak": "<strong>Serie di Visione:</strong> Il bot annuncia la serie, ma omette il messaggio personalizzato allegato dello spettatore.",
+    "eventRedemption": "<strong>Riscatti Punti Canale:</strong> Il bot annuncia il riscatto del premio, ma omette il testo personalizzato inserito.",
+    "eventRewardPolicy": "<strong>Criteri di Riscatto:</strong> Se un premio Punti Canale ha una politica sui contenuti, il bot rifiuta i riscatti che contengono parole vietate.",
+    "manageTitle": "Come Gestire le Parole Vietate",
+    "manageIntro": "Puoi configurare le parole vietate nella Web Dashboard. Le modifiche diventano effettive immediatamente.",
+    "step1": "Accedi alla Web Dashboard all'indirizzo tts.wildcat.chat con il tuo account Twitch.",
+    "step2": "Scorri fino alla scheda Banned Words / Phrases sotto la sezione Ignore List.",
+    "step3": "Digita una parola o una frase nel campo di testo.",
+    "step4": "Fai clic su Add o premi Invio sulla tastiera.",
+    "step5": "Se desideri rimuovere una voce, fai clic su Remove accanto alla parola nell'elenco.",
+    "comparisonTip": "Parole Vietate ignora l'intero messaggio. Il Filtro Volgarità legge il messaggio con parole attenuate. Se un messaggio contiene parole presenti in entrambi gli elenchi, TTS ignora il messaggio."
   }
 }

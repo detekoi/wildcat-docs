@@ -14,7 +14,8 @@
     "troubleshooting": "Solución de Problemas",
     "emoteDescriptions": "Descripciones de Emotes",
     "pronunciation": "Diccionario de Pronunciación",
-    "profanityFilter": "Filtro de Blasfemias"
+    "profanityFilter": "Filtro de Blasfemias",
+    "bannedWords": "Palabras Prohibidas"
   },
   "page": {
     "title": "Documentación del Bot TTS WildcatTTS",
@@ -472,6 +473,8 @@
     "settingChannelPointsDesc": "Crear y configurar una recompensa personalizada de Puntos del Canal (ver sección anterior)",
     "settingIgnoreTitle": "Listas de Ignorados:",
     "settingIgnoreDesc": "Gestionar listas de ignorados de TTS y música con interfaz de agregar/eliminar",
+    "settingBannedWordsTitle": "Palabras Prohibidas:",
+    "settingBannedWordsDesc": "Bloquear palabras o frases específicas para que TTS omita los mensajes coincidentes",
     "settingVoiceTitle": "Configuración de Voz Predeterminada:",
     "settingVoiceDesc": "Establecer valores predeterminados del canal para voz, emoción, tono, velocidad, idioma y normalización de texto",
     "settingObsTitle": "Configuración OBS:",
@@ -573,5 +576,29 @@
     "languageAutoText": "Si tu Refuerzo de Idioma está en \"Automático\", el filtro utiliza la lista en inglés. El bot no puede identificar el idioma de cada mensaje individual.",
     "languageCoverageText": "La lista en inglés es la más grande. Las listas para otros idiomas son más reducidas. Los insultos discriminatorios están solo en la lista en inglés.",
     "bannedWordsTip": "El filtro de blasfemias no es lo mismo que la lista de palabras prohibidas. Las palabras prohibidas eliminan el mensaje completo. El filtro de blasfemias pronuncia el mensaje, pero con palabras más suaves."
+  },
+  "bannedWords": {
+    "title": "Palabras Prohibidas",
+    "introText": "La función de Palabras Prohibidas evita que WildcatTTS lea mensajes no deseados. Si un mensaje de chat contiene una palabra o frase prohibida, TTS omite el mensaje por completo. El bot no genera audio para los mensajes omitidos.",
+    "howItWorksTitle": "Cómo Funciona",
+    "rule1": "No distingue entre mayúsculas y minúsculas. Si prohíbes \"badword\", TTS también detecta \"BadWord\" y \"BADWORD\".",
+    "rule2": "TTS busca coincidencias en partes de palabras. Si prohíbes \"spam\", TTS también omite mensajes que contengan \"spammer\" o \"spammy\".",
+    "rule3": "Puedes prohibir frases de varias palabras. Por ejemplo, puedes prohibir frases como \"follow my link\" o \"free followers\".",
+    "rule4": "TTS ignora el nombre de usuario en las respuestas. Si una respuesta menciona a un usuario con una palabra prohibida en su nombre, TTS no omite el mensaje.",
+    "eventsTitle": "Eventos de Transmisión y Canjes",
+    "eventsIntro": "El bot procesa los eventos y mensajes de chat de manera diferente cuando un mensaje contiene una palabra prohibida:",
+    "eventChat": "<strong>Mensajes de Chat:</strong> TTS omite el mensaje completo. No se reproduce audio de voz.",
+    "eventResub": "<strong>Suscripciones Renovadas:</strong> El bot anuncia la resuscripción, pero omite el mensaje adjunto del espectador.",
+    "eventStreak": "<strong>Rachas de Visualización:</strong> El bot anuncia la racha, pero omite el mensaje adjunto del espectador.",
+    "eventRedemption": "<strong>Canjes de Puntos del Canal:</strong> El bot anuncia el canje de la recompensa, pero omite el texto personalizado ingresado.",
+    "eventRewardPolicy": "<strong>Política de Recompensas:</strong> Si una recompensa de Puntos del Canal tiene una política de contenido, el bot rechaza los canjes que contengan palabras prohibidas.",
+    "manageTitle": "Cómo Administrar Palabras Prohibidas",
+    "manageIntro": "Puedes configurar las palabras prohibidas en el Panel Web. Los cambios surten efecto de inmediato.",
+    "step1": "Inicia sesión en el Panel Web en tts.wildcat.chat con tu cuenta de Twitch.",
+    "step2": "Desplázate hasta la tarjeta Banned Words / Phrases debajo de la sección Ignore List.",
+    "step3": "Escribe una palabra o frase en el campo de texto.",
+    "step4": "Haz clic en Add o presiona Enter en tu teclado.",
+    "step5": "Si deseas eliminar una entrada, haz clic en Remove junto a la palabra en la lista.",
+    "comparisonTip": "Palabras Prohibidas omite el mensaje completo. El Filtro de Blasfemias pronuncia el mensaje con palabras más suaves. Si un mensaje contiene palabras de ambas listas, TTS omite el mensaje."
   }
 }

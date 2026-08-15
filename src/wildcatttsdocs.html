@@ -17,6 +17,7 @@ sidebarLinks:
   - { href: "#emote-descriptions", key: sidebar.emoteDescriptions,  label: "Emote Descriptions" }
   - { href: "#pronunciation",      key: sidebar.pronunciation,      label: "Pronunciation Dictionary" }
   - { href: "#profanity-filter",   key: sidebar.profanityFilter,    label: "Profanity Filter" }
+  - { href: "#banned-words",       key: sidebar.bannedWords,        label: "Banned Words" }
   - { href: "#web-dashboard",      key: sidebar.webDashboard,       label: "Web Dashboard" }
   - { href: "#troubleshooting",    key: sidebar.troubleshooting,    label: "Troubleshooting" }
 extraScripts:
@@ -1914,11 +1915,67 @@ extraScripts:
     </div>
 </section>
 
+<section id="banned-words" class="section">
+    <h2 data-i18n="bannedWords.title">Banned Words</h2>
+    <p data-i18n="bannedWords.introText">The Banned Words feature stops WildcatTTS from speaking unwanted messages.
+        If a chat message contains a banned word or phrase, TTS skips the message completely. The bot does not
+        generate audio for skipped messages.</p>
+
+    <h3 data-i18n="bannedWords.howItWorksTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="bannedWords.rule1">Matching is not case-sensitive. If you ban "badword", TTS also catches
+            "BadWord" and "BADWORD".</li>
+        <li data-i18n="bannedWords.rule2">TTS matches parts of words. If you ban "spam", TTS also skips messages
+            that contain "spammer" or "spammy".</li>
+        <li data-i18n="bannedWords.rule3">You can ban multi-word phrases. For example, you can ban phrases such
+            as "follow my link" or "free followers".</li>
+        <li data-i18n="bannedWords.rule4">TTS ignores the username in replies. If a reply mentions a user with a
+            banned word in their name, TTS does not skip the message.</li>
+    </ul>
+
+    <h3 data-i18n="bannedWords.eventsTitle">Stream Events and Redemptions</h3>
+    <p data-i18n="bannedWords.eventsIntro">The bot handles events and chat messages differently when a message
+        contains a banned word:</p>
+    <ul>
+        <li data-i18n="bannedWords.eventChat"><strong>Chat Messages:</strong> TTS skips the full message. No
+            voice audio plays.</li>
+        <li data-i18n="bannedWords.eventResub"><strong>Resubscriptions:</strong> The bot announces the
+            resubscription, but omits the attached viewer message.</li>
+        <li data-i18n="bannedWords.eventStreak"><strong>Watch Streaks:</strong> The bot announces the streak
+            count, but omits the attached viewer message.</li>
+        <li data-i18n="bannedWords.eventRedemption"><strong>Channel Point Redemptions:</strong> The bot announces
+            the reward redemption, but omits the custom text input.</li>
+        <li data-i18n="bannedWords.eventRewardPolicy"><strong>Custom Reward Policy:</strong> If a Channel Point
+            reward has a content policy, the bot rejects redemptions that contain banned words.</li>
+    </ul>
+
+    <h3 data-i18n="bannedWords.manageTitle">How To Manage Banned Words</h3>
+    <p data-i18n="bannedWords.manageIntro">You can configure banned words in the Web Dashboard. Changes take effect
+        immediately.</p>
+    <ol>
+        <li data-i18n="bannedWords.step1">Log in to the Web Dashboard at tts.wildcat.chat with your Twitch
+            account.</li>
+        <li data-i18n="bannedWords.step2">Scroll to the Banned Words / Phrases card below the Ignore List section.</li>
+        <li data-i18n="bannedWords.step3">Type a word or phrase into the input field.</li>
+        <li data-i18n="bannedWords.step4">Click Add, or press Enter on your keyboard.</li>
+        <li data-i18n="bannedWords.step5">If you want to remove an entry, click Remove next to the word in the
+            list.</li>
+    </ol>
+
+    <div class="expand-tip">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="bannedWords.comparisonTip">Banned Words skips the full message. The
+                Profanity Filter speaks the message with milder words. If a message contains words on both lists,
+                TTS skips the message.</div>
+        </div>
+    </div>
+</section>
+
 <section id="web-dashboard" class="section">
     <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
     <p data-i18n="webDashboard.introText">The <a href="https://tts.wildcat.chat/" class="default-link-style"
             target="_blank" rel="noopener noreferrer">ChatVibes Web Dashboard</a> provides streamers with a comprehensive interface to
-        configure all TTS settings. Access it by logging in with your Twitch account.</p>
+            configure all TTS settings. Access it by logging in with your Twitch account.</p>
 
 
 
@@ -1942,6 +1999,8 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingIgnoreTitle">Ignore Lists:</strong> <span
                 data-i18n="webDashboard.settingIgnoreDesc">Manage TTS ignore lists with add/remove
                 interface</span></li>
+        <li><strong data-i18n="webDashboard.settingBannedWordsTitle">Banned Words:</strong> <span
+                data-i18n="webDashboard.settingBannedWordsDesc">Block specific words or phrases so TTS skips matching messages</span></li>
         <li><strong data-i18n="webDashboard.settingVoiceTitle">Default Voice Settings:</strong> <span
                 data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, volume, emotion,
                 pitch, speed, language, and text normalization</span></li>
