@@ -27,11 +27,11 @@
   },
   "commands": {
     "title": "Commandes",
-    "prefixTip": "Toutes les commandes TTS sont préfixées avec <span class=\"inline-code\">!tts</span>.",
+    "prefixTip": "Toutes les commandes TTS commencent par <span class=\"inline-code\">!tts</span>.",
     "exampleTip": "Par exemple : <span class=\"inline-code\">!tts status</span>",
-    "expandTip": "Cliquez sur n'importe quelle ligne de commande ci-dessous pour développer et voir les détails d'utilisation.",
-    "webDashboardTip": "Les diffuseurs et les spectateurs peuvent également configurer les paramètres en utilisant le <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>.",
-    "myvoiceTip": "Les spectateurs peuvent définir leurs propres préférences TTS en utilisant l'interface web en envoyant <span class=\"inline-code\">!myvoice</span> dans le chat.",
+    "expandTip": "Sélectionnez une ligne de commande ci-dessous pour afficher les détails.",
+    "webDashboardTip": "Les streamers et spectateurs peuvent aussi modifier les paramètres sur le <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web WildcatTTS</a>.",
+    "myvoiceTip": "Les spectateurs peuvent définir leurs préférences TTS personnelles sur le tableau de bord avec <span class=\"inline-code\">!myvoice</span> dans le chat.",
     "ttsCommandsTitle": "Commandes Text-To-Speech",
     "common": {
       "notes": "Remarques :",
@@ -46,29 +46,29 @@
     },
     "ttsStatus": {
       "name": "!tts status",
-      "description": "Obtient l'état actuel de l'application TTS pour le canal.",
-      "notes": "Affiche l'état du moteur, le mode, la longueur de la file d'attente, la voix par défaut, la tonalité, la vitesse, l'émotion et les paramètres d'amélioration de la langue.",
+      "description": "Affiche l'état actuel du TTS pour la chaîne.",
+      "notes": "Affiche l'état du moteur, le mode, la taille de la file, la voix par défaut, la hauteur, la vitesse, l'émotion et l'optimisation linguistique.",
       "usage": {
         "basic": "!tts status"
       }
     },
     "ttsVoices": {
       "name": "!tts voices",
-      "description": "Fournit un lien vers la section de documentation pour les voix TTS disponibles.",
+      "description": "Affiche un lien vers la liste des voix TTS disponibles.",
       "usage": {
         "basic": "!tts voices"
       }
     },
     "ttsLanguageslist": {
       "name": "!tts languageslist",
-      "description": "Fournit un lien vers la section de documentation pour les options d'amélioration de langue TTS disponibles.",
+      "description": "Affiche un lien vers la liste des options d'optimisation linguistique.",
       "usage": {
         "basic": "!tts languageslist"
       }
     },
     "ttsCommands": {
       "name": "!tts commands\n(Alias : !tts help)",
-      "description": "Fournit un lien vers la liste complète des sous-commandes !tts.",
+      "description": "Affiche un lien vers la liste complète des sous-commandes <span class=\"inline-code\">!tts</span>.",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
@@ -77,10 +77,10 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias : !tts preferences, !tts settings)",
-      "description": "Vous envoie un lien de courte durée vers votre page de paramètres TTS personnels.",
-      "feature1": "Configurez votre propre voix, tonalité, vitesse, émotion et langue par canal.",
-      "feature2": "Inclut une « Zone de Danger » à bordure rouge où vous pouvez vous ajouter à la file d'attente TTS et/ou à la liste d'ignorés de Musique du canal (seul un modérateur peut annuler cela).",
-      "feature3": "Le bot publie le lien publiquement dans le chat ; il est signé pour vous uniquement et expire après la première utilisation ou 10 minutes. La page est pré-remplie avec le canal actuel.",
+      "description": "Envoie un lien temporaire vers <strong>votre page personnelle de paramètres TTS</strong>.",
+      "feature1": "Définissez votre propre voix, hauteur, vitesse, émotion et langue pour cette chaîne.",
+      "feature2": "Comprend une Zone Dangereuse où vous pouvez vous ajouter à la liste d'ignorance TTS. Seul un modérateur peut vous retirer.",
+      "feature3": "Le bot publie le lien dans le chat. Le lien fonctionne uniquement pour vous et expire après 10 minutes ou première utilisation.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,15 +90,15 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Vous envoie un lien de courte durée vers votre page de paramètres TTS personnels (équivalent à !tts prefs).",
-      "notes": "Identique à !tts prefs. Le bot publie le lien publiquement dans le chat ; il est signé pour vous uniquement et expire après la première utilisation ou 10 minutes. La page est pré-remplie avec le canal actuel.",
+      "description": "Envoie un lien temporaire vers <strong>votre page personnelle de paramètres TTS</strong> (identique à <span class=\"inline-code\">!tts prefs</span>).",
+      "notes": "Identique à <code>!tts prefs</code>. Le bot publie le lien dans le chat. Le lien fonctionne uniquement pour vous et expire après 10 minutes ou première utilisation.",
       "usage": {
         "basic": "!myvoice"
       }
     },
     "ttsOn": {
       "name": "!tts on\n(Alias : !tts enable)",
-      "description": "Active le moteur TTS. Les messages et événements peuvent être parlés selon le mode actuel.",
+      "description": "Démarre le moteur TTS. Le TTS lit les messages et événements selon le mode actif.",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
@@ -107,7 +107,7 @@
     },
     "ttsOff": {
       "name": "!tts off\n(Alias : !tts disable)",
-      "description": "Désactive complètement le moteur TTS. Aucun message ou événement ne sera parlé.",
+      "description": "Arrête complètement le moteur TTS. Le TTS ne lira aucun message ni événement.",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
@@ -116,14 +116,14 @@
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
-      "description": "Bascule le mode TTS.",
-      "allDesc": "(Parlez tous les messages de chat et les événements ; c'est le mode par défaut)",
-      "commandDesc": "(Parlez uniquement sur commande ou pour les événements)",
-      "bitsPointsOnlyDesc": "(Parlez uniquement les acclamations Bits et les remboursements de points de canal)",
+      "description": "Définit ou affiche le mode TTS.",
+      "allDesc": "(Lit tous les messages du chat et événements ; <strong>mode par défaut</strong>)",
+      "commandDesc": "(Lit uniquement les commandes et événements activés)",
+      "bitsPointsOnlyDesc": "(Lit uniquement les cheers de Bits et récompenses de Points de chaîne)",
       "bitsAlias": "(Alias pour bits_points_only)",
       "pointsAlias": "(Alias pour bits_points_only)",
       "statusDesc": "(Affiche le mode actuel)",
-      "notes": "all : Tous les messages de chat (à l'exception de ceux des utilisateurs ignorés ou des commandes) et les événements activés seront parlés, selon le paramètre de permission !tts.\ncommand : Seuls les messages déclenchés par des commandes TTS spécifiques (comme !tts <message>) ou les événements activés seront parlés. Le chat normal est ignoré.\nbits_points_only : Seuls les acclamations Bits et les remboursements de points de canal sont lus à haute voix. Le chat normal et les commandes sont ignorés.",
+      "notes": "<span class=\"inline-code\">all</span> : Le TTS lit tous les messages du chat (sauf utilisateurs ignorés) et événements activés, selon <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span> : Le TTS lit uniquement les commandes (comme <span class=\"inline-code\">!tts &lt;message&gt;</span>) et événements activés. Le TTS ignore le chat standard.<br><span class=\"inline-code\">bits_points_only</span> : Le TTS lit uniquement les cheers de Bits et récompenses de Points de chaîne. Le TTS ignore le chat standard et les commandes.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,9 +135,9 @@
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
-      "description": "Définit un filtre sur qui peut déclencher le TTS lorsque le bot est en mode all.",
-      "statusDesc": "(affiche le filtre de permission actuel)",
-      "notes": "everyone ou all : Les messages de n'importe quel utilisateur peuvent être lus. (Par défaut)\nsubs : Seuls les messages des abonnés, VIPs, modérateurs et du streameur seront lus.\nvip : Seuls les messages des VIPs, modérateurs et du streameur seront lus.\nmods : Seuls les messages des modérateurs et du streameur seront lus.\nCela n'affecte pas le mode command.",
+      "description": "Définit qui peut déclencher le TTS lorsque le bot est en mode <span class=\"inline-code\">all</span>.",
+      "statusDesc": "(affiche le filtre de permissions actuel)",
+      "notes": "<span class=\"inline-code\">everyone</span> ou <span class=\"inline-code\">all</span> : Le TTS lit les messages de tous les utilisateurs (<strong>Par défaut</strong>).<br><span class=\"inline-code\">subs</span> : Le TTS lit les messages des abonnés, VIPs, modérateurs et du streamer.<br><span class=\"inline-code\">vip</span> : Le TTS lit les messages des VIPs, modérateurs et du streamer.<br><span class=\"inline-code\">mods</span> : Le TTS lit uniquement les messages des modérateurs et du streamer.<br>Ce paramètre n'affecte pas le mode <span class=\"inline-code\">command</span>.",
       "usage": {
         "everyone": "!tts permission everyone",
         "subs": "!tts permission subs",
@@ -148,11 +148,11 @@
     },
     "ttsBits": {
       "name": "!tts bits [on|off|min <amount>]",
-      "description": "Configure la fonctionnalité Bits-for-TTS, permettant aux canaux d'exiger un montant minimum d'acclamation pour déclencher TTS.",
-      "statusDesc": "(affiche l'état actuel de Bits-for-TTS)",
-      "onDesc": "on : Active le mode Bits-for-TTS. Seuls les messages avec une acclamation suffisante seront lus.",
-      "offDesc": "off : Désactive le mode Bits-for-TTS.",
-      "minDesc": "min <amount> : Définit le nombre minimum de Bits requis (par ex., min 100).",
+      "description": "Contrôle la fonction Bits-pour-TTS et définit le montant minimum de Cheer pour le TTS.",
+      "statusDesc": "(affiche l'état actuel de Bits-pour-TTS)",
+      "onDesc": "<span class=\"inline-code\">on</span> : Active le mode Bits-pour-TTS. Le TTS lit uniquement les messages avec assez de Bits.",
+      "offDesc": "<span class=\"inline-code\">off</span> : Désactive le mode Bits-pour-TTS.",
+      "minDesc": "<span class=\"inline-code\">min &lt;amount&gt;</span> : Définit le montant minimum de Bits requis (par exemple, <span class=\"inline-code\">min 100</span>).",
       "usage": {
         "on": "!tts bits on",
         "off": "!tts bits off",
@@ -162,56 +162,56 @@
     },
     "channelPointsTTS": {
       "name": "Points de Canal → TTS",
-      "description": "Créez une récompense personnalisée de Points de Canal Twitch pour que les spectateurs puissent échanger avec un message à lire à haute voix.",
-      "noteText": "Cette fonctionnalité est configurée exclusivement via le Tableau de Bord Web WildcatTTS dans la section « Points de Canal → TTS ».",
+      "description": "Crée une récompense personnalisée de Points de chaîne pour les messages lus par le TTS.",
+      "noteText": "Configurez cette fonctionnalité dans le <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web WildcatTTS</a> sous la section \"Points de chaîne → TTS\".",
       "howItWorks": "Comment cela fonctionne :",
-      "step1": "Configuration du Diffuseur : Activez la fonctionnalité dans le tableau de bord.",
-      "step2": "Création de Récompense : Le bot crée automatiquement une récompense personnalisée de Points de Canal sur votre canal Twitch.",
-      "step3": "Remboursement du Spectateur : Les spectateurs échangent la récompense avec un message personnalisé, qui est lu à haute voix.",
-      "step4": "Politique de Contenu : Filtrage intégré (limites de longueur, blocage de lien, mots interdits).",
+      "step1": "<strong>Configuration Streamer :</strong> Activez la fonctionnalité dans le tableau de bord.",
+      "step2": "<strong>Création de Récompense :</strong> Le bot crée une récompense personnalisée de Points de chaîne sur votre chaîne Twitch.",
+      "step3": "<strong>Échange Spectateur :</strong> Les spectateurs échangent la récompense avec un message lu par le TTS.",
+      "step4": "<strong>Politique de Contenu :</strong> Filtrez le texte avec limites de longueur, blocage de liens et mots interdits.",
       "configOptions": "Options de Configuration :",
-      "basicSettings": "Paramètres de Base : Titre de récompense, coût (points), texte d'invite, option sauter la file d'attente",
-      "advancedSettings": "Paramètres Avancés : Délai d'attente global, limite par flux, limite par utilisateur",
-      "contentPolicy": "Politique de Contenu : Longueur min/max de message, bloquer les liens, liste de mots interdits",
+      "basicSettings": "<strong>Paramètres de Base :</strong> Titre de la récompense, coût en points, invite et options de file d'attente.",
+      "advancedSettings": "<strong>Paramètres Avancés :</strong> Délai de récupération global, limite par stream et limite par utilisateur.",
+      "contentPolicy": "<strong>Politique de Contenu :</strong> Longueur min/max du message, blocage de liens et mots interdits.",
       "skipQueue": "Sauter la File d'Attente :",
-      "skipQueueDefault": "Paramètre Par Défaut : Cette option est activée par défaut pour la lecture TTS immédiate.",
-      "skipQueueEnabled": "Lorsque Activé : Les remboursements sont traités immédiatement et n'apparaissent pas dans votre file d'attente « Demandes de Récompense » Twitch.",
-      "skipQueueDisabled": "Lorsque Désactivé : Les remboursements apparaissent dans votre tableau de bord Twitch pour approbation manuelle avant la lecture TTS.",
-      "skipQueueUseCase": "Cas d'Usage : Activez pour TTS instantané, désactivez pour le contrôle de la modération.",
+      "skipQueueDefault": "<strong>Option par Défaut :</strong> Cette option est activée par défaut pour une lecture TTS immédiate.",
+      "skipQueueEnabled": "<strong>Si activée :</strong> Le TTS lit immédiatement les échanges sans les ajouter à votre file d'attente Twitch.",
+      "skipQueueDisabled": "<strong>Si désactivée :</strong> Les échanges attendent une approbation manuelle sur votre tableau de bord Twitch avant la lecture.",
+      "skipQueueUseCase": "<strong>Conseil :</strong> Activez pour une lecture instantanée. Désactivez pour modérer avant l'émission audio.",
       "ttsModes": "Modes TTS :",
       "ttsModesText": "Fonctionne avec tous les modes TTS (Tous les Messages, Commandes Uniquement, Bits/Points Uniquement).",
       "requirements": "Exigences :",
-      "requirementsText": "Doit accorder les portées OAuth channel:manage:redemptions et channel:read:redemptions lors de la configuration initiale du tableau de bord."
+      "requirementsText": "Accordez les autorisations <span class=\"inline-code\">channel:manage:redemptions</span> et <span class=\"inline-code\">channel:read:redemptions</span> lors de la connexion au tableau de bord."
     },
     "ttsPause": {
       "name": "!tts pause",
-      "description": "Met en pause le traitement de la file d'attente d'événements TTS.",
-      "notes": "Les nouveaux messages/événements seront toujours ajoutés à la file d'attente mais ne seront pas parlés jusqu'à la reprise.",
+      "description": "Met en pause le traitement de la file d'attente TTS.",
+      "notes": "Le bot ajoute les nouveaux messages et événements à la file, mais ne les lit pas tant que la lecture n'est pas reprise.",
       "usage": {
         "basic": "!tts pause"
       }
     },
     "ttsResume": {
       "name": "!tts resume",
-      "description": "Reprend le traitement de la file d'attente d'événements TTS s'il était en pause.",
+      "description": "Reprend le traitement de la file d'attente TTS.",
       "usage": {
         "basic": "!tts resume"
       }
     },
     "ttsClear": {
       "name": "!tts clear",
-      "description": "Efface tous les messages en attente et les événements de la file d'attente TTS.",
-      "notes": "Cette commande supprime uniquement les messages en attente dans la file d'attente. Elle n'arrête pas l'audio actuellement en lecture ou activement généré par le moteur TTS.",
+      "description": "Supprime tous les messages et événements en attente dans la file TTS.",
+      "notes": "Cette commande vide la file d'attente. Elle n'arrête <strong>pas</strong> l'audio en cours de lecture ou de génération.",
       "usage": {
         "basic": "!tts clear"
       }
     },
     "ttsStop": {
       "name": "!tts stop",
-      "description": "Arrête l'audio TTS actuellement en lecture ou en génération.",
-      "note1": "Si TTS parle ou génère actuellement un audio, cette commande tentera de l'arrêter.",
-      "note2": "N'importe quel utilisateur peut arrêter un message s'il a été déclenché par son propre message de chat.",
-      "note3": "Les modérateurs et le diffuseur peuvent arrêter n'importe quel audio TTS.",
+      "description": "Arrête l'audio TTS en cours de lecture ou de génération.",
+      "note1": "Si le TTS parle ou génère de l'audio, cette commande arrête la lecture.",
+      "note2": "Tout utilisateur peut arrêter un message déclenché par son propre message de chat.",
+      "note3": "Les modérateurs et le streamer peuvent arrêter tout audio TTS.",
       "permission": "Tout le monde pour ses propres messages, Modérateur pour les autres",
       "usage": {
         "basic": "!tts stop"
@@ -219,9 +219,9 @@
     },
     "ttsVoice": {
       "name": "!tts voice <voice_id|reset>",
-      "description": "Permet à un utilisateur de définir sa voix préférée pour les messages qu'il envoie.",
+      "description": "Définit votre voix préférée pour vos messages de chat.",
       "statusDesc": "(affiche la préférence personnelle actuelle)",
-      "notes": "Utilisez reset pour revenir à la voix par défaut du canal. Utilisez !tts voices pour obtenir un lien vers les identifiants de voix disponibles.",
+      "notes": "Utilisez <span class=\"inline-code\">reset</span> pour utiliser la voix par défaut de la chaîne. Utilisez <span class=\"inline-code\">!tts voices</span> pour obtenir la liste des identifiants de voix.",
       "usage": {
         "example": "!tts voice Friendly_Person",
         "reset": "!tts voice reset",
@@ -230,9 +230,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "Permet à un utilisateur de définir son émotion préférée pour ses messages.",
+      "description": "Définit votre émotion préférée pour vos messages de chat.",
       "statusDesc": "(affiche la préférence personnelle actuelle)",
-      "notes": "Émotions valides : neutral, happy, sad, angry, fearful, disgusted, surprised. Utilisez reset pour la valeur par défaut du canal.",
+      "notes": "Émotions valides : <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>. Utilisez <span class=\"inline-code\">reset</span> pour la valeur par défaut de la chaîne.",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -241,9 +241,9 @@
     },
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Alias : !tts lang)",
-      "description": "Définit votre amélioration de langue préférée pour TTS.",
+      "description": "Définit votre préférence d'optimisation linguistique pour vos messages de chat.",
       "statusDesc": "(affiche la préférence personnelle actuelle)",
-      "notes": "Affecte la façon dont la parole est interprétée et générée. Utilisez reset ou auto pour utiliser la valeur par défaut du canal. Voir la section Amélioration de Langue ou utilisez !tts languageslist pour les options disponibles.",
+      "notes": "L'optimisation linguistique améliore la prononciation pour une langue. Utilisez <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> pour la valeur par défaut. Consultez la section <a href=\"#language-boost\" class=\"default-link-style\">Optimisation Linguistique</a> ou utilisez <span class=\"inline-code\">!tts languageslist</span> pour voir toutes les options.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -254,9 +254,9 @@
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
-      "description": "Définit votre tonalité TTS personnelle.",
+      "description": "Définit votre hauteur de voix TTS pour vos messages de chat.",
       "statusDesc": "(affiche la préférence personnelle actuelle)",
-      "notes": "La valeur doit être un entier entre -12 et 12 (0 est normal). Utilisez reset pour la valeur par défaut du canal.",
+      "notes": "La valeur doit être un entier compris entre -12 et 12 (0 par défaut). Utilisez <span class=\"inline-code\">reset</span> pour la valeur par défaut de la chaîne.",
       "usage": {
         "positive": "!tts pitch 2",
         "negative": "!tts pitch -3",
@@ -266,9 +266,9 @@
     },
     "ttsSpeed": {
       "name": "!tts speed <value|reset>",
-      "description": "Définit votre vitesse TTS personnelle.",
+      "description": "Définit votre vitesse d'élocution TTS pour vos messages de chat.",
       "statusDesc": "(affiche la préférence personnelle actuelle)",
-      "notes": "La valeur doit être un nombre entre 0.5 et 2.0 (1.0 est normal). Utilisez reset pour la valeur par défaut du canal.",
+      "notes": "La valeur doit être un nombre compris entre 0.5 et 2.0 (1.0 par défaut). Utilisez <span class=\"inline-code\">reset</span> pour la valeur par défaut de la chaîne.",
       "usage": {
         "faster": "!tts speed 1.2",
         "slower": "!tts speed 0.8",
@@ -283,14 +283,14 @@
         "self": "!tts ignore votrenom",
         "mod": "!tts ignore add AutreUtilisateur"
       },
-      "descriptionUser": "Pour tout utilisateur: Ajoutez-vous à la liste d'ignorés TTS du canal. Vos messages ne seront pas parlés.",
-      "descriptionMod": "Pour les modérateurs ou le diffuseur: Ajoutez tout utilisateur Twitch spécifié à la liste d'ignorés TTS du canal.",
+      "descriptionUser": "<strong>Pour tout utilisateur :</strong> Vous ajoute <em>vous-même</em> à la liste d'ignorance TTS. Le TTS ne lira pas vos messages.",
+      "descriptionMod": "<strong>Pour les modérateurs et le streamer :</strong> Ajoute <em>un utilisateur Twitch</em> à la liste d'ignorance TTS de la chaîne.",
       "usageSelfNote": "(si vous voulez vous ignorer vous-même)",
       "usageModNote": "(si vous êtes mod/diffuseur)"
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Alias : delete, rem, remove)",
-      "description": "Supprime l'utilisateur Twitch spécifié de la liste d'ignorés TTS.",
+      "description": "Retire un utilisateur Twitch de la liste d'ignorance TTS de la chaîne.",
       "usage": {
         "basic": "!tts ignore del UnUtilisateur"
       },
@@ -298,14 +298,14 @@
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "Affiche la liste de tous les utilisateurs actuellement sur la liste d'ignorés TTS pour le canal.",
+      "description": "Liste tous les utilisateurs sur la liste d'ignorance TTS de la chaîne.",
       "usage": {
         "basic": "!tts ignored"
       }
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Bascule si les événements Twitch (comme les abonnements, les acclamations, les raids, etc.) sont annoncés par TTS.",
+      "description": "Active ou désactive les annonces d'événements Twitch (abonnements, cheers, raids, etc.).",
       "statusDesc": "(affiche l'état actuel des annonces d'événements)",
       "usage": {
         "on": "!tts events on",
@@ -315,9 +315,9 @@
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "Définit la voix TTS par défaut pour le canal.",
+      "description": "Définit la voix TTS par défaut pour la <em>chaîne</em>.",
       "statusDesc": "(affiche la valeur par défaut actuelle du canal)",
-      "notes": "Utilisez reset pour revenir à la valeur par défaut du système. Utilisez !tts voices pour un lien vers les IDs de voix.",
+      "notes": "Utilisez <span class=\"inline-code\">reset</span> pour revenir à la valeur par défaut du système. Utilisez <span class=\"inline-code\">!tts voices</span> pour voir les voix disponibles.",
       "usage": {
         "example": "!tts defaultvoice Friendly_Person",
         "reset": "!tts defaultvoice reset",
@@ -326,9 +326,9 @@
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Définit l'émotion TTS par défaut pour le canal.",
+      "description": "Définit l'émotion TTS par défaut pour la <em>chaîne</em>.",
       "statusDesc": "(affiche la valeur par défaut actuelle du canal)",
-      "notes": "Émotions valides : neutral, happy, sad, angry, fearful, disgusted, surprised. Utilisez reset pour la valeur par défaut du système (neutral).",
+      "notes": "Émotions valides : <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>. Utilisez <span class=\"inline-code\">reset</span> pour la valeur par défaut (<span class=\"inline-code\">neutral</span>).",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -337,9 +337,9 @@
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <language|reset>",
-      "description": "Définit l'amélioration de langue TTS par défaut pour le canal.",
+      "description": "Définit l'optimisation linguistique par défaut pour la <em>chaîne</em>.",
       "statusDesc": "(affiche la valeur par défaut actuelle du canal)",
-      "notes": "Utilisez reset ou auto pour utiliser la valeur par défaut du système. Voir la section Amélioration de Langue ou utilisez !tts languageslist pour les options.",
+      "notes": "Utilisez <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> pour la valeur par défaut. Consultez la section <a href=\"#language-boost\" class=\"default-link-style\">Optimisation Linguistique</a> ou utilisez <span class=\"inline-code\">!tts languageslist</span> pour voir les options.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -348,9 +348,9 @@
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <value|reset>",
-      "description": "Définit la tonalité TTS par défaut pour le canal.",
+      "description": "Définit la hauteur TTS par défaut pour la <em>chaîne</em>.",
       "statusDesc": "(affiche la valeur par défaut actuelle du canal)",
-      "notes": "La valeur doit être un entier entre -12 et 12 (0 est normal). Utilisez reset pour la valeur par défaut du système (0).",
+      "notes": "La valeur doit être un entier de -12 à 12 (0 par défaut). Utilisez <span class=\"inline-code\">reset</span> pour la valeur par défaut du système (0).",
       "usage": {
         "example": "!tts defaultpitch 2",
         "reset": "!tts defaultpitch reset",
@@ -359,9 +359,9 @@
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <value|reset>",
-      "description": "Définit la vitesse TTS par défaut pour le canal.",
+      "description": "Définit la vitesse TTS par défaut pour la <em>chaîne</em>.",
       "statusDesc": "(affiche la valeur par défaut actuelle du canal)",
-      "notes": "La valeur doit être un nombre entre 0.5 et 2.0 (1.0 est normal). Utilisez reset pour la valeur par défaut du système (1.0).",
+      "notes": "La valeur doit être un nombre compris entre 0.5 et 2.0 (1.0 par défaut). Utilisez <span class=\"inline-code\">reset</span> pour la valeur par défaut du système (1.0).",
       "usage": {
         "example": "!tts defaultspeed 1.2",
         "reset": "!tts defaultspeed reset",
@@ -373,15 +373,15 @@
       "usage": {
         "basic": "!tts Bienvenue à tous sur le stream !"
       },
-      "description": "Met immédiatement le message fourni en file d'attente pour TTS. Cela fonctionne à la fois en mode all et command. Utilise les préférences de l'utilisateur demandeur (ou les valeurs par défaut du canal) pour la voix, la hauteur, la vitesse et l'émotion."
+      "description": "Ajoute immédiatement le message à la file d'attente TTS. Fonctionne en mode 'all' et 'command'. Le TTS applique vos préférences (ou les valeurs par défaut de la chaîne) pour la voix, la hauteur, la vitesse et l'émotion."
     },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
-      "description": "Afficher, régénérer ou définir manuellement les descriptions d'emotes mises en cache utilisées par le TTS.",
-      "viewDesc": "Afficher la description actuelle générée par l'IA pour un emote.",
-      "regenerateDesc": "Effacer la description mise en cache afin que l'IA la re-décrive lors de la prochaine utilisation.",
-      "setDesc": "Définir manuellement une description personnalisée pour un emote.",
-      "notes": "Les emotes dans le chat sont automatiquement décrits par l'IA lors de leur première apparition. Ces descriptions sont mises en cache de manière permanente afin de ne pas être régénérées. Utilisez cette commande pour afficher, corriger ou régénérer les descriptions d'emotes.",
+      "description": "Affiche, efface ou définit les descriptions d'emotes en cache pour le TTS.",
+      "viewDesc": "Affiche la description actuelle par IA d'une emote.",
+      "regenerateDesc": "Efface la description en cache pour que l'IA en génère une nouvelle lors de la prochaine utilisation.",
+      "setDesc": "Définit une description personnalisée pour une emote de la chaîne.",
+      "notes": "Lorsqu'une emote apparaît pour la première fois dans le chat, l'IA génère une description textuelle. Le bot enregistre les descriptions de façon permanente. Utilisez cette commande pour afficher, modifier ou régénérer les descriptions d'emotes.",
       "usage": {
         "view": "!tts emote LUL",
         "regenerate": "!tts emote regenerate LUL",
@@ -390,7 +390,7 @@
       "viewNote": "(affiche la description mise en cache actuelle)",
       "regenerateNote": "(efface le cache ; l'IA re-décrira lors de la prochaine utilisation)",
       "setNote": "(définit une description personnalisée — emotes de la chaîne uniquement)",
-      "permission": "Modérateur (définir/régénérer uniquement pour les emotes de cette chaîne)"
+      "permission": "Modérateur (définition/régénération uniquement pour les emotes de la chaîne)"
     },
     "ttsPronounce": {
       "name": "!tts pronounce <word> = <how to say it>",
@@ -407,7 +407,7 @@
       "listNote": "(affiche les entrées pour cette chaîne)",
       "removeNote": "(supprime une entrée)",
       "offNote": "(désactive une entrée intégrée)",
-      "testNote": "(affiche le résultat sans le prononcer)",
+      "testNote": "(affiche le résultat sans lecture audio)",
       "defaultsNote": "(liste les entrées intégrées)",
       "addDesc": "Ajoute un mot et le texte que le TTS prononcera à sa place. Votre entrée remplace une entrée intégrée avec le même mot.",
       "removeDesc": "Supprime votre entrée. Si une entrée intégrée a le même mot, cette entrée intégrée redevient active.",
@@ -415,18 +415,18 @@
       "testDesc": "Affiche ce que le TTS dira pour un texte donné. Le bot ne prononce pas le texte.",
       "clearDesc": "Le diffuseur peut utiliser !tts pronounce clear pour supprimer toutes les entrées de la chaîne. Les entrées intégrées restent actives.",
       "notes": "Le mot n'est pas sensible à la casse et doit correspondre à un mot complet. Une chaîne peut avoir un maximum de 100 entrées. Un mot peut contenir jusqu'à 40 caractères. Une forme parlée peut contenir jusqu'à 120 caractères. Vous pouvez également modifier ces entrées dans le Tableau de Bord Web.",
-      "permission": "Modérateur (diffuseur uniquement pour clear)"
+      "permission": "Modérateur (uniquement le streamer pour clear)"
     },
     "ttsProfanity": {
       "name": "!tts profanity <on|off|status>",
-      "description": "Active ou désactive le filtre anti-grossièretés, qui remplace les mots vulgaires par des termes plus doux.",
+      "description": "Active ou désactive le filtre de vulgarité, qui remplace les termes grossiers par des mots plus doux.",
       "usage": {
         "on": "!tts profanity on",
         "off": "!tts profanity off",
         "status": "!tts profanity status"
       },
       "statusNote": "(affiche l'état, la langue et le nombre de mots)",
-      "notes": "Le filtre est désactivé jusqu'à ce que vous l'activiez. Il remplace les mots vulgaires par des termes plus doux. Il ne supprime pas le message. La liste de mots interdits dans le Tableau de Bord Web supprime le message entier."
+      "notes": "Le filtre est désactivé tant que vous ne l'activez pas. Il remplace les mots grossiers par des mots plus doux. Il ne supprime pas le message. La liste des Mots Interdits dans le tableau de bord supprime le message entier."
     }
   },
   "table": {
@@ -448,150 +448,150 @@
   },
   "voices": {
     "title": "Voix",
-    "introText": "Les voix suivantes sont disponibles via le modèle MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> de <strong>302.ai</strong>, avec basculement automatique vers <span class=\"inline-code\">speech-02-turbo</span> via <strong>Wavespeed AI</strong>. Le bot utilise une liste complète codée en dur de 472 voix avec catégorisation automatique des langues sur 45 langues. Le <span class=\"inline-code\">voice_id</span> est utilisé dans des commandes comme <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
+    "introText": "Le bot propose 472 voix réparties sur 45 langues issues du modèle MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Si le fournisseur principal est indisponible, le bot bascule automatiquement sur <span class=\"inline-code\">speech-02-turbo</span>. Utilisez le <span class=\"inline-code\">voice_id</span> dans des commandes comme <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
     "popularTitle": "Identifiants de Voix Populaires",
-    "popularText": "Voix en vedette du modèle MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> via 302.ai (avec Wavespeed AI en secours). Pour toute voix de cette liste, vous pouvez utiliser la commande <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> pour l'utiliser.",
+    "popularText": "Voix populaires du modèle MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Pour sélectionner une voix, utilisez <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> dans le chat.",
     "completeListTitle": "Liste complète des voix (du <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Schéma Wavespeed AI minimax/speech-02-turbo</a> — fournisseur de secours)",
-    "completeListText": "Ceci est la liste complète de toutes les 472 voix disponibles organisées par langue. Les voix sont automatiquement catégorisées par préfixe de langue pour une identification facile.",
-    "expandText": "Cliquez pour développer la liste complète des voix (472 voix sur 45 langues)",
-    "completeListNote": "Note : Le bot utilise principalement MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> via 302.ai, avec basculement vers <span class=\"inline-code\">speech-02-turbo</span> via Wavespeed AI si le fournisseur principal est indisponible. La liste complète comprend les 472 voix sur 45 langues, automatiquement catégorisées par préfixe de langue. La commande <span class=\"inline-code\">!tts voices</span> dans le chat pointe vers ici. Pour la liste la plus à jour, consultez l'<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">API du schéma Wavespeed AI</a> ou utilisez la validation de voix du bot lors de la définition des préférences.",
+    "completeListText": "Cette liste contient l'ensemble des 472 voix disponibles organisées par préfixe linguistique.",
+    "expandText": "Sélectionner pour afficher la liste complète des voix (472 voix dans 45 langues)",
+    "completeListNote": "Remarque : Le bot utilise MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> avec basculement automatique sur <span class=\"inline-code\">speech-02-turbo</span>. La liste comprend 472 voix classées par préfixe de langue. La commande <span class=\"inline-code\">!tts voices</span> renvoie à cette section.",
     "mossNote": "⚠️ Note : Certaines voix audio Moss peuvent nécessiter des autorisations d'accès spéciales. Si vous recevez une erreur \"vous n'avez pas accès à ce voice_id\", essayez une voix différente de cette liste."
   },
   "languageBoost": {
     "title": "Amélioration de Langue",
-    "introText": "La fonctionnalité <span class=\"inline-code\">language_boost</span> aide le modèle TTS à mieux comprendre et prononcer les mots de langues ou dialectes spécifiques. Ceci est particulièrement utile dans les chats multilingues ou lorsque les nuances d'une langue spécifique sont importantes pour un TTS clair.",
-    "commandText": "Vous pouvez définir une préférence de boost de langue personnelle en utilisant <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> ou les modérateurs peuvent définir une valeur par défaut du canal avec <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
+    "introText": "La fonctionnalité <span class=\"inline-code\">language_boost</span> améliore la prononciation pour des langues et dialectes spécifiques. Ce réglage est utile dans les chats multilingues et les streams non anglophones.",
+    "commandText": "Définissez une préférence de langue personnelle avec <span class=\"inline-code\">!tts language &lt;language_name&gt;</span>. Les modérateurs peuvent définir la valeur par défaut de la chaîne avec <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
     "optionsTitle": "Options d'Amélioration de Langue Disponibles",
     "optionsIntro": "Les valeurs suivantes sont acceptées :",
-    "usageText": "L'utilisation de <span class=\"inline-code\">auto</span> s'appuiera sur la détection automatique de la langue du modèle. <span class=\"inline-code\">English</span> est souvent un bon défaut pour les chats principalement anglophones. Choisir une langue spécifique peut considérablement améliorer la prononciation pour cette langue."
+    "usageText": "Le réglage <span class=\"inline-code\">auto</span> utilise la détection automatique de langue. Pour les chats en anglais, choisissez <span class=\"inline-code\">English</span>. Choisir une langue spécifique améliore nettement la prononciation pour cette langue."
   },
   "webDashboard": {
     "title": "Tableau de Bord Web",
-    "introText": "Le <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a> offre aux streamers une interface complète pour configurer tous les paramètres TTS et musique. Accédez-y en vous connectant avec votre compte Twitch.",
+    "introText": "Le <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web WildcatTTS</a> permet aux streamers de configurer tous les paramètres TTS. Connectez-vous avec votre compte Twitch pour accéder au tableau de bord.",
     "settingsTitle": "Paramètres Disponibles du Tableau de Bord",
     "settingEngineTitle": "Contrôle du Moteur :",
-    "settingEngineDesc": "Activer/désactiver TTS, annoncer les événements, définir le mode TTS et les permissions",
+    "settingEngineDesc": "Activez ou désactivez le TTS, annoncez les événements du stream et définissez le mode et les permissions TTS.",
     "settingViewerTitle": "Préférences des Spectateurs :",
-    "settingViewerDesc": "Autoriser ou forcer la voix par défaut du canal pour tous les messages",
+    "settingViewerDesc": "Autorisez les voix personnalisées pour spectateurs ou forcez la voix par défaut de la chaîne pour tous les messages.",
     "settingAllowPreferencesTitle": "Autoriser les préférences de voix des spectateurs :",
-    "settingAllowPreferencesDesc": "Permettez aux spectateurs de choisir leur voix avec !myvoice, ou verrouillez tout le TTS sur la voix par défaut du canal",
+    "settingAllowPreferencesDesc": "Permettez aux spectateurs de choisir des voix personnalisées avec !myvoice, ou verrouillez le TTS sur la voix par défaut.",
     "settingBotChatTitle": "Le bot répond dans le chat :",
-    "settingBotChatDesc": "Activez ou désactivez les réponses textuelles du bot dans le chat Twitch tout en conservant l'audio TTS",
+    "settingBotChatDesc": "Activez ou désactivez les réponses textuelles du bot dans le chat tout en conservant l'audio TTS actif.",
     "settingAnonymizeFollowersTitle": "Anonymiser les nouveaux followers :",
-    "settingAnonymizeFollowersDesc": "Annoncez les nouveaux followers sans prononcer leur nom d'utilisateur pour protéger leur vie privée",
+    "settingAnonymizeFollowersDesc": "Annoncez les nouveaux followers sans énoncer leur pseudo pour respecter leur vie privée.",
     "settingAnnounceCheersTitle": "Annoncer les Cheers :",
-    "settingAnnounceCheersDesc": "Activez ou désactivez les alertes d'événements de bits tout en continuant à lire les messages de cheer",
+    "settingAnnounceCheersDesc": "Activez ou désactivez les alertes de cheer tout en continuant à lire les messages de cheer.",
     "settingUrlTitle": "Lecture d'URL :",
-    "settingUrlDesc": "Lire les URLs complètes ou seulement les noms de domaine",
+    "settingUrlDesc": "Lisez les liens web complets ou uniquement les noms de domaine.",
     "settingBitsTitle": "Bits → TTS :",
-    "settingBitsDesc": "Exiger un minimum de bits pour les messages TTS",
+    "settingBitsDesc": "Exigez un montant minimum de Bits pour déclencher l'audio TTS.",
     "settingChannelPointsTitle": "Points de Canal → TTS :",
-    "settingChannelPointsDesc": "Créer et configurer une récompense personnalisée de Points de Canal (voir section ci-dessus)",
+    "settingChannelPointsDesc": "Créez et configurez une récompense personnalisée de Points de chaîne pour le TTS.",
     "settingIgnoreTitle": "Listes d'Ignorés :",
-    "settingIgnoreDesc": "Gérer les listes d'ignorés TTS et musique avec interface d'ajout/suppression",
+    "settingIgnoreDesc": "Gérez la liste d'ignorance TTS avec les boutons d'ajout et de suppression.",
     "settingBannedWordsTitle": "Mots Interdits :",
-    "settingBannedWordsDesc": "Bloquer des mots ou des expressions spécifiques pour que TTS ignore les messages correspondants",
+    "settingBannedWordsDesc": "Bloquez des mots spécifiques pour que le TTS ignore les messages correspondants.",
     "settingVoiceTitle": "Paramètres de Voix par Défaut :",
-    "settingVoiceDesc": "Définir les défauts du canal pour la voix, l'émotion, la tonalité, la vitesse, la langue et la normalisation du texte",
+    "settingVoiceDesc": "Définissez les valeurs par défaut de la chaîne pour la voix, le volume, l'émotion, la hauteur, la vitesse, la langue et la normalisation du texte.",
     "settingObsTitle": "Configuration OBS :",
-    "settingObsDesc": "Obtenez votre URL TTS unique et sécurisée et des instructions de configuration détaillées",
+    "settingObsDesc": "Obtenez votre URL sécurisée de source navigateur OBS et les instructions de configuration.",
     "settingPreviewTitle": "Aperçu de la Voix :",
-    "settingPreviewDesc": "Testez vos paramètres de voix actuels avant de diffuser en direct",
+    "settingPreviewDesc": "Testez vos réglages vocaux avant de lancer votre stream.",
     "obsSetupTitle": "Configuration de la Source du Navigateur OBS",
     "obsStep1Title": "Étape 1 : Ajouter une Source de Navigateur dans OBS",
-    "obsStep1_1": "Dans OBS, cliquez sur le \"+\" sous Sources",
-    "obsStep1_2": "Sélectionnez \"Navigateur\"",
-    "obsStep1_3": "Nommez-la (ex : \"WildcatTTS TTS\")",
-    "obsStep1_4": "Configurez :",
+    "obsStep1_1": "Dans OBS, cliquez sur l'icône '+' sous Sources",
+    "obsStep1_2": "Sélectionnez 'Navigateur'",
+    "obsStep1_3": "Nommez la source (par exemple, 'WildcatTTS')",
+    "obsStep1_4": "Configurez la source :",
     "obsConfigUrlTitle": "URL :",
-    "obsConfigUrlDesc": "Collez votre URL unique depuis le tableau de bord",
+    "obsConfigUrlDesc": "Collez votre URL TTS unique issue du tableau de bord",
     "obsConfigSizeTitle": "Largeur/Hauteur :",
-    "obsConfigSizeDesc": "300x100 (peu importe, c'est audio seulement)",
-    "obsConfigControl": "✓ Contrôler l'audio via OBS (doit être coché)",
-    "obsConfigShutdown": "Décochez \"Fermer la source lorsqu'elle n'est pas visible\" pour un audio persistant",
+    "obsConfigSizeDesc": "Définissez 300x100 (la taille n'affecte pas l'audio)",
+    "obsConfigControl": "<strong>✓ Contrôler l'audio via OBS</strong> (doit être coché)",
+    "obsConfigShutdown": "Décochez 'Désactiver la source si invisible' pour assurer une lecture audio continue",
     "obsStep2Title": "Étape 2 : Activer la Surveillance Audio",
-    "obsStep2_1": "Trouvez le mixeur audio dans OBS (panneau inférieur)",
-    "obsStep2_2": "Cliquez sur l'engrenage (⚙️) à côté de \"WildcatTTS TTS\" → \"Propriétés Audio Avancées\"",
-    "obsStep2_3": "Réglez \"Surveillance Audio\" sur :",
+    "obsStep2_1": "Repérez le mélangeur audio dans OBS (panneau inférieur)",
+    "obsStep2_2": "Cliquez sur l'engrenage (⚙️) à côté de 'WildcatTTS' → 'Propriétés audio avancées'",
+    "obsStep2_3": "Réglez 'Monitoring audio' sur :",
     "obsMonitorOutputTitle": "Surveiller et Sortie",
-    "obsMonitorOutputDesc": "- VOUS ET le stream l'entendez",
+    "obsMonitorOutputDesc": "- Vous et votre stream entendez l'audio",
     "obsMonitorOnlyTitle": "Surveiller Uniquement",
-    "obsMonitorOnlyDesc": "- Seulement vous l'entendez (pour tester)",
+    "obsMonitorOnlyDesc": "- Vous seul entendez l'audio (pour les tests)",
     "obsImportantTitle": "Important :",
-    "obsImportantDesc": "Assurez-vous que la source n'est pas muette dans votre mixeur audio et que le volume est réglé de manière appropriée.",
+    "obsImportantDesc": "Vérifiez que la source n'est pas muette dans votre mélangeur audio et que le volume est correctement réglé.",
     "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
+    "settingYoutubeDesc": "Activez le TTS pour le chat en direct YouTube et définissez votre identifiant ou URL de direct.",
     "voiceCalibrationTitle": "Calibrage des voix",
-    "voiceCalibrationIntro": "Certaines voix sont naturellement plus fortes ou plus faibles que d'autres. Le calibrage des voix vous permet de définir des niveaux de volume précis pour chaque voix, afin de garantir une expérience audio homogène sur tout votre stream.",
-    "voiceCalibrationFeature1": "<strong>Volume par voix :</strong> Sélectionnez une voix et attribuez-lui un multiplicateur de volume personnalisé (de 0,1x à 10,0x). <em>(Attention : les valeurs supérieures à 1,0 peuvent être très fortes)</em>",
-    "voiceCalibrationFeature2": "<strong>Application automatique :</strong> Lorsqu'un utilisateur choisit une voix calibrée via <span class=\"inline-code\">!myvoice</span>, le volume personnalisé est appliqué automatiquement.",
-    "voiceCalibrationFeature3": "<strong>Priorité :</strong> Les volumes calibrés priment sur le volume par défaut de la chaîne pour cette voix précise.",
+    "voiceCalibrationIntro": "Certaines voix sont naturellement plus fortes ou plus douces que d'autres. L'Étalonnage Vocal vous permet de définir des multiplicateurs de volume pour des voix spécifiques afin d'harmoniser le niveau audio.",
+    "voiceCalibrationFeature1": "<strong>Volume par Voix :</strong> Sélectionnez une voix et attribuez un multiplicateur (0.1x à 10.0x). <em>(Attention : les valeurs supérieures à 1.0 peuvent être fortes)</em>",
+    "voiceCalibrationFeature2": "<strong>Application Automatique :</strong> Lorsqu'un spectateur choisit une voix étalonnée, le bot applique automatiquement le volume personnalisé.",
+    "voiceCalibrationFeature3": "<strong>Priorité :</strong> Les volumes étalonnés prévalent sur le volume par défaut de la chaîne.",
     "settingCalibrationTitle": "Calibrage des voix :",
-    "settingCalibrationDesc": "Définissez des volumes spécifiques pour certaines voix afin de normaliser les niveaux audio"
+    "settingCalibrationDesc": "Définissez des multiplicateurs de volume pour les voix individuelles afin d'équilibrer les niveaux audio."
   },
   "troubleshooting": {
     "title": "Dépannage",
     "q1": "Le bot ne répond pas aux commandes ?",
-    "a1": "Assurez-vous que le bot est modérateur dans votre canal. Vous pouvez le faire en tapant /mod wildcatTtsbot dans votre chat Twitch. Dans de nombreux cas, le bot peut avoir besoin de permissions de modérateur pour lire les messages et répondre aux commandes.",
+    "a1": "Vérifiez que le bot est modérateur sur votre chaîne. Tapez <span class=\"inline-code\">/mod wildcatttsbot</span> dans votre chat Twitch. Le bot a besoin des droits de modérateur pour lire les messages et envoyer des réponses.",
     "q2": "Le bot ne parle pas ?",
-    "a2": "Assurez-vous que le bot est activé dans votre canal. Vous pouvez le faire en tapant !tts on dans votre chat Twitch. Vérifiez également le mode actuel !tts mode et les permissions !tts permission.",
+    "a2": "Vérifiez que le TTS est activé avec <span class=\"inline-code\">!tts on</span> dans le chat. Vérifiez aussi le mode actif avec <span class=\"inline-code\">!tts mode</span> et les permissions avec <span class=\"inline-code\">!tts permission</span>.",
     "q3": "Le bot ne parle pas dans une langue spécifique, ou lit les nombres en chinois ?",
-    "a3": "Assurez-vous que l'amélioration de langue est définie sur la langue correcte. Vous pouvez le faire en tapant !tts language <nom_langue> pour vous-même ou !tts defaultlanguage <nom_langue> pour le canal dans votre chat Twitch. Vous pouvez vérifier l'amélioration de langue actuelle en utilisant !tts defaultlanguage.",
+    "a3": "Définissez l'optimisation linguistique sur votre langue avec <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (ou <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> pour la chaîne). Affichez le réglage actuel avec <span class=\"inline-code\">!tts defaultlanguage</span>.",
     "q4": "La génération TTS prend trop de temps ou échoue ?",
-    "a4": "WildcatTTS utilise principalement 302.ai (speech-2.8-turbo) avec basculement automatique vers Wavespeed AI (speech-02-turbo). Si vous rencontrez des retards, vérifiez votre connexion Internet et essayez d'utiliser !tts stop pour annuler toute génération bloquée. Le bot réessaie automatiquement les demandes échouées.",
+    "a4": "Le bot utilise 302.ai avec basculement automatique sur Wavespeed AI. En cas de latence, utilisez <span class=\"inline-code\">!tts stop</span> pour annuler les générations bloquées. Le bot relance automatiquement les requêtes échouées.",
     "q5": "Erreur de voix introuvable ?",
-    "a5": "Assurez-vous d'utiliser le voice ID correct de la section Voix. Les voice IDs sont sensibles à la casse et doivent correspondre exactement. Essayez !tts voices pour obtenir un lien vers les voix disponibles.",
+    "a5": "Assurez-vous d'utiliser un identifiant de voix exact de la <a href=\"#voices\" class=\"default-link-style\">section Voix</a>. Les identifiants respectent la casse. Utilisez <span class=\"inline-code\">!tts voices</span> pour obtenir la liste des voix.",
     "q6": "Erreur \"Accès à la voix refusé\" ?",
-    "a6": "Certaines voix (en particulier certains effets audio Moss) peuvent nécessiter des permissions d'accès spéciales sur Wavespeed AI. Si vous recevez cette erreur, essayez d'utiliser une voix différente de la liste des voix disponibles. La plupart des voix fonctionnent avec un accès standard.",
+    "a6": "Certaines voix Moss audio requièrent des autorisations spécifiques sur Wavespeed AI. Si cette erreur survient, sélectionnez une autre voix dans la <a href=\"#voices\" class=\"default-link-style\">liste des voix disponibles</a>.",
     "q7": "Erreur \"Voix invalide\" ?",
-    "a7": "Le voice ID que vous utilisez n'est pas disponible ou n'existe pas. Assurez-vous d'utiliser le voice ID correct de la section Voix. Les voice IDs sont sensibles à la casse et doivent correspondre exactement.",
+    "a7": "L'identifiant de voix demandé n'est pas valide. Vérifiez qu'il correspond à une entrée de la <a href=\"#voices\" class=\"default-link-style\">section Voix</a>. Les identifiants respectent la casse.",
     "q8": "L'émotion ne fonctionne pas ?",
-    "a8": "Notez que l'émotion \"auto\" n'est plus prise en charge. Utilisez neutral, happy, sad, angry, fearful, disgusted ou surprised à la place.",
+    "a8": "L'émotion automatique n'est pas prise en charge. Utilisez <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> ou <span class=\"inline-code\">surprised</span>.",
     "q9": "Besoin d'aide ?",
-    "a9": "Contactez le développeur via le formulaire de contact sur le site web du portfolio d'Henry."
+    "a9": "Contactez le développeur via le <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">formulaire de contact</a> sur le portfolio de Henry."
   },
   "emoteDescriptions": {
     "title": "Descriptions d'Emotes",
-    "introText": "WildcatTTS utilise l'IA (Google Gemini) pour décrire automatiquement les emotes Twitch lorsqu'ils apparaissent dans les messages du chat. Au lieu de lire le code de l'emote (par ex. « LUL »), le TTS lit une description naturelle telle que « une personne qui rit ». Ces descriptions sont mises en cache de manière permanente pour éviter un traitement IA répété.",
+    "introText": "WildcatTTS utilise l'IA Google Gemini pour décrire les emotes Twitch dans les messages de chat. Au lieu de lire le code de l'emote (par exemple, 'LUL'), le TTS prononce une description comme 'une personne qui rit'. Le bot met en cache les descriptions de façon permanente pour éviter les requêtes IA répétées.",
     "howItWorksTitle": "Comment ça fonctionne",
-    "step1": "Lorsqu'un emote apparaît dans un message TTS pour la première fois, le bot utilise l'IA pour analyser l'image de l'emote et générer une courte description textuelle.",
-    "step2": "La description est mise en cache de manière permanente, elle ne doit donc être générée qu'une seule fois.",
-    "step3": "Les utilisations ultérieures du même emote utilisent la description mise en cache instantanément, sans aucun traitement IA.",
+    "step1": "Lorsqu'une emote apparaît pour la première fois, l'IA analyse son image et crée une courte description.",
+    "step2": "Le bot met en cache la description de façon permanente après la première génération.",
+    "step3": "Les utilisations ultérieures de l'emote utilisent immédiatement la description en cache sans nouveau traitement IA.",
     "managementTitle": "Gestion des Descriptions",
-    "managementText": "Les modérateurs peuvent utiliser la commande <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir manuellement les descriptions d'emotes. Consultez la section <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> dans le tableau des commandes ci-dessus pour plus de détails."
+    "managementText": "Les modérateurs peuvent utiliser <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir les descriptions d'emotes. Consultez le tableau <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> pour plus de détails."
   },
   "pronunciation": {
     "title": "Dictionnaire de Prononciation",
-    "introText": "Le chat utilise de nombreuses formes abrégées que le TTS lit lettre par lettre. Le dictionnaire de prononciation les transforme en mots complets. Par exemple, le TTS prononce ngl comme « not gonna lie » et glhf comme « good luck have fun ». WildcatTTS intègre une liste d'environ 70 abréviations courantes. Vous pouvez également ajouter les vôtres.",
+    "introText": "Le chat utilise de nombreuses abréviations que le TTS lit lettre par lettre. Le dictionnaire de prononciation les transforme en mots complets. Par exemple, le TTS prononce <span class=\"inline-code\">ngl</span> comme 'not gonna lie' et <span class=\"inline-code\">glhf</span> comme 'good luck have fun'. WildcatTTS comprend une liste intégrée d'environ 70 abréviations courantes. Vous pouvez aussi ajouter vos propres entrées.",
     "howItWorksTitle": "Comment ça fonctionne",
     "rule1": "Le mot n'est pas sensible à la casse. Une entrée pour lfg correspond également à LFG.",
     "rule2": "Une entrée doit correspondre à un mot complet. Une entrée pour fr ne modifie pas le mot « friend ».",
-    "rule3": "Le dictionnaire ne modifie pas le texte présent dans un lien.",
-    "rule4": "Le dictionnaire ne remplace chaque mot qu'une seule fois. Le TTS ne relit pas le nouveau texte pour chercher d'autres correspondances.",
+    "rule3": "Le dictionnaire ne modifie pas le texte à l'intérieur d'un lien.",
+    "rule4": "Le dictionnaire remplace chaque mot une seule fois. Le TTS n'analyse pas le texte remplacé pour d'autres correspondances.",
     "customTitle": "Vos Propres Entrées",
-    "customText": "Les modérateurs peuvent ajouter des entrées avec la commande !tts pronounce. Vous pouvez également en ajouter dans la carte Dictionnaire de Prononciation du Tableau de Bord Web. Vos propres entrées sont utiles pour les noms de chaînes, de jeux ou tout mot que le TTS prononce mal.",
+    "customText": "Les modérateurs peuvent ajouter des entrées avec la commande <span class=\"inline-code\">!tts pronounce</span> ou dans le Tableau de bord Web. Les entrées personnalisées sont utiles pour les noms de chaîne, les termes de jeu et les mots difficiles.",
     "custom1": "Votre entrée remplace une entrée intégrée ayant le même mot.",
-    "custom2": "Pour désactiver une entrée intégrée, utilisez !tts pronounce off <mot>. Pour la réactiver, utilisez !tts pronounce remove <mot>.",
+    "custom2": "Pour désactiver une entrée intégrée, utilisez <span class=\"inline-code\">!tts pronounce off &lt;word&gt;</span>. Pour la réactiver, utilisez <span class=\"inline-code\">!tts pronounce remove &lt;word&gt;</span>.",
     "custom3": "Une chaîne peut contenir un maximum de 100 entrées.",
     "switchTitle": "Comment le désactiver",
-    "switchText": "Le dictionnaire est activé pour toutes les chaînes. Pour le désactiver, réglez le contrôle « Développer les acronymes du chat » sur désactivé dans le Tableau de Bord Web. Le TTS épellera alors chaque abréviation lettre par lettre.",
-    "lolTip": "Le TTS prononce déjà lol comme « el oh el ». C'est le résultat habituel et aucune entrée de dictionnaire n'est nécessaire pour cela."
+    "switchText": "Le dictionnaire est activé pour toutes les chaînes par défaut. Pour le désactiver, coupez l'option 'Développer les acronymes du chat' sur le Tableau de bord Web. Le TTS lira alors les abréviations lettre par lettre.",
+    "lolTip": "Le TTS prononce déjà <span class=\"inline-code\">lol</span> comme 'el oh el'. Il s'agit du comportement standard sans nécessiter d'entrée de dictionnaire."
   },
   "profanityFilter": {
     "title": "Filtre Anti-Grossièretés",
-    "introText": "Le filtre anti-grossièretés remplace les mots vulgaires par des termes plus doux avant que le TTS ne les prononce. Par exemple, le TTS prononce « what the fuck » comme « what the freak ». Le filtre est désactivé jusqu'à ce qu'un modérateur l'active.",
+    "introText": "Le filtre de vulgarité remplace les termes grossiers par des mots plus doux avant la lecture par le TTS. Par exemple, le TTS prononce 'what the fuck' comme 'what the freak'. Le filtre reste désactivé jusqu'à ce qu'un modérateur l'active.",
     "startTitle": "Comment l'activer",
-    "startText": "Utilisez !tts profanity on dans le chat ou activez le contrôle « Filtre Anti-Grossièretés » dans le Tableau de Bord Web. Utilisez !tts profanity status pour voir l'état, la langue et le nombre de mots dans la liste.",
+    "startText": "Utilisez <span class=\"inline-code\">!tts profanity on</span> dans le chat ou activez le Filtre de Vulgarité sur le Tableau de bord Web. Utilisez <span class=\"inline-code\">!tts profanity status</span> pour vérifier l'état, la langue active et le nombre de mots.",
     "behaviorTitle": "Ce qu'il fait",
-    "behavior1": "Le filtre remplace un mot grossier par un terme plus doux. Il ne supprime pas le message et ne produit pas de bip sonore.",
-    "behavior2": "Le filtre remplace une insulte discriminatoire (slur) par le mot « slur ». Ce remplacement empêche la diffusion du terme offensant dans l'audio.",
-    "behavior3": "Le filtre s'applique également aux abréviations du dictionnaire de prononciation. Lorsque le filtre est activé, le TTS prononce lfg comme « let's freaking go ».",
-    "behavior4": "Un mot doit correspondre exactement et en entier. Le filtre ne modifie pas le mot « class ».",
+    "behavior1": "Le filtre remplace les mots grossiers par des mots plus doux. Le bot ne supprime pas le message et ne joue pas de bip.",
+    "behavior2": "Le filtre remplace les insultes graves par le mot 'slur' pour supprimer le contenu offensant de l'audio.",
+    "behavior3": "Le filtre s'applique également aux abréviations du dictionnaire de prononciation. Lorsque le filtre est actif, le TTS lit <span class=\"inline-code\">lfg</span> comme 'let's freaking go'.",
+    "behavior4": "Les mots doivent correspondre exactement. Le filtre ne modifie pas les mots comme 'class'.",
     "languageTitle": "Langues",
-    "languageText": "Le filtre possède des listes de mots pour les 40 langues prises en charge par l'Amélioration de Langue. Le filtre utilise la liste de la langue de votre chaîne. Si un spectateur choisit une langue différente pour ses messages, le filtre utilise les deux listes. Le filtre inclut toujours la liste anglaise, car le dictionnaire de prononciation est en anglais.",
-    "languageAutoText": "Si votre Amélioration de Langue est définie sur « Automatique », le filtre utilise la liste anglaise. Le bot ne peut pas identifier la langue de chaque message individuel.",
-    "languageCoverageText": "La liste anglaise est la plus complète. Les listes des autres langues sont plus réduites. Les insultes discriminatoires (slurs) ne figurent que dans la liste anglaise.",
-    "bannedWordsTip": "Le filtre anti-grossièretés est différent de la liste des mots interdits. Les mots interdits suppriment l'intégralité du message. Le filtre anti-grossièretés lit le message, mais avec des termes adoucis."
+    "languageText": "Le filtre comprend des listes de mots pour les 40 langues prises en charge par l'optimisation linguistique. Le bot applique la liste correspondant à la langue de votre chaîne. Si un spectateur choisit une langue personnelle, le filtre applique les deux listes. La liste anglaise est toujours active car le dictionnaire de prononciation est en anglais.",
+    "languageAutoText": "Si l'optimisation linguistique est sur 'auto', le filtre utilise la liste anglaise. Le bot ne peut pas détecter la langue de chaque message individuel.",
+    "languageCoverageText": "La liste de mots anglais est la plus complète. Les listes pour les autres langues sont plus réduites. Les insultes graves n'existent que dans la liste anglaise.",
+    "bannedWordsTip": "Le filtre de vulgarité est différent des Mots Interdits. Les Mots Interdits ignorent la totalité du message. Le filtre de vulgarité lit le message en remplaçant les termes grossiers."
   },
   "bannedWords": {
     "title": "Mots Interdits",

@@ -27,11 +27,11 @@
   },
   "commands": {
     "title": "Comandi",
-    "prefixTip": "Tutti i comandi TTS sono prefissati con <span class=\"inline-code\">!tts</span>.",
+    "prefixTip": "Tutti i comandi TTS iniziano con <span class=\"inline-code\">!tts</span>.",
     "exampleTip": "Ad esempio: <span class=\"inline-code\">!tts status</span>",
-    "expandTip": "Clicca su qualsiasi riga di comando qui sotto per espandere e visualizzare i dettagli di utilizzo.",
-    "webDashboardTip": "I broadcaster e gli spettatori possono anche configurare le impostazioni utilizzando la <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>.",
-    "myvoiceTip": "Gli spettatori possono impostare le proprie preferenze TTS utilizzando l'interfaccia web inviando <span class=\"inline-code\">!myvoice</span> nella chat.",
+    "expandTip": "Seleziona una riga di comando per visualizzare i dettagli di utilizzo.",
+    "webDashboardTip": "Streamer e spettatori possono modificare le impostazioni anche nella <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard Web di WildcatTTS</a>.",
+    "myvoiceTip": "Gli spettatori possono impostare preferenze TTS personali nella dashboard web con <span class=\"inline-code\">!myvoice</span> in chat.",
     "ttsCommandsTitle": "Comandi Text-To-Speech",
     "common": {
       "notes": "Note:",
@@ -46,29 +46,29 @@
     },
     "ttsStatus": {
       "name": "!tts status",
-      "description": "Ottiene lo stato attuale dell'applicazione TTS per il canale.",
-      "notes": "Visualizza lo stato del motore, la modalità, la lunghezza della coda, la voce predefinita, il tono, la velocità, l'emozione e le impostazioni di potenziamento della lingua.",
+      "description": "Mostra lo stato attuale del TTS per il canale.",
+      "notes": "Mostra stato del motore, modalità, lunghezza della coda, voce predefinita, tono, velocità, emozione e potenziamento lingua.",
       "usage": {
         "basic": "!tts status"
       }
     },
     "ttsVoices": {
       "name": "!tts voices",
-      "description": "Fornisce un collegamento alla sezione di documentazione per le voci TTS disponibili.",
+      "description": "Mostra un collegamento all'elenco delle voci TTS disponibili.",
       "usage": {
         "basic": "!tts voices"
       }
     },
     "ttsLanguageslist": {
       "name": "!tts languageslist",
-      "description": "Fornisce un collegamento alla sezione di documentazione per le opzioni di potenziamento della lingua TTS disponibili.",
+      "description": "Mostra un collegamento all'elenco delle opzioni di potenziamento lingua.",
       "usage": {
         "basic": "!tts languageslist"
       }
     },
     "ttsCommands": {
       "name": "!tts commands\n(Alias: !tts help)",
-      "description": "Fornisce un collegamento all'elenco completo dei sottocomandi !tts.",
+      "description": "Mostra un collegamento all'elenco completo dei sottocomandi di <span class=\"inline-code\">!tts</span>.",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
@@ -77,10 +77,10 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias: !tts preferences, !tts settings)",
-      "description": "Ti invia un collegamento di breve durata alla tua pagina di impostazioni TTS personali.",
-      "feature1": "Configura la tua voce, tono, velocità, emozione e lingua su base per canale.",
-      "feature2": "Include una \"Zona Pericolo\" con contorno rosso dove puoi aggiungere te stesso agli elenchi di ignorati TTS e/o Generazione Musicale del canale (solo un moderatore può annullare questo).",
-      "feature3": "Il bot pubblica il collegamento pubblicamente in chat; è firmato solo per te e scade dopo il primo accesso o 10 minuti. La pagina è pre-compilata con il canale attuale.",
+      "description": "Invia un collegamento temporaneo alla <strong>tua pagina personale delle impostazioni TTS</strong>.",
+      "feature1": "Imposta voce, tono, velocità, emozione e lingua personali per questo canale.",
+      "feature2": "Include una Zona Pericolosa in cui puoi aggiungerti alla lista ignorati di TTS. Solo un moderatore può rimuoverti.",
+      "feature3": "Il bot invia il collegamento in chat. Funziona solo per te e scade dopo 10 minuti o al primo utilizzo.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,15 +90,15 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Ti invia un collegamento di breve durata alla tua pagina di impostazioni TTS personali (equivalente a !tts prefs).",
-      "notes": "Uguale a !tts prefs. Il bot pubblica il collegamento pubblicamente in chat; è firmato solo per te e scade dopo il primo accesso o 10 minuti. La pagina è pre-compilata con il canale attuale.",
+      "description": "Invia un collegamento temporaneo alla <strong>tua pagina personale delle impostazioni TTS</strong> (uguale a <span class=\"inline-code\">!tts prefs</span>).",
+      "notes": "Uguale a <code>!tts prefs</code>. Il bot invia il collegamento in chat. Funziona solo per te e scade dopo 10 minuti o al primo utilizzo.",
       "usage": {
         "basic": "!myvoice"
       }
     },
     "ttsOn": {
       "name": "!tts on\n(Alias: !tts enable)",
-      "description": "Attiva il motore TTS. I messaggi e gli eventi possono essere pronunciati in base alla modalità corrente.",
+      "description": "Avvia il motore TTS. Il TTS legge messaggi ed eventi in base alla modalità attiva.",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
@@ -107,7 +107,7 @@
     },
     "ttsOff": {
       "name": "!tts off\n(Alias: !tts disable)",
-      "description": "Disattiva completamente il motore TTS. Nessun messaggio o evento verrà pronunciato.",
+      "description": "Arresta completamente il motore TTS. Il TTS non leggerà messaggi né eventi.",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
@@ -116,14 +116,14 @@
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
-      "description": "Attiva/Disattiva la modalità TTS.",
-      "allDesc": "(Pronuncia tutti i messaggi di chat e gli eventi; questa è la modalità predefinita)",
-      "commandDesc": "(Pronuncia solo su comando o per gli eventi)",
-      "bitsPointsOnlyDesc": "(Pronuncia solo i Bits cheer e i riscatti dei Punti Canale)",
+      "description": "Imposta o mostra la modalità TTS.",
+      "allDesc": "(Legge tutti i messaggi della chat ed eventi; <strong>modalità predefinita</strong>)",
+      "commandDesc": "(Legge solo comandi ed eventi abilitati)",
+      "bitsPointsOnlyDesc": "(Legge solo cheer di Bits e riscatti di Punti Canale)",
       "bitsAlias": "(Alias per bits_points_only)",
       "pointsAlias": "(Alias per bits_points_only)",
-      "statusDesc": "(Visualizza la modalità attuale)",
-      "notes": "all: Tutti i messaggi di chat (non dagli utenti ignorati o comandi) e gli eventi abilitati verranno pronunciati, soggetti all'impostazione di permesso !tts.\ncommand: Solo i messaggi attivati da comandi TTS specifici (come !tts <message>) o gli eventi abilitati verranno pronunciati. La chat regolare viene ignorata.\nbits_points_only: Solo i Bits cheer e i riscatti dei Punti Canale vengono letti ad alta voce. La chat regolare e i comandi vengono ignorati.",
+      "statusDesc": "(Mostra la modalità attuale)",
+      "notes": "<span class=\"inline-code\">all</span>: Il TTS legge tutti i messaggi della chat (tranne utenti ignorati) ed eventi abilitati, in base a <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: Il TTS legge solo comandi (come <span class=\"inline-code\">!tts &lt;message&gt;</span>) ed eventi abilitati. Il TTS ignora la chat normale.<br><span class=\"inline-code\">bits_points_only</span>: Il TTS legge solo cheer di Bits e riscatti di Punti Canale. Il TTS ignora la chat normale e i comandi.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,9 +135,9 @@
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
-      "description": "Imposta un filtro su chi può attivare il TTS quando il bot è in modalità all.",
-      "statusDesc": "(mostra il filtro dei permessi attuale)",
-      "notes": "everyone o all: Il messaggio di chat di qualsiasi utente può essere letto. (Predefinito)\nsubs: Verranno letti solo i messaggi di abbonati, VIP, moderatori e dello streamer.\nvip: Verranno letti solo i messaggi di VIP, moderatori e dello streamer.\nmods: Verranno letti solo i messaggi di moderatori e dello streamer.\nQuesto non influisce sulla modalità command.",
+      "description": "Imposta chi può attivare il TTS quando il bot è in modalità <span class=\"inline-code\">all</span>.",
+      "statusDesc": "(mostra il filtro permessi attuale)",
+      "notes": "<span class=\"inline-code\">everyone</span> o <span class=\"inline-code\">all</span>: Il TTS legge i messaggi di tutti gli utenti (<strong>Predefinito</strong>).<br><span class=\"inline-code\">subs</span>: Il TTS legge i messaggi di abbonati, VIP, moderatori e dello streamer.<br><span class=\"inline-code\">vip</span>: Il TTS legge i messaggi di VIP, moderatori e dello streamer.<br><span class=\"inline-code\">mods</span>: Il TTS legge solo i messaggi di moderatori e dello streamer.<br>Questa impostazione non influisce sulla modalità <span class=\"inline-code\">command</span>.",
       "usage": {
         "everyone": "!tts permission everyone",
         "subs": "!tts permission subs",
@@ -148,11 +148,11 @@
     },
     "ttsBits": {
       "name": "!tts bits [on|off|min <amount>]",
-      "description": "Configura la funzione Bits-for-TTS, consentendo ai canali di richiedere un importo Cheer minimo per attivare il TTS.",
-      "statusDesc": "(visualizza lo stato attuale di Bits-for-TTS)",
-      "onDesc": "on: Attiva la modalità Bits-for-TTS. Solo i messaggi con un cheer sufficiente verranno letti.",
-      "offDesc": "off: Disattiva la modalità Bits-for-TTS.",
-      "minDesc": "min <amount>: Imposta il numero minimo di Bits richiesti (ad esempio, min 100).",
+      "description": "Controlla la funzione Bits-per-TTS e imposta l'importo minimo di Cheer per il TTS.",
+      "statusDesc": "(mostra lo stato attuale di Bits-per-TTS)",
+      "onDesc": "<span class=\"inline-code\">on</span>: Avvia la modalità Bits-per-TTS. Il TTS legge solo i messaggi con abbastanza Bits.",
+      "offDesc": "<span class=\"inline-code\">off</span>: Disattiva la modalità Bits-per-TTS.",
+      "minDesc": "<span class=\"inline-code\">min &lt;amount&gt;</span>: Imposta i Bits minimi richiesti (ad esempio, <span class=\"inline-code\">min 100</span>).",
       "usage": {
         "on": "!tts bits on",
         "off": "!tts bits off",
@@ -162,56 +162,56 @@
     },
     "channelPointsTTS": {
       "name": "Punti Canale → TTS",
-      "description": "Crea un premio personalizzato dei Punti Canale Twitch per gli spettatori da riscattare con un messaggio da leggere ad alta voce.",
-      "noteText": "Questa funzione è configurata esclusivamente tramite il Web Dashboard di WildcatTTS nella sezione \"Punti Canale → TTS\".",
+      "description": "Crea una ricompensa personalizzata di Punti Canale per i messaggi letti dal TTS.",
+      "noteText": "Configura questa funzione nella <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard Web di WildcatTTS</a> nella sezione \"Punti Canale → TTS\".",
       "howItWorks": "Come Funziona:",
-      "step1": "Configurazione Streamer: Abilita la funzione nel dashboard.",
-      "step2": "Creazione Premio: Il bot crea automaticamente un premio personalizzato dei Punti Canale sul tuo canale Twitch.",
-      "step3": "Riscatto Spettatore: Gli spettatori riscattano il premio con un messaggio personalizzato, che viene letto ad alta voce.",
-      "step4": "Politica dei Contenuti: Filtro incorporato (limiti di lunghezza, blocco dei link, parole vietate).",
+      "step1": "<strong>Configurazione Streamer:</strong> Attiva la funzione nella dashboard.",
+      "step2": "<strong>Creazione Ricompensa:</strong> Il bot crea una ricompensa personalizzata di Punti Canale sul tuo canale Twitch.",
+      "step3": "<strong>Riscatto Spettatore:</strong> Gli spettatori riscattano la ricompensa con un messaggio letto dal TTS.",
+      "step4": "<strong>Regole sui Contenuti:</strong> Filtra il testo con limiti di lunghezza, blocco link e parole vietate.",
       "configOptions": "Opzioni di Configurazione:",
-      "basicSettings": "Impostazioni di Base: Titolo premio, costo (punti), testo del prompt, opzione salta coda",
-      "advancedSettings": "Impostazioni Avanzate: Tempo di attesa globale, limite per stream, limite per utente",
-      "contentPolicy": "Politica dei Contenuti: Lunghezza minima/massima del messaggio, blocca link, elenco di parole vietate",
+      "basicSettings": "<strong>Impostazioni di Base:</strong> Titolo ricompensa, costo in punti, prompt e opzioni di coda.",
+      "advancedSettings": "<strong>Impostazioni Avanzate:</strong> Cooldown globale, limite per stream e limite per utente.",
+      "contentPolicy": "<strong>Regole sui Contenuti:</strong> Lunghezza minima/massima, blocco link e parole vietate.",
       "skipQueue": "Salta la Coda dei Premi:",
-      "skipQueueDefault": "Impostazione Predefinita: Questa opzione è abilitata per impostazione predefinita per la riproduzione TTS immediata.",
-      "skipQueueEnabled": "Se Abilitato: I riscatti vengono elaborati immediatamente e non compaiono nella coda \"Richieste Premio\" di Twitch.",
-      "skipQueueDisabled": "Se Disabilitato: I riscatti compaiono nel tuo dashboard Twitch per l'approvazione manuale prima della riproduzione di TTS.",
-      "skipQueueUseCase": "Caso di Utilizzo: Abilita per TTS istantaneo, disabilita per controllo di moderazione.",
+      "skipQueueDefault": "<strong>Impostazione Predefinita:</strong> Questa opzione è attiva per impostazione predefinita per la riproduzione immediata.",
+      "skipQueueEnabled": "<strong>Se attiva:</strong> Il TTS riproduce subito i riscatti senza aggiungerli alla coda di revisione di Twitch.",
+      "skipQueueDisabled": "<strong>Se disattivata:</strong> I riscatti attendono l'approvazione manuale nella dashboard di Twitch prima della lettura.",
+      "skipQueueUseCase": "<strong>Suggerimento:</strong> Attiva per riproduzione immediata. Disattiva per moderare prima dell'audio.",
       "ttsModes": "Modalità TTS:",
       "ttsModesText": "Funziona con tutte le modalità TTS (Tutti i Messaggi, Solo Comandi, Solo Bits/Punti).",
       "requirements": "Requisiti:",
-      "requirementsText": "Devi concedere gli ambiti OAuth channel:manage:redemptions e channel:read:redemptions durante la configurazione iniziale del dashboard."
+      "requirementsText": "Concedi le autorizzazioni <span class=\"inline-code\">channel:manage:redemptions</span> e <span class=\"inline-code\">channel:read:redemptions</span> all'accesso alla dashboard."
     },
     "ttsPause": {
       "name": "!tts pause",
-      "description": "Mette in pausa l'elaborazione della coda di eventi TTS.",
-      "notes": "I nuovi messaggi/eventi verranno comunque aggiunti alla coda ma non verranno pronunciati fino alla ripresa.",
+      "description": "Mette in pausa l'elaborazione della coda TTS.",
+      "notes": "Il bot aggiunge nuovi messaggi ed eventi alla coda, ma non li legge finché non viene ripresa.",
       "usage": {
         "basic": "!tts pause"
       }
     },
     "ttsResume": {
       "name": "!tts resume",
-      "description": "Riprende l'elaborazione della coda di eventi TTS se era in pausa.",
+      "description": "Riprende l'elaborazione della coda TTS.",
       "usage": {
         "basic": "!tts resume"
       }
     },
     "ttsClear": {
       "name": "!tts clear",
-      "description": "Cancella tutti i messaggi e gli eventi in sospeso dalla coda TTS.",
-      "notes": "Questo comando rimuove solo i messaggi in attesa nella coda. Non ferma l'audio attualmente in riproduzione o generato attivamente dal motore TTS.",
+      "description": "Rimuove tutti i messaggi ed eventi in attesa dalla coda TTS.",
+      "notes": "Questo comando rimuove i messaggi dalla coda. <strong>Non</strong> arresta l'audio attualmente in riproduzione o generazione.",
       "usage": {
         "basic": "!tts clear"
       }
     },
     "ttsStop": {
       "name": "!tts stop",
-      "description": "Interrompe l'audio TTS attualmente in riproduzione o in corso di generazione.",
-      "note1": "Se il TTS è attualmente in pronuncia o generazione audio, questo comando tenterà di interromperlo.",
-      "note2": "Qualsiasi utente può interrompere un messaggio se è stato attivato dal suo messaggio di chat.",
-      "note3": "I moderatori e il broadcaster possono interrompere qualsiasi audio TTS.",
+      "description": "Arresta l'audio TTS attivo o in fase di generazione.",
+      "note1": "Se il TTS sta parlando o generando audio, questo comando ferma la riproduzione.",
+      "note2": "Qualsiasi utente può fermare un messaggio attivato dal proprio messaggio di chat.",
+      "note3": "I moderatori e lo streamer possono fermare qualsiasi audio TTS.",
       "permission": "Tutti per i propri messaggi, Moderatore per gli altri",
       "usage": {
         "basic": "!tts stop"
@@ -219,9 +219,9 @@
     },
     "ttsVoice": {
       "name": "!tts voice <voice_id|reset>",
-      "description": "Consente a un utente di impostare la propria voce preferita per i messaggi che invia.",
+      "description": "Imposta la tua voce preferita per i tuoi messaggi di chat.",
       "statusDesc": "(visualizza la preferenza personale attuale)",
-      "notes": "Usa reset per tornare alla voce predefinita del canale. Usa !tts voices per ottenere un collegamento agli ID voce disponibili.",
+      "notes": "Usa <span class=\"inline-code\">reset</span> per usare la voce predefinita del canale. Usa <span class=\"inline-code\">!tts voices</span> per l'elenco degli ID voce.",
       "usage": {
         "example": "!tts voice Friendly_Person",
         "reset": "!tts voice reset",
@@ -230,9 +230,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "Consente a un utente di impostare l'emozione preferita per i suoi messaggi.",
+      "description": "Imposta la tua emozione preferita per i tuoi messaggi di chat.",
       "statusDesc": "(visualizza la preferenza personale attuale)",
-      "notes": "Emozioni valide: neutral, happy, sad, angry, fearful, disgusted, surprised. Usa reset per l'impostazione predefinita del canale.",
+      "notes": "Emozioni valide: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>. Usa <span class=\"inline-code\">reset</span> per il valore predefinito del canale.",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -241,9 +241,9 @@
     },
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Alias: !tts lang)",
-      "description": "Imposta il potenziamento della lingua preferita per il TTS.",
+      "description": "Imposta la tua preferenza di potenziamento lingua per i tuoi messaggi di chat.",
       "statusDesc": "(visualizza la preferenza personale attuale)",
-      "notes": "Influenza come viene interpretato e generato il parlato. Usa reset o auto per utilizzare l'impostazione predefinita del canale. Vedi la sezione Potenziamento Lingua o usa !tts languageslist per le opzioni disponibili.",
+      "notes": "Il potenziamento lingua migliora la pronuncia per una lingua. Usa <span class=\"inline-code\">reset</span> o <span class=\"inline-code\">auto</span> per il valore predefinito. Consulta la sezione <a href=\"#language-boost\" class=\"default-link-style\">Potenziamento Lingua</a> o usa <span class=\"inline-code\">!tts languageslist</span> per tutte le opzioni.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -254,9 +254,9 @@
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
-      "description": "Imposta il tono TTS personale.",
+      "description": "Imposta il tuo tono TTS per i tuoi messaggi di chat.",
       "statusDesc": "(visualizza la preferenza personale attuale)",
-      "notes": "Il valore deve essere un numero intero compreso tra -12 e 12 (0 è normale). Usa reset per l'impostazione predefinita del canale.",
+      "notes": "Il valore deve essere un numero intero da -12 a 12 (0 è predefinito). Usa <span class=\"inline-code\">reset</span> per il valore predefinito del canale.",
       "usage": {
         "positive": "!tts pitch 2",
         "negative": "!tts pitch -3",
@@ -266,9 +266,9 @@
     },
     "ttsSpeed": {
       "name": "!tts speed <value|reset>",
-      "description": "Imposta la velocità TTS personale.",
+      "description": "Imposta la tua velocità TTS per i tuoi messaggi di chat.",
       "statusDesc": "(visualizza la preferenza personale attuale)",
-      "notes": "Il valore deve essere un numero compreso tra 0.5 e 2.0 (1.0 è normale). Usa reset per l'impostazione predefinita del canale.",
+      "notes": "Il valore deve essere compreso tra 0.5 e 2.0 (1.0 è predefinito). Usa <span class=\"inline-code\">reset</span> per il valore predefinito del canale.",
       "usage": {
         "faster": "!tts speed 1.2",
         "slower": "!tts speed 0.8",
@@ -283,14 +283,14 @@
         "self": "!tts ignore tuonome",
         "mod": "!tts ignore add AltroUtente"
       },
-      "descriptionUser": "Per qualsiasi utente: Aggiungiti alla lista degli ignorati TTS del canale. I tuoi messaggi non verranno pronunciati.",
-      "descriptionMod": "Per Moderatori o Broadcaster: Aggiungi qualsiasi utente Twitch specificato alla lista degli ignorati TTS del canale.",
+      "descriptionUser": "<strong>Per ogni utente:</strong> Aggiungi <em>te stesso</em> alla lista ignorati di TTS. Il TTS non leggerà i tuoi messaggi.",
+      "descriptionMod": "<strong>Per moderatori e streamer:</strong> Aggiungi <em>un utente Twitch</em> alla lista ignorati di TTS del canale.",
       "usageSelfNote": "(se vuoi ignorare te stesso)",
       "usageModNote": "(se sei mod/broadcaster)"
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Alias: delete, rem, remove)",
-      "description": "Rimuove l'utente Twitch specificato dall'elenco di ignorati TTS.",
+      "description": "Rimuove un utente Twitch dalla lista ignorati di TTS del canale.",
       "usage": {
         "basic": "!tts ignore del UnUtente"
       },
@@ -298,15 +298,15 @@
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "Elenca tutti gli utenti attualmente nell'elenco di ignorati TTS per il canale.",
+      "description": "Elenca tutti gli utenti nella lista ignorati di TTS del canale.",
       "usage": {
         "basic": "!tts ignored"
       }
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Attiva/Disattiva se gli eventi Twitch (come abbonamenti, cheer, raid, ecc.) vengono annunciati da TTS.",
-      "statusDesc": "(visualizza lo stato attuale degli annunci degli eventi)",
+      "description": "Attiva o disattiva gli annunci degli eventi Twitch (come abbonamenti, cheer e raid).",
+      "statusDesc": "(mostra lo stato attuale degli annunci di eventi)",
       "usage": {
         "on": "!tts events on",
         "off": "!tts events off",
@@ -315,9 +315,9 @@
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "Imposta la voce TTS predefinita per il canale.",
+      "description": "Imposta la voce TTS predefinita per il <em>canale</em>.",
       "statusDesc": "(visualizza l'impostazione predefinita attuale del canale)",
-      "notes": "Usa reset per ripristinare l'impostazione predefinita del sistema. Usa !tts voices per un collegamento agli ID voce.",
+      "notes": "Usa <span class=\"inline-code\">reset</span> per il valore predefinito di sistema. Usa <span class=\"inline-code\">!tts voices</span> per vedere gli ID voce disponibili.",
       "usage": {
         "example": "!tts defaultvoice Friendly_Person",
         "reset": "!tts defaultvoice reset",
@@ -326,9 +326,9 @@
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Imposta l'emozione TTS predefinita per il canale.",
+      "description": "Imposta l'emozione TTS predefinita per il <em>canale</em>.",
       "statusDesc": "(visualizza l'impostazione predefinita attuale del canale)",
-      "notes": "Emozioni valide: neutral, happy, sad, angry, fearful, disgusted, surprised. Usa reset per l'impostazione predefinita del sistema (neutral).",
+      "notes": "Emozioni valide: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>. Usa <span class=\"inline-code\">reset</span> per il valore predefinito (<span class=\"inline-code\">neutral</span>).",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -337,9 +337,9 @@
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <language|reset>",
-      "description": "Imposta il potenziamento della lingua TTS predefinito per il canale.",
+      "description": "Imposta il potenziamento lingua predefinito per il <em>canale</em>.",
       "statusDesc": "(visualizza l'impostazione predefinita attuale del canale)",
-      "notes": "Usa reset o auto per utilizzare l'impostazione predefinita del sistema. Vedi la sezione Potenziamento Lingua o usa !tts languageslist per le opzioni.",
+      "notes": "Usa <span class=\"inline-code\">reset</span> o <span class=\"inline-code\">auto</span> per il valore predefinito di sistema. Consulta la sezione <a href=\"#language-boost\" class=\"default-link-style\">Potenziamento Lingua</a> o usa <span class=\"inline-code\">!tts languageslist</span> per le opzioni.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -348,9 +348,9 @@
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <value|reset>",
-      "description": "Imposta il tono TTS predefinito per il canale.",
+      "description": "Imposta il tono TTS predefinito per il <em>canale</em>.",
       "statusDesc": "(visualizza l'impostazione predefinita attuale del canale)",
-      "notes": "Il valore deve essere un numero intero compreso tra -12 e 12 (0 è normale). Usa reset per l'impostazione predefinita del sistema (0).",
+      "notes": "Il valore deve essere un numero intero da -12 a 12 (0 è predefinito). Usa <span class=\"inline-code\">reset</span> per il valore predefinito di sistema (0).",
       "usage": {
         "example": "!tts defaultpitch 2",
         "reset": "!tts defaultpitch reset",
@@ -359,9 +359,9 @@
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <value|reset>",
-      "description": "Imposta la velocità TTS predefinita per il canale.",
+      "description": "Imposta la velocità TTS predefinita per il <em>canale</em>.",
       "statusDesc": "(visualizza l'impostazione predefinita attuale del canale)",
-      "notes": "Il valore deve essere un numero compreso tra 0.5 e 2.0 (1.0 è normale). Usa reset per l'impostazione predefinita del sistema (1.0).",
+      "notes": "Il valore deve essere compreso tra 0.5 e 2.0 (1.0 è predefinito). Usa <span class=\"inline-code\">reset</span> per il valore predefinito di sistema (1.0).",
       "usage": {
         "example": "!tts defaultspeed 1.2",
         "reset": "!tts defaultspeed reset",
@@ -373,15 +373,15 @@
       "usage": {
         "basic": "!tts Benvenuti a tutti allo stream!"
       },
-      "description": "Accoda immediatamente il messaggio fornito per TTS. Funziona sia in modalità all che command. Utilizza le preferenze dell'utente richiedente (o i valori predefiniti del canale) per voce, tono, velocità ed emozione."
+      "description": "Aggiunge immediatamente il messaggio alla coda TTS. Funziona in modalità 'all' e 'command'. Il TTS usa le tue preferenze (o i valori predefiniti del canale) per voce, tono, velocità ed emozione."
     },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
-      "description": "Visualizzare, rigenerare o impostare manualmente le descrizioni delle emote memorizzate nella cache utilizzate dal TTS.",
-      "viewDesc": "Visualizzare la descrizione attuale generata dall'IA per un'emote.",
-      "regenerateDesc": "Cancellare la descrizione memorizzata nella cache in modo che l'IA la ri-descriva al prossimo utilizzo.",
-      "setDesc": "Impostare manualmente una descrizione personalizzata per un'emote.",
-      "notes": "Le emote nella chat vengono descritte automaticamente dall'IA al loro primo utilizzo. Queste descrizioni vengono memorizzate permanentemente nella cache, quindi non è necessario rigenerarle. Utilizza questo comando per visualizzare, correggere o rigenerare le descrizioni delle emote.",
+      "description": "Mostra, cancella o imposta le descrizioni delle emote salvate per il TTS.",
+      "viewDesc": "Mostra la descrizione IA attuale per un'emote.",
+      "regenerateDesc": "Cancella la descrizione salvata così che l'IA ne crei una nuova al prossimo utilizzo.",
+      "setDesc": "Imposta una descrizione personalizzata per un'emote del canale.",
+      "notes": "Quando un'emote compare in chat per la prima volta, l'IA crea una descrizione testuale. Il bot la memorizza in modo permanente. Usa questo comando per visualizzare, modificare o rigenerare le descrizioni delle emote.",
       "usage": {
         "view": "!tts emote LUL",
         "regenerate": "!tts emote regenerate LUL",
@@ -390,7 +390,7 @@
       "viewNote": "(mostra la descrizione attuale memorizzata nella cache)",
       "regenerateNote": "(cancella la cache; l'IA ri-descriverà al prossimo utilizzo)",
       "setNote": "(imposta una descrizione personalizzata — solo emote del canale)",
-      "permission": "Moderatore (imposta/rigenera solo per le emote di questo canale)"
+      "permission": "Moderatore (imposta/rigenera solo per le emote del canale)"
     },
     "ttsPronounce": {
       "name": "!tts pronounce <word> = <how to say it>",
@@ -407,7 +407,7 @@
       "listNote": "(mostra le voci per questo canale)",
       "removeNote": "(rimuove una voce)",
       "offNote": "(disattiva una voce predefinita)",
-      "testNote": "(mostra il risultato senza pronunciarlo)",
+      "testNote": "(mostra il risultato senza riproduzione audio)",
       "defaultsNote": "(elenca le voci predefinite)",
       "addDesc": "Aggiunge una parola e il testo che TTS pronuncerà al suo posto. La tua voce sostituisce una voce predefinita con la stessa parola.",
       "removeDesc": "Rimuove la tua voce. Se una voce predefinita ha la stessa parola, quella voce predefinita torna attiva.",
@@ -415,18 +415,18 @@
       "testDesc": "Mostra cosa direbbe TTS per un determinato testo. Il bot non pronuncia il testo.",
       "clearDesc": "Il broadcaster può usare !tts pronounce clear per rimuovere tutte le voci del canale. Le voci predefinite rimangono attive.",
       "notes": "La parola non fa distinzione tra maiuscole e minuscole e deve corrispondere a una parola intera. Un canale può avere un massimo di 100 voci. Una parola può contenere fino a 40 caratteri. Una forma parlata può contenere fino a 120 caratteri. Puoi modificare queste voci anche nella Web Dashboard.",
-      "permission": "Moderatore (solo broadcaster per clear)"
+      "permission": "Moderatore (solo streamer per clear)"
     },
     "ttsProfanity": {
       "name": "!tts profanity <on|off|status>",
-      "description": "Attiva o disattiva il filtro volgarità, che sostituisce le parole volgari con termini più attenuati.",
+      "description": "Avvia o ferma il filtro volgarità, che sostituisce i termini scurrili con parole più moderate.",
       "usage": {
         "on": "!tts profanity on",
         "off": "!tts profanity off",
         "status": "!tts profanity status"
       },
       "statusNote": "(mostra lo stato, la lingua e il numero di parole)",
-      "notes": "Il filtro è disattivato finché non lo attivi. Sostituisce le parole volgari con termini più attenuati. Non rimuove il messaggio. L'elenco delle parole vietate nella Web Dashboard rimuove l'intero messaggio."
+      "notes": "Il filtro è disattivato finché non lo avvii. Sostituisce i termini volgari con parole più miti. Non cancella il messaggio. L'elenco delle Parole Vietate nella Dashboard Web scarta invece l'intero messaggio."
     }
   },
   "table": {
@@ -448,150 +448,150 @@
   },
   "voices": {
     "title": "Voci",
-    "introText": "Le seguenti voci sono disponibili dal modello MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> tramite <strong>302.ai</strong>, con fallback automatico a <span class=\"inline-code\">speech-02-turbo</span> tramite <strong>Wavespeed AI</strong>. Il bot utilizza un elenco completo hardcoded di 472 voci con categorizzazione automatica della lingua su 45 lingue. Il <span class=\"inline-code\">voice_id</span> viene utilizzato in comandi come <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
+    "introText": "Il bot mette a disposizione 472 voci in 45 lingue dal modello MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Se il fornitore principale non è disponibile, il bot passa automaticamente a <span class=\"inline-code\">speech-02-turbo</span>. Usa il <span class=\"inline-code\">voice_id</span> in comandi come <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
     "popularTitle": "ID Voce Popolare",
-    "popularText": "Voci in evidenza dal modello MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> tramite 302.ai (con fallback Wavespeed AI). Per qualsiasi voce in questo elenco, puoi usare il comando <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> per usarla.",
+    "popularText": "Voci popolari dal modello MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Per selezionare una voce, usa <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> in chat.",
     "completeListTitle": "Elenco completo delle voci (dallo <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Schema Wavespeed AI minimax/speech-02-turbo</a> — provider di fallback)",
-    "completeListText": "Questo è l'elenco completo di tutte le 472 voci disponibili organizzate per lingua. Le voci vengono automaticamente categorizzate per prefisso della lingua per una facile identificazione.",
-    "expandText": "Clicca per espandere l'elenco completo delle voci (472 voci in 45 lingue)",
-    "completeListNote": "Nota: Il bot utilizza principalmente MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> tramite 302.ai, con fallback a <span class=\"inline-code\">speech-02-turbo</span> tramite Wavespeed AI se il provider principale non è disponibile. L'elenco completo include tutte le 472 voci su 45 lingue, automaticamente categorizzate per prefisso di lingua. Il comando <span class=\"inline-code\">!tts voices</span> nella chat collega qui. Per l'elenco più aggiornato, consultare l'<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">API dello schema Wavespeed AI</a> o utilizzare la convalida della voce del bot durante l'impostazione delle preferenze.",
+    "completeListText": "Questo elenco contiene tutte le 472 voci disponibili suddivise per prefisso di lingua.",
+    "expandText": "Seleziona per espandere l'elenco completo delle voci (472 voci in 45 lingue)",
+    "completeListNote": "Nota: Il bot usa MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> con passaggio automatico a <span class=\"inline-code\">speech-02-turbo</span>. L'elenco comprende 472 voci suddivise per prefisso linguistico. Il comando <span class=\"inline-code\">!tts voices</span> rimanda a questa sezione.",
     "mossNote": "⚠️ Nota: Alcune voci audio Moss potrebbero richiedere autorizzazioni di accesso speciali. Se ricevi un errore \"non hai accesso a questo voice_id\", prova una voce diversa da questo elenco."
   },
   "languageBoost": {
     "title": "Potenziamento Lingua",
-    "introText": "La funzionalità <span class=\"inline-code\">language_boost</span> aiuta il modello TTS a comprendere e pronunciare meglio le parole di lingue o dialetti specifici. Questo è particolarmente utile nelle chat multilingue o quando le sfumature di una lingua specifica sono importanti per un TTS chiaro.",
-    "commandText": "Puoi impostare una preferenza di boost della lingua personale usando <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> o i moderatori possono impostare un valore predefinito del canale con <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
+    "introText": "La funzione <span class=\"inline-code\">language_boost</span> migliora la pronuncia per lingue e dialetti specifici. Questa impostazione è utile nelle chat multilingue e negli stream non in lingua inglese.",
+    "commandText": "Imposta una preferenza di lingua personale con <span class=\"inline-code\">!tts language &lt;language_name&gt;</span>. I moderatori possono impostare il valore predefinito del canale con <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
     "optionsTitle": "Opzioni Potenziamento Lingua Disponibili",
     "optionsIntro": "I seguenti valori sono accettati:",
-    "usageText": "Usare <span class=\"inline-code\">auto</span> si baserà sul rilevamento automatico della lingua del modello. <span class=\"inline-code\">English</span> è spesso un buon valore predefinito per chat principalmente in inglese. Scegliere una lingua specifica può migliorare significativamente la pronuncia per quella lingua."
+    "usageText": "L'impostazione <span class=\"inline-code\">auto</span> usa il rilevamento automatico della lingua. Per chat in inglese, imposta <span class=\"inline-code\">English</span>. La scelta di una lingua specifica migliora notevolmente la pronuncia per quella lingua."
   },
   "webDashboard": {
     "title": "Web Dashboard",
-    "introText": "La <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a> fornisce agli streamer un'interfaccia completa per configurare tutte le impostazioni TTS e musica. Accedi effettuando l'accesso con il tuo account Twitch.",
+    "introText": "La <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard Web di WildcatTTS</a> permette agli streamer di configurare tutte le impostazioni TTS. Accedi con il tuo account Twitch per accedere alla dashboard.",
     "settingsTitle": "Impostazioni Dashboard Disponibili",
     "settingEngineTitle": "Controllo Motore:",
-    "settingEngineDesc": "Abilita/disabilita TTS, annuncia eventi, imposta modalità TTS e permessi",
+    "settingEngineDesc": "Attiva o disattiva il TTS, annuncia eventi del canale e imposta modalità e permessi del TTS.",
     "settingViewerTitle": "Preferenze Spettatore:",
-    "settingViewerDesc": "Consenti o forza la voce predefinita del canale per tutti i messaggi",
+    "settingViewerDesc": "Consenti voci personalizzate per gli spettatori o forza la voce predefinita del canale per tutti i messaggi.",
     "settingAllowPreferencesTitle": "Consenti preferenze vocali degli spettatori:",
-    "settingAllowPreferencesDesc": "Consenti agli spettatori di impostare voci personalizzate con !myvoice o blocca tutto il TTS sulla voce predefinita del canale",
+    "settingAllowPreferencesDesc": "Permetti agli spettatori di impostare voci personalizzate con !myvoice o blocca il TTS sulla voce predefinita del canale.",
     "settingBotChatTitle": "Il bot risponde in chat:",
-    "settingBotChatDesc": "Abilita o disabilita le risposte di testo del bot nella chat di Twitch mantenendo attivo l'audio TTS",
+    "settingBotChatDesc": "Attiva o disattiva i messaggi di testo del bot in chat mantenendo attivo l'audio del TTS.",
     "settingAnonymizeFollowersTitle": "Anonimizza nuovi follower:",
-    "settingAnonymizeFollowersDesc": "Annuncia i nuovi follower senza pronunciare il loro nome utente per tutelare la privacy",
+    "settingAnonymizeFollowersDesc": "Annuncia nuovi follower senza pronunciare i nomi utente a tutela della privacy.",
     "settingAnnounceCheersTitle": "Annuncia Cheer:",
-    "settingAnnounceCheersDesc": "Attiva o disattiva gli avvisi degli eventi di tifo continuando a leggere i messaggi di tifo",
+    "settingAnnounceCheersDesc": "Attiva o disattiva gli avvisi per i cheer continuando a leggerne i messaggi.",
     "settingUrlTitle": "Lettura URL:",
-    "settingUrlDesc": "Leggi URL completi o solo nomi di dominio",
+    "settingUrlDesc": "Leggi i link web completi o solo i nomi di dominio.",
     "settingBitsTitle": "Bits → TTS:",
-    "settingBitsDesc": "Richiedi bits minimi per messaggi TTS",
+    "settingBitsDesc": "Richiedi un importo minimo di cheer in Bits per attivare l'audio del TTS.",
     "settingChannelPointsTitle": "Punti Canale → TTS:",
-    "settingChannelPointsDesc": "Crea e configura un premio personalizzato dei Punti Canale (vedi sezione sopra)",
+    "settingChannelPointsDesc": "Crea e configura una ricompensa personalizzata di Punti Canale per il TTS.",
     "settingIgnoreTitle": "Elenchi Ignorati:",
-    "settingIgnoreDesc": "Gestisci elenchi ignorati TTS e musica con interfaccia aggiungi/rimuovi",
+    "settingIgnoreDesc": "Gestisci l'elenco ignorati del TTS con i comandi di aggiunta e rimozione.",
     "settingBannedWordsTitle": "Parole Vietate:",
-    "settingBannedWordsDesc": "Blocca parole o frasi specifiche in modo che TTS ignori i messaggi corrispondenti",
+    "settingBannedWordsDesc": "Blocca parole specifiche affinché il TTS salti i messaggi corrispondenti.",
     "settingVoiceTitle": "Impostazioni Voce Predefinita:",
-    "settingVoiceDesc": "Imposta valori predefiniti del canale per voce, emozione, tono, velocità, lingua e normalizzazione testo",
+    "settingVoiceDesc": "Imposta i valori predefiniti del canale per voce, volume, emozione, tono, velocità, lingua e normalizzazione del testo.",
     "settingObsTitle": "Configurazione OBS:",
-    "settingObsDesc": "Ottieni il tuo URL TTS univoco e sicuro e istruzioni dettagliate di configurazione",
+    "settingObsDesc": "Ottieni l'URL sicuro della sorgente browser OBS e le istruzioni di configurazione.",
     "settingPreviewTitle": "Anteprima Voce:",
-    "settingPreviewDesc": "Testa le tue impostazioni vocali attuali prima di andare in diretta",
+    "settingPreviewDesc": "Prova le impostazioni vocali prima di avviare lo stream.",
     "obsSetupTitle": "Configurazione Sorgente Browser OBS",
     "obsStep1Title": "Passaggio 1: Aggiungi Sorgente Browser in OBS",
-    "obsStep1_1": "In OBS, fai clic su \"+\" sotto Sorgenti",
-    "obsStep1_2": "Seleziona \"Browser\"",
-    "obsStep1_3": "Nominala (es: \"WildcatTTS TTS\")",
-    "obsStep1_4": "Configura:",
+    "obsStep1_1": "In OBS, fai clic sull'icona '+' sotto Sorgenti",
+    "obsStep1_2": "Seleziona 'Browser'",
+    "obsStep1_3": "Assegna un nome alla sorgente (ad esempio, 'WildcatTTS')",
+    "obsStep1_4": "Configura la sorgente:",
     "obsConfigUrlTitle": "URL:",
-    "obsConfigUrlDesc": "Incolla il tuo URL univoco dal dashboard",
+    "obsConfigUrlDesc": "Incolla l'URL TTS univoco ottenuto dalla dashboard",
     "obsConfigSizeTitle": "Larghezza/Altezza:",
-    "obsConfigSizeDesc": "300x100 (non importa, è solo audio)",
-    "obsConfigControl": "✓ Controlla audio tramite OBS (deve essere selezionato)",
-    "obsConfigShutdown": "Deseleziona \"Arresta sorgente quando non visibile\" per audio persistente",
+    "obsConfigSizeDesc": "Imposta 300x100 (le dimensioni non influenzano l'audio)",
+    "obsConfigControl": "<strong>✓ Controlla audio tramite OBS</strong> (deve essere selezionato)",
+    "obsConfigShutdown": "Deseleziona 'Disattiva sorgente quando non visibile' per garantire audio costante",
     "obsStep2Title": "Passaggio 2: Abilita Monitoraggio Audio",
-    "obsStep2_1": "Trova il mixer audio in OBS (pannello inferiore)",
-    "obsStep2_2": "Fai clic sull'ingranaggio (⚙️) accanto a \"WildcatTTS TTS\" → \"Proprietà Audio Avanzate\"",
-    "obsStep2_3": "Imposta \"Monitoraggio Audio\" su:",
+    "obsStep2_1": "Individua il mixer audio in OBS (pannello inferiore)",
+    "obsStep2_2": "Fai clic sull'ingranaggio (⚙️) accanto a 'WildcatTTS' → 'Proprietà audio avanzate'",
+    "obsStep2_3": "Imposta 'Monitoraggio audio' su:",
     "obsMonitorOutputTitle": "Monitora e Output",
-    "obsMonitorOutputDesc": "- TU E lo stream lo sentite",
+    "obsMonitorOutputDesc": "- Tu e il tuo stream ascoltate l'audio",
     "obsMonitorOnlyTitle": "Solo Monitora",
-    "obsMonitorOnlyDesc": "- Solo tu lo senti (per test)",
+    "obsMonitorOnlyDesc": "- Solo tu ascolti l'audio (per i test)",
     "obsImportantTitle": "Importante:",
-    "obsImportantDesc": "Assicurati che la sorgente non sia silenziata nel tuo mixer audio e che il volume sia impostato correttamente.",
+    "obsImportantDesc": "Assicurati che la sorgente non sia muta nel mixer audio e che il volume sia regolato in modo adeguato.",
     "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
+    "settingYoutubeDesc": "Abilita il TTS per la chat live di YouTube e imposta il tuo handle o URL del live.",
     "voiceCalibrationTitle": "Calibrazione delle voci",
-    "voiceCalibrationIntro": "Alcune voci possono risultare naturalmente più alte o più basse di altre. La calibrazione delle voci ti permette di impostare livelli di volume specifici per le singole voci, garantendo un'esperienza audio uniforme durante tutto lo stream.",
-    "voiceCalibrationFeature1": "<strong>Volume per voce:</strong> Seleziona una voce qualsiasi e assegnale un moltiplicatore di volume personalizzato (da 0,1x a 10,0x). <em>(Attenzione: i valori superiori a 1,0 possono risultare molto alti)</em>",
-    "voiceCalibrationFeature2": "<strong>Applicazione automatica:</strong> Quando un utente seleziona una voce calibrata tramite <span class=\"inline-code\">!myvoice</span>, il volume personalizzato viene applicato automaticamente.",
-    "voiceCalibrationFeature3": "<strong>Precedenza:</strong> I volumi calibrati hanno la precedenza sul volume predefinito del canale per quella specifica voce.",
+    "voiceCalibrationIntro": "Alcune voci sono naturalmente più alte o più basse di altre. La Calibrazione Voce ti permette di impostare moltiplicatori di volume per le singole voci al fine di bilanciare i livelli audio.",
+    "voiceCalibrationFeature1": "<strong>Volume per Voce:</strong> Seleziona una voce e assegna un moltiplicatore (da 0.1x a 10.0x). <em>(Attenzione: valori superiori a 1.0 possono essere alti)</em>",
+    "voiceCalibrationFeature2": "<strong>Applicazione Automatica:</strong> Quando uno spettatore seleziona una voce calibrata, il bot applica automaticamente il volume personalizzato.",
+    "voiceCalibrationFeature3": "<strong>Priorità:</strong> I volumi calibrati hanno priorità sul volume predefinito del canale.",
     "settingCalibrationTitle": "Calibrazione delle voci:",
-    "settingCalibrationDesc": "Imposta volumi specifici per le singole voci per normalizzare i livelli audio"
+    "settingCalibrationDesc": "Imposta moltiplicatori di volume per le singole voci per bilanciare i livelli audio."
   },
   "troubleshooting": {
     "title": "Risoluzione Problemi",
     "q1": "Il bot non risponde ai comandi?",
-    "a1": "Assicurati che il bot sia un moderatore nel tuo canale. Puoi farlo digitando /mod wildcatTtsbot nella tua chat Twitch. In molti casi, il bot potrebbe aver bisogno di permessi da moderatore per leggere i messaggi e rispondere ai comandi.",
+    "a1": "Assicurati che il bot sia moderatore nel tuo canale. Digita <span class=\"inline-code\">/mod wildcatttsbot</span> nella tua chat di Twitch. Il bot richiede i permessi di moderatore per leggere i messaggi e inviare risposte.",
     "q2": "Il bot non parla?",
-    "a2": "Assicurati che il bot sia abilitato nel tuo canale. Puoi farlo digitando !tts on nella tua chat Twitch. Inoltre, controlla la modalità attuale !tts mode e i permessi !tts permission.",
+    "a2": "Assicurati che il TTS sia attivo con <span class=\"inline-code\">!tts on</span> in chat. Controlla anche la modalità attiva con <span class=\"inline-code\">!tts mode</span> e i permessi con <span class=\"inline-code\">!tts permission</span>.",
     "q3": "Il bot non parla in una lingua specifica, o legge i numeri in cinese?",
-    "a3": "Assicurati che il potenziamento della lingua sia impostato sulla lingua corretta. Puoi farlo digitando !tts language <nome_lingua> per te stesso o !tts defaultlanguage <nome_lingua> per il canale nella tua chat Twitch. Puoi controllare il potenziamento della lingua attuale usando !tts defaultlanguage.",
+    "a3": "Imposta il Potenziamento Lingua sulla tua lingua con <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (o <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> per il canale). Mostra l'impostazione attiva con <span class=\"inline-code\">!tts defaultlanguage</span>.",
     "q4": "La generazione TTS impiega troppo tempo o fallisce?",
-    "a4": "WildcatTTS utilizza principalmente 302.ai (speech-2.8-turbo) con fallback automatico a Wavespeed AI (speech-02-turbo). Se riscontri ritardi, controlla la tua connessione Internet e prova a usare !tts stop per annullare qualsiasi generazione bloccata. Il bot riprova automaticamente le richieste fallite.",
+    "a4": "Il bot usa 302.ai con passaggio automatico a Wavespeed AI. In caso di ritardi audio, usa <span class=\"inline-code\">!tts stop</span> per annullare generazioni bloccate. Il bot ritenta automaticamente le richieste fallite.",
     "q5": "Errore voce non trovata?",
-    "a5": "Assicurati di utilizzare il voice ID corretto dalla sezione Voci. I voice ID sono sensibili alle maiuscole e devono corrispondere esattamente. Prova !tts voices per ottenere un collegamento alle voci disponibili.",
+    "a5": "Assicurati di usare un ID voce esatto dalla <a href=\"#voices\" class=\"default-link-style\">sezione Voci</a>. Gli ID voce distinguono tra maiuscole e minuscole. Usa <span class=\"inline-code\">!tts voices</span> per l'elenco.",
     "q6": "Errore \"Accesso alla voce negato\"?",
-    "a6": "Alcune voci (in particolare certi effetti audio Moss) potrebbero richiedere permessi di accesso speciali su Wavespeed AI. Se ricevi questo errore, prova a usare una voce diversa dall'elenco delle voci disponibili. La maggior parte delle voci funziona con accesso standard.",
+    "a6": "Alcune voci Moss audio richiedono permessi speciali su Wavespeed AI. Se ricevi questo errore, seleziona un'altra voce dall'<a href=\"#voices\" class=\"default-link-style\">elenco delle voci disponibili</a>.",
     "q7": "Errore \"Voce non valida\"?",
-    "a7": "Il voice ID che stai usando non è disponibile o non esiste. Assicurati di utilizzare il voice ID corretto dalla sezione Voci. I voice ID sono sensibili alle maiuscole e devono corrispondere esattamente.",
+    "a7": "L'ID voce richiesto non è valido. Assicurati che corrisponda a una voce nella <a href=\"#voices\" class=\"default-link-style\">sezione Voci</a>. Gli ID voce distinguono tra maiuscole e minuscole.",
     "q8": "L'emozione non funziona?",
-    "a8": "Nota che l'emozione \"auto\" non è più supportata. Usa invece neutral, happy, sad, angry, fearful, disgusted o surprised.",
+    "a8": "L'emozione automatica non è supportata. Usa <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> o <span class=\"inline-code\">surprised</span>.",
     "q9": "Hai bisogno di aiuto?",
-    "a9": "Contatta lo sviluppatore tramite il modulo di contatto sul sito web del portfolio di Henry."
+    "a9": "Contatta lo sviluppatore tramite il <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">modulo di contatto</a> sul sito portfolio di Henry."
   },
   "emoteDescriptions": {
     "title": "Descrizioni Emote",
-    "introText": "WildcatTTS utilizza l'IA (Google Gemini) per descrivere automaticamente le emote di Twitch quando appaiono nei messaggi della chat. Invece di leggere il codice dell'emote (ad es. \"LUL\"), il TTS legge una descrizione naturale come \"una persona che ride\". Queste descrizioni vengono memorizzate permanentemente nella cache per evitare ripetute elaborazioni IA.",
+    "introText": "WildcatTTS usa l'IA di Google Gemini per descrivere le emote di Twitch nei messaggi di chat. Invece di leggere il codice dell'emote (ad esempio, 'LUL'), il TTS pronuncia una descrizione come 'una persona che ride'. Il bot memorizza le descrizioni in modo permanente per evitare richieste IA ripetute.",
     "howItWorksTitle": "Come Funziona",
-    "step1": "Quando un'emote appare in un messaggio TTS per la prima volta, il bot utilizza l'IA per analizzare l'immagine dell'emote e generare una breve descrizione testuale.",
-    "step2": "La descrizione viene memorizzata permanentemente nella cache, quindi deve essere generata solo una volta.",
-    "step3": "Gli utilizzi successivi della stessa emote utilizzano la descrizione memorizzata nella cache istantaneamente, senza alcuna elaborazione IA.",
+    "step1": "Quando un'emote appare per la prima volta, l'IA analizza l'immagine e crea una breve descrizione.",
+    "step2": "Il bot memorizza la descrizione in modo permanente dopo la prima generazione.",
+    "step3": "I successivi utilizzi dell'emote leggono la descrizione memorizzata all'istante senza nuova elaborazione IA.",
     "managementTitle": "Gestione delle Descrizioni",
-    "managementText": "I moderatori possono utilizzare il comando <span class=\"inline-code\">!tts emote</span> per visualizzare, rigenerare o impostare manualmente le descrizioni delle emote. Consulta la sezione <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestione Descrizioni Emote</a> nella tabella dei comandi sopra per i dettagli."
+    "managementText": "I moderatori possono usare <span class=\"inline-code\">!tts emote</span> per visualizzare, rigenerare o impostare le descrizioni delle emote. Consulta la tabella <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestione Descrizioni Emote</a> per i dettagli."
   },
   "pronunciation": {
     "title": "Dizionario di Pronuncia",
-    "introText": "La chat utilizza molte abbreviazioni che TTS legge lettera per lettera. Il dizionario di pronuncia le trasforma in parole complete. Ad esempio, TTS pronuncia ngl come \"not gonna lie\" e glhf come \"good luck have fun\". WildcatTTS dispone di un elenco integrato di circa 70 abbreviazioni comuni. Puoi anche aggiungere le tue.",
+    "introText": "La chat usa molte abbreviazioni che il TTS legge lettera per lettera. Il dizionario di pronuncia le trasforma in parole complete. Ad esempio, il TTS legge <span class=\"inline-code\">ngl</span> come 'not gonna lie' e <span class=\"inline-code\">glhf</span> come 'good luck have fun'. WildcatTTS include un elenco integrato di circa 70 abbreviazioni comuni. Puoi anche aggiungere le tue voci.",
     "howItWorksTitle": "Come Funziona",
     "rule1": "La parola non fa distinzione tra maiuscole e minuscole. Una voce per lfg corrisponde anche a LFG.",
     "rule2": "Una voce deve corrispondere a una parola intera. Una voce per fr non modifica la parola \"friend\".",
-    "rule3": "Il dizionario non modifica il testo presente all'interno di un link.",
-    "rule4": "Il dizionario modifica ogni parola una sola volta. TTS non rilegge il nuovo testo alla ricerca di ulteriori corrispondenze.",
+    "rule3": "Il dizionario non modifica il testo all'interno di un collegamento web.",
+    "rule4": "Il dizionario sostituisce ogni parola una sola volta. Il TTS non rielabora il testo sostituito alla ricerca di altre corrispondenze.",
     "customTitle": "Le Tue Voci",
-    "customText": "I moderatori possono aggiungere voci con il comando !tts pronounce. Puoi anche aggiungere voci nella scheda Dizionario di Pronuncia nella Web Dashboard. Le tue voci sono utili per i nomi dei canali, i titoli dei giochi o qualsiasi parola che TTS pronuncia in modo errato.",
+    "customText": "I moderatori possono aggiungere voci con il comando <span class=\"inline-code\">!tts pronounce</span> o nella Dashboard Web. Le voci personalizzate sono utili per nomi di canali, termini di gioco e parole difficili.",
     "custom1": "La tua voce sostituisce una voce predefinita con la stessa parola.",
-    "custom2": "Per disattivare una voce predefinita, usa !tts pronounce off <parola>. Per riattivarla, usa !tts pronounce remove <parola>.",
+    "custom2": "Per disattivare una voce integrata, usa <span class=\"inline-code\">!tts pronounce off &lt;word&gt;</span>. Per ripristinarla, usa <span class=\"inline-code\">!tts pronounce remove &lt;word&gt;</span>.",
     "custom3": "Un canale può contenere un massimo di 100 voci.",
     "switchTitle": "Come Disattivarlo",
-    "switchText": "Il dizionario è attivo per tutti i canali. Per disattivarlo, disattiva il controllo \"Espandi acronimi della chat\" nella Web Dashboard. TTS leggerà quindi ogni abbreviazione lettera per lettera.",
-    "lolTip": "TTS pronuncia già lol come \"el oh el\". Questo è il comportamento standard e non è presente alcuna voce di dizionario a riguardo."
+    "switchText": "Il dizionario è attivo per tutti i canali per impostazione predefinita. Per disattivarlo, disabilita 'Espandi acronimi della chat' nella Dashboard Web. Il TTS leggerà quindi le abbreviazioni lettera per lettera.",
+    "lolTip": "Il TTS legge già <span class=\"inline-code\">lol</span> come 'el oh el'. Questo è il comportamento standard e non richiede alcuna voce nel dizionario."
   },
   "profanityFilter": {
     "title": "Filtro Volgarità",
-    "introText": "Il filtro volgarità sostituisce le parole volgari con termini più attenuati prima che TTS le pronunci. Ad esempio, TTS pronuncia \"what the fuck\" come \"what the freak\". Il filtro è disattivato finché un moderatore non lo attiva.",
+    "introText": "Il filtro volgarità sostituisce le parole scurrili con termini più miti prima che il TTS le pronunci. Ad esempio, il TTS legge 'what the fuck' come 'what the freak'. Il filtro è disattivato finché un moderatore non lo avvia.",
     "startTitle": "Come Attivarlo",
-    "startText": "Usa !tts profanity on in chat o attiva il controllo \"Filtro Volgarità\" nella Web Dashboard. Usa !tts profanity status per visualizzare lo stato, la lingua e il numero di parole nell'elenco.",
+    "startText": "Usa <span class=\"inline-code\">!tts profanity on</span> in chat o attiva il Filtro Volgarità nella Dashboard Web. Usa <span class=\"inline-code\">!tts profanity status</span> per visualizzare lo stato, la lingua attiva e il conteggio delle parole.",
     "behaviorTitle": "Cosa Fa",
-    "behavior1": "Il filtro sostituisce una parola volgare con un termine più attenuato. Non rimuove il messaggio e non emette alcun segnale acustico.",
-    "behavior2": "Il filtro sostituisce un insulto discriminatorio (slur) con la parola \"slur\". Questa sostituzione impedisce la pronuncia del termine offensivo nell'audio.",
-    "behavior3": "Il filtro si applica anche alle abbreviazioni del dizionario di pronuncia. Quando il filtro è attivo, TTS pronuncia lfg come \"let's freaking go\".",
-    "behavior4": "La parola deve corrispondere esattamente e per intero. Il filtro non modifica la parola \"class\".",
+    "behavior1": "Il filtro sostituisce i termini scurrili con parole più miti. Il bot non cancella il messaggio né emette bip.",
+    "behavior2": "Il filtro sostituisce gli insulti gravi con la parola 'slur' per rimuovere contenuti offensivi dall'audio.",
+    "behavior3": "Il filtro si applica anche alle abbreviazioni del dizionario di pronuncia. Con il filtro attivo, il TTS legge <span class=\"inline-code\">lfg</span> come 'let's freaking go'.",
+    "behavior4": "Le parole devono corrispondere per intero. Il filtro non altera parole come 'class'.",
     "languageTitle": "Lingue",
-    "languageText": "Il filtro dispone di elenchi di parole per tutte le 40 lingue supportate da Potenziamento Lingua. Il filtro utilizza l'elenco della lingua del tuo canale. Se uno spettatore seleziona una lingua diversa per i propri messaggi, il filtro utilizzerà entrambi gli elenchi. Il filtro include sempre l'elenco in inglese, poiché il dizionario di pronuncia è in inglese.",
-    "languageAutoText": "Se il tuo Potenziamento Lingua è impostato su \"Automatico\", il filtro utilizzerà l'elenco in inglese. Il bot non è in grado di identificare la lingua di ogni singolo messaggio.",
-    "languageCoverageText": "L'elenco in inglese è il più completo. Gli elenchi per le altre lingue sono più ridotti. Gli insulti discriminatori sono presenti solo nell'elenco in inglese.",
-    "bannedWordsTip": "Il filtro volgarità non è la stessa cosa dell'elenco delle parole vietate. Le parole vietate rimuovono l'intero messaggio. Il filtro volgarità legge il messaggio, ma con parole più moderate."
+    "languageText": "Il filtro include elenchi di parole per tutte le 40 lingue supportate da Potenziamento Lingua. Il bot usa l'elenco della lingua del tuo canale. Se uno spettatore seleziona una lingua personale, il filtro usa entrambi gli elenchi. L'elenco inglese è sempre attivo poiché il dizionario di pronuncia è in inglese.",
+    "languageAutoText": "Se Potenziamento Lingua è impostato su 'auto', il filtro usa l'elenco inglese. Il bot non è in grado di rilevare la lingua di ogni singolo messaggio.",
+    "languageCoverageText": "L'elenco di parole in inglese è il più esteso. Gli elenchi per le altre lingue sono più contenuti. Gli insulti gravi sono presenti solo nell'elenco inglese.",
+    "bannedWordsTip": "Il filtro volgarità è diverso dalle Parole Vietate. Le Parole Vietate scartano l'intero messaggio. Il filtro volgarità legge il messaggio sostituendo le parole volgari."
   },
   "bannedWords": {
     "title": "Parole Vietate",

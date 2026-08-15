@@ -29,9 +29,9 @@
     "title": "コマンド",
     "prefixTip": "すべてのTTSコマンドは <span class=\"inline-code\">!tts</span> で始まります。",
     "exampleTip": "例: <span class=\"inline-code\">!tts status</span>",
-    "expandTip": "下のコマンド行をクリックすると展開され、使用方法の詳細が表示されます。",
-    "webDashboardTip": "配信者と視聴者は、<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>を使用して設定を構成することもできます。",
-    "myvoiceTip": "視聴者は、チャットで <span class=\"inline-code\">!myvoice</span> を送信することで、Web UIを使用して独自のTTS設定を設定できます。",
+    "expandTip": "コマンド行を選択すると使い方の詳細が表示されます。",
+    "webDashboardTip": "配信者や視聴者は <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatTTS Webダッシュボード</a> で設定を変更することもできます。",
+    "myvoiceTip": "視聴者はチャットで <span class=\"inline-code\">!myvoice</span> を送信してWebダッシュボードで個人設定を行えます。",
     "ttsCommandsTitle": "読み上げコマンド",
     "common": {
       "notes": "注意事項:",
@@ -46,29 +46,29 @@
     },
     "ttsStatus": {
       "name": "!tts status",
-      "description": "チャンネルのTTSアプリケーションの現在のステータスを取得します。",
-      "notes": "エンジンの状態、モード、キューの長さ、デフォルト音声、ピッチ、速度、感情、言語ブースト設定を表示します。",
+      "description": "チャンネルの現在のTTS状態を表示します。",
+      "notes": "エンジン状態、モード、キューの長さ、標準音声、音程、速度、感情、言語ブースト設定を表示します。",
       "usage": {
         "basic": "!tts status"
       }
     },
     "ttsVoices": {
       "name": "!tts voices",
-      "description": "利用可能なTTS音声のドキュメントセクションへのリンクを提供します。",
+      "description": "利用可能なTTS音声一覧へのリンクを表示します。",
       "usage": {
         "basic": "!tts voices"
       }
     },
     "ttsLanguageslist": {
       "name": "!tts languageslist",
-      "description": "利用可能なTTS言語ブーストオプションのドキュメントセクションへのリンクを提供します。",
+      "description": "利用可能な言語ブースト設定一覧へのリンクを表示します。",
       "usage": {
         "basic": "!tts languageslist"
       }
     },
     "ttsCommands": {
       "name": "!tts commands\n(エイリアス: !tts help)",
-      "description": "!tts サブコマンドの完全なリストへのリンクを提供します。",
+      "description": "<span class=\"inline-code\">!tts</span> サブコマンド一覧へのリンクを表示します。",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
@@ -77,10 +77,10 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(エイリアス: !tts preferences, !tts settings)",
-      "description": "個人用TTS設定ページへの短期間有効なリンクを送信します。",
-      "feature1": "チャンネルごとに、自分の音声、ピッチ、速度、感情、言語を設定できます。",
-      "feature2": "赤枠で囲まれた「危険ゾーン」が含まれており、チャンネルのTTSおよび/または音楽の除外リストに自分自身を追加できます(モデレーターのみ解除可能)。",
-      "feature3": "ボットはリンクをチャットに公開投稿しますが、あなた専用に署名されており、最初のアクセス後または10分後に期限切れになります。ページには現在のチャンネルが事前入力されています。",
+      "description": "<strong>あなた専用のTTS個人設定ページ</strong>への一時リンクを送信します。",
+      "feature1": "このチャンネル専用の声、音程、速度、感情、言語を設定できます。",
+      "feature2": "TTS無視リストに自分を追加できるDanger Zoneが含まれます。解除できるのはモデレーターのみです。",
+      "feature3": "ボットはチャットにリンクを送信します。リンクはあなたのみ有効で、10分または初回使用で失効します。",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,15 +90,15 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "個人用TTS設定ページへの短期間有効なリンクを送信します(!tts prefsと同等)。",
-      "notes": "!tts prefsと同じです。ボットはリンクをチャットに公開投稿しますが、あなた専用に署名されており、最初のアクセス後または10分後に期限切れになります。ページには現在のチャンネルが事前入力されています。",
+      "description": "<strong>あなた専用のTTS個人設定ページ</strong>への一時リンクを送信します（<span class=\"inline-code\">!tts prefs</span> と同様）。",
+      "notes": "<code>!tts prefs</code> と同一です。ボットはチャットにリンクを送信します。リンクはあなたのみ有効で、10分または初回使用で失効します。",
       "usage": {
         "basic": "!myvoice"
       }
     },
     "ttsOn": {
       "name": "!tts on\n(エイリアス: !tts enable)",
-      "description": "TTSエンジンを有効にします。現在のモードに基づいて、メッセージとイベントが読み上げられます。",
+      "description": "TTSエンジンを開始します。有効なモードに基づいてメッセージやイベントを読み上げます。",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
@@ -107,7 +107,7 @@
     },
     "ttsOff": {
       "name": "!tts off\n(エイリアス: !tts disable)",
-      "description": "TTSエンジンを完全に無効にします。メッセージやイベントは読み上げられません。",
+      "description": "TTSエンジンを完全に停止します。メッセージやイベントは読み上げられません。",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
@@ -116,14 +116,14 @@
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
-      "description": "TTSモードを切り替えます。",
-      "allDesc": "(すべてのチャットメッセージとイベントを読み上げます。これがデフォルトモードです)",
-      "commandDesc": "(コマンドまたはイベントでのみ読み上げます)",
-      "bitsPointsOnlyDesc": "(Bitsチアとチャンネルポイント交換のみを読み上げます)",
+      "description": "TTSモードを設定または表示します。",
+      "allDesc": "（すべてのチャットメッセージとイベントを読み上げます。<strong>標準モード</strong>）",
+      "commandDesc": "（コマンドと有効なイベントのみ読み上げます）",
+      "bitsPointsOnlyDesc": "（Bitsチアーとチャンネルポイント引き換えのみ読み上げます）",
       "bitsAlias": "(bits_points_onlyのエイリアス)",
       "pointsAlias": "(bits_points_onlyのエイリアス)",
-      "statusDesc": "(現在のモードを表示)",
-      "notes": "all: すべてのチャットメッセージ(除外ユーザーやコマンドからのものを除く)および有効なイベントが、!tts permission設定に従って読み上げられます。\ncommand: 特定のTTSコマンド(!tts <メッセージ>など)または有効なイベントによってトリガーされたメッセージのみが読み上げられます。通常のチャットは無視されます。\nbits_points_only: Bitsチアとチャンネルポイント交換のみが読み上げられます。通常のチャットとコマンドは無視されます。",
+      "statusDesc": "（現在のモードを表示）",
+      "notes": "<span class=\"inline-code\">all</span>: <span class=\"inline-code\">!tts permission</span> に基づき、すべてのチャットメッセージ（無視ユーザーを除く）とイベントを読み上げます。<br><span class=\"inline-code\">command</span>: コマンド（<span class=\"inline-code\">!tts &lt;message&gt;</span> など）と有効なイベントのみ読み上げます。通常のチャットは無視されます。<br><span class=\"inline-code\">bits_points_only</span>: Bitsチアーとチャンネルポイント引き換えのみ読み上げます。通常のチャットやコマンドは無視されます。",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,9 +135,9 @@
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
-      "description": "ボットがallモードのときにTTSをトリガーできるユーザーのフィルターを設定します。",
-      "statusDesc": "(現在の権限フィルターを表示)",
-      "notes": "everyone または all: すべてのユーザーのチャットメッセージが読み上げられます。(デフォルト)\nsubs: サブスクライバー、VIP、モデレーター、配信者のメッセージのみが読み上げられます。\nvip: VIP、モデレーター、配信者のメッセージのみが読み上げられます。\nmods: モデレーターと配信者からのメッセージのみが読み上げられます。\nこれはcommandモードには影響しません。",
+      "description": "<span class=\"inline-code\">all</span> モード時にTTSをトリガーできる権限を設定します。",
+      "statusDesc": "（現在の権限フィルターを表示）",
+      "notes": "<span class=\"inline-code\">everyone</span> または <span class=\"inline-code\">all</span>: すべてのユーザーのメッセージを読み上げます（<strong>初期設定</strong>）。<br><span class=\"inline-code\">subs</span>: サブスクライバー、VIP、モデレーター、配信者のメッセージを読み上げます。<br><span class=\"inline-code\">vip</span>: VIP、モデレーター、配信者のメッセージを読み上げます。<br><span class=\"inline-code\">mods</span>: モデレーターと配信者のメッセージのみ読み上げます。<br>この設定は <span class=\"inline-code\">command</span> モードには影響しません。",
       "usage": {
         "everyone": "!tts permission everyone",
         "subs": "!tts permission subs",
@@ -148,11 +148,11 @@
     },
     "ttsBits": {
       "name": "!tts bits [on|off|min <金額>]",
-      "description": "Bits-for-TTS機能を設定します。チャンネルがTTSをトリガーするために最小チア金額を要求できるようにします。",
-      "statusDesc": "(現在のBits-for-TTSステータスを表示)",
-      "onDesc": "on: Bits-for-TTSモードを有効にします。十分なチアを含むメッセージのみが読み上げられます。",
-      "offDesc": "off: Bits-for-TTSモードを無効にします。",
-      "minDesc": "min <金額>: 必要な最小Bits数を設定します(例: min 100)。",
+      "description": "Bits読み上げ機能を制御し、TTSに必要な最小チアー数を設定します。",
+      "statusDesc": "（現在のBits-TTS状態を表示）",
+      "onDesc": "<span class=\"inline-code\">on</span>: Bits-TTSモードを開始します。指定以上のBitsを含むメッセージのみ読み上げます。",
+      "offDesc": "<span class=\"inline-code\">off</span>: Bits-TTSモードを停止します。",
+      "minDesc": "<span class=\"inline-code\">min &lt;amount&gt;</span>: 必要な最小Bits数を設定します（例: <span class=\"inline-code\">min 100</span>）。",
       "usage": {
         "on": "!tts bits on",
         "off": "!tts bits off",
@@ -162,66 +162,66 @@
     },
     "channelPointsTTS": {
       "name": "チャンネルポイント → TTS",
-      "description": "視聴者がメッセージを読み上げさせるために交換できるカスタムTwitchチャンネルポイント報酬を作成します。",
-      "noteText": "この機能は、WildcatTTS Webダッシュボードの「チャンネルポイント → TTS」セクションからのみ設定できます。",
+      "description": "視聴者がTTSで読み上げるメッセージを送信できるカスタムチャンネルポイント報酬を作成します。",
+      "noteText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatTTS Webダッシュボード</a> の「チャンネルポイント → TTS」項目で設定します。",
       "howItWorks": "仕組み:",
-      "step1": "配信者の設定: ダッシュボードで機能を有効にします。",
-      "step2": "報酬の作成: ボットがTwitchチャンネルにカスタムチャンネルポイント報酬を自動的に作成します。",
-      "step3": "視聴者の交換: 視聴者がカスタムメッセージ付きで報酬を交換すると、そのメッセージが読み上げられます。",
-      "step4": "コンテンツポリシー: 組み込みフィルタリング(長さ制限、リンクブロック、禁止ワード)。",
+      "step1": "<strong>配信者設定:</strong> ダッシュボードで機能を有効にします。",
+      "step2": "<strong>報酬作成:</strong> ボットがTwitchチャンネルにカスタムチャンネルポイント報酬を自動作成します。",
+      "step3": "<strong>視聴者引き換え:</strong> 視聴者がメッセージを入力して報酬を引き換えるとTTSが読み上げます。",
+      "step4": "<strong>コンテンツポリシー:</strong> 文字数制限、リンク遮断、禁止用語でテキストをフィルタリングします。",
       "configOptions": "設定オプション:",
-      "basicSettings": "基本設定: 報酬タイトル、コスト(ポイント)、プロンプトテキスト、キュースキップオプション",
-      "advancedSettings": "詳細設定: グローバルクールダウン、配信ごとの制限、ユーザーごとの制限",
-      "contentPolicy": "コンテンツポリシー: メッセージの最小/最大長、リンクブロック、禁止ワードリスト",
+      "basicSettings": "<strong>基本設定:</strong> 報酬名、必要ポイント、プロンプト、キュー設定。",
+      "advancedSettings": "<strong>高度な設定:</strong> 全体クールダウン、配信ごと制限、ユーザーごと制限。",
+      "contentPolicy": "<strong>コンテンツポリシー:</strong> 最小/最大文字数、リンク遮断、禁止用語リスト。",
       "skipQueue": "報酬キューをスキップ:",
-      "skipQueueDefault": "デフォルト設定: このオプションはデフォルトで有効になっており、即座にTTS再生されます。",
-      "skipQueueEnabled": "有効時: 交換は即座に処理され、Twitchの「報酬リクエスト」キューに表示されません。",
-      "skipQueueDisabled": "無効時: 交換はTwitchダッシュボードに表示され、TTS再生前に手動承認が必要です。",
-      "skipQueueUseCase": "使用例: 即座のTTSには有効、モデレーション管理には無効にします。",
+      "skipQueueDefault": "<strong>初期設定:</strong> 即時TTS再生のため初期状態で有効になっています。",
+      "skipQueueEnabled": "<strong>有効時:</strong> Twitchの審査キューに入れず、即座にTTS再生します。",
+      "skipQueueDisabled": "<strong>無効時:</strong> TTS再生前にTwitchダッシュボードで手動承認が必要になります。",
+      "skipQueueUseCase": "<strong>ヒント:</strong> 即時再生は有効、事前モデレーションは無効にします。",
       "ttsModes": "TTSモード:",
       "ttsModesText": "すべてのTTSモード(すべてのメッセージ、コマンドのみ、Bits/ポイントのみ)で動作します。",
       "requirements": "要件:",
-      "requirementsText": "初期ダッシュボード設定時に、channel:manage:redemptionsおよびchannel:read:redemptions OAuthスコープを付与する必要があります。"
+      "requirementsText": "ダッシュボード初回ログイン時に <span class=\"inline-code\">channel:manage:redemptions</span> と <span class=\"inline-code\">channel:read:redemptions</span> の権限を付与してください。"
     },
     "ttsPause": {
       "name": "!tts pause",
-      "description": "TTSイベントキューの処理を一時停止します。",
-      "notes": "新しいメッセージ/イベントは引き続きキューに追加されますが、再開されるまで読み上げられません。",
+      "description": "TTSキューの処理を一時停止します。",
+      "notes": "新しいメッセージやイベントはキューに追加されますが、再開するまで読み上げられません。",
       "usage": {
         "basic": "!tts pause"
       }
     },
     "ttsResume": {
       "name": "!tts resume",
-      "description": "一時停止されていた場合、TTSイベントキューの処理を再開します。",
+      "description": "TTSキューの処理を再開します。",
       "usage": {
         "basic": "!tts resume"
       }
     },
     "ttsClear": {
       "name": "!tts clear",
-      "description": "TTSキューからすべての保留中のメッセージとイベントをクリアします。",
-      "notes": "このコマンドは、キューで待機中のメッセージのみを削除します。現在再生中またはTTSエンジンによって生成中のオーディオは停止しません。",
+      "description": "TTSキュー内の待機中メッセージとイベントをすべて消去します。",
+      "notes": "このコマンドはキュー内の待機中メッセージを消去します。現在再生中または生成中の音声を停止することは<strong>ありません</strong>。",
       "usage": {
         "basic": "!tts clear"
       }
     },
     "ttsStop": {
       "name": "!tts stop",
-      "description": "現在再生中または生成中のTTSオーディオを停止します。",
-      "note1": "TTSが現在話している、またはオーディオを生成している場合、このコマンドはそれを停止しようとします。",
-      "note2": "すべてのユーザーは、自分のチャットメッセージによってトリガーされた場合、メッセージを停止できます。",
-      "note3": "モデレーターと配信者は、すべてのTTSオーディオを停止できます。",
-      "permission": "自分のメッセージは全員、他人のメッセージはモデレーター",
+      "description": "現在再生中または生成中のTTS音声を停止します。",
+      "note1": "TTSが音声再生中または生成中の場合、このコマンドで停止します。",
+      "note2": "自分のチャットメッセージで発生した読み上げは誰でも停止できます。",
+      "note3": "モデレーターと配信者はすべてのTTS音声を停止できます。",
+      "permission": "自分のメッセージは全員、他者のメッセージはモデレーター",
       "usage": {
         "basic": "!tts stop"
       }
     },
     "ttsVoice": {
       "name": "!tts voice <voice_id|reset>",
-      "description": "ユーザーが送信するメッセージの優先音声を設定できます。",
+      "description": "自分のチャットメッセージ用の希望音声を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "resetを使用すると、チャンネルのデフォルト音声に戻ります。!tts voicesを使用して、利用可能な音声IDのリンクを取得します。",
+      "notes": "チャンネル初期音声に戻すには <span class=\"inline-code\">reset</span> を指定します。音声ID一覧は <span class=\"inline-code\">!tts voices</span> で確認できます。",
       "usage": {
         "example": "!tts voice Friendly_Person",
         "reset": "!tts voice reset",
@@ -230,9 +230,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "ユーザーが自分のメッセージの優先感情を設定できます。",
+      "description": "自分のチャットメッセージ用の希望感情を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "有効な感情: neutral, happy, sad, angry, fearful, disgusted, surprised。チャンネルのデフォルトにはresetを使用します。",
+      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>。初期値に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -241,9 +241,9 @@
     },
     "ttsLanguage": {
       "name": "!tts language <言語|reset>\n(エイリアス: !tts lang)",
-      "description": "TTSの優先言語ブーストを設定します。",
+      "description": "自分のチャットメッセージ用の希望言語ブーストを指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "音声の解釈と生成方法に影響します。チャンネルのデフォルトを使用するにはresetまたはautoを使用します。利用可能なオプションについては、言語ブーストセクションを参照するか、!tts languageslistを使用してください。",
+      "notes": "言語ブーストは特定言語の発音を向上させます。初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -254,9 +254,9 @@
     },
     "ttsPitch": {
       "name": "!tts pitch <値|reset>",
-      "description": "個人用TTSピッチを設定します。",
+      "description": "自分のチャットメッセージ用のTTS音程を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "値は-12から12の整数である必要があります(0が通常)。チャンネルのデフォルトにはresetを使用します。",
+      "notes": "値は -12 から 12 の整数（標準は0）です。初期値に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
         "positive": "!tts pitch 2",
         "negative": "!tts pitch -3",
@@ -266,9 +266,9 @@
     },
     "ttsSpeed": {
       "name": "!tts speed <値|reset>",
-      "description": "個人用TTS速度を設定します。",
+      "description": "自分のチャットメッセージ用のTTS話速を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "値は0.5から2.0の数値である必要があります(1.0が通常)。チャンネルのデフォルトにはresetを使用します。",
+      "notes": "値は 0.5 から 2.0 の数値（標準は1.0）です。初期値に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
         "faster": "!tts speed 1.2",
         "slower": "!tts speed 0.8",
@@ -283,14 +283,14 @@
         "self": "!tts ignore あなたのユーザー名",
         "mod": "!tts ignore add 他のユーザー"
       },
-      "descriptionUser": "任意のユーザー向け: チャンネルのTTS無視リストに自分を追加します。あなたのメッセージは読み上げられません。",
-      "descriptionMod": "モデレーターまたは配信者向け: 指定された任意のTwitchユーザーをチャンネルのTTS無視リストに追加します。",
+      "descriptionUser": "<strong>全ユーザー対象:</strong> <em>自分自身</em> をTTS無視リストに追加します。あなたのメッセージは読み上げられなくなります。",
+      "descriptionMod": "<strong>モデレーター/配信者対象:</strong> <em>指定したTwitchユーザー</em> をチャンネルのTTS無視リストに追加します。",
       "usageSelfNote": "(自分を無視したい場合)",
       "usageModNote": "(あなたがモデレーター/配信者の場合)"
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
-      "description": "指定したTwitchユーザーをTTS除外リストから削除します。",
+      "description": "チャンネルのTTS無視リストから指定ユーザーを削除します。",
       "usage": {
         "basic": "!tts ignore del ユーザー"
       },
@@ -298,15 +298,15 @@
     },
     "ttsIgnored": {
       "name": "!tts ignored",
-      "description": "チャンネルのTTS除外リストに現在登録されているすべてのユーザーを一覧表示します。",
+      "description": "チャンネルのTTS無視リストに登録されている全ユーザーを表示します。",
       "usage": {
         "basic": "!tts ignored"
       }
     },
     "ttsEvents": {
       "name": "!tts events [on|off]",
-      "description": "Twitchイベント(サブスクリプション、チア、レイドなど)をTTSでアナウンスするかどうかを切り替えます。",
-      "statusDesc": "(現在のイベントアナウンスステータスを表示)",
+      "description": "Twitchイベント通知（サブスク、チアー、レイドなど）の読み上げを有効/無効にします。",
+      "statusDesc": "（現在のイベント通知状態を表示）",
       "usage": {
         "on": "!tts events on",
         "off": "!tts events off",
@@ -315,9 +315,9 @@
     },
     "ttsDefaultvoice": {
       "name": "!tts defaultvoice <voice_id|reset>",
-      "description": "チャンネルのデフォルトTTS音声を設定します。",
+      "description": "<em>チャンネル全体</em> の標準TTS音声を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "システムデフォルトに戻すにはresetを使用します。音声IDへのリンクには!tts voicesを使用します。",
+      "notes": "システム標準に戻すには <span class=\"inline-code\">reset</span> を指定します。音声IDは <span class=\"inline-code\">!tts voices</span> で確認できます。",
       "usage": {
         "example": "!tts defaultvoice Friendly_Person",
         "reset": "!tts defaultvoice reset",
@@ -326,9 +326,9 @@
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "チャンネルのデフォルトTTS感情を設定します。",
+      "description": "<em>チャンネル全体</em> の標準TTS感情を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "有効な感情: neutral, happy, sad, angry, fearful, disgusted, surprised。システムデフォルト(neutral)にはresetを使用します。",
+      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>。初期値（<span class=\"inline-code\">neutral</span>）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -337,9 +337,9 @@
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <言語|reset>",
-      "description": "チャンネルのデフォルトTTS言語ブーストを設定します。",
+      "description": "<em>チャンネル全体</em> の標準TTS言語ブーストを指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "システムデフォルトを使用するにはresetまたはautoを使用します。オプションについては、言語ブーストセクションを参照するか、!tts languageslistを使用してください。",
+      "notes": "システム初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -348,9 +348,9 @@
     },
     "ttsDefaultpitch": {
       "name": "!tts defaultpitch <値|reset>",
-      "description": "チャンネルのデフォルトTTSピッチを設定します。",
+      "description": "<em>チャンネル全体</em> の標準TTS音程を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "値は-12から12の整数である必要があります(0が通常)。システムデフォルト(0)にはresetを使用します。",
+      "notes": "値は -12 から 12 の整数（標準は0）です。システム初期値（0）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
         "example": "!tts defaultpitch 2",
         "reset": "!tts defaultpitch reset",
@@ -359,9 +359,9 @@
     },
     "ttsDefaultspeed": {
       "name": "!tts defaultspeed <値|reset>",
-      "description": "チャンネルのデフォルトTTS速度を設定します。",
+      "description": "<em>チャンネル全体</em> の標準TTS話速を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "値は0.5から2.0の数値である必要があります(1.0が通常)。システムデフォルト(1.0)にはresetを使用します。",
+      "notes": "値は 0.5 から 2.0 の数値（標準は1.0）です。システム初期値（1.0）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
         "example": "!tts defaultspeed 1.2",
         "reset": "!tts defaultspeed reset",
@@ -373,15 +373,15 @@
       "usage": {
         "basic": "!tts 皆さん配信へようこそ!"
       },
-      "description": "提供されたメッセージをTTS用にすぐにキューに入れます。これはallモードとcommandモードの両方で機能します。リクエストしたユーザーの設定（またはチャンネルのデフォルト値）を音声、ピッチ、速度、感情に使用します。"
+      "description": "指定したメッセージを直ちにTTSキューに追加します。allモードとcommandモードの両方で動作します。声、音程、速度、感情はユーザーの個人設定（またはチャンネルの初期設定）を使用します。"
     },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
-      "description": "TTSで使用されるキャッシュ済みエモート説明を表示、再生成、または手動で設定します。",
-      "viewDesc": "エモートの現在のAI生成済み説明を表示します。",
-      "regenerateDesc": "キャッシュ済み説明をクリアし、次回AIが再度説明します。",
-      "setDesc": "エモートのカスタム説明を手動で設定します。",
-      "notes": "チャット内のエモートは、初めて出現した際にAIによって自動的に説明されます。これらの説明は永続的にキャッシュされるため、再生成の必要はありません。このコマンドを使用して、エモート説明を表示、修正、または再生成できます。",
+      "description": "TTSが使用するキャッシュされたエモート説明を表示・消去・設定します。",
+      "viewDesc": "エモートの現在のAI説明を表示します。",
+      "regenerateDesc": "保存された説明を消去し、次回使用時にAIが再生成するようにします。",
+      "setDesc": "チャンネルエモートにカスタム説明を設定します。",
+      "notes": "チャットに初めてエモートが登場した際、AIがテキスト説明を生成して永続キャッシュします。このコマンドで説明の確認・変更・再生成が行えます。",
       "usage": {
         "view": "!tts emote LUL",
         "regenerate": "!tts emote regenerate LUL",
@@ -390,7 +390,7 @@
       "viewNote": "（現在のキャッシュ済み説明を表示）",
       "regenerateNote": "（キャッシュをクリア；次回使用時にAIが再度説明）",
       "setNote": "（カスタム説明を設定 — チャンネルエモートのみ）",
-      "permission": "モデレーター（このチャンネルのエモートのみ設定/再生成可能）"
+      "permission": "モデレーター（設定/再生成はチャンネル独自エモートのみ）"
     },
     "ttsPronounce": {
       "name": "!tts pronounce <word> = <how to say it>",
@@ -407,7 +407,7 @@
       "listNote": "（このチャンネルのエントリを表示）",
       "removeNote": "（エントリを削除）",
       "offNote": "（組み込みエントリを無効化）",
-      "testNote": "（結果を表示するが読み上げない）",
+      "testNote": "（音声を出力せず結果のみ表示）",
       "defaultsNote": "（組み込みエントリを一覧表示）",
       "addDesc": "単語と、TTSが代わりに読み上げるテキストを追加します。設定したエントリは同じ単語の組み込みエントリを上書きします。",
       "removeDesc": "カスタムエントリを削除します。同じ単語の組み込みエントリが存在する場合、その組み込みエントリが再び有効になります。",
@@ -419,14 +419,14 @@
     },
     "ttsProfanity": {
       "name": "!tts profanity <on|off|status>",
-      "description": "下品な単語をより穏やかな言葉に置き換える不適切表現フィルターのオン/オフを切り替えます。",
+      "description": "不快な単語を穏やかな言葉に置き換える禁止用語フィルターを開始・停止します。",
       "usage": {
         "on": "!tts profanity on",
         "off": "!tts profanity off",
         "status": "!tts profanity status"
       },
       "statusNote": "（状態、言語、登録単語数を表示）",
-      "notes": "フィルターは有効化するまでオフになっています。下品な単語を穏やかな言葉に置き換えます。メッセージ全体は削除されません。メッセージ全体を削除したい場合は、Webダッシュボードの禁止ワードリストを使用してください。"
+      "notes": "開始するまでフィルターは無効です。下品な単語を穏やかな表現に置き換えます。メッセージ自体は削除されません。メッセージ全体を破棄したい場合はWebダッシュボードの禁止単語リストを使用してください。"
     }
   },
   "table": {
@@ -450,148 +450,148 @@
     "title": "音声",
     "popularTitle": "人気の音声ID",
     "completeListTitle": "完全な音声リスト（<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turboスキーマ</a>から — フォールバックプロバイダー）",
-    "introText": "以下の音声は、<strong>302.ai</strong>経由のMiniMax <span class=\"inline-code\">speech-2.8-turbo</span>モデルから利用できます。<strong>Wavespeed AI</strong>経由の<span class=\"inline-code\">speech-02-turbo</span>への自動フォールバック機能付きです。ボットは、45言語にわたる自動言語分類を備えた472音声の包括的なハードコードされたリストを使用します。<span class=\"inline-code\">voice_id</span>は、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>などのコマンドで使用されます。",
-    "popularText": "302.ai経由のMiniMax <span class=\"inline-code\">speech-2.8-turbo</span>モデルからの注目の音声（Wavespeed AIフォールバック付き）。このリストの任意の音声について、<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>コマンドを使用してそれを使用できます。",
-    "completeListText": "これは言語別に整理された利用可能な472音声すべての完全なリストです。音声は簡単に識別できるように言語プレフィックスで自動的に分類されています。",
-    "expandText": "クリックして完全な音声リストを展開(45言語で472音声)",
-    "completeListNote": "注: ボットは主に302.ai経由のMiniMax <span class=\"inline-code\">speech-2.8-turbo</span>を使用し、プライマリプロバイダーが利用できない場合はWavespeed AI経由の<span class=\"inline-code\">speech-02-turbo</span>にフォールバックします。完全なリストには、言語プレフィックスで自動的に分類された45言語にわたる472音声がすべて含まれています。チャットの<span class=\"inline-code\">!tts voices</span>コマンドはここにリンクします。最新のリストについては、<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AIスキーマAPI</a>を参照するか、設定を設定する際にボットの音声検証を使用してください。",
+    "introText": "ボットはMiniMax <span class=\"inline-code\">speech-2.8-turbo</span> モデルから45言語にわたる472種類の音声を提供します。プライマリプロバイダーが利用できない場合、自動的に <span class=\"inline-code\">speech-02-turbo</span> へフォールバックします。<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> のように <span class=\"inline-code\">voice_id</span> を指定して使用します。",
+    "popularText": "MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> モデルの人気音声です。使用するにはチャットで <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> を入力します。",
+    "completeListText": "言語プレフィックス別に整理された利用可能な全472音声の一覧です。",
+    "expandText": "選択して全音声一覧（45言語・472音声）を展開",
+    "completeListNote": "注意: ボットはMiniMax <span class=\"inline-code\">speech-2.8-turbo</span> を使用し、自動的に <span class=\"inline-code\">speech-02-turbo</span> にフォールバックします。言語プレフィックス別に分類された472音声が含まれます。<span class=\"inline-code\">!tts voices</span> コマンドからこの項目へリンクしています。",
     "mossNote": "⚠️ 注: 一部のMossオーディオ音声には特別なアクセス権限が必要な場合があります。「このvoice_idにアクセスできません」というエラーが表示された場合は、このリストから別の音声を試してください。"
   },
   "languageBoost": {
     "title": "言語ブースト",
     "optionsTitle": "利用可能な言語ブーストオプション",
-    "introText": "<span class=\"inline-code\">language_boost</span>機能は、TTSモデルが特定の言語や方言の単語をよりよく理解し、発音するのに役立ちます。これは、多言語チャットや、特定の言語のニュアンスが明確なTTSにとって重要である場合に特に有用です。",
-    "commandText": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span>を使用して個人の言語ブースト設定を設定するか、モデレーターが<span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>でチャンネルのデフォルトを設定できます。",
+    "introText": "<span class=\"inline-code\">language_boost</span> 機能は特定言語や方言の発音精度を向上させます。多言語チャットや英語以外の配信で役立ちます。",
+    "commandText": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span> で個人の希望言語を設定できます。モデレーターは <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> でチャンネル全体の初期値を設定できます。",
     "optionsIntro": "次の値が受け入れられます:",
-    "usageText": "<span class=\"inline-code\">auto</span>を使用すると、モデルの自動言語検出に依存します。<span class=\"inline-code\">English</span>は、主に英語のチャットには適切なデフォルトです。特定の言語を選択すると、その言語の発音が大幅に改善される場合があります。"
+    "usageText": "<span class=\"inline-code\">auto</span> 設定は自動言語検出を使用します。主に英語のチャットでは <span class=\"inline-code\">English</span> を指定します。特定言語を指定するとその言語の発音精度が向上します。"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
     "settingsTitle": "利用可能なダッシュボード設定",
     "obsSetupTitle": "OBSブラウザソースのセットアップ",
-    "introText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatTTS Web Dashboard</a>は、配信者にすべてのTTSおよび音楽設定を構成するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスします。",
+    "introText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatTTS Webダッシュボード</a> では配信者がすべてのTTS設定を管理できます。Twitchアカウントでログインしてアクセスしてください。",
     "settingEngineTitle": "エンジン制御:",
-    "settingEngineDesc": "TTSの有効/無効、イベントのアナウンス、TTSモードと権限の設定",
+    "settingEngineDesc": "TTSの有効/無効、イベント通知、TTSモードと権限を設定します。",
     "settingViewerTitle": "視聴者の設定:",
-    "settingViewerDesc": "すべてのメッセージでチャンネルデフォルト音声を許可または強制",
+    "settingViewerDesc": "視聴者のカスタム音声を許可するか、チャンネル標準音声に固定します。",
     "settingAllowPreferencesTitle": "視聴者の音声設定を許可:",
-    "settingAllowPreferencesDesc": "視聴者が !myvoice で音声をカスタマイズすることを許可するか、すべてのTTSをチャンネルのデフォルト音声に固定します",
+    "settingAllowPreferencesDesc": "視聴者が !myvoice で音声を選択できるようにするか、標準音声に固定します。",
     "settingBotChatTitle": "ボットのチャット応答:",
-    "settingBotChatDesc": "TTS音声を維持したまま、Twitchチャット内でのボットのテキスト応答を有効/無効にします",
+    "settingBotChatDesc": "TTS音声を有効にしたまま、ボットのチャット返答テキストのみをオン/オフします。",
     "settingAnonymizeFollowersTitle": "新規フォロワーの匿名化:",
-    "settingAnonymizeFollowersDesc": "視聴者のプライバシー保護のため、ユーザー名を読み上げずに新規フォローを通知します",
+    "settingAnonymizeFollowersDesc": "プライバシー保護のため、ユーザー名を読み上げずに新規フォロワーのみ通知します。",
     "settingAnnounceCheersTitle": "チアー通知:",
-    "settingAnnounceCheersDesc": "チアーメッセージの読み上げを維持したまま、ビッツ寄付のアラート読み上げを切り替えます",
+    "settingAnnounceCheersDesc": "チアーメッセージの読み上げを維持したまま、チアー通知アラートのオン/オフを切り替えます。",
     "settingUrlTitle": "URL読み上げ:",
-    "settingUrlDesc": "完全なURLまたはドメイン名のみを読む",
+    "settingUrlDesc": "URLを全文読み上げるか、ドメイン名のみ読み上げるかを設定します。",
     "settingBitsTitle": "Bits → TTS:",
-    "settingBitsDesc": "TTSメッセージに最小bitsを要求",
+    "settingBitsDesc": "TTS読み上げに必要な最小Bits数を設定します。",
     "settingChannelPointsTitle": "チャンネルポイント → TTS:",
-    "settingChannelPointsDesc": "カスタムチャンネルポイント報酬を作成および設定(上記のセクションを参照)",
+    "settingChannelPointsDesc": "TTS用のカスタムチャンネルポイント報酬を作成・設定します。",
     "settingIgnoreTitle": "除外リスト:",
-    "settingIgnoreDesc": "追加/削除インターフェースでTTSおよび音楽除外リストを管理",
+    "settingIgnoreDesc": "追加・削除UIでTTS無視リストを管理します。",
     "settingBannedWordsTitle": "禁止ワード:",
-    "settingBannedWordsDesc": "特定の単語やフレーズをブロックし、該当するメッセージの読み上げをスキップします",
+    "settingBannedWordsDesc": "特定単語をブロックし、該当メッセージの読み上げをスキップします。",
     "settingVoiceTitle": "デフォルト音声設定:",
-    "settingVoiceDesc": "音声、感情、ピッチ、速度、言語、テキスト正規化のチャンネルデフォルトを設定",
+    "settingVoiceDesc": "声、音量、感情、音程、速度、言語、テキスト正規化のチャンネル標準値を設定します。",
     "settingObsTitle": "OBS設定:",
-    "settingObsDesc": "固有の安全なTTS URLと詳細なセットアップ手順を取得",
+    "settingObsDesc": "安全なOBSブラウザソースURLと詳細な設定手順を取得します。",
     "settingPreviewTitle": "音声プレビュー:",
-    "settingPreviewDesc": "ライブ配信前に現在の音声設定をテスト",
+    "settingPreviewDesc": "配信開始前に現在の音声設定をテストできます。",
     "obsStep1Title": "ステップ1: OBSにブラウザソースを追加",
-    "obsStep1_1": "OBSで、ソースの下の\"+\"をクリック",
-    "obsStep1_2": "\"ブラウザ\"を選択",
-    "obsStep1_3": "名前を付ける(例: \"WildcatTTS TTS\")",
-    "obsStep1_4": "設定:",
+    "obsStep1_1": "OBSの「ソース」の下にある「+」をクリックします",
+    "obsStep1_2": "「ブラウザ」を選択します",
+    "obsStep1_3": "名前を設定します（例: 「WildcatTTS」）",
+    "obsStep1_4": "ソースを設定します:",
     "obsConfigUrlTitle": "URL:",
-    "obsConfigUrlDesc": "ダッシュボードから固有のURLを貼り付け",
+    "obsConfigUrlDesc": "ダッシュボードから取得した専用TTS URLを貼り付けます",
     "obsConfigSizeTitle": "幅/高さ:",
-    "obsConfigSizeDesc": "300x100 (重要ではありません、オーディオのみです)",
-    "obsConfigControl": "✓ OBS経由でオーディオを制御(チェック必須)",
-    "obsConfigShutdown": "持続的なオーディオのために\"表示されていないときにソースをシャットダウン\"のチェックを外す",
+    "obsConfigSizeDesc": "300x100（音声専用のためサイズは影響しません）",
+    "obsConfigControl": "<strong>✓ OBS経由で音声を制御する</strong>（必ずチェックを入れてください）",
+    "obsConfigShutdown": "音声を安定して再生するため「表示されていないときにソースをシャットダウン」のチェックを外します",
     "obsStep2Title": "ステップ2: オーディオモニタリングを有効化",
-    "obsStep2_1": "OBSでオーディオミキサーを見つける(下部パネル)",
-    "obsStep2_2": "\"WildcatTTS TTS\"の横の歯車(⚙️)をクリック → \"詳細オーディオプロパティ\"",
-    "obsStep2_3": "\"オーディオモニタリング\"を次に設定:",
+    "obsStep2_1": "OBS下部の音声ミキサーを確認します",
+    "obsStep2_2": "「WildcatTTS」の横の歯車（⚙️）→「オーディオの詳細プロパティ」をクリックします",
+    "obsStep2_3": "「音声モニタリング」を次のように設定します:",
     "obsMonitorOutputTitle": "モニターと出力",
-    "obsMonitorOutputDesc": "- あなたと配信の両方が聞こえます",
+    "obsMonitorOutputDesc": "- 自分と配信の両方に音声を出力",
     "obsMonitorOnlyTitle": "モニターのみ",
-    "obsMonitorOnlyDesc": "- あなただけが聞こえます(テスト用)",
+    "obsMonitorOnlyDesc": "- 自分のみに音声を出力（テスト用）",
     "obsImportantTitle": "重要:",
-    "obsImportantDesc": "オーディオミキサーでソースがミュートされておらず、音量が適切に設定されていることを確認してください。",
+    "obsImportantDesc": "音声ミキサーでソースがミュートになっておらず、適切な音量に設定されていることを確認してください。",
     "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Enable YouTube Live Chat TTS and set your YouTube Handle/Video ID",
+    "settingYoutubeDesc": "YouTube LiveチャットのTTSを有効にし、YouTubeハンドルや配信URLを設定します。",
     "voiceCalibrationTitle": "音声キャリブレーション",
-    "voiceCalibrationIntro": "音声によっては、他よりも自然に大きく、または小さく聞こえる場合があります。音声キャリブレーション機能では、個々の音声に固有の音量を設定でき、配信全体で一貫した音声体験を実現できます。",
-    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 任意の音声を選び、独自の音量倍率（0.1倍～10.0倍）を設定できます。<em>（注意: 1.0を超える値は大きくなりすぎる場合があります）</em>",
-    "voiceCalibrationFeature2": "<strong>自動適用:</strong> ユーザーが <span class=\"inline-code\">!myvoice</span> でキャリブレーション済みの音声を選択すると、設定した音量が自動的に適用されます。",
-    "voiceCalibrationFeature3": "<strong>優先順位:</strong> キャリブレーションした音量は、その音声についてはチャンネルの既定の音量設定より優先されます。",
+    "voiceCalibrationIntro": "音声によって音量が大きかったり小さかったりする場合があります。音声キャリブレーション機能により、音声ごとに音量倍率を設定して配信全体の音量を均一化できます。",
+    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 音声を選択して倍率（0.1x〜10.0x）を設定します。<em>（注意: 1.0より大きい値は非常に大きくなる場合があります）</em>",
+    "voiceCalibrationFeature2": "<strong>自動適用:</strong> 視聴者がキャリブレーション設定された音声を指定すると、自動的にカスタム音量が適用されます。",
+    "voiceCalibrationFeature3": "<strong>優先度:</strong> キャリブレーション設定された音量はチャンネルの標準音量設定よりも優先されます。",
     "settingCalibrationTitle": "音声キャリブレーション:",
-    "settingCalibrationDesc": "個々の音声に固有の音量を設定して、音量レベルを均一にします"
+    "settingCalibrationDesc": "音声ごとの音量倍率を設定して音量レベルを均一化します。"
   },
   "troubleshooting": {
     "title": "トラブルシューティング",
     "q1": "ボットがコマンドに応答しない?",
-    "a1": "ボットがあなたのチャンネルのモデレーターであることを確認してください。Twitchチャットで/mod wildcatTtsbotと入力することでこれを行えます。多くの場合、ボットはメッセージを読んでコマンドに応答するためにモデレーター権限が必要な場合があります。",
+    "a1": "ボットがチャンネルのモデレーターになっているか確認してください。Twitchチャットで <span class=\"inline-code\">/mod wildcatttsbot</span> と入力します。メッセージ取得と返信送信にはモデレーター権限が必要です。",
     "q2": "ボットが話さない?",
-    "a2": "ボットがあなたのチャンネルで有効になっていることを確認してください。Twitchチャットで!tts onと入力することでこれを行えます。また、現在のモード!tts modeと権限!tts permissionを確認してください。",
+    "a2": "チャットで <span class=\"inline-code\">!tts on</span> を送信してTTSが有効になっているか確認してください。また <span class=\"inline-code\">!tts mode</span> でモードを、<span class=\"inline-code\">!tts permission</span> で権限を確認してください。",
     "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",
-    "a3": "言語ブーストが正しい言語に設定されていることを確認してください。自分用には!tts language <言語名>、チャンネル用には!tts defaultlanguage <言語名>をTwitchチャットで入力することでこれを行えます。!tts defaultlanguageを使用して現在の言語ブーストを確認できます。",
+    "a3": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span>（またはチャンネル用に <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>）で言語ブーストを目的の言語に設定します。現在の設定は <span class=\"inline-code\">!tts defaultlanguage</span> で確認できます。",
     "q4": "TTS生成に時間がかかりすぎるか失敗する?",
-    "a4": "WildcatTTSは主に302.ai（speech-2.8-turbo）を使用し、Wavespeed AI（speech-02-turbo）への自動フォールバック機能付きです。遅延が発生する場合は、インターネット接続を確認し、!tts stopを使用してスタックした生成をキャンセルしてみてください。ボットは失敗したリクエストを自動的に再試行します。",
+    "a4": "ボットは302.aiを使用し、自動的にWavespeed AIへフォールバックします。遅延が発生した場合は <span class=\"inline-code\">!tts stop</span> で停止してください。失敗したリクエストは自動で再試行されます。",
     "q5": "音声が見つかりませんエラー?",
-    "a5": "音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。!tts voicesで利用可能な音声へのリンクを取得してください。",
+    "a5": "<a href=\"#voices\" class=\"default-link-style\">音声一覧</a> から正確な音声IDを指定しているか確認してください。音声IDは大文字と小文字を区別します。<span class=\"inline-code\">!tts voices</span> で音声一覧を取得できます。",
     "q6": "\"音声アクセスが拒否されました\"エラー?",
-    "a6": "一部の音声(特に特定のMossオーディオエフェクト)は、Wavespeed AIで特別なアクセス権限が必要な場合があります。このエラーが発生した場合は、利用可能な音声リストから別の音声を使用してみてください。ほとんどの音声は標準アクセスで動作します。",
+    "a6": "一部のMoss audio音声はWavespeed AIで特別なアクセス権限を必要とします。このエラーが出た場合は <a href=\"#voices\" class=\"default-link-style\">利用可能音声一覧</a> から別の音声をお選びください。",
     "q7": "\"無効な音声\"エラー?",
-    "a7": "使用しているvoice IDが利用できないか存在しません。音声セクションから正しいvoice IDを使用していることを確認してください。voice IDは大文字小文字を区別し、正確に一致する必要があります。",
+    "a7": "指定した音声IDが無効です。<a href=\"#voices\" class=\"default-link-style\">音声一覧</a> のIDと完全一致しているか確認してください。大文字と小文字は区別されます。",
     "q8": "感情が機能しない?",
-    "a8": "\"auto\"感情はサポートされなくなったことに注意してください。代わりにneutral、happy、sad、angry、fearful、disgusted、またはsurprisedを使用してください。",
+    "a8": "auto感情は非対応です。<span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span> を使用してください。",
     "q9": "ヘルプが必要?",
-    "a9": "Henryのポートフォリオウェブサイトのお問い合わせフォームから開発者にお問い合わせください。"
+    "a9": "Henryのポートフォリオサイトの <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォーム</a> から開発者へご連絡ください。"
   },
   "emoteDescriptions": {
     "title": "エモート説明",
-    "introText": "WildcatTTSはAI（Google Gemini）を使用して、チャットメッセージにTwitchエモートが表示される際に自動的に説明を生成します。エモートコード（例：「LUL」）をそのまま読み上げる代わりに、TTSは「笑っている人」のような自然な説明を読み上げます。これらの説明は、AIの繰り返し処理を避けるために永続的にキャッシュされます。",
+    "introText": "WildcatTTSはGoogle Gemini AIを使用してチャット内のTwitchエモートを自動説明します。エモートコード（例: LUL）をそのまま読む代わりに、「笑っている人」のように説明を読み上げます。説明は永続キャッシュされ、AIへの重複リクエストを防ぎます。",
     "howItWorksTitle": "仕組み",
-    "step1": "TTSメッセージにエモートが初めて出現すると、ボットはAIを使用してエモート画像を分析し、短いテキスト説明を生成します。",
-    "step2": "説明は永続的にキャッシュされるため、一度だけ生成すれば十分です。",
-    "step3": "同じエモートの後続使用は、AI処理なしにキャッシュ済み説明を即座に使用します。",
+    "step1": "エモートが初めて登場すると、AIが画像を解析して短い説明文を作成します。",
+    "step2": "初回生成後、ボットはその説明文を永続的にキャッシュします。",
+    "step3": "以降の同じエモートの読み上げはキャッシュを使用し、AI処理なしで即座に実行されます。",
     "managementTitle": "説明の管理",
-    "managementText": "モデレーターは<span class=\"inline-code\">!tts emote</span>コマンドを使用して、エモート説明を表示、再生成、または手動で設定できます。詳細については、上記のコマンドテーブルの<a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a>セクションを参照してください。"
+    "managementText": "モデレーターは <span class=\"inline-code\">!tts emote</span> コマンドでエモート説明の確認・再生成・手動設定が可能です。詳細はコマンド一覧の <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a> をご覧ください。"
   },
   "pronunciation": {
     "title": "発音辞書",
-    "introText": "チャットでは多くの略語が使われますが、TTSは通常それらを1文字ずつ読み上げます。発音辞書はこれらを自然な単語に変換します。例えば、TTSは ngl を「not gonna lie」、glhf を「good luck have fun」として読み上げます。WildcatTTSには約70個の一般的な略語が組み込まれています。また、独自のカスタムエントリを追加することもできます。",
+    "introText": "チャットにはアルファベット1文字ずつ読まれてしまう略語が多く使われます。発音辞書はこれらを本来の単語に変換します。例えば <span class=\"inline-code\">ngl</span> を「not gonna lie」、<span class=\"inline-code\">glhf</span> を「good luck have fun」と読み上げます。WildcatTTSには約70個の一般的な略語が組み込まれています。独自のエントリを追加することも可能です。",
     "howItWorksTitle": "仕組み",
     "rule1": "単語は大文字・小文字を区別しません。lfg のエントリは LFG にも一致します。",
     "rule2": "エントリは単語全体に一致する必要があります。fr のエントリが \"friend\" という単語を変更することはありません。",
-    "rule3": "辞書はリンク（URL）内のテキストを変更しません。",
-    "rule4": "辞書は各単語を1回だけ変換します。TTSは変換後の新しいテキストを再度読み直して追加のエントリを探すことはありません。",
+    "rule3": "リンク（URL）内のテキストは辞書変換されません。",
+    "rule4": "辞書変換は1単語につき1回のみ適用されます。置換後のテキストをさらに再検索することはありません。",
     "customTitle": "カスタムエントリ",
-    "customText": "モデレーターは !tts pronounce コマンドでエントリを追加できます。また、Webダッシュボードの発音辞書カードから追加することも可能です。カスタムエントリは、チャンネル名、ゲームタイトル、TTSが正しく発音できない単語などに便利です。",
+    "customText": "モデレーターは <span class=\"inline-code\">!tts pronounce</span> コマンドまたはWebダッシュボードからエントリを追加できます。チャンネル名、ゲーム用語、誤読しやすい単語の修正に便利です。",
     "custom1": "カスタムエントリは、同じ単語を持つ組み込みエントリを上書きします。",
-    "custom2": "組み込みエントリを無効化するには !tts pronounce off <単語> を使用します。再び有効にするには !tts pronounce remove <単語> を使用します。",
+    "custom2": "組み込みエントリを無効化するには <span class=\"inline-code\">!tts pronounce off &lt;word&gt;</span>、元に戻すには <span class=\"inline-code\">!tts pronounce remove &lt;word&gt;</span> を使用します。",
     "custom3": "1チャンネルあたり最大100件のエントリを登録できます。",
     "switchTitle": "辞書を無効にする方法",
-    "switchText": "発音辞書はすべてのチャンネルで有効になっています。無効にするには、Webダッシュボードで「チャット頭字語を展開」コントロールをオフに設定します。TTSは各略語を1文字ずつ読み上げるようになります。",
-    "lolTip": "TTSはすでに lol を「el oh el」として読み上げます。これは標準の挙動であり、辞書エントリはありません。"
+    "switchText": "発音辞書はすべてのチャンネルで標準有効です。無効化するにはWebダッシュボードで「チャット略語を展開」をオフにします。オフ時は略語が1文字ずつ読み上げられます。",
+    "lolTip": "TTSは <span class=\"inline-code\">lol</span> を既に「el oh el」と読み上げます。これは標準動作であり辞書登録は不要です。"
   },
   "profanityFilter": {
     "title": "不適切表現フィルター",
-    "introText": "不適切表現フィルターは、TTSが読み上げる前に下品な単語をより穏やかな言葉に置き換えます。例えば、TTSは「what the fuck」を「what the freak」として読み上げます。フィルターはモデレーターが有効化するまでオフになっています。",
+    "introText": "禁止用語フィルターは下品な単語を読み上げ前に穏やかな言葉に置換します。例えば「what the fuck」を「what the freak」として読み上げます。モデレーターが有効にするまでフィルターは無効です。",
     "startTitle": "開始方法",
-    "startText": "チャットで !tts profanity on を使用するか、Webダッシュボードで「不適切表現フィルター」コントロールをオンに設定します。!tts profanity status で状態、言語、リスト内の単語数を確認できます。",
+    "startText": "チャットで <span class=\"inline-code\">!tts profanity on</span> を送信するか、Webダッシュボードで禁止用語フィルターを有効にします。<span class=\"inline-code\">!tts profanity status</span> で現在の状態、言語、登録単語数を確認できます。",
     "behaviorTitle": "動作内容",
-    "behavior1": "フィルターは下品な単語を穏やかな言葉に置き換えます。メッセージは削除されず、ビープ音も鳴りません。",
-    "behavior2": "フィルターは差別用語（スラ―）を単語「slur」に置き換えます。この置換により、差別用語の意味が音声に含まれるのを防ぎます。",
-    "behavior3": "フィルターは発音辞書の略語にも適用されます。フィルターがオンのとき、TTSは lfg を「let's freaking go」として読み上げます。",
-    "behavior4": "単語は完全一致する必要があります。フィルターが「class」という単語を変更することはありません。",
+    "behavior1": "フィルターは下品な単語を穏やかな言葉に置き換えます。メッセージを破棄したりビープ音を鳴らしたりはしません。",
+    "behavior2": "悪質な中傷（スラー）は「slur」という単語に置換して不快な音声を除去します。",
+    "behavior3": "発音辞書で展開された略語にも適用されます。フィルター有効時、<span class=\"inline-code\">lfg</span> は「let's freaking go」と読み上げられます。",
+    "behavior4": "単語全体が一致した場合のみ適用されます。「class」などの単語の一部を誤って置換することはありません。",
     "languageTitle": "対応言語",
-    "languageText": "フィルターには言語ブーストがサポートする40言語すべての単語リストがあります。フィルターはチャンネル言語のリストを使用します。視聴者が自身のメッセージに別の言語を選択した場合、フィルターは両方のリストを使用します。発音辞書が英語であるため、フィルターには常に英語リストが含まれます。",
-    "languageAutoText": "言語ブーストが「自動」の場合、フィルターは英語リストを使用します。ボットは各メッセージの言語を個別に識別することはできません。",
-    "languageCoverageText": "英語のリストが最も充実しています。他の言語のリストは比較的小規模です。差別用語は英語リストのみに含まれています。",
-    "bannedWordsTip": "不適切表現フィルターは禁止ワードリストとは異なります。禁止ワードはメッセージ全体を削除します。不適切表現フィルターはメッセージを読み上げますが、穏やかな言葉に置き換えます。"
+    "languageText": "言語ブーストが対応する全40言語の単語リストを収録しています。チャンネル設定言語のリストが使用されます。視聴者が個人言語を設定している場合は両方のリストが適用されます。発音辞書が英語基準のため英語リストは常に有効です。",
+    "languageAutoText": "言語ブーストが「auto」の場合、英語リストが使用されます。メッセージごとの言語を個別に完全検出することはできません。",
+    "languageCoverageText": "英語の単語リストが最も充実しています。他言語のリストは小規模です。スラー置換は英語リストのみに含まれます。",
+    "bannedWordsTip": "禁止用語フィルターは「禁止単語」機能とは異なります。「禁止単語」はメッセージ全体をスキップしますが、禁止用語フィルターは単語を置換してメッセージを読み上げます。"
   },
   "bannedWords": {
     "title": "禁止ワード",
