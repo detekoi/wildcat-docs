@@ -418,15 +418,17 @@
       "permission": "Moderatore (solo streamer per clear)"
     },
     "ttsProfanity": {
-      "name": "!tts profanity <on|off|status>",
+      "name": "!tts profanity <block|allow|status>",
       "description": "Avvia o ferma il filtro volgarità, che sostituisce i termini scurrili con parole più moderate.",
       "usage": {
-        "on": "!tts profanity on",
-        "off": "!tts profanity off",
+        "block": "!tts profanity block",
+        "allow": "!tts profanity allow",
         "status": "!tts profanity status"
       },
       "statusNote": "(mostra lo stato, la lingua e il numero di parole)",
-      "notes": "Il filtro è disattivato finché non lo avvii. Sostituisce i termini volgari con parole più miti. Non cancella il messaggio. L'elenco delle Parole Vietate nella Dashboard Web scarta invece l'intero messaggio."
+      "notes": "Il filtro è disattivato finché non lo avvii. Sostituisce i termini volgari con parole più miti. Non cancella il messaggio. L'elenco delle Parole Vietate nella Dashboard Web scarta invece l'intero messaggio. Le vecchie parole on e off funzionano ancora: on equivale a block.",
+      "blockNote": "(avvia il filtro)",
+      "allowNote": "(ferma il filtro)"
     }
   },
   "table": {
@@ -574,7 +576,7 @@
     "title": "Filtro Volgarità",
     "introText": "Il filtro volgarità sostituisce le parole scurrili con termini più miti prima che il TTS le pronunci. Ad esempio, il TTS legge 'what the fuck' come 'what the freak'. Il filtro è disattivato finché un moderatore non lo avvia.",
     "startTitle": "Come Attivarlo",
-    "startText": "Usa <span class=\"inline-code\">!tts profanity on</span> in chat o attiva il Filtro Volgarità nella Dashboard Web. Usa <span class=\"inline-code\">!tts profanity status</span> per visualizzare lo stato, la lingua attiva e il conteggio delle parole.",
+    "startText": "Usa <span class=\"inline-code\">!tts profanity block</span> in chat o attiva il Filtro Volgarità nella Dashboard Web. Usa <span class=\"inline-code\">!tts profanity status</span> per visualizzare lo stato, la lingua attiva e il conteggio delle parole. Usa <span class=\"inline-code\">!tts profanity allow</span> per fermare di nuovo il filtro. Le vecchie parole on e off funzionano ancora.",
     "behaviorTitle": "Cosa Fa",
     "behavior1": "Il filtro sostituisce i termini scurrili con parole più miti. Il bot non cancella il messaggio né emette bip.",
     "behavior2": "Il filtro sostituisce gli insulti gravi con la parola 'slur' per rimuovere contenuti offensivi dall'audio.",

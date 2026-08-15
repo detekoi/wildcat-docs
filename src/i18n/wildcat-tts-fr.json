@@ -418,15 +418,17 @@
       "permission": "Modérateur (uniquement le streamer pour clear)"
     },
     "ttsProfanity": {
-      "name": "!tts profanity <on|off|status>",
+      "name": "!tts profanity <block|allow|status>",
       "description": "Active ou désactive le filtre de vulgarité, qui remplace les termes grossiers par des mots plus doux.",
       "usage": {
-        "on": "!tts profanity on",
-        "off": "!tts profanity off",
+        "block": "!tts profanity block",
+        "allow": "!tts profanity allow",
         "status": "!tts profanity status"
       },
       "statusNote": "(affiche l'état, la langue et le nombre de mots)",
-      "notes": "Le filtre est désactivé tant que vous ne l'activez pas. Il remplace les mots grossiers par des mots plus doux. Il ne supprime pas le message. La liste des Mots Interdits dans le tableau de bord supprime le message entier."
+      "notes": "Le filtre est désactivé tant que vous ne l'activez pas. Il remplace les mots grossiers par des mots plus doux. Il ne supprime pas le message. La liste des Mots Interdits dans le tableau de bord supprime le message entier. Les anciens mots on et off fonctionnent toujours : on équivaut à block.",
+      "blockNote": "(démarre le filtre)",
+      "allowNote": "(arrête le filtre)"
     }
   },
   "table": {
@@ -574,7 +576,7 @@
     "title": "Filtre Anti-Grossièretés",
     "introText": "Le filtre de vulgarité remplace les termes grossiers par des mots plus doux avant la lecture par le TTS. Par exemple, le TTS prononce 'what the fuck' comme 'what the freak'. Le filtre reste désactivé jusqu'à ce qu'un modérateur l'active.",
     "startTitle": "Comment l'activer",
-    "startText": "Utilisez <span class=\"inline-code\">!tts profanity on</span> dans le chat ou activez le Filtre de Vulgarité sur le Tableau de bord Web. Utilisez <span class=\"inline-code\">!tts profanity status</span> pour vérifier l'état, la langue active et le nombre de mots.",
+    "startText": "Utilisez <span class=\"inline-code\">!tts profanity block</span> dans le chat ou activez le Filtre de Vulgarité sur le Tableau de bord Web. Utilisez <span class=\"inline-code\">!tts profanity status</span> pour vérifier l'état, la langue active et le nombre de mots. Utilisez <span class=\"inline-code\">!tts profanity allow</span> pour arrêter le filtre. Les anciens mots on et off fonctionnent toujours.",
     "behaviorTitle": "Ce qu'il fait",
     "behavior1": "Le filtre remplace les mots grossiers par des mots plus doux. Le bot ne supprime pas le message et ne joue pas de bip.",
     "behavior2": "Le filtre remplace les insultes graves par le mot 'slur' pour supprimer le contenu offensant de l'audio.",

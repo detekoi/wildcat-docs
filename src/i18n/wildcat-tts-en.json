@@ -418,15 +418,17 @@
       "permission": "Moderator (broadcaster only for clear)"
     },
     "ttsProfanity": {
-      "name": "!tts profanity <on|off|status>",
+      "name": "!tts profanity <block|allow|status>",
       "description": "Starts or stops the profanity filter, which replaces rude words with milder words.",
       "usage": {
-        "on": "!tts profanity on",
-        "off": "!tts profanity off",
+        "block": "!tts profanity block",
+        "allow": "!tts profanity allow",
         "status": "!tts profanity status"
       },
       "statusNote": "(shows the state, the language, and the number of words)",
-      "notes": "The filter is off until you start it. It replaces rude words with milder words. It does not remove the message. The Banned Words list in the Web Dashboard removes a full message."
+      "notes": "The filter is off until you start it. It replaces rude words with milder words. It does not remove the message. The Banned Words list in the Web Dashboard removes a full message. The older words on and off still work: on is the same as block.",
+      "blockNote": "(starts the filter)",
+      "allowNote": "(stops the filter)"
     }
   },
   "table": {
@@ -574,7 +576,7 @@
     "title": "Profanity Filter",
     "introText": "The profanity filter replaces rude words with milder words before TTS speaks them. For example, TTS speaks \"what the fuck\" as \"what the freak\". The filter is off until a moderator turns it on.",
     "startTitle": "How To Start It",
-    "startText": "Use !tts profanity on in chat, or turn on Profanity Filter in the Web Dashboard. Use !tts profanity status to see the current state, active language, and word count.",
+    "startText": "Use !tts profanity block in chat, or turn on Profanity Filter in the Web Dashboard. Use !tts profanity status to see the current state, active language, and word count. Use !tts profanity allow to stop the filter again. The older words on and off still work.",
     "behaviorTitle": "What It Does",
     "behavior1": "The filter replaces rude words with milder words. The bot does not drop the message or play a bleep sound.",
     "behavior2": "The filter replaces slurs with the word \"slur\" to remove offensive content from the audio.",

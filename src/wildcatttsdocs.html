@@ -1026,7 +1026,7 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsProfanity.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts profanity
-                    &lt;on|off|status&gt;</td>
+                    &lt;block|allow|status&gt;</td>
                 <td data-i18n-key="commands.ttsProfanity.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsProfanity"><span class="description-text">Starts
                         or stops the profanity filter, which replaces rude words with milder
                         words.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
@@ -1036,11 +1036,13 @@ extraScripts:
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.ttsProfanity.usage.on">!tts profanity on</code>
+                            data-i18n-cmd="commands.ttsProfanity.usage.block">!tts profanity block</code>
+                        <span data-i18n="commands.ttsProfanity.blockNote">(starts the filter)</span>
                     </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.ttsProfanity.usage.off">!tts profanity off</code>
+                            data-i18n-cmd="commands.ttsProfanity.usage.allow">!tts profanity allow</code>
+                        <span data-i18n="commands.ttsProfanity.allowNote">(stops the filter)</span>
                     </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -1051,7 +1053,10 @@ extraScripts:
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
                             data-i18n="commands.ttsProfanity.notes">The filter is off until you start it. It
                             replaces rude words with milder words. It does not remove the message. The Banned
-                            Words list in the Web Dashboard removes a full message.</span></p>
+                            Words list in the Web Dashboard removes a full message. The older
+                            <span class="inline-code">on</span> and <span class="inline-code">off</span> words
+                            still work: <span class="inline-code">on</span> is the same as
+                            <span class="inline-code">block</span>.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -1891,9 +1896,11 @@ extraScripts:
         moderator starts it.</p>
 
     <h3 data-i18n="profanityFilter.startTitle">How To Start It</h3>
-    <p data-i18n="profanityFilter.startText">Use <span class="inline-code">!tts profanity on</span> in chat, or
+    <p data-i18n="profanityFilter.startText">Use <span class="inline-code">!tts profanity block</span> in chat, or
         set the "Profanity Filter" control to on in the Web Dashboard. Use <span class="inline-code">!tts
-            profanity status</span> to see the state, the language, and the number of words in the list.</p>
+            profanity allow</span> to stop the filter again, and <span class="inline-code">!tts
+            profanity status</span> to see the state, the language, and the number of words in the list. The
+        older <span class="inline-code">on</span> and <span class="inline-code">off</span> words still work.</p>
 
     <h3 data-i18n="profanityFilter.behaviorTitle">What It Does</h3>
     <ul>

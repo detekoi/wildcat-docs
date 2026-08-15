@@ -418,15 +418,17 @@
       "permission": "Moderator (nur Broadcaster für clear)"
     },
     "ttsProfanity": {
-      "name": "!tts profanity <on|off|status>",
+      "name": "!tts profanity <block|allow|status>",
       "description": "Startet oder stoppt den Profanitätsfilter, der unhöfliche Wörter durch mildere Wörter ersetzt.",
       "usage": {
-        "on": "!tts profanity on",
-        "off": "!tts profanity off",
+        "block": "!tts profanity block",
+        "allow": "!tts profanity allow",
         "status": "!tts profanity status"
       },
       "statusNote": "(zeigt den Status, die Sprache und die Anzahl der Wörter an)",
-      "notes": "Der Filter ist aus, bis du ihn startest. Er ersetzt unhöfliche Wörter durch mildere Wörter. Er entfernt die Nachricht nicht. Die Liste verbotener Wörter im Web-Dashboard entfernt die gesamte Nachricht."
+      "notes": "Der Filter ist aus, bis du ihn startest. Er ersetzt unhöfliche Wörter durch mildere Wörter. Er entfernt die Nachricht nicht. Die Liste verbotener Wörter im Web-Dashboard entfernt die gesamte Nachricht. Die alten Wörter on und off funktionieren weiterhin: on entspricht block.",
+      "blockNote": "(startet den Filter)",
+      "allowNote": "(stoppt den Filter)"
     }
   },
   "table": {
@@ -574,7 +576,7 @@
     "title": "Profanitätsfilter",
     "introText": "Der Profanitätsfilter ersetzt unhöfliche Wörter durch mildere Wörter, bevor TTS sie vorliest. Zum Beispiel spricht TTS 'what the fuck' als 'what the freak'. Der Filter ist aus, bis ein Moderator ihn einschaltet.",
     "startTitle": "Aktivierung des Filters",
-    "startText": "Verwende <span class=\"inline-code\">!tts profanity on</span> im Chat oder aktiviere den Profanitätsfilter im Web-Dashboard. Verwende <span class=\"inline-code\">!tts profanity status</span>, um Status, aktive Sprache und Wortanzahl anzuzeigen.",
+    "startText": "Verwende <span class=\"inline-code\">!tts profanity block</span> im Chat oder aktiviere den Profanitätsfilter im Web-Dashboard. Verwende <span class=\"inline-code\">!tts profanity status</span>, um Status, aktive Sprache und Wortanzahl anzuzeigen. Verwende <span class=\"inline-code\">!tts profanity allow</span>, um den Filter wieder zu stoppen. Die alten Wörter on und off funktionieren weiterhin.",
     "behaviorTitle": "Funktionsweise",
     "behavior1": "Der Filter ersetzt unhöfliche Wörter durch mildere Wörter. Der Bot verwirft die Nachricht nicht und spielt keinen Piepton ab.",
     "behavior2": "Der Filter ersetzt Schimpfwörter mit dem Wort 'slur', um beleidigenden Inhalt aus dem Audio zu entfernen.",

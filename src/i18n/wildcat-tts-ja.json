@@ -418,15 +418,17 @@
       "permission": "モデレーター（clearは配信者のみ）"
     },
     "ttsProfanity": {
-      "name": "!tts profanity <on|off|status>",
+      "name": "!tts profanity <block|allow|status>",
       "description": "不快な単語を穏やかな言葉に置き換える禁止用語フィルターを開始・停止します。",
       "usage": {
-        "on": "!tts profanity on",
-        "off": "!tts profanity off",
+        "block": "!tts profanity block",
+        "allow": "!tts profanity allow",
         "status": "!tts profanity status"
       },
       "statusNote": "（状態、言語、登録単語数を表示）",
-      "notes": "開始するまでフィルターは無効です。下品な単語を穏やかな表現に置き換えます。メッセージ自体は削除されません。メッセージ全体を破棄したい場合はWebダッシュボードの禁止単語リストを使用してください。"
+      "notes": "開始するまでフィルターは無効です。下品な単語を穏やかな表現に置き換えます。メッセージ自体は削除されません。メッセージ全体を破棄したい場合はWebダッシュボードの禁止単語リストを使用してください。以前の on と off も引き続き使用できます。on は block と同じです。",
+      "blockNote": "（フィルターを開始）",
+      "allowNote": "（フィルターを停止）"
     }
   },
   "table": {
@@ -574,7 +576,7 @@
     "title": "不適切表現フィルター",
     "introText": "禁止用語フィルターは下品な単語を読み上げ前に穏やかな言葉に置換します。例えば「what the fuck」を「what the freak」として読み上げます。モデレーターが有効にするまでフィルターは無効です。",
     "startTitle": "開始方法",
-    "startText": "チャットで <span class=\"inline-code\">!tts profanity on</span> を送信するか、Webダッシュボードで禁止用語フィルターを有効にします。<span class=\"inline-code\">!tts profanity status</span> で現在の状態、言語、登録単語数を確認できます。",
+    "startText": "チャットで <span class=\"inline-code\">!tts profanity block</span> を送信するか、Webダッシュボードで禁止用語フィルターを有効にします。<span class=\"inline-code\">!tts profanity status</span> で現在の状態、言語、登録単語数を確認できます。フィルターを停止するには <span class=\"inline-code\">!tts profanity allow</span> を使用します。以前の on と off も引き続き使用できます。",
     "behaviorTitle": "動作内容",
     "behavior1": "フィルターは下品な単語を穏やかな言葉に置き換えます。メッセージを破棄したりビープ音を鳴らしたりはしません。",
     "behavior2": "悪質な中傷（スラー）は「slur」という単語に置換して不快な音声を除去します。",
