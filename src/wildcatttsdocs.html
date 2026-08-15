@@ -18,6 +18,9 @@ sidebarLinks:
   - { href: "#pronunciation",      key: sidebar.pronunciation,      label: "Pronunciation Dictionary" }
   - { href: "#profanity-filter",   key: sidebar.profanityFilter,    label: "Profanity Filter" }
   - { href: "#banned-words",       key: sidebar.bannedWords,        label: "Banned Words" }
+  - { href: "#youtube-tts",        key: sidebar.youtubeTts,         label: "YouTube Integration" }
+  - { href: "#url-reading",        key: sidebar.urlReading,         label: "URL Reading" }
+  - { href: "#event-controls",     key: sidebar.eventControls,      label: "Stream Events & Privacy" }
   - { href: "#web-dashboard",      key: sidebar.webDashboard,       label: "Web Dashboard" }
   - { href: "#troubleshooting",    key: sidebar.troubleshooting,    label: "Troubleshooting" }
 extraScripts:
@@ -292,7 +295,7 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsPermission.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts permission
-                    [everyone|all|mods|vip]</td>
+                    [everyone|all|subs|vip|mods]</td>
                 <td data-i18n-key="commands.ttsPermission.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPermission"><span class="description-text">Sets a
                         filter on who can trigger TTS when the bot is in <span class="inline-code">all</span>
                         mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
@@ -300,8 +303,9 @@ extraScripts:
             <tr class="dropdown-details" id="dd-commands-ttsPermission" hidden>
                 <td colspan="2">
                     <code data-i18n-cmd="commands.ttsPermission.usage.everyone">!tts permission everyone</code>
-                    <code data-i18n-cmd="commands.ttsPermission.usage.mods">!tts permission mods</code>
+                    <code data-i18n-cmd="commands.ttsPermission.usage.subs">!tts permission subs</code>
                     <code data-i18n-cmd="commands.ttsPermission.usage.vip">!tts permission vip</code>
+                    <code data-i18n-cmd="commands.ttsPermission.usage.mods">!tts permission mods</code>
                     <code data-i18n-cmd="commands.ttsPermission.usage.status">!tts permission</code> <span
                         data-i18n="commands.ttsPermission.statusDesc">(displays the current permission
                         filter)</span>
@@ -309,9 +313,11 @@ extraScripts:
                             data-i18n="commands.ttsPermission.notes"><span class="inline-code">everyone</span>
                             or <span class="inline-code">all</span>: Any user's chat message can be spoken.
                             (<strong>Default</strong>)<br>
-                            <span class="inline-code">mods</span>: Only messages from moderators and the
+                            <span class="inline-code">subs</span>: Only messages from subscribers, VIPs, moderators, and the
                             broadcaster will be spoken.<br>
                             <span class="inline-code">vip</span>: Only messages from VIPs, moderators, and the
+                            broadcaster will be spoken.<br>
+                            <span class="inline-code">mods</span>: Only messages from moderators and the
                             broadcaster will be spoken.<br>
                             This does not affect <span class="inline-code">command</span> mode.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
@@ -1971,6 +1977,59 @@ extraScripts:
     </div>
 </section>
 
+<section id="youtube-tts" class="section">
+    <h2 data-i18n="youtubeTts.title">YouTube Live Chat Integration</h2>
+    <p data-i18n="youtubeTts.intro">WildcatTTS can read YouTube Live chat messages aloud into your OBS audio feed. If you stream to Twitch and YouTube at the same time, the bot reads messages from both chats into one audio source.</p>
+
+    <h3 data-i18n="youtubeTts.featuresTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="youtubeTts.feature1"><strong>Multi-streaming support:</strong> Messages from Twitch and YouTube play through the same OBS Browser Source without extra audio setup.</li>
+        <li data-i18n="youtubeTts.feature2"><strong>Background polling:</strong> If you turn on the feature before you start your YouTube stream, the bot waits and connects when you go live.</li>
+        <li data-i18n="youtubeTts.feature3"><strong>Heartbeat system:</strong> The bot sends regular heartbeat signals to keep the YouTube connection active during slow chat.</li>
+        <li data-i18n="youtubeTts.feature4"><strong>Unified formatting:</strong> Custom YouTube emotes, URLs, and channel default voice settings apply to YouTube messages automatically.</li>
+    </ul>
+
+    <h3 data-i18n="youtubeTts.setupTitle">How To Enable YouTube TTS</h3>
+    <p data-i18n="youtubeTts.setupIntro">You can configure YouTube TTS in the Web Dashboard. Changes take effect immediately.</p>
+    <ol>
+        <li data-i18n="youtubeTts.step1">Log in to the Web Dashboard at tts.wildcat.chat with your Twitch account.</li>
+        <li data-i18n="youtubeTts.step2">Scroll to the YouTube Integration card.</li>
+        <li data-i18n="youtubeTts.step3">Turn on the Enable YouTube TTS switch.</li>
+        <li data-i18n="youtubeTts.step4">Enter your YouTube handle (for example, @yourchannel), Channel ID, or live Video URL.</li>
+        <li data-i18n="youtubeTts.step5">If your stream is already live, OBS begins speaking your YouTube chat messages immediately.</li>
+    </ol>
+</section>
+
+<section id="url-reading" class="section">
+    <h2 data-i18n="urlReading.title">Speech-Friendly URL Reading</h2>
+    <p data-i18n="urlReading.intro">Chat messages often contain long web links with parameters and tracking codes. WildcatTTS simplifies links so they sound natural when spoken.</p>
+
+    <h3 data-i18n="urlReading.howItWorksTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="urlReading.rule1">By default, TTS replaces links with speech-friendly domain names. For example, TTS speaks a search link as "google dot com link".</li>
+        <li data-i18n="urlReading.rule2">TTS removes protocol prefixes such as "https://" and "www." before speaking the domain name.</li>
+        <li data-i18n="urlReading.rule3">TTS replaces hyphens, underscores, and dots with spaces and words so the domain sounds natural.</li>
+    </ul>
+
+    <h3 data-i18n="urlReading.toggleTitle">Read Full URLs Option</h3>
+    <p data-i18n="urlReading.toggleText">If you want TTS to speak entire URLs as typed, turn on the Read Full URLs switch in the Web Dashboard. When this switch is on, TTS speaks the full link without shortening.</p>
+</section>
+
+<section id="event-controls" class="section">
+    <h2 data-i18n="eventControls.title">Stream Events & Privacy Controls</h2>
+    <p data-i18n="eventControls.intro">WildcatTTS gives you granular control over stream event announcements and viewer privacy in the Web Dashboard.</p>
+
+    <h3 data-i18n="eventControls.cheersTitle">Cheer Announcements & Cheermote Filtering</h3>
+    <p data-i18n="eventControls.cheersText">When a viewer cheers bits, TTS automatically strips cheermote names like Cheer100 or Party1 from the message. TTS only reads the viewer's custom message.</p>
+    <p data-i18n="eventControls.cheersToggleText">Use the Announce Cheers switch in the Web Dashboard to turn off the "User cheered bits" alert while continuing to read cheer chat messages.</p>
+
+    <h3 data-i18n="eventControls.followersTitle">Follower Privacy & Anonymization</h3>
+    <p data-i18n="eventControls.followersText">To protect viewer privacy, turn on the Anonymize New Followers switch in the Web Dashboard. When active, TTS announces "Someone new just followed!" instead of speaking the viewer's username.</p>
+
+    <h3 data-i18n="eventControls.streaksTitle">Watch Streaks & Pronoun Resolution</h3>
+    <p data-i18n="eventControls.streaksText">When a viewer hits a watch streak milestone, the bot announces the streak count. If the viewer attached a message, the bot checks pronouns.alejo.io to speak their pronouns (for example, "They said: ...").</p>
+</section>
+
 <section id="web-dashboard" class="section">
     <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
     <p data-i18n="webDashboard.introText">The <a href="https://tts.wildcat.chat/" class="default-link-style"
@@ -1987,6 +2046,14 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingViewerTitle">Viewer Preferences:</strong> <span
                 data-i18n="webDashboard.settingViewerDesc">Allow or force channel default voice for all
                 messages</span></li>
+        <li><strong data-i18n="webDashboard.settingAllowPreferencesTitle">Allow Viewer Voice Preferences:</strong> <span
+                data-i18n="webDashboard.settingAllowPreferencesDesc">Allow viewers to set custom voices with !myvoice, or lock all TTS to the channel default voice</span></li>
+        <li><strong data-i18n="webDashboard.settingBotChatTitle">Bot Responds in Chat:</strong> <span
+                data-i18n="webDashboard.settingBotChatDesc">Enable or disable text responses from the bot in Twitch chat while keeping TTS audio enabled</span></li>
+        <li><strong data-i18n="webDashboard.settingAnonymizeFollowersTitle">Anonymize New Followers:</strong> <span
+                data-i18n="webDashboard.settingAnonymizeFollowersDesc">Announce new followers without speaking their usernames for viewer privacy</span></li>
+        <li><strong data-i18n="webDashboard.settingAnnounceCheersTitle">Announce Cheers:</strong> <span
+                data-i18n="webDashboard.settingAnnounceCheersDesc">Toggle cheer event alerts on or off while continuing to read cheer messages</span></li>
         <li><strong data-i18n="webDashboard.settingUrlTitle">URL Reading:</strong> <span
                 data-i18n="webDashboard.settingUrlDesc">Read full URLs or just domain names</span></li>
         <li><strong data-i18n="webDashboard.settingBitsTitle">Bits → TTS:</strong> <span

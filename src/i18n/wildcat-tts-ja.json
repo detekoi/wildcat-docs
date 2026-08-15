@@ -15,7 +15,10 @@
     "emoteDescriptions": "エモート説明",
     "pronunciation": "発音辞書",
     "profanityFilter": "不適切表現フィルター",
-    "bannedWords": "禁止ワード"
+    "bannedWords": "禁止ワード",
+    "youtubeTts": "YouTube連携",
+    "urlReading": "URL読み上げ",
+    "eventControls": "配信イベントとプライバシー"
   },
   "page": {
     "title": "WildcatTTS ボット ドキュメント",
@@ -131,15 +134,16 @@
       }
     },
     "ttsPermission": {
-      "name": "!tts permission [everyone|all|mods]",
+      "name": "!tts permission [everyone|all|subs|vip|mods]",
       "description": "ボットがallモードのときにTTSをトリガーできるユーザーのフィルターを設定します。",
       "statusDesc": "(現在の権限フィルターを表示)",
-      "notes": "everyone または all: すべてのユーザーのチャットメッセージが読み上げられます。(デフォルト)\nmods: モデレーターと配信者からのメッセージのみが読み上げられます。\nこれはcommandモードには影響しません。",
+      "notes": "everyone または all: すべてのユーザーのチャットメッセージが読み上げられます。(デフォルト)\nsubs: サブスクライバー、VIP、モデレーター、配信者のメッセージのみが読み上げられます。\nvip: VIP、モデレーター、配信者のメッセージのみが読み上げられます。\nmods: モデレーターと配信者からのメッセージのみが読み上げられます。\nこれはcommandモードには影響しません。",
       "usage": {
         "everyone": "!tts permission everyone",
+        "subs": "!tts permission subs",
+        "vip": "!tts permission vip",
         "mods": "!tts permission mods",
-        "status": "!tts permission",
-        "vip": "!tts permission vip"
+        "status": "!tts permission"
       }
     },
     "ttsBits": {
@@ -426,6 +430,10 @@
     }
   },
   "table": {
+    "headers": {
+      "command": "コマンド",
+      "description": "説明"
+    },
     "categories": {
       "ttsGeneral": "一般",
       "engineModeControl": "エンジンとモード制御(モデレーターのみ)",
@@ -466,6 +474,14 @@
     "settingEngineDesc": "TTSの有効/無効、イベントのアナウンス、TTSモードと権限の設定",
     "settingViewerTitle": "視聴者の設定:",
     "settingViewerDesc": "すべてのメッセージでチャンネルデフォルト音声を許可または強制",
+    "settingAllowPreferencesTitle": "視聴者の音声設定を許可:",
+    "settingAllowPreferencesDesc": "視聴者が !myvoice で音声をカスタマイズすることを許可するか、すべてのTTSをチャンネルのデフォルト音声に固定します",
+    "settingBotChatTitle": "ボットのチャット応答:",
+    "settingBotChatDesc": "TTS音声を維持したまま、Twitchチャット内でのボットのテキスト応答を有効/無効にします",
+    "settingAnonymizeFollowersTitle": "新規フォロワーの匿名化:",
+    "settingAnonymizeFollowersDesc": "視聴者のプライバシー保護のため、ユーザー名を読み上げずに新規フォローを通知します",
+    "settingAnnounceCheersTitle": "チアー通知:",
+    "settingAnnounceCheersDesc": "チアーメッセージの読み上げを維持したまま、ビッツ寄付のアラート読み上げを切り替えます",
     "settingUrlTitle": "URL読み上げ:",
     "settingUrlDesc": "完全なURLまたはドメイン名のみを読む",
     "settingBitsTitle": "Bits → TTS:",
@@ -600,5 +616,42 @@
     "step4": "「Add」をクリックするか、キーボードのEnterキーを押します。",
     "step5": "登録を削除したい場合は、リスト内の単語の横にある「Remove」をクリックします。",
     "comparisonTip": "禁止ワードはメッセージ全体をスキップします。不適切表現フィルターは穏やかな言葉に置き換えて読み上げます。メッセージに両方のリストの単語が含まれている場合、TTSはメッセージをスキップします。"
+  },
+  "youtubeTts": {
+    "title": "YouTube Liveチャット連携",
+    "intro": "WildcatTTSはYouTube LiveのチャットメッセージをOBSの音声フィードに直接読み上げることができます。TwitchとYouTubeで同時に配信している場合、ボットは両方のチャットメッセージを1つの音声ソースとして読み上げます。",
+    "featuresTitle": "仕組み",
+    "feature1": "<strong>マルチ配信対応:</strong> TwitchとYouTubeのメッセージは、追加のオーディオ設定なしで同じOBSブラウザソースから再生されます。",
+    "feature2": "<strong>バックグラウンド接続待機:</strong> YouTube配信を開始する前に機能をオンにしておくと、ボットは待機し、配信開始と同時に自動接続します。",
+    "feature3": "<strong>ハートビート機能:</strong> チャットの動きが少ない時間帯でも、定期的な信号送信によってYouTubeとの接続を維持します。",
+    "feature4": "<strong>一貫したテキスト処理:</strong> YouTubeのカスタム絵文字、URL、チャンネルのデフォルト音声設定が自動的に適用されます。",
+    "setupTitle": "YouTube TTSの有効化手順",
+    "setupIntro": "WebダッシュボードでYouTube TTSを設定できます。変更は即座に反映されます。",
+    "step1": "Twitchアカウントで tts.wildcat.chat のWebダッシュボードにログインします。",
+    "step2": "YouTube Integration（YouTube連携）カードまでスクロールします。",
+    "step3": "Enable YouTube TTS スイッチをオンにします。",
+    "step4": "YouTubeハンドル（例: @yourchannel）、チャンネルID、またはライブ配信URLを入力します。",
+    "step5": "すでに配信中の場合、OBSはYouTubeチャットの読み上げを即座に開始します。"
+  },
+  "urlReading": {
+    "title": "自然なURL読み上げ",
+    "intro": "チャットメッセージにはパラメータや追跡コードを含む長いURLが含まれることがよくあります。WildcatTTSはリンクを自然に聞こえるように自動短縮します。",
+    "howItWorksTitle": "仕組み",
+    "rule1": "デフォルトでは、TTSはリンクをドメイン名に置き換えて読み上げます。例えば、検索リンクは「google dot com link」として読み上げられます。",
+    "rule2": "TTSはドメイン名を読み上げる前に「https://」や「www.」などのプロトコル接頭辞を削除します。",
+    "rule3": "TTSはハイフン、アンダースコア、ドットをスペースや単語に置き換えて、自然な発音にします。",
+    "toggleTitle": "URL全文の読み上げ設定",
+    "toggleText": "入力された通りの完全なURLを読み上げたい場合は、Webダッシュボードで「Read Full URLs」スイッチをオンにします。このスイッチがオンの場合、TTSは短縮せずにURL全体を読み上げます。"
+  },
+  "eventControls": {
+    "title": "配信イベントとプライバシー設定",
+    "intro": "WildcatTTSでは、Webダッシュボードからイベント通知や視聴者のプライバシーを細かく管理できます。",
+    "cheersTitle": "チアー通知とCheermoteの除外",
+    "cheersText": "視聴者がビッツを寄付（チアー）した際、TTSはメッセージから Cheer100 や Party1 などのCheermote名を自動的に除外します。視聴者が入力したカスタムメッセージのみを読み上げます。",
+    "cheersToggleText": "Webダッシュボードの「Announce Cheers」スイッチを使用すると、「○○がビッツをチアーしました」というアラート音声をオフにしつつ、メッセージのみを読み上げることができます。",
+    "followersTitle": "フォロワーのプライバシー保護",
+    "followersText": "視聴者のプライバシーを守るため、Webダッシュボードで「Anonymize New Followers」をオンにします。有効にすると、ユーザー名の代わりに「新しいフォロワーが参加しました！」と通知されます。",
+    "streaksTitle": "視聴ストリークと代名詞の自動判定",
+    "streaksText": "視聴者が連続視聴記録を達成した際、ボットは連続ストリーク数をアナウンスします。メッセージが添付されている場合、ボットは pronouns.alejo.io を参照して適切な代名詞で読み上げます（例: 「They said: ...」）。"
   }
 }

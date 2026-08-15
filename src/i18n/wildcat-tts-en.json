@@ -15,7 +15,10 @@
     "troubleshooting": "Troubleshooting",
     "pronunciation": "Pronunciation Dictionary",
     "profanityFilter": "Profanity Filter",
-    "bannedWords": "Banned Words"
+    "bannedWords": "Banned Words",
+    "youtubeTts": "YouTube Integration",
+    "urlReading": "URL Reading",
+    "eventControls": "Stream Events & Privacy"
   },
   "page": {
     "title": "WildcatTTS Bot Documentation",
@@ -131,15 +134,16 @@
       }
     },
     "ttsPermission": {
-      "name": "!tts permission [everyone|all|mods]",
+      "name": "!tts permission [everyone|all|subs|vip|mods]",
       "description": "Sets a filter on who can trigger TTS when the bot is in all mode.",
       "statusDesc": "(displays the current permission filter)",
-      "notes": "everyone or all: Any user's chat message can be spoken. (Default)\nmods: Only messages from moderators and the broadcaster will be spoken.\nThis does not affect command mode.",
+      "notes": "everyone or all: Any user's chat message can be spoken. (Default)\nsubs: Only messages from subscribers, VIPs, moderators, and the broadcaster will be spoken.\nvip: Only messages from VIPs, moderators, and the broadcaster will be spoken.\nmods: Only messages from moderators and the broadcaster will be spoken.\nThis does not affect command mode.",
       "usage": {
         "everyone": "!tts permission everyone",
+        "subs": "!tts permission subs",
+        "vip": "!tts permission vip",
         "mods": "!tts permission mods",
-        "status": "!tts permission",
-        "vip": "!tts permission vip"
+        "status": "!tts permission"
       }
     },
     "ttsBits": {
@@ -426,6 +430,10 @@
     }
   },
   "table": {
+    "headers": {
+      "command": "Command",
+      "description": "Description"
+    },
     "categories": {
       "ttsGeneral": "General",
       "engineModeControl": "Engine & Mode Control (Moderator Only)",
@@ -475,6 +483,14 @@
     "settingEngineDesc": "Enable/disable TTS, announce events, set TTS mode and permissions",
     "settingViewerTitle": "Viewer Preferences:",
     "settingViewerDesc": "Allow or force channel default voice for all messages",
+    "settingAllowPreferencesTitle": "Allow Viewer Voice Preferences:",
+    "settingAllowPreferencesDesc": "Allow viewers to set custom voices with !myvoice, or lock all TTS to the channel default voice",
+    "settingBotChatTitle": "Bot Responds in Chat:",
+    "settingBotChatDesc": "Enable or disable text responses from the bot in Twitch chat while keeping TTS audio enabled",
+    "settingAnonymizeFollowersTitle": "Anonymize New Followers:",
+    "settingAnonymizeFollowersDesc": "Announce new followers without speaking their usernames for viewer privacy",
+    "settingAnnounceCheersTitle": "Announce Cheers:",
+    "settingAnnounceCheersDesc": "Toggle cheer event alerts on or off while continuing to read cheer messages",
     "settingUrlTitle": "URL Reading:",
     "settingUrlDesc": "Read full URLs or just domain names",
     "settingBitsTitle": "Bits → TTS:",
@@ -600,5 +616,42 @@
     "step4": "Click Add, or press Enter on your keyboard.",
     "step5": "If you want to remove an entry, click Remove next to the word in the list.",
     "comparisonTip": "Banned Words skips the full message. The Profanity Filter speaks the message with milder words. If a message contains words on both lists, TTS skips the message."
+  },
+  "youtubeTts": {
+    "title": "YouTube Live Chat Integration",
+    "intro": "WildcatTTS can read YouTube Live chat messages aloud into your OBS audio feed. If you stream to Twitch and YouTube at the same time, the bot reads messages from both chats into one audio source.",
+    "featuresTitle": "How It Works",
+    "feature1": "<strong>Multi-streaming support:</strong> Messages from Twitch and YouTube play through the same OBS Browser Source without extra audio setup.",
+    "feature2": "<strong>Background polling:</strong> If you turn on the feature before you start your YouTube stream, the bot waits and connects when you go live.",
+    "feature3": "<strong>Heartbeat system:</strong> The bot sends regular heartbeat signals to keep the YouTube connection active during slow chat.",
+    "feature4": "<strong>Unified formatting:</strong> Custom YouTube emotes, URLs, and channel default voice settings apply to YouTube messages automatically.",
+    "setupTitle": "How To Enable YouTube TTS",
+    "setupIntro": "You can configure YouTube TTS in the Web Dashboard. Changes take effect immediately.",
+    "step1": "Log in to the Web Dashboard at tts.wildcat.chat with your Twitch account.",
+    "step2": "Scroll to the YouTube Integration card.",
+    "step3": "Turn on the Enable YouTube TTS switch.",
+    "step4": "Enter your YouTube handle (for example, @yourchannel), Channel ID, or live Video URL.",
+    "step5": "If your stream is already live, OBS begins speaking your YouTube chat messages immediately."
+  },
+  "urlReading": {
+    "title": "Speech-Friendly URL Reading",
+    "intro": "Chat messages often contain long web links with parameters and tracking codes. WildcatTTS simplifies links so they sound natural when spoken.",
+    "howItWorksTitle": "How It Works",
+    "rule1": "By default, TTS replaces links with speech-friendly domain names. For example, TTS speaks a search link as \"google dot com link\".",
+    "rule2": "TTS removes protocol prefixes such as \"https://\" and \"www.\" before speaking the domain name.",
+    "rule3": "TTS replaces hyphens, underscores, and dots with spaces and words so the domain sounds natural.",
+    "toggleTitle": "Read Full URLs Option",
+    "toggleText": "If you want TTS to speak entire URLs as typed, turn on the Read Full URLs switch in the Web Dashboard. When this switch is on, TTS speaks the full link without shortening."
+  },
+  "eventControls": {
+    "title": "Stream Events & Privacy Controls",
+    "intro": "WildcatTTS gives you granular control over stream event announcements and viewer privacy in the Web Dashboard.",
+    "cheersTitle": "Cheer Announcements & Cheermote Filtering",
+    "cheersText": "When a viewer cheers bits, TTS automatically strips cheermote names like Cheer100 or Party1 from the message. TTS only reads the viewer's custom message.",
+    "cheersToggleText": "Use the Announce Cheers switch in the Web Dashboard to turn off the \"User cheered bits\" alert while continuing to read cheer chat messages.",
+    "followersTitle": "Follower Privacy & Anonymization",
+    "followersText": "To protect viewer privacy, turn on the Anonymize New Followers switch in the Web Dashboard. When active, TTS announces \"Someone new just followed!\" instead of speaking the viewer's username.",
+    "streaksTitle": "Watch Streaks & Pronoun Resolution",
+    "streaksText": "When a viewer hits a watch streak milestone, the bot announces the streak count. If the viewer attached a message, the bot checks pronouns.alejo.io to speak their pronouns (for example, \"They said: ...\")."
   }
 }

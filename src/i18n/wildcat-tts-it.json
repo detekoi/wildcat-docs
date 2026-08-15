@@ -15,7 +15,10 @@
     "emoteDescriptions": "Descrizioni Emote",
     "pronunciation": "Dizionario di Pronuncia",
     "profanityFilter": "Filtro Volgarità",
-    "bannedWords": "Parole Vietate"
+    "bannedWords": "Parole Vietate",
+    "youtubeTts": "Integrazione YouTube",
+    "urlReading": "Lettura degli URL",
+    "eventControls": "Eventi dello Stream e Privacy"
   },
   "page": {
     "title": "Documentazione Bot WildcatTTS",
@@ -131,15 +134,16 @@
       }
     },
     "ttsPermission": {
-      "name": "!tts permission [everyone|all|mods]",
+      "name": "!tts permission [everyone|all|subs|vip|mods]",
       "description": "Imposta un filtro su chi può attivare il TTS quando il bot è in modalità all.",
-      "statusDesc": "(visualizza il filtro di permesso corrente)",
-      "notes": "everyone o all: Qualsiasi messaggio di chat di un utente può essere pronunciato. (Predefinito)\nmods: Solo i messaggi dai moderatori e dal broadcaster verranno pronunciati.\nQuesto non influisce sulla modalità comandi.",
+      "statusDesc": "(mostra il filtro dei permessi attuale)",
+      "notes": "everyone o all: Il messaggio di chat di qualsiasi utente può essere letto. (Predefinito)\nsubs: Verranno letti solo i messaggi di abbonati, VIP, moderatori e dello streamer.\nvip: Verranno letti solo i messaggi di VIP, moderatori e dello streamer.\nmods: Verranno letti solo i messaggi di moderatori e dello streamer.\nQuesto non influisce sulla modalità command.",
       "usage": {
         "everyone": "!tts permission everyone",
+        "subs": "!tts permission subs",
+        "vip": "!tts permission vip",
         "mods": "!tts permission mods",
-        "status": "!tts permission",
-        "vip": "!tts permission vip"
+        "status": "!tts permission"
       }
     },
     "ttsBits": {
@@ -426,6 +430,10 @@
     }
   },
   "table": {
+    "headers": {
+      "command": "Comando",
+      "description": "Descrizione"
+    },
     "categories": {
       "ttsGeneral": "Generale",
       "engineModeControl": "Controllo Motore e Modalità (Solo Moderatore)",
@@ -465,6 +473,14 @@
     "settingEngineDesc": "Abilita/disabilita TTS, annuncia eventi, imposta modalità TTS e permessi",
     "settingViewerTitle": "Preferenze Spettatore:",
     "settingViewerDesc": "Consenti o forza la voce predefinita del canale per tutti i messaggi",
+    "settingAllowPreferencesTitle": "Consenti preferenze vocali degli spettatori:",
+    "settingAllowPreferencesDesc": "Consenti agli spettatori di impostare voci personalizzate con !myvoice o blocca tutto il TTS sulla voce predefinita del canale",
+    "settingBotChatTitle": "Il bot risponde in chat:",
+    "settingBotChatDesc": "Abilita o disabilita le risposte di testo del bot nella chat di Twitch mantenendo attivo l'audio TTS",
+    "settingAnonymizeFollowersTitle": "Anonimizza nuovi follower:",
+    "settingAnonymizeFollowersDesc": "Annuncia i nuovi follower senza pronunciare il loro nome utente per tutelare la privacy",
+    "settingAnnounceCheersTitle": "Annuncia Cheer:",
+    "settingAnnounceCheersDesc": "Attiva o disattiva gli avvisi degli eventi di tifo continuando a leggere i messaggi di tifo",
     "settingUrlTitle": "Lettura URL:",
     "settingUrlDesc": "Leggi URL completi o solo nomi di dominio",
     "settingBitsTitle": "Bits → TTS:",
@@ -600,5 +616,42 @@
     "step4": "Fai clic su Add o premi Invio sulla tastiera.",
     "step5": "Se desideri rimuovere una voce, fai clic su Remove accanto alla parola nell'elenco.",
     "comparisonTip": "Parole Vietate ignora l'intero messaggio. Il Filtro Volgarità legge il messaggio con parole attenuate. Se un messaggio contiene parole presenti in entrambi gli elenchi, TTS ignora il messaggio."
+  },
+  "youtubeTts": {
+    "title": "Integrazione Live Chat di YouTube",
+    "intro": "WildcatTTS può leggere ad alta voce i messaggi della live chat di YouTube nel feed audio di OBS. Se trasmetti su Twitch e YouTube contemporaneamente, il bot legge i messaggi di entrambe le chat in un'unica sorgente audio.",
+    "featuresTitle": "Come funziona",
+    "feature1": "<strong>Supporto multistream:</strong> I messaggi di Twitch e YouTube vengono riprodotti attraverso la stessa sorgente browser di OBS senza alcuna configurazione audio aggiuntiva.",
+    "feature2": "<strong>Polling in background:</strong> Se attivi la funzione prima di avviare lo streaming su YouTube, il bot attende e si connette automaticamente non appena vai in onda.",
+    "feature3": "<strong>Sistema di battito cardiaco (heartbeat):</strong> Il bot invia segnali regolari per mantenere attiva la connessione con YouTube anche durante i periodi di chat lenta.",
+    "feature4": "<strong>Formattazione unificata:</strong> Le emote personalizzate di YouTube, gli URL e le impostazioni vocali predefinite del canale si applicano automaticamente ai messaggi di YouTube.",
+    "setupTitle": "Come abilitare il TTS per YouTube",
+    "setupIntro": "Puoi configurare il TTS di YouTube nel Pannello Web. Le modifiche diventano effettive immediatamente.",
+    "step1": "Accedi al Pannello Web su tts.wildcat.chat con il tuo account Twitch.",
+    "step2": "Scorri fino alla scheda Integrazione YouTube.",
+    "step3": "Attiva l'interruttore Abilita TTS per YouTube.",
+    "step4": "Inserisci il tuo handle YouTube (ad esempio, @tuocanale), l'ID canale o l'URL del video in diretta.",
+    "step5": "Se la tua trasmissione è già in diretta, OBS inizierà a leggere immediatamente i messaggi della chat di YouTube."
+  },
+  "urlReading": {
+    "title": "Lettura degli URL ottimizzata per la voce",
+    "intro": "I messaggi di chat contengono spesso lunghi link web con parametri e codici di tracciamento. WildcatTTS semplifica i link affinché suonino naturali quando vengono letti.",
+    "howItWorksTitle": "Come funziona",
+    "rule1": "Per impostazione predefinita, il TTS sostituisce i link con nomi di dominio facili da pronunciare. Ad esempio, il TTS legge un link di ricerca come \"google dot com link\".",
+    "rule2": "Il TTS rimuove i prefissi di protocollo come \"https://\" e \"www.\" prima di pronunciare il nome di dominio.",
+    "rule3": "Il TTS sostituisce trattini, trattini bassi e punti con spazi e parole affinché il dominio suoni naturale.",
+    "toggleTitle": "Opzione Leggi URL completi",
+    "toggleText": "Se desideri che il TTS legga gli URL completi esattamente come sono stati digitati, attiva l'interruttore Leggi URL completi nel Pannello Web. Quando questo interruttore è attivo, il TTS pronuncia l'intero link senza accorciarlo."
+  },
+  "eventControls": {
+    "title": "Eventi dello Stream e Controlli di Privacy",
+    "intro": "WildcatTTS offre un controllo granulare sugli annunci degli eventi di trasmissione e sulla privacy degli spettatori nel Pannello Web.",
+    "cheersTitle": "Annunci dei Cheer e Filtro Cheermote",
+    "cheersText": "Quando uno spettatore dona bit (cheer), il TTS rimuove automaticamente i nomi delle cheermote come Cheer100 o Party1 dal messaggio. Il TTS legge solo il messaggio personalizzato dello spettatore.",
+    "cheersToggleText": "Utilizza l'interruttore Annuncia Cheer nel Pannello Web per disattivare l'avviso \"L'utente ha donato bit\" continuando a leggere i messaggi di chat con i bit.",
+    "followersTitle": "Privacy e Anonimizzazione dei Follower",
+    "followersText": "Per proteggere la privacy degli spettatori, attiva l'interruttore Anonimizza nuovi follower nel Pannello Web. Quando è attivo, il TTS annuncia \"Qualcuno ha appena iniziato a seguire il canale!\" invece di pronunciare il nome utente.",
+    "streaksTitle": "Serie di Visualizzazione e Rilevamento dei Pronomi",
+    "streaksText": "Quando uno spettatore raggiunge un traguardo di serie di visualizzazioni, il bot annuncia il numero di stream. Se lo spettatore ha allegato un messaggio, il bot consulta pronouns.alejo.io per pronunciare i pronomi corretti (ad esempio, \"They said: ...\")."
   }
 }
