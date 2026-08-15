@@ -196,8 +196,6 @@ code,
   line-height: 1.6;
 }
 
-.dropdown-details ul li .mod-badge,
-.dropdown-details ol li .mod-badge,
 .dropdown-details .usage-line .mod-badge {
   margin-left: 0;
   margin-right: 6px;
@@ -310,12 +308,7 @@ footer {
     border-color: var(--color-grid-line);
   }
 
-  code {
-    background-color: var(--color-card-bg);
-    border-color: var(--color-grid-line);
-    color: var(--color-text);
-  }
-
+  code,
   .inline-code {
     background-color: var(--color-card-bg);
     border-color: var(--color-grid-line);
@@ -379,7 +372,8 @@ footer {
     padding: 8px 10px;
   }
 
-  code {
+  code,
+  .inline-code {
     padding: 2px 4px;
     font-size: 0.85rem;
     word-break: break-word;

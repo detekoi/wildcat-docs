@@ -463,7 +463,7 @@
       },
       "grantPerms": {
         "title": "トラブルシューティング:",
-        "desc": "ボットが応答しない場合は、Twitchチャットで <code>/mod WildcatSage</code> と入力してモデレーター権限を付与してください。"
+        "desc": "ボットが応答しない場合は、Twitchチャットで <span class=\"inline-code\">/mod WildcatSage</span> と入力してモデレーター権限を付与してください。"
       }
     },
     "oauthTitle": "OAuth権限",

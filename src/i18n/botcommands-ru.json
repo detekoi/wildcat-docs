@@ -463,7 +463,7 @@
       },
       "grantPerms": {
         "title": "Устранение неполадок:",
-        "desc": "Если бот не отвечает, введите <code>/mod WildcatSage</code> в чате Twitch, чтобы выдать права модератора."
+        "desc": "Если бот не отвечает, введите <span class=\"inline-code\">/mod WildcatSage</span> в чате Twitch, чтобы выдать права модератора."
       }
     },
     "oauthTitle": "Разрешения OAuth",

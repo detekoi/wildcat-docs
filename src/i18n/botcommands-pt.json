@@ -463,7 +463,7 @@
       },
       "grantPerms": {
         "title": "Solução de problemas:",
-        "desc": "Se o bot não responder, digite <code>/mod WildcatSage</code> no chat da Twitch para conceder privilégios de moderador."
+        "desc": "Se o bot não responder, digite <span class=\"inline-code\">/mod WildcatSage</span> no chat da Twitch para conceder privilégios de moderador."
       }
     },
     "oauthTitle": "Permissões OAuth",
