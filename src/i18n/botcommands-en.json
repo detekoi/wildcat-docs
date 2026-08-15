@@ -4,7 +4,7 @@
   },
   "page": {
     "title": "WildcatSage Bot Commands",
-    "expandTip": "Click any command row below to expand and see usage details."
+    "expandTip": "Select any command row below to show usage details."
   },
   "table": {
     "categories": {
@@ -18,25 +18,25 @@
   "commands": {
     "ask": {
       "name": "!ask / !sage",
-      "description": "Ask Sage a question. Uses search intelligently.",
+      "description": "Ask Sage a question. Sage searches the web for answers.",
       "usage": {
-        "question": "!ask <your question>"
+        "question": "!ask <question>"
       }
     },
     "search": {
       "name": "!search",
-      "description": "Searches the web for information on a topic.",
+      "description": "Searches the web for information about a topic.",
       "usage": {
-        "query": "!search <your query>"
+        "query": "!search <query>"
       }
     },
     "game": {
       "name": "!game",
-      "description": "Provides researched information about the game currently being played. Add \"analyze\" to use AI image recognition on the stream (uses Twitch thumbnail that updates every 5 minutes)."
+      "description": "Shows information about the current stream game. Add \"analyze\" to inspect stream visuals with AI (uses stream thumbnails that update every 5 minutes)."
     },
     "translate": {
       "name": "!translate",
-      "description": "Manage automatic message translation for users.",
+      "description": "Manages automatic chat translation for users.",
       "usage": {
         "lang": "!translate <lang>",
         "modUser": "!translate <lang|stop> [user]"
@@ -44,58 +44,58 @@
     },
     "help": {
       "name": "!commands / !help",
-      "description": "Shows where to find the list of available commands.",
+      "description": "Shows a link to the list of available bot commands.",
       "usage": {
         "basic": "!help or !commands"
       }
     },
     "lurk": {
-      "description": "Let the chat know you are lurking. Provide an optional reason for a custom send-off."
+      "description": "Tells chat that you are lurking. You can add a reason for a custom message."
     },
     "quote": {
       "name": "!quote",
-      "description": "Add, view, or search quotes from the channel. Quotes are stored per-channel and can include an optional author attribution.",
+      "description": "Adds, views, or searches channel quotes. Quotes can include an author.",
       "usage": {
         "random": "!quote",
         "randomDesc": "Shows a random quote",
         "id": "!quote <id>",
-        "idDesc": "Shows quote by ID number, e.g. !quote 12",
+        "idDesc": "Shows a quote by ID number (for example: !quote 12)",
         "last": "!quote last",
-        "lastDesc": "Shows the most recently added quote",
+        "lastDesc": "Shows the most recent quote",
         "search": "!quote <search term>",
-        "searchDesc": "Searches quotes by text or author, e.g. !quote parfait",
+        "searchDesc": "Searches quotes by text or author (for example: !quote parfait)",
         "searchExplicit": "!quote search <term>",
         "searchExplicitDesc": "Explicit search command",
         "add": "!quote add <text [- author]>",
-        "addDesc": "Adds a new quote. Optional author after \" - \", e.g. !quote add \"hello world - parfait\"",
+        "addDesc": "Adds a new quote. Add an author after \" - \" (for example: !quote add \"hello world - parfait\")",
         "delete": "!quote delete <id>",
-        "deleteDesc": "Deletes a quote (mods/broadcaster only)",
+        "deleteDesc": "Deletes a quote (moderators and broadcaster only)",
         "edit": "!quote edit <id> <text [- author]>",
-        "editDesc": "Edits an existing quote (mods/broadcaster only)"
+        "editDesc": "Edits a quote (moderators and broadcaster only)"
       }
     },
     "followage": {
       "name": "!followage",
-      "description": "Check how long you or another user has been following the channel.",
+      "description": "Shows how long a user has followed the channel.",
       "usage": {
         "basic": "!followage",
-        "basicDesc": "Check your own follow age",
+        "basicDesc": "Shows your own follow time",
         "userCmd": "!followage <username>",
-        "userDesc": "Check another user's follow age"
+        "userDesc": "Shows another user's follow time"
       }
     },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Create, edit, and manage custom commands for your channel. Custom commands can also be managed via the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
+      "description": "<span class=\"description-text\">Creates, edits, and manages custom channel commands. You can also manage custom commands in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
       "usage": {
-        "addText": "Creates a new text-based command",
-        "addAi": "Creates a new AI-powered command — generates a unique response each time using the prompt",
-        "edit": "Updates an existing command's response",
+        "addText": "Creates a new text command",
+        "addAi": "Creates a new AI command that generates a unique response from a prompt",
+        "edit": "Updates a command response",
         "remove": "Deletes a command",
-        "show": "Shows the raw response template and current settings",
-        "optionsPerms": "Set who can use the command: everyone, subscriber, vip, moderator, or broadcaster",
-        "optionsCooldown": "Set a cooldown between uses (in seconds)",
-        "optionsType": "Switch an existing command between text mode and AI mode",
+        "show": "Shows the response template and settings for a command",
+        "optionsPerms": "Sets required permission: everyone, subscriber, vip, moderator, or broadcaster",
+        "optionsCooldown": "Sets a cooldown between uses in seconds",
+        "optionsType": "Switches a command between text mode and AI mode",
         "addTextCmd": "!command add <name> <response>",
         "addAiCmd": "!command addai <name> <prompt>",
         "editCmd": "!command edit <name> <response>",
@@ -108,18 +108,18 @@
     },
     "timer": {
       "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Create, edit, and manage automated chat timers. Timers can also be managed via the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
+      "description": "<span class=\"description-text\">Creates, edits, and manages automated chat timers. You can also manage timers in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
       "usage": {
         "addCmd": "!timer add <name> <interval> <response>",
-        "add": "Creates a new text-based timer with the given interval in minutes",
+        "add": "Creates a new text timer with the given interval in minutes",
         "addAiCmd": "!timer addai <name> <interval> <prompt>",
-        "addAi": "Creates a new AI-powered timer with the given interval in minutes",
+        "addAi": "Creates a new AI timer with the given interval in minutes",
         "editCmd": "!timer edit <name> <response>",
-        "edit": "Updates an existing timer's response",
+        "edit": "Updates a timer response",
         "intervalCmd": "!timer interval <name> <minutes>",
-        "interval": "Updates the firing interval (minimum minutes)",
+        "interval": "Sets the minimum interval in minutes between timer messages",
         "linesCmd": "!timer lines <name> <number>",
-        "lines": "Updates the minimum required chat lines between firings",
+        "lines": "Sets the minimum number of chat lines between timer messages",
         "enableCmd": "!timer enable <name>",
         "enable": "Enables a paused timer",
         "disableCmd": "!timer disable <name>",
@@ -127,29 +127,29 @@
         "removeCmd": "!timer remove <name>",
         "remove": "Deletes a timer",
         "showCmd": "!timer show <name>",
-        "show": "Shows the current settings for a specific timer",
+        "show": "Shows the settings for a specific timer",
         "listCmd": "!timer list",
-        "list": "Lists all timers for your channel"
+        "list": "Shows all timers for the channel"
       }
     },
     "geo": {
       "name": "!geo",
-      "description": "Starts or manages Geo-Game, a geography guessing game for IRL or virtual worlds.",
+      "description": "Starts or manages Geo-Game, a geography guessing game for real or virtual locations.",
       "usage": {
-        "basic": "Starts a global real-world game",
-        "region": "Starts a region-specific real-world game, e.g. !geo Japan",
-        "game": "Starts a game-world game using current stream's game",
-        "gameTitle": "Starts a game-world game with specified game, e.g. !geo game \"Metroid Prime\"",
-        "rounds": "Runs any game command with N rounds, e.g. !geo Japan 3",
-        "stop": "Game initiator, mods, or broadcaster can stop",
-        "interval": "Sets time between clues to 30-300 seconds",
-        "duration": "Sets round duration to 3-20 minutes",
-        "configRegion": "Sets regions like Europe,Asia or USA,Canada",
-        "configGame": "Sets preferred game titles, comma-separated",
-        "pointsBase": "Sets base points from 1-100",
-        "maxRounds": "Sets maximum rounds from 1-10",
-        "clearLeaderboard": "Or resetstats",
-        "report": "Reports problematic locations or clues",
+        "basic": "Starts a real-world game with locations across the world",
+        "region": "Starts a game in a specific region (for example: !geo Japan)",
+        "game": "Starts a game using locations from the current stream game",
+        "gameTitle": "Starts a game using a specified game title (for example: !geo game \"Metroid Prime\")",
+        "rounds": "Runs a game with a set number of rounds (for example: !geo Japan 3)",
+        "stop": "Stops the game (game starter, moderators, or broadcaster)",
+        "interval": "Sets the delay between clues (30 to 300 seconds)",
+        "duration": "Sets the round duration (3 to 20 minutes)",
+        "configRegion": "Sets default regions (for example: Europe,Asia or USA,Canada)",
+        "configGame": "Sets preferred game titles as a comma-separated list",
+        "pointsBase": "Sets base points per round (1 to 100)",
+        "maxRounds": "Sets maximum rounds per game (1 to 10)",
+        "clearLeaderboard": "Alias: !geo resetstats",
+        "report": "Reports incorrect locations or clues",
         "regionCmd": "!geo <region>",
         "commandRounds": "!geo <command> N",
         "configRegionCmd": "!geo config region <regions>",
@@ -171,21 +171,21 @@
     },
     "riddle": {
       "name": "!riddle",
-      "description": "Starts or manages a Riddle game. Riddles can be general, about the current stream game, or a specific subject.",
+      "description": "Starts or manages a Riddle game about general topics, stream games, or custom subjects.",
       "usage": {
-        "basic": "Starts a general knowledge riddle",
-        "subject": "Example: !riddle animals",
-        "rounds": "Example: !riddle 3 for 3 general rounds",
-        "subjectRounds": "Example: !riddle history 5",
-        "game": "Riddle about the current stream game",
-        "report": "Reports problematic riddles",
-        "stop": "Game initiator, mods, or broadcaster can stop",
-        "questionTime": "Sets time per riddle to 15-120 seconds",
-        "pointsBase": "Sets base points from 1-100",
-        "maxRounds": "Sets maximum rounds from 1-20",
-        "keywordsLimit": "Sets recent keywords to exclude, e.g. 20-100",
-        "roundDelay": "Sets delay between rounds",
-        "clearLeaderboard": "Or cleardata",
+        "basic": "Starts a general knowledge riddle game",
+        "subject": "Starts a riddle on a specific subject (for example: !riddle animals)",
+        "rounds": "Starts a game with a set number of rounds (for example: !riddle 3)",
+        "subjectRounds": "Starts a subject game with multiple rounds (for example: !riddle history 5)",
+        "game": "Starts a riddle about the current stream game",
+        "report": "Reports incorrect or broken riddles",
+        "stop": "Stops the game (game starter, moderators, or broadcaster)",
+        "questionTime": "Sets answer time per riddle (15 to 120 seconds)",
+        "pointsBase": "Sets base points per riddle (1 to 100)",
+        "maxRounds": "Sets maximum rounds per game (1 to 20)",
+        "keywordsLimit": "Sets number of recent keywords to exclude (for example: 20 to 100)",
+        "roundDelay": "Sets delay between rounds in milliseconds",
+        "clearLeaderboard": "Alias: !riddle cleardata",
         "subjectCmd": "!riddle <subject>",
         "roundsCmd": "!riddle <rounds>",
         "subjectRoundsCmd": "!riddle <subject> <rounds>",
@@ -203,19 +203,19 @@
     },
     "trivia": {
       "name": "!trivia",
-      "description": "Starts or manages Trivia games with factual questions on various topics, including the current stream game.",
+      "description": "Starts or manages Trivia games with questions about various topics or the stream game.",
       "usage": {
-        "basic": "Starts general knowledge trivia",
-        "topic": "Starts topic-specific trivia, e.g. !trivia science",
+        "basic": "Starts a general knowledge trivia game",
+        "topic": "Starts trivia on a specific topic (for example: !trivia science)",
         "game": "Starts trivia about the current stream game",
-        "rounds": "Specifies number of rounds, e.g. !trivia 3",
-        "topicRounds": "Example: !trivia history 5",
-        "report": "Reports problematic questions",
-        "stop": "Game initiator, mods, or broadcaster can stop",
-        "time": "Sets time per question to 10-120 seconds",
-        "pointsBase": "Sets base points from 1-100",
-        "configTopic": "Sets preferred topics, comma-separated",
-        "maxRounds": "Sets maximum rounds from 1-10",
+        "rounds": "Starts a game with a set number of rounds (for example: !trivia 3)",
+        "topicRounds": "Starts a topic game with multiple rounds (for example: !trivia history 5)",
+        "report": "Reports incorrect or broken questions",
+        "stop": "Stops the game (game starter, moderators, or broadcaster)",
+        "time": "Sets answer time per question (10 to 120 seconds)",
+        "pointsBase": "Sets base points per question (1 to 100)",
+        "configTopic": "Sets preferred topics as a comma-separated list",
+        "maxRounds": "Sets maximum rounds per game (1 to 10)",
         "topicCmd": "!trivia <topic>",
         "roundsCmd": "!trivia <rounds>",
         "topicRoundsCmd": "!trivia <topic> <rounds>",
@@ -231,52 +231,52 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Configure the bot to speak in a specific language for the entire channel.",
+      "description": "Sets the default language for bot responses across the channel.",
       "usage": {
-        "status": "Checks current language",
-        "off": "Resets to English",
-        "default": "Resets to English",
+        "status": "Shows the current channel language",
+        "off": "Resets the channel language to English",
+        "default": "Resets the channel language to English",
         "langCmd": "!botlang <language>"
       }
     },
     "auto": {
       "name": "!auto",
-      "description": "Configure auto-chat mode and options.",
+      "description": "Configures automated chat messages and stream event notifications.",
       "usage": {
-        "status": "Shows current auto-chat mode, frequency, and categories",
+        "status": "Shows current auto-chat mode, frequency, and active categories",
         "modeCmd": "!auto <off|low|medium|high>",
         "mode": "Sets auto-chat frequency (off disables periodic messages only)",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "Enable/disable stream start/end greetings",
+        "greetings": "Enables or disables greetings when the stream starts and ends",
         "followsCmd": "!auto config follows:<on|off>",
-        "follows": "Enable/disable new follower celebrations",
+        "follows": "Enables or disables messages for new followers",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
-        "subscriptions": "Enable/disable subscription celebrations",
+        "subscriptions": "Enables or disables messages for new subscriptions",
         "raidsCmd": "!auto config raids:<on|off>",
-        "raids": "Enable/disable raid welcome messages",
+        "raids": "Enables or disables welcome messages for incoming raids",
         "factsCmd": "!auto config facts:<on|off>",
-        "facts": "Enable/disable facts and tips",
+        "facts": "Enables or disables automated facts and tips",
         "questionsCmd": "!auto config questions:<on|off>",
-        "questions": "Enable/disable engagement questions",
+        "questions": "Enables or disables automated viewer questions",
         "adsCmd": "!auto config ads:<on|off>",
-        "ads": "Enable/disable ad break notifications"
+        "ads": "Enables or disables notifications before ad breaks"
       }
     },
     "disable": {
-      "description": "Disables a command in this channel.",
+      "description": "Disables a command for this channel.",
       "usage": {
         "lurk": "Disables the !lurk command",
         "trivia": "Disables the !trivia command"
       }
     },
     "enable": {
-      "description": "Enables a previously disabled command in this channel.",
+      "description": "Enables a previously disabled command for this channel.",
       "usage": {
         "trivia": "Enables the !trivia command"
       }
     },
     "ping": {
-      "description": "Checks if the bot is responsive. Responds with Pong!"
+      "description": "Checks if the bot responds. The bot replies with \"Pong!\""
     }
   },
   "sidebar": {
@@ -288,11 +288,11 @@
     "responseVariables": "Response Variables",
     "dailyCheckIn": "Daily Check-In",
     "title": "WildcatSage",
-    "toggleSidebar": "Toggle sidebar"
+    "toggleSidebar": "Toggle Sidebar"
   },
   "responseVariables": {
     "title": "Response Variables",
-    "intro1": "When you create a custom command, you can use <strong>response variables</strong> to insert dynamic content. Write them in your response using the <code>$(variable)</code> format and they'll be replaced automatically when the command is used.",
+    "intro1": "You can use <strong>response variables</strong> to insert dynamic text into custom commands. Put <code>$(variable)</code> in your command response. The bot replaces the variable when a user runs the command.",
     "table": {
       "variable": "Variable",
       "whatItDoes": "What it does",
@@ -300,47 +300,47 @@
     },
     "variables": {
       "user": {
-        "desc": "Name of the person who used the command"
+        "desc": "Username of the person who ran the command"
       },
       "channel": {
         "desc": "Channel name"
       },
       "args": {
         "desc": "All text after the command name as one string",
-        "example": "If someone types <span class=\"inline-code\">!shout hello world</span>, $(args) = <strong>hello world</strong>"
+        "example": "If a user runs <span class=\"inline-code\">!shout hello world</span>, $(args) = <strong>hello world</strong>"
       },
       "numbered": {
-        "desc": "A single word by position — $(1) is the 1st word, $(2) is the 2nd, and so on",
-        "example": "If someone types <span class=\"inline-code\">!shout hello world</span>, $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
+        "desc": "A single word by position: $(1) is the first word, $(2) is the second word",
+        "example": "If a user runs <span class=\"inline-code\">!shout hello world</span>, $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
       },
       "count": {
-        "desc": "How many times this command has been used"
+        "desc": "Total number of times users ran this command"
       },
       "random": {
         "desc": "A random number between X and Y",
         "example": "17 from <span class=\"inline-code\">$(random 1-20)</span>"
       },
       "uptime": {
-        "desc": "How long the stream has been live",
+        "desc": "Current stream uptime",
         "example": "2h 30m"
       },
       "game": {
-        "desc": "The game currently being played",
+        "desc": "Current stream game title",
         "example": "Metroid Prime"
       },
       "followage": {
-        "desc": "How long the user has been following the channel",
+        "desc": "How long the user has followed the channel",
         "example": "2 years 3 months"
       },
       "checkinCount": {
-        "desc": "The viewer's running daily check-in count (Channel Point Rewards only)"
+        "desc": "The viewer daily check-in total (Channel Point Rewards only)"
       }
     },
     "examplesTitle": "Examples",
-    "examplesIntro": "Here are some example commands you can create:",
+    "examplesIntro": "Here are example custom commands:",
     "examplesTable": {
-      "command": "Command to type in chat",
-      "botSays": "What the bot says"
+      "command": "Chat command",
+      "botSays": "Bot response"
     },
     "examples": {
       "hi": {
@@ -352,129 +352,129 @@
         "result": "WildcatGamer rolled a 17!"
       },
       "live": {
-        "command": "<span class=\"inline-code\">!command add live We've been live for $(uptime) playing $(game)!</span>",
-        "result": "We've been live for 2h 30m playing Metroid Prime!"
+        "command": "<span class=\"inline-code\">!command add live We have been live for $(uptime) playing $(game)!</span>",
+        "result": "We have been live for 2h 30m playing Metroid Prime!"
       },
       "hug": {
         "command": "<span class=\"inline-code\">!command add hug $(user) hugs $(1)!</span>",
         "result": "WildcatGamer hugs WildcatStreamer!"
       },
       "uses": {
-        "command": "<span class=\"inline-code\">!command add uses This command has been used $(count) times!</span>",
-        "result": "This command has been used 42 times!"
+        "command": "<span class=\"inline-code\">!command add uses This command was used $(count) times!</span>",
+        "result": "This command was used 42 times!"
       }
     },
     "examplesCaption": "Response variable examples"
   },
   "aiCommands": {
     "title": "AI Commands",
-    "intro1": "AI commands use a prompt instead of a fixed response. The bot sends the prompt to an AI model and returns a unique answer every time. You can use response variables in prompts too!",
-    "intro2": "The easiest way to create AI commands is through the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Click <strong>+ Add</strong>, flip on <strong>AI Mode</strong>, and write your prompt. You can also create them in chat with <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.",
+    "intro1": "AI commands use a prompt instead of a fixed text response. The bot sends the prompt to an AI model to generate a unique reply every time. You can also use response variables in prompts.",
+    "intro2": "You can create AI commands in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Select <strong>+ Add</strong>, enable <strong>AI Mode</strong>, and enter your prompt. You can also create AI commands in chat with <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.",
     "table": {
       "prompt": "AI Prompt",
-      "whatHappens": "What happens",
+      "whatHappens": "Bot response",
       "caption": "AI command examples"
     },
     "examples": {
       "vibe": {
         "prompt": "Name: <span class=\"inline-code\">vibe</span><br>Prompt: <span class=\"inline-code\">Tell $(user) what kind of vibe \"$(args)\" gives off in one sentence.</span>",
-        "result": "When someone types <span class=\"inline-code\">!vibe I just ate an entire pizza</span>, the AI might reply: <em>\"WildcatGamer your message gives off deeply respectable goblin energy.\"</em> — different every time!"
+        "result": "If a user enters <span class=\"inline-code\">!vibe I just ate an entire pizza</span>, the AI can reply: <em>\"WildcatGamer your message gives off deeply respectable goblin energy.\"</em> Replies vary with each use."
       },
       "hug": {
         "prompt": "Name: <span class=\"inline-code\">hug</span><br>Prompt: <span class=\"inline-code\">Write a short, funny hug message from $(user) to $(1).</span>",
-        "result": "When someone types <span class=\"inline-code\">!hug WildcatStreamer</span>, the AI might reply: <em>\"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier.\"</em>"
+        "result": "If a user enters <span class=\"inline-code\">!hug WildcatStreamer</span>, the AI can reply: <em>\"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier.\"</em>"
       },
       "fortune": {
         "prompt": "Name: <span class=\"inline-code\">fortune</span><br>Prompt: <span class=\"inline-code\">Give $(user) a short fortune cookie message.</span>",
-        "result": "A unique fortune every time: <em>\"WildcatGamer, today you will find a rare item in an unexpected place.\"</em>"
+        "result": "A unique fortune for each use: <em>\"WildcatGamer, today you will find a rare item in an unexpected place.\"</em>"
       }
     },
     "tipLabel": "Tip:",
-    "tipText": "You can convert any existing text command to AI mode by editing it in the dashboard and enabling <strong>AI Mode</strong>, or in chat with <span class=\"inline-code\">!command options &lt;name&gt; type=prompt</span>. Switch back with <span class=\"inline-code\">type=text</span>."
+    "tipText": "You can convert a text command to AI mode in the dashboard by enabling <strong>AI Mode</strong>. You can also run <span class=\"inline-code\">!command options &lt;name&gt; type=prompt</span> in chat. Switch back with <span class=\"inline-code\">type=text</span>."
   },
   "webDashboard": {
     "title": "Web Dashboard",
-    "intro": "The WildcatSage Web Dashboard provides streamers with a comprehensive interface to manage the bot in their channel. Access it by logging in with your Twitch account.",
-    "featuresTitle": "Available Dashboard Features",
+    "intro": "The <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Web Dashboard</a> lets streamers configure bot settings for their channel. Log in with your Twitch account to access the dashboard.",
+    "featuresTitle": "Dashboard Features",
     "features": {
       "botManagement": {
         "title": "Bot Management:",
-        "desc": "Add or remove WildcatSage from your channel"
+        "desc": "Add or remove WildcatSage from your channel."
       },
       "channelConfig": {
-        "title": "Channel Configuration:",
-        "desc": "Configure auto-chat settings, stream event toggles, and ad notifications"
+        "title": "Channel Settings:",
+        "desc": "Configure auto-chat frequency, stream event messages, and ad break notifications."
       },
       "streamEvents": {
         "title": "Stream Events:",
-        "desc": "Toggle AI-generated greetings, farewells, and celebrations for follows, subscriptions, and raids — works independently of auto-chat mode"
+        "desc": "Enable AI greetings, farewells, and celebration messages for new followers, subscribers, and incoming raids."
       },
       "commandControl": {
-        "title": "Command Control:",
-        "desc": "Create and manage custom commands, and enable/disable built-in commands"
+        "title": "Command Management:",
+        "desc": "Create custom commands and enable or disable built-in commands."
       },
       "dailyCheckIn": {
         "title": "Daily Check-In:",
-        "desc": "Set up a Channel Point Reward for daily check-ins with streak tracking and optional AI-generated messages"
+        "desc": "Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses."
       }
     },
     "gettingStartedTitle": "Getting Started",
     "steps": {
       "visit": {
         "title": "Visit the Dashboard:",
-        "desc": "Go to https://bot.wildcat.chat/"
+        "desc": "Go to <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">https://bot.wildcat.chat/</a>."
       },
       "authorize": {
         "title": "Authorize:",
-        "desc": "Click \"Login with Twitch\" and grant the required permissions"
+        "desc": "Select \"Login with Twitch\" and approve the required permissions."
       },
       "addBot": {
         "title": "Add the Bot:",
-        "desc": "Use the \"Add Bot to My Channel\" button to invite WildcatSage to your channel"
+        "desc": "Select \"Add Bot to My Channel\" to invite WildcatSage to your channel."
       },
       "configure": {
         "title": "Configure:",
-        "desc": "Customize settings through the dashboard interface"
+        "desc": "Change bot settings in the dashboard."
       },
       "grantPerms": {
         "title": "Troubleshooting:",
-        "desc": "If the bot isn't responding, type /mod WildcatSage in your Twitch chat to grant moderator status"
+        "desc": "If the bot does not respond, enter <code>/mod WildcatSage</code> in Twitch chat to grant moderator permissions."
       }
     },
     "oauthTitle": "OAuth Permissions",
-    "oauthIntro": "The dashboard requires the following Twitch OAuth scopes:",
+    "oauthIntro": "The dashboard requires these Twitch OAuth permissions:",
     "oauth": {
-      "readEmail": "Access your email address for account identification",
-      "readAds": "Receive ad break notifications for your channel",
-      "manageModerators": "Automatically grant the bot moderator status",
-      "readFollowers": "Access follower information for commands like !followage",
-      "manageRedemptions": "Create and manage Channel Point Rewards for features like Daily Check-In"
+      "readEmail": "Reads your email address for account identification.",
+      "readAds": "Receives ad break notifications for your channel.",
+      "manageModerators": "Grants moderator permissions to the bot.",
+      "readFollowers": "Reads follower data for commands such as !followage.",
+      "manageRedemptions": "Creates and manages Channel Point Rewards for features such as Daily Check-In."
     },
     "noteLabel": "Note:",
-    "noteText": "WildcatSage is currently invite-only. If you don't see your channel in the dashboard, please request access through the contact form."
+    "noteText": "WildcatSage is currently invite-only. If your channel does not appear in the dashboard, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">request access through the contact form</a>."
   },
   "dailyCheckIn": {
     "title": "Daily Check-In",
-    "intro": "Daily Check-In is a Channel Point Reward that lets viewers check in once per stream and track their streak. The reward is created and managed automatically from the dashboard — no manual setup on Twitch required.",
+    "intro": "Daily Check-In is a Channel Point Reward. Viewers check in once per stream to track their daily streak. The dashboard creates and manages the reward on Twitch.",
     "setupTitle": "Setup",
     "steps": {
-      "open": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> and scroll to the <strong>Daily Check-In</strong> section.",
-      "enable": "Flip the <strong>Enable</strong> toggle and set a reward title and Channel Point cost.",
-      "template": "Write a response template using variables like <span class=\"inline-code\">$(user)</span> and <span class=\"inline-code\">$(checkin_count)</span>, or enable <strong>AI Mode</strong> for unique messages every time.",
-      "save": "Click <strong>Save</strong>. The reward is created on Twitch automatically."
+      "open": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> and go to the <strong>Daily Check-In</strong> section.",
+      "enable": "Enable the toggle, then enter a reward title and Channel Point cost.",
+      "template": "Enter a response template with variables like <span class=\"inline-code\">$(user)</span> and <span class=\"inline-code\">$(checkin_count)</span>, or enable <strong>AI Mode</strong> for unique replies.",
+      "save": "Select <strong>Save</strong>. The bot creates the reward on Twitch."
     },
     "variablesTitle": "Available Variables",
     "variables": {
       "user": "Display name of the viewer who checked in",
-      "checkinCount": "The viewer's running check-in total",
+      "checkinCount": "Total number of check-ins for the viewer",
       "channel": "Channel name"
     },
     "exampleTitle": "Examples",
     "exampleTemplate": "<strong>Template:</strong> <code>$(user) checked in! Day #$(checkin_count) 🎉</code>",
     "exampleOutput": "<strong>Output:</strong> <em>WildcatGamer checked in! Day #14 🎉</em>",
     "requirementLabel": "Requirement:",
-    "requirementText": "Twitch Affiliate or Partner status is required to create Channel Point Rewards.",
+    "requirementText": "You must have Twitch Affiliate or Partner status to create Channel Point Rewards.",
     "aiExamplePrompt": "<strong>AI Mode Prompt:</strong> <code>Write a fun, short congratulatory message for $(user) on check-in number $(checkin_count).</code>",
-    "aiExampleOutput": "<strong>Output:</strong> <em>\"WildcatGamer, 14 days straight? You're on fire! At this rate you'll outlast the sun. ☀️\"</em> — different every time!"
+    "aiExampleOutput": "<strong>Output:</strong> <em>\"WildcatGamer, 14 days straight? You're on fire! At this rate you'll outlast the sun. ☀️\"</em> — replies vary with each use."
   }
 }

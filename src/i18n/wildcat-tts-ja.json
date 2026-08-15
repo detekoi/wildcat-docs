@@ -454,8 +454,7 @@
     "popularText": "MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> モデルの人気音声です。使用するにはチャットで <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> を入力します。",
     "completeListText": "言語プレフィックス別に整理された利用可能な全472音声の一覧です。",
     "expandText": "選択して全音声一覧（45言語・472音声）を展開",
-    "completeListNote": "注意: ボットはMiniMax <span class=\"inline-code\">speech-2.8-turbo</span> を使用し、自動的に <span class=\"inline-code\">speech-02-turbo</span> にフォールバックします。言語プレフィックス別に分類された472音声が含まれます。<span class=\"inline-code\">!tts voices</span> コマンドからこの項目へリンクしています。",
-    "mossNote": "⚠️ 注: 一部のMossオーディオ音声には特別なアクセス権限が必要な場合があります。「このvoice_idにアクセスできません」というエラーが表示された場合は、このリストから別の音声を試してください。"
+    "completeListNote": "注意: ボットはMiniMax <span class=\"inline-code\">speech-2.8-turbo</span> を使用し、自動的に <span class=\"inline-code\">speech-02-turbo</span> にフォールバックします。言語プレフィックス別に分類された472音声が含まれます。<span class=\"inline-code\">!tts voices</span> コマンドからこの項目へリンクしています。"
   },
   "languageBoost": {
     "title": "言語ブースト",
@@ -539,16 +538,10 @@
     "a3": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span>（またはチャンネル用に <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>）で言語ブーストを目的の言語に設定します。現在の設定は <span class=\"inline-code\">!tts defaultlanguage</span> で確認できます。",
     "q4": "TTS生成に時間がかかりすぎるか失敗する?",
     "a4": "ボットは302.aiを使用し、自動的にWavespeed AIへフォールバックします。遅延が発生した場合は <span class=\"inline-code\">!tts stop</span> で停止してください。失敗したリクエストは自動で再試行されます。",
-    "q5": "音声が見つかりませんエラー?",
-    "a5": "<a href=\"#voices\" class=\"default-link-style\">音声一覧</a> から正確な音声IDを指定しているか確認してください。音声IDは大文字と小文字を区別します。<span class=\"inline-code\">!tts voices</span> で音声一覧を取得できます。",
-    "q6": "\"音声アクセスが拒否されました\"エラー?",
-    "a6": "一部のMoss audio音声はWavespeed AIで特別なアクセス権限を必要とします。このエラーが出た場合は <a href=\"#voices\" class=\"default-link-style\">利用可能音声一覧</a> から別の音声をお選びください。",
-    "q7": "\"無効な音声\"エラー?",
-    "a7": "指定した音声IDが無効です。<a href=\"#voices\" class=\"default-link-style\">音声一覧</a> のIDと完全一致しているか確認してください。大文字と小文字は区別されます。",
-    "q8": "感情が機能しない?",
-    "a8": "auto感情は非対応です。<span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span> を使用してください。",
-    "q9": "ヘルプが必要?",
-    "a9": "Henryのポートフォリオサイトの <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォーム</a> から開発者へご連絡ください。"
+    "q5": "感情が機能しない?",
+    "a5": "auto感情は非対応です。<span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span> を使用してください。",
+    "q6": "ヘルプが必要?",
+    "a6": "Henryのポートフォリオサイトの <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォーム</a> から開発者へご連絡ください。"
   },
   "emoteDescriptions": {
     "title": "エモート説明",

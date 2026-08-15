@@ -454,8 +454,7 @@
     "completeListTitle": "Liste complète des voix (du <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Schéma Wavespeed AI minimax/speech-02-turbo</a> — fournisseur de secours)",
     "completeListText": "Cette liste contient l'ensemble des 472 voix disponibles organisées par préfixe linguistique.",
     "expandText": "Sélectionner pour afficher la liste complète des voix (472 voix dans 45 langues)",
-    "completeListNote": "Remarque : Le bot utilise MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> avec basculement automatique sur <span class=\"inline-code\">speech-02-turbo</span>. La liste comprend 472 voix classées par préfixe de langue. La commande <span class=\"inline-code\">!tts voices</span> renvoie à cette section.",
-    "mossNote": "⚠️ Note : Certaines voix audio Moss peuvent nécessiter des autorisations d'accès spéciales. Si vous recevez une erreur \"vous n'avez pas accès à ce voice_id\", essayez une voix différente de cette liste."
+    "completeListNote": "Remarque : Le bot utilise MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> avec basculement automatique sur <span class=\"inline-code\">speech-02-turbo</span>. La liste comprend 472 voix classées par préfixe de langue. La commande <span class=\"inline-code\">!tts voices</span> renvoie à cette section."
   },
   "languageBoost": {
     "title": "Amélioration de Langue",
@@ -539,16 +538,10 @@
     "a3": "Définissez l'optimisation linguistique sur votre langue avec <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (ou <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> pour la chaîne). Affichez le réglage actuel avec <span class=\"inline-code\">!tts defaultlanguage</span>.",
     "q4": "La génération TTS prend trop de temps ou échoue ?",
     "a4": "Le bot utilise 302.ai avec basculement automatique sur Wavespeed AI. En cas de latence, utilisez <span class=\"inline-code\">!tts stop</span> pour annuler les générations bloquées. Le bot relance automatiquement les requêtes échouées.",
-    "q5": "Erreur de voix introuvable ?",
-    "a5": "Assurez-vous d'utiliser un identifiant de voix exact de la <a href=\"#voices\" class=\"default-link-style\">section Voix</a>. Les identifiants respectent la casse. Utilisez <span class=\"inline-code\">!tts voices</span> pour obtenir la liste des voix.",
-    "q6": "Erreur \"Accès à la voix refusé\" ?",
-    "a6": "Certaines voix Moss audio requièrent des autorisations spécifiques sur Wavespeed AI. Si cette erreur survient, sélectionnez une autre voix dans la <a href=\"#voices\" class=\"default-link-style\">liste des voix disponibles</a>.",
-    "q7": "Erreur \"Voix invalide\" ?",
-    "a7": "L'identifiant de voix demandé n'est pas valide. Vérifiez qu'il correspond à une entrée de la <a href=\"#voices\" class=\"default-link-style\">section Voix</a>. Les identifiants respectent la casse.",
-    "q8": "L'émotion ne fonctionne pas ?",
-    "a8": "L'émotion automatique n'est pas prise en charge. Utilisez <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> ou <span class=\"inline-code\">surprised</span>.",
-    "q9": "Besoin d'aide ?",
-    "a9": "Contactez le développeur via le <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">formulaire de contact</a> sur le portfolio de Henry."
+    "q5": "L'émotion ne fonctionne pas ?",
+    "a5": "L'émotion automatique n'est pas prise en charge. Utilisez <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> ou <span class=\"inline-code\">surprised</span>.",
+    "q6": "Besoin d'aide ?",
+    "a6": "Contactez le développeur via le <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">formulaire de contact</a> sur le portfolio de Henry."
   },
   "emoteDescriptions": {
     "title": "Descriptions d'Emotes",

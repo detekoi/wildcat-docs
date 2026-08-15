@@ -454,8 +454,7 @@
     "popularText": "Популярные голоса из модели MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Чтобы выбрать голос, используйте команду <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> в чате.",
     "completeListText": "Полный список всех 472 доступных голосов, упорядоченных по языковым префиксам.",
     "expandText": "Выбрать, чтобы развернуть полный список голосов (472 голоса на 45 языках)",
-    "completeListNote": "Примечание: Бот использует MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> с автоматическим резервным переходом на <span class=\"inline-code\">speech-02-turbo</span>. Список содержит 472 голоса по языковым группам. Команда <span class=\"inline-code\">!tts voices</span> ссылается на этот раздел.",
-    "mossNote": "⚠️ Примечание: Некоторым голосам Moss audio могут потребоваться специальные разрешения на доступ. Если вы получили ошибку \"у вас нет доступа к этому voice_id\", попробуйте другой голос из этого списка."
+    "completeListNote": "Примечание: Бот использует MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> с автоматическим резервным переходом на <span class=\"inline-code\">speech-02-turbo</span>. Список содержит 472 голоса по языковым группам. Команда <span class=\"inline-code\">!tts voices</span> ссылается на этот раздел."
   },
   "languageBoost": {
     "title": "Языковое усиление",
@@ -539,16 +538,10 @@
     "a3": "Установите нужный язык в Языковом Усилении с помощью <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (или <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> для канала). Проверьте текущую настройку с помощью <span class=\"inline-code\">!tts defaultlanguage</span>.",
     "q4": "Генерация TTS занимает слишком много времени или не работает?",
     "a4": "Бот использует 302.ai с автоматическим резервным переключением на Wavespeed AI. При возникновении задержек используйте команду <span class=\"inline-code\">!tts stop</span>, чтобы отменить зависшую генерацию. Бот автоматически повторяет неудачные запросы.",
-    "q5": "Ошибка «Голос не найден»?",
-    "a5": "Убедитесь, что вы используете точный ID голоса из <a href=\"#voices\" class=\"default-link-style\">раздела Голоса</a>. ID голосов чувствительны к регистру. Используйте <span class=\"inline-code\">!tts voices</span>, чтобы получить список.",
-    "q6": "Ошибка «Доступ к голосу запрещен»?",
-    "a6": "Некоторые голоса Moss audio требуют специальных разрешений на Wavespeed AI. При появлении этой ошибки выберите другой голос из <a href=\"#voices\" class=\"default-link-style\">списка доступных голосов</a>.",
-    "q7": "Ошибка «Недопустимый голос»?",
-    "a7": "Запрошенный ID голоса недействителен. Убедитесь, что ID голоса совпадает с записью в <a href=\"#voices\" class=\"default-link-style\">разделе Голоса</a>. Регистр символов имеет значение.",
-    "q8": "Эмоция не работает?",
-    "a8": "Эмоция auto больше не поддерживается. Используйте <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> или <span class=\"inline-code\">surprised</span>.",
-    "q9": "Нужна помощь?",
-    "a9": "Свяжитесь с разработчиком через <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">форму обратной связи</a> на сайте портфолио Henry."
+    "q5": "Эмоция не работает?",
+    "a5": "Эмоция auto больше не поддерживается. Используйте <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> или <span class=\"inline-code\">surprised</span>.",
+    "q6": "Нужна помощь?",
+    "a6": "Свяжитесь с разработчиком через <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">форму обратной связи</a> на сайте портфолио Henry."
   },
   "emoteDescriptions": {
     "title": "Описания эмоутов",

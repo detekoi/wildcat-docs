@@ -454,8 +454,7 @@
     "completeListTitle": "Complete Voice List (from <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turbo Schema</a> — fallback provider)",
     "completeListText": "This list contains all 472 available voices organized by language prefix.",
     "expandText": "Select to expand complete voice list (472 voices across 45 languages)",
-    "completeListNote": "Note: The bot uses MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> with automatic fallback to <span class=\"inline-code\">speech-02-turbo</span>. The list includes 472 voices categorized by language prefix. The command <span class=\"inline-code\">!tts voices</span> links to this section.",
-    "mossNote": "⚠️ Note: Some Moss audio voices require special permissions. If an access error occurs, choose a different voice from this list."
+    "completeListNote": "Note: The bot uses MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> with automatic fallback to <span class=\"inline-code\">speech-02-turbo</span>. The list includes 472 voices categorized by language prefix. The command <span class=\"inline-code\">!tts voices</span> links to this section."
   },
   "languageBoost": {
     "title": "Language Boost",
@@ -549,16 +548,10 @@
     "a3": "Set Language Boost to your language with <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (or <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> for the channel). Show the active setting with <span class=\"inline-code\">!tts defaultlanguage</span>.",
     "q4": "TTS generation taking too long or failing?",
     "a4": "The bot uses 302.ai with automatic fallback to Wavespeed AI. If audio delays occur, use <span class=\"inline-code\">!tts stop</span> to cancel stuck generation. The bot retries failed requests automatically.",
-    "q5": "Voice not found error?",
-    "a5": "Make sure that you use an exact voice ID from the Voices section. Voice IDs are case-sensitive. Use <span class=\"inline-code\">!tts voices</span> to get the list of voice IDs.",
-    "q6": "\"Voice access denied\" error?",
-    "a6": "Some Moss audio voices require special permissions on Wavespeed AI. If this error occurs, choose a different voice from the available voices list.",
-    "q7": "\"Invalid voice\" error?",
-    "a7": "The requested voice ID is not valid. Make sure that the voice ID matches an entry from the Voices section. Voice IDs are case-sensitive.",
-    "q8": "Emotion not working?",
-    "a8": "The auto emotion is not supported. Use neutral, happy, sad, angry, fearful, disgusted, or surprised.",
-    "q9": "Need help?",
-    "a9": "Contact the developer through the <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">contact form</a> at Henry's portfolio website."
+    "q5": "Emotion not working?",
+    "a5": "The auto emotion is not supported. Use neutral, happy, sad, angry, fearful, disgusted, or surprised.",
+    "q6": "Need help?",
+    "a6": "Contact the developer through the <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">contact form</a> at Henry's portfolio website."
   },
   "pronunciation": {
     "title": "Pronunciation Dictionary",

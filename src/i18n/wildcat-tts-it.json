@@ -454,8 +454,7 @@
     "completeListTitle": "Elenco completo delle voci (dallo <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Schema Wavespeed AI minimax/speech-02-turbo</a> — provider di fallback)",
     "completeListText": "Questo elenco contiene tutte le 472 voci disponibili suddivise per prefisso di lingua.",
     "expandText": "Seleziona per espandere l'elenco completo delle voci (472 voci in 45 lingue)",
-    "completeListNote": "Nota: Il bot usa MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> con passaggio automatico a <span class=\"inline-code\">speech-02-turbo</span>. L'elenco comprende 472 voci suddivise per prefisso linguistico. Il comando <span class=\"inline-code\">!tts voices</span> rimanda a questa sezione.",
-    "mossNote": "⚠️ Nota: Alcune voci audio Moss potrebbero richiedere autorizzazioni di accesso speciali. Se ricevi un errore \"non hai accesso a questo voice_id\", prova una voce diversa da questo elenco."
+    "completeListNote": "Nota: Il bot usa MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> con passaggio automatico a <span class=\"inline-code\">speech-02-turbo</span>. L'elenco comprende 472 voci suddivise per prefisso linguistico. Il comando <span class=\"inline-code\">!tts voices</span> rimanda a questa sezione."
   },
   "languageBoost": {
     "title": "Potenziamento Lingua",
@@ -539,16 +538,10 @@
     "a3": "Imposta il Potenziamento Lingua sulla tua lingua con <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (o <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> per il canale). Mostra l'impostazione attiva con <span class=\"inline-code\">!tts defaultlanguage</span>.",
     "q4": "La generazione TTS impiega troppo tempo o fallisce?",
     "a4": "Il bot usa 302.ai con passaggio automatico a Wavespeed AI. In caso di ritardi audio, usa <span class=\"inline-code\">!tts stop</span> per annullare generazioni bloccate. Il bot ritenta automaticamente le richieste fallite.",
-    "q5": "Errore voce non trovata?",
-    "a5": "Assicurati di usare un ID voce esatto dalla <a href=\"#voices\" class=\"default-link-style\">sezione Voci</a>. Gli ID voce distinguono tra maiuscole e minuscole. Usa <span class=\"inline-code\">!tts voices</span> per l'elenco.",
-    "q6": "Errore \"Accesso alla voce negato\"?",
-    "a6": "Alcune voci Moss audio richiedono permessi speciali su Wavespeed AI. Se ricevi questo errore, seleziona un'altra voce dall'<a href=\"#voices\" class=\"default-link-style\">elenco delle voci disponibili</a>.",
-    "q7": "Errore \"Voce non valida\"?",
-    "a7": "L'ID voce richiesto non è valido. Assicurati che corrisponda a una voce nella <a href=\"#voices\" class=\"default-link-style\">sezione Voci</a>. Gli ID voce distinguono tra maiuscole e minuscole.",
-    "q8": "L'emozione non funziona?",
-    "a8": "L'emozione automatica non è supportata. Usa <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> o <span class=\"inline-code\">surprised</span>.",
-    "q9": "Hai bisogno di aiuto?",
-    "a9": "Contatta lo sviluppatore tramite il <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">modulo di contatto</a> sul sito portfolio di Henry."
+    "q5": "L'emozione non funziona?",
+    "a5": "L'emozione automatica non è supportata. Usa <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> o <span class=\"inline-code\">surprised</span>.",
+    "q6": "Hai bisogno di aiuto?",
+    "a6": "Contatta lo sviluppatore tramite il <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">modulo di contatto</a> sul sito portfolio di Henry."
   },
   "emoteDescriptions": {
     "title": "Descrizioni Emote",

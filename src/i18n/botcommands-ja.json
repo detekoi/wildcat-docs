@@ -3,22 +3,22 @@
     "title": "ボットコマンド"
   },
   "page": {
-    "title": "ChatSage ボットコマンド",
-    "expandTip": "下のコマンド行をクリックすると、詳細な使用方法が表示されます。"
+    "title": "WildcatSage ボットコマンド",
+    "expandTip": "コマンド行を選択すると使い方の詳細が表示されます。"
   },
   "table": {
     "categories": {
       "general": "一般",
+      "customCommands": "カスタムコマンド",
       "games": "ゲーム",
-      "config": "設定",
-      "customCommands": "カスタムコマンド"
+      "config": "設定"
     },
     "caption": "ボットコマンド"
   },
   "commands": {
     "ask": {
       "name": "!ask / !sage",
-      "description": "Sageに質問します。検索機能をインテリジェントに使用します。",
+      "description": "Sageに質問します。Sageがウェブを検索して回答します。",
       "usage": {
         "question": "!ask <質問>"
       }
@@ -32,11 +32,11 @@
     },
     "game": {
       "name": "!game",
-      "description": "現在プレイ中のゲームに関する調査された情報を提供します。「analyze」を追加すると、ストリームでAI画像認識を使用します(5分ごとに更新されるTwitchサムネイルを使用)。"
+      "description": "現在の配信ゲームに関する情報を表示します。「analyze」を追加するとAIで配信映像を解析します（5分ごとに更新されるサムネイルを使用）。"
     },
     "translate": {
       "name": "!translate",
-      "description": "ユーザーの自動メッセージ翻訳を管理します。",
+      "description": "ユーザー向けの自動チャット翻訳を管理します。",
       "usage": {
         "lang": "!translate <言語>",
         "modUser": "!translate <言語|stop> [ユーザー]"
@@ -44,60 +44,118 @@
     },
     "help": {
       "name": "!commands / !help",
-      "description": "利用可能なコマンドのリストを表示します。",
+      "description": "利用可能なボットコマンド一覧へのリンクを表示します。",
       "usage": {
         "basic": "!help または !commands"
       }
     },
     "lurk": {
-      "description": "チャットに潜伏中であることを知らせます。カスタムメッセージのために理由を追加することもできます。"
+      "description": "チャットに潜伏（ロム）中であることを伝えます。理由を追加してカスタムメッセージにすることもできます。"
     },
     "quote": {
       "name": "!quote",
-      "description": "チャンネルの名言を追加、表示、検索します。名言はチャンネルごとに保存され、オプションで作者を指定できます。",
+      "description": "チャンネルの名言を追加、表示、検索します。作者名を含めることもできます。",
       "usage": {
         "random": "!quote",
         "randomDesc": "ランダムな名言を表示",
         "id": "!quote <ID>",
-        "idDesc": "ID番号で名言を表示、例: !quote 12",
+        "idDesc": "ID番号で名言を表示（例: !quote 12）",
         "last": "!quote last",
-        "lastDesc": "最近追加された名言を表示",
+        "lastDesc": "最新の名言を表示",
         "search": "!quote <検索語>",
-        "searchDesc": "テキストまたは作者で名言を検索、例: !quote parfait",
+        "searchDesc": "テキストまたは作者名で名言を検索（例: !quote parfait）",
         "searchExplicit": "!quote search <検索語>",
         "searchExplicitDesc": "明示的な検索コマンド",
         "add": "!quote add <テキスト [- 作者]>",
-        "addDesc": "新しい名言を追加。\" - \"の後にオプションで作者を指定、例: !quote add \"hello world - parfait\"",
+        "addDesc": "新しい名言を追加。「 - 」の後に作者名を指定（例: !quote add \"hello world - parfait\"）",
         "delete": "!quote delete <ID>",
-        "deleteDesc": "名言を削除(モデレーター/配信者のみ)",
+        "deleteDesc": "名言を削除（モデレーターおよび配信者のみ）",
         "edit": "!quote edit <ID> <テキスト [- 作者]>",
-        "editDesc": "既存の名言を編集(モデレーター/配信者のみ)"
+        "editDesc": "名言を編集（モデレーターおよび配信者のみ）"
+      }
+    },
+    "followage": {
+      "name": "!followage",
+      "description": "ユーザーがチャンネルをフォローしている期間を表示します。",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "自身のフォロー期間を表示",
+        "userCmd": "!followage <ユーザー名>",
+        "userDesc": "他のユーザーのフォロー期間を表示"
+      }
+    },
+    "command": {
+      "name": "!command <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">カスタムチャンネルコマンドを作成、編集、管理します。<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Webダッシュボード</a>でも管理できます。</span>",
+      "usage": {
+        "addText": "新しいテキストコマンドを作成",
+        "addAi": "プロンプトからユニークな応答を生成する新しいAIコマンドを作成",
+        "edit": "コマンドの応答を更新",
+        "remove": "コマンドを削除",
+        "show": "コマンドの応答テンプレートと設定を表示",
+        "optionsPerms": "必要な権限を設定: everyone, subscriber, vip, moderator, または broadcaster",
+        "optionsCooldown": "使用間のクールダウン（秒）を設定",
+        "optionsType": "コマンドをテキストモードとAIモードの間で切り替え",
+        "addTextCmd": "!command add <名前> <応答>",
+        "addAiCmd": "!command addai <名前> <プロンプト>",
+        "editCmd": "!command edit <名前> <応答>",
+        "removeCmd": "!command remove <名前>",
+        "showCmd": "!command show <名前>",
+        "optionsPermsCmd": "!command options <名前> permission=<権限レベル>",
+        "optionsCooldownCmd": "!command options <名前> cooldown=<秒数>",
+        "optionsTypeCmd": "!command options <名前> type=<text|prompt>"
+      }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">自動チャットタイマーを作成、編集、管理します。<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Webダッシュボード</a>でも管理できます。</span>",
+      "usage": {
+        "addCmd": "!timer add <名前> <間隔> <応答>",
+        "add": "指定した間隔（分）で新しいテキストタイマーを作成",
+        "addAiCmd": "!timer addai <名前> <間隔> <プロンプト>",
+        "addAi": "指定した間隔（分）で新しいAIタイマーを作成",
+        "editCmd": "!timer edit <名前> <応答>",
+        "edit": "タイマーの応答を更新",
+        "intervalCmd": "!timer interval <名前> <分>",
+        "interval": "タイマーメッセージ間の最小間隔（分）を設定",
+        "linesCmd": "!timer lines <名前> <行数>",
+        "lines": "タイマーメッセージ間に必要な最小チャット行数を設定",
+        "enableCmd": "!timer enable <名前>",
+        "enable": "一時停止中のタイマーを有効化",
+        "disableCmd": "!timer disable <名前>",
+        "disable": "アクティブなタイマーを一時停止",
+        "removeCmd": "!timer remove <名前>",
+        "remove": "タイマーを削除",
+        "showCmd": "!timer show <名前>",
+        "show": "特定タイマーの設定を表示",
+        "listCmd": "!timer list",
+        "list": "チャンネルのすべてのタイマーを表示"
       }
     },
     "geo": {
       "name": "!geo",
-      "description": "Geo-Gameを開始または管理します。IRLまたは仮想世界の地理推測ゲームです。",
+      "description": "実在または仮想の場所を当てる地理ゲーム「Geo-Game」を開始または管理します。",
       "usage": {
-        "basic": "グローバルな現実世界のゲームを開始",
-        "region": "地域限定の現実世界のゲームを開始、例: !geo Japan",
-        "game": "現在のストリームのゲームを使用してゲーム世界のゲームを開始",
-        "gameTitle": "指定されたゲームでゲーム世界のゲームを開始、例: !geo game \"Metroid Prime\"",
-        "rounds": "N回のラウンドでゲームを実行、例: !geo Japan 3",
-        "stop": "ゲーム開始者、モデレーター、または配信者が停止可能",
-        "interval": "ヒント間の時間を30〜300秒に設定",
-        "duration": "ラウンドの長さを3〜20分に設定",
-        "configRegion": "Europe,AsiaまたはUSA,Canadaなどの地域を設定",
-        "configGame": "優先ゲームタイトルをカンマ区切りで設定",
-        "pointsBase": "基本ポイントを1〜100に設定",
-        "maxRounds": "最大ラウンド数を1〜10に設定",
-        "clearLeaderboard": "またはresetstats",
-        "report": "問題のある場所やヒントを報告",
+        "basic": "世界中の実在する場所でゲームを開始",
+        "region": "特定の地域でゲームを開始（例: !geo Japan）",
+        "game": "現在の配信ゲームの場所を使ってゲームを開始",
+        "gameTitle": "指定したゲームタイトルでゲームを開始（例: !geo game \"Metroid Prime\"）",
+        "rounds": "指定したラウンド数でゲームを実行（例: !geo Japan 3）",
+        "stop": "ゲームを停止（ゲーム開始者、モデレーター、または配信者）",
+        "interval": "ヒント間の待機時間を設定（30〜300秒）",
+        "duration": "ラウンドの制限時間を設定（3〜20分）",
+        "configRegion": "デフォルトの地域を設定（例: Europe,Asia または USA,Canada）",
+        "configGame": "優先するゲームタイトルをカンマ区切りで設定",
+        "pointsBase": "ラウンドごとの基本ポイントを設定（1〜100）",
+        "maxRounds": "ゲームあたりの最大ラウンド数を設定（1〜10）",
+        "clearLeaderboard": "エイリアス: !geo resetstats",
+        "report": "誤った場所やヒントを報告",
         "regionCmd": "!geo <地域>",
         "commandRounds": "!geo <コマンド> N",
         "configRegionCmd": "!geo config region <地域>",
         "configDifficultyCmd": "!geo config difficulty <easy|normal|hard>",
-        "intervalCmd": "!geo config interval <秒>",
-        "durationCmd": "!geo config duration <分>",
+        "intervalCmd": "!geo config interval <秒数>",
+        "durationCmd": "!geo config duration <分数>",
         "configGameCmd": "!geo config game <タイトル>",
         "pointsBaseCmd": "!geo config pointsbase <数値>",
         "maxRoundsCmd": "!geo config maxrounds <数値>",
@@ -113,28 +171,28 @@
     },
     "riddle": {
       "name": "!riddle",
-      "description": "なぞなぞゲームを開始または管理します。なぞなぞは一般知識、現在のストリームゲーム、または特定の主題に関するものです。",
+      "description": "一般知識、配信ゲーム、またはカスタムトピックに関するなぞなぞゲームを開始または管理します。",
       "usage": {
-        "basic": "一般知識のなぞなぞを開始",
-        "subject": "例: !riddle animals",
-        "rounds": "例: !riddle 3 で一般知識3ラウンド",
-        "subjectRounds": "例: !riddle history 5",
-        "game": "現在のストリームゲームに関するなぞなぞ",
-        "report": "問題のあるなぞなぞを報告",
-        "stop": "ゲーム開始者、モデレーター、または配信者が停止可能",
-        "questionTime": "なぞなぞごとの時間を15〜120秒に設定",
-        "pointsBase": "基本ポイントを1〜100に設定",
-        "maxRounds": "最大ラウンド数を1〜20に設定",
-        "keywordsLimit": "除外する最近のキーワード数を設定、例: 20〜100",
-        "roundDelay": "ラウンド間の遅延を設定",
-        "clearLeaderboard": "またはcleardata",
-        "subjectCmd": "!riddle <主題>",
+        "basic": "一般知識のなぞなぞゲームを開始",
+        "subject": "特定のトピックでなぞなぞを開始（例: !riddle animals）",
+        "rounds": "指定したラウンド数でゲームを開始（例: !riddle 3）",
+        "subjectRounds": "複数ラウンドのトピックゲームを開始（例: !riddle history 5）",
+        "game": "現在の配信ゲームに関するなぞなぞを開始",
+        "report": "誤ったなぞなぞを報告",
+        "stop": "ゲームを停止（ゲーム開始者、モデレーター、または配信者）",
+        "questionTime": "なぞなぞごとの回答時間を設定（15〜120秒）",
+        "pointsBase": "なぞなぞごとの基本ポイントを設定（1〜100）",
+        "maxRounds": "ゲームあたりの最大ラウンド数を設定（1〜20）",
+        "keywordsLimit": "除外する直近キーワード数を設定（例: 20〜100）",
+        "roundDelay": "ラウンド間の待機時間をミリ秒で設定",
+        "clearLeaderboard": "エイリアス: !riddle cleardata",
+        "subjectCmd": "!riddle <トピック>",
         "roundsCmd": "!riddle <ラウンド数>",
-        "subjectRoundsCmd": "!riddle <主題> <ラウンド数>",
+        "subjectRoundsCmd": "!riddle <トピック> <ラウンド数>",
         "gameRoundsCmd": "!riddle game <ラウンド数>",
         "reportCmd": "!riddle report <理由...>",
         "configDifficultyCmd": "!riddle config difficulty <easy|normal|hard>",
-        "questionTimeCmd": "!riddle config questiontime <秒>",
+        "questionTimeCmd": "!riddle config questiontime <秒数>",
         "pointsBaseCmd": "!riddle config pointsbase <数値>",
         "maxRoundsCmd": "!riddle config maxrounds <数値>",
         "keywordsLimitCmd": "!riddle config keywordslimit <数値>",
@@ -145,25 +203,25 @@
     },
     "trivia": {
       "name": "!trivia",
-      "description": "現在のストリームゲームを含む、様々なトピックに関する事実問題のトリビアゲームを開始または管理します。",
+      "description": "様々なトピックや配信ゲームに関するトリビアクイズゲームを開始または管理します。",
       "usage": {
-        "basic": "一般知識トリビアを開始",
-        "topic": "トピック別トリビアを開始、例: !trivia science",
-        "game": "現在のストリームゲームに関するトリビアを開始",
-        "rounds": "ラウンド数を指定、例: !trivia 3",
-        "topicRounds": "例: !trivia history 5",
-        "report": "問題のある質問を報告",
-        "stop": "ゲーム開始者、モデレーター、または配信者が停止可能",
-        "time": "質問ごとの時間を10〜120秒に設定",
-        "pointsBase": "基本ポイントを1〜100に設定",
+        "basic": "一般知識トリビアゲームを開始",
+        "topic": "特定のトピックでトリビアを開始（例: !trivia science）",
+        "game": "現在の配信ゲームに関するトリビアを開始",
+        "rounds": "指定したラウンド数でゲームを開始（例: !trivia 3）",
+        "topicRounds": "複数ラウンドのトピックゲームを開始（例: !trivia history 5）",
+        "report": "誤った問題を報告",
+        "stop": "ゲームを停止（ゲーム開始者、モデレーター、または配信者）",
+        "time": "問題ごとの回答時間を設定（10〜120秒）",
+        "pointsBase": "問題ごとの基本ポイントを設定（1〜100）",
         "configTopic": "優先トピックをカンマ区切りで設定",
-        "maxRounds": "最大ラウンド数を1〜10に設定",
+        "maxRounds": "ゲームあたりの最大ラウンド数を設定（1〜10）",
         "topicCmd": "!trivia <トピック>",
         "roundsCmd": "!trivia <ラウンド数>",
         "topicRoundsCmd": "!trivia <トピック> <ラウンド数>",
         "reportCmd": "!trivia report <理由>",
         "configDifficultyCmd": "!trivia config difficulty <easy|normal|hard>",
-        "timeCmd": "!trivia config time <秒>",
+        "timeCmd": "!trivia config time <秒数>",
         "pointsBaseCmd": "!trivia config pointsbase <数値>",
         "configTopicCmd": "!trivia config topic <トピック>",
         "maxRoundsCmd": "!trivia config maxrounds <数値>",
@@ -173,308 +231,250 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "チャンネル全体でボットが特定の言語で話すように設定します。",
+      "description": "チャンネル全体のボット応答のデフォルト言語を設定します。",
       "usage": {
-        "status": "現在の言語を確認",
-        "off": "英語にリセット",
-        "default": "英語にリセット",
+        "status": "現在のチャンネル言語を表示",
+        "off": "チャンネル言語を英語にリセット",
+        "default": "チャンネル言語を英語にリセット",
         "langCmd": "!botlang <言語>"
       }
     },
     "auto": {
       "name": "!auto",
-      "description": "自動チャットモードとオプションを設定します。",
+      "description": "自動チャットメッセージと配信イベント通知を設定します。",
       "usage": {
-        "status": "現在の自動チャットモード、頻度、カテゴリーを表示",
+        "status": "現在の自動チャットモード、頻度、およびアクティブなカテゴリを表示",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "自動チャットの頻度を設定します（offは定期メッセージのみ無効にします）",
+        "mode": "自動チャットの頻度を設定（offは定期メッセージのみ無効化）",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "配信開始/終了の挨拶を有効/無効にする",
-        "factsCmd": "!auto config facts:<on|off>",
-        "facts": "豆知識とヒントを有効/無効にする",
-        "questionsCmd": "!auto config questions:<on|off>",
-        "questions": "エンゲージメント質問を有効/無効にする",
-        "adsCmd": "!auto config ads:<on|off>",
-        "ads": "広告休憩通知を有効/無効にする",
+        "greetings": "配信開始時および終了時の挨拶を有効/無効化",
         "followsCmd": "!auto config follows:<on|off>",
-        "follows": "新しいフォロワーのお祝いを有効/無効にする",
+        "follows": "新規フォロワーへのメッセージを有効/無効化",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
-        "subscriptions": "サブスクリプションのお祝いを有効/無効にする",
+        "subscriptions": "新規サブスクライブへのメッセージを有効/無効化",
         "raidsCmd": "!auto config raids:<on|off>",
-        "raids": "レイド歓迎メッセージを有効/無効にする"
+        "raids": "受信レイドへの歓迎メッセージを有効/無効化",
+        "factsCmd": "!auto config facts:<on|off>",
+        "facts": "自動の豆知識やヒントを有効/無効化",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "questions": "視聴者向けの自動質問を有効/無効化",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "広告ブレイク前の通知を有効/無効化"
       }
     },
     "disable": {
-      "description": "このチャンネルでコマンドを無効にします。",
+      "description": "このチャンネルでコマンドを無効化します。",
       "usage": {
-        "lurk": "!lurkコマンドを無効にする",
-        "trivia": "!triviaコマンドを無効にする"
+        "lurk": "!lurk コマンドを無効化",
+        "trivia": "!trivia コマンドを無効化"
       }
     },
     "enable": {
-      "description": "このチャンネルで以前無効にしたコマンドを有効にします。",
+      "description": "このチャンネルで以前無効化されたコマンドを有効化します。",
       "usage": {
-        "trivia": "!triviaコマンドを有効にする"
+        "trivia": "!trivia コマンドを有効化"
       }
     },
     "ping": {
-      "description": "ボットが応答しているかを確認します。Pong!と応答します。"
-    },
-    "followage": {
-      "name": "!followage",
-      "description": "自分または他のユーザーがチャンネルをフォローしている期間を確認します。",
-      "usage": {
-        "basic": "!followage",
-        "basicDesc": "自分のフォロー期間を確認",
-        "userCmd": "!followage <ユーザー名>",
-        "userDesc": "他のユーザーのフォロー期間を確認"
-      }
-    },
-    "command": {
-      "name": "!コマンド <span class=\"mod-badge\">MOD</span>",
-      "description": "<span class=\"description-text\">チャンネルのカスタム コマンドを作成、編集、管理します。カスタム コマンドは、<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ウェブ ダッシュボード</a>からも管理できます。</span>",
-      "usage": {
-        "addText": "新しいテキストベースのコマンドを作成します",
-        "addAi": "AI を利用した新しいコマンドを作成します。プロンプトを使用するたびに固有の応答を生成します。",
-        "edit": "既存のコマンドの応答を更新します",
-        "remove": "コマンドを削除します",
-        "show": "生の応答テンプレートと現在の設定を表示します",
-        "optionsPerms": "コマンドを使用できる人を設定します:全員、サブスクライバー、VIP、モデレーター、またはブロードキャスター",
-        "optionsCooldown": "使用間のクールダウンを設定します (秒単位)",
-        "optionsType": "既存のコマンドをテキスト モードと AI モードの間で切り替える",
-        "addTextCmd": "!command add <名前> <応答>",
-        "addAiCmd": "!command addai <名前> <プロンプト>",
-        "editCmd": "!command edit <名前> <応答>",
-        "removeCmd": "!command <名前> を削除します",
-        "showCmd": "!command show <名前>",
-        "optionsPermsCmd": "!コマンド オプション <名前> 権限=<レベル>",
-        "optionsCooldownCmd": "!コマンド オプション <名前> クールダウン=<秒>",
-        "optionsTypeCmd": "!コマンド オプション <名前> type=<テキスト|プロンプト>"
-      }
-    },
-    "timer": {
-      "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">自動チャットタイマーを作成、編集、管理します。タイマーは、<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Webダッシュボード</a>経由でも管理できます。</span>",
-      "usage": {
-        "addCmd": "!timer add <名前> <間隔> <応答>",
-        "add": "指定された間隔（分）で新しいテキストベースのタイマーを作成します",
-        "addAiCmd": "!timer addai <名前> <間隔> <プロンプト>",
-        "addAi": "指定された間隔（分）で新しいAI搭載のタイマーを作成します",
-        "editCmd": "!timer edit <名前> <応答>",
-        "edit": "既存のタイマーの応答を更新します",
-        "intervalCmd": "!timer interval <名前> <分数>",
-        "interval": "実行間隔（最小分数）を更新します",
-        "linesCmd": "!timer lines <名前> <数値>",
-        "lines": "実行間の最小チャット行数を更新します",
-        "enableCmd": "!timer enable <名前>",
-        "enable": "一時停止中のタイマーを有効にします",
-        "disableCmd": "!timer disable <名前>",
-        "disable": "アクティブなタイマーを一時停止します",
-        "removeCmd": "!timer remove <名前>",
-        "remove": "タイマーを削除します",
-        "showCmd": "!timer show <名前>",
-        "show": "特定のタイマーの現在の設定を表示します",
-        "listCmd": "!timer list",
-        "list": "チャンネルのすべてのタイマーをリストします"
-      }
+      "description": "ボットが応答するか確認します。ボットは「Pong!」と返答します。"
     }
   },
   "sidebar": {
     "generalCommands": "一般コマンド",
+    "customCommands": "カスタムコマンド",
     "games": "ゲーム",
     "config": "設定",
     "webDashboard": "Webダッシュボード",
-    "customCommands": "カスタムコマンド",
     "responseVariables": "応答変数",
     "dailyCheckIn": "デイリーチェックイン",
     "title": "WildcatSage",
-    "toggleSidebar": "サイドバーの切り替え"
-  },
-  "webDashboard": {
-    "title": "Webダッシュボード",
-    "intro": "ChatSage Webダッシュボードは、配信者がチャンネルのボットを管理するための包括的なインターフェースを提供します。Twitchアカウントでログインしてアクセスしてください。",
-    "featuresTitle": "利用可能なダッシュボード機能",
-    "features": {
-      "botManagement": {
-        "title": "ボット管理:",
-        "desc": "チャンネルにChatSageを追加または削除"
-      },
-      "channelConfig": {
-        "title": "チャンネル設定:",
-        "desc": "自動チャット設定、ストリームイベント切替、広告通知を構成する"
-      },
-      "streamEvents": {
-        "title": "ストリームイベント：",
-        "desc": "フォロワー、サブスクリプション、レイドに対するAI生成の挨拶、お別れ、お祝いの切替 — 自動チャットモードとは独立して動作します"
-      },
-      "commandControl": {
-        "title": "コマンド管理:",
-        "desc": "カスタムコマンドの作成と管理、組み込みコマンドの有効/無効"
-      },
-      "dailyCheckIn": {
-        "title": "デイリーチェックイン:",
-        "desc": "連続記録トラッキングとAI生成メッセージ（オプション）付きのデイリーチェックインのチャンネルポイント報酬を設定"
-      }
-    },
-    "gettingStartedTitle": "はじめに",
-    "steps": {
-      "visit": {
-        "title": "ダッシュボードにアクセス:",
-        "desc": "https://bot.wildcat.chat/ にアクセス"
-      },
-      "authorize": {
-        "title": "認証:",
-        "desc": "\"Login with Twitch\"をクリックして必要な権限を付与"
-      },
-      "addBot": {
-        "title": "ボットを追加:",
-        "desc": "\"Add Bot to My Channel\"ボタンを使用してChatSageをチャンネルに招待"
-      },
-      "configure": {
-        "title": "設定:",
-        "desc": "ダッシュボードインターフェースから設定をカスタマイズ"
-      },
-      "grantPerms": {
-        "title": "トラブルシューティング:",
-        "desc": "ボットが応答しない場合、Twitchチャットで /mod WildcatSage と入力してモデレーターステータスを付与"
-      }
-    },
-    "oauthTitle": "OAuth権限",
-    "oauthIntro": "ダッシュボードには以下のTwitch OAuthスコープが必要です:",
-    "oauth": {
-      "readEmail": "アカウント識別のためのメールアドレスへのアクセス",
-      "readAds": "チャンネルの広告休憩通知を受信",
-      "manageModerators": "ボットに自動的にモデレーターステータスを付与",
-      "readFollowers": "!followageなどのコマンド用にフォロワー情報にアクセス",
-      "manageRedemptions": "デイリーチェックインなどの機能のためにチャンネルポイント報酬を作成・管理"
-    },
-    "noteLabel": "注意:",
-    "noteText": "ChatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、お問い合わせフォームからアクセスをリクエストしてください。"
+    "toggleSidebar": "サイドバーを切り替え"
   },
   "responseVariables": {
     "title": "応答変数",
-    "intro1": "カスタム コマンドを作成するときは、<strong>応答変数</strong>を使用して動的コンテンツを挿入できます。 <code>$(variable)</code> 形式を使用して応答にこれらを記述すると、コマンドが使用されるときに自動的に置き換えられます。",
+    "intro1": "<strong>応答変数</strong>を使用して、カスタムコマンドに動的なテキストを挿入できます。コマンドの応答に <code>$(variable)</code> を記述します。ユーザーがコマンドを実行すると、ボットが変数を自動置換します。",
     "table": {
       "variable": "変数",
-      "whatItDoes": "何をするのか",
+      "whatItDoes": "説明",
       "exampleOutput": "出力例"
     },
     "variables": {
       "user": {
-        "desc": "コマンドを使用した人の名前"
+        "desc": "コマンドを実行したユーザーの名前"
       },
       "channel": {
         "desc": "チャンネル名"
       },
       "args": {
-        "desc": "コマンド名の後のすべてのテキストを 1 つの文字列として表示",
-        "example": "誰かが <span class=\"inline-code\">!shout hello world</span> と入力すると、$(args) = <strong>hello world</strong> となります。"
+        "desc": "コマンド名以降のすべてのテキスト（単一の文字列）",
+        "example": "ユーザーが <span class=\"inline-code\">!shout hello world</span> を実行した場合、$(args) = <strong>hello world</strong>"
       },
       "numbered": {
-        "desc": "位置ごとの 1 つの単語 — $(1) が 1 番目の単語、$(2) が 2 番目の単語など",
-        "example": "誰かが <span class=\"inline-code\">! Shout hello world</span> と入力すると、$(1) = <strong>hello</strong>、$(2) = <strong>world</strong> となります。"
+        "desc": "位置による単語指定: $(1)は1番目の単語、$(2)は2番目の単語",
+        "example": "ユーザーが <span class=\"inline-code\">!shout hello world</span> を実行した場合、$(1) = <strong>hello</strong>、$(2) = <strong>world</strong>"
       },
       "count": {
-        "desc": "このコマンドが何回使用されたか"
+        "desc": "ユーザーがこのコマンドを実行した総回数"
       },
       "random": {
-        "desc": "X と Y の間の乱数",
-        "example": "<span class=\"inline-code\">$(ランダム 1 ～ 20)</span> から 17 個"
+        "desc": "XからYの間の乱数",
+        "example": "<span class=\"inline-code\">$(random 1-20)</span> から 17"
       },
       "uptime": {
-        "desc": "ストリームがライブになっている期間",
-        "example": "2時間30分"
+        "desc": "現在の配信経過時間",
+        "example": "2h 30m"
       },
       "game": {
-        "desc": "現在プレイ中のゲーム",
-        "example": "メトロイドプライム"
+        "desc": "現在の配信ゲームタイトル",
+        "example": "Metroid Prime"
       },
       "followage": {
-        "desc": "ユーザーがチャンネルをフォローし続けている期間",
-        "example": "2年3ヶ月"
+        "desc": "ユーザーがチャンネルをフォローしている期間",
+        "example": "2 years 3 months"
       },
       "checkinCount": {
-        "desc": "視聴者の累計デイリーチェックイン回数（チャンネルポイント報酬のみ）"
+        "desc": "視聴者の通算デイリーチェックイン回数（チャンネルポイント報酬のみ）"
       }
     },
     "examplesTitle": "例",
-    "examplesIntro": "作成できるコマンドの例をいくつか示します。",
+    "examplesIntro": "カスタムコマンドの作成例です:",
     "examplesTable": {
-      "command": "チャットで入力するコマンド",
-      "botSays": "ボットの発言"
+      "command": "チャットコマンド",
+      "botSays": "ボットの応答"
     },
     "examples": {
       "hi": {
-        "command": "<span class=\"inline-code\">!command add こんにちは、$(user)!ようこそ!</span>",
-        "result": "こんにちは、WildcatGamer!いらっしゃいませ！"
+        "command": "<span class=\"inline-code\">!command add hi こんにちは $(user)！ようこそ！</span>",
+        "result": "こんにちは WildcatGamer！ようこそ！"
       },
       "roll": {
-        "command": "<span class=\"inline-code\">!command add roll $(user) は $(random 1-20) をロールしました!</span>",
-        "result": "WildcatGamer は 17 を出しました!"
+        "command": "<span class=\"inline-code\">!command add roll $(user) は $(random 1-20) を出しました！</span>",
+        "result": "WildcatGamer は 17 を出しました！"
       },
       "live": {
-        "command": "<span class=\"inline-code\">!command add live $(uptime) のライブで $(game) をプレイしています!</span>",
-        "result": "メトロイドプライムを2時間30分生放送してきました！"
+        "command": "<span class=\"inline-code\">!command add live 配信開始から $(uptime) 経過、$(game) をプレイ中！</span>",
+        "result": "配信開始から 2h 30m 経過、Metroid Prime をプレイ中！"
       },
       "hug": {
-        "command": "<span class=\"inline-code\">!command addhug $(user) は $(1) をハグします!</span>",
-        "result": "WildcatGamer が WildcatStreamer をハグします!"
+        "command": "<span class=\"inline-code\">!command add hug $(user) が $(1) をハグ！</span>",
+        "result": "WildcatGamer が WildcatStreamer をハグ！"
       },
       "uses": {
-        "command": "<span class=\"inline-code\">!command add uses このコマンドは $(count) 回使用されました!</span>",
-        "result": "このコマンドは 42 回使用されました。"
+        "command": "<span class=\"inline-code\">!command add uses このコマンドは $(count) 回使用されました！</span>",
+        "result": "このコマンドは 42 回使用されました！"
       }
     },
     "examplesCaption": "応答変数の例"
   },
   "aiCommands": {
     "title": "AIコマンド",
-    "intro1": "AI コマンドは、固定応答の代わりにプロンプ​​トを使用します。ボットはプロンプトを AI モデルに送信し、毎回固有の回答を返します。プロンプトでも応答変数を使用できます。",
-    "intro2": "AI コマンドを作成する最も簡単な方法は、<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">ウェブ ダッシュボード</a>を使用することです。 [<strong>+ 追加</strong>] をクリックし、<strong>AI モード</strong> をオンにして、プロンプトを作成します。 <code>!command addai <name> <prompt></code> を使用してチャットで作成することもできます。",
+    "intro1": "AIコマンドは固定のテキスト応答ではなくプロンプトを使用します。ボットがプロンプトをAIモデルに送信し、毎回ユニークな回答を生成します。プロンプト内で応答変数を使用することもできます。",
+    "intro2": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Webダッシュボード</a>でAIコマンドを作成できます。<strong>+ 追加</strong> を選択し、<strong>AIモード</strong> を有効にしてプロンプトを入力してください。チャットで <code>!command addai &lt;名前&gt; &lt;プロンプト&gt;</code> と入力して作成することもできます。",
     "table": {
       "prompt": "AIプロンプト",
-      "whatHappens": "何が起こるのですか",
+      "whatHappens": "ボットの応答",
       "caption": "AIコマンドの例"
     },
     "examples": {
       "vibe": {
-        "prompt": "名前: <span class=\"inline-code\">雰囲気</span><br>プロンプト: <span class=\"inline-code\">「$(args)」がどのような雰囲気を放つかを $(ユーザー) に一文で伝えてください。</span>",
-        "result": "誰かが「<span class=\"inline-code\">!雰囲気、ピザ丸ごと食べたばかり</span>」と入力すると、AI は次のように応答します。<em>「WildcatGamer、あなたのメッセージは非常に尊敬に値するゴブリンのエネルギーを放っています。」</em> - 毎回異なります。"
+        "prompt": "名前: <span class=\"inline-code\">vibe</span><br>プロンプト: <span class=\"inline-code\">$(user) に「$(args)」がどんな雰囲気を出しているか1文で教えてください。</span>",
+        "result": "ユーザーが <span class=\"inline-code\">!vibe I just ate an entire pizza</span> と入力すると、AIが次のように返信します: <em>「WildcatGamerさん、あなたのメッセージからは実に立派なゴブリンのエネルギーが漂っています。」</em> 応答は毎回変化します。"
       },
       "hug": {
-        "prompt": "名前: <span class=\"inline-code\">ハグ</span><br>プロンプト: <span class=\"inline-code\">$(ユーザー) から $(1) への短くて面白いハグ メッセージを書きます。</span>",
-        "result": "誰かが「<span class=\"inline-code\">!hug WildcatStreamer</span>」と入力すると、AI は次のように応答します。<em>「WildcatGamer は、氷河が溶けるほど温かいハグで WildcatStreamer を包みます。」</em>"
+        "prompt": "名前: <span class=\"inline-code\">hug</span><br>プロンプト: <span class=\"inline-code\">$(user) から $(1) への短くて面白いハグメッセージを書いてください。</span>",
+        "result": "ユーザーが <span class=\"inline-code\">!hug WildcatStreamer</span> と入力すると、AIが次のように返信します: <em>「WildcatGamerは氷河をも溶かすほど温かいハグでWildcatStreamerを包み込みました。」</em>"
       },
       "fortune": {
-        "prompt": "名前: <span class=\"inline-code\">フォーチュン</span><br>プロンプト: <span class=\"inline-code\">$(ユーザー) に短いフォーチュン クッキー メッセージを渡します。</span>",
-        "result": "毎回ユニークな幸運: <em>「WildcatGamer、今日は思いがけない場所で珍しいアイテムを見つけるでしょう。」</em>"
+        "prompt": "名前: <span class=\"inline-code\">fortune</span><br>プロンプト: <span class=\"inline-code\">$(user) に短いフォーチュンクッキーのメッセージを伝えてください。</span>",
+        "result": "実行ごとにユニークなおみくじ: <em>「WildcatGamerさん、今日は思いがけない場所で珍しいアイテムが見つかるでしょう。」</em>"
       }
     },
-    "tipLabel": "ヒント：",
-    "tipText": "既存のテキスト コマンドを AI モードに変換するには、ダッシュボードで編集して <strong>AI モード</strong> を有効にするか、チャットで <span class=\"inline-code\">!command options <name> type=prompt</span> を使用します。 <span class=\"inline-code\">type=text</span> で元に戻ります。"
+    "tipLabel": "ヒント:",
+    "tipText": "ダッシュボードで <strong>AIモード</strong> を有効にすることで、既存のテキストコマンドをAIモードに変換できます。チャットで <span class=\"inline-code\">!command options &lt;名前&gt; type=prompt</span> を実行することも可能です。<span class=\"inline-code\">type=text</span> で元に戻せます。"
+  },
+  "webDashboard": {
+    "title": "Webダッシュボード",
+    "intro": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Webダッシュボード</a> では、配信者がチャンネルのボット設定を行うことができます。Twitchアカウントでログインしてアクセスしてください。",
+    "featuresTitle": "ダッシュボード機能",
+    "features": {
+      "botManagement": {
+        "title": "ボット管理:",
+        "desc": "チャンネルにWildcatSageを追加または削除します。"
+      },
+      "channelConfig": {
+        "title": "チャンネル設定:",
+        "desc": "自動チャットの頻度、配信イベントメッセージ、広告通知を設定します。"
+      },
+      "streamEvents": {
+        "title": "配信イベント:",
+        "desc": "新規フォロワー、サブスクライバー、受信レイド向けのAI挨拶、お別れ、お祝いメッセージを有効化します。"
+      },
+      "commandControl": {
+        "title": "コマンド管理:",
+        "desc": "カスタムコマンドを作成し、組み込みコマンドを有効または無効にします。"
+      },
+      "dailyCheckIn": {
+        "title": "デイリーチェックイン:",
+        "desc": "連続記録のトラッキングとAI応答を備えたデイリーチェックイン用チャンネルポイント報酬を設定します。"
+      }
+    },
+    "gettingStartedTitle": "はじめに",
+    "steps": {
+      "visit": {
+        "title": "ダッシュボードにアクセス:",
+        "desc": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">https://bot.wildcat.chat/</a> にアクセスします。"
+      },
+      "authorize": {
+        "title": "認証:",
+        "desc": "「Twitchでログイン」を選択し、必要な権限を承認します。"
+      },
+      "addBot": {
+        "title": "ボットを追加:",
+        "desc": "「チャンネルにボットを追加」を選択して、WildcatSageをチャンネルに招待します。"
+      },
+      "configure": {
+        "title": "設定:",
+        "desc": "ダッシュボードでボット設定を変更します。"
+      },
+      "grantPerms": {
+        "title": "トラブルシューティング:",
+        "desc": "ボットが応答しない場合は、Twitchチャットで <code>/mod WildcatSage</code> と入力してモデレーター権限を付与してください。"
+      }
+    },
+    "oauthTitle": "OAuth権限",
+    "oauthIntro": "ダッシュボードには以下のTwitch OAuth権限が必要です:",
+    "oauth": {
+      "readEmail": "アカウント識別のためにメールアドレスを読み取ります。",
+      "readAds": "チャンネルの広告ブレイク通知を受信します。",
+      "manageModerators": "ボットにモデレーター権限を付与します。",
+      "readFollowers": "!followage などのコマンド用にフォロワー情報を読み取ります。",
+      "manageRedemptions": "デイリーチェックインなどの機能のためにチャンネルポイント報酬を作成・管理します。"
+    },
+    "noteLabel": "注:",
+    "noteText": "WildcatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、<a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォームからアクセスをリクエスト</a> してください。"
   },
   "dailyCheckIn": {
     "title": "デイリーチェックイン",
-    "intro": "デイリーチェックインは、視聴者が配信ごとに1回チェックインし、連続記録を追跡できるチャンネルポイント報酬です。報酬はダッシュボードから自動的に作成・管理されます — Twitchでの手動設定は不要です。",
+    "intro": "デイリーチェックインはチャンネルポイント報酬です。視聴者は配信ごとに1回チェックインして連続記録を追跡できます。ダッシュボードがTwitch上で報酬を自動作成・管理します。",
     "setupTitle": "セットアップ",
     "steps": {
-      "open": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSageダッシュボード</a>を開き、<strong>デイリーチェックイン</strong>セクションまでスクロールします。",
-      "enable": "<strong>有効にする</strong>トグルをオンにし、報酬のタイトルとチャンネルポイントのコストを設定します。",
-      "template": "<span class=\"inline-code\">$(user)</span>や<span class=\"inline-code\">$(checkin_count)</span>などの変数を使って応答テンプレートを作成するか、<strong>AIモード</strong>を有効にして毎回ユニークなメッセージを生成します。",
-      "save": "<strong>保存</strong>をクリックします。報酬はTwitchに自動的に作成されます。"
+      "open": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSageダッシュボード</a> を開き、<strong>デイリーチェックイン</strong> セクションに移動します。",
+      "enable": "トグルを有効にし、報酬タイトルとチャンネルポイントコストを入力します。",
+      "template": "<span class=\"inline-code\">$(user)</span> や <span class=\"inline-code\">$(checkin_count)</span> などの変数を使用した応答テンプレートを入力するか、<strong>AIモード</strong> を有効にして毎回ユニークな返答を生成します。",
+      "save": "<strong>保存</strong> を選択します。Twitch上で報酬が自動作成されます。"
     },
     "variablesTitle": "利用可能な変数",
     "variables": {
       "user": "チェックインした視聴者の表示名",
-      "checkinCount": "視聴者の累計チェックイン回数",
+      "checkinCount": "視聴者の通算チェックイン回数",
       "channel": "チャンネル名"
     },
     "exampleTitle": "例",
-    "exampleTemplate": "<strong>テンプレート:</strong> <code>$(user)がチェックイン！ #$(checkin_count)日目 🎉</code>",
-    "exampleOutput": "<strong>出力:</strong> <em>WildcatGamerがチェックイン！ #14日目 🎉</em>",
+    "exampleTemplate": "<strong>テンプレート:</strong> <code>$(user) がチェックインしました！ #$(checkin_count) 日目 🎉</code>",
+    "exampleOutput": "<strong>出力:</strong> <em>WildcatGamer がチェックインしました！ #14 日目 🎉</em>",
     "requirementLabel": "要件:",
-    "requirementText": "チャンネルポイント報酬を作成するには、Twitchアフィリエイトまたはパートナーのステータスが必要です。",
-    "aiExamplePrompt": "<strong>AIモードプロンプト:</strong> <code>$(user)のチェックイン$(checkin_count)回目を楽しく短く祝うメッセージを書いてください。</code>",
-    "aiExampleOutput": "<strong>出力:</strong> <em>「WildcatGamer、14日連続？すごい！この調子だと太陽より長持ちしそう。☀️」</em> — 毎回違うメッセージ！"
+    "requirementText": "チャンネルポイント報酬を作成するには、Twitchアフィリエイトまたはパートナーの資格が必要です。",
+    "aiExamplePrompt": "<strong>AIモードのプロンプト:</strong> <code>$(user) の $(checkin_count) 回目のチェックインに対する、楽しくて短いお祝いメッセージを書いてください。</code>",
+    "aiExampleOutput": "<strong>出力:</strong> <em>「WildcatGamerさん、14日連続！？絶好調ですね！このペースなら太陽よりも長生きできそうです。☀️」</em> — 応答は毎回変化します。"
   }
 }

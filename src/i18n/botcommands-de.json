@@ -3,40 +3,40 @@
     "title": "Bot-Befehle"
   },
   "page": {
-    "title": "ChatSage Bot-Befehle",
-    "expandTip": "Klicken Sie auf eine beliebige Befehlszeile unten, um sie zu erweitern und Nutzungsdetails zu sehen."
+    "title": "WildcatSage Bot-Befehle",
+    "expandTip": "Wähle eine Befehlszeile unten aus, um Details anzuzeigen."
   },
   "table": {
     "categories": {
       "general": "Allgemein",
+      "customCommands": "Benutzerdefinierte Befehle",
       "games": "Spiele",
-      "config": "Konfiguration",
-      "customCommands": "Benutzerdefinierte Befehle"
+      "config": "Konfiguration"
     },
     "caption": "Bot-Befehle"
   },
   "commands": {
     "ask": {
       "name": "!ask / !sage",
-      "description": "Stellen Sie Sage eine Frage. Nutzt intelligente Suche.",
+      "description": "Stelle Sage eine Frage. Sage sucht im Internet nach Antworten.",
       "usage": {
-        "question": "!ask <deine Frage>"
+        "question": "!ask <Frage>"
       }
     },
     "search": {
       "name": "!search",
       "description": "Sucht im Internet nach Informationen zu einem Thema.",
       "usage": {
-        "query": "!search <deine Anfrage>"
+        "query": "!search <Suchanfrage>"
       }
     },
     "game": {
       "name": "!game",
-      "description": "Bietet recherchierte Informationen über das aktuell gespielte Spiel. Fügen Sie \"analyze\" hinzu, um KI-Bilderkennung im Stream zu nutzen (verwendet Twitch-Thumbnail, das sich alle 5 Minuten aktualisiert)."
+      "description": "Zeigt Informationen zum aktuellen Stream-Spiel. Füge \"analyze\" hinzu, um Stream-Grafiken mit KI zu analysieren (nutzt alle 5 Minuten aktualisierte Thumbnails)."
     },
     "translate": {
       "name": "!translate",
-      "description": "Verwalten Sie die automatische Nachrichtenübersetzung für Benutzer.",
+      "description": "Verwaltet die automatische Chat-Übersetzung für Benutzer.",
       "usage": {
         "lang": "!translate <Sprache>",
         "modUser": "!translate <Sprache|stop> [Benutzer]"
@@ -44,54 +44,112 @@
     },
     "help": {
       "name": "!commands / !help",
-      "description": "Zeigt, wo man die Liste der verfügbaren Befehle findet.",
+      "description": "Zeigt einen Link zur Liste der verfügbaren Bot-Befehle.",
       "usage": {
         "basic": "!help oder !commands"
       }
     },
     "lurk": {
-      "description": "Teilen Sie dem Chat mit, dass Sie lurken. Geben Sie einen optionalen Grund für eine benutzerdefinierte Verabschiedung an."
+      "description": "Teilt dem Chat mit, dass du lurkst. Du kannst einen Grund für eine benutzerdefinierte Nachricht angeben."
     },
     "quote": {
       "name": "!quote",
-      "description": "Fügen Sie Zitate aus dem Kanal hinzu, sehen Sie sie an oder suchen Sie nach ihnen. Zitate werden pro Kanal gespeichert und können eine optionale Autorenangabe enthalten.",
+      "description": "Fügt Kanalzitate hinzu, zeigt sie an oder durchsucht sie. Zitate können einen Autor enthalten.",
       "usage": {
         "random": "!quote",
         "randomDesc": "Zeigt ein zufälliges Zitat",
         "id": "!quote <id>",
-        "idDesc": "Zeigt Zitat nach ID-Nummer, z. B. !quote 12",
+        "idDesc": "Zeigt ein Zitat nach ID-Nummer (zum Beispiel: !quote 12)",
         "last": "!quote last",
-        "lastDesc": "Zeigt das zuletzt hinzugefügte Zitat",
+        "lastDesc": "Zeigt das neueste Zitat",
         "search": "!quote <Suchbegriff>",
-        "searchDesc": "Sucht Zitate nach Text oder Autor, z. B. !quote parfait",
+        "searchDesc": "Sucht Zitate nach Text oder Autor (zum Beispiel: !quote parfait)",
         "searchExplicit": "!quote search <Begriff>",
         "searchExplicitDesc": "Expliziter Suchbefehl",
         "add": "!quote add <Text [- Autor]>",
-        "addDesc": "Fügt ein neues Zitat hinzu. Optionaler Autor nach \" - \", z. B. !quote add \"hello world - parfait\"",
+        "addDesc": "Fügt ein neues Zitat hinzu. Autor nach \" - \" angeben (zum Beispiel: !quote add \"hello world - parfait\")",
         "delete": "!quote delete <id>",
-        "deleteDesc": "Löscht ein Zitat (nur Mods/Streamer)",
+        "deleteDesc": "Löscht ein Zitat (nur Moderatoren und Broadcaster)",
         "edit": "!quote edit <id> <Text [- Autor]>",
-        "editDesc": "Bearbeitet ein vorhandenes Zitat (nur Mods/Streamer)"
+        "editDesc": "Bearbeitet ein Zitat (nur Moderatoren und Broadcaster)"
+      }
+    },
+    "followage": {
+      "name": "!followage",
+      "description": "Zeigt, wie lange ein Benutzer dem Kanal bereits folgt.",
+      "usage": {
+        "basic": "!followage",
+        "basicDesc": "Zeigt deine eigene Follow-Dauer an",
+        "userCmd": "!followage <Benutzername>",
+        "userDesc": "Zeigt die Follow-Dauer eines anderen Benutzers an"
+      }
+    },
+    "command": {
+      "name": "!command <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Erstellt, bearbeitet und verwaltet benutzerdefinierte Kanalbefehle. Du kannst benutzerdefinierte Befehle auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwalten.</span>",
+      "usage": {
+        "addText": "Erstellt einen neuen Textbefehl",
+        "addAi": "Erstellt einen neuen KI-Befehl, der eine einzigartige Antwort aus einem Prompt generiert",
+        "edit": "Aktualisiert eine Befehlsantwort",
+        "remove": "Löscht einen Befehl",
+        "show": "Zeigt die Antwortvorlage und Einstellungen für einen Befehl",
+        "optionsPerms": "Legt die erforderliche Berechtigung fest: everyone, subscriber, vip, moderator oder broadcaster",
+        "optionsCooldown": "Legt eine Abklingzeit zwischen Verwendungen in Sekunden fest",
+        "optionsType": "Wechselt einen Befehl zwischen Textmodus und KI-Modus",
+        "addTextCmd": "!command add <Name> <Antwort>",
+        "addAiCmd": "!command addai <Name> <Prompt>",
+        "editCmd": "!command edit <Name> <Antwort>",
+        "removeCmd": "!command remove <Name>",
+        "showCmd": "!command show <Name>",
+        "optionsPermsCmd": "!command options <Name> permission=<Stufe>",
+        "optionsCooldownCmd": "!command options <Name> cooldown=<Sekunden>",
+        "optionsTypeCmd": "!command options <Name> type=<text|prompt>"
+      }
+    },
+    "timer": {
+      "name": "!timer <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Erstellt, bearbeitet und verwaltet automatisierte Chat-Timer. Du kannst Timer auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwalten.</span>",
+      "usage": {
+        "addCmd": "!timer add <Name> <Intervall> <Antwort>",
+        "add": "Erstellt einen neuen Text-Timer mit dem angegebenen Intervall in Minuten",
+        "addAiCmd": "!timer addai <Name> <Intervall> <Prompt>",
+        "addAi": "Erstellt einen neuen KI-Timer mit dem angegebenen Intervall in Minuten",
+        "editCmd": "!timer edit <Name> <Antwort>",
+        "edit": "Aktualisiert eine Timer-Antwort",
+        "intervalCmd": "!timer interval <Name> <Minuten>",
+        "interval": "Legt das Mindestintervall in Minuten zwischen Timer-Nachrichten fest",
+        "linesCmd": "!timer lines <Name> <Anzahl>",
+        "lines": "Legt die Mindestanzahl an Chatzeilen zwischen Timer-Nachrichten fest",
+        "enableCmd": "!timer enable <Name>",
+        "enable": "Aktiviert einen pausierten Timer",
+        "disableCmd": "!timer disable <Name>",
+        "disable": "Pausiert einen aktiven Timer",
+        "removeCmd": "!timer remove <Name>",
+        "remove": "Löscht einen Timer",
+        "showCmd": "!timer show <Name>",
+        "show": "Zeigt die Einstellungen für einen bestimmten Timer",
+        "listCmd": "!timer list",
+        "list": "Zeigt alle Timer für den Kanal"
       }
     },
     "geo": {
       "name": "!geo",
-      "description": "Startet oder verwaltet Geo-Spiel, ein Geografiespiel für IRL oder virtuelle Welten.",
+      "description": "Startet oder verwaltet Geo-Game, ein Geografie-Ratespiel für reale oder virtuelle Orte.",
       "usage": {
-        "basic": "Startet ein globales Echtzeit-Spiel",
-        "region": "Startet ein regionales Echtzeit-Spiel, z. B. !geo Japan",
-        "game": "Startet ein Spielwelt-Spiel mit dem aktuellen Stream-Spiel",
-        "gameTitle": "Startet ein Spielwelt-Spiel mit bestimmtem Spiel, z. B. !geo game \"Metroid Prime\"",
-        "rounds": "Führt einen beliebigen Spiel-Befehl mit N Runden aus, z. B. !geo Japan 3",
-        "stop": "Spielinitiator, Mods oder Streamer können stoppen",
-        "interval": "Stellt Zeit zwischen Hinweisen auf 30-300 Sekunden ein",
-        "duration": "Stellt Rundendauer auf 3-20 Minuten ein",
-        "configRegion": "Setzt Regionen wie Europe,Asia oder USA,Canada",
-        "configGame": "Setzt bevorzugte Spieltitel, kommagetrennt",
-        "pointsBase": "Setzt Basispunkte von 1-100",
-        "maxRounds": "Setzt maximale Runden von 1-10",
-        "clearLeaderboard": "Oder resetstats",
-        "report": "Meldet problematische Orte oder Hinweise",
+        "basic": "Startet ein weltweites Spiel mit realen Orten",
+        "region": "Startet ein Spiel in einer bestimmten Region (zum Beispiel: !geo Japan)",
+        "game": "Startet ein Spiel mit Orten aus dem aktuellen Stream-Spiel",
+        "gameTitle": "Startet ein Spiel mit einem bestimmten Spieltitel (zum Beispiel: !geo game \"Metroid Prime\")",
+        "rounds": "Führt ein Spiel mit einer festgelegten Rundenanzahl aus (zum Beispiel: !geo Japan 3)",
+        "stop": "Stoppt das Spiel (Starter, Moderatoren oder Broadcaster)",
+        "interval": "Legt die Verzögerung zwischen Hinweisen fest (30 bis 300 Sekunden)",
+        "duration": "Legt die Rundendauer fest (3 bis 20 Minuten)",
+        "configRegion": "Legt Standardregionen fest (zum Beispiel: Europe,Asia oder USA,Canada)",
+        "configGame": "Legt bevorzugte Spieltitel als kommagetrennte Liste fest",
+        "pointsBase": "Legt Basispunkte pro Runde fest (1 bis 100)",
+        "maxRounds": "Legt maximale Runden pro Spiel fest (1 bis 10)",
+        "clearLeaderboard": "Alias: !geo resetstats",
+        "report": "Meldet fehlerhafte Orte oder Hinweise",
         "regionCmd": "!geo <Region>",
         "commandRounds": "!geo <Befehl> N",
         "configRegionCmd": "!geo config region <Regionen>",
@@ -113,21 +171,21 @@
     },
     "riddle": {
       "name": "!riddle",
-      "description": "Startet oder verwaltet ein Rätselspiel. Rätsel können allgemein, über das aktuelle Stream-Spiel oder ein spezifisches Thema sein.",
+      "description": "Startet oder verwaltet ein Rätselspiel zu allgemeinen Themen, Stream-Spielen oder benutzerdefinierten Themen.",
       "usage": {
-        "basic": "Startet ein allgemeines Wissensrätsel",
-        "subject": "Beispiel: !riddle animals",
-        "rounds": "Beispiel: !riddle 3 für 3 allgemeine Runden",
-        "subjectRounds": "Beispiel: !riddle history 5",
-        "game": "Rätsel über das aktuelle Stream-Spiel",
-        "report": "Meldet problematische Rätsel",
-        "stop": "Spielinitiator, Mods oder Streamer können stoppen",
-        "questionTime": "Stellt Zeit pro Rätsel auf 15-120 Sekunden ein",
-        "pointsBase": "Setzt Basispunkte von 1-100",
-        "maxRounds": "Setzt maximale Runden von 1-20",
-        "keywordsLimit": "Setzt aktuelle auszuschließende Schlüsselwörter, z. B. 20-100",
-        "roundDelay": "Stellt Verzögerung zwischen Runden ein",
-        "clearLeaderboard": "Oder cleardata",
+        "basic": "Startet ein allgemeines Wissensrätselspiel",
+        "subject": "Startet ein Rätsel zu einem bestimmten Thema (zum Beispiel: !riddle animals)",
+        "rounds": "Startet ein Spiel mit einer festgelegten Rundenanzahl (zum Beispiel: !riddle 3)",
+        "subjectRounds": "Startet ein Themenspiel mit mehreren Runden (zum Beispiel: !riddle history 5)",
+        "game": "Startet ein Rätsel zum aktuellen Stream-Spiel",
+        "report": "Meldet fehlerhafte Rätsel",
+        "stop": "Stoppt das Spiel (Starter, Moderatoren oder Broadcaster)",
+        "questionTime": "Legt die Antwortzeit pro Rätsel fest (15 bis 120 Sekunden)",
+        "pointsBase": "Legt Basispunkte pro Rätsel fest (1 bis 100)",
+        "maxRounds": "Legt maximale Runden pro Spiel fest (1 bis 20)",
+        "keywordsLimit": "Legt die Anzahl auszuschließender kürzlicher Schlüsselwörter fest (zum Beispiel: 20 bis 100)",
+        "roundDelay": "Legt die Verzögerung zwischen Runden in Millisekunden fest",
+        "clearLeaderboard": "Alias: !riddle cleardata",
         "subjectCmd": "!riddle <Thema>",
         "roundsCmd": "!riddle <Runden>",
         "subjectRoundsCmd": "!riddle <Thema> <Runden>",
@@ -145,19 +203,19 @@
     },
     "trivia": {
       "name": "!trivia",
-      "description": "Startet oder verwaltet Wissensquiz mit Fragen zu verschiedenen Themen, einschließlich des aktuellen Stream-Spiels.",
+      "description": "Startet oder verwaltet Quizspiele mit Fragen zu verschiedenen Themen oder zum Stream-Spiel.",
       "usage": {
-        "basic": "Startet allgemeines Wissensquiz",
-        "topic": "Startet themenbezogenes Wissensquiz, z. B. !trivia science",
-        "game": "Startet Wissensquiz über das aktuelle Stream-Spiel",
-        "rounds": "Gibt Anzahl der Runden an, z. B. !trivia 3",
-        "topicRounds": "Beispiel: !trivia history 5",
-        "report": "Meldet problematische Fragen",
-        "stop": "Spielinitiator, Mods oder Streamer können stoppen",
-        "time": "Stellt Zeit pro Frage auf 10-120 Sekunden ein",
-        "pointsBase": "Setzt Basispunkte von 1-100",
-        "configTopic": "Setzt bevorzugte Themen, kommagetrennt",
-        "maxRounds": "Setzt maximale Runden von 1-10",
+        "basic": "Startet ein allgemeines Wissensquiz",
+        "topic": "Startet ein Quiz zu einem bestimmten Thema (zum Beispiel: !trivia science)",
+        "game": "Startet ein Quiz zum aktuellen Stream-Spiel",
+        "rounds": "Startet ein Spiel mit einer festgelegten Rundenanzahl (zum Beispiel: !trivia 3)",
+        "topicRounds": "Startet ein Themenspiel mit mehreren Runden (zum Beispiel: !trivia history 5)",
+        "report": "Meldet fehlerhafte Fragen",
+        "stop": "Stoppt das Spiel (Starter, Moderatoren oder Broadcaster)",
+        "time": "Legt die Antwortzeit pro Frage fest (10 bis 120 Sekunden)",
+        "pointsBase": "Legt Basispunkte pro Frage fest (1 bis 100)",
+        "configTopic": "Legt bevorzugte Themen als kommagetrennte Liste fest",
+        "maxRounds": "Legt maximale Runden pro Spiel fest (1 bis 10)",
         "topicCmd": "!trivia <Thema>",
         "roundsCmd": "!trivia <Runden>",
         "topicRoundsCmd": "!trivia <Thema> <Runden>",
@@ -173,235 +231,116 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Konfigurieren Sie den Bot so, dass er in einer bestimmten Sprache für den gesamten Kanal spricht.",
+      "description": "Legt die Standardsprache für Bot-Antworten im gesamten Kanal fest.",
       "usage": {
-        "status": "Überprüft aktuelle Sprache",
-        "off": "Setzt auf Englisch zurück",
-        "default": "Setzt auf Englisch zurück",
+        "status": "Zeigt die aktuelle Kanalsprache an",
+        "off": "Setzt die Kanalsprache auf Englisch zurück",
+        "default": "Setzt die Kanalsprache auf Englisch zurück",
         "langCmd": "!botlang <Sprache>"
       }
     },
     "auto": {
       "name": "!auto",
-      "description": "Konfigurieren Sie den Auto-Chat-Modus und Optionen.",
+      "description": "Konfiguriert automatisierte Chatnachrichten und Stream-Ereignis-Benachrichtigungen.",
       "usage": {
-        "status": "Zeigt aktuellen Auto-Chat-Modus, Häufigkeit und Kategorien",
+        "status": "Zeigt aktuellen Auto-Chat-Modus, Häufigkeit und aktive Kategorien",
         "modeCmd": "!auto <off|low|medium|high>",
-        "mode": "Legt die Auto-Chat-Frequenz fest (off deaktiviert nur periodische Nachrichten)",
+        "mode": "Legt die Auto-Chat-Häufigkeit fest (off deaktiviert nur periodische Nachrichten)",
         "greetingsCmd": "!auto config greetings:<on|off>",
-        "greetings": "Stream-Start/End-Begrüßungen aktivieren/deaktivieren",
-        "factsCmd": "!auto config facts:<on|off>",
-        "facts": "Fakten und Tipps aktivieren/deaktivieren",
-        "questionsCmd": "!auto config questions:<on|off>",
-        "questions": "Engagement-Fragen aktivieren/deaktivieren",
-        "adsCmd": "!auto config ads:<on|off>",
-        "ads": "Werbepauset-Benachrichtigungen aktivieren/deaktivieren",
+        "greetings": "Aktiviert oder deaktiviert Begrüßungen bei Stream-Start und -Ende",
         "followsCmd": "!auto config follows:<on|off>",
-        "follows": "Feierlichkeiten für neue Follower aktivieren/deaktivieren",
+        "follows": "Aktiviert oder deaktiviert Nachrichten für neue Follower",
         "subscriptionsCmd": "!auto config subscriptions:<on|off>",
-        "subscriptions": "Feierlichkeiten für Abonnements aktivieren/deaktivieren",
+        "subscriptions": "Aktiviert oder deaktiviert Nachrichten für neue Abonnements",
         "raidsCmd": "!auto config raids:<on|off>",
-        "raids": "Raid-Willkommensnachrichten aktivieren/deaktivieren"
+        "raids": "Aktiviert oder deaktiviert Willkommensnachrichten für eingehende Raids",
+        "factsCmd": "!auto config facts:<on|off>",
+        "facts": "Aktiviert oder deaktiviert automatisierte Fakten und Tipps",
+        "questionsCmd": "!auto config questions:<on|off>",
+        "questions": "Aktiviert oder deaktiviert automatisierte Zuschauerfragen",
+        "adsCmd": "!auto config ads:<on|off>",
+        "ads": "Aktiviert oder deaktiviert Benachrichtigungen vor Werbepausen"
       }
     },
     "disable": {
-      "description": "Deaktiviert einen Befehl in diesem Kanal.",
+      "description": "Deaktiviert einen Befehl für diesen Kanal.",
       "usage": {
         "lurk": "Deaktiviert den Befehl !lurk",
         "trivia": "Deaktiviert den Befehl !trivia"
       }
     },
     "enable": {
-      "description": "Aktiviert einen zuvor deaktivierten Befehl in diesem Kanal.",
+      "description": "Aktiviert einen zuvor deaktivierten Befehl für diesen Kanal.",
       "usage": {
         "trivia": "Aktiviert den Befehl !trivia"
       }
     },
     "ping": {
-      "description": "Überprüft, ob der Bot responsiv ist. Antwortet mit Pong!"
-    },
-    "followage": {
-      "name": "!followage",
-      "description": "Überprüfe, wie lange du oder ein anderer Benutzer dem Kanal folgst.",
-      "usage": {
-        "basic": "!followage",
-        "basicDesc": "Eigene Follow-Dauer anzeigen",
-        "userCmd": "!followage <Benutzername>",
-        "userDesc": "Follow-Dauer eines anderen Benutzers anzeigen"
-      }
-    },
-    "command": {
-      "name": "!command <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Erstellen, bearbeiten und verwalten Sie benutzerdefinierte Befehle für Ihren Kanal. Benutzerdefinierte Befehle können auch über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
-      "usage": {
-        "addText": "Erstellt einen neuen textbasierten Befehl",
-        "addAi": "Erstellt einen neuen KI-gestützten Befehl – ​​generiert bei jeder Verwendung der Eingabeaufforderung eine eindeutige Antwort",
-        "edit": "Aktualisiert die Antwort eines vorhandenen Befehls",
-        "remove": "Löscht einen Befehl",
-        "show": "Zeigt die Rohantwortvorlage und die aktuellen Einstellungen an",
-        "optionsPerms": "Legen Sie fest, wer den Befehl verwenden kann: jeder, Abonnent, VIP, Moderator oder Broadcaster",
-        "optionsCooldown": "Legen Sie eine Abklingzeit zwischen den Anwendungen fest (in Sekunden).",
-        "optionsType": "Schalten Sie einen vorhandenen Befehl zwischen Textmodus und AI-Modus um",
-        "addTextCmd": "!Befehl add <Name> <Antwort>",
-        "addAiCmd": "!command addai <name> <prompt>",
-        "editCmd": "!Befehl bearbeiten <Name> <Antwort>",
-        "removeCmd": "!Befehl <Name> entfernen",
-        "showCmd": "!command show <Name>",
-        "optionsPermsCmd": "!Befehlsoptionen <Name> Erlaubnis=<Stufe>",
-        "optionsCooldownCmd": "!Befehlsoptionen <Name> cooldown=<Sekunden>",
-        "optionsTypeCmd": "!Befehlsoptionen <name> type=<text|prompt>"
-      }
-    },
-    "timer": {
-      "name": "!timer <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Erstelle, bearbeite und verwalte automatisierte Chat-Timer. Timer können auch über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwaltet werden.</span>",
-      "usage": {
-        "addCmd": "!timer add <name> <intervall> <antwort>",
-        "add": "Erstellt einen neuen textbasierten Timer mit dem angegebenen Intervall in Minuten",
-        "addAiCmd": "!timer addai <name> <intervall> <prompt>",
-        "addAi": "Erstellt einen neuen KI-gesteuerten Timer mit dem angegebenen Intervall in Minuten",
-        "editCmd": "!timer edit <name> <antwort>",
-        "edit": "Aktualisiert die Antwort eines bestehenden Timers",
-        "intervalCmd": "!timer interval <name> <minuten>",
-        "interval": "Aktualisiert das Ausführungsintervall (Mindestminuten)",
-        "linesCmd": "!timer lines <name> <anzahl>",
-        "lines": "Aktualisiert die erforderlichen Mindest-Chat-Zeilen zwischen Ausführungen",
-        "enableCmd": "!timer enable <name>",
-        "enable": "Aktiviert einen pausierten Timer",
-        "disableCmd": "!timer disable <name>",
-        "disable": "Pausiert einen aktiven Timer",
-        "removeCmd": "!timer remove <name>",
-        "remove": "Löscht einen Timer",
-        "showCmd": "!timer show <name>",
-        "show": "Zeigt die aktuellen Einstellungen für einen bestimmten Timer an",
-        "listCmd": "!timer list",
-        "list": "Listet alle Timer für deinen Kanal auf"
-      }
+      "description": "Prüft, ob der Bot reagiert. Der Bot antwortet mit „Pong!“"
     }
   },
   "sidebar": {
     "generalCommands": "Allgemeine Befehle",
+    "customCommands": "Benutzerdefinierte Befehle",
     "games": "Spiele",
     "config": "Konfiguration",
-    "webDashboard": "Web-Schaltpult",
-    "customCommands": "Benutzerdefinierte Befehle",
+    "webDashboard": "Web Dashboard",
     "responseVariables": "Antwortvariablen",
     "dailyCheckIn": "Täglicher Check-In",
     "title": "WildcatSage",
     "toggleSidebar": "Seitenleiste umschalten"
   },
-  "webDashboard": {
-    "title": "Web-Schaltpult",
-    "intro": "Das ChatSage Web-Schaltpult bietet Streamern eine umfassende Schnittstelle, um den Bot in ihrem Kanal zu verwalten. Greifen Sie zu, indem Sie sich mit Ihrem Twitch-Konto anmelden.",
-    "featuresTitle": "Verfügbare Schaltpult-Funktionen",
-    "features": {
-      "botManagement": {
-        "title": "Bot-Verwaltung:",
-        "desc": "Fügen Sie ChatSage zu Ihrem Kanal hinzu oder entfernen Sie ihn"
-      },
-      "channelConfig": {
-        "title": "Kanaleinstellungen:",
-        "desc": "Auto-Chat-Einstellungen, Stream-Ereignis-Umschalter und Werbebenachrichtigungen konfigurieren"
-      },
-      "streamEvents": {
-        "title": "Stream-Ereignisse:",
-        "desc": "KI-generierte Begrüßungen, Verabschiedungen und Feierlichkeiten für Follower, Abonnements und Raids umschalten — funktioniert unabhängig vom Auto-Chat-Modus"
-      },
-      "commandControl": {
-        "title": "Befehlskontrolle:",
-        "desc": "Erstellen und verwalten Sie benutzerdefinierte Befehle und aktivieren/deaktivieren Sie integrierte Befehle"
-      },
-      "dailyCheckIn": {
-        "title": "Täglicher Check-In:",
-        "desc": "Richte eine Channel-Punkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-generierten Nachrichten ein"
-      }
-    },
-    "gettingStartedTitle": "Erste Schritte",
-    "steps": {
-      "visit": {
-        "title": "Besuchen Sie das Schaltpult:",
-        "desc": "Gehen Sie zu https://bot.wildcat.chat/"
-      },
-      "authorize": {
-        "title": "Genehmigen:",
-        "desc": "Klicken Sie auf \"Mit Twitch anmelden\" und gewähren Sie die erforderlichen Berechtigungen"
-      },
-      "addBot": {
-        "title": "Bot hinzufügen:",
-        "desc": "Verwenden Sie die Schaltfläche \"Bot zu meinem Kanal hinzufügen\", um ChatSage zu Ihrem Kanal einzuladen"
-      },
-      "configure": {
-        "title": "Konfigurieren:",
-        "desc": "Passen Sie die Einstellungen über die Schaltpult-Schnittstelle an"
-      },
-      "grantPerms": {
-        "title": "Fehlerbehebung:",
-        "desc": "Wenn der Bot nicht reagiert, geben Sie /mod WildcatSage in Ihrem Twitch-Chat ein, um den Moderatorstatus zu erteilen"
-      }
-    },
-    "oauthTitle": "OAuth-Berechtigungen",
-    "oauthIntro": "Das Schaltpult erfordert die folgenden Twitch OAuth-Bereiche:",
-    "oauth": {
-      "readEmail": "Zugriff auf Ihre E-Mail-Adresse zur Kontoidentifikation",
-      "readAds": "Werbeunterbrechungsbenachrichtigungen für Ihren Kanal empfangen",
-      "manageModerators": "Dem Bot automatisch Moderatorstatus gewähren",
-      "readFollowers": "Zugriff auf Follower-Informationen für Befehle wie !followage",
-      "manageRedemptions": "Channel-Punkte-Belohnungen erstellen und verwalten für Funktionen wie den täglichen Check-In"
-    },
-    "noteLabel": "Hinweis:",
-    "noteText": "ChatSage ist derzeit nur auf Einladung verfügbar. Wenn Sie Ihren Kanal im Schaltpult nicht sehen, beantragen Sie Zugriff über das Kontaktformular."
-  },
   "responseVariables": {
     "title": "Antwortvariablen",
-    "intro1": "Wenn Sie einen benutzerdefinierten Befehl erstellen, können Sie <strong>Antwortvariablen</strong> verwenden, um dynamische Inhalte einzufügen. Schreiben Sie sie in Ihre Antwort im Format <code>$(variable)</code> und sie werden automatisch ersetzt, wenn der Befehl verwendet wird.",
+    "intro1": "Du kannst <strong>Antwortvariablen</strong> verwenden, um dynamischen Text in benutzerdefinierte Befehle einzufügen. Füge <code>$(variable)</code> in deine Befehlsantwort ein. Der Bot ersetzt die Variable, wenn ein Benutzer den Befehl ausführt.",
     "table": {
       "variable": "Variable",
-      "whatItDoes": "Was es bewirkt",
+      "whatItDoes": "Funktion",
       "exampleOutput": "Beispielausgabe"
     },
     "variables": {
       "user": {
-        "desc": "Name der Person, die den Befehl verwendet hat"
+        "desc": "Benutzername der Person, die den Befehl ausgeführt hat"
       },
       "channel": {
         "desc": "Kanalname"
       },
       "args": {
         "desc": "Der gesamte Text nach dem Befehlsnamen als eine Zeichenfolge",
-        "example": "Wenn jemand <span class=\"inline-code\">!shout hello world</span> eingibt, ist $(args) = <strong>hello world</strong>"
+        "example": "Wenn ein Benutzer <span class=\"inline-code\">!shout hello world</span> ausführt, ist $(args) = <strong>hello world</strong>"
       },
       "numbered": {
-        "desc": "Ein einzelnes Wort nach Position – $(1) ist das erste Wort, $(2) ist das zweite und so weiter",
-        "example": "Wenn jemand <span class=\"inline-code\">!shout hello world</span> eingibt, ist $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
+        "desc": "Ein einzelnes Wort nach Position: $(1) ist das erste Wort, $(2) ist das zweite Wort",
+        "example": "Wenn ein Benutzer <span class=\"inline-code\">!shout hello world</span> ausführt, ist $(1) = <strong>hello</strong>, $(2) = <strong>world</strong>"
       },
       "count": {
-        "desc": "Wie oft wurde dieser Befehl verwendet?"
+        "desc": "Gesamtzahl der Ausführungen dieses Befehls"
       },
       "random": {
         "desc": "Eine Zufallszahl zwischen X und Y",
-        "example": "17 aus <span class=\"inline-code\">$(zufällig 1-20)</span>"
+        "example": "17 aus <span class=\"inline-code\">$(random 1-20)</span>"
       },
       "uptime": {
-        "desc": "Wie lange ist der Stream schon live?",
+        "desc": "Aktuelle Stream-Laufzeit",
         "example": "2h 30m"
       },
       "game": {
-        "desc": "Das Spiel, das gerade gespielt wird",
+        "desc": "Aktueller Stream-Spieltitel",
         "example": "Metroid Prime"
       },
       "followage": {
-        "desc": "Wie lange der Benutzer dem Kanal folgt",
+        "desc": "Wie lange der Benutzer dem Kanal bereits folgt",
         "example": "2 Jahre 3 Monate"
       },
       "checkinCount": {
-        "desc": "Die laufende tägliche Check-In-Anzahl des Zuschauers (nur Channel-Punkte-Belohnungen)"
+        "desc": "Gesamtzahl der täglichen Check-Ins des Zuschauers (nur Kanalpunkte-Belohnungen)"
       }
     },
     "examplesTitle": "Beispiele",
-    "examplesIntro": "Hier sind einige Beispielbefehle, die Sie erstellen können:",
+    "examplesIntro": "Hier sind Beispiele für benutzerdefinierte Befehle:",
     "examplesTable": {
-      "command": "Befehl zum Eingeben im Chat",
-      "botSays": "Was der Bot sagt"
+      "command": "Chat-Befehl",
+      "botSays": "Bot-Antwort"
     },
     "examples": {
       "hi": {
@@ -409,19 +348,19 @@
         "result": "Hallo WildcatGamer! Willkommen!"
       },
       "roll": {
-        "command": "<span class=\"inline-code\">!command add roll $(user) hat einen $(random 1-20) gewürfelt!</span>",
+        "command": "<span class=\"inline-code\">!command add roll $(user) hat eine $(random 1-20) gewürfelt!</span>",
         "result": "WildcatGamer hat eine 17 gewürfelt!"
       },
       "live": {
         "command": "<span class=\"inline-code\">!command add live Wir sind seit $(uptime) live und spielen $(game)!</span>",
-        "result": "Wir sind seit 2 Stunden und 30 Minuten live und spielen Metroid Prime!"
+        "result": "Wir sind seit 2h 30m live und spielen Metroid Prime!"
       },
       "hug": {
-        "command": "<span class=\"inline-code\">!command add umarmung $(user) umarmt $(1)!</span>",
+        "command": "<span class=\"inline-code\">!command add hug $(user) umarmt $(1)!</span>",
         "result": "WildcatGamer umarmt WildcatStreamer!"
       },
       "uses": {
-        "command": "<span class=\"inline-code\">!command add verwendet Dieser Befehl wurde $(count) Mal verwendet!</span>",
+        "command": "<span class=\"inline-code\">!command add uses Dieser Befehl wurde $(count) Mal verwendet!</span>",
         "result": "Dieser Befehl wurde 42 Mal verwendet!"
       }
     },
@@ -429,52 +368,113 @@
   },
   "aiCommands": {
     "title": "KI-Befehle",
-    "intro1": "KI-Befehle verwenden eine Eingabeaufforderung anstelle einer festen Antwort. Der Bot sendet die Eingabeaufforderung an ein KI-Modell und gibt jedes Mal eine eindeutige Antwort zurück. Sie können Antwortvariablen auch in Eingabeaufforderungen verwenden!",
-    "intro2": "Der einfachste Weg, KI-Befehle zu erstellen, ist über das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>. Klicken Sie auf <strong>+ Hinzufügen</strong>, schalten Sie den <strong>KI-Modus</strong> ein und schreiben Sie Ihre Eingabeaufforderung. Sie können sie auch im Chat mit <code>!command addai <name> <prompt></code> erstellen.",
+    "intro1": "KI-Befehle verwenden einen Prompt anstelle einer festen Textantwort. Der Bot sendet den Prompt an ein KI-Modell, um jedes Mal eine einzigartige Antwort zu generieren. Du kannst Antwortvariablen auch in Prompts verwenden.",
+    "intro2": "Du kannst KI-Befehle im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a> erstellen. Wähle <strong>+ Hinzufügen</strong>, aktiviere <strong>KI-Modus</strong> und gib deinen Prompt ein. Du kannst KI-Befehle auch im Chat mit <code>!command addai &lt;Name&gt; &lt;Prompt&gt;</code> erstellen.",
     "table": {
-      "prompt": "KI-Eingabeaufforderung",
-      "whatHappens": "Was geschieht",
+      "prompt": "KI-Prompt",
+      "whatHappens": "Bot-Antwort",
       "caption": "Beispiele für KI-Befehle"
     },
     "examples": {
       "vibe": {
-        "prompt": "Name: <span class=\"inline-code\">Vibe</span><br>Eingabeaufforderung: <span class=\"inline-code\">Sagen Sie $(user) in einem Satz, welche Art von Vibe „$(args)“ ausstrahlt.</span>",
-        "result": "Wenn jemand <span class=\"inline-code\">!vibe I just eated a ganze Pizza</span> eingibt, antwortet die KI möglicherweise: <em>„WildcatGamer, deine Nachricht strahlt zutiefst respektable Goblin-Energie aus.“</em> – jedes Mal anders!"
+        "prompt": "Name: <span class=\"inline-code\">vibe</span><br>Prompt: <span class=\"inline-code\">Sage $(user) in einem Satz, welchen Vibe \"$(args)\" ausstrahlt.</span>",
+        "result": "Wenn ein Benutzer <span class=\"inline-code\">!vibe I just ate an entire pizza</span> eingibt, kann die KI antworten: <em>\"WildcatGamer deine Nachricht strahlt zutiefst respektable Goblin-Energie aus.\"</em> Antworten variieren bei jeder Verwendung."
       },
       "hug": {
-        "prompt": "Name: <span class=\"inline-code\">Umarmung</span><br>Eingabeaufforderung: <span class=\"inline-code\">Schreiben Sie eine kurze, lustige Umarmungsnachricht von $(user) an $(1).</span>",
-        "result": "Wenn jemand <span class=\"inline-code\">!hug WildcatStreamer</span> eingibt, antwortet die KI möglicherweise: <em>„WildcatGamer umarmt WildcatStreamer so warm, dass ein Gletscher schmelzen könnte.“</em>"
+        "prompt": "Name: <span class=\"inline-code\">hug</span><br>Prompt: <span class=\"inline-code\">Schreibe eine kurze, lustige Umarmungsnachricht von $(user) an $(1).</span>",
+        "result": "Wenn ein Benutzer <span class=\"inline-code\">!hug WildcatStreamer</span> eingibt, kann die KI antworten: <em>\"WildcatGamer umarmt WildcatStreamer so herzlich, dass es einen Gletscher schmelzen könnte.\"</em>"
       },
       "fortune": {
-        "prompt": "Name: <span class=\"inline-code\">Glück</span><br>Eingabeaufforderung: <span class=\"inline-code\">Geben Sie $(user) eine kurze Glückskeks-Nachricht.</span>",
-        "result": "Jedes Mal ein einzigartiges Glück: <em>„WildcatGamer, heute findest du einen seltenen Gegenstand an einem unerwarteten Ort.“</em>"
+        "prompt": "Name: <span class=\"inline-code\">fortune</span><br>Prompt: <span class=\"inline-code\">Gib $(user) eine kurze Glückskeks-Nachricht.</span>",
+        "result": "Ein einzigartiger Spruch bei jeder Verwendung: <em>\"WildcatGamer, heute wirst du einen seltenen Gegenstand an einem unerwarteten Ort finden.\"</em>"
       }
     },
     "tipLabel": "Tipp:",
-    "tipText": "Sie können jeden vorhandenen Textbefehl in den KI-Modus konvertieren, indem Sie ihn im Dashboard bearbeiten und den <strong>KI-Modus</strong> aktivieren, oder im Chat mit <span class=\"inline-code\">!Befehlsoptionen <name> type=prompt</span>. Wechseln Sie zurück mit <span class=\"inline-code\">type=text</span>."
+    "tipText": "Du kannst einen Textbefehl im Dashboard in den KI-Modus umwandeln, indem du <strong>KI-Modus</strong> aktivierst. Du kannst im Chat auch <span class=\"inline-code\">!command options &lt;Name&gt; type=prompt</span> ausführen. Wechsle mit <span class=\"inline-code\">type=text</span> zurück."
+  },
+  "webDashboard": {
+    "title": "Web Dashboard",
+    "intro": "Das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Web Dashboard</a> ermöglicht es Streamern, Bot-Einstellungen für ihren Kanal zu konfigurieren. Melde dich mit deinem Twitch-Konto an, um auf das Dashboard zuzugreifen.",
+    "featuresTitle": "Dashboard-Funktionen",
+    "features": {
+      "botManagement": {
+        "title": "Bot-Verwaltung:",
+        "desc": "Füge WildcatSage zu deinem Kanal hinzu oder entferne den Bot."
+      },
+      "channelConfig": {
+        "title": "Kanaleinstellungen:",
+        "desc": "Konfiguriere Auto-Chat-Häufigkeit, Stream-Ereignis-Nachrichten und Werbebenachrichtigungen."
+      },
+      "streamEvents": {
+        "title": "Stream-Ereignisse:",
+        "desc": "Aktiviere KI-Begrüßungen, Verabschiedungen und Feiernachrichten für neue Follower, Abonnenten und eingehende Raids."
+      },
+      "commandControl": {
+        "title": "Befehlsverwaltung:",
+        "desc": "Erstelle benutzerdefinierte Befehle und aktiviere oder deaktiviere integrierte Befehle."
+      },
+      "dailyCheckIn": {
+        "title": "Täglicher Check-In:",
+        "desc": "Richte eine Kanalpunkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-Antworten ein."
+      }
+    },
+    "gettingStartedTitle": "Erste Schritte",
+    "steps": {
+      "visit": {
+        "title": "Dashboard aufrufen:",
+        "desc": "Gehe zu <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">https://bot.wildcat.chat/</a>."
+      },
+      "authorize": {
+        "title": "Autorisieren:",
+        "desc": "Wähle \"Mit Twitch anmelden\" und bestätige die erforderlichen Berechtigungen."
+      },
+      "addBot": {
+        "title": "Bot hinzufügen:",
+        "desc": "Wähle \"Bot zu meinem Kanal hinzufügen\", um WildcatSage zu deinem Kanal einzuladen."
+      },
+      "configure": {
+        "title": "Konfigurieren:",
+        "desc": "Passe die Bot-Einstellungen im Dashboard an."
+      },
+      "grantPerms": {
+        "title": "Fehlerbehebung:",
+        "desc": "Wenn der Bot nicht reagiert, gib <code>/mod WildcatSage</code> im Twitch-Chat ein, um Moderatorrechte zu erteilen."
+      }
+    },
+    "oauthTitle": "OAuth-Berechtigungen",
+    "oauthIntro": "Das Dashboard benötigt diese Twitch-OAuth-Berechtigungen:",
+    "oauth": {
+      "readEmail": "Liest deine E-Mail-Adresse zur Kontoidentifikation.",
+      "readAds": "Empfängt Werbebenachrichtigungen für deinen Kanal.",
+      "manageModerators": "Erteilt dem Bot Moderatorrechte.",
+      "readFollowers": "Liest Follower-Daten für Befehle wie !followage.",
+      "manageRedemptions": "Erstellt und verwaltet Kanalpunkte-Belohnungen für Funktionen wie den täglichen Check-In."
+    },
+    "noteLabel": "Hinweis:",
+    "noteText": "WildcatSage ist derzeit nur auf Einladung verfügbar. Wenn dein Kanal nicht im Dashboard angezeigt wird, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">fordere Zugang über das Kontaktformular an</a>."
   },
   "dailyCheckIn": {
     "title": "Täglicher Check-In",
-    "intro": "Der tägliche Check-In ist eine Channel-Punkte-Belohnung, mit der Zuschauer sich einmal pro Stream einchecken und ihren Streak verfolgen können. Die Belohnung wird automatisch über das Dashboard erstellt und verwaltet — kein manuelles Setup auf Twitch erforderlich.",
+    "intro": "Der tägliche Check-In ist eine Kanalpunkte-Belohnung. Zuschauer checken sich einmal pro Stream ein, um ihren Streak zu verfolgen. Das Dashboard erstellt und verwaltet die Belohnung auf Twitch.",
     "setupTitle": "Einrichtung",
     "steps": {
-      "open": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">WildcatSage Dashboard</a> und scrolle zum Abschnitt <strong>Täglicher Check-In</strong>.",
-      "enable": "Aktiviere den <strong>Einschalten</strong>-Schalter und lege einen Belohnungstitel und Channel-Punkte-Kosten fest.",
-      "template": "Schreibe eine Antwortvorlage mit Variablen wie <span class=\"inline-code\">$(user)</span> und <span class=\"inline-code\">$(checkin_count)</span>, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Nachrichten bei jedem Check-In.",
-      "save": "Klicke auf <strong>Speichern</strong>. Die Belohnung wird automatisch auf Twitch erstellt."
+      "open": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> und gehe zum Abschnitt <strong>Täglicher Check-In</strong>.",
+      "enable": "Aktiviere den Schalter und gib einen Belohnungstitel und Kanalpunkte-Kosten ein.",
+      "template": "Gib eine Antwortvorlage mit Variablen wie <span class=\"inline-code\">$(user)</span> und <span class=\"inline-code\">$(checkin_count)</span> ein, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Antworten.",
+      "save": "Wähle <strong>Speichern</strong>. Der Bot erstellt die Belohnung auf Twitch."
     },
     "variablesTitle": "Verfügbare Variablen",
     "variables": {
       "user": "Anzeigename des Zuschauers, der eingecheckt hat",
-      "checkinCount": "Die laufende Check-In-Gesamtzahl des Zuschauers",
+      "checkinCount": "Gesamtzahl der Check-Ins des Zuschauers",
       "channel": "Kanalname"
     },
     "exampleTitle": "Beispiele",
     "exampleTemplate": "<strong>Vorlage:</strong> <code>$(user) hat eingecheckt! Tag #$(checkin_count) 🎉</code>",
     "exampleOutput": "<strong>Ausgabe:</strong> <em>WildcatGamer hat eingecheckt! Tag #14 🎉</em>",
     "requirementLabel": "Voraussetzung:",
-    "requirementText": "Twitch-Affiliate- oder Partner-Status ist erforderlich, um Channel-Punkte-Belohnungen zu erstellen.",
-    "aiExamplePrompt": "<strong>KI-Modus Prompt:</strong> <code>Schreibe eine lustige, kurze Glückwunschnachricht für $(user) zum Check-In Nummer $(checkin_count).</code>",
-    "aiExampleOutput": "<strong>Ausgabe:</strong> <em>\"WildcatGamer, 14 Tage am Stück? Du bist on fire! Bei dem Tempo überlebst du die Sonne. ☀️\"</em> — jedes Mal anders!"
+    "requirementText": "Du benötigst den Twitch-Affiliate- oder Partner-Status, um Kanalpunkte-Belohnungen zu erstellen.",
+    "aiExamplePrompt": "<strong>KI-Modus Prompt:</strong> <code>Schreibe eine kurze, lustige Glückwunschnachricht für $(user) zum Check-In Nummer $(checkin_count).</code>",
+    "aiExampleOutput": "<strong>Ausgabe:</strong> <em>\"WildcatGamer, 14 Tage am Stück? Du bist on fire! Bei dem Tempo überlebst du die Sonne. ☀️\"</em> — Antworten variieren bei jeder Verwendung."
   }
 }
