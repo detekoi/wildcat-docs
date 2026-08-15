@@ -92,33 +92,19 @@ th {
   border-bottom: 1px solid var(--color-grid-line);
 }
 
-/* Code blocks in tables */
-code {
-  display: block;
-  margin: 4px 0;
+/* Code elements & inline code spans */
+code,
+.inline-code {
+  display: inline-block;
+  vertical-align: middle;
   background-color: var(--color-card-bg);
   border: 1px solid var(--color-grid-line);
   padding: 2px 6px;
   border-radius: 0;
   font-family: var(--font-code);
-  font-size: 1em;
+  font-size: 0.95em;
   color: var(--color-text);
-}
-
-#response-variables p code {
-  display: inline;
   margin: 0;
-}
-
-.inline-code {
-  font-family: var(--font-code);
-  background-color: var(--color-card-bg);
-  border: 1px solid var(--color-grid-line);
-  padding: 0.2em 0.4em;
-  border-radius: 0;
-  font-size: 0.9em;
-  display: inline-block;
-  color: var(--color-text);
 }
 
 /* Permission badges.
@@ -139,6 +125,8 @@ code {
   margin-left: 6px;
   vertical-align: middle;
   letter-spacing: 0.5px;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 /* Badge that precedes the command rather than following it */
@@ -192,6 +180,28 @@ code {
 
 .dropdown-details td {
   border-bottom: 1px solid var(--color-border);
+}
+
+.dropdown-details .usage-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin: 6px 0;
+}
+
+.dropdown-details ul li,
+.dropdown-details ol li {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.dropdown-details ul li .mod-badge,
+.dropdown-details ol li .mod-badge,
+.dropdown-details .usage-line .mod-badge {
+  margin-left: 0;
+  margin-right: 6px;
+  vertical-align: middle;
 }
 
 tr:last-child:not(.dropdown-details) td {

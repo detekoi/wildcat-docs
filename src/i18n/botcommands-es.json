@@ -462,8 +462,8 @@
         "desc": "Cambia los ajustes del bot en el panel."
       },
       "grantPerms": {
-        "title": "Solución de problemas:",
-        "desc": "Si el bot no responde, escribe <code>/mod WildcatSage</code> en el chat de Twitch para otorgar permisos de moderador."
+        "title": "Resolución de problemas:",
+        "desc": "Si el bot no responde, escribe <span class=\"inline-code\">/mod WildcatSage</span> en el chat de Twitch para otorgar permisos de moderador."
       }
     },
     "oauthTitle": "Permisos OAuth",

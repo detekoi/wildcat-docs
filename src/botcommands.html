@@ -44,7 +44,9 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-ask" hidden>
             <td colspan="2">
-                <code data-i18n-cmd="commands.ask.usage.question">!ask &lt;question&gt;</code>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.ask.usage.question">!ask &lt;question&gt;</code>
+                </div>
                 <div style="margin-top: 8px;">
                     <strong>Features:</strong>
                     <ul style="margin: 4px 0 0 16px; padding-left: 0;">
@@ -65,7 +67,9 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-search" hidden>
             <td colspan="2">
-                <code data-i18n-cmd="commands.search.usage.query">!search &lt;query&gt;</code>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.search.usage.query">!search &lt;query&gt;</code>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -79,12 +83,22 @@ extraScripts:
             <td colspan="2">
                 <div style="margin-bottom: 8px;">
                     <strong>Modes:</strong>
-                    <ul style="margin: 4px 0 0 16px; padding-left: 0;">
-                        <li><code>!game</code> - Shows current game information and facts.</li>
-                        <li><code>!game analyze</code> - Uses AI to inspect stream visuals and describe gameplay.</li>
-                        <li><code>!game &lt;question&gt;</code> - Answers questions about the current game.</li>
-                        <li><code>!game analyze &lt;question&gt;</code> - Inspects stream visuals and answers your question.</li>
-                    </ul>
+                    <div class="usage-line">
+                        <code>!game</code>
+                        <span>- Shows current game information and facts.</span>
+                    </div>
+                    <div class="usage-line">
+                        <code>!game analyze</code>
+                        <span>- Uses AI to inspect stream visuals and describe gameplay.</span>
+                    </div>
+                    <div class="usage-line">
+                        <code>!game &lt;question&gt;</code>
+                        <span>- Answers questions about the current game.</span>
+                    </div>
+                    <div class="usage-line">
+                        <code>!game analyze &lt;question&gt;</code>
+                        <span>- Inspects stream visuals and answers your question.</span>
+                    </div>
                 </div>
                 <div style="margin-top: 8px;">
                     <strong>Image Analysis Features:</strong>
@@ -106,14 +120,24 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-translate" hidden>
             <td colspan="2">
-                <code data-i18n-cmd="commands.translate.usage.lang">!translate &lt;lang&gt;</code>
-                <code>!translate &lt;stop&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.translate.usage.modUser">!translate &lt;lang|stop&gt; [user]</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!translate [user] &lt;lang|stop&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.translate.usage.stopAll">!translate stop all</code> <span
-                    data-i18n="commands.translate.usage.stopAllDesc">Stops all active translations in the channel</span>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.translate.usage.lang">!translate &lt;lang&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <code>!translate &lt;stop&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.translate.usage.modUser">!translate &lt;lang|stop&gt; [user]</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!translate [user] &lt;lang|stop&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.translate.usage.stopAll">!translate stop all</code>
+                    <span data-i18n="commands.translate.usage.stopAllDesc">Stops all active translations in the channel</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -124,7 +148,9 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-help" hidden>
             <td colspan="2">
-                <code data-i18n-cmd="commands.help.usage.basic">!help or !commands</code>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.help.usage.basic">!help or !commands</code>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -136,7 +162,9 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-lurk" hidden>
             <td colspan="2">
-                <code>!lurk [your reason for lurking]</code>
+                <div class="usage-line">
+                    <code>!lurk [your reason for lurking]</code>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -147,24 +175,40 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-quote" hidden>
             <td colspan="2">
-                <code data-i18n-cmd="commands.quote.usage.random">!quote</code> <span
-                    data-i18n="commands.quote.usage.randomDesc">Shows a random quote</span>
-                <code data-i18n-cmd="commands.quote.usage.id">!quote &lt;id&gt;</code> <span
-                    data-i18n="commands.quote.usage.idDesc">Shows a quote by ID number (for example: !quote 12)</span>
-                <code data-i18n-cmd="commands.quote.usage.last">!quote last</code> <span
-                    data-i18n="commands.quote.usage.lastDesc">Shows the most recent quote</span>
-                <code data-i18n-cmd="commands.quote.usage.search">!quote &lt;search term&gt;</code> <span
-                    data-i18n="commands.quote.usage.searchDesc">Searches quotes by text or author (for example: !quote parfait)</span>
-                <code data-i18n-cmd="commands.quote.usage.searchExplicit">!quote search &lt;term&gt;</code>
-                <span data-i18n="commands.quote.usage.searchExplicitDesc">Explicit search command</span>
-                <code data-i18n-cmd="commands.quote.usage.add">!quote add &lt;text [- author]&gt;</code> <span
-                    data-i18n="commands.quote.usage.addDesc">Adds a new quote. Add an author after " - " (for example: !quote add "hello world - parfait")</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.quote.usage.delete">!quote delete &lt;id&gt;</code> <span
-                    data-i18n="commands.quote.usage.deleteDesc">Deletes a quote (moderators and broadcaster only)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.quote.usage.edit">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code>
-                <span data-i18n="commands.quote.usage.editDesc">Edits a quote (moderators and broadcaster only)</span>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.quote.usage.random">!quote</code>
+                    <span data-i18n="commands.quote.usage.randomDesc">Shows a random quote</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.quote.usage.id">!quote &lt;id&gt;</code>
+                    <span data-i18n="commands.quote.usage.idDesc">Shows a quote by ID number (for example: !quote 12)</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.quote.usage.last">!quote last</code>
+                    <span data-i18n="commands.quote.usage.lastDesc">Shows the most recent quote</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.quote.usage.search">!quote &lt;search term&gt;</code>
+                    <span data-i18n="commands.quote.usage.searchDesc">Searches quotes by text or author (for example: !quote parfait)</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.quote.usage.searchExplicit">!quote search &lt;term&gt;</code>
+                    <span data-i18n="commands.quote.usage.searchExplicitDesc">Explicit search command</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.quote.usage.add">!quote add &lt;text [- author]&gt;</code>
+                    <span data-i18n="commands.quote.usage.addDesc">Adds a new quote. Add an author after " - " (for example: !quote add "hello world - parfait")</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.quote.usage.delete">!quote delete &lt;id&gt;</code>
+                    <span data-i18n="commands.quote.usage.deleteDesc">Deletes a quote (moderators and broadcaster only)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.quote.usage.edit">!quote edit &lt;id&gt; &lt;text [- author]&gt;</code>
+                    <span data-i18n="commands.quote.usage.editDesc">Edits a quote (moderators and broadcaster only)</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -176,11 +220,14 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-followage" hidden>
             <td colspan="2">
-                <code data-i18n-cmd="commands.followage.usage.basic">!followage</code> <span
-                    data-i18n="commands.followage.usage.basicDesc">Shows your own follow time</span>
-                <code
-                    data-i18n-cmd="commands.followage.usage.userCmd">!followage &lt;username&gt;</code>
-                <span data-i18n="commands.followage.usage.userDesc">Shows another user's follow time</span>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.followage.usage.basic">!followage</code>
+                    <span data-i18n="commands.followage.usage.basicDesc">Shows your own follow time</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.followage.usage.userCmd">!followage &lt;username&gt;</code>
+                    <span data-i18n="commands.followage.usage.userDesc">Shows another user's follow time</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -197,30 +244,46 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-command" hidden>
             <td colspan="2">
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.addTextCmd">!command add &lt;name&gt; &lt;response&gt;</code>
-                <span data-i18n="commands.command.usage.addText">Creates a new text command</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.addAiCmd">!command addai &lt;name&gt; &lt;prompt&gt;</code>
-                <span data-i18n="commands.command.usage.addAi">Creates a new AI command that generates a unique response from a prompt</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.editCmd">!command edit &lt;name&gt; &lt;response&gt;</code>
-                <span data-i18n="commands.command.usage.edit">Updates a command response</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.removeCmd">!command remove &lt;name&gt;</code>
-                <span data-i18n="commands.command.usage.remove">Deletes a command</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.showCmd">!command show &lt;name&gt;</code>
-                <span data-i18n="commands.command.usage.show">Shows the response template and settings for a command</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.optionsPermsCmd">!command options &lt;name&gt; permission=&lt;level&gt;</code>
-                <span data-i18n="commands.command.usage.optionsPerms">Sets required permission: everyone, subscriber, vip, moderator, or broadcaster</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.optionsCooldownCmd">!command options &lt;name&gt; cooldown=&lt;seconds&gt;</code>
-                <span data-i18n="commands.command.usage.optionsCooldown">Sets a cooldown between uses in seconds</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.command.usage.optionsTypeCmd">!command options &lt;name&gt; type=&lt;text|prompt&gt;</code>
-                <span data-i18n="commands.command.usage.optionsType">Switches a command between text mode and AI mode</span>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.addTextCmd">!command add &lt;name&gt; &lt;response&gt;</code>
+                    <span data-i18n="commands.command.usage.addText">Creates a new text command</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.addAiCmd">!command addai &lt;name&gt; &lt;prompt&gt;</code>
+                    <span data-i18n="commands.command.usage.addAi">Creates a new AI command that generates a unique response from a prompt</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.editCmd">!command edit &lt;name&gt; &lt;response&gt;</code>
+                    <span data-i18n="commands.command.usage.edit">Updates a command response</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.removeCmd">!command remove &lt;name&gt;</code>
+                    <span data-i18n="commands.command.usage.remove">Deletes a command</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.showCmd">!command show &lt;name&gt;</code>
+                    <span data-i18n="commands.command.usage.show">Shows the response template and settings for a command</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.optionsPermsCmd">!command options &lt;name&gt; permission=&lt;level&gt;</code>
+                    <span data-i18n="commands.command.usage.optionsPerms">Sets required permission: everyone, subscriber, vip, moderator, or broadcaster</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.optionsCooldownCmd">!command options &lt;name&gt; cooldown=&lt;seconds&gt;</code>
+                    <span data-i18n="commands.command.usage.optionsCooldown">Sets a cooldown between uses in seconds</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.command.usage.optionsTypeCmd">!command options &lt;name&gt; type=&lt;text|prompt&gt;</code>
+                    <span data-i18n="commands.command.usage.optionsType">Switches a command between text mode and AI mode</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -231,26 +294,46 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-timer" hidden>
             <td colspan="2">
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addCmd">!timer add &lt;name&gt; &lt;interval&gt; &lt;response&gt;</code>
-                <span data-i18n="commands.timer.usage.add">Creates a new text timer with the given interval in minutes</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addAiCmd">!timer addai &lt;name&gt; &lt;interval&gt; &lt;prompt&gt;</code>
-                <span data-i18n="commands.timer.usage.addAi">Creates a new AI timer with the given interval in minutes</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.editCmd">!timer edit &lt;name&gt; &lt;response&gt;</code>
-                <span data-i18n="commands.timer.usage.edit">Updates a timer response</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.intervalCmd">!timer interval &lt;name&gt; &lt;minutes&gt;</code>
-                <span data-i18n="commands.timer.usage.interval">Sets the minimum interval in minutes between timer messages</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.linesCmd">!timer lines &lt;name&gt; &lt;number&gt;</code>
-                <span data-i18n="commands.timer.usage.lines">Sets the minimum number of chat lines between timer messages</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.enableCmd">!timer enable &lt;name&gt;</code>
-                <span data-i18n="commands.timer.usage.enable">Enables a paused timer</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.disableCmd">!timer disable &lt;name&gt;</code>
-                <span data-i18n="commands.timer.usage.disable">Pauses an active timer</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.removeCmd">!timer remove &lt;name&gt;</code>
-                <span data-i18n="commands.timer.usage.remove">Deletes a timer</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.showCmd">!timer show &lt;name&gt;</code>
-                <span data-i18n="commands.timer.usage.show">Shows the settings for a specific timer</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.listCmd">!timer list</code>
-                <span data-i18n="commands.timer.usage.list">Shows all timers for the channel</span>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addCmd">!timer add &lt;name&gt; &lt;interval&gt; &lt;response&gt;</code>
+                    <span data-i18n="commands.timer.usage.add">Creates a new text timer with the given interval in minutes</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addAiCmd">!timer addai &lt;name&gt; &lt;interval&gt; &lt;prompt&gt;</code>
+                    <span data-i18n="commands.timer.usage.addAi">Creates a new AI timer with the given interval in minutes</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.editCmd">!timer edit &lt;name&gt; &lt;response&gt;</code>
+                    <span data-i18n="commands.timer.usage.edit">Updates a timer response</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.intervalCmd">!timer interval &lt;name&gt; &lt;minutes&gt;</code>
+                    <span data-i18n="commands.timer.usage.interval">Sets the minimum interval in minutes between timer messages</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.linesCmd">!timer lines &lt;name&gt; &lt;number&gt;</code>
+                    <span data-i18n="commands.timer.usage.lines">Sets the minimum number of chat lines between timer messages</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.enableCmd">!timer enable &lt;name&gt;</code>
+                    <span data-i18n="commands.timer.usage.enable">Enables a paused timer</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.disableCmd">!timer disable &lt;name&gt;</code>
+                    <span data-i18n="commands.timer.usage.disable">Pauses an active timer</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.removeCmd">!timer remove &lt;name&gt;</code>
+                    <span data-i18n="commands.timer.usage.remove">Deletes a timer</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.showCmd">!timer show &lt;name&gt;</code>
+                    <span data-i18n="commands.timer.usage.show">Shows the settings for a specific timer</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.listCmd">!timer list</code>
+                    <span data-i18n="commands.timer.usage.list">Shows all timers for the channel</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -267,52 +350,94 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-geo" hidden>
             <td colspan="2">
-                <code>!geo</code> <span data-i18n="commands.geo.usage.basic">Starts a real-world game with locations across the world</span>
-                <code data-i18n-cmd="commands.geo.usage.regionCmd">!geo &lt;region&gt;</code> <span
-                    data-i18n="commands.geo.usage.region">Starts a game in a specific region (for example: !geo
-                    <span data-i18n="commands.geo.usage.japan">Japan</span>)</span>
-                <code>!geo game</code> <span data-i18n="commands.geo.usage.game">Starts a game using locations from the current stream game</span>
-                <code data-i18n-cmd="commands.geo.usage.gameTitleCmd">!geo game [Game Title]</code> <span
-                    data-i18n="commands.geo.usage.gameTitle">Starts a game using a specified game title (for example:
-                    !geo game "<span data-i18n="commands.geo.usage.metroidPrime">Metroid Prime</span>")</span>
-                <code data-i18n-cmd="commands.geo.usage.commandRounds">!geo &lt;command&gt; N</code> <span
-                    data-i18n="commands.geo.usage.rounds">Runs a game with a set number of rounds (for example: !geo <span
-                        data-i18n="commands.geo.usage.japan">Japan</span> 3)</span>
-                <code>!geo leaderboard</code>
-                <code>!geo stop</code> <span data-i18n="commands.geo.usage.stop">Stops the game (game starter, moderators, or broadcaster)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.configDifficultyCmd">!geo config difficulty &lt;easy|normal|hard&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.intervalCmd">!geo config interval &lt;seconds&gt;</code>
-                <span data-i18n="commands.geo.usage.interval">Sets the delay between clues (30 to 300 seconds)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.durationCmd">!geo config duration &lt;minutes&gt;</code>
-                <span data-i18n="commands.geo.usage.duration">Sets the round duration (3 to 20 minutes)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.configRegionCmd">!geo config region &lt;regions&gt;</code>
-                <span data-i18n="commands.geo.usage.configRegion">Sets default regions (for example: <span
-                        data-i18n="commands.geo.usage.europe">Europe</span>,<span
-                        data-i18n="commands.geo.usage.asia">Asia</span> or <span
-                        data-i18n="commands.geo.usage.usa">USA</span>,<span
-                        data-i18n="commands.geo.usage.canada">Canada</span>)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.configGameCmd">!geo config game &lt;titles&gt;</code>
-                <span data-i18n="commands.geo.usage.configGame">Sets preferred game titles as a comma-separated list</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.pointsBaseCmd">!geo config pointsbase &lt;number&gt;</code>
-                <span data-i18n="commands.geo.usage.pointsBase">Sets base points per round (1 to 100)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointstimebonus &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointsdifficultymultiplier &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config scoretracking &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.geo.usage.maxRoundsCmd">!geo config maxrounds &lt;number&gt;</code>
-                <span data-i18n="commands.geo.usage.maxRounds">Sets maximum rounds per game (1 to 10)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo resetconfig</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!geo clearleaderboard</code> <span
-                    data-i18n="commands.geo.usage.clearLeaderboard">Alias: !geo resetstats</span>
-                <code data-i18n-cmd="commands.geo.usage.reportCmd">!geo report &lt;reason&gt;</code> <span
-                    data-i18n="commands.geo.usage.report">Reports incorrect locations or clues</span>
-                <code>!geo help</code>
+                <div class="usage-line">
+                    <code>!geo</code> <span data-i18n="commands.geo.usage.basic">Starts a real-world game with locations across the world</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.geo.usage.regionCmd">!geo &lt;region&gt;</code> <span
+                        data-i18n="commands.geo.usage.region">Starts a game in a specific region (for example: !geo
+                        <span data-i18n="commands.geo.usage.japan">Japan</span>)</span>
+                </div>
+                <div class="usage-line">
+                    <code>!geo game</code> <span data-i18n="commands.geo.usage.game">Starts a game using locations from the current stream game</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.geo.usage.gameTitleCmd">!geo game [Game Title]</code> <span
+                        data-i18n="commands.geo.usage.gameTitle">Starts a game using a specified game title (for example:
+                        !geo game "<span data-i18n="commands.geo.usage.metroidPrime">Metroid Prime</span>")</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.geo.usage.commandRounds">!geo &lt;command&gt; N</code> <span
+                        data-i18n="commands.geo.usage.rounds">Runs a game with a set number of rounds (for example: !geo <span
+                            data-i18n="commands.geo.usage.japan">Japan</span> 3)</span>
+                </div>
+                <div class="usage-line">
+                    <code>!geo leaderboard</code>
+                </div>
+                <div class="usage-line">
+                    <code>!geo stop</code> <span data-i18n="commands.geo.usage.stop">Stops the game (game starter, moderators, or broadcaster)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.configDifficultyCmd">!geo config difficulty &lt;easy|normal|hard&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.intervalCmd">!geo config interval &lt;seconds&gt;</code>
+                    <span data-i18n="commands.geo.usage.interval">Sets the delay between clues (30 to 300 seconds)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.durationCmd">!geo config duration &lt;minutes&gt;</code>
+                    <span data-i18n="commands.geo.usage.duration">Sets the round duration (3 to 20 minutes)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.configRegionCmd">!geo config region &lt;regions&gt;</code>
+                    <span data-i18n="commands.geo.usage.configRegion">Sets default regions (for example: <span
+                            data-i18n="commands.geo.usage.europe">Europe</span>,<span
+                            data-i18n="commands.geo.usage.asia">Asia</span> or <span
+                            data-i18n="commands.geo.usage.usa">USA</span>,<span
+                            data-i18n="commands.geo.usage.canada">Canada</span>)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.configGameCmd">!geo config game &lt;titles&gt;</code>
+                    <span data-i18n="commands.geo.usage.configGame">Sets preferred game titles as a comma-separated list</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.pointsBaseCmd">!geo config pointsbase &lt;number&gt;</code>
+                    <span data-i18n="commands.geo.usage.pointsBase">Sets base points per round (1 to 100)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointstimebonus &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config pointsdifficultymultiplier &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config scoretracking &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.geo.usage.maxRoundsCmd">!geo config maxrounds &lt;number&gt;</code>
+                    <span data-i18n="commands.geo.usage.maxRounds">Sets maximum rounds per game (1 to 10)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo resetconfig</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo clearleaderboard</code> <span
+                        data-i18n="commands.geo.usage.clearLeaderboard">Alias: !geo resetstats</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.geo.usage.reportCmd">!geo report &lt;reason&gt;</code> <span
+                        data-i18n="commands.geo.usage.report">Reports incorrect locations or clues</span>
+                </div>
+                <div class="usage-line">
+                    <code>!geo help</code>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -323,46 +448,88 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-riddle" hidden>
             <td colspan="2">
-                <code>!riddle</code> <span data-i18n="commands.riddle.usage.basic">Starts a general knowledge riddle game</span>
-                <code data-i18n-cmd="commands.riddle.usage.subjectCmd">!riddle &lt;subject&gt;</code> <span
-                    data-i18n="commands.riddle.usage.subject">Starts a riddle on a specific subject (for example: !riddle <span
-                        data-i18n="commands.riddle.usage.animals">animals</span>)</span>
-                <code data-i18n-cmd="commands.riddle.usage.roundsCmd">!riddle &lt;rounds&gt;</code> <span
-                    data-i18n="commands.riddle.usage.rounds">Starts a game with a set number of rounds (for example: !riddle 3)</span>
-                <code
-                    data-i18n-cmd="commands.riddle.usage.subjectRoundsCmd">!riddle &lt;subject&gt; &lt;rounds&gt;</code>
-                <span data-i18n="commands.riddle.usage.subjectRounds">Starts a subject game with multiple rounds (for example: !riddle <span
-                        data-i18n="commands.riddle.usage.history">history</span> 5)</span>
-                <code>!riddle game</code> <span data-i18n="commands.riddle.usage.game">Starts a riddle about the current stream game</span>
-                <code data-i18n-cmd="commands.riddle.usage.gameRoundsCmd">!riddle game &lt;rounds&gt;</code>
-                <code>!riddle leaderboard</code>
-                <code data-i18n-cmd="commands.riddle.usage.reportCmd">!riddle report &lt;reason...&gt;</code>
-                <span data-i18n="commands.riddle.usage.report">Reports incorrect or broken riddles</span>
-                <code>!riddle stop</code> <span data-i18n="commands.riddle.usage.stop">Stops the game (game starter, moderators, or broadcaster)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.riddle.usage.configDifficultyCmd">!riddle config difficulty &lt;easy|normal|hard&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.riddle.usage.questionTimeCmd">!riddle config questiontime &lt;seconds&gt;</code>
-                <span data-i18n="commands.riddle.usage.questionTime">Sets answer time per riddle (15 to 120 seconds)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.riddle.usage.pointsBaseCmd">!riddle config pointsbase &lt;number&gt;</code>
-                <span data-i18n="commands.riddle.usage.pointsBase">Sets base points per riddle (1 to 100)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointstimebonus &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointsdifficultymultiplier &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config scoretracking &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.riddle.usage.maxRoundsCmd">!riddle config maxrounds &lt;number&gt;</code>
-                <span data-i18n="commands.riddle.usage.maxRounds">Sets maximum rounds per game (1 to 20)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.riddle.usage.keywordsLimitCmd">!riddle config keywordslimit &lt;number&gt;</code>
-                <span data-i18n="commands.riddle.usage.keywordsLimit">Sets number of recent keywords to exclude (for example: 20 to 100)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.riddle.usage.roundDelayCmd">!riddle config rounddelay &lt;milliseconds&gt;</code>
-                <span data-i18n="commands.riddle.usage.roundDelay">Sets delay between rounds in milliseconds</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle resetconfig</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle clearleaderboard</code> <span
-                    data-i18n="commands.riddle.usage.clearLeaderboard">Alias: !riddle cleardata</span>
-                <code>!riddle help</code>
+                <div class="usage-line">
+                    <code>!riddle</code> <span data-i18n="commands.riddle.usage.basic">Starts a general knowledge riddle game</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.riddle.usage.subjectCmd">!riddle &lt;subject&gt;</code> <span
+                        data-i18n="commands.riddle.usage.subject">Starts a riddle on a specific subject (for example: !riddle <span
+                            data-i18n="commands.riddle.usage.animals">animals</span>)</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.riddle.usage.roundsCmd">!riddle &lt;rounds&gt;</code> <span
+                        data-i18n="commands.riddle.usage.rounds">Starts a game with a set number of rounds (for example: !riddle 3)</span>
+                </div>
+                <div class="usage-line">
+                    <code
+                        data-i18n-cmd="commands.riddle.usage.subjectRoundsCmd">!riddle &lt;subject&gt; &lt;rounds&gt;</code>
+                    <span data-i18n="commands.riddle.usage.subjectRounds">Starts a subject game with multiple rounds (for example: !riddle <span
+                            data-i18n="commands.riddle.usage.history">history</span> 5)</span>
+                </div>
+                <div class="usage-line">
+                    <code>!riddle game</code> <span data-i18n="commands.riddle.usage.game">Starts a riddle about the current stream game</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.riddle.usage.gameRoundsCmd">!riddle game &lt;rounds&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <code>!riddle leaderboard</code>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.riddle.usage.reportCmd">!riddle report &lt;reason...&gt;</code>
+                    <span data-i18n="commands.riddle.usage.report">Reports incorrect or broken riddles</span>
+                </div>
+                <div class="usage-line">
+                    <code>!riddle stop</code> <span data-i18n="commands.riddle.usage.stop">Stops the game (game starter, moderators, or broadcaster)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.riddle.usage.configDifficultyCmd">!riddle config difficulty &lt;easy|normal|hard&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.riddle.usage.questionTimeCmd">!riddle config questiontime &lt;seconds&gt;</code>
+                    <span data-i18n="commands.riddle.usage.questionTime">Sets answer time per riddle (15 to 120 seconds)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.riddle.usage.pointsBaseCmd">!riddle config pointsbase &lt;number&gt;</code>
+                    <span data-i18n="commands.riddle.usage.pointsBase">Sets base points per riddle (1 to 100)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointstimebonus &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointsdifficultymultiplier &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config scoretracking &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.riddle.usage.maxRoundsCmd">!riddle config maxrounds &lt;number&gt;</code>
+                    <span data-i18n="commands.riddle.usage.maxRounds">Sets maximum rounds per game (1 to 20)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.riddle.usage.keywordsLimitCmd">!riddle config keywordslimit &lt;number&gt;</code>
+                    <span data-i18n="commands.riddle.usage.keywordsLimit">Sets number of recent keywords to exclude (for example: 20 to 100)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.riddle.usage.roundDelayCmd">!riddle config rounddelay &lt;milliseconds&gt;</code>
+                    <span data-i18n="commands.riddle.usage.roundDelay">Sets delay between rounds in milliseconds</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle resetconfig</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle clearleaderboard</code> <span
+                        data-i18n="commands.riddle.usage.clearLeaderboard">Alias: !riddle cleardata</span>
+                </div>
+                <div class="usage-line">
+                    <code>!riddle help</code>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -373,41 +540,79 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-trivia" hidden>
             <td colspan="2">
-                <code>!trivia</code> <span data-i18n="commands.trivia.usage.basic">Starts a general knowledge trivia game</span>
-                <code data-i18n-cmd="commands.trivia.usage.topicCmd">!trivia &lt;topic&gt;</code> <span
-                    data-i18n="commands.trivia.usage.topic">Starts trivia on a specific topic (for example: !trivia <span
-                        data-i18n="commands.trivia.usage.science">science</span>)</span>
-                <code>!trivia game</code> <span data-i18n="commands.trivia.usage.game">Starts trivia about the current stream game</span>
-                <code data-i18n-cmd="commands.trivia.usage.roundsCmd">!trivia &lt;rounds&gt;</code> <span
-                    data-i18n="commands.trivia.usage.rounds">Starts a game with a set number of rounds (for example: !trivia 3)</span>
-                <code
-                    data-i18n-cmd="commands.trivia.usage.topicRoundsCmd">!trivia &lt;topic&gt; &lt;rounds&gt;</code>
-                <span data-i18n="commands.trivia.usage.topicRounds">Starts a topic game with multiple rounds (for example: !trivia <span
-                        data-i18n="commands.trivia.usage.history">history</span> 5)</span>
-                <code>!trivia leaderboard</code>
-                <code data-i18n-cmd="commands.trivia.usage.reportCmd">!trivia report &lt;reason&gt;</code> <span
-                    data-i18n="commands.trivia.usage.report">Reports incorrect or broken questions</span>
-                <code>!trivia stop</code> <span data-i18n="commands.trivia.usage.stop">Stops the game (game starter, moderators, or broadcaster)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.trivia.usage.configDifficultyCmd">!trivia config difficulty &lt;easy|normal|hard&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.trivia.usage.timeCmd">!trivia config time &lt;seconds&gt;</code>
-                <span data-i18n="commands.trivia.usage.time">Sets answer time per question (10 to 120 seconds)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.trivia.usage.pointsBaseCmd">!trivia config pointsbase &lt;number&gt;</code>
-                <span data-i18n="commands.trivia.usage.pointsBase">Sets base points per question (1 to 100)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointstimebonus &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointsdifficultymultiplier &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config scoretracking &lt;true|false&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.trivia.usage.configTopicCmd">!trivia config topic &lt;topics&gt;</code>
-                <span data-i18n="commands.trivia.usage.configTopic">Sets preferred topics as a comma-separated list</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.trivia.usage.maxRoundsCmd">!trivia config maxrounds &lt;number&gt;</code>
-                <span data-i18n="commands.trivia.usage.maxRounds">Sets maximum rounds per game (1 to 10)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia resetconfig</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia clearleaderboard</code>
-                <code>!trivia help</code>
+                <div class="usage-line">
+                    <code>!trivia</code> <span data-i18n="commands.trivia.usage.basic">Starts a general knowledge trivia game</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.trivia.usage.topicCmd">!trivia &lt;topic&gt;</code> <span
+                        data-i18n="commands.trivia.usage.topic">Starts trivia on a specific topic (for example: !trivia <span
+                            data-i18n="commands.trivia.usage.science">science</span>)</span>
+                </div>
+                <div class="usage-line">
+                    <code>!trivia game</code> <span data-i18n="commands.trivia.usage.game">Starts trivia about the current stream game</span>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.trivia.usage.roundsCmd">!trivia &lt;rounds&gt;</code> <span
+                        data-i18n="commands.trivia.usage.rounds">Starts a game with a set number of rounds (for example: !trivia 3)</span>
+                </div>
+                <div class="usage-line">
+                    <code
+                        data-i18n-cmd="commands.trivia.usage.topicRoundsCmd">!trivia &lt;topic&gt; &lt;rounds&gt;</code>
+                    <span data-i18n="commands.trivia.usage.topicRounds">Starts a topic game with multiple rounds (for example: !trivia <span
+                            data-i18n="commands.trivia.usage.history">history</span> 5)</span>
+                </div>
+                <div class="usage-line">
+                    <code>!trivia leaderboard</code>
+                </div>
+                <div class="usage-line">
+                    <code data-i18n-cmd="commands.trivia.usage.reportCmd">!trivia report &lt;reason&gt;</code> <span
+                        data-i18n="commands.trivia.usage.report">Reports incorrect or broken questions</span>
+                </div>
+                <div class="usage-line">
+                    <code>!trivia stop</code> <span data-i18n="commands.trivia.usage.stop">Stops the game (game starter, moderators, or broadcaster)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.trivia.usage.configDifficultyCmd">!trivia config difficulty &lt;easy|normal|hard&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.trivia.usage.timeCmd">!trivia config time &lt;seconds&gt;</code>
+                    <span data-i18n="commands.trivia.usage.time">Sets answer time per question (10 to 120 seconds)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.trivia.usage.pointsBaseCmd">!trivia config pointsbase &lt;number&gt;</code>
+                    <span data-i18n="commands.trivia.usage.pointsBase">Sets base points per question (1 to 100)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointstimebonus &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config pointsdifficultymultiplier &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia config scoretracking &lt;true|false&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.trivia.usage.configTopicCmd">!trivia config topic &lt;topics&gt;</code>
+                    <span data-i18n="commands.trivia.usage.configTopic">Sets preferred topics as a comma-separated list</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.trivia.usage.maxRoundsCmd">!trivia config maxrounds &lt;number&gt;</code>
+                    <span data-i18n="commands.trivia.usage.maxRounds">Sets maximum rounds per game (1 to 10)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia resetconfig</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia clearleaderboard</code>
+                </div>
+                <div class="usage-line">
+                    <code>!trivia help</code>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -425,14 +630,22 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-botlang" hidden>
             <td colspan="2">
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.botlang.usage.langCmd">!botlang &lt;language&gt;</code>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang status</code> <span
-                    data-i18n="commands.botlang.usage.status">Shows the current channel language</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang off</code> <span
-                    data-i18n="commands.botlang.usage.off">Resets the channel language to English</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang default</code> <span
-                    data-i18n="commands.botlang.usage.default">Resets the channel language to English</span>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.botlang.usage.langCmd">!botlang &lt;language&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang status</code> <span
+                        data-i18n="commands.botlang.usage.status">Shows the current channel language</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang off</code> <span
+                        data-i18n="commands.botlang.usage.off">Resets the channel language to English</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!botlang default</code> <span
+                        data-i18n="commands.botlang.usage.default">Resets the channel language to English</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -443,31 +656,49 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-auto" hidden>
             <td colspan="2">
-                <code>!auto</code> <span data-i18n="commands.auto.usage.status">Shows current auto-chat mode, frequency, and active categories</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.modeCmd">!auto &lt;off|low|medium|high&gt;</code> <span
-                    data-i18n="commands.auto.usage.mode">Sets auto-chat frequency (off disables periodic messages only)</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.greetingsCmd">!auto config greetings:&lt;on|off&gt;</code>
-                <span data-i18n="commands.auto.usage.greetings">Enables or disables greetings when the stream starts and ends</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.followsCmd">!auto config follows:&lt;on|off&gt;</code>
-                <span data-i18n="commands.auto.usage.follows">Enables or disables messages for new followers</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.subscriptionsCmd">!auto config subscriptions:&lt;on|off&gt;</code>
-                <span data-i18n="commands.auto.usage.subscriptions">Enables or disables messages for new subscriptions</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.raidsCmd">!auto config raids:&lt;on|off&gt;</code>
-                <span data-i18n="commands.auto.usage.raids">Enables or disables welcome messages for incoming raids</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.factsCmd">!auto config facts:&lt;on|off&gt;</code> <span
-                    data-i18n="commands.auto.usage.facts">Enables or disables automated facts and tips</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.questionsCmd">!auto config questions:&lt;on|off&gt;</code>
-                <span data-i18n="commands.auto.usage.questions">Enables or disables automated viewer questions</span>
-                <span class="mod-badge mod-badge-leading">Mod</span><code
-                    data-i18n-cmd="commands.auto.usage.adsCmd">!auto config ads:&lt;on|off&gt;</code> <span
-                    data-i18n="commands.auto.usage.ads">Enables or disables notifications before ad breaks</span>
+                <div class="usage-line">
+                    <code>!auto</code> <span data-i18n="commands.auto.usage.status">Shows current auto-chat mode, frequency, and active categories</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.modeCmd">!auto &lt;off|low|medium|high&gt;</code> <span
+                        data-i18n="commands.auto.usage.mode">Sets auto-chat frequency (off disables periodic messages only)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.greetingsCmd">!auto config greetings:&lt;on|off&gt;</code>
+                    <span data-i18n="commands.auto.usage.greetings">Enables or disables greetings when the stream starts and ends</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.followsCmd">!auto config follows:&lt;on|off&gt;</code>
+                    <span data-i18n="commands.auto.usage.follows">Enables or disables messages for new followers</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.subscriptionsCmd">!auto config subscriptions:&lt;on|off&gt;</code>
+                    <span data-i18n="commands.auto.usage.subscriptions">Enables or disables messages for new subscriptions</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.raidsCmd">!auto config raids:&lt;on|off&gt;</code>
+                    <span data-i18n="commands.auto.usage.raids">Enables or disables welcome messages for incoming raids</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.factsCmd">!auto config facts:&lt;on|off&gt;</code> <span
+                        data-i18n="commands.auto.usage.facts">Enables or disables automated facts and tips</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.questionsCmd">!auto config questions:&lt;on|off&gt;</code>
+                    <span data-i18n="commands.auto.usage.questions">Enables or disables automated viewer questions</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.auto.usage.adsCmd">!auto config ads:&lt;on|off&gt;</code> <span
+                        data-i18n="commands.auto.usage.ads">Enables or disables notifications before ad breaks</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -478,9 +709,15 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-disable" hidden>
             <td colspan="2">
-                <code>!disable &lt;command&gt;</code>
-                <code>!disable lurk</code> <span data-i18n="commands.disable.usage.lurk">Disables the !lurk command</span>
-                <code>!disable trivia</code> <span data-i18n="commands.disable.usage.trivia">Disables the !trivia command</span>
+                <div class="usage-line">
+                    <code>!disable &lt;command&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <code>!disable lurk</code> <span data-i18n="commands.disable.usage.lurk">Disables the !lurk command</span>
+                </div>
+                <div class="usage-line">
+                    <code>!disable trivia</code> <span data-i18n="commands.disable.usage.trivia">Disables the !trivia command</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -491,8 +728,12 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-enable" hidden>
             <td colspan="2">
-                <code>!enable &lt;command&gt;</code>
-                <code>!enable trivia</code> <span data-i18n="commands.enable.usage.trivia">Enables the !trivia command</span>
+                <div class="usage-line">
+                    <code>!enable &lt;command&gt;</code>
+                </div>
+                <div class="usage-line">
+                    <code>!enable trivia</code> <span data-i18n="commands.enable.usage.trivia">Enables the !trivia command</span>
+                </div>
             </td>
         </tr>
     </tbody>
@@ -503,8 +744,11 @@ extraScripts:
         </tr>
         <tr class="dropdown-details" id="dd-commands-ping" hidden>
             <td colspan="2">
-                <code>!ping</code>
+                <div class="usage-line">
+                    <code>!ping</code>
+                </div>
             </td>
+        </tr> </td>
         </tr>
     </tbody>
 </table>
@@ -726,21 +970,18 @@ extraScripts:
         <li><strong data-i18n="webDashboard.steps.configure.title">Configure:</strong> <span
                 data-i18n="webDashboard.steps.configure.desc">Change bot settings in the dashboard.</span></li>
         <li><strong data-i18n="webDashboard.steps.grantPerms.title">Troubleshooting:</strong> <span
-                data-i18n="webDashboard.steps.grantPerms.desc">If the bot does not respond, enter <code>/mod WildcatSage</code> in Twitch chat to grant moderator permissions.</span></li>
+                data-i18n="webDashboard.steps.grantPerms.desc">If the bot does not respond, enter <span class="inline-code">/mod WildcatSage</span> in Twitch chat to grant moderator permissions.</span></li>
     </ol>
 
     <h3 data-i18n="webDashboard.oauthTitle">OAuth Permissions</h3>
     <p data-i18n="webDashboard.oauthIntro">The dashboard requires these Twitch OAuth permissions:</p>
     <ul>
-        <li><code>user:read:email</code> - <span data-i18n="webDashboard.oauth.readEmail">Reads your email address for account identification.</span></li>
-        <li><code>channel:read:ads</code> - <span data-i18n="webDashboard.oauth.readAds">Receives ad break notifications for your channel.</span></li>
-        <li><code>channel:manage:moderators</code> - <span
+        <li><span class="inline-code">user:read:email</span> - <span data-i18n="webDashboard.oauth.readEmail">Reads your email address for account identification.</span></li>
+        <li><span class="inline-code">channel:read:ads</span> - <span data-i18n="webDashboard.oauth.readAds">Receives ad break notifications for your channel.</span></li>
+        <li><span class="inline-code">channel:manage:moderators</span> - <span
                 data-i18n="webDashboard.oauth.manageModerators">Grants moderator permissions to the bot.</span></li>
-        <li><code>moderator:read:followers</code> - <span data-i18n="webDashboard.oauth.readFollowers">Reads follower data for commands such as !followage.</span></li>
-    </ul>
-
-    <ul>
-        <li><code>channel:manage:redemptions</code> - <span
+        <li><span class="inline-code">moderator:read:followers</span> - <span data-i18n="webDashboard.oauth.readFollowers">Reads follower data for commands such as !followage.</span></li>
+        <li><span class="inline-code">channel:manage:redemptions</span> - <span
                 data-i18n="webDashboard.oauth.manageRedemptions">Creates and manages Channel Point Rewards for features such as Daily Check-In.</span></li>
     </ul>
 

@@ -463,7 +463,7 @@
       },
       "grantPerms": {
         "title": "Troubleshooting:",
-        "desc": "If the bot does not respond, enter <code>/mod WildcatSage</code> in Twitch chat to grant moderator permissions."
+        "desc": "If the bot does not respond, enter <span class=\"inline-code\">/mod WildcatSage</span> in Twitch chat to grant moderator permissions."
       }
     },
     "oauthTitle": "OAuth Permissions",
