@@ -10,13 +10,13 @@
     "welcome": "¡Bienvenido a Wildcat.chat! Esta plataforma proporciona bots de chat con IA y servicios de TTS para streamers de Twitch.",
     "botsTitle": "Documentación de Bots",
     "chatsage": {
-      "title": "Bot ChatSage",
+      "title": "Bot WildcatSage",
       "description": "Chatbot con IA con respuestas contextuales, búsqueda web, juegos y más.",
       "feature1": "Haz preguntas y obtén respuestas de IA",
       "feature2": "Integración de búsqueda web",
       "feature3": "Juegos interactivos (trivia, geo-juego, acertijos)",
       "feature4": "Funciones de auto-chat y traducción",
-      "button": "Ver Docs de ChatSage →"
+      "button": "Ver Docs de WildcatSage →"
     },
     "wildcatTts": {
       "title": "Bot WildcatTTS TTS",
@@ -39,7 +39,7 @@
     "gettingStarted": {
       "title": "Primeros Pasos",
       "quickStartTitle": "Inicio Rápido",
-      "step1": "Visita <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a> para configurar tu bot ChatSage",
+      "step1": "Visita <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a> para configurar tu bot WildcatSage",
       "step2": "Visita <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> para el panel de WildcatTTS TTS",
       "step3": "Autentícate con tu cuenta de Twitch",
       "step4": "Configura los ajustes de tu bot",

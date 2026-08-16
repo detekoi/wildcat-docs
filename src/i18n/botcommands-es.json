@@ -438,6 +438,10 @@
         "title": "Mensajes programados:",
         "desc": "Crea y administra mensajes de chat programados con ajustes de intervalo y líneas de chat."
       },
+      "botPersonality": {
+        "title": "Personalidad del Bot:",
+        "desc": "Personaliza las instrucciones de tono, humor y estilo para las respuestas de IA, con comprobación automática de reglas de Twitch."
+      },
       "dailyCheckIn": {
         "title": "Check-In diario:",
         "desc": "Configura una recompensa de puntos de canal para check-ins diarios con seguimiento de rachas y respuestas opcionales de IA."

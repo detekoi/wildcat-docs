@@ -10,13 +10,13 @@
     "welcome": "Добро пожаловать на Wildcat.chat! Эта платформа предоставляет чат-ботов на базе ИИ и услуги TTS для стримеров Twitch.",
     "botsTitle": "Документация ботов",
     "chatsage": {
-      "title": "Бот ChatSage",
+      "title": "Бот WildcatSage",
       "description": "Чат-бот на базе ИИ с контекстными ответами, веб-поиском, играми и многим другим.",
       "feature1": "Задавайте вопросы и получайте ответы от ИИ",
       "feature2": "Интеграция веб-поиска",
       "feature3": "Интерактивные игры (викторины, гео-игра, загадки)",
       "feature4": "Функции автоматического чата и перевода",
-      "button": "Посмотреть документацию ChatSage →"
+      "button": "Посмотреть документацию WildcatSage →"
     },
     "wildcatTts": {
       "title": "Бот WildcatTTS TTS",
@@ -39,7 +39,7 @@
     "gettingStarted": {
       "title": "Начало работы",
       "quickStartTitle": "Быстрый старт",
-      "step1": "Посетите <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a> для настройки вашего бота ChatSage",
+      "step1": "Посетите <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a> для настройки вашего бота WildcatSage",
       "step2": "Посетите <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> для панели WildcatTTS TTS",
       "step3": "Аутентифицируйтесь с помощью вашей учетной записи Twitch",
       "step4": "Настройте параметры вашего бота",

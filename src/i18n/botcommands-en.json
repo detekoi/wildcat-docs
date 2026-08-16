@@ -415,7 +415,7 @@
   },
   "webDashboard": {
     "title": "Web Dashboard",
-    "intro": "The <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Web Dashboard</a> lets streamers configure bot settings for their channel. Log in with your Twitch account to access the dashboard.",
+    "intro": "The <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Web Dashboard</a> lets streamers configure bot settings for their channel. Sign in with your Twitch account to access the dashboard.",
     "featuresTitle": "Dashboard Features",
     "features": {
       "botManagement": {
@@ -438,6 +438,10 @@
         "title": "Timed Messages:",
         "desc": "Create and manage scheduled chat messages with interval and chat line settings."
       },
+      "botPersonality": {
+        "title": "Bot Personality:",
+        "desc": "Customize tone, humor, and style instructions for AI responses, with automatic Twitch rule checks."
+      },
       "dailyCheckIn": {
         "title": "Daily Check-In:",
         "desc": "Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses."
@@ -451,11 +455,11 @@
       },
       "authorize": {
         "title": "Authorize:",
-        "desc": "Select \"Login with Twitch\" and approve the required permissions."
+        "desc": "Select \"Sign in with Twitch\" and approve the required permissions."
       },
       "addBot": {
         "title": "Add the Bot:",
-        "desc": "Select \"Add Bot to My Channel\" to invite WildcatSage to your channel."
+        "desc": "Select \"Add bot to my channel\" to invite WildcatSage to your channel."
       },
       "configure": {
         "title": "Configure:",

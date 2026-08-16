@@ -10,13 +10,13 @@
     "welcome": "Willkommen bei Wildcat.chat! Diese Plattform bietet KI-gestützte Chat-Bots und TTS-Dienste für Twitch-Streamer.",
     "botsTitle": "Bot-Dokumentation",
     "chatsage": {
-      "title": "ChatSage Bot",
+      "title": "WildcatSage Bot",
       "description": "KI-gestützter Chatbot mit kontextbezogenen Antworten, Websuche, Spielen und mehr.",
       "feature1": "Stellen Sie Fragen und erhalten Sie KI-Antworten",
       "feature2": "Websuche-Integration",
       "feature3": "Interaktive Spiele (Quiz, Geo-Spiel, Rätsel)",
       "feature4": "Auto-Chat- und Übersetzungsfunktionen",
-      "button": "ChatSage Docs anzeigen →"
+      "button": "WildcatSage Docs anzeigen →"
     },
     "wildcatTts": {
       "title": "WildcatTTS TTS Bot",
@@ -25,21 +25,21 @@
       "feature2": "Channel Points Integration",
       "feature3": "KI-Musikgenerierung",
       "feature4": "Web-Dashboard für Einstellungen",
-      "button": "WildcatTTS Dokumentation anzeigen →"
+      "button": "WildcatTTS Docs anzeigen →"
     },
     "chatOverlay": {
-      "title": "Chat Overlay",
+      "title": "Chat-Overlay",
       "description": "Ein anpassbares Twitch- und YouTube-Chat-Overlay mit KI-generierten Themes für OBS.",
       "feature1": "Unterstützt Twitch- und YouTube-Live-Chat",
-      "feature2": "KI-generierte Themes mit natürlicher Sprache",
-      "feature3": "Einfache OBS-Browser-Source-Integration",
-      "feature4": "Chat-Scene-Creator für mehrere Profile",
-      "button": "Overlay-Docs anzeigen →"
+      "feature2": "KI-generierte Themes in natürlicher Sprache",
+      "feature3": "Einfache OBS-Browserquellen-Integration",
+      "feature4": "Chat Scene Creator für mehrere Profile",
+      "button": "Overlay-Dokumentation anzeigen →"
     },
     "gettingStarted": {
       "title": "Erste Schritte",
       "quickStartTitle": "Schnellstart",
-      "step1": "Besuchen Sie <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a>, um Ihren ChatSage-Bot einzurichten",
+      "step1": "Besuchen Sie <a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a>, um Ihren WildcatSage-Bot einzurichten",
       "step2": "Besuchen Sie <a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a> für das WildcatTTS TTS-Dashboard",
       "step3": "Authentifizieren Sie sich mit Ihrem Twitch-Konto",
       "step4": "Konfigurieren Sie Ihre Bot-Einstellungen",

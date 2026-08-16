@@ -438,6 +438,10 @@
         "title": "Geplante Nachrichten:",
         "desc": "Erstellen und verwalten Sie geplante Chat-Nachrichten mit Intervall- und Chatzeileneinstellungen."
       },
+      "botPersonality": {
+        "title": "Bot-Persönlichkeit:",
+        "desc": "Passe Ton-, Humor- und Stilanweisungen für KI-Antworten an, mit automatischer Twitch-Regelprüfung."
+      },
       "dailyCheckIn": {
         "title": "Täglicher Check-In:",
         "desc": "Richte eine Kanalpunkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-Antworten ein."

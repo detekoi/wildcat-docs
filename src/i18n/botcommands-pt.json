@@ -438,6 +438,10 @@
         "title": "Mensagens agendadas:",
         "desc": "Crie e gerencie mensagens de chat agendadas com configurações de intervalo e linhas de chat."
       },
+      "botPersonality": {
+        "title": "Personalidade do bot:",
+        "desc": "Personalize as instruções de tom, humor e estilo para respostas de IA, com verificações automáticas de regras da Twitch."
+      },
       "dailyCheckIn": {
         "title": "Check-In diário:",
         "desc": "Configure uma recompensa de pontos de canal para check-ins diários com rastreamento de sequência e respostas opcionais de IA."

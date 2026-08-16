@@ -10,13 +10,13 @@
     "welcome": "Wildcat.chatへようこそ！このプラットフォームは、Twitchストリーマー向けのAI搭載チャットボットとTTSサービスを提供します。",
     "botsTitle": "ボットドキュメント",
     "chatsage": {
-      "title": "ChatSage ボット",
+      "title": "WildcatSage ボット",
       "description": "コンテキスト対応の応答、ウェブ検索、ゲームなどを備えたAI搭載チャットボット。",
       "feature1": "質問をしてAIの応答を取得",
       "feature2": "ウェブ検索統合",
       "feature3": "インタラクティブゲーム（クイズ、地理ゲーム、なぞなぞ）",
       "feature4": "自動チャットと翻訳機能",
-      "button": "ChatSage ドキュメントを見る →"
+      "button": "WildcatSage ドキュメントを見る →"
     },
     "wildcatTts": {
       "title": "WildcatTTS TTS ボット",
@@ -39,7 +39,7 @@
     "gettingStarted": {
       "title": "はじめに",
       "quickStartTitle": "クイックスタート",
-      "step1": "<a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a>にアクセスしてChatSageボットをセットアップ",
+      "step1": "<a href=\"https://bot.wildcat.chat\" class=\"default-link-style\">bot.wildcat.chat</a>にアクセスしてWildcatSageボットをセットアップ",
       "step2": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\">tts.wildcat.chat</a>にアクセスしてWildcatTTS TTSダッシュボードを開く",
       "step3": "Twitchアカウントで認証",
       "step4": "ボット設定を構成",
