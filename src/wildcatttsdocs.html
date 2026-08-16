@@ -422,7 +422,7 @@ extraScripts:
                     <p><strong data-i18n="commands.channelPointsTTS.requirements">Requirements:</strong> <span
                             data-i18n="commands.channelPointsTTS.requirementsText">Grant <span
                                 class="inline-code">channel:manage:redemptions</span> and <span
-                                class="inline-code">channel:read:redemptions</span> permissions during dashboard login.</span></p>
+                                class="inline-code">channel:read:redemptions</span> permissions during dashboard sign-in.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.streamerBroadcaster">Streamer/Broadcaster (via Web
                             Dashboard)</span></p>
@@ -1972,9 +1972,9 @@ extraScripts:
     <p data-i18n="bannedWords.manageIntro">You can configure banned words in the Web Dashboard. Changes take effect
         immediately.</p>
     <ol>
-        <li data-i18n="bannedWords.step1">Log in to the Web Dashboard at tts.wildcat.chat with your Twitch
+        <li data-i18n="bannedWords.step1">Sign in to the Web Dashboard at tts.wildcat.chat with your Twitch
             account.</li>
-        <li data-i18n="bannedWords.step2">Scroll to the Banned Words / Phrases card below the Ignore List section.</li>
+        <li data-i18n="bannedWords.step2">Scroll to the Banned Words / Phrases card in the Ignored Users section.</li>
         <li data-i18n="bannedWords.step3">Type a word or phrase into the input field.</li>
         <li data-i18n="bannedWords.step4">Click Add, or press Enter on your keyboard.</li>
         <li data-i18n="bannedWords.step5">If you want to remove an entry, click Remove next to the word in the
@@ -2005,10 +2005,10 @@ extraScripts:
     <h3 data-i18n="youtubeTts.setupTitle">How To Enable YouTube TTS</h3>
     <p data-i18n="youtubeTts.setupIntro">You can configure YouTube TTS in the Web Dashboard. Changes take effect immediately.</p>
     <ol>
-        <li data-i18n="youtubeTts.step1">Log in to the Web Dashboard at tts.wildcat.chat with your Twitch account.</li>
+        <li data-i18n="youtubeTts.step1">Sign in to the Web Dashboard at tts.wildcat.chat with your Twitch account.</li>
         <li data-i18n="youtubeTts.step2">Scroll to the YouTube Integration card.</li>
-        <li data-i18n="youtubeTts.step3">Turn on the Enable YouTube TTS switch.</li>
-        <li data-i18n="youtubeTts.step4">Enter your YouTube handle (for example, @yourchannel), Channel ID, or live Video URL.</li>
+        <li data-i18n="youtubeTts.step3">Turn on the YouTube TTS Enabled switch.</li>
+        <li data-i18n="youtubeTts.step4">Enter your YouTube handle (for example, @yourchannel).</li>
         <li data-i18n="youtubeTts.step5">If your stream is already live, OBS begins speaking your YouTube chat messages immediately.</li>
     </ol>
 </section>
@@ -2047,7 +2047,7 @@ extraScripts:
     <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
     <p data-i18n="webDashboard.introText">The <a href="https://tts.wildcat.chat/" class="default-link-style"
             target="_blank" rel="noopener noreferrer">WildcatTTS Web Dashboard</a> lets broadcasters configure
-            all TTS settings. Log in with your Twitch account to access the dashboard.</p>
+            all TTS settings. Sign in with your Twitch account to access the dashboard.</p>
 
 
 
@@ -2071,7 +2071,7 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingAnnounceCheersTitle">Announce Cheers:</strong> <span
                 data-i18n="webDashboard.settingAnnounceCheersDesc">Turn cheer alerts on or off while continuing to
                 read cheer messages.</span></li>
-        <li><strong data-i18n="webDashboard.settingUrlTitle">URL Reading:</strong> <span
+        <li><strong data-i18n="webDashboard.settingUrlTitle">Read Full URLs:</strong> <span
                 data-i18n="webDashboard.settingUrlDesc">Read full web links or only domain names.</span></li>
         <li><strong data-i18n="webDashboard.settingBitsTitle">Bits → TTS:</strong> <span
                 data-i18n="webDashboard.settingBitsDesc">Require a minimum Bits cheer to trigger TTS audio.</span></li>
@@ -2081,11 +2081,11 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingYoutubeTitle">YouTube Integration:</strong> <span
                 data-i18n="webDashboard.settingYoutubeDesc">Enable YouTube Live chat TTS and set your YouTube
                 handle or stream URL.</span></li>
-        <li><strong data-i18n="webDashboard.settingIgnoreTitle">Ignore Lists:</strong> <span
-                data-i18n="webDashboard.settingIgnoreDesc">Manage the TTS ignore list with the add and remove
-                controls.</span></li>
-        <li><strong data-i18n="webDashboard.settingBannedWordsTitle">Banned Words:</strong> <span
-                data-i18n="webDashboard.settingBannedWordsDesc">Block specific words so TTS skips matching
+        <li><strong data-i18n="webDashboard.settingIgnoreTitle">Ignored Users:</strong> <span
+                data-i18n="webDashboard.settingIgnoreDesc">Manage the TTS ignore list, banned words, and pronunciation
+                dictionary.</span></li>
+        <li><strong data-i18n="webDashboard.settingBannedWordsTitle">Banned Words / Phrases:</strong> <span
+                data-i18n="webDashboard.settingBannedWordsDesc">Block specific words or phrases so TTS skips matching
                 messages.</span></li>
         <li><strong data-i18n="webDashboard.settingVoiceTitle">Default Voice Settings:</strong> <span
                 data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, volume, emotion,
@@ -2093,7 +2093,7 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingCalibrationTitle">Voice Calibration:</strong> <span
                 data-i18n="webDashboard.settingCalibrationDesc">Set volume multipliers for individual voices to
                 balance audio levels.</span></li>
-        <li><strong data-i18n="webDashboard.settingObsTitle">OBS Setup:</strong> <span
+        <li><strong data-i18n="webDashboard.settingObsTitle">OBS Browser Source Setup:</strong> <span
                 data-i18n="webDashboard.settingObsDesc">Get your secure OBS browser source URL and setup
                 instructions.</span></li>
         <li><strong data-i18n="webDashboard.settingPreviewTitle">Voice Preview:</strong> <span
