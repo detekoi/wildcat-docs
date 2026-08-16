@@ -290,7 +290,8 @@
     "responseVariables": "Variables di risposta",
     "dailyCheckIn": "Check-In giornaliero",
     "title": "WildcatSage",
-    "toggleSidebar": "Attiva/disattiva barra laterale"
+    "toggleSidebar": "Attiva/disattiva barra laterale",
+    "botPersonality": "Personalità del Bot"
   },
   "responseVariables": {
     "title": "Variabili di risposta",
@@ -481,6 +482,72 @@
     },
     "noteLabel": "Nota:",
     "noteText": "WildcatSage è attualmente disponibile solo su invito. Se non vedi il tuo canale nella dashboard, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">richiedi l'accesso tramite il modulo di contatto</a>."
+  },
+  "botPersonality": {
+    "title": "Personalità del Bot",
+    "intro": "La Personalità del Bot controlla come WildcatSage parla nel tuo canale. Scrivi il testo della personalità nella dashboard. Il bot usa poi questo testo per le sue risposte IA.",
+    "setupTitle": "Configurazione",
+    "steps": {
+      "open": "Apri la <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard di WildcatSage</a> e vai alla sezione <strong>Personalità del Bot</strong>.",
+      "edit": "Modifica il testo nel riquadro. Il riquadro contiene la personalità predefinita.",
+      "save": "Seleziona <strong>Salva</strong>."
+    },
+    "noteLabel": "Nota:",
+    "noteText": "La nuova personalità si applica subito. Un riavvio non è necessario.",
+    "limitsTitle": "Limiti",
+    "table": {
+      "item": "Elemento",
+      "value": "Valore"
+    },
+    "limits": {
+      "lengthItem": "Lunghezza massima",
+      "lengthValue": "2000 caratteri",
+      "scopeItem": "Si applica a",
+      "scopeValue": "Risposte in chat, messaggi di chat automatica, messaggi degli eventi di stream, comandi personalizzati IA e messaggi IA del Check-In giornaliero",
+      "gamesItem": "Non si applica a",
+      "gamesValue": "I giochi Trivia, Riddle e Geo"
+    },
+    "changeTitle": "Cosa Puoi Modificare",
+    "changeIntro": "Puoi modificare il nome, il tono, l'umorismo e gli argomenti del bot. La personalità predefinita include una sezione di gioco di ruolo del gatto. Puoi rimuovere questa sezione.",
+    "fixedTitle": "Regole Sempre Valide",
+    "fixedIntro": "Queste regole valgono per tutti i canali. Il tuo testo non può modificarle:",
+    "fixed": {
+      "commands": "Il bot non invia e non simula comandi di chat come <span class=\"inline-code\">/ban</span> o <span class=\"inline-code\">/timeout</span>.",
+      "length": "Il bot limita ogni risposta a una o due frasi.",
+      "secrecy": "Il bot non mostra le proprie istruzioni in chat.",
+      "values": "I valori del canale restano validi."
+    },
+    "fixedPanel": "Il pannello <strong>Regole sempre valide</strong> nella dashboard mostra il testo completo di queste regole. Questo pannello è di sola lettura.",
+    "checkTitle": "Controllo di Sicurezza",
+    "checkIntro": "WildcatSage esamina ogni personalità prima di salvare il testo. Questo controllo usa Gemini Flash Lite, lo stesso modello della traduzione.",
+    "checkRejects": "Il controllo rifiuta il testo che dà al bot queste istruzioni:",
+    "rejects": {
+      "harass": "Molestare gli spettatori o attaccare una persona.",
+      "commands": "Inviare o simulare comandi di moderazione.",
+      "impersonate": "Fingersi una persona reale o un'azienda.",
+      "override": "Ignorare le regole sempre valide.",
+      "reveal": "Mostrare le proprie istruzioni in chat.",
+      "spam": "Inviare spam, truffe o pubblicità."
+    },
+    "checkTone": "Il controllo non rifiuta una personalità per il suo tono. Una personalità scortese, sarcastica o volgare è permessa.",
+    "checkFail": "Se il controllo rifiuta il tuo testo, la dashboard mostra il motivo. Il bot non salva il testo. Il tuo testo resta nel riquadro. Correggi il testo, poi seleziona di nuovo <strong>Salva</strong>.",
+    "checkUnavailable": "Se il controllo non è disponibile, il salvataggio fallisce. Il bot non salva testo che il controllo non ha esaminato.",
+    "resetTitle": "Ripristina i Valori Predefiniti",
+    "resetSteps": {
+      "select": "Seleziona <strong>Ripristina i valori predefiniti</strong>.",
+      "confirm": "Seleziona <strong>OK</strong> nel messaggio di conferma."
+    },
+    "resetNote": "Quando il tuo canale ha una personalità personalizzata, la dashboard mostra questo pulsante.",
+    "sharedTitle": "Chat Condivisa",
+    "sharedIntro": "In una sessione di chat condivisa di Twitch, il bot unisce le personalità di tutti i canali della sessione. Il bot dà più peso alla personalità del canale host. Un canale con la personalità predefinita non aggiunge nulla all'unione.",
+    "otherPromptsTitle": "Altri Prompt IA",
+    "otherPromptsIntro": "Lo stesso controllo di sicurezza si applica a questi campi:",
+    "otherPrompts": {
+      "commands": "Prompt IA per i comandi personalizzati",
+      "timers": "Prompt IA per i timer",
+      "checkin": "Prompt IA per il Check-In giornaliero"
+    },
+    "otherPromptsText": "I comandi di testo e i timer di testo non usano il controllo. Il bot invia questo testo senza modifiche."
   },
   "dailyCheckIn": {
     "title": "Check-In giornaliero",

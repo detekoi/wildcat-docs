@@ -290,7 +290,8 @@
     "responseVariables": "応答変数",
     "dailyCheckIn": "デイリーチェックイン",
     "title": "WildcatSage",
-    "toggleSidebar": "サイドバーを切り替え"
+    "toggleSidebar": "サイドバーを切り替え",
+    "botPersonality": "ボットの個性"
   },
   "responseVariables": {
     "title": "応答変数",
@@ -481,6 +482,72 @@
     },
     "noteLabel": "注:",
     "noteText": "WildcatSageは現在招待制です。ダッシュボードにチャンネルが表示されない場合は、<a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォームからアクセスをリクエスト</a> してください。"
+  },
+  "botPersonality": {
+    "title": "ボットの個性",
+    "intro": "ボットの個性は、WildcatSage があなたのチャンネルでどのように話すかを制御します。ダッシュボードで個性のテキストを記述します。ボットはこのテキストを AI 応答に使用します。",
+    "setupTitle": "セットアップ",
+    "steps": {
+      "open": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage ダッシュボード</a>を開き、<strong>ボットの個性</strong>セクションに移動します。",
+      "edit": "ボックス内のテキストを変更します。ボックスには既定の個性が入っています。",
+      "save": "<strong>保存</strong> を選択します。"
+    },
+    "noteLabel": "注:",
+    "noteText": "新しい個性はすぐに適用されます。再起動は不要です。",
+    "limitsTitle": "制限",
+    "table": {
+      "item": "項目",
+      "value": "値"
+    },
+    "limits": {
+      "lengthItem": "最大文字数",
+      "lengthValue": "2000 文字",
+      "scopeItem": "適用対象",
+      "scopeValue": "チャット応答、自動チャットのメッセージ、配信イベントのメッセージ、AI カスタムコマンド、デイリーチェックインの AI メッセージ",
+      "gamesItem": "適用対象外",
+      "gamesValue": "Trivia、Riddle、Geo の各ゲーム"
+    },
+    "changeTitle": "変更できる項目",
+    "changeIntro": "ボットの名前、口調、ユーモア、話題を変更できます。既定の個性には猫のロールプレイの記述が含まれます。この記述は削除できます。",
+    "fixedTitle": "常に適用されるルール",
+    "fixedIntro": "次のルールはすべてのチャンネルに適用されます。あなたのテキストでは変更できません。",
+    "fixed": {
+      "commands": "ボットは <span class=\"inline-code\">/ban</span> や <span class=\"inline-code\">/timeout</span> などのチャットコマンドを送信も模倣もしません。",
+      "length": "ボットは各応答を 1 文か 2 文に制限します。",
+      "secrecy": "ボットは自身の指示をチャットに表示しません。",
+      "values": "チャンネルの価値観は有効なままです。"
+    },
+    "fixedPanel": "ダッシュボードの<strong>常に適用されるルール</strong>パネルに、これらのルールの全文が表示されます。このパネルは読み取り専用です。",
+    "checkTitle": "安全性チェック",
+    "checkIntro": "WildcatSage はテキストを保存する前に各個性を検査します。このチェックには、翻訳と同じ Gemini Flash Lite モデルを使用します。",
+    "checkRejects": "チェックは、ボットに次の指示を与えるテキストを拒否します。",
+    "rejects": {
+      "harass": "視聴者への嫌がらせ、または個人への攻撃。",
+      "commands": "モデレーションコマンドの送信または模倣。",
+      "impersonate": "実在の人物または企業へのなりすまし。",
+      "override": "常に適用されるルールの無視。",
+      "reveal": "自身の指示のチャットへの表示。",
+      "spam": "スパム、詐欺、広告の送信。"
+    },
+    "checkTone": "チェックは口調を理由に個性を拒否しません。無礼、皮肉、下品な個性も使用できます。",
+    "checkFail": "チェックがテキストを拒否した場合、ダッシュボードに理由が表示されます。ボットはテキストを保存しません。テキストはボックスに残ります。テキストを修正してから、もう一度 <strong>保存</strong> を選択します。",
+    "checkUnavailable": "チェックが利用できない場合、保存は失敗します。ボットはチェックを受けていないテキストを保存しません。",
+    "resetTitle": "既定値に戻す",
+    "resetSteps": {
+      "select": "<strong>既定値に戻す</strong> を選択します。",
+      "confirm": "確認メッセージで <strong>OK</strong> を選択します。"
+    },
+    "resetNote": "チャンネルにカスタムの個性がある場合、ダッシュボードにこのボタンが表示されます。",
+    "sharedTitle": "共有チャット",
+    "sharedIntro": "Twitch の共有チャットセッションでは、ボットはセッション内のすべてのチャンネルの個性を混ぜます。ボットはホストチャンネルの個性をより重視します。既定の個性のチャンネルは混合に何も加えません。",
+    "otherPromptsTitle": "その他の AI プロンプト",
+    "otherPromptsIntro": "同じ安全性チェックが次のフィールドにも適用されます。",
+    "otherPrompts": {
+      "commands": "カスタムコマンドの AI プロンプト",
+      "timers": "タイマーの AI プロンプト",
+      "checkin": "デイリーチェックインの AI プロンプト"
+    },
+    "otherPromptsText": "テキストコマンドとテキストタイマーはチェックを使用しません。ボットはこのテキストを変更せずに送信します。"
   },
   "dailyCheckIn": {
     "title": "デイリーチェックイン",

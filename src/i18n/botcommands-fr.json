@@ -290,7 +290,8 @@
     "responseVariables": "Variables de réponse",
     "dailyCheckIn": "Check-In quotidien",
     "title": "WildcatSage",
-    "toggleSidebar": "Basculer la barre latérale"
+    "toggleSidebar": "Basculer la barre latérale",
+    "botPersonality": "Personnalité du Bot"
   },
   "responseVariables": {
     "title": "Variables de réponse",
@@ -481,6 +482,72 @@
     },
     "noteLabel": "Remarque :",
     "noteText": "WildcatSage est actuellement accessible uniquement sur invitation. Si votre chaîne n'apparaît pas dans le tableau de bord, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">demandez l'accès via le formulaire de contact</a>."
+  },
+  "botPersonality": {
+    "title": "Personnalité du Bot",
+    "intro": "La Personnalité du Bot contrôle la façon dont WildcatSage parle dans votre chaîne. Vous écrivez le texte de la personnalité dans le tableau de bord. Le bot utilise ensuite ce texte pour ses réponses IA.",
+    "setupTitle": "Configuration",
+    "steps": {
+      "open": "Ouvrez le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord WildcatSage</a> et allez à la section <strong>Personnalité du Bot</strong>.",
+      "edit": "Modifiez le texte dans le champ. Le champ contient la personnalité par défaut.",
+      "save": "Sélectionnez <strong>Enregistrer</strong>."
+    },
+    "noteLabel": "Remarque :",
+    "noteText": "La nouvelle personnalité s'applique immédiatement. Un redémarrage n'est pas nécessaire.",
+    "limitsTitle": "Limites",
+    "table": {
+      "item": "Élément",
+      "value": "Valeur"
+    },
+    "limits": {
+      "lengthItem": "Longueur maximale",
+      "lengthValue": "2000 caractères",
+      "scopeItem": "S'applique à",
+      "scopeValue": "Réponses du chat, messages de chat automatique, messages d'événements de stream, commandes personnalisées IA et messages IA du Check-In quotidien",
+      "gamesItem": "Ne s'applique pas à",
+      "gamesValue": "Les jeux Trivia, Riddle et Geo"
+    },
+    "changeTitle": "Ce Que Vous Pouvez Modifier",
+    "changeIntro": "Vous pouvez modifier le nom, le ton, l'humour et les sujets du bot. La personnalité par défaut contient une section de jeu de rôle de chat. Vous pouvez supprimer cette section.",
+    "fixedTitle": "Règles Toujours Appliquées",
+    "fixedIntro": "Ces règles s'appliquent à toutes les chaînes. Votre texte ne peut pas les modifier :",
+    "fixed": {
+      "commands": "Le bot n'envoie ni ne simule les commandes de chat telles que <span class=\"inline-code\">/ban</span> ou <span class=\"inline-code\">/timeout</span>.",
+      "length": "Le bot limite chaque réponse à une ou deux phrases.",
+      "secrecy": "Le bot n'affiche pas ses propres instructions dans le chat.",
+      "values": "Les valeurs de la chaîne restent en vigueur."
+    },
+    "fixedPanel": "Le panneau <strong>Règles toujours appliquées</strong> du tableau de bord affiche le texte complet de ces règles. Ce panneau est en lecture seule.",
+    "checkTitle": "Contrôle de Sécurité",
+    "checkIntro": "WildcatSage examine chaque personnalité avant d'enregistrer le texte. Ce contrôle utilise Gemini Flash Lite, le même modèle que la traduction.",
+    "checkRejects": "Le contrôle rejette le texte qui donne au bot ces instructions :",
+    "rejects": {
+      "harass": "Harceler les spectateurs ou attaquer une personne.",
+      "commands": "Envoyer ou simuler des commandes de modération.",
+      "impersonate": "Se faire passer pour une personne réelle ou une entreprise.",
+      "override": "Ignorer les règles toujours appliquées.",
+      "reveal": "Afficher ses propres instructions dans le chat.",
+      "spam": "Envoyer du spam, des arnaques ou de la publicité."
+    },
+    "checkTone": "Le contrôle ne rejette pas une personnalité à cause de son ton. Une personnalité grossière, sarcastique ou vulgaire est autorisée.",
+    "checkFail": "Si le contrôle rejette votre texte, le tableau de bord affiche la raison. Le bot n'enregistre pas le texte. Votre texte reste dans le champ. Corrigez le texte, puis sélectionnez <strong>Enregistrer</strong> de nouveau.",
+    "checkUnavailable": "Si le contrôle n'est pas disponible, l'enregistrement échoue. Le bot n'enregistre pas de texte que le contrôle n'a pas examiné.",
+    "resetTitle": "Réinitialiser aux Valeurs par Défaut",
+    "resetSteps": {
+      "select": "Sélectionnez <strong>Réinitialiser aux valeurs par défaut</strong>.",
+      "confirm": "Sélectionnez <strong>OK</strong> dans le message de confirmation."
+    },
+    "resetNote": "Quand votre chaîne a une personnalité personnalisée, le tableau de bord affiche ce bouton.",
+    "sharedTitle": "Chat Partagé",
+    "sharedIntro": "Dans une session de chat partagé Twitch, le bot mélange les personnalités de toutes les chaînes de la session. Le bot donne plus de poids à la personnalité de la chaîne hôte. Une chaîne avec la personnalité par défaut n'ajoute rien au mélange.",
+    "otherPromptsTitle": "Autres Prompts IA",
+    "otherPromptsIntro": "Le même contrôle de sécurité s'applique à ces champs :",
+    "otherPrompts": {
+      "commands": "Prompts IA pour les commandes personnalisées",
+      "timers": "Prompts IA pour les minuteurs",
+      "checkin": "Prompts IA pour le Check-In quotidien"
+    },
+    "otherPromptsText": "Les commandes texte et les minuteurs texte n'utilisent pas le contrôle. Le bot envoie ce texte sans modification."
   },
   "dailyCheckIn": {
     "title": "Check-In quotidien",

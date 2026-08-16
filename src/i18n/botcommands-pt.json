@@ -290,7 +290,8 @@
     "responseVariables": "Variáveis de resposta",
     "dailyCheckIn": "Check-In diário",
     "title": "WildcatSage",
-    "toggleSidebar": "Alternar barra lateral"
+    "toggleSidebar": "Alternar barra lateral",
+    "botPersonality": "Personalidade do Bot"
   },
   "responseVariables": {
     "title": "Variáveis de resposta",
@@ -481,6 +482,72 @@
     },
     "noteLabel": "Nota:",
     "noteText": "O WildcatSage está disponível atualmente apenas por convite. Se o seu canal não aparecer no painel, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">solicite acesso pelo formulário de contato</a>."
+  },
+  "botPersonality": {
+    "title": "Personalidade do Bot",
+    "intro": "A Personalidade do Bot controla como o WildcatSage fala no seu canal. Você escreve o texto da personalidade no painel. O bot usa então este texto para as respostas de IA.",
+    "setupTitle": "Configuração",
+    "steps": {
+      "open": "Abra o <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel do WildcatSage</a> e vá para a seção <strong>Personalidade do Bot</strong>.",
+      "edit": "Altere o texto na caixa. A caixa contém a personalidade padrão.",
+      "save": "Selecione <strong>Salvar</strong>."
+    },
+    "noteLabel": "Nota:",
+    "noteText": "A nova personalidade se aplica imediatamente. Não é necessário reiniciar.",
+    "limitsTitle": "Limites",
+    "table": {
+      "item": "Item",
+      "value": "Valor"
+    },
+    "limits": {
+      "lengthItem": "Comprimento máximo",
+      "lengthValue": "2000 caracteres",
+      "scopeItem": "Aplica-se a",
+      "scopeValue": "Respostas no chat, mensagens de chat automático, mensagens de eventos de stream, comandos personalizados de IA e mensagens de IA do Check-In diário",
+      "gamesItem": "Não se aplica a",
+      "gamesValue": "Os jogos Trivia, Riddle e Geo"
+    },
+    "changeTitle": "O Que Você Pode Alterar",
+    "changeIntro": "Você pode alterar o nome, o tom, o humor e os temas do bot. A personalidade padrão inclui uma seção de interpretação de gato. Você pode remover esta seção.",
+    "fixedTitle": "Regras Que Sempre Se Aplicam",
+    "fixedIntro": "Estas regras se aplicam a todos os canais. Seu texto não pode alterá-las:",
+    "fixed": {
+      "commands": "O bot não envia nem simula comandos de chat como <span class=\"inline-code\">/ban</span> ou <span class=\"inline-code\">/timeout</span>.",
+      "length": "O bot limita cada resposta a uma ou duas frases.",
+      "secrecy": "O bot não mostra as próprias instruções no chat.",
+      "values": "Os valores do canal continuam em vigor."
+    },
+    "fixedPanel": "O painel <strong>Regras que sempre se aplicam</strong> mostra o texto completo destas regras. Este painel é somente leitura.",
+    "checkTitle": "Verificação de Segurança",
+    "checkIntro": "O WildcatSage examina cada personalidade antes de salvar o texto. Esta verificação usa o Gemini Flash Lite, o mesmo modelo que faz a tradução.",
+    "checkRejects": "A verificação rejeita o texto que dá ao bot estas instruções:",
+    "rejects": {
+      "harass": "Assediar espectadores ou atacar uma pessoa.",
+      "commands": "Enviar ou simular comandos de moderação.",
+      "impersonate": "Fazer-se passar por uma pessoa real ou uma empresa.",
+      "override": "Ignorar as regras que sempre se aplicam.",
+      "reveal": "Mostrar as próprias instruções no chat.",
+      "spam": "Enviar spam, golpes ou publicidade."
+    },
+    "checkTone": "A verificação não rejeita uma personalidade por causa do tom. Uma personalidade rude, sarcástica ou grosseira é permitida.",
+    "checkFail": "Se a verificação rejeitar seu texto, o painel mostra o motivo. O bot não salva o texto. Seu texto permanece na caixa. Corrija o texto e selecione <strong>Salvar</strong> outra vez.",
+    "checkUnavailable": "Se a verificação não estiver disponível, o salvamento falha. O bot não salva texto que a verificação não examinou.",
+    "resetTitle": "Restaurar o Padrão",
+    "resetSteps": {
+      "select": "Selecione <strong>Restaurar o padrão</strong>.",
+      "confirm": "Selecione <strong>OK</strong> na mensagem de confirmação."
+    },
+    "resetNote": "Quando seu canal tem uma personalidade personalizada, o painel mostra este botão.",
+    "sharedTitle": "Chat Compartilhado",
+    "sharedIntro": "Em uma sessão de chat compartilhado da Twitch, o bot mistura as personalidades de todos os canais da sessão. O bot dá mais peso à personalidade do canal anfitrião. Um canal com a personalidade padrão não acrescenta nada à mistura.",
+    "otherPromptsTitle": "Outros Prompts de IA",
+    "otherPromptsIntro": "A mesma verificação de segurança se aplica a estes campos:",
+    "otherPrompts": {
+      "commands": "Prompts de IA para comandos personalizados",
+      "timers": "Prompts de IA para temporizadores",
+      "checkin": "Prompts de IA para o Check-In diário"
+    },
+    "otherPromptsText": "Comandos de texto e temporizadores de texto não usam a verificação. O bot envia este texto sem alteração."
   },
   "dailyCheckIn": {
     "title": "Check-In diário",

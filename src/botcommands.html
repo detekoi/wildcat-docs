@@ -12,6 +12,7 @@ sidebarLinks:
   - { href: "#config",             key: sidebar.config,            label: "Config" }
   - { href: "#response-variables", key: sidebar.responseVariables, label: "Response Variables" }
   - { href: "#web-dashboard",      key: sidebar.webDashboard,      label: "Web Dashboard" }
+  - { href: "#bot-personality",    key: sidebar.botPersonality,    label: "Bot Personality" }
   - { href: "#daily-check-in",     key: sidebar.dailyCheckIn,      label: "Daily Check-In" }
 extraScripts:
   - scripts/sidenav.js
@@ -991,6 +992,95 @@ extraScripts:
             data-i18n="webDashboard.noteText">WildcatSage is currently invite-only. If your channel does not appear in the dashboard, <a href="https://parfaitfair.com/#contact"
                 class="default-link-style" target="_blank" rel="noopener noreferrer">request access through the contact form</a>.</span>
     </p>
+</section>
+
+<section id="bot-personality" class="section">
+    <h2 data-i18n="botPersonality.title">Bot Personality</h2>
+    <p data-i18n="botPersonality.intro">Bot Personality controls how WildcatSage speaks in your channel. You write the personality text in the dashboard. The bot then uses this text for its AI replies.</p>
+
+    <h3 data-i18n="botPersonality.setupTitle">Setup</h3>
+    <ol>
+        <li data-i18n="botPersonality.steps.open">Open the <a href="https://bot.wildcat.chat/"
+                class="default-link-style" target="_blank" rel="noopener noreferrer">WildcatSage Dashboard</a> and go to the
+            <strong>Bot Personality</strong> section.
+        </li>
+        <li data-i18n="botPersonality.steps.edit">Change the text in the box. The box contains the default personality.</li>
+        <li data-i18n="botPersonality.steps.save">Select <strong>Save</strong>.</li>
+    </ol>
+    <p><strong data-i18n="botPersonality.noteLabel">Note:</strong> <span
+            data-i18n="botPersonality.noteText">The new personality applies immediately. A restart is not necessary.</span></p>
+
+    <h3 data-i18n="botPersonality.limitsTitle">Limits</h3>
+    <table>
+        <caption class="visually-hidden" data-i18n="botPersonality.limitsTitle">Limits</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="botPersonality.table.item">Item</th>
+                <th scope="col" data-i18n="botPersonality.table.value">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-i18n="botPersonality.limits.lengthItem">Maximum length</td>
+                <td data-i18n="botPersonality.limits.lengthValue">2000 characters</td>
+            </tr>
+            <tr>
+                <td data-i18n="botPersonality.limits.scopeItem">Applies to</td>
+                <td data-i18n="botPersonality.limits.scopeValue">Chat replies, auto-chat messages, stream event messages, AI custom commands, and Daily Check-In AI messages</td>
+            </tr>
+            <tr>
+                <td data-i18n="botPersonality.limits.gamesItem">Does not apply to</td>
+                <td data-i18n="botPersonality.limits.gamesValue">Trivia, Riddle, and Geo games</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 data-i18n="botPersonality.changeTitle">What You Can Change</h3>
+    <p data-i18n="botPersonality.changeIntro">You can change the name, the tone, the humor, and the topics of the bot. The default personality includes a cat roleplay section. You can remove this section.</p>
+
+    <h3 data-i18n="botPersonality.fixedTitle">Rules That Always Apply</h3>
+    <p data-i18n="botPersonality.fixedIntro">These rules apply to all channels. Your text cannot change them:</p>
+    <ul>
+        <li data-i18n="botPersonality.fixed.commands">The bot does not send or simulate chat commands such as <span class="inline-code">/ban</span> or <span class="inline-code">/timeout</span>.</li>
+        <li data-i18n="botPersonality.fixed.length">The bot keeps each reply to one or two sentences.</li>
+        <li data-i18n="botPersonality.fixed.secrecy">The bot does not show its own instructions in chat.</li>
+        <li data-i18n="botPersonality.fixed.values">The channel values stay in effect.</li>
+    </ul>
+    <p data-i18n="botPersonality.fixedPanel">The <strong>Rules that always apply</strong> panel in the dashboard shows the full text of these rules. This panel is read-only.</p>
+
+    <h3 data-i18n="botPersonality.checkTitle">Safety Check</h3>
+    <p data-i18n="botPersonality.checkIntro">WildcatSage examines each personality before it stores the text. This check uses Gemini Flash Lite, the same model that does translation.</p>
+    <p data-i18n="botPersonality.checkRejects">The check rejects text that gives the bot these instructions:</p>
+    <ul>
+        <li data-i18n="botPersonality.rejects.harass">Harass viewers, or attack a person.</li>
+        <li data-i18n="botPersonality.rejects.commands">Send or simulate moderation commands.</li>
+        <li data-i18n="botPersonality.rejects.impersonate">Impersonate a real person or a company.</li>
+        <li data-i18n="botPersonality.rejects.override">Ignore the rules that always apply.</li>
+        <li data-i18n="botPersonality.rejects.reveal">Show its own instructions in chat.</li>
+        <li data-i18n="botPersonality.rejects.spam">Send spam, scams, or advertisements.</li>
+    </ul>
+    <p data-i18n="botPersonality.checkTone">The check does not reject a personality because of its tone. A rude, sarcastic, or profane personality is permitted.</p>
+    <p data-i18n="botPersonality.checkFail">If the check rejects your text, the dashboard shows the reason. The bot does not store the text. Your text stays in the box. Correct the text, then select <strong>Save</strong> again.</p>
+    <p data-i18n="botPersonality.checkUnavailable">If the check is not available, the save fails. The bot does not store text that the check did not examine.</p>
+
+    <h3 data-i18n="botPersonality.resetTitle">Reset to Default</h3>
+    <ol>
+        <li data-i18n="botPersonality.resetSteps.select">Select <strong>Reset to default</strong>.</li>
+        <li data-i18n="botPersonality.resetSteps.confirm">Select <strong>OK</strong> in the confirmation message.</li>
+    </ol>
+    <p data-i18n="botPersonality.resetNote">When your channel has a custom personality, the dashboard shows this button.</p>
+
+    <h3 data-i18n="botPersonality.sharedTitle">Shared Chat</h3>
+    <p data-i18n="botPersonality.sharedIntro">In a Twitch shared chat session, the bot mixes the personalities of all channels in the session. The bot gives more weight to the personality of the host channel. A channel with the default personality adds nothing to the mix.</p>
+
+    <h3 data-i18n="botPersonality.otherPromptsTitle">Other AI Prompts</h3>
+    <p data-i18n="botPersonality.otherPromptsIntro">The same safety check applies to these fields:</p>
+    <ul>
+        <li data-i18n="botPersonality.otherPrompts.commands">AI prompts for custom commands</li>
+        <li data-i18n="botPersonality.otherPrompts.timers">AI prompts for timers</li>
+        <li data-i18n="botPersonality.otherPrompts.checkin">AI prompts for Daily Check-In</li>
+    </ul>
+    <p data-i18n="botPersonality.otherPromptsText">Text commands and text timers do not use the check. The bot sends this text without a change.</p>
 </section>
 
 <section id="daily-check-in" class="section">

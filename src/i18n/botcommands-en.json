@@ -290,7 +290,8 @@
     "responseVariables": "Response Variables",
     "dailyCheckIn": "Daily Check-In",
     "title": "WildcatSage",
-    "toggleSidebar": "Toggle Sidebar"
+    "toggleSidebar": "Toggle Sidebar",
+    "botPersonality": "Bot Personality"
   },
   "responseVariables": {
     "title": "Response Variables",
@@ -481,6 +482,72 @@
     },
     "noteLabel": "Note:",
     "noteText": "WildcatSage is currently invite-only. If your channel does not appear in the dashboard, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">request access through the contact form</a>."
+  },
+  "botPersonality": {
+    "title": "Bot Personality",
+    "intro": "Bot Personality controls how WildcatSage speaks in your channel. You write the personality text in the dashboard. The bot then uses this text for its AI replies.",
+    "setupTitle": "Setup",
+    "steps": {
+      "open": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> and go to the <strong>Bot Personality</strong> section.",
+      "edit": "Change the text in the box. The box contains the default personality.",
+      "save": "Select <strong>Save</strong>."
+    },
+    "noteLabel": "Note:",
+    "noteText": "The new personality applies immediately. A restart is not necessary.",
+    "limitsTitle": "Limits",
+    "table": {
+      "item": "Item",
+      "value": "Value"
+    },
+    "limits": {
+      "lengthItem": "Maximum length",
+      "lengthValue": "2000 characters",
+      "scopeItem": "Applies to",
+      "scopeValue": "Chat replies, auto-chat messages, stream event messages, AI custom commands, and Daily Check-In AI messages",
+      "gamesItem": "Does not apply to",
+      "gamesValue": "Trivia, Riddle, and Geo games"
+    },
+    "changeTitle": "What You Can Change",
+    "changeIntro": "You can change the name, the tone, the humor, and the topics of the bot. The default personality includes a cat roleplay section. You can remove this section.",
+    "fixedTitle": "Rules That Always Apply",
+    "fixedIntro": "These rules apply to all channels. Your text cannot change them:",
+    "fixed": {
+      "commands": "The bot does not send or simulate chat commands such as <span class=\"inline-code\">/ban</span> or <span class=\"inline-code\">/timeout</span>.",
+      "length": "The bot keeps each reply to one or two sentences.",
+      "secrecy": "The bot does not show its own instructions in chat.",
+      "values": "The channel values stay in effect."
+    },
+    "fixedPanel": "The <strong>Rules that always apply</strong> panel in the dashboard shows the full text of these rules. This panel is read-only.",
+    "checkTitle": "Safety Check",
+    "checkIntro": "WildcatSage examines each personality before it stores the text. This check uses Gemini Flash Lite, the same model that does translation.",
+    "checkRejects": "The check rejects text that gives the bot these instructions:",
+    "rejects": {
+      "harass": "Harass viewers, or attack a person.",
+      "commands": "Send or simulate moderation commands.",
+      "impersonate": "Impersonate a real person or a company.",
+      "override": "Ignore the rules that always apply.",
+      "reveal": "Show its own instructions in chat.",
+      "spam": "Send spam, scams, or advertisements."
+    },
+    "checkTone": "The check does not reject a personality because of its tone. A rude, sarcastic, or profane personality is permitted.",
+    "checkFail": "If the check rejects your text, the dashboard shows the reason. The bot does not store the text. Your text stays in the box. Correct the text, then select <strong>Save</strong> again.",
+    "checkUnavailable": "If the check is not available, the save fails. The bot does not store text that the check did not examine.",
+    "resetTitle": "Reset to Default",
+    "resetSteps": {
+      "select": "Select <strong>Reset to default</strong>.",
+      "confirm": "Select <strong>OK</strong> in the confirmation message."
+    },
+    "resetNote": "When your channel has a custom personality, the dashboard shows this button.",
+    "sharedTitle": "Shared Chat",
+    "sharedIntro": "In a Twitch shared chat session, the bot mixes the personalities of all channels in the session. The bot gives more weight to the personality of the host channel. A channel with the default personality adds nothing to the mix.",
+    "otherPromptsTitle": "Other AI Prompts",
+    "otherPromptsIntro": "The same safety check applies to these fields:",
+    "otherPrompts": {
+      "commands": "AI prompts for custom commands",
+      "timers": "AI prompts for timers",
+      "checkin": "AI prompts for Daily Check-In"
+    },
+    "otherPromptsText": "Text commands and text timers do not use the check. The bot sends this text without a change."
   },
   "dailyCheckIn": {
     "title": "Daily Check-In",

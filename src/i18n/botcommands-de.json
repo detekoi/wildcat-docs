@@ -290,7 +290,8 @@
     "responseVariables": "Antwortvariablen",
     "dailyCheckIn": "Täglicher Check-In",
     "title": "WildcatSage",
-    "toggleSidebar": "Seitenleiste umschalten"
+    "toggleSidebar": "Seitenleiste umschalten",
+    "botPersonality": "Bot-Persönlichkeit"
   },
   "responseVariables": {
     "title": "Antwortvariablen",
@@ -481,6 +482,72 @@
     },
     "noteLabel": "Hinweis:",
     "noteText": "WildcatSage ist derzeit nur auf Einladung verfügbar. Wenn dein Kanal nicht im Dashboard angezeigt wird, <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">fordere Zugang über das Kontaktformular an</a>."
+  },
+  "botPersonality": {
+    "title": "Bot-Persönlichkeit",
+    "intro": "Die Bot-Persönlichkeit steuert, wie WildcatSage in deinem Kanal spricht. Du schreibst den Persönlichkeitstext im Dashboard. Der Bot verwendet diesen Text dann für seine KI-Antworten.",
+    "setupTitle": "Einrichtung",
+    "steps": {
+      "open": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> und gehe zum Abschnitt <strong>Bot-Persönlichkeit</strong>.",
+      "edit": "Ändere den Text im Feld. Das Feld enthält die Standardpersönlichkeit.",
+      "save": "Wähle <strong>Speichern</strong>."
+    },
+    "noteLabel": "Hinweis:",
+    "noteText": "Die neue Persönlichkeit gilt sofort. Ein Neustart ist nicht notwendig.",
+    "limitsTitle": "Grenzwerte",
+    "table": {
+      "item": "Element",
+      "value": "Wert"
+    },
+    "limits": {
+      "lengthItem": "Maximale Länge",
+      "lengthValue": "2000 Zeichen",
+      "scopeItem": "Gilt für",
+      "scopeValue": "Chat-Antworten, Auto-Chat-Nachrichten, Stream-Event-Nachrichten, KI-Custom-Commands und KI-Nachrichten des täglichen Check-In",
+      "gamesItem": "Gilt nicht für",
+      "gamesValue": "Die Spiele Trivia, Riddle und Geo"
+    },
+    "changeTitle": "Was Du Ändern Kannst",
+    "changeIntro": "Du kannst den Namen, den Ton, den Humor und die Themen des Bots ändern. Die Standardpersönlichkeit enthält einen Abschnitt mit Katzen-Rollenspiel. Du kannst diesen Abschnitt entfernen.",
+    "fixedTitle": "Regeln, Die Immer Gelten",
+    "fixedIntro": "Diese Regeln gelten für alle Kanäle. Dein Text kann sie nicht ändern:",
+    "fixed": {
+      "commands": "Der Bot sendet und simuliert keine Chat-Befehle wie <span class=\"inline-code\">/ban</span> oder <span class=\"inline-code\">/timeout</span>.",
+      "length": "Der Bot begrenzt jede Antwort auf ein bis zwei Sätze.",
+      "secrecy": "Der Bot zeigt seine eigenen Anweisungen nicht im Chat.",
+      "values": "Die Werte des Kanals bleiben in Kraft."
+    },
+    "fixedPanel": "Das Feld <strong>Regeln, die immer gelten</strong> im Dashboard zeigt den vollständigen Text dieser Regeln. Dieses Feld ist schreibgeschützt.",
+    "checkTitle": "Sicherheitsprüfung",
+    "checkIntro": "WildcatSage prüft jede Persönlichkeit, bevor der Text gespeichert wird. Diese Prüfung verwendet Gemini Flash Lite, dasselbe Modell wie die Übersetzung.",
+    "checkRejects": "Die Prüfung lehnt Text ab, der dem Bot diese Anweisungen gibt:",
+    "rejects": {
+      "harass": "Zuschauer belästigen oder eine Person angreifen.",
+      "commands": "Moderationsbefehle senden oder simulieren.",
+      "impersonate": "Sich als reale Person oder Firma ausgeben.",
+      "override": "Die immer geltenden Regeln ignorieren.",
+      "reveal": "Die eigenen Anweisungen im Chat zeigen.",
+      "spam": "Spam, Betrug oder Werbung senden."
+    },
+    "checkTone": "Die Prüfung lehnt eine Persönlichkeit nicht wegen ihres Tons ab. Eine unhöfliche, sarkastische oder vulgäre Persönlichkeit ist erlaubt.",
+    "checkFail": "Wenn die Prüfung deinen Text ablehnt, zeigt das Dashboard den Grund. Der Bot speichert den Text nicht. Dein Text bleibt im Feld. Korrigiere den Text und wähle dann erneut <strong>Speichern</strong>.",
+    "checkUnavailable": "Wenn die Prüfung nicht verfügbar ist, schlägt das Speichern fehl. Der Bot speichert keinen Text, den die Prüfung nicht geprüft hat.",
+    "resetTitle": "Auf Standard Zurücksetzen",
+    "resetSteps": {
+      "select": "Wähle <strong>Auf Standard zurücksetzen</strong>.",
+      "confirm": "Wähle <strong>OK</strong> in der Bestätigungsmeldung."
+    },
+    "resetNote": "Wenn dein Kanal eine eigene Persönlichkeit hat, zeigt das Dashboard diese Schaltfläche.",
+    "sharedTitle": "Geteilter Chat",
+    "sharedIntro": "In einer Twitch-Sitzung mit geteiltem Chat mischt der Bot die Persönlichkeiten aller Kanäle der Sitzung. Der Bot gewichtet die Persönlichkeit des Host-Kanals stärker. Ein Kanal mit der Standardpersönlichkeit trägt nichts zur Mischung bei.",
+    "otherPromptsTitle": "Andere KI-Prompts",
+    "otherPromptsIntro": "Dieselbe Sicherheitsprüfung gilt für diese Felder:",
+    "otherPrompts": {
+      "commands": "KI-Prompts für Custom Commands",
+      "timers": "KI-Prompts für Timer",
+      "checkin": "KI-Prompts für den täglichen Check-In"
+    },
+    "otherPromptsText": "Text-Commands und Text-Timer verwenden die Prüfung nicht. Der Bot sendet diesen Text ohne Änderung."
   },
   "dailyCheckIn": {
     "title": "Täglicher Check-In",
