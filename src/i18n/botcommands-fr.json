@@ -291,7 +291,8 @@
     "dailyCheckIn": "Check-In quotidien",
     "title": "WildcatSage",
     "toggleSidebar": "Basculer la barre latérale",
-    "botPersonality": "Personnalité du Bot"
+    "botPersonality": "Personnalité du Bot",
+    "botLanguage": "Langue du bot"
   },
   "responseVariables": {
     "title": "Variables de réponse",
@@ -446,6 +447,10 @@
       "dailyCheckIn": {
         "title": "Check-In quotidien :",
         "desc": "Configurez une récompense de points de chaîne pour les check-ins quotidiens avec suivi des séries et réponses IA facultatives."
+      },
+      "language": {
+        "title": "Langue du tableau de bord :",
+        "desc": "Affichez le tableau de bord dans l'une des huit langues. Ce paramètre est distinct de la langue du bot."
       }
     },
     "gettingStartedTitle": "Pour commencer",
@@ -576,5 +581,38 @@
     "requirementText": "Le statut d'Affilié ou de Partenaire Twitch est nécessaire pour créer des récompenses de points de chaîne.",
     "aiExamplePrompt": "<strong>Prompt en mode IA :</strong> <code>Écris un message de félicitations court et amusant pour $(user) à l'occasion de son check-in numéro $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Résultat :</strong> <em>« WildcatGamer, 14 jours d'affilée ? Tu es en feu ! À ce rythme, tu vas survivre au soleil. ☀️ »</em> — les réponses varient à chaque utilisation."
+  },
+  "botLanguage": {
+    "title": "Langue du bot",
+    "intro": "WildcatSage peut parler une langue autre que l'anglais dans votre chaîne. La langue s'applique aux réponses aux commandes, aux messages de jeu et aux réponses de l'IA.",
+    "autoTitle": "Détection automatique",
+    "autoIntro": "Vous définissez une langue de stream sur votre chaîne Twitch. WildcatSage lit cette valeur et l'utilise comme langue par défaut pour votre chaîne.",
+    "auto": {
+      "default": "La détection donne seulement une valeur par défaut. Si un modérateur définit une langue avec <span class=\"inline-code\">!botlang</span>, ce choix est toujours prioritaire.",
+      "live": "Le bot lit la valeur Twitch chaque fois qu'il en a besoin. Si vous modifiez la langue sur Twitch, le bot change aussi.",
+      "english": "Les chaînes avec l'anglais comme langue de stream restent en anglais."
+    },
+    "setTitle": "Définir la langue",
+    "setIntro": "Seuls les modérateurs peuvent modifier la langue du bot. Utilisez ces commandes dans le chat :",
+    "commands": {
+      "set": "Définit la langue de la chaîne sur l'espagnol.",
+      "status": "Affiche la langue actuelle et son origine.",
+      "off": "Rétablit l'anglais pour la chaîne."
+    },
+    "noteLabel": "Remarque :",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> maintient la chaîne en anglais. La détection automatique ne la modifie pas à nouveau.",
+    "writtenTitle": "Langues avec traductions écrites",
+    "writtenIntro": "Huit langues disposent de traductions rédigées à l'avance : anglais, espagnol, français, allemand, italien, portugais, japonais et russe.",
+    "writtenBenefit": "Dans ces langues, les messages fixes tels que les annonces de jeu sont envoyés immédiatement dans le chat. Les mots sont les mêmes à chaque fois.",
+    "writtenOther": "La commande <span class=\"inline-code\">!botlang</span> accepte plus de langues que ces huit langues. Pour une langue sans traductions écrites, le bot traduit chaque message quand il l'envoie.",
+    "writtenOtherCost": "Ces messages sont corrects, mais ils sont plus lents et les mots peuvent changer d'un message à l'autre.",
+    "aiTitle": "Réponses de l'IA",
+    "aiIntro": "Le bot génère de nouvelles réponses IA à chaque fois, elles ne sont donc pas limitées aux huit langues.",
+    "aiRule": "Le bot répond à chaque personne dans la langue utilisée par cette personne. Si la langue n'est pas claire, le bot utilise la langue de votre stream.",
+    "aiUnits": "Les périodes de temps et les noms de langues suivent la langue de la chaîne. Par exemple, <span class=\"inline-code\">!followage</span> écrit ses unités dans la langue de la chaîne.",
+    "dashboardTitle": "Langue du tableau de bord",
+    "dashboardIntro": "Le tableau de bord a son propre paramètre de langue. Ce paramètre est séparé de la langue du bot.",
+    "dashboardPicker": "Le sélecteur de langue se trouve dans le coin inférieur de chaque page du tableau de bord. Le tableau de bord utilise la langue de votre navigateur jusqu'à ce que vous fassiez un choix.",
+    "dashboardUrl": "Pour afficher une page dans une autre langue, ajoutez <span class=\"inline-code\">?lang=ja</span> à la fin de l'adresse."
   }
 }

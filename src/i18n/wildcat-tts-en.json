@@ -464,7 +464,14 @@
     "commandText": "Set a personal language preference with <span class=\"inline-code\">!tts language &lt;language_name&gt;</span>. Moderators can set a channel default with <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
     "optionsTitle": "Available Language Boost Options",
     "optionsIntro": "The following values are accepted:",
-    "usageText": "The <span class=\"inline-code\">auto</span> setting uses automatic language detection. For English chats, set <span class=\"inline-code\">English</span>. Selecting a specific language improves pronunciation for that language."
+    "usageText": "The <span class=\"inline-code\">auto</span> setting uses automatic language detection. For English chats, set <span class=\"inline-code\">English</span>. Selecting a specific language improves pronunciation for that language.",
+    "announcementsTitle": "Announcements and Chat Replies",
+    "announcementsText1": "The channel language also selects the language of the text that the bot writes. This text includes stream event announcements, emote descriptions, and chat replies to commands.",
+    "announcementsText2": "For example, a viewer subscribes to a Spanish channel. The bot then makes the announcement in Spanish.",
+    "announcementsText3": "A personal language from <span class=\"inline-code\">!tts language</span> changes the voice for your own messages only. A personal language does not change the announcements, because the whole channel hears them. The <span class=\"inline-code\">auto</span> setting names no language, so a channel on <span class=\"inline-code\">auto</span> gets announcements in English.",
+    "detectionTitle": "Automatic Detection",
+    "detectionText1": "WildcatTTS reads the language that your channel declares on Twitch. The bot then sets the channel default for you.",
+    "detectionText2": "The bot changes this setting only for a channel that has no language of its own. Your own choice always stays. Twitch has some languages that the voice engine does not support. For these languages, the channel stays on <span class=\"inline-code\">auto</span>."
   },
   "emoteDescriptions": {
     "title": "Emote Descriptions",
@@ -474,7 +481,8 @@
     "step2": "The bot caches the description permanently after first generation.",
     "step3": "Later uses of the emote use the cached description instantly without new AI processing.",
     "managementTitle": "Managing Descriptions",
-    "managementText": "Moderators can use <span class=\"inline-code\">!tts emote</span> to view, regenerate, or set emote descriptions. See the <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Emote Description Management</a> table for details."
+    "managementText": "Moderators can use <span class=\"inline-code\">!tts emote</span> to view, regenerate, or set emote descriptions. See the <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Emote Description Management</a> table for details.",
+    "localeText": "The AI writes each description in the language of the channel. The bot keeps a separate description for each language."
   },
   "webDashboard": {
     "title": "Web Dashboard",
@@ -542,7 +550,9 @@
     "voiceCalibrationFeature2": "<strong>Auto-Apply:</strong> When a viewer selects a calibrated voice, the bot applies the custom volume automatically.",
     "voiceCalibrationFeature3": "<strong>Overrides:</strong> Calibrated voice volumes override the channel default volume setting.",
     "settingCalibrationTitle": "Voice Calibration:",
-    "settingCalibrationDesc": "Set volume multipliers for individual voices to balance audio levels."
+    "settingCalibrationDesc": "Set volume multipliers for individual voices to balance audio levels.",
+    "settingPageLanguageTitle": "Page Language:",
+    "settingPageLanguageDesc": "Select the language of the dashboard text. The selector is at the top of the page. This selector does not change the voice or the announcements."
   },
   "troubleshooting": {
     "title": "Troubleshooting",
@@ -574,7 +584,9 @@
     "custom3": "A channel can have a maximum of 100 entries.",
     "switchTitle": "How To Turn It Off",
     "switchText": "The dictionary is active for all channels by default. To turn it off, turn off Expand Chat Acronyms in the Web Dashboard. TTS then speaks short forms letter by letter.",
-    "lolTip": "TTS already speaks lol as \"el oh el\". This is standard behavior and requires no dictionary entry."
+    "lolTip": "TTS already speaks lol as \"el oh el\". This is standard behavior and requires no dictionary entry.",
+    "rule5": "Some entries work in specific languages only. For example, the dictionary changes <span class=\"inline-code\">ty</span> to \"thank you\" in English. In Polish, Czech, and Slovak, <span class=\"inline-code\">ty</span> is a common word, so the dictionary keeps it.",
+    "custom4": "A new entry of your own works in all languages. An entry that replaces a built-in entry keeps the languages of that built-in entry."
   },
   "profanityFilter": {
     "title": "Profanity Filter",

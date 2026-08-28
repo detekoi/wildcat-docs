@@ -13,6 +13,7 @@ sidebarLinks:
   - { href: "#response-variables", key: sidebar.responseVariables, label: "Response Variables" }
   - { href: "#web-dashboard",      key: sidebar.webDashboard,      label: "Web Dashboard" }
   - { href: "#bot-personality",    key: sidebar.botPersonality,    label: "Bot Personality" }
+  - { href: "#bot-language",       key: sidebar.botLanguage,       label: "Bot Language" }
   - { href: "#daily-check-in",     key: sidebar.dailyCheckIn,      label: "Daily Check-In" }
 extraScripts:
   - scripts/sidenav.js
@@ -959,6 +960,8 @@ extraScripts:
                 data-i18n="webDashboard.features.botPersonality.desc">Customize tone, humor, and style instructions for AI responses, with automatic Twitch rule checks.</span></li>
         <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
                 data-i18n="webDashboard.features.dailyCheckIn.desc">Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses.</span></li>
+        <li><strong data-i18n="webDashboard.features.language.title">Dashboard Language:</strong> <span
+                data-i18n="webDashboard.features.language.desc">Show the dashboard in one of eight languages. This setting is separate from the bot language.</span></li>
     </ul>
 
     <h3 data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
@@ -1081,6 +1084,44 @@ extraScripts:
         <li data-i18n="botPersonality.otherPrompts.checkin">AI prompts for Daily Check-In</li>
     </ul>
     <p data-i18n="botPersonality.otherPromptsText">Text commands and text timers do not use the check. The bot sends this text without a change.</p>
+</section>
+
+<section id="bot-language" class="section">
+    <h2 data-i18n="botLanguage.title">Bot Language</h2>
+    <p data-i18n="botLanguage.intro">WildcatSage can speak a language other than English in your channel. The language applies to command replies, game messages, and AI replies.</p>
+
+    <h3 data-i18n="botLanguage.autoTitle">Automatic Detection</h3>
+    <p data-i18n="botLanguage.autoIntro">You set a stream language on your Twitch channel. WildcatSage reads this value and uses it as the default language for your channel.</p>
+    <ul>
+        <li data-i18n="botLanguage.auto.default">Detection gives a default only. If a moderator sets a language with <span class="inline-code">!botlang</span>, that choice always wins.</li>
+        <li data-i18n="botLanguage.auto.live">The bot reads the Twitch value each time it needs it. If you change the language on Twitch, the bot changes with it.</li>
+        <li data-i18n="botLanguage.auto.english">Channels with English as the stream language stay in English.</li>
+    </ul>
+
+    <h3 data-i18n="botLanguage.setTitle">Set the Language</h3>
+    <p data-i18n="botLanguage.setIntro">Only moderators can change the bot language. Use these commands in chat:</p>
+    <ul>
+        <li><span class="inline-code">!botlang spanish</span> - <span data-i18n="botLanguage.commands.set">Sets the channel language to Spanish.</span></li>
+        <li><span class="inline-code">!botlang status</span> - <span data-i18n="botLanguage.commands.status">Shows the current language and where it came from.</span></li>
+        <li><span class="inline-code">!botlang off</span> - <span data-i18n="botLanguage.commands.off">Returns the channel to English.</span></li>
+    </ul>
+    <p><strong data-i18n="botLanguage.noteLabel">Note:</strong> <span data-i18n="botLanguage.offNote"><span class="inline-code">!botlang off</span> holds the channel in English. Automatic detection does not change it back.</span></p>
+
+    <h3 data-i18n="botLanguage.writtenTitle">Languages With Written Translations</h3>
+    <p data-i18n="botLanguage.writtenIntro">Eight languages have translations that are written in advance: English, Spanish, French, German, Italian, Portuguese, Japanese, and Russian.</p>
+    <p data-i18n="botLanguage.writtenBenefit">In these languages, fixed messages such as game announcements go to chat immediately. The words are the same each time.</p>
+    <p data-i18n="botLanguage.writtenOther">The <span class="inline-code">!botlang</span> command accepts more languages than these eight. For a language without written translations, the bot translates each message as it sends it.</p>
+    <p data-i18n="botLanguage.writtenOtherCost">These messages are correct, but they are slower and the words can change between messages.</p>
+
+    <h3 data-i18n="botLanguage.aiTitle">AI Replies</h3>
+    <p data-i18n="botLanguage.aiIntro">The bot writes AI replies new each time, so they are not limited to the eight languages.</p>
+    <p data-i18n="botLanguage.aiRule">The bot answers each person in the language that person used. If the language is not clear, the bot uses the language of your stream.</p>
+    <p data-i18n="botLanguage.aiUnits">Time periods and language names follow the channel language. As an example, <span class="inline-code">!followage</span> writes its units in the channel language.</p>
+
+    <h3 data-i18n="botLanguage.dashboardTitle">Dashboard Language</h3>
+    <p data-i18n="botLanguage.dashboardIntro">The dashboard has its own language setting. This setting is separate from the bot language.</p>
+    <p data-i18n="botLanguage.dashboardPicker">The language picker is in the bottom corner of every dashboard page. The dashboard uses your browser language until you make a choice.</p>
+    <p data-i18n="botLanguage.dashboardUrl">To see one page in a different language, add <span class="inline-code">?lang=ja</span> to the end of the address.</p>
 </section>
 
 <section id="daily-check-in" class="section">

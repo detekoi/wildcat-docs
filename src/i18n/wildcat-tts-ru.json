@@ -10,9 +10,9 @@
     "ttsCommands": "Команды синтеза речи",
     "voices": "Голоса",
     "languageBoost": "Языковое усиление",
+    "emoteDescriptions": "Описания эмоутов",
     "webDashboard": "Веб-панель управления",
     "troubleshooting": "Устранение неполадок",
-    "emoteDescriptions": "Описания эмоутов",
     "pronunciation": "Словарь произношения",
     "profanityFilter": "Фильтр ненормативной лексики",
     "bannedWords": "Запрещенные слова",
@@ -69,15 +69,16 @@
     "ttsCommands": {
       "name": "!tts commands\n(Псевдоним: !tts help)",
       "description": "Показывает ссылку на полный список подкоманд <span class=\"inline-code\">!tts</span>.",
+      "alias": "(Псевдоним: !tts help)",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
-      },
-      "alias": "(Псевдоним: !tts help)"
+      }
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Псевдонимы: !tts preferences, !tts settings)",
       "description": "Отправляет временную ссылку на <strong>вашу личную страницу настроек TTS</strong>.",
+      "aliases": "(Псевдонимы: !tts preferences, !tts settings)",
       "feature1": "Настройте свой голос, тон, скорость, эмоцию и язык для этого канала.",
       "feature2": "Содержит Опасную Зону, где вы можете добавить себя в список игнорирования TTS. Удалить вас сможет только модератор.",
       "feature3": "Бот отправляет ссылку в чат. Ссылка работает только для вас и сгорает через 10 минут или после первого открытия.",
@@ -85,8 +86,7 @@
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
         "settings": "!tts settings"
-      },
-      "aliases": "(Псевдонимы: !tts preferences, !tts settings)"
+      }
     },
     "myvoice": {
       "name": "!myvoice",
@@ -99,20 +99,20 @@
     "ttsOn": {
       "name": "!tts on\n(Псевдоним: !tts enable)",
       "description": "Запускает движок TTS. TTS озвучивает сообщения и события в соответствии с активным режимом.",
+      "alias": "(Псевдоним: !tts enable)",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
-      },
-      "alias": "(Псевдоним: !tts enable)"
+      }
     },
     "ttsOff": {
       "name": "!tts off\n(Псевдоним: !tts disable)",
       "description": "Полностью останавливает движок TTS. TTS не озвучивает сообщения и события.",
+      "alias": "(Псевдоним: !tts disable)",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
-      },
-      "alias": "(Псевдоним: !tts disable)"
+      }
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
@@ -242,6 +242,7 @@
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Псевдоним: !tts lang)",
       "description": "Устанавливает предпочитаемое языковое усиление для ваших сообщений в чате.",
+      "alias": "(Псевдоним: !tts lang)",
       "statusDesc": "(отображает текущее личное предпочтение)",
       "notes": "Языковое усиление оптимизирует произношение для конкретного языка. Используйте <span class=\"inline-code\">reset</span> или <span class=\"inline-code\">auto</span> для значения по умолчанию. См. раздел <a href=\"#language-boost\" class=\"default-link-style\">Языковое Усиление</a> или введите <span class=\"inline-code\">!tts languageslist</span>.",
       "usage": {
@@ -249,8 +250,7 @@
         "langAlias": "!tts lang Japanese",
         "reset": "!tts language reset",
         "status": "!tts language"
-      },
-      "alias": "(Псевдоним: !tts lang)"
+      }
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
@@ -278,23 +278,23 @@
     },
     "ttsIgnore": {
       "name": "!tts ignore <username>\n!tts ignore add <username>",
+      "descriptionUser": "<strong>Для любого зрителя:</strong> Добавить <em>себя</em> в список игнорирования TTS. TTS не будет читать ваши сообщения.",
+      "descriptionMod": "<strong>Для модераторов и стримеров:</strong> Добавить <em>пользователя Twitch</em> в список игнорирования TTS канала.",
+      "usageSelfNote": "(если вы хотите игнорировать себя)",
+      "usageModNote": "(если вы мод/вещатель)",
       "permission": "Все (чтобы добавить себя), Модератор (чтобы добавить других)",
       "usage": {
         "self": "!tts ignore вашеимя",
         "mod": "!tts ignore add ДругойПользователь"
-      },
-      "descriptionUser": "<strong>Для любого зрителя:</strong> Добавить <em>себя</em> в список игнорирования TTS. TTS не будет читать ваши сообщения.",
-      "descriptionMod": "<strong>Для модераторов и стримеров:</strong> Добавить <em>пользователя Twitch</em> в список игнорирования TTS канала.",
-      "usageSelfNote": "(если вы хотите игнорировать себя)",
-      "usageModNote": "(если вы мод/вещатель)"
+      }
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Псевдонимы: delete, rem, remove)",
       "description": "Удаляет пользователя Twitch из списка игнорирования TTS канала.",
+      "aliases": "(Псевдонимы: delete, rem, remove)",
       "usage": {
         "basic": "!tts ignore del Пользователь"
-      },
-      "aliases": "(Псевдонимы: delete, rem, remove)"
+      }
     },
     "ttsIgnored": {
       "name": "!tts ignored",
@@ -370,10 +370,10 @@
     },
     "ttsMessage": {
       "name": "!tts <message>",
+      "description": "Немедленно добавляет сообщение в очередь TTS. Работает в режимах all и command. TTS использует ваши настройки (или настройки канала) для голоса, тона, скорости и эмоции.",
       "usage": {
         "basic": "!tts Добро пожаловать всем на стрим!"
-      },
-      "description": "Немедленно добавляет сообщение в очередь TTS. Работает в режимах all и command. TTS использует ваши настройки (или настройки канала) для голоса, тона, скорости и эмоции."
+      }
     },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
@@ -443,34 +443,51 @@
       "queueManagement": "Управление очередью (только модератор)",
       "userEventPreferences": "Предпочтения пользователя и события",
       "channelDefaults": "Конфигурация по умолчанию для канала (только модератор)",
-      "directTTS": "Прямой синтез речи",
       "emoteDescriptions": "Управление описаниями эмоутов (только модераторы)",
+      "directTTS": "Прямой синтез речи",
       "pronunciationFiltering": "Произношение и фильтрация (только модератор)"
     }
   },
   "voices": {
     "title": "Голоса",
-    "popularTitle": "Популярные ID голосов",
-    "completeListTitle": "Полный список голосов (из <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Схемы Wavespeed AI minimax/speech-02-turbo</a> — резервный провайдер)",
     "introText": "Бот предоставляет 472 голоса на 45 языках из модели MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Если основной провайдер недоступен, бот автоматически переключается на <span class=\"inline-code\">speech-02-turbo</span>. Используйте <span class=\"inline-code\">voice_id</span> в командах, таких как <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
+    "popularTitle": "Популярные ID голосов",
     "popularText": "Популярные голоса из модели MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Чтобы выбрать голос, используйте команду <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> в чате.",
+    "completeListTitle": "Полный список голосов (из <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Схемы Wavespeed AI minimax/speech-02-turbo</a> — резервный провайдер)",
     "completeListText": "Полный список всех 472 доступных голосов, упорядоченных по языковым префиксам.",
     "expandText": "Выбрать, чтобы развернуть полный список голосов (472 голоса на 45 языках)",
     "completeListNote": "Примечание: Бот использует MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> с автоматическим резервным переходом на <span class=\"inline-code\">speech-02-turbo</span>. Список содержит 472 голоса по языковым группам. Команда <span class=\"inline-code\">!tts voices</span> ссылается на этот раздел."
   },
   "languageBoost": {
     "title": "Языковое усиление",
-    "optionsTitle": "Доступные опции языкового усиления",
     "introText": "Функция <span class=\"inline-code\">language_boost</span> улучшает произношение для конкретных языков и диалектов. Эта настройка полезна в многоязычных чатах и на неанглоязычных трансляциях.",
     "commandText": "Установите личный предпочитаемый язык с помощью <span class=\"inline-code\">!tts language &lt;language_name&gt;</span>. Модераторы могут задать значение по умолчанию для канала с помощью <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
+    "optionsTitle": "Доступные опции языкового усиления",
     "optionsIntro": "Принимаются следующие значения:",
-    "usageText": "Настройка <span class=\"inline-code\">auto</span> использует автоопределение языка. Для англоязычных чатов выберите <span class=\"inline-code\">English</span>. Выбор конкретного языка значительно улучшает качество произношения."
+    "usageText": "Настройка <span class=\"inline-code\">auto</span> использует автоопределение языка. Для англоязычных чатов выберите <span class=\"inline-code\">English</span>. Выбор конкретного языка значительно улучшает качество произношения.",
+    "announcementsTitle": "Оповещения и ответы в чате",
+    "announcementsText1": "Язык канала также определяет язык текста, который пишет бот. Этот текст включает оповещения о событиях стрима, описания эмоутов и ответы в чате на команды.",
+    "announcementsText2": "Например, зритель оформляет подписку на испанском канале. Тогда бот делает оповещение на испанском языке.",
+    "announcementsText3": "Персональный язык из команды <span class=\"inline-code\">!tts language</span> меняет голос только для ваших сообщений. Персональный язык не меняет оповещения, потому что их слышит весь канал. Настройка <span class=\"inline-code\">auto</span> не задает конкретный язык, поэтому канал с настройкой <span class=\"inline-code\">auto</span> получает оповещения на английском языке.",
+    "detectionTitle": "Автоматическое определение",
+    "detectionText1": "WildcatTTS считывает язык, указанный вашим каналом на Twitch. Затем бот задает настройку канала по умолчанию для вас.",
+    "detectionText2": "Бот изменяет эту настройку только для канала, у которого не задан собственный язык. Ваш собственный выбор всегда сохраняется. На Twitch есть языки, которые голосовой движок не поддерживает. Для таких языков канал остается с настройкой <span class=\"inline-code\">auto</span>."
+  },
+  "emoteDescriptions": {
+    "title": "Описания эмоутов",
+    "introText": "WildcatTTS использует искусственный интеллект Google Gemini для описания эмодзи Twitch в сообщениях чата. Вместо чтения кода эмодзи (например, 'LUL') TTS произносит описание, например 'смеющийся человек'. Бот кэширует описания навсегда, предотвращая повторные запросы к ИИ.",
+    "howItWorksTitle": "Как это работает",
+    "step1": "Когда эмодзи появляется впервые, ИИ анализирует изображение и создает короткое описание.",
+    "step2": "Бот сохраняет описание в постоянный кэш после первой генерации.",
+    "step3": "При последующих появлениях эмодзи используется готовое описание из кэша без нагрузки на ИИ.",
+    "managementTitle": "Управление описаниями",
+    "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, перегенерации или ручной установки описаний эмодзи. См. таблицу <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Управление Описаниями Эмодзи</a>.",
+    "localeText": "ИИ пишет каждое описание на языке канала. Бот хранит отдельное описание для каждого языка."
   },
   "webDashboard": {
     "title": "Веб-панель управления",
-    "settingsTitle": "Доступные параметры панели управления",
-    "obsSetupTitle": "Настройка источника браузера OBS",
     "introText": "<a href=\"https://tts.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Веб-панель управления WildcatTTS</a> позволяет стримерам настраивать все параметры TTS. Войдите через свою учетную запись Twitch для доступа к панели.",
+    "settingsTitle": "Доступные параметры панели управления",
     "settingEngineTitle": "Управление движком:",
     "settingEngineDesc": "Включайте или выключайте TTS, настраивайте оповещения о событиях, режим TTS и права доступа.",
     "settingViewerTitle": "Предпочтения зрителей:",
@@ -493,6 +510,8 @@
     "settingBitsDesc": "Установите минимальное количество Bits для вызова аудио TTS.",
     "settingChannelPointsTitle": "Точки канала → TTS:",
     "settingChannelPointsDesc": "Создайте и настройте награду за Баллы Канала для TTS.",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Включите TTS для чата прямых трансляций YouTube и укажите свой хэндл или ссылку на стрим.",
     "settingIgnoreTitle": "Игнорируемые пользователи:",
     "settingIgnoreDesc": "Управляйте списком игнорирования TTS, запрещенными словами и словарем произношения.",
     "settingBannedWordsTitle": "Запрещенные слова / фразы:",
@@ -525,15 +544,15 @@
     "obsMonitorOnlyDesc": "- Только вы слышите звук (для проверки)",
     "obsImportantTitle": "Важно:",
     "obsImportantDesc": "Убедитесь, что источник не заглушен в аудиомикшере, а уровень громкости настроен правильно.",
-    "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Включите TTS для чата прямых трансляций YouTube и укажите свой хэндл или ссылку на стрим.",
     "voiceCalibrationTitle": "Калибровка голосов",
     "voiceCalibrationIntro": "Некоторые голоса могут звучать громче или тише других. Калибровка Голосов позволяет установить множители громкости для отдельных голосов для идеального баланса звука на стриме.",
     "voiceCalibrationFeature1": "<strong>Громкость по Голосам:</strong> Выберите голос и задайте множитель громкости (от 0.1x до 10.0x). <em>(Предупреждение: значения выше 1.0 могут быть слишком громкими)</em>",
     "voiceCalibrationFeature2": "<strong>Автоприменение:</strong> Когда зритель выбирает откалиброванный голос, бот автоматически применяет персональную громкость.",
     "voiceCalibrationFeature3": "<strong>Приоритет:</strong> Индивидуальная громкость голоса имеет приоритет над общей громкостью канала по умолчанию.",
     "settingCalibrationTitle": "Калибровка голосов:",
-    "settingCalibrationDesc": "Установите индивидуальные коэффициенты громкости для голосов для выравнивания звука."
+    "settingCalibrationDesc": "Установите индивидуальные коэффициенты громкости для голосов для выравнивания звука.",
+    "settingPageLanguageTitle": "Язык страницы:",
+    "settingPageLanguageDesc": "Выберите язык текста панели управления. Переключатель находится в верхней части страницы. Этот переключатель не меняет голос или оповещения."
   },
   "troubleshooting": {
     "title": "Устранение неполадок",
@@ -550,16 +569,6 @@
     "q6": "Нужна помощь?",
     "a6": "Свяжитесь с разработчиком через <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">форму обратной связи</a> на сайте портфолио Henry."
   },
-  "emoteDescriptions": {
-    "title": "Описания эмоутов",
-    "introText": "WildcatTTS использует искусственный интеллект Google Gemini для описания эмодзи Twitch в сообщениях чата. Вместо чтения кода эмодзи (например, 'LUL') TTS произносит описание, например 'смеющийся человек'. Бот кэширует описания навсегда, предотвращая повторные запросы к ИИ.",
-    "howItWorksTitle": "Как это работает",
-    "step1": "Когда эмодзи появляется впервые, ИИ анализирует изображение и создает короткое описание.",
-    "step2": "Бот сохраняет описание в постоянный кэш после первой генерации.",
-    "step3": "При последующих появлениях эмодзи используется готовое описание из кэша без нагрузки на ИИ.",
-    "managementTitle": "Управление описаниями",
-    "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, перегенерации или ручной установки описаний эмодзи. См. таблицу <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Управление Описаниями Эмодзи</a>."
-  },
   "pronunciation": {
     "title": "Словарь произношения",
     "introText": "В чате часто используются сокращения, которые TTS читает по буквам. Словарь произношения преобразует их в полные слова. Например, TTS произносит <span class=\"inline-code\">ngl</span> как 'not gonna lie', а <span class=\"inline-code\">glhf</span> как 'good luck have fun'. WildcatTTS включает встроенный список из примерно 70 популярных сокращений. Вы также можете добавлять свои собственные слова.",
@@ -575,7 +584,9 @@
     "custom3": "Канал может содержать не более 100 записей.",
     "switchTitle": "Как отключить",
     "switchText": "Словарь включен для всех каналов по умолчанию. Чтобы отключить его, выключите 'Разворачивать аббревиатуры чата' в веб-панели. Тогда TTS будет читать сокращения побуквенно.",
-    "lolTip": "TTS уже произносит <span class=\"inline-code\">lol</span> как 'el oh el'. Это стандартное поведение и не требует отдельной записи в словаре."
+    "lolTip": "TTS уже произносит <span class=\"inline-code\">lol</span> как 'el oh el'. Это стандартное поведение и не требует отдельной записи в словаре.",
+    "rule5": "Некоторые записи работают только для определенных языков. Например, словарь заменяет <span class=\"inline-code\">ty</span> на \"thank you\" в английском языке. В польском, чешском и словацком языках <span class=\"inline-code\">ty</span> — это обычное слово, поэтому словарь оставляет его.",
+    "custom4": "Ваша новая запись работает для всех языков. Запись, которая заменяет встроенную запись, сохраняет языки этой встроенной записи."
   },
   "profanityFilter": {
     "title": "Фильтр ненормативной лексики",

@@ -10,9 +10,9 @@
     "ttsCommands": "Comandos de Conversão de Texto em Fala",
     "voices": "Vozes",
     "languageBoost": "Aumento de Idioma",
+    "emoteDescriptions": "Descrições de Emotes",
     "webDashboard": "Painel Web",
     "troubleshooting": "Solução de Problemas",
-    "emoteDescriptions": "Descrições de Emotes",
     "pronunciation": "Dicionário de Pronúncia",
     "profanityFilter": "Filtro de Palavrões",
     "bannedWords": "Palavras Banidas",
@@ -69,15 +69,16 @@
     "ttsCommands": {
       "name": "!tts commands\n(Apelido: !tts help)",
       "description": "Mostra um link para a lista completa de subcomandos do <span class=\"inline-code\">!tts</span>.",
+      "alias": "(Alias: !tts help)",
       "usage": {
         "commands": "!tts commands",
         "help": "!tts help"
-      },
-      "alias": "(Alias: !tts help)"
+      }
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Apelidos: !tts preferences, !tts settings)",
       "description": "Envia um link temporário para <strong>sua página pessoal de configurações de TTS</strong>.",
+      "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Defina sua própria voz, tom, velocidade, emoção e idioma para este canal.",
       "feature2": "Inclui uma Zona de Perigo onde você pode se adicionar à lista de ignorados do TTS. Apenas um moderador pode remover você.",
       "feature3": "O bot publica o link no chat. O link funciona apenas para você e expira após 10 minutos ou no primeiro uso.",
@@ -85,8 +86,7 @@
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
         "settings": "!tts settings"
-      },
-      "aliases": "(Alias: !tts preferences, !tts settings)"
+      }
     },
     "myvoice": {
       "name": "!myvoice",
@@ -99,20 +99,20 @@
     "ttsOn": {
       "name": "!tts on\n(Apelido: !tts enable)",
       "description": "Inicia o motor TTS. O TTS lê mensagens e eventos com base no modo ativo.",
+      "alias": "(Alias: !tts enable)",
       "usage": {
         "on": "!tts on",
         "enable": "!tts enable"
-      },
-      "alias": "(Alias: !tts enable)"
+      }
     },
     "ttsOff": {
       "name": "!tts off\n(Apelido: !tts disable)",
       "description": "Interrompe o motor TTS completamente. O TTS não lerá mensagens nem eventos.",
+      "alias": "(Alias: !tts disable)",
       "usage": {
         "off": "!tts off",
         "disable": "!tts disable"
-      },
-      "alias": "(Alias: !tts disable)"
+      }
     },
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
@@ -242,6 +242,7 @@
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Apelido: !tts lang)",
       "description": "Define sua preferência de otimização de idioma para suas mensagens de chat.",
+      "alias": "(Alias: !tts lang)",
       "statusDesc": "(exibe a preferência pessoal atual)",
       "notes": "A otimização de idioma melhora a pronúncia para um idioma. Use <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> para o padrão do canal. Consulte a seção <a href=\"#language-boost\" class=\"default-link-style\">Otimização de Idioma</a> ou use <span class=\"inline-code\">!tts languageslist</span> para ver todas as opções.",
       "usage": {
@@ -249,8 +250,7 @@
         "langAlias": "!tts lang Japanese",
         "reset": "!tts language reset",
         "status": "!tts language"
-      },
-      "alias": "(Alias: !tts lang)"
+      }
     },
     "ttsPitch": {
       "name": "!tts pitch <value|reset>",
@@ -278,23 +278,23 @@
     },
     "ttsIgnore": {
       "name": "!tts ignore <username>\n!tts ignore add <username>",
+      "descriptionUser": "<strong>Para qualquer usuário:</strong> Adicione <em>a si mesmo</em> à lista de ignorados do TTS. O TTS não lerá suas mensagens.",
+      "descriptionMod": "<strong>Para moderadores e streamers:</strong> Adicione <em>um usuário da Twitch</em> à lista de ignorados do TTS do canal.",
+      "usageSelfNote": "(se você quiser se ignorar)",
+      "usageModNote": "(se você for mod/broadcaster)",
       "permission": "Todos (para se adicionar), Moderador (para adicionar outros)",
       "usage": {
         "self": "!tts ignore seunome",
         "mod": "!tts ignore add OutroUsuario"
-      },
-      "descriptionUser": "<strong>Para qualquer usuário:</strong> Adicione <em>a si mesmo</em> à lista de ignorados do TTS. O TTS não lerá suas mensagens.",
-      "descriptionMod": "<strong>Para moderadores e streamers:</strong> Adicione <em>um usuário da Twitch</em> à lista de ignorados do TTS do canal.",
-      "usageSelfNote": "(se você quiser se ignorar)",
-      "usageModNote": "(se você for mod/broadcaster)"
+      }
     },
     "ttsIgnoreDel": {
       "name": "!tts ignore del <username>\n(Apelidos: delete, rem, remove)",
       "description": "Remove um usuário da Twitch da lista de ignorados do TTS do canal.",
+      "aliases": "(Alias: delete, rem, remove)",
       "usage": {
         "basic": "!tts ignore del AlgumUsuario"
-      },
-      "aliases": "(Alias: delete, rem, remove)"
+      }
     },
     "ttsIgnored": {
       "name": "!tts ignored",
@@ -370,10 +370,10 @@
     },
     "ttsMessage": {
       "name": "!tts <message>",
+      "description": "Adiciona a mensagem à fila do TTS imediatamente. Funciona nos modos 'all' e 'command'. O TTS usa suas preferências (ou os padrões do canal) para voz, tom, velocidade e emoção.",
       "usage": {
         "basic": "!tts Bem-vindos todos à transmissão!"
-      },
-      "description": "Adiciona a mensagem à fila do TTS imediatamente. Funciona nos modos 'all' e 'command'. O TTS usa suas preferências (ou os padrões do canal) para voz, tom, velocidade e emoção."
+      }
     },
     "ttsEmote": {
       "name": "!tts emote <emoteName>",
@@ -443,8 +443,8 @@
       "queueManagement": "Gerenciamento de Fila (Apenas Moderador)",
       "userEventPreferences": "Preferências de Usuário e Evento",
       "channelDefaults": "Configuração de Padrões em Nível de Canal (Apenas Moderador)",
-      "directTTS": "TTS Direto",
       "emoteDescriptions": "Gerenciamento de Descrições de Emotes (Apenas Moderadores)",
+      "directTTS": "TTS Direto",
       "pronunciationFiltering": "Pronúncia e Filtragem (Apenas Moderador)"
     }
   },
@@ -464,7 +464,25 @@
     "commandText": "Defina uma preferência pessoal de idioma com <span class=\"inline-code\">!tts language &lt;language_name&gt;</span>. Moderadores podem definir o padrão do canal com <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>.",
     "optionsTitle": "Opções de Aumento de Idioma Disponíveis",
     "optionsIntro": "Os seguintes valores são aceitos:",
-    "usageText": "A configuração <span class=\"inline-code\">auto</span> usa a detecção automática de idioma. Para chats em inglês, escolha <span class=\"inline-code\">English</span>. Escolher um idioma específico melhora consideravelmente a pronúncia para esse idioma."
+    "usageText": "A configuração <span class=\"inline-code\">auto</span> usa a detecção automática de idioma. Para chats em inglês, escolha <span class=\"inline-code\">English</span>. Escolher um idioma específico melhora consideravelmente a pronúncia para esse idioma.",
+    "announcementsTitle": "Anúncios e Respostas no Chat",
+    "announcementsText1": "O idioma do canal também seleciona o idioma do texto que o bot escreve. Este texto inclui anúncios de eventos da transmissão, descrições de emotes e respostas a comandos no chat.",
+    "announcementsText2": "Por exemplo, um espectador se inscreve em um canal em espanhol. O bot então faz o anúncio em espanhol.",
+    "announcementsText3": "Um idioma pessoal de <span class=\"inline-code\">!tts language</span> altera a voz apenas para as suas próprias mensagens. Um idioma pessoal não altera os anúncios, porque todo o canal os ouve. A configuração <span class=\"inline-code\">auto</span> não define nenhum idioma, portanto um canal em <span class=\"inline-code\">auto</span> recebe anúncios em inglês.",
+    "detectionTitle": "Deteção Automática",
+    "detectionText1": "O WildcatTTS lê o idioma que o seu canal declara na Twitch. O bot define então o padrão do canal para você.",
+    "detectionText2": "O bot altera esta configuração apenas para um canal que não tem um idioma próprio. A sua própria escolha sempre permanece. A Twitch tem alguns idiomas que o motor de voz não suporta. Para estes idiomas, o canal permanece em <span class=\"inline-code\">auto</span>."
+  },
+  "emoteDescriptions": {
+    "title": "Descrições de Emotes",
+    "introText": "O WildcatTTS usa a IA do Google Gemini para descrever emotes da Twitch em mensagens de chat. Em vez de ler o código do emote (por exemplo, 'LUL'), o TTS fala uma descrição como 'uma pessoa rindo'. O bot armazena as descrições permanentemente para evitar requisições repetidas de IA.",
+    "howItWorksTitle": "Como Funciona",
+    "step1": "Quando um emote aparece pela primeira vez, a IA analisa a imagem e cria uma breve descrição.",
+    "step2": "O bot salva a descrição permanentemente após a primeira geração.",
+    "step3": "Usos posteriores do emote aproveitam a descrição salva instantaneamente sem novo processamento de IA.",
+    "managementTitle": "Gerenciamento de Descrições",
+    "managementText": "Moderadores podem usar <span class=\"inline-code\">!tts emote</span> para ver, regenerar ou definir descrições de emotes. Consulte a tabela <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gerenciamento de Descrição de Emotes</a> para detalhes.",
+    "localeText": "A IA escreve cada descrição no idioma do canal. O bot mantém uma descrição separada para cada idioma."
   },
   "webDashboard": {
     "title": "Painel Web",
@@ -492,6 +510,8 @@
     "settingBitsDesc": "Exija uma quantidade mínima de Bits para acionar o áudio do TTS.",
     "settingChannelPointsTitle": "Pontos de Canal → TTS:",
     "settingChannelPointsDesc": "Crie e configure uma recompensa personalizada de Pontos do Canal para o TTS.",
+    "settingYoutubeTitle": "YouTube Integration:",
+    "settingYoutubeDesc": "Ative o TTS para o chat ao vivo do YouTube e defina seu identificador ou URL de transmissão.",
     "settingIgnoreTitle": "Usuários ignorados:",
     "settingIgnoreDesc": "Gerencie a lista de ignorados do TTS, palavras banidas e o dicionário de pronúncia.",
     "settingBannedWordsTitle": "Palavras / Frases banidas:",
@@ -524,15 +544,15 @@
     "obsMonitorOnlyDesc": "- Apenas você ouve o áudio (para testes)",
     "obsImportantTitle": "Importante:",
     "obsImportantDesc": "Certifique-se de que a fonte não esteja silenciada no seu mixer de áudio e que o volume esteja ajustado corretamente.",
-    "settingYoutubeTitle": "YouTube Integration:",
-    "settingYoutubeDesc": "Ative o TTS para o chat ao vivo do YouTube e defina seu identificador ou URL de transmissão.",
     "voiceCalibrationTitle": "Calibração de voz",
     "voiceCalibrationIntro": "Algumas vozes são naturalmente mais altas ou mais baixas do que outras. A Calibração de Voz permite definir multiplicadores de volume para vozes individuais para equilibrar os níveis de áudio.",
     "voiceCalibrationFeature1": "<strong>Volume por Voz:</strong> Selecione uma voz e atribua um multiplicador (0.1x a 10.0x). <em>(Atenção: valores acima de 1.0 podem ser altos)</em>",
     "voiceCalibrationFeature2": "<strong>Aplicação Automática:</strong> Quando um espectador escolhe uma voz calibrada, o bot aplica o volume personalizado automaticamente.",
     "voiceCalibrationFeature3": "<strong>Prioridade:</strong> Volumes de vozes calibradas têm prioridade sobre o volume padrão do canal.",
     "settingCalibrationTitle": "Calibração de voz:",
-    "settingCalibrationDesc": "Defina multiplicadores de volume para vozes individuais para equilibrar os níveis de áudio."
+    "settingCalibrationDesc": "Defina multiplicadores de volume para vozes individuais para equilibrar os níveis de áudio.",
+    "settingPageLanguageTitle": "Idioma da Página:",
+    "settingPageLanguageDesc": "Selecione o idioma do texto do painel. O seletor está no topo da página. Este seletor não altera a voz nem os anúncios."
   },
   "troubleshooting": {
     "title": "Solução de Problemas",
@@ -549,16 +569,6 @@
     "q6": "Precisa de ajuda?",
     "a6": "Entre em contato com o desenvolvedor pelo <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">formulário de contato</a> no site de portfólio de Henry."
   },
-  "emoteDescriptions": {
-    "title": "Descrições de Emotes",
-    "introText": "O WildcatTTS usa a IA do Google Gemini para descrever emotes da Twitch em mensagens de chat. Em vez de ler o código do emote (por exemplo, 'LUL'), o TTS fala uma descrição como 'uma pessoa rindo'. O bot armazena as descrições permanentemente para evitar requisições repetidas de IA.",
-    "howItWorksTitle": "Como Funciona",
-    "step1": "Quando um emote aparece pela primeira vez, a IA analisa a imagem e cria uma breve descrição.",
-    "step2": "O bot salva a descrição permanentemente após a primeira geração.",
-    "step3": "Usos posteriores do emote aproveitam a descrição salva instantaneamente sem novo processamento de IA.",
-    "managementTitle": "Gerenciamento de Descrições",
-    "managementText": "Moderadores podem usar <span class=\"inline-code\">!tts emote</span> para ver, regenerar ou definir descrições de emotes. Consulte a tabela <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gerenciamento de Descrição de Emotes</a> para detalhes."
-  },
   "pronunciation": {
     "title": "Dicionário de Pronúncia",
     "introText": "O chat usa muitas abreviações que o TTS lê letra por letra. O dicionário de pronúncia as converte em palavras completas. Por exemplo, o TTS lê <span class=\"inline-code\">ngl</span> como 'not gonna lie' e <span class=\"inline-code\">glhf</span> como 'good luck have fun'. O WildcatTTS inclui uma lista interna de cerca de 70 abreviações comuns. Você também pode adicionar suas próprias entradas.",
@@ -574,7 +584,9 @@
     "custom3": "Um canal pode ter no máximo 100 entradas.",
     "switchTitle": "Como Desativar",
     "switchText": "O dicionário é ativado por padrão para todos os canais. Para desativá-lo, desligue 'Expandir acrônimos do chat' no Painel Web. O TTS lerá as abreviações letra por letra.",
-    "lolTip": "O TTS já pronuncia <span class=\"inline-code\">lol</span> como 'el oh el'. Esse é o comportamento padrão e não requer entrada no dicionário."
+    "lolTip": "O TTS já pronuncia <span class=\"inline-code\">lol</span> como 'el oh el'. Esse é o comportamento padrão e não requer entrada no dicionário.",
+    "rule5": "Algumas entradas funcionam apenas em idiomas específicos. Por exemplo, o dicionário altera <span class=\"inline-code\">ty</span> para \"thank you\" em inglês. Em polonês, tcheco e eslovaco, <span class=\"inline-code\">ty</span> é uma palavra comum, portanto o dicionário a mantém.",
+    "custom4": "Uma nova entrada sua funciona em todos os idiomas. Uma entrada que substitui uma entrada integrada mantém os idiomas dessa entrada integrada."
   },
   "profanityFilter": {
     "title": "Filtro de Palavrões",

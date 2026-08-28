@@ -291,7 +291,8 @@
     "dailyCheckIn": "Check-In diário",
     "title": "WildcatSage",
     "toggleSidebar": "Alternar barra lateral",
-    "botPersonality": "Personalidade do Bot"
+    "botPersonality": "Personalidade do Bot",
+    "botLanguage": "Idioma do Bot"
   },
   "responseVariables": {
     "title": "Variáveis de resposta",
@@ -446,6 +447,10 @@
       "dailyCheckIn": {
         "title": "Check-In diário:",
         "desc": "Configure uma recompensa de pontos de canal para check-ins diários com rastreamento de sequência e respostas opcionais de IA."
+      },
+      "language": {
+        "title": "Idioma do Dashboard:",
+        "desc": "Mostra o dashboard em um de oito idiomas. Esta configuração é separada do idioma do bot."
       }
     },
     "gettingStartedTitle": "Primeiros passos",
@@ -576,5 +581,38 @@
     "requirementText": "Você precisa do status de Afiliado ou Parceiro da Twitch para criar recompensas de pontos de canal.",
     "aiExamplePrompt": "<strong>Prompt do Modo IA:</strong> <code>Escreva uma mensagem de parabéns curta e divertida para $(user) pelo check-in número $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Saída:</strong> <em>\"WildcatGamer, 14 dias seguidos? Você está com tudo! Nesse ritmo você vai durar mais que o sol. ☀️\"</em> — as respostas variam a cada uso."
+  },
+  "botLanguage": {
+    "title": "Idioma do Bot",
+    "intro": "WildcatSage pode falar um idioma diferente de inglês no seu canal. O idioma se aplica a respostas de comandos, mensagens de jogos e respostas de IA.",
+    "autoTitle": "Detecção Automática",
+    "autoIntro": "Você define um idioma de transmissão no seu canal da Twitch. WildcatSage lê esse valor e o usa como o idioma padrão para o seu canal.",
+    "auto": {
+      "default": "A detecção fornece apenas um padrão. Se um moderador definir um idioma com <span class=\"inline-code\">!botlang</span>, essa escolha sempre prevalece.",
+      "live": "O bot lê o valor da Twitch cada vez que precisa dele. Se você alterar o idioma na Twitch, o bot muda com ele.",
+      "english": "Canais com inglês como idioma de transmissão permanecem em inglês."
+    },
+    "setTitle": "Definir o Idioma",
+    "setIntro": "Apenas moderadores podem alterar o idioma do bot. Use estes comandos no chat:",
+    "commands": {
+      "set": "Define o idioma do canal para espanhol.",
+      "status": "Mostra o idioma atual e de onde ele veio.",
+      "off": "Retorna o canal para inglês."
+    },
+    "noteLabel": "Nota:",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> mantém o canal em inglês. A detecção automática não o altera de volta.",
+    "writtenTitle": "Idiomas com Traduções Escritas",
+    "writtenIntro": "Oito idiomas têm traduções escritas com antecedência: inglês, espanhol, francês, alemão, italiano, português, japonês e russo.",
+    "writtenBenefit": "Nesses idiomas, mensagens fixas como anúncios de jogos vão para o chat imediatamente. As palavras são as mesmas a cada vez.",
+    "writtenOther": "O comando <span class=\"inline-code\">!botlang</span> aceita mais idiomas do que estes oito. Para um idioma sem traduções escritas, o bot traduz cada mensagem conforme a envia.",
+    "writtenOtherCost": "Estas mensagens estão corretas, mas são mais lentas e as palavras podem mudar entre mensagens.",
+    "aiTitle": "Respostas de IA",
+    "aiIntro": "O bot escreve respostas de IA novas a cada vez, por isso elas não estão limitadas aos oito idiomas.",
+    "aiRule": "O bot responde a cada pessoa no idioma que essa pessoa usou. Se o idioma não for claro, o bot usa o idioma da sua transmissão.",
+    "aiUnits": "Períodos de tempo e nomes de idiomas seguem o idioma do canal. Como exemplo, o comando <span class=\"inline-code\">!followage</span> escreve as suas unidades no idioma do canal.",
+    "dashboardTitle": "Idioma do Dashboard",
+    "dashboardIntro": "O dashboard tem a sua própria configuração de idioma. Esta configuração é separada do idioma do bot.",
+    "dashboardPicker": "O seletor de idioma fica no canto inferior de cada página do dashboard. O dashboard usa o idioma do seu navegador até fazer uma escolha.",
+    "dashboardUrl": "Para ver uma página num idioma diferente, adicione <span class=\"inline-code\">?lang=ja</span> ao final do endereço."
   }
 }

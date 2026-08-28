@@ -291,7 +291,8 @@
     "dailyCheckIn": "デイリーチェックイン",
     "title": "WildcatSage",
     "toggleSidebar": "サイドバーを切り替え",
-    "botPersonality": "ボットの個性"
+    "botPersonality": "ボットの個性",
+    "botLanguage": "ボットの言語"
   },
   "responseVariables": {
     "title": "応答変数",
@@ -446,6 +447,10 @@
       "dailyCheckIn": {
         "title": "デイリーチェックイン:",
         "desc": "連続記録のトラッキングとAI応答を備えたデイリーチェックイン用チャンネルポイント報酬を設定します。"
+      },
+      "language": {
+        "title": "ダッシュボードの言語:",
+        "desc": "ダッシュボードを8つの言語のいずれかで表示します。この設定はボットの言語とは別です。"
       }
     },
     "gettingStartedTitle": "はじめに",
@@ -576,5 +581,38 @@
     "requirementText": "チャンネルポイント報酬を作成するには、Twitchアフィリエイトまたはパートナーの資格が必要です。",
     "aiExamplePrompt": "<strong>AIモードのプロンプト:</strong> <code>$(user) の $(checkin_count) 回目のチェックインに対する、楽しくて短いお祝いメッセージを書いてください。</code>",
     "aiExampleOutput": "<strong>出力:</strong> <em>「WildcatGamerさん、14日連続！？絶好調ですね！このペースなら太陽よりも長生きできそうです。☀️」</em> — 応答は毎回変化します。"
+  },
+  "botLanguage": {
+    "title": "ボットの言語",
+    "intro": "WildcatSageはチャンネルで英語以外の言語を話すことができます。この言語は、コマンドの返答、ゲームのメッセージ、AIの返答に適用されます。",
+    "autoTitle": "自動検出",
+    "autoIntro": "Twitchチャンネルで配信言語を設定します。WildcatSageはこの値を読み取り、チャンネルのデフォルト言語として使用します。",
+    "auto": {
+      "default": "検出はデフォルトのみを設定します。モデレーターが<span class=\"inline-code\">!botlang</span>で言語を設定した場合、その選択が常に優先されます。",
+      "live": "ボットは必要になるたびにTwitchの値を読み取ります。Twitchで言語を変更すると、ボットもそれに合わせて変更されます。",
+      "english": "配信言語が英語のチャンネルは英語のままになります。"
+    },
+    "setTitle": "言語の設定",
+    "setIntro": "モデレーターのみがボットの言語を変更できます。チャットで以下のコマンドを使用してください:",
+    "commands": {
+      "set": "チャンネルの言語をスペイン語に設定します。",
+      "status": "現在の言語とその取得元を表示します。",
+      "off": "チャンネルを英語に戻します。"
+    },
+    "noteLabel": "注:",
+    "offNote": "<span class=\"inline-code\">!botlang off</span>はチャンネルを英語に保持します。自動検出によって元に戻ることはありません。",
+    "writtenTitle": "事前に作成された翻訳がある言語",
+    "writtenIntro": "英語、スペイン語、フランス語、ドイツ語、イタリア語、ポルトガル語、日本語、ロシア語の8言語には、事前に作成された翻訳があります。",
+    "writtenBenefit": "これらの言語では、ゲームの告知などの固定メッセージがすぐにチャットへ送信されます。言葉は毎回同じです。",
+    "writtenOther": "<span class=\"inline-code\">!botlang</span>コマンドは、これら8つの言語以外も受け付けます。テキスト翻訳がない言語の場合、ボットはメッセージを送信する時に毎回翻訳します。",
+    "writtenOtherCost": "これらのメッセージは正確ですが、送信が遅くなり、メッセージごとに表現が変わることがあります。",
+    "aiTitle": "AI返答",
+    "aiIntro": "ボットはAI返答を毎回新しく作成するため、8つの言語に限定されません。",
+    "aiRule": "ボットは、各ユーザーが使用した言語で返答します。言語が明確でない場合、ボットは配信の言語を使用します。",
+    "aiUnits": "期間と言語名はチャンネルの言語に従います。例として、<span class=\"inline-code\">!followage</span>は単位をチャンネルの言語で表記します。",
+    "dashboardTitle": "ダッシュボードの言語",
+    "dashboardIntro": "ダッシュボードには独自の言語設定があります。この設定はボットの言語とは別です。",
+    "dashboardPicker": "言語セレクターは、すべてのダッシュボードページの画面下部の隅にあります。選択するまで、ダッシュボードはブラウザの言語を使用します。",
+    "dashboardUrl": "1つのページを別の言語で表示するには、アドレスの末尾に<span class=\"inline-code\">?lang=ja</span>を追加します。"
   }
 }

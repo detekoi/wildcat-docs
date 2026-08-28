@@ -291,7 +291,8 @@
     "dailyCheckIn": "Daily Check-In",
     "title": "WildcatSage",
     "toggleSidebar": "Toggle Sidebar",
-    "botPersonality": "Bot Personality"
+    "botPersonality": "Bot Personality",
+    "botLanguage": "Bot Language"
   },
   "responseVariables": {
     "title": "Response Variables",
@@ -446,6 +447,10 @@
       "dailyCheckIn": {
         "title": "Daily Check-In:",
         "desc": "Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses."
+      },
+      "language": {
+        "title": "Dashboard Language:",
+        "desc": "Show the dashboard in one of eight languages. This setting is separate from the bot language."
       }
     },
     "gettingStartedTitle": "Getting Started",
@@ -576,5 +581,38 @@
     "requirementText": "You must have Twitch Affiliate or Partner status to create Channel Point Rewards.",
     "aiExamplePrompt": "<strong>AI Mode Prompt:</strong> <code>Write a fun, short congratulatory message for $(user) on check-in number $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Output:</strong> <em>\"WildcatGamer, 14 days straight? You're on fire! At this rate you'll outlast the sun. ☀️\"</em> — replies vary with each use."
+  },
+  "botLanguage": {
+    "title": "Bot Language",
+    "intro": "WildcatSage can speak a language other than English in your channel. The language applies to command replies, game messages, and AI replies.",
+    "autoTitle": "Automatic Detection",
+    "autoIntro": "You set a stream language on your Twitch channel. WildcatSage reads this value and uses it as the default language for your channel.",
+    "auto": {
+      "default": "Detection gives a default only. If a moderator sets a language with <span class=\"inline-code\">!botlang</span>, that choice always wins.",
+      "live": "The bot reads the Twitch value each time it needs it. If you change the language on Twitch, the bot changes with it.",
+      "english": "Channels with English as the stream language stay in English."
+    },
+    "setTitle": "Set the Language",
+    "setIntro": "Only moderators can change the bot language. Use these commands in chat:",
+    "commands": {
+      "set": "Sets the channel language to Spanish.",
+      "status": "Shows the current language and where it came from.",
+      "off": "Returns the channel to English."
+    },
+    "noteLabel": "Note:",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> holds the channel in English. Automatic detection does not change it back.",
+    "writtenTitle": "Languages With Written Translations",
+    "writtenIntro": "Eight languages have translations that are written in advance: English, Spanish, French, German, Italian, Portuguese, Japanese, and Russian.",
+    "writtenBenefit": "In these languages, fixed messages such as game announcements go to chat immediately. The words are the same each time.",
+    "writtenOther": "The <span class=\"inline-code\">!botlang</span> command accepts more languages than these eight. For a language without written translations, the bot translates each message as it sends it.",
+    "writtenOtherCost": "These messages are correct, but they are slower and the words can change between messages.",
+    "aiTitle": "AI Replies",
+    "aiIntro": "The bot writes AI replies new each time, so they are not limited to the eight languages.",
+    "aiRule": "The bot answers each person in the language that person used. If the language is not clear, the bot uses the language of your stream.",
+    "aiUnits": "Time periods and language names follow the channel language. As an example, <span class=\"inline-code\">!followage</span> writes its units in the channel language.",
+    "dashboardTitle": "Dashboard Language",
+    "dashboardIntro": "The dashboard has its own language setting. This setting is separate from the bot language.",
+    "dashboardPicker": "The language picker is in the bottom corner of every dashboard page. The dashboard uses your browser language until you make a choice.",
+    "dashboardUrl": "To see one page in a different language, add <span class=\"inline-code\">?lang=ja</span> to the end of the address."
   }
 }

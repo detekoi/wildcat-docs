@@ -1793,34 +1793,69 @@ extraScripts:
     <p data-i18n="languageBoost.optionsIntro">The following values are accepted:</p>
     <ul class="language-list">
         <li>auto</li>
+        <li>Afrikaans</li>
         <li>Arabic</li>
+        <li>Bulgarian</li>
+        <li>Catalan</li>
         <li>Chinese</li>
         <li>Chinese,Yue</li>
+        <li>Croatian</li>
         <li>Czech</li>
+        <li>Danish</li>
         <li>Dutch</li>
         <li>English</li>
+        <li>Filipino</li>
         <li>Finnish</li>
         <li>French</li>
         <li>German</li>
         <li>Greek</li>
+        <li>Hebrew</li>
         <li>Hindi</li>
+        <li>Hungarian</li>
         <li>Indonesian</li>
         <li>Italian</li>
         <li>Japanese</li>
         <li>Korean</li>
+        <li>Malay</li>
+        <li>Norwegian</li>
+        <li>Nynorsk</li>
+        <li>Persian</li>
         <li>Polish</li>
         <li>Portuguese</li>
         <li>Romanian</li>
         <li>Russian</li>
+        <li>Slovak</li>
+        <li>Slovenian</li>
         <li>Spanish</li>
+        <li>Swedish</li>
+        <li>Tamil</li>
         <li>Thai</li>
         <li>Turkish</li>
         <li>Ukrainian</li>
         <li>Vietnamese</li>
+    
     </ul>
     <p data-i18n="languageBoost.usageText">The <span class="inline-code">auto</span> setting uses automatic language
         detection. For English chats, set <span class="inline-code">English</span>. Selecting a specific language
         improves pronunciation for that language.</p>
+
+    <h3 data-i18n="languageBoost.announcementsTitle">Announcements and Chat Replies</h3>
+    <p data-i18n="languageBoost.announcementsText1">The channel language also selects the language of the text
+        that the bot writes. This text includes stream event announcements, emote descriptions, and chat replies
+        to commands.</p>
+    <p data-i18n="languageBoost.announcementsText2">For example, a viewer subscribes to a Spanish channel. The bot
+        then makes the announcement in Spanish.</p>
+    <p data-i18n="languageBoost.announcementsText3">A personal language from <span class="inline-code">!tts
+            language</span> changes the voice for your own messages only. A personal language does not change the
+        announcements, because the whole channel hears them. The <span class="inline-code">auto</span> setting
+        names no language, so a channel on <span class="inline-code">auto</span> gets announcements in English.</p>
+
+    <h3 data-i18n="languageBoost.detectionTitle">Automatic Detection</h3>
+    <p data-i18n="languageBoost.detectionText1">WildcatTTS reads the language that your channel declares on Twitch.
+        The bot then sets the channel default for you.</p>
+    <p data-i18n="languageBoost.detectionText2">The bot changes this setting only for a channel that has no
+        language of its own. Your own choice always stays. Twitch has some languages that the voice engine does
+        not support. For these languages, the channel stays on <span class="inline-code">auto</span>.</p>
 </section>
 
 <section id="emote-descriptions" class="section">
@@ -1837,6 +1872,9 @@ extraScripts:
         <li data-i18n="emoteDescriptions.step3">Later uses of the emote use the cached description instantly
             without new AI processing.</li>
     </ol>
+
+    <p data-i18n="emoteDescriptions.localeText">The AI writes each description in the language of the channel.
+        The bot keeps a separate description for each language.</p>
 
     <h3 data-i18n="emoteDescriptions.managementTitle">Managing Descriptions</h3>
     <p data-i18n="emoteDescriptions.managementText">Moderators can use <span
@@ -1862,6 +1900,9 @@ extraScripts:
         <li data-i18n="pronunciation.rule3">The dictionary does not change text inside a link.</li>
         <li data-i18n="pronunciation.rule4">The dictionary changes each word one time. TTS does not scan
             replaced text for more entries.</li>
+        <li data-i18n="pronunciation.rule5">Some entries work in specific languages only. For example, the
+            dictionary changes <span class="inline-code">ty</span> to "thank you" in English. In Polish, Czech,
+            and Slovak, <span class="inline-code">ty</span> is a common word, so the dictionary keeps it.</li>
     </ul>
 
     <h3 data-i18n="pronunciation.customTitle">Your Own Entries</h3>
@@ -1874,6 +1915,8 @@ extraScripts:
                 pronounce off &lt;word&gt;</span>. To restore it, use <span class="inline-code">!tts
                 pronounce remove &lt;word&gt;</span>.</li>
         <li data-i18n="pronunciation.custom3">A channel can have a maximum of 100 entries.</li>
+        <li data-i18n="pronunciation.custom4">A new entry of your own works in all languages. An entry that
+            replaces a built-in entry keeps the languages of that built-in entry.</li>
     </ul>
 
     <h3 data-i18n="pronunciation.switchTitle">How To Stop It</h3>
@@ -2070,6 +2113,10 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingBotChatTitle">Bot Responds in Chat:</strong> <span
                 data-i18n="webDashboard.settingBotChatDesc">Turn chat text replies on or off while keeping TTS
                 voice audio active.</span></li>
+        <li><strong data-i18n="webDashboard.settingPageLanguageTitle">Page Language:</strong> <span
+                data-i18n="webDashboard.settingPageLanguageDesc">Select the language of the dashboard text. The
+                selector is at the top of the page. This selector does not change the voice or the
+                announcements.</span></li>
         <li><strong data-i18n="webDashboard.settingAnonymizeFollowersTitle">Anonymize New Followers:</strong> <span
                 data-i18n="webDashboard.settingAnonymizeFollowersDesc">Announce new followers without speaking
                 usernames for viewer privacy.</span></li>

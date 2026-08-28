@@ -291,7 +291,8 @@
     "dailyCheckIn": "Check-In diario",
     "title": "WildcatSage",
     "toggleSidebar": "Alternar barra lateral",
-    "botPersonality": "Personalidad del Bot"
+    "botPersonality": "Personalidad del Bot",
+    "botLanguage": "Idioma del bot"
   },
   "responseVariables": {
     "title": "Variables de respuesta",
@@ -446,6 +447,10 @@
       "dailyCheckIn": {
         "title": "Check-In diario:",
         "desc": "Configura una recompensa de puntos de canal para check-ins diarios con seguimiento de rachas y respuestas opcionales de IA."
+      },
+      "language": {
+        "title": "Idioma del panel:",
+        "desc": "Muestra el panel en uno de ocho idiomas. Esta configuración es independiente del idioma del bot."
       }
     },
     "gettingStartedTitle": "Primeros pasos",
@@ -576,5 +581,38 @@
     "requirementText": "Debes tener el estado de Afiliado o Socio de Twitch para crear recompensas de puntos de canal.",
     "aiExamplePrompt": "<strong>Prompt en modo IA:</strong> <code>Escribe un mensaje de felicitación breve y divertido para $(user) en su check-in número $(checkin_count).</code>",
     "aiExampleOutput": "<strong>Salida:</strong> <em>\"WildcatGamer, ¿14 días seguidos? ¡Estás imparable! A este paso superarás al sol. ☀️\"</em> — las respuestas varían con cada uso."
+  },
+  "botLanguage": {
+    "title": "Idioma del bot",
+    "intro": "WildcatSage puede hablar un idioma diferente al inglés en su canal. El idioma se aplica a las respuestas de comandos, mensajes de juegos y respuestas de IA.",
+    "autoTitle": "Detección automática",
+    "autoIntro": "Usted establece un idioma de transmisión en su canal de Twitch. WildcatSage lee este valor y lo usa como el idioma predeterminado para su canal.",
+    "auto": {
+      "default": "La detección solo proporciona un valor predeterminado. Si un moderador establece un idioma con <span class=\"inline-code\">!botlang</span>, esa opción siempre prevalece.",
+      "live": "El bot lee el valor de Twitch cada vez que lo necesita. Si usted cambia el idioma en Twitch, el bot cambia con él.",
+      "english": "Los canales con inglés como idioma de transmisión se mantienen en inglés."
+    },
+    "setTitle": "Establecer el idioma",
+    "setIntro": "Solo los moderadores pueden cambiar el idioma del bot. Use estos comandos en el chat:",
+    "commands": {
+      "set": "Establece el idioma del canal en español.",
+      "status": "Muestra el idioma actual y de dónde proviene.",
+      "off": "Devuelve el canal al inglés."
+    },
+    "noteLabel": "Nota:",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> mantiene el canal en inglés. La detección automática no vuelve a cambiarlo.",
+    "writtenTitle": "Idiomas con traducciones escritas",
+    "writtenIntro": "Ocho idiomas tienen traducciones escritas previamente: inglés, español, francés, alemán, italiano, portugués, japonés y ruso.",
+    "writtenBenefit": "En estos idiomas, los mensajes fijos como los anuncios de juegos se envían al chat de inmediato. Las palabras son las mismas cada vez.",
+    "writtenOther": "El comando <span class=\"inline-code\">!botlang</span> acepta más idiomas que estos ocho. Para un idioma sin traducciones escritas, el bot traduce cada mensaje al enviarlo.",
+    "writtenOtherCost": "Estos mensajes son correctos, pero son más lentos y las palabras pueden cambiar entre mensajes.",
+    "aiTitle": "Respuestas de IA",
+    "aiIntro": "El bot escribe las respuestas de IA de nuevo cada vez, por lo que no se limitan a los ocho idiomas.",
+    "aiRule": "El bot responde a cada persona en el idioma que esa persona utilizó. Si el idioma no está claro, el bot usa el idioma de su transmisión.",
+    "aiUnits": "Los períodos de tiempo y los nombres de idiomas siguen el idioma del canal. Como ejemplo, <span class=\"inline-code\">!followage</span> escribe sus unidades en el idioma del canal.",
+    "dashboardTitle": "Idioma del panel",
+    "dashboardIntro": "El panel tiene su propia configuración de idioma. Esta configuración es independiente del idioma del bot.",
+    "dashboardPicker": "El selector de idioma está en la esquina inferior de cada página del panel. El panel usa el idioma de su navegador hasta que elija una opción.",
+    "dashboardUrl": "Para ver una página en un idioma diferente, añada <span class=\"inline-code\">?lang=ja</span> al final de la dirección."
   }
 }
