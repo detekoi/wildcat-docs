@@ -446,7 +446,7 @@
       },
       "botLanguage": {
         "title": "ボットの言語:",
-        "desc": "チャンネルでボットが使う言語を設定します。Twitchの配信言語に合わせることもできます。"
+        "desc": "チャンネルでボットが使う言語を設定します。Twitchの配信言語を使用することもできます。"
       },
       "dailyCheckIn": {
         "title": "デイリーチェックイン:",
@@ -601,9 +601,9 @@
     "dashboardSetTitle": "ダッシュボードで言語を設定する",
     "dashboardSetIntro": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>を開きます。<strong>ボットの言語</strong>のカードを探します。次にリストから言語を選択します。",
     "dashboardSet": {
-      "auto": "<strong>自動</strong>を選択すると、Twitchの配信言語に合わせます。この設定がデフォルトです。",
-      "manual": "言語を選択すると、チャンネルはその言語に固定されます。Twitchの値は効果がなくなります。",
-      "groups": "リストには、あらかじめ翻訳された8言語が先に表示されます。その他の言語はその後に続きます。",
+      "auto": "<strong>自動</strong>を選択すると、Twitchの配信言語を使用します。この設定がデフォルトです。",
+      "manual": "言語を選択すると、チャンネルはその言語に固定されます。Twitchの配信言語は効果がなくなります。",
+      "groups": "リストには2つのグループがあります。<strong>事前に作成済み</strong>には翻訳が用意された8言語が入ります。<strong>送信時に自動翻訳</strong>にはその他の言語が入ります。",
       "save": "ダッシュボードは選択をすぐに保存します。ボットは数秒後に言語を変更します。"
     },
     "chatSetTitle": "チャットで言語を設定する",

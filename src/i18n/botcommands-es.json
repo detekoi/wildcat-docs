@@ -446,7 +446,7 @@
       },
       "botLanguage": {
         "title": "Idioma del bot:",
-        "desc": "Establece el idioma que el bot habla en tu canal o sigue el idioma del stream en Twitch."
+        "desc": "Establece el idioma que el bot habla en tu canal o usa el idioma del stream en Twitch."
       },
       "dailyCheckIn": {
         "title": "Check-In diario:",
@@ -601,9 +601,9 @@
     "dashboardSetTitle": "Establecer el idioma en el panel",
     "dashboardSetIntro": "Abre el <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Panel Web</a>. Busca la tarjeta <strong>Idioma del bot</strong>. Después selecciona un idioma de la lista.",
     "dashboardSet": {
-      "auto": "Selecciona <strong>Automático</strong> para seguir el idioma del stream en Twitch. Esta opción es la predeterminada.",
-      "manual": "Selecciona un idioma para mantener el canal en ese idioma. El valor de Twitch deja de tener efecto.",
-      "groups": "La lista muestra primero los ocho idiomas con traducciones escritas. Los demás idiomas aparecen después.",
+      "auto": "Selecciona <strong>Automático</strong> para usar el idioma del stream en Twitch. Esta opción es la predeterminada.",
+      "manual": "Selecciona un idioma para mantener el canal en ese idioma. El idioma del stream en Twitch deja de tener efecto.",
+      "groups": "La lista tiene dos grupos. <strong>Escrito previamente</strong> contiene los ocho idiomas con traducciones listas. <strong>Traducido al enviarse</strong> contiene los demás idiomas.",
       "save": "El panel guarda tu elección de inmediato. El bot cambia de idioma unos segundos después."
     },
     "chatSetTitle": "Establecer el idioma en el chat",
