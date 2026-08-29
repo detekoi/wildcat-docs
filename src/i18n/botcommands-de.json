@@ -233,7 +233,7 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Legt die Standardsprache für Bot-Antworten im gesamten Kanal fest.",
+      "description": "Legt die Standardsprache für Bot-Antworten im gesamten Kanal fest. Du kannst die Sprache auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> festlegen.",
       "usage": {
         "status": "Zeigt die aktuelle Kanalsprache an",
         "off": "Setzt die Kanalsprache auf Englisch zurück",
@@ -444,6 +444,10 @@
         "title": "Bot-Persönlichkeit:",
         "desc": "Passe Ton-, Humor- und Stilanweisungen für KI-Antworten an, mit automatischer Twitch-Regelprüfung."
       },
+      "botLanguage": {
+        "title": "Bot-Sprache:",
+        "desc": "Lege die Sprache fest, die der Bot in deinem Kanal spricht, oder folge der Streamsprache von Twitch."
+      },
       "dailyCheckIn": {
         "title": "Täglicher Check-In:",
         "desc": "Richte eine Kanalpunkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-Antworten ein."
@@ -588,19 +592,30 @@
     "autoTitle": "Automatische Erkennung",
     "autoIntro": "Sie legen eine Stream-Sprache auf Ihrem Twitch-Kanal fest. WildcatSage liest diesen Wert und verwendet ihn als Standardsprache für Ihren Kanal.",
     "auto": {
-      "default": "Die Erkennung liefert nur einen Standardwert. Wenn ein Moderator eine Sprache mit <span class=\"inline-code\">!botlang</span> festlegt, gilt immer diese Auswahl.",
+      "default": "Die Erkennung liefert nur einen Standardwert. Eine im Dashboard oder mit <span class=\"inline-code\">!botlang</span> festgelegte Sprache gilt immer.",
       "live": "Der Bot liest den Twitch-Wert jedes Mal, wenn er ihn benötigt. Wenn Sie die Sprache auf Twitch ändern, ändert sich der Bot mit.",
       "english": "Kanäle mit Englisch als Stream-Sprache bleiben auf Englisch."
     },
     "setTitle": "Sprache festlegen",
-    "setIntro": "Nur Moderatoren können die Bot-Sprache ändern. Verwenden Sie diese Befehle im Chat:",
+    "setIntro": "Du kannst die Bot-Sprache im Dashboard oder im Chat festlegen. Nur der Streamer und Moderatoren können sie ändern.",
+    "dashboardSetTitle": "Sprache im Dashboard festlegen",
+    "dashboardSetIntro": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a>. Suche die Karte <strong>Bot-Sprache</strong>. Wähle dann eine Sprache aus der Liste.",
+    "dashboardSet": {
+      "auto": "Wähle <strong>Automatisch</strong>, um der Streamsprache von Twitch zu folgen. Diese Option ist die Standardeinstellung.",
+      "manual": "Wähle eine Sprache, um den Kanal auf dieser Sprache zu halten. Der Twitch-Wert hat dann keine Wirkung.",
+      "groups": "Die Liste zeigt zuerst die acht Sprachen mit geschriebenen Übersetzungen. Die anderen Sprachen folgen danach.",
+      "save": "Das Dashboard speichert deine Auswahl sofort. Der Bot wechselt die Sprache einige Sekunden später."
+    },
+    "chatSetTitle": "Sprache im Chat festlegen",
+    "chatSetIntro": "Der Chat akzeptiert mehr Sprachen als die Liste im Dashboard. Verwenden Sie diese Befehle:",
     "commands": {
       "set": "Legt die Kanalsprache auf Spanisch fest.",
       "status": "Zeigt die aktuelle Sprache und deren Herkunft an.",
       "off": "Setzt den Kanal auf Englisch zurück."
     },
     "noteLabel": "Hinweis:",
-    "offNote": "<span class=\"inline-code\">!botlang off</span> hält den Kanal auf Englisch. Die automatische Erkennung ändert dies nicht zurück.",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> und die Option <strong>Englisch</strong> halten den Kanal auf Englisch. Die automatische Erkennung ändert dies nicht zurück.",
+    "autoNote": "Um die automatische Erkennung wieder zu verwenden, wähle <strong>Automatisch</strong> im Dashboard.",
     "writtenTitle": "Sprachen mit vorbereiteten Übersetzungen",
     "writtenIntro": "Acht Sprachen haben Übersetzungen, die im Voraus geschrieben wurden: Englisch, Spanisch, Französisch, Deutsch, Italienisch, Portugiesisch, Japanisch und Russisch.",
     "writtenBenefit": "In diesen Sprachen werden feste Nachrichten wie Spielankündigungen sofort im Chat gesendet. Die Wörter sind jedes Mal gleich.",

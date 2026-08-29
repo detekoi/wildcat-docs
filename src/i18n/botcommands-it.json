@@ -233,7 +233,7 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Imposta la lingua predefinita per le risposte del bot in tutto il canale.",
+      "description": "Imposta la lingua predefinita per le risposte del bot in tutto il canale. Puoi impostare la lingua anche nella <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard Web</a>.",
       "usage": {
         "status": "Mostra la lingua attuale del canale",
         "off": "Reimposta la lingua del canale su inglese",
@@ -444,6 +444,10 @@
         "title": "Personalità del Bot:",
         "desc": "Personalizza le istruzioni per tono, umorismo e stile delle risposte IA, con controllo automatico delle regole di Twitch."
       },
+      "botLanguage": {
+        "title": "Lingua del bot:",
+        "desc": "Imposta la lingua che il bot parla nel tuo canale, oppure segui la lingua dello stream su Twitch."
+      },
       "dailyCheckIn": {
         "title": "Check-In giornaliero:",
         "desc": "Configura una ricompensa in punti canale per check-in giornalieri con conteggio delle serie e risposte IA facoltative."
@@ -588,19 +592,30 @@
     "autoTitle": "Rilevamento automatico",
     "autoIntro": "Imposti una lingua di trasmissione sul tuo canale Twitch. WildcatSage legge questo valore e lo usa come lingua predefinita per il tuo canale.",
     "auto": {
-      "default": "Il rilevamento fornisce solo un'impostazione predefinita. Se un moderatore imposta una lingua con <span class=\"inline-code\">!botlang</span>, quella scelta ha sempre la precedenza.",
+      "default": "Il rilevamento fornisce solo un’impostazione predefinita. Una lingua impostata nella dashboard o con <span class=\"inline-code\">!botlang</span> ha sempre la precedenza.",
       "live": "Il bot legge il valore di Twitch ogni volta che ne ha bisogno. Se modifichi la lingua su Twitch, il bot cambia di conseguenza.",
       "english": "I canali con l'inglese come lingua di trasmissione rimangono in inglese."
     },
     "setTitle": "Imposta la lingua",
-    "setIntro": "Solo i moderatori possono modificare la lingua del bot. Usa questi comandi nella chat:",
+    "setIntro": "Puoi impostare la lingua del bot nella dashboard o nella chat. Solo lo streamer e i moderatori possono modificarla.",
+    "dashboardSetTitle": "Imposta la lingua nella dashboard",
+    "dashboardSetIntro": "Apri la <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard Web</a>. Trova la scheda <strong>Lingua del bot</strong>. Poi seleziona una lingua dall’elenco.",
+    "dashboardSet": {
+      "auto": "Seleziona <strong>Automatico</strong> per seguire la lingua dello stream su Twitch. Questa opzione è quella predefinita.",
+      "manual": "Seleziona una lingua per mantenere il canale in quella lingua. Il valore di Twitch non ha più effetto.",
+      "groups": "L’elenco mostra prima le otto lingue con traduzioni scritte. Le altre lingue vengono dopo.",
+      "save": "La dashboard salva la tua scelta immediatamente. Il bot cambia lingua pochi secondi dopo."
+    },
+    "chatSetTitle": "Imposta la lingua nella chat",
+    "chatSetIntro": "La chat accetta più lingue rispetto all’elenco della dashboard. Usa questi comandi:",
     "commands": {
       "set": "Imposta la lingua del canale su spagnolo.",
       "status": "Mostra la lingua corrente e la sua origine.",
       "off": "Riporta il canale all'inglese."
     },
     "noteLabel": "Nota:",
-    "offNote": "<span class=\"inline-code\">!botlang off</span> mantiene il canale in inglese. Il rilevamento automatico non lo modifica di nuovo.",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> e l’opzione <strong>Inglese</strong> mantengono il canale in inglese. Il rilevamento automatico non lo modifica di nuovo.",
+    "autoNote": "Per usare di nuovo il rilevamento automatico, seleziona <strong>Automatico</strong> nella dashboard.",
     "writtenTitle": "Lingue con traduzioni scritte",
     "writtenIntro": "Otto lingue hanno traduzioni scritte in anticipo: inglese, spagnolo, francese, tedesco, italiano, portoghese, giapponese e russo.",
     "writtenBenefit": "In queste lingue, i messaggi fissi come gli annunci di gioco vengono inviati immediatamente alla chat. Le parole sono le stesse ogni volta.",

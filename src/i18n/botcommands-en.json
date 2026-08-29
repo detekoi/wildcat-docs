@@ -233,7 +233,7 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Sets the default language for bot responses across the channel.",
+      "description": "Sets the default language for bot responses across the channel. You can also set the language in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>.",
       "usage": {
         "status": "Shows the current channel language",
         "off": "Resets the channel language to English",
@@ -444,6 +444,10 @@
         "title": "Bot Personality:",
         "desc": "Customize tone, humor, and style instructions for AI responses, with automatic Twitch rule checks."
       },
+      "botLanguage": {
+        "title": "Bot Language:",
+        "desc": "Set the language the bot speaks in your channel, or follow the stream language from Twitch."
+      },
       "dailyCheckIn": {
         "title": "Daily Check-In:",
         "desc": "Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses."
@@ -588,19 +592,30 @@
     "autoTitle": "Automatic Detection",
     "autoIntro": "You set a stream language on your Twitch channel. WildcatSage reads this value and uses it as the default language for your channel.",
     "auto": {
-      "default": "Detection gives a default only. If a moderator sets a language with <span class=\"inline-code\">!botlang</span>, that choice always wins.",
+      "default": "Detection gives a default only. A language set in the dashboard or with <span class=\"inline-code\">!botlang</span> always wins.",
       "live": "The bot reads the Twitch value each time it needs it. If you change the language on Twitch, the bot changes with it.",
       "english": "Channels with English as the stream language stay in English."
     },
     "setTitle": "Set the Language",
-    "setIntro": "Only moderators can change the bot language. Use these commands in chat:",
+    "setIntro": "You can set the bot language in the dashboard or in chat. Only the broadcaster and moderators can change it.",
+    "dashboardSetTitle": "Set the Language in the Dashboard",
+    "dashboardSetIntro": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>. Find the <strong>Bot Language</strong> card. Then select a language from the list.",
+    "dashboardSet": {
+      "auto": "Select <strong>Automatic</strong> to follow the stream language from Twitch. This option is the default.",
+      "manual": "Select a language to hold the channel in that language. The Twitch value then has no effect.",
+      "groups": "The list shows the eight languages with written translations first. The other languages come after them.",
+      "save": "The dashboard saves your choice immediately. The bot changes language a few seconds later."
+    },
+    "chatSetTitle": "Set the Language in Chat",
+    "chatSetIntro": "Chat accepts more languages than the dashboard list. Use these commands:",
     "commands": {
       "set": "Sets the channel language to Spanish.",
       "status": "Shows the current language and where it came from.",
       "off": "Returns the channel to English."
     },
     "noteLabel": "Note:",
-    "offNote": "<span class=\"inline-code\">!botlang off</span> holds the channel in English. Automatic detection does not change it back.",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> and the <strong>English</strong> option both hold the channel in English. Automatic detection does not change it back.",
+    "autoNote": "To use automatic detection again, select <strong>Automatic</strong> in the dashboard.",
     "writtenTitle": "Languages With Written Translations",
     "writtenIntro": "Eight languages have translations that are written in advance: English, Spanish, French, German, Italian, Portuguese, Japanese, and Russian.",
     "writtenBenefit": "In these languages, fixed messages such as game announcements go to chat immediately. The words are the same each time.",

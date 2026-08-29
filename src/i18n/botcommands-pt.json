@@ -233,7 +233,7 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "Define o idioma padrão das respostas do bot em todo o canal.",
+      "description": "Define o idioma padrão das respostas do bot em todo o canal. Você também pode definir o idioma no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>.",
       "usage": {
         "status": "Mostra o idioma atual do canal",
         "off": "Redefine o idioma do canal para inglês",
@@ -444,6 +444,10 @@
         "title": "Personalidade do bot:",
         "desc": "Personalize as instruções de tom, humor e estilo para respostas de IA, com verificações automáticas de regras da Twitch."
       },
+      "botLanguage": {
+        "title": "Idioma do Bot:",
+        "desc": "Defina o idioma que o bot fala no seu canal, ou siga o idioma da stream na Twitch."
+      },
       "dailyCheckIn": {
         "title": "Check-In diário:",
         "desc": "Configure uma recompensa de pontos de canal para check-ins diários com rastreamento de sequência e respostas opcionais de IA."
@@ -588,19 +592,30 @@
     "autoTitle": "Detecção Automática",
     "autoIntro": "Você define um idioma de transmissão no seu canal da Twitch. WildcatSage lê esse valor e o usa como o idioma padrão para o seu canal.",
     "auto": {
-      "default": "A detecção fornece apenas um padrão. Se um moderador definir um idioma com <span class=\"inline-code\">!botlang</span>, essa escolha sempre prevalece.",
+      "default": "A detecção fornece apenas um padrão. Um idioma definido no painel ou com <span class=\"inline-code\">!botlang</span> sempre prevalece.",
       "live": "O bot lê o valor da Twitch cada vez que precisa dele. Se você alterar o idioma na Twitch, o bot muda com ele.",
       "english": "Canais com inglês como idioma de transmissão permanecem em inglês."
     },
     "setTitle": "Definir o Idioma",
-    "setIntro": "Apenas moderadores podem alterar o idioma do bot. Use estes comandos no chat:",
+    "setIntro": "Você pode definir o idioma do bot no painel ou no chat. Apenas o streamer e os moderadores podem alterá-lo.",
+    "dashboardSetTitle": "Definir o Idioma no Painel",
+    "dashboardSetIntro": "Abra o <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>. Encontre o cartão <strong>Idioma do Bot</strong>. Depois selecione um idioma da lista.",
+    "dashboardSet": {
+      "auto": "Selecione <strong>Automático</strong> para seguir o idioma da stream na Twitch. Esta opção é a padrão.",
+      "manual": "Selecione um idioma para manter o canal nesse idioma. O valor da Twitch deixa de ter efeito.",
+      "groups": "A lista mostra primeiro os oito idiomas com traduções escritas. Os outros idiomas vêm depois.",
+      "save": "O painel salva sua escolha imediatamente. O bot muda de idioma alguns segundos depois."
+    },
+    "chatSetTitle": "Definir o Idioma no Chat",
+    "chatSetIntro": "O chat aceita mais idiomas do que a lista do painel. Use estes comandos:",
     "commands": {
       "set": "Define o idioma do canal para espanhol.",
       "status": "Mostra o idioma atual e de onde ele veio.",
       "off": "Retorna o canal para inglês."
     },
     "noteLabel": "Nota:",
-    "offNote": "<span class=\"inline-code\">!botlang off</span> mantém o canal em inglês. A detecção automática não o altera de volta.",
+    "offNote": "<span class=\"inline-code\">!botlang off</span> e a opção <strong>Inglês</strong> mantêm o canal em inglês. A detecção automática não o altera de volta.",
+    "autoNote": "Para usar a detecção automática novamente, selecione <strong>Automático</strong> no painel.",
     "writtenTitle": "Idiomas com Traduções Escritas",
     "writtenIntro": "Oito idiomas têm traduções escritas com antecedência: inglês, espanhol, francês, alemão, italiano, português, japonês e russo.",
     "writtenBenefit": "Nesses idiomas, mensagens fixas como anúncios de jogos vão para o chat imediatamente. As palavras são as mesmas a cada vez.",

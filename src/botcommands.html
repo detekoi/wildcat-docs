@@ -627,7 +627,7 @@ extraScripts:
         <tr class="dropdown-summary">
             <td><span data-i18n-key="commands.botlang.name">!botlang</span> <span class="mod-badge">Mod</span>
             </td>
-            <td data-i18n-key="commands.botlang.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-botlang"><span class="description-text">Sets the default language for bot responses across the channel.</span><span
+            <td data-i18n-key="commands.botlang.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-botlang"><span class="description-text">Sets the default language for bot responses across the channel. You can also set the language in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span
                     class="dropdown-toggle">&#x25BC;</span></button></td>
         </tr>
         <tr class="dropdown-details" id="dd-commands-botlang" hidden>
@@ -958,6 +958,8 @@ extraScripts:
                 data-i18n="webDashboard.features.timers.desc">Create and manage scheduled chat messages with interval and chat line settings.</span></li>
         <li><strong data-i18n="webDashboard.features.botPersonality.title">Bot Personality:</strong> <span
                 data-i18n="webDashboard.features.botPersonality.desc">Customize tone, humor, and style instructions for AI responses, with automatic Twitch rule checks.</span></li>
+        <li><strong data-i18n="webDashboard.features.botLanguage.title">Bot Language:</strong> <span
+                data-i18n="webDashboard.features.botLanguage.desc">Set the language the bot speaks in your channel, or follow the stream language from Twitch.</span></li>
         <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
                 data-i18n="webDashboard.features.dailyCheckIn.desc">Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses.</span></li>
         <li><strong data-i18n="webDashboard.features.language.title">Dashboard Language:</strong> <span
@@ -1093,19 +1095,32 @@ extraScripts:
     <h3 data-i18n="botLanguage.autoTitle">Automatic Detection</h3>
     <p data-i18n="botLanguage.autoIntro">You set a stream language on your Twitch channel. WildcatSage reads this value and uses it as the default language for your channel.</p>
     <ul>
-        <li data-i18n="botLanguage.auto.default">Detection gives a default only. If a moderator sets a language with <span class="inline-code">!botlang</span>, that choice always wins.</li>
+        <li data-i18n="botLanguage.auto.default">Detection gives a default only. A language set in the dashboard or with <span class="inline-code">!botlang</span> always wins.</li>
         <li data-i18n="botLanguage.auto.live">The bot reads the Twitch value each time it needs it. If you change the language on Twitch, the bot changes with it.</li>
         <li data-i18n="botLanguage.auto.english">Channels with English as the stream language stay in English.</li>
     </ul>
 
     <h3 data-i18n="botLanguage.setTitle">Set the Language</h3>
-    <p data-i18n="botLanguage.setIntro">Only moderators can change the bot language. Use these commands in chat:</p>
+    <p data-i18n="botLanguage.setIntro">You can set the bot language in the dashboard or in chat. Only the broadcaster and moderators can change it.</p>
+
+    <h3 data-i18n="botLanguage.dashboardSetTitle">Set the Language in the Dashboard</h3>
+    <p data-i18n="botLanguage.dashboardSetIntro">Open the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>. Find the <strong>Bot Language</strong> card. Then select a language from the list.</p>
+    <ul>
+        <li data-i18n="botLanguage.dashboardSet.auto">Select <strong>Automatic</strong> to follow the stream language from Twitch. This option is the default.</li>
+        <li data-i18n="botLanguage.dashboardSet.manual">Select a language to hold the channel in that language. The Twitch value then has no effect.</li>
+        <li data-i18n="botLanguage.dashboardSet.groups">The list shows the eight languages with written translations first. The other languages come after them.</li>
+        <li data-i18n="botLanguage.dashboardSet.save">The dashboard saves your choice immediately. The bot changes language a few seconds later.</li>
+    </ul>
+
+    <h3 data-i18n="botLanguage.chatSetTitle">Set the Language in Chat</h3>
+    <p data-i18n="botLanguage.chatSetIntro">Chat accepts more languages than the dashboard list. Use these commands:</p>
     <ul>
         <li><span class="inline-code">!botlang spanish</span> - <span data-i18n="botLanguage.commands.set">Sets the channel language to Spanish.</span></li>
         <li><span class="inline-code">!botlang status</span> - <span data-i18n="botLanguage.commands.status">Shows the current language and where it came from.</span></li>
         <li><span class="inline-code">!botlang off</span> - <span data-i18n="botLanguage.commands.off">Returns the channel to English.</span></li>
     </ul>
-    <p><strong data-i18n="botLanguage.noteLabel">Note:</strong> <span data-i18n="botLanguage.offNote"><span class="inline-code">!botlang off</span> holds the channel in English. Automatic detection does not change it back.</span></p>
+    <p><strong data-i18n="botLanguage.noteLabel">Note:</strong> <span data-i18n="botLanguage.offNote"><span class="inline-code">!botlang off</span> and the <strong>English</strong> option both hold the channel in English. Automatic detection does not change it back.</span></p>
+    <p data-i18n="botLanguage.autoNote">To use automatic detection again, select <strong>Automatic</strong> in the dashboard.</p>
 
     <h3 data-i18n="botLanguage.writtenTitle">Languages With Written Translations</h3>
     <p data-i18n="botLanguage.writtenIntro">Eight languages have translations that are written in advance: English, Spanish, French, German, Italian, Portuguese, Japanese, and Russian.</p>

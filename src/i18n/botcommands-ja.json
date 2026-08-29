@@ -233,7 +233,7 @@
     },
     "botlang": {
       "name": "!botlang",
-      "description": "チャンネル全体のボット応答のデフォルト言語を設定します。",
+      "description": "チャンネル全体のボット応答のデフォルト言語を設定します。<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも言語を設定できます。",
       "usage": {
         "status": "現在のチャンネル言語を表示",
         "off": "チャンネル言語を英語にリセット",
@@ -444,6 +444,10 @@
         "title": "ボットの個性:",
         "desc": "AI応答のトーン、ユーモア、スタイルの指示をカスタマイズし、Twitchルールに自動準拠します。"
       },
+      "botLanguage": {
+        "title": "ボットの言語:",
+        "desc": "チャンネルでボットが使う言語を設定します。Twitchの配信言語に合わせることもできます。"
+      },
       "dailyCheckIn": {
         "title": "デイリーチェックイン:",
         "desc": "連続記録のトラッキングとAI応答を備えたデイリーチェックイン用チャンネルポイント報酬を設定します。"
@@ -588,19 +592,30 @@
     "autoTitle": "自動検出",
     "autoIntro": "Twitchチャンネルで配信言語を設定します。WildcatSageはこの値を読み取り、チャンネルのデフォルト言語として使用します。",
     "auto": {
-      "default": "検出はデフォルトのみを設定します。モデレーターが<span class=\"inline-code\">!botlang</span>で言語を設定した場合、その選択が常に優先されます。",
+      "default": "検出はデフォルトのみを設定します。ダッシュボードまたは<span class=\"inline-code\">!botlang</span>で設定した言語が常に優先されます。",
       "live": "ボットは必要になるたびにTwitchの値を読み取ります。Twitchで言語を変更すると、ボットもそれに合わせて変更されます。",
       "english": "配信言語が英語のチャンネルは英語のままになります。"
     },
     "setTitle": "言語の設定",
-    "setIntro": "モデレーターのみがボットの言語を変更できます。チャットで以下のコマンドを使用してください:",
+    "setIntro": "ボットの言語はダッシュボードまたはチャットで設定できます。変更できるのは配信者とモデレーターのみです。",
+    "dashboardSetTitle": "ダッシュボードで言語を設定する",
+    "dashboardSetIntro": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>を開きます。<strong>ボットの言語</strong>のカードを探します。次にリストから言語を選択します。",
+    "dashboardSet": {
+      "auto": "<strong>自動</strong>を選択すると、Twitchの配信言語に合わせます。この設定がデフォルトです。",
+      "manual": "言語を選択すると、チャンネルはその言語に固定されます。Twitchの値は効果がなくなります。",
+      "groups": "リストには、あらかじめ翻訳された8言語が先に表示されます。その他の言語はその後に続きます。",
+      "save": "ダッシュボードは選択をすぐに保存します。ボットは数秒後に言語を変更します。"
+    },
+    "chatSetTitle": "チャットで言語を設定する",
+    "chatSetIntro": "チャットはダッシュボードのリストより多くの言語に対応しています。以下のコマンドを使用してください:",
     "commands": {
       "set": "チャンネルの言語をスペイン語に設定します。",
       "status": "現在の言語とその取得元を表示します。",
       "off": "チャンネルを英語に戻します。"
     },
     "noteLabel": "注:",
-    "offNote": "<span class=\"inline-code\">!botlang off</span>はチャンネルを英語に保持します。自動検出によって元に戻ることはありません。",
+    "offNote": "<span class=\"inline-code\">!botlang off</span>と<strong>英語</strong>の選択は、どちらもチャンネルを英語に保持します。自動検出によって元に戻ることはありません。",
+    "autoNote": "自動検出に戻すには、ダッシュボードで<strong>自動</strong>を選択します。",
     "writtenTitle": "事前に作成された翻訳がある言語",
     "writtenIntro": "英語、スペイン語、フランス語、ドイツ語、イタリア語、ポルトガル語、日本語、ロシア語の8言語には、事前に作成された翻訳があります。",
     "writtenBenefit": "これらの言語では、ゲームの告知などの固定メッセージがすぐにチャットへ送信されます。言葉は毎回同じです。",
