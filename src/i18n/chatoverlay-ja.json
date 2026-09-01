@@ -5,16 +5,16 @@
   "sidebar": {
     "title": "Chat Overlay",
     "overview": "概要",
-    "platforms": "プラットフォームのサポート",
+    "platforms": "対応プラットフォーム",
     "customization": "カスタマイズとテーマ",
-    "colors": "カラーのカスタマイズ",
+    "colors": "色のカスタマイズ",
     "fonts": "フォントとタイポグラフィ",
     "emotes": "サードパーティエモート",
     "animations": "表示モードとアニメーション",
     "config": "設定パネル",
-    "scenes": "チャットシーンクリエイター",
-    "urlParameters": "URLパラメータ",
-    "obsSetup": "OBSの設定",
+    "scenes": "Chat Scene Creator",
+    "urlParameters": "URL パラメーター",
+    "obsSetup": "OBS の設定",
     "toggleSidebar": "サイドバーの切り替え"
   },
   "chatOverlay": {
@@ -23,162 +23,167 @@
     },
     "overview": {
       "title": "概要",
-      "desc": "Wildcat Chat Overlayは、OBS Studio内でTwitchおよびYouTube Liveチャットメッセージを表示します。Web上のChat Scene Creator、またはOBSブラウザソース内で設定を構成できます。",
-      "getStarted": "チャットオーバーレイを始める"
+      "desc": "Wildcat Chat Overlay は、Twitch および YouTube Live のチャットメッセージを OBS Studio に表示します。設定は、Web 上の <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Chat Scene Creator</a> または OBS ブラウザソースの設定パネルで変更できます。",
+      "getStarted": "Chat Overlay を始める"
     },
     "platforms": {
       "title": "対応プラットフォーム",
-      "desc": "チャットオーバーレイは様々な配信プラットフォームに接続します。OBS内の設定パネルから対象プラットフォームを構成できます。",
-      "twitch": "<strong>Twitch:</strong> チャンネル名を入力します（例: ）。バッジとエモートがネイティブでサポートされています。",
-      "youtube": "<strong>YouTube:</strong> 公開および限定公開配信のYouTubeライブチャットに対応しています。公開配信の場合は<strong>チャンネルユーザー名、チャンネルID、動画URL、または動画ID</strong>を入力します。限定公開配信の場合は<strong>動画URL</strong>が必要です。（注: 非公開配信はサポートされていません）。"
+      "desc": "このオーバーレイは Twitch および YouTube に接続します。設定パネルでプラットフォームを選択します。",
+      "twitch": "<strong>Twitch:</strong> チャンネル名を入力します（例: <span class=\"inline-code\">wildcatgamer</span>）。バッジとエモートは自動的に読み込まれます。",
+      "youtube": "<strong>YouTube:</strong> このオーバーレイは、公開配信および限定公開配信の YouTube ライブチャットに対応しています。公開配信の場合は、チャンネルのユーザー名、チャンネル ID、動画 URL、または動画 ID を入力します。限定公開配信の場合は、動画 URL を入力します。非公開配信には対応していません。"
     },
     "customization": {
       "title": "カスタマイズとテーマ",
-      "desc": "チャットオーバーレイには強力な見た目のカスタマイズツールが含まれています。設定メニューから直接基本スタイルを変更できます。",
+      "desc": "オーバーレイの外観は、設定パネルまたは Chat Scene Creator で変更できます。",
       "obsConfig": {
-        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> 設定方法:</strong> チャット設定は2つの方法で構成できます:",
-        "step1": "<strong>Web Chat Scene Creator（推奨）:</strong> Web上でチャンネル接続、フォント、テーマ、カラー、レイアウトを構成します。Chat Scene Creatorは編集内容をOBSに自動的にライブ同期します。",
-        "step2": "<strong>OBS内の設定パネル:</strong> OBSのブラウザソースを右クリックして<strong>相互作用</strong>を選択します。チャット上にマウスを重ね、設定ギア（<i data-lucide=\"settings\" class=\"lucide-inline\"></i>）をクリックしてローカルで設定をカスタマイズします。",
-        "step3": "設定は各シーンソースごとに自動的に保存されます。"
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> 設定オプション:</strong> 設定を変更するには2つの方法があります:",
+        "step1": "<strong>Web Chat Scene Creator（推奨）:</strong> Web 上でチャンネル接続、フォント、テーマ、色、レイアウトを設定します。Chat Scene Creator は、保存された各変更をリアルタイムで OBS に送信します。",
+        "step2": "<strong>OBS 設定パネル:</strong> OBS でブラウザソースを右クリックします。次に<strong>対話</strong>を選択します。チャットの上にポインターを移動します。次に設定ギア（<i data-lucide=\"settings\" class=\"lucide-inline\"></i>）をクリックします。ここで変更した設定は、この OBS ソースにのみ適用されます。",
+        "step3": "オーバーレイは、各シーンソースの設定を自動的に保存します。"
       }
     },
     "themes": {
-      "title": "自動AIテーマ",
-      "desc": "Wildcat Chat Overlayの最も強力な機能の1つは、自然言語AIテーマジェネレーターです。設定パネル内で希望する雰囲気やスタイル（例: 「cyberpunk neon night」、「cozy wooden cabin in the snow」）を入力するだけで、CSS変数が生成され、代名詞バッジの色を含めてテーマが適用されます。",
+      "title": "AI 自動テーマ",
+      "desc": "オーバーレイには AI テーマジェネレーターがあります。設定パネルで希望する外観の説明を入力します（例: 「cyberpunk neon night」や「cozy wooden cabin」）。オーバーレイが CSS 変数を生成し、色のコントラストを調整し、一致する代名詞バッジの色を設定して、テーマをリアルタイムで適用します。",
       "carouselTitle": "テーマカルーセルとカスタムテーマ",
-      "carouselDesc": "テーマカルーセルを使用して、プリセットテーマ、AI生成テーマ、またはユーザー作成テーマを選択します。最大50個のテーマを保存できます。確認モーダルでカスタムテーマを削除できます。アクティブなテーマはページ間で同期されます。",
-      "userPresetsTitle": "カスタムテーマプリセットの保存",
-      "userPresetsDesc": "現在のビジュアル設定を名前付きテーマプリセットとして保存できます。Chat Scene CreatorまたはOBS設定パネルからプリセットを保存できます。プリセットはクラウドテーマカルーセルに保存されます。",
-      "presetSync": "<strong>クラウド同期と削除:</strong> プリセットは自動重複排除、クラウドバックアップ、および削除機能を備えています。",
-      "presetBgImage": "<strong>背景画像サポート:</strong> Chat Scene Creatorでは、アップロードした背景画像がプリセットに保存されます。OBS設定パネルでは、アクティブなテーマの背景画像が使用されます。"
+      "carouselDesc": "テーマカルーセルを使用して、プリセットテーマ、AI テーマ、またはカスタムテーマを選択します。カルーセルには最大50個のテーマを保存できます。カスタムテーマは削除できます。オーバーレイは削除の確認を求めます。有効なテーマはすべてのページで共通です。",
+      "userPresetsTitle": "カスタムテーマプリセット",
+      "userPresetsDesc": "現在の外観設定に名前を付けてテーマプリセットとして保存できます。プリセットは Chat Scene Creator または設定パネルから保存できます。プリセットはクラウドのテーマカルーセルに保存されます。",
+      "presetSync": "<strong>クラウド同期と削除:</strong> オーバーレイは重複したプリセットを削除し、クラウドにバックアップし、削除できるようにします。",
+      "presetBgImage": "<strong>背景画像の対応:</strong> Chat Scene Creator では、プリセットにアップロードした背景画像が保存されます。設定パネルでは、プリセットは有効なテーマの背景画像を使用します。"
     },
     "colors": {
-      "title": "カラーのカスタマイズ",
-      "desc": "チャットオーバーレイのすべての要素のカラーを完全に制御できます。標準のカラーピッカーダイアログはOBSブラウザソース内では動作しないため、カラーは16進数コード（例: <span class=\"inline-code\">#FF5500</span>）を直接入力して設定します。各カラー設定には動的なカラーサンプル付きのプリセットボタンも用意されており、現在の配色を一目で確認できます。",
-      "tip": "<strong>ヒント:</strong> Googleで「カラーピッカー」を検索すると、組み込みの対話型カラーピッカーツールを使用できます。生成された16進数コードをコピーして設定フィールドに直接貼り付けることができます。",
+      "title": "色のカスタマイズ",
+      "desc": "チャットの各要素の色を設定できます。16進数カラーコード（例: <span class=\"inline-code\">#FF5500</span>）を入力します。スウォッチに現在の色が表示されます。背景を透明にするには、<span class=\"inline-code\">transparent</span> またはアルファ値を含む16進数コードを入力します。",
+      "tip": "<strong>ヒント:</strong> Web で「カラーピッカー」を検索して、インタラクティブなカラーツールを見つけます。16進数コードをコピーして設定欄に貼り付けます。",
       "available": {
-        "title": "利用可能なカラー設定",
-        "bg": "<strong>背景色:</strong> チャットメッセージのメイン背景です。透明度コントロール用の背景不透明度スライダーと連携して機能します。",
-        "border": "<strong>枠線色:</strong> チャットメッセージバブルの周囲の枠線です。",
-        "text": "<strong>テキスト色:</strong> チャットメッセージテキストの色です。",
-        "username": "<strong>ユーザー名色:</strong> メッセージの横に表示されるユーザー名の色です。<strong>ユーザー名色のオーバーライド</strong>を有効にして、ユーザーごとのTwitchネームカラーの代わりにカスタムカラーを使用することもできます。",
-        "timestamp": "<strong>タイムスタンプ色:</strong> メッセージのタイムスタンプの色です（タイムスタンプが有効な場合）。",
-        "pronoun": "<strong>代名詞バッジ色:</strong> ユーザー名の横に表示される代名詞バッジの色です（代名詞が有効な場合）。タイムスタンプ色に自動的に一致させることもできます。",
-        "bgOpacity": "<strong>背景の不透明度:</strong> メッセージ背景の不透明度を0%（完全透明）から100%まで調整します。",
-        "bgImageOpacity": "<strong>背景画像の不透明度:</strong> カスタムアップロードされた背景画像の不透明度を調整します。",
-        "chromaKey": "<strong>クロマキーモード:</strong> OBSでのグリーンスクリーン合成用に単色グリーンの背景を設定します。"
+        "title": "利用可能な色設定",
+        "bg": "<strong>背景色:</strong> チャットメッセージのメイン背景です。背景の不透明度スライダーと組み合わせて透明度を調整します。",
+        "border": "<strong>枠線の色:</strong> チャットメッセージの吹き出し周囲の枠線です。",
+        "text": "<strong>テキスト色:</strong> チャットメッセージのテキストの色です。",
+        "username": "<strong>ユーザー名の色:</strong> ユーザー名のデフォルト色です。<strong>Override User Colors</strong>をオンにすると、すべてのユーザー名に設定した色が適用されます。",
+        "timestamp": "<strong>タイムスタンプの色:</strong> メッセージのタイムスタンプの色です。",
+        "pronoun": "<strong>代名詞バッジの色:</strong> ユーザー名の横にある代名詞バッジの色です。タイムスタンプの色と同じに設定できます。",
+        "bgOpacity": "<strong>背景の不透明度:</strong> メッセージ背景の不透明度を0%（完全な透明）から100%の間で設定します。",
+        "bgImageOpacity": "<strong>背景画像のアップロードと不透明度:</strong> Chat Scene Creatorで背景画像をアップロードします。背景画像の不透明度スライダーでその不透明度を設定します。",
+        "chromaKey": "<strong>クロマキーモード:</strong> OBSでのグリーンバック透過用に単色の緑色背景を設定します。"
       }
     },
     "fonts": {
-      "title": "Google Fonts とタイポグラフィ",
-      "desc": "配信レイアウトに合わせてフォントスタイル、サイズ、レイアウト制限をカスタマイズします。",
-      "searchTitle": "検索可能な Google Fonts",
-      "searchDesc": "検索可能なフォントピッカーUIを使用して、利用可能な Google Fonts を検索・選択できます。フォントマネージャーはプレビューおよびOBS同期全体で Google Font スタイルシートをリアルタイムで読み込みます。",
+      "title": "Google Fontsとタイポグラフィ",
+      "desc": "配信レイアウトに合わせて、フォントスタイル、フォントサイズ、レイアウト制限を設定できます。",
+      "searchTitle": "検索可能なGoogle Fonts",
+      "searchDesc": "フォントピッカーを使用してGoogle Fontsを検索し、選択します。オーバーレイはプレビューおよびOBSでフォントスタイルシートをリアルタイムに読み込みます。",
       "settingsTitle": "タイポグラフィとレイアウトの設定",
-      "fontSize": "<strong>フォントサイズ:</strong> フォントサイズを10pxから40pxまで調整します。",
-      "fontWeight": "<strong>フォントの太さ（ウェイト）:</strong> 標準、太字、500、600、700、または800極太を選択します。",
-      "borderRadius": "<strong>角丸（ボーダーラジオス）:</strong> 角丸のプリセット（0px、8px、16px、または24px）を選択します。",
-      "boxShadow": "<strong>ボックスシャドウ:</strong> シャドウの深さプリセット（なし、ソフト、シンプル3D、インテンス3D、またはシャープ）を選択します。",
-      "textShadow": "<strong>テキストシャドウ:</strong> テキストシャドウのスタイルプリセット（なし、ソフト、シャープ、アウトライン、ストロング、またはグロー）を選択します。",
-      "chatDimensions": "<strong>チャットの寸法:</strong> チャットコンテナの幅（20%〜100%）と高さ（20%〜100%）を調整します。"
+      "fontSize": "<strong>フォントサイズ:</strong> フォントサイズを10pxから40pxの間で設定します。",
+      "fontWeight": "<strong>フォントの太さ:</strong> Normal、Bold、500、600、700、または800 Extra Boldを選択します。",
+      "borderRadius": "<strong>角丸:</strong> 角丸プリセット（0px、8px、16px、または24px）を選択します。",
+      "boxShadow": "<strong>ボックスシャドウ:</strong> 影の深さのプリセット（None、Soft、Simple 3D、Intense 3D、またはSharp）を選択します。",
+      "textShadow": "<strong>テキストシャドウ:</strong> テキストシャドウのプリセット（None、Soft、Sharp、Outline、Strong、またはGlow）を選択します。",
+      "chatDimensions": "<strong>チャットサイズ:</strong> チャットコンテナの幅（20%〜100%）と高さ（20%〜100%）を設定します。"
     },
     "emotes": {
-      "title": "サードパーティエモートと重ね合わせ",
-      "desc": "Wildcat Chat Overlayは、<strong>BetterTTV (BTTV)</strong>、<strong>FrankerFaceZ (FFZ)</strong>、<strong>7TV</strong>などのサードパーティTwitchエモートプロバイダーをサポートしています。",
+      "title": "サードパーティエモートとスタック",
+      "desc": "オーバーレイは、3つのサードパーティ製Twitchエモートプロバイダー（BetterTTV（BTTV）、FrankerFaceZ（FFZ）、7TV）に対応しています。Twitchチャンネルでは、グローバルエモートセットとチャンネルエモートセットが自動的に読み込まれます。",
       "zeroWidth": {
-        "title": "Zero-Widthエモートと重ね合わせ",
-        "desc": "Zero-Widthエモート（帽子、マスク、雨エフェクトなど）は、スペースで区切られた場合に前のエモートの上に動的に重ね合わせ表示されます（例: <span class=\"inline-code\">catJAM cvHazmat</span>）。"
+        "title": "ゼロ幅エモートとオーバーレイスタック",
+        "desc": "ゼロ幅エモート（帽子や雨のエフェクトなど）は、その前にあるエモートの上に重ねて表示されます。2つのエモートの間にスペースを入力してください（例: <span class=\"inline-code\">catJAM cvHazmat</span>）。ゼロ幅エモートを連続して入力することで、複数レイヤーのスタックを作成できます。単一エモートの拡大機能は、スタックされたエモートにも適用されます。"
       },
       "precedence": {
-        "title": "優先度と一致条件",
-        "desc": "エモートは大文字小文字を区別する完全一致で処理されます。Twitch公式エモートはサードパーティエモートより優先され、チャンネルエモートはグローバルセットより優先されます。"
+        "title": "優先順位と一致判定",
+        "desc": "エモートは大文字と小文字を区別し、完全に一致する単語に適用されます。Twitchエモートはサードパーティエモートよりも優先されます。チャンネルエモートはグローバルエモートよりも優先されます。"
       },
       "safety": {
-        "title": "コンテンツセーフティとカスタマイズ",
-        "desc": "設定パネルでサードパーティエモートの挙動を調整できます:",
-        "toggle": "<strong>サードパーティエモート切り替え:</strong> すべてのサードパーティエモートを有効または無効にするマスタースイッチ（デフォルトで有効）。",
-        "channelToggle": "<strong>チャンネルエモートを表示:</strong> チャンネル固有のサードパーティエモートを表示するか、グローバルセットのみに制限するかを切り替えます。",
-        "filters": "<strong>7TVセーフティフィルター:</strong> カテゴリ別に不適切なエモートをフィルターできます。"
+        "title": "コンテンツの安全性とカスタマイズ",
+        "desc": "設定パネルで以下のサードパーティエモート設定を変更できます:",
+        "toggle": "<strong>サードパーティエモート切り替え:</strong> すべてのサードパーティエモートのオンとオフを一括で切り替えるメインスイッチです。",
+        "channelToggle": "<strong>チャンネルエモートを表示:</strong> チャンネルのサードパーティエモートの表示または非表示を切り替えます。",
+        "filters": "<strong>7TVコンテンツフィルター:</strong> センシティブなエモートをカテゴリ別（Twitch Disallowed、Sexual Content、Epilepsy / Flashing、Edgy / Offensive）に非表示にします。"
       }
     },
     "animations": {
-      "title": "アニメーション",
-      "desc": "チャットメッセージの表示・非表示アニメーションは、スムーズでパフォーマンスの高いトランジションのためにWeb Animations APIを使用します。ウィンドウモードでは、新着メッセージがメッセージリスト全体へのCSSクリッピングベースのオフセットアニメーションで表示されます。ポップアップモードでは、高さと不透明度のトランジションでメッセージが出現・消滅します。",
+      "title": "表示モードとアニメーション",
+      "desc": "Windowモード（継続的にスクロールするリスト）またはPopupモード（消滅するメッセージ吹き出し）を選択します。メッセージの表示・非表示アニメーションにはWeb Animations APIを使用しているため、滑らかに動作します。",
       "popupDirections": {
         "title": "ポップアップアニメーションの方向とコントロール",
-        "desc": "ポップアップモードでは、メッセージの出現方向（下から、上から、左から、右から）を設定できます。また、表示時間（2秒〜60秒）や最大ポップアップ件数（1〜10件）も調整可能です。カスタマイズ中はポップアップメッセージが表示されたままになるため、変更をリアルタイムで確認できます。"
+        "desc": "Popupモードでは、メッセージが表示される方向（From Bottom、From Top、From Left、From Right）を設定できます。メッセージの表示時間（2〜60秒）および最大ポップアップ数（1〜10）も設定できます。設定変更中もポップアップメッセージは表示されたままになるため、結果を確認できます。"
       },
       "reducedMotion": {
-        "title": "視覚効果の削減（Reduced Motion）のサポート",
-        "desc": "オーバーレイはシステムレベルの <span class=\"inline-code\">prefers-reduced-motion</span> 設定（例: macOSのアクセシビリティ設定にある「視覚効果を減らす」オプション）を尊重します。有効にすると、ウィンドウモードメッセージの表示アニメーションが無効化され、ポップアップのトランジション時間が最小化されます。"
+        "title": "Reduced Motionのサポート",
+        "desc": "オーバーレイはシステムの <span class=\"inline-code\">prefers-reduced-motion</span> 設定に従います。この設定がオンの場合、Windowモードでは表示アニメーションが無効になり、Popupモードでは最短のトランジションが使用されます。"
       }
     },
     "config": {
-      "title": "設定パネル機能",
-      "desc": "OBSでブラウザソースを右クリックし、<strong>相互作用</strong>を選択して設定メニューを開きます。利用可能なオプションは以下の通りです:",
-      "feature1": "<strong>チャンネル選択:</strong> TwitchまたはYouTubeを選択し、チャンネル情報を入力して接続します。",
-      "feature2": "<strong>フォント設定:</strong> Google Fontsの検索、フォントサイズの調整、フォントの太さの設定を行えます。",
-      "feature3": "<strong>表示レイアウト:</strong> ウィンドウモードまたはポップアップモードを選択します。背景色、不透明度、境界線、影を設定できます。",
-      "feature4": "<strong>メッセージ要素とイベント:</strong> プラットフォームバッジ、ユーザーバッジ、Super Chat、メンバーシップイベント、代名詞、タイムスタンプ、エモート拡大、上部グラデーションフェード、! コマンドメッセージの非表示を切り替えます。",
-      "feature5": "<strong>エモートと安全性:</strong> サードパーティエモートを有効化し、7TVコンテンツフィルターを設定します。",
-      "feature6": "<strong>テーマ管理:</strong> プリセットテーマの選択、AIテーマの生成、カスタムテーマプリセットの保存、カスタム16進数カラーコードの設定を行えます。"
+      "title": "設定パネルの機能",
+      "desc": "OBSでブラウザソースを右クリックし、<strong>Interact</strong>を選択して設定パネルを開きます。パネルには以下のオプションがあります:",
+      "feature1": "<strong>チャンネル選択:</strong> TwitchまたはYouTubeを選択します。次にチャンネル情報を入力して接続します。",
+      "feature2": "<strong>フォント設定:</strong> Google Fontsの検索、フォントサイズの設定、フォントの太さの設定を行います。",
+      "feature3": "<strong>表示レイアウト:</strong> ウィンドウモードまたはポップアップモードを選択します。背景色、不透明度、枠線、影を設定します。",
+      "feature4": "<strong>メッセージ要素とイベント:</strong> プラットフォームバッジ、ユーザーバッジ、スーパーチャット、メンバーシップイベント、代名詞、タイムスタンプの表示・非表示を切り替えます。単一エモートの拡大や上部グラデーションフェードを有効にします。",
+      "feature5": "<strong>エモートと安全性:</strong> サードパーティ製エモートを有効にし、7TVのコンテンツフィルターを設定します。",
+      "feature6": "<strong>テーマ管理:</strong> プリセットテーマの選択、AIテーマの生成、カスタムテーマプリセットの保存、カスタムHEXカラーの設定を行います。",
+      "feature7": "<strong>コマンドを非表示:</strong> <span class=\"inline-code\">!</span> で始まるチャットメッセージを非表示にします。詳細については<strong>コマンドメッセージの非表示</strong>をご覧ください。",
+      "hideCommandsTitle": "コマンドメッセージの非表示",
+      "hideCommandsDesc": "視聴者は <span class=\"inline-code\">!so</span> や <span class=\"inline-code\">!lurk</span> など、<span class=\"inline-code\">!</span> で始まるチャットメッセージとしてボットコマンドを送信します。<strong>コマンドを非表示</strong>オプションを使用すると、これらのメッセージをオーバーレイに表示しないようにできます。",
+      "hideCommandsWhere": "このオプションは、設定パネルおよびChat Scene Creatorの<strong>メッセージ要素</strong>グループにあります。デフォルトではオフになっています。",
+      "hideCommandsNote": "このオプションは通常のチャットメッセージにのみ適用されます。<span class=\"inline-code\">!</span> で始まるスーパーチャットやメンバーシップイベントは引き続き表示されます。"
     },
     "scenes": {
       "title": "Chat Scene Creator",
-      "desc": "<a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat Scene Creator</a>を使用すると、配信の各場面（例: ゲーム配信、雑談配信）に応じたチャットシーンを作成・管理できます。",
+      "desc": "<a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Chat Scene Creator</a>を使用すると、配信レイアウトごと（例: ゲーム配信や雑談配信）に名前付きのオーバーレイシーンを作成および管理できます。",
       "featuresTitle": "主な機能",
-      "feature1": "<strong>シーン管理:</strong> シーンの作成、複製、削除、JSON形式でのインポート/エクスポート、シーンTokenを使った既存シーンのリンクを行えます。",
-      "feature2": "<strong>チャンネル接続:</strong> TwitchチャンネルやYouTubeチャンネルID/ハンドルを入力し、即座に適用できます。",
-      "feature3": "<strong>ビジュアル設定:</strong> Google Fonts、プリセットテーマ、AIテーマ、カスタムテーマプリセット、カラー構成、背景画像、不透明度、クロマキーモード、ポップアップ配置、バッジ、エモートフィルターを設定できます。",
-      "feature4": "<strong>インタラクティブなライブプレビュー:</strong> ライブプレビューボックスで設定をテストします。プレビュー背景をダーク、ライト、グリッド（市松模様/透明）、カスタムカラーに切替可能です。変更はリアルタイムでプレビューに反映されます。",
+      "feature1": "<strong>シーン管理:</strong> シーンの作成、複製、削除を行います。JSONシーンファイルのインポートとエクスポートが可能です。同期トークンを使用して既存のシーンをリンクします。",
+      "feature2": "<strong>チャンネル接続:</strong> Twitchチャンネル、またはYouTubeのチャンネルIDやハンドルを入力します。変更は即座に適用されます。",
+      "feature3": "<strong>外観設定:</strong> Google Fonts、プリセットテーマ、AIテーマ、カスタムテーマプリセット、色、背景画像、不透明度、クロマキー、ポップアップレイアウト、バッジ、エモートフィルターを設定します。",
+      "feature4": "<strong>インタラクティブなライブプレビュー:</strong> ライブプレビューボックスで設定をテストします。プレビューの背景をダーク、ライト、グリッド（市松模様）、またはカスタムカラーに設定できます。変更は即座にプレビューに反映されます。",
       "syncTitle": "自動ライブ同期",
-      "syncDesc": "Chat Scene Creatorは、OBSのURL（<span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>）に固有の同期トークンを自動生成します。Webインターフェースで保存された変更は、ページを更新することなく、OBSブラウザソースへリアルタイムで反映されます。",
-      "localNote": "OBS内で直接設定を構成する場合、設定はOBSブラウザソースのキャッシュにローカル保存されます。",
-      "ioTitle": "シーンファイルの書き出し（エクスポート）と読み込み（インポート）",
-      "ioDesc": "JSONファイルを使用してチャットシーンの設定をバックアップまたは移行できます。",
-      "exportSingle": "<strong>単一シーンのエクスポート:</strong> 単一のシーンを書き出すには、シーンを選択して<strong>エクスポート</strong>をクリックします。",
-      "exportAll": "<strong>全シーンのエクスポート:</strong> すべてのシーンをバックアップするには、左パネルの<strong>すべてエクスポート</strong>をクリックします。",
-      "importFile": "<strong>シーンファイルのインポート:</strong> シーン設定を復元するには、<strong>インポート</strong>をクリックしてパソコンに保存されたJSONファイルを選択します。",
-      "linkTitle": "既存シーンのリンク（同期トークン）",
-      "linkDesc": "同期トークンを使用して、クラウド同期された既存のシーンを新しいブラウザやパソコンにリンクできます。",
+      "syncDesc": "Chat Scene Creatorは、OBSのURLに一意の同期トークンを追加します: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>。ウェブ上で変更を保存すると、OBSブラウザソースがリアルタイムで更新されます。ページを再読み込みする必要はありません。",
+      "localNote": "OBS内で設定を変更した場合、その設定はOBSブラウザソースのキャッシュにローカル保存されます。",
+      "ioTitle": "シーンファイルのエクスポートとインポート",
+      "ioDesc": "JSONファイルを使用して、チャットシーンの設定をバックアップまたは移行できます。",
+      "exportSingle": "<strong>単一シーンのエクスポート:</strong> 1つのシーンをエクスポートするには、シーンを選択してから<strong>エクスポート</strong>をクリックします。",
+      "exportAll": "<strong>すべてのシーンのエクスポート:</strong> すべてのシーンをバックアップするには、左パネルの<strong>すべてエクスポート</strong>をクリックします。",
+      "importFile": "<strong>シーンファイルのインポート:</strong> シーン設定を復元するには、<strong>インポート</strong>をクリックし、パソコン上の保存済みJSONファイルを選択します。",
+      "linkTitle": "既存のシーンをリンク（同期トークン）",
+      "linkDesc": "同期トークンを使用することで、クラウド同期された既存のシーンを新しいブラウザやパソコンにリンクできます。",
       "linkStep1": "左パネルの<strong>シーンをリンク</strong>をクリックします。",
-      "linkStep2": "OBSのURLから同期トークン（<span class=\"inline-code\">sync=</span>の後ろの英数字トークン）を入力します。",
-      "linkStep3": "<strong>リンク</strong>をクリックしてクラウドからシーン設定を取得します。リンクされたシーンは、いずれかのデバイスで変更を保存するとリアルタイムで更新されます。"
+      "linkStep2": "OBSのURLから同期トークン（<span class=\"inline-code\">sync=</span> の後にある英数字のトークン）を入力します。",
+      "linkStep3": "<strong>リンク</strong>をクリックして、クラウドからシーン設定を取得します。いずれかの端末で変更を保存すると、リンクされたシーンがリアルタイムで更新されます。"
     },
     "urlParams": {
-      "title": "URLパラメータ",
-      "desc": "オーバーレイのURLはクエリパラメータを受け付けます。Chat Scene Creatorがsceneとsyncのパラメータを自動的に追加します。その他のパラメータは手動で追加できます。",
-      "tableCaption": "チャットオーバーレイのURLパラメータ",
-      "colName": "パラメータ",
-      "colEffect": "機能",
+      "title": "URLパラメーター",
+      "desc": "オーバーレイのURLにはクエリパラメーターを指定できます。Chat Scene Creatorはシーンと同期のパラメーターを自動で追加します。その他のパラメーターは手動で追加できます。",
+      "tableCaption": "チャットオーバーレイのURLパラメーター",
+      "colName": "パラメーター",
+      "colEffect": "動作",
       "colExample": "例",
-      "sceneEffect": "指定した名前のシーンを読み込みます。このパラメータを省略すると、オーバーレイは<span class=\"inline-code\">default</span>という名前のシーンを読み込みます。",
-      "syncEffect": "ブラウザソースをクラウド同期されたシーンにリンクします。詳しくは<strong>自動ライブ同期</strong>をお読みください。",
-      "demoEffect": "サンプルのチャットメッセージを表示します。このモードではTwitchやYouTubeに接続しません。",
-      "debugEffect": "ステータスメッセージと診断メッセージを画面に表示します。オーバーレイは既定でこれらのメッセージを非表示にします。",
+      "sceneEffect": "指定された名前のシーンを読み込みます。このパラメーターを省略した場合、オーバーレイは <span class=\"inline-code\">default</span> という名前のシーンを読み込みます。",
+      "syncEffect": "ブラウザソースをクラウド同期されたシーンにリンクします。詳細については<strong>自動ライブ同期</strong>をご覧ください。",
+      "demoEffect": "サンプルのチャットメッセージを表示します。このモードでは、オーバーレイはTwitchやYouTubeに接続しません。",
+      "debugEffect": "ステータスおよび診断メッセージを画面に表示します。オーバーレイはデフォルトでこれらのメッセージを非表示にします。",
       "debugTitle": "診断メッセージ",
-      "debugDesc": "オーバーレイは既定ですべてのステータスメッセージを非表示にします。接続の通知やエラーテキストは配信に表示されません。<span class=\"inline-code\">debug=1</span>パラメータを付けると、これらのメッセージがチャットの上に表示されます。",
-      "debugConsole": "オーバーレイは同じメッセージを常にブラウザのコンソールに書き込みます。URLに<span class=\"inline-code\">debug</span>パラメータがない場合でも、コンソールには記録が残ります。",
-      "debugStatus": "TwitchとYouTubeの接続状態は設定パネルにあります。OBSでブラウザソースを右クリックし、<strong>相互作用</strong>を選択すると確認できます。状態は<strong>接続済み</strong>、<strong>接続中</strong>、<strong>再接続中</strong>、<strong>切断</strong>のいずれかを表示します。",
-      "debugTip": "配信を始める前にURLから<span class=\"inline-code\">debug=1</span>を削除してください。これらのメッセージは視聴者にも見えます。",
+      "debugDesc": "オーバーレイは、デフォルトですべてのステータスメッセージを非表示にします。接続通知やエラーテキストは配信画面に表示されません。パラメーター<span class=\"inline-code\">debug=1</span>を使用すると、これらのメッセージがチャットの上に表示されます。",
+      "debugConsole": "オーバーレイは、ブラウザのコンソールに常に同じメッセージを書き込みます。これは<span class=\"inline-code\">debug</span>パラメーターの有無にかかわらず適用されます。",
+      "debugStatus": "TwitchおよびYouTubeの接続ステータスは設定パネルにあります。OBSでブラウザソースを右クリックし、<strong>対話</strong>を選択して確認してください。ステータスには<strong>Connected</strong>、<strong>Connecting</strong>、<strong>Reconnecting</strong>、または<strong>Disconnected</strong>が表示されます。",
+      "debugTip": "配信前にURLから<span class=\"inline-code\">debug=1</span>を削除してください。メッセージが視聴者に表示されます。",
       "demoTitle": "デモモード",
-      "demoDesc": "<span class=\"inline-code\">demo=1</span>パラメータは、サンプルのチャットメッセージを繰り返し表示します。オーバーレイはチャットプラットフォームに接続せず、接続プロンプトも非表示にします。Chat Scene Creatorはライブプレビューにこのモードを使用します。"
+      "demoDesc": "パラメーター<span class=\"inline-code\">demo=1</span>は、サンプルのチャットメッセージをループ表示します。オーバーレイはチャットプラットフォームに接続せず、接続プロンプトを非表示にします。Chat Scene Creatorは、このモードをライブプレビューに使用します。"
     },
     "obsSetup": {
-      "title": "OBSセットアップ手順",
-      "desc": "OBS Studioにチャットオーバーレイを追加する手順は以下の通りです:",
-      "step1": "OBS Studioの<strong>ソース</strong>パネルで<strong>+</strong>ボタンをクリックし、<strong>ブラウザ</strong>を選択します。",
-      "step2": "わかりやすいソース名を入力します（例: 「Twitch Chat」）。",
-      "step3": "Chat Scene Creatorで生成されたURLをURLフィールドに貼り付けます。貼り付けできない場合は「ローカルファイル」のチェックを外してください。",
-      "step4": "幅を<strong>320</strong>、高さを<strong>600</strong>に設定します。",
-      "step5": "「OK」をクリックしてブラウザソースを追加します。",
-      "step6": "<strong>設定の構成:</strong> Web Chat Scene Creatorで設定を保存すると、OBSへライブ同期されます。あるいは、OBSのブラウザソースを右クリックして<strong>相互作用</strong>を選択し、ローカルで設定を調整することもできます。",
-      "step7": "対話ウィンドウでチャンネル情報を入力し、右上にあるギアアイコン（<i data-lucide=\"settings\" class=\"lucide-inline\"></i>）をクリックして接続します。",
+      "title": "OBS設定手順",
+      "desc": "チャットオーバーレイをOBS Studioに追加するには、次の手順を実行します:",
+      "step1": "OBS Studioで<strong>ソース</strong>パネルを開きます。<strong>+</strong>をクリックします。次に<strong>ブラウザ</strong>を選択します。",
+      "step2": "ソースの名前を入力します（例: 「Twitch Chat」）。",
+      "step3": "Chat Scene CreatorからコピーしたURLをURLフィールドに貼り付けます。URLを貼り付けられない場合は、「ローカルファイル」のチェックボックスを外します。",
+      "step4": "「幅」を<strong>320</strong>に、「高さ」を<strong>600</strong>に設定します。",
+      "step5": "「OK」をクリックして、キャンバスにブラウザソースを追加します。",
+      "step6": "<strong>設定の変更:</strong> Chat Scene Creatorで設定を保存します。設定はOBSにリアルタイムで同期されます。または、OBSでブラウザソースを右クリックし、<strong>対話</strong>を選択してローカルで設定を変更することもできます。",
+      "step7": "対話ウィンドウでチャンネル情報を入力します。設定ギア（<i data-lucide=\"settings\" class=\"lucide-inline\"></i>）をクリックします。次に「Connect」をクリックします。",
       "tips": {
         "title": "OBSの高度なヒント",
-        "tip1": "CPUおよびメモリのオーバーヘッドを節約するために、<span class=\"inline-code\">非表示時にソースをシャットダウン</span>を有効にします。",
-        "tip2": "スクロールバーを非表示にするには、プロパティウィンドウ内のカスタムCSSフィールドに <span class=\"inline-code\">body { overflow: hidden; }</span> を追加します。",
-        "tip3": "設定はOBSのキャッシュに保存されます。このソースの「キャッシュをクリア」を実行した場合は、見た目の設定を再構成する必要があります。"
+        "tip1": "<span class=\"inline-code\">表示されていないときにソースを閉じる</span>をオンにして、システムリソースを節約します。",
+        "tip2": "スクロールバーを非表示にするには、「カスタムCSS」フィールドに<span class=\"inline-code\">body { overflow: hidden; }</span>を追加します。",
+        "tip3": "設定はOBSのキャッシュに保存されます。このソースのOBSキャッシュをクリアした場合は、外観設定を再度行ってください。"
       }
     }
   }

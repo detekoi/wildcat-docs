@@ -1,22 +1,27 @@
 {
-  "_README": "Drives ../tts-twitch/scripts/translate-catalogs.js, shared with the bot and web UI. Run it from the bot checkout: `node scripts/translate-catalogs.js --config ../wildcat-docs/i18n.config.json`. Only the wildcat-tts catalog is listed: the other four were translated by hand, are in step with English, and are deliberately out of this script's reach.",
+  "_README": "Drives ../tts-twitch/scripts/translate-catalogs.js, shared with the bot and web UI. Run it from the bot checkout: `node scripts/translate-catalogs.js --config ../wildcat-docs/i18n.config.json`. The wildcat-tts and chatoverlay catalogs are listed: the other three (common, index, botcommands) were translated by hand, are in step with English, and are deliberately out of this script's reach.",
   "sourceLocale": "en",
   "promptVersion": 1,
   "_spoken": "Documentation read off a screen, never synthesised.",
   "spoken": false,
   "nested": true,
   "localesFile": "../tts-twitch/src/i18n/locales.json",
-  "_locales": "The docs ship eight languages, hand-translated for the other four catalogs and listed in src/scripts/i18n.js. Without this the script would generate the bot's other thirty-one, which the language switcher does not offer.",
+  "_locales": "The docs ship eight languages, hand-translated for the other three catalogs and listed in src/scripts/i18n.js. Without this the script would generate the bot's other thirty-one, which the language switcher does not offer.",
   "locales": ["de", "es", "fr", "it", "ja", "pt", "ru"],
   "catalogs": [
     {
       "id": "wildcat-tts",
       "source": "src/i18n/wildcat-tts-en.json",
       "out": "src/i18n/wildcat-tts-{locale}.json"
+    },
+    {
+      "id": "chatoverlay",
+      "source": "src/i18n/chatoverlay-en.json",
+      "out": "src/i18n/chatoverlay-{locale}.json"
     }
   ],
   "sidecar": "src/i18n/.translation-hashes.json",
-  "role": "You translate technical documentation for a live-streaming text-to-speech bot.",
+  "role": "You translate technical documentation for a live-streaming text-to-speech bot and a stream chat overlay.",
   "context": "Reference documentation shown on a docs website. The English source is written to ASD-STE100 Simplified Technical English: short sentences, plain words, one meaning per word, active voice. Keep the translation equally plain and direct. Do not add emphasis, marketing tone, or words the English does not have.",
   "extraRules": [
     "These strings contain HTML. Reproduce every tag, attribute and entity exactly as written, including <span class=\"inline-code\">, </span>, &lt; and &gt;. Never translate a class name or any other attribute value. Translate only the visible text between the tags.",

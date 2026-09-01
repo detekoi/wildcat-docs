@@ -1,184 +1,189 @@
 {
   "meta": {
-    "title": "Chat Overlay Dokumentation"
+    "title": "Dokumentation zum Chat-Overlay"
   },
   "sidebar": {
-    "title": "Chat Overlay",
+    "title": "Chat-Overlay",
     "overview": "Übersicht",
-    "platforms": "Plattform-Support",
-    "customization": "Anpassung & Themen",
+    "platforms": "Plattform-Unterstützung",
+    "customization": "Anpassung & Themes",
     "colors": "Farbanpassung",
     "fonts": "Schriftarten & Typografie",
     "emotes": "Drittanbieter-Emotes",
     "animations": "Anzeigemodi & Animationen",
-    "config": "Konfigurations-Panel",
-    "scenes": "Chat-Scene-Creator",
+    "config": "Konfigurationspanel",
+    "scenes": "Chat Scene Creator",
     "urlParameters": "URL-Parameter",
-    "obsSetup": "OBS-Setup",
+    "obsSetup": "OBS-Einrichtung",
     "toggleSidebar": "Seitenleiste umschalten"
   },
   "chatOverlay": {
     "page": {
-      "title": "Wildcat Chat Overlay"
+      "title": "Wildcat Chat-Overlay"
     },
     "overview": {
       "title": "Übersicht",
-      "desc": "Das Wildcat Chat Overlay zeigt Twitch- und YouTube-Live-Chat-Nachrichten in OBS Studio an. Sie können Einstellungen im Chat-Scene-Creator im Web oder direkt in der OBS-Browserquelle konfigurieren.",
+      "desc": "Das Wildcat Chat-Overlay zeigt Chat-Nachrichten von Twitch und YouTube Live in OBS Studio an. Sie können die Einstellungen im <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Chat Scene Creator</a> im Web oder im Konfigurationspanel der OBS-Browserquelle ändern.",
       "getStarted": "Erste Schritte mit dem Chat-Overlay"
     },
     "platforms": {
-      "title": "Plattform-Support",
-      "desc": "Das Chat-Overlay verbindet sich mit verschiedenen Streaming-Plattformen. Sie können Ihre Zielplattform über das Konfigurations-Panel in OBS einstellen.",
-      "twitch": "<strong>Twitch:</strong> Geben Sie Ihren Kanalnamen ein (zum Beispiel `wildcatgamer`). Badges und Emotes werden nativ unterstützt.",
-      "youtube": "<strong>YouTube:</strong> Unterstützt YouTube-Live-Chat für öffentliche und nicht gelistete Streams. Geben Sie für öffentliche Streams Ihren <strong>Kanal-Benutzernamen, Ihre Kanal-ID, die Video-URL oder die Video-ID</strong> ein. Für nicht gelistete Streams ist die <strong>Video-URL</strong> erforderlich. (Hinweis: Private Streams werden nicht unterstützt)."
+      "title": "Plattform-Unterstützung",
+      "desc": "Das Overlay verbindet sich mit Twitch und YouTube. Sie wählen die Plattform im Konfigurationspanel aus.",
+      "twitch": "<strong>Twitch:</strong> Geben Sie Ihren Kanalnamen ein (zum Beispiel <span class=\"inline-code\">wildcatgamer</span>). Badges und Emotes werden automatisch geladen.",
+      "youtube": "<strong>YouTube:</strong> Das Overlay unterstützt YouTube-Live-Chat für öffentliche und nicht gelistete Streams. Geben Sie für einen öffentlichen Stream Ihren Kanal-Benutzernamen, Ihre Kanal-ID, Video-URL oder Video-ID ein. Geben Sie für einen nicht gelisteten Stream die Video-URL ein. Private Streams werden nicht unterstützt."
     },
     "customization": {
       "title": "Anpassung & Themes",
-      "desc": "Das Chat-Overlay enthält leistungsstarke ästhetische Anpassungswerkzeuge. Sie können das grundlegende Styling direkt über das Konfigurationsmenü ändern.",
+      "desc": "Sie können das Aussehen des Overlays im Konfigurationspanel oder im Chat Scene Creator ändern.",
       "obsConfig": {
-        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Konfigurationsoptionen:</strong> Sie können Chat-Einstellungen auf zwei Arten konfigurieren:",
-        "step1": "<strong>Web Chat Scene Creator (Empfohlen):</strong> Konfigurieren Sie Kanalverbindungen, Schriftarten, Themen, Farben und Layouts im Web. Der Chat Scene Creator synchronisiert Ihre Änderungen automatisch live mit OBS.",
-        "step2": "<strong>In OBS Einstellungen:</strong> Klicken Sie mit der rechten Maustaste auf die Browserquelle in OBS und wählen Sie <strong>Interagieren</strong>. Bewegen Sie den Zeiger über den Chat und klicken Sie auf das Zahnrad (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>), um Einstellungen lokal anzupassen.",
-        "step3": "Einstellungen werden automatisch für jede Szenenquelle gespeichert."
+        "title": "<strong><i data-lucide=\"settings\" class=\"lucide-inline\"></i> Konfigurationsoptionen:</strong> Es gibt zwei Möglichkeiten, die Einstellungen zu ändern:",
+        "step1": "<strong>Web Chat Scene Creator (Empfohlen):</strong> Legen Sie Kanalverbindungen, Schriftarten, Themes, Farben und Layouts im Web fest. Der Chat Scene Creator sendet jede gespeicherte Änderung live an OBS.",
+        "step2": "<strong>OBS-Konfigurationspanel:</strong> Klicken Sie in OBS mit der rechten Maustaste auf die Browserquelle. Wählen Sie dann <strong>Interagieren</strong>. Bewegen Sie den Mauszeiger über den Chat. Klicken Sie dann auf das Einstellungs-Zahnrad (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Einstellungen, die Sie hier ändern, bleiben lokal für diese OBS-Quelle.",
+        "step3": "Das Overlay speichert die Einstellungen jeder Szenenquelle automatisch."
       }
     },
     "themes": {
       "title": "Automatische KI-Themes",
-      "desc": "Eines der leistungsstärksten Features des Wildcat Chat Overlays ist der KI-Theme-Generator für natürliche Sprache. Geben Sie im Konfigurations-Panel einfach eine Beschreibung der Ästhetik ein. Das Overlay generiert CSS-Variablen, passt den Farbkontrast an, stellt passende Pronom-Badge-Farben ein und wendet das Theme live an.",
-      "carouselTitle": "Themen-Karussell & Eigene Themen",
-      "carouselDesc": "Verwenden Sie das Themen-Karussell, um vordefinierte Themen, KI-generierte Themen oder eigene Themen auszuwählen. Das Karussell speichert bis zu 50 eigene Themen. Sie können eigene Themen über einen Bestätigungsdialog löschen. Aktive Themen werden seitenübergreifend synchronisiert.",
-      "userPresetsTitle": "Speichern eigener Themen-Vorgaben",
-      "userPresetsDesc": "Sie können Ihre aktuellen visuellen Einstellungen als benannte Themen-Vorgabe speichern. Speichern Sie Vorgaben über den Chat-Scene-Creator oder das OBS-Einstellungs-Panel. Themen-Vorgaben werden im Cloud-Themen-Karussell gespeichert.",
-      "presetSync": "<strong>Cloud-Synchronisierung & Löschung:</strong> Themen-Vorgaben werden automatisch dedupliziert, in der Cloud gesichert und können gelöscht werden.",
-      "presetBgImage": "<strong>Hintergrundbild-Unterstützung:</strong> Im Chat-Scene-Creator speichern Themen-Vorgaben Ihr hochgeladenes Hintergrundbild. Im OBS-Einstellungs-Panel verwenden Themen-Vorgaben das Hintergrundbild des aktiven Themas."
+      "desc": "Das Overlay verfügt über einen KI-Theme-Generator. Geben Sie im Konfigurationspanel eine Beschreibung des gewünschten Aussehens ein (zum Beispiel „cyberpunk neon night“ oder „cozy wooden cabin“). Das Overlay erstellt die CSS-Variablen, passt den Farbkontrast an, legt passende Pronomen-Badge-Farben fest und wendet das Theme live an.",
+      "carouselTitle": "Theme-Karussell & benutzerdefinierte Themes",
+      "carouselDesc": "Verwenden Sie das Theme-Karussell, um ein voreingestelltes Theme, ein KI-Theme oder ein benutzerdefiniertes Theme auszuwählen. Das Karussell speichert bis zu 50 gespeicherte Themes. Sie können ein benutzerdefiniertes Theme löschen. Das Overlay fordert Sie auf, das Löschen zu bestätigen. Das aktive Theme ist auf jeder Seite gleich.",
+      "userPresetsTitle": "Benutzerdefinierte Theme-Voreinstellungen",
+      "userPresetsDesc": "Sie können Ihre aktuellen visuellen Einstellungen als benannte Theme-Voreinstellung speichern. Sie können eine Voreinstellung aus dem Chat Scene Creator oder aus dem Konfigurationspanel speichern. Voreinstellungen werden in das Cloud-Theme-Karussell übertragen.",
+      "presetSync": "<strong>Cloud-Synchronisierung & Löschung:</strong> Das Overlay entfernt doppelte Voreinstellungen, sichert sie in der Cloud und ermöglicht Ihnen, diese zu löschen.",
+      "presetBgImage": "<strong>Unterstützung für Hintergrundbilder:</strong> Im Chat Scene Creator speichert eine Voreinstellung Ihr hochgeladenes Hintergrundbild. Im Konfigurationspanel verwendet eine Voreinstellung das Hintergrundbild des aktiven Themes."
     },
     "colors": {
       "title": "Farbanpassung",
-      "desc": "Sie haben die volle Kontrolle über die Farbe jedes Elements im Chat-Overlay. Da standardmäßige Farbauswahldialoge innerhalb der OBS-Browserquelle nicht funktionieren, werden alle Farben durch direkte Eingabe von Hex-Codes (z. B. <span class=\"inline-code\">#FF5500</span>) festgelegt. Jede Farbeinstellung bietet außerdem vordefinierte Schaltflächen mit dynamischen Farbfeldern, sodass Sie Ihr aktuelles Farbschema auf einen Blick sehen können.",
-      "tip": "<strong>Tipp:</strong> Sie können auf Google nach „Farbwähler“ suchen, um ein integriertes interaktives Farbauswahl-Tool zu nutzen, und die resultierenden Hex-Codes dann direkt in die Einstellungsfelder kopieren.",
+      "desc": "Sie können die Farbe jedes Chat-Elements festlegen. Geben Sie einen Hex-Farbcode ein (zum Beispiel <span class=\"inline-code\">#FF5500</span>). Farbfelder zeigen Ihre aktuellen Farben. Für einen transparenten Hintergrund geben Sie <span class=\"inline-code\">transparent</span> oder einen Hex-Code mit einem Alphawert ein.",
+      "tip": "<strong>Tipp:</strong> Suchen Sie im Web nach „color picker“, um ein interaktives Farbwerkzeug zu finden. Kopieren Sie den Hex-Code und fügen Sie ihn in das Einstellungsfeld ein.",
       "available": {
         "title": "Verfügbare Farbeinstellungen",
-        "bg": "<strong>Hintergrundfarbe:</strong> Der Haupthintergrund von Chat-Nachrichten. Arbeitet mit dem Schieberegler für die Hintergrunddeckkraft zusammen, um die Transparenz zu steuern.",
-        "border": "<strong>Rahmenfarbe:</strong> Der Rahmen um die Chat-Nachrichtenblasen.",
-        "text": "<strong>Textfarbe:</strong> Die Farbe des Texts der Chat-Nachricht.",
-        "username": "<strong>Benutzername-Farbe:</strong> Die Farbe der Benutzernamen, die neben den Nachrichten angezeigt werden. Sie können auch <strong>Benutzername-Farben überschreiben</strong> aktivieren, um Ihre benutzerdefinierte Farbe anstelle der Twitch-Namensfarbe jedes Benutzers zu verwenden.",
-        "timestamp": "<strong>Zeitstempelfarbe:</strong> Die Farbe der Nachrichtenzeitstempel (wenn Zeitstempel aktiviert sind).",
-        "pronoun": "<strong>Pronomen-Abzeichenfarbe:</strong> Die Farbe der Pronomen-Abzeichen neben den Benutzernamen (wenn Pronomen aktiviert sind). Dies kann auch so eingestellt werden, dass es automatisch der Zeitstempelfarbe entspricht.",
-        "bgOpacity": "<strong>Hintergrund-Deckkraft:</strong> Passen Sie die Deckkraft des Nachrichtenhintergrunds von 0% (vollständig transparent) bis 100% an.",
-        "bgImageOpacity": "<strong>Hintergrundbild-Deckkraft:</strong> Steuert die Deckkraft für hochgeladene Hintergrundbilder.",
-        "chromaKey": "<strong>Chroma-Key-Modus:</strong> Stellt einen grünen Hintergrund für Green-Screen-Keying in OBS ein."
+        "bg": "<strong>Hintergrundfarbe:</strong> Der Haupthintergrund von Chat-Nachrichten. Verwenden Sie diesen mit dem Schieberegler für die Hintergrund-Deckkraft, um die Transparenz zu steuern.",
+        "border": "<strong>Rahmenfarbe:</strong> Der Rahmen um Chat-Nachrichtenblasen.",
+        "text": "<strong>Textfarbe:</strong> Die Farbe des Textes von Chat-Nachrichten.",
+        "username": "<strong>Benutzername-Farbe:</strong> Die Standardfarbe von Benutzernamen. Aktivieren Sie <strong>Benutzerfarben überschreiben</strong>, um Ihre Farbe auf alle Benutzernamen anzuwenden.",
+        "timestamp": "<strong>Zeitstempelfarbe:</strong> Die Farbe der Nachrichten-Zeitstempel.",
+        "pronoun": "<strong>Pronomen-Badge-Farbe:</strong> Die Farbe des Pronomen-Badges neben einem Benutzernamen. Sie können diese auf die Zeitstempelfarbe festlegen.",
+        "bgOpacity": "<strong>Hintergrund-Deckkraft:</strong> Legt die Deckkraft des Nachrichtenhintergrunds fest, von 0 % (vollständig transparent) bis 100 %.",
+        "bgImageOpacity": "<strong>Hintergrundbild-Upload & Deckkraft:</strong> Laden Sie ein Hintergrundbild im Chat Scene Creator hoch. Legen Sie dessen Deckkraft mit dem Schieberegler für die Hintergrundbild-Deckkraft fest.",
+        "chromaKey": "<strong>Chroma-Key-Modus:</strong> Legt einen einfarbig grünen Hintergrund für Greenscreen-Keying in OBS fest."
       }
     },
     "fonts": {
       "title": "Google Fonts & Typografie",
-      "desc": "Passen Sie Schriftstile, Größen und Layoutbeschränkungen an Ihr Broadcast-Layout an.",
+      "desc": "Sie können den Schriftstil, die Schriftgröße und die Layout-Grenzen festlegen, um sie an Ihr Stream-Layout anzupassen.",
       "searchTitle": "Durchsuchbare Google Fonts",
-      "searchDesc": "Verwenden Sie die Schriftartenauswahl, um verfügbare Google Fonts zu suchen und auszuwählen. Der Font-Manager lädt Google Fonts-Stylesheets live in der Vorschau und der OBS-Synchronisierung.",
+      "searchDesc": "Verwenden Sie die Schriftauswahl, um Google Fonts zu durchsuchen und eine Schriftart auszuwählen. Das Overlay lädt das Schriftarten-Stylesheet live in der Vorschau und in OBS.",
       "settingsTitle": "Typografie- & Layout-Einstellungen",
-      "fontSize": "<strong>Schriftgröße:</strong> Passen Sie die Schriftgröße von 10px bis 40px an.",
-      "fontWeight": "<strong>Schriftstärke:</strong> Wählen Sie Normal, Fett, 500, 600, 700 oder 800 Extra Fett.",
-      "borderRadius": "<strong>Eckenabrundung:</strong> Wählen Sie Abrundungsvorgaben (0px, 8px, 16px oder 24px).",
-      "boxShadow": "<strong>Schattenwurf:</strong> Wählen Sie Schattentiefenvorgaben (Keiner, Weich, Einfach 3D, Intensiv 3D oder Scharf).",
-      "textShadow": "<strong>Textschatten:</strong> Wählen Sie Textschatten-Stilvorgaben (Keiner, Weich, Scharf, Kontur, Stark oder Leuchten).",
-      "chatDimensions": "<strong>Chat-Abmessungen:</strong> Passen Sie die Breite (20% bis 100%) und Höhe (20% bis 100%) des Chat-Containers an."
+      "fontSize": "<strong>Schriftgröße:</strong> Legt die Schriftgröße fest, von 10 px bis 40 px.",
+      "fontWeight": "<strong>Schriftstärke:</strong> Wählen Sie Normal, Bold, 500, 600, 700 oder 800 Extra Bold.",
+      "borderRadius": "<strong>Eckenradius:</strong> Wählen Sie eine Eckenradius-Voreinstellung (0 px, 8 px, 16 px oder 24 px).",
+      "boxShadow": "<strong>Box-Schatten:</strong> Wählen Sie eine Schattentiefe-Voreinstellung (None, Soft, Simple 3D, Intense 3D oder Sharp).",
+      "textShadow": "<strong>Textschatten:</strong> Wählen Sie eine Textschatten-Voreinstellung (None, Soft, Sharp, Outline, Strong oder Glow).",
+      "chatDimensions": "<strong>Chat-Abmessungen:</strong> Legt die Breite (20 % bis 100 %) und die Höhe (20 % bis 100 %) des Chat-Containers fest."
     },
     "emotes": {
-      "title": "Drittanbieter-Emotes & Stacking",
-      "desc": "Das Wildcat Chat Overlay unterstützt nativ Drittanbieter-Twitch-Emote-Anbieter, einschließlich <strong>BetterTTV (BTTV)</strong>, <strong>FrankerFaceZ (FFZ)</strong> und <strong>7TV</strong>. Sowohl globale als auch kanalspezifische Emote-Sets werden für Twitch-Kanäle automatisch geladen.",
+      "title": "Drittanbieter-Emotes & Stapelung",
+      "desc": "Das Overlay unterstützt drei Drittanbieter für Twitch-Emotes: BetterTTV (BTTV), FrankerFaceZ (FFZ) und 7TV. Globale und Kanal-Emote-Sets werden für Twitch-Kanäle automatisch geladen.",
       "zeroWidth": {
-        "title": "Zero-Width & Overlay-Stacking",
-        "desc": "Zero-Width-Emotes (wie Hüte, Masken, Regeneffekte oder saisonale Overlays) werden dynamisch über das vorherige Emote gestapelt, wenn sie durch ein Leerzeichen getrennt sind (zum Beispiel <span class=\"inline-code\">catJAM cvHazmat</span>). Aufeinanderfolgende Zero-Width-Emotes können verkettet werden, um mehrschichtige Emote-Stapel zu erstellen. Die automatische Vergrößerung einzelner Emotes gilt auch für gestapelte Emote-Kombinationen."
+        "title": "Zero-Width & Overlay-Stapelung",
+        "desc": "Ein Zero-Width-Emote (zum Beispiel ein Hut oder ein Regeneffekt) stapelt sich auf dem Emote davor. Setzen Sie ein Leerzeichen zwischen die beiden Emotes (zum Beispiel <span class=\"inline-code\">catJAM cvHazmat</span>). Sie können Zero-Width-Emotes verketten, um einen Stapel mit vielen Ebenen zu erstellen. Die Vergrößerung für einzelne Emotes gilt auch für ein gestapeltes Emote."
       },
       "precedence": {
-        "title": "Priorität & Erkennung",
-        "desc": "Emotes werden als exakte Wörter mit Unterscheidung von Groß- und Kleinschreibung erkannt. Native Twitch-Emotes haben Vorrang vor Drittanbieter-Emotes, und Kanal-Emotes haben Vorrang vor globalen Sets."
+        "title": "Priorität & Zuordnung",
+        "desc": "Ein Emote passt auf ein genaues Wort unter Beachtung der Groß-/Kleinschreibung. Ein Twitch-Emote hat Priorität vor einem Drittanbieter-Emote. Ein Kanal-Emote hat Priorität vor einem globalen Emote."
       },
       "safety": {
         "title": "Inhaltssicherheit & Anpassung",
-        "desc": "Sie können das Verhalten von Drittanbieter-Emotes direkt im Konfigurations-Panel anpassen:",
-        "toggle": "<strong>Drittanbieter-Emotes Umschalter:</strong> Hauptschalter zum Aktivieren oder Deaktivieren aller Drittanbieter-Emotes (standardmäßig aktiviert).",
-        "channelToggle": "<strong>Kanal-Emotes anzeigen:</strong> Schalten Sie um, ob kanalspezifische Drittanbieter-Emotes angezeigt oder auf globale Sets beschränkt werden.",
-        "filters": "<strong>7TV-Sicherheitsfilter:</strong> Filtern Sie potenziell sensible oder unerwünschte Emotes nach Kategorie heraus, einschließlich <em>Twitch Disallowed</em> (standardmäßig gefiltert), <em>Sexual Content</em>, <em>Epilepsy / Flashing</em> und <em>Edgy / Offensive</em>."
+        "desc": "Sie können diese Drittanbieter-Emote-Einstellungen im Konfigurationspanel ändern:",
+        "toggle": "<strong>Drittanbieter-Emotes-Schalter:</strong> Der Hauptschalter, der alle Drittanbieter-Emotes ein- oder ausschaltet.",
+        "channelToggle": "<strong>Kanal-Emotes anzeigen:</strong> Blendet die Drittanbieter-Emotes des Kanals ein oder aus.",
+        "filters": "<strong>7TV-Inhaltsfilter:</strong> Blenden Sie sensible Emotes nach Kategorie aus (Twitch Disallowed, Sexual Content, Epilepsy / Flashing und Edgy / Offensive)."
       }
     },
     "animations": {
-      "title": "Animationen",
-      "desc": "Animationen zum Ein- und Ausblenden von Chat-Nachrichten verwenden die Web Animations API für reibungslose und performante Übergänge. Im Fenstermodus gleiten neue Nachrichten mithilfe einer CSS-Clipping-basierten Versatzanimation über die gesamte Nachrichtenliste in die Ansicht. Dies vermeidet Höhenanimationen pro Element, die bei aktivem Chat zu Rucklern führen können. Im Pop-up-Modus werden Nachrichten mit Höhen- und Deckkraftübergängen ein- und ausgeblendet.",
+      "title": "Anzeigemodi & Animationen",
+      "desc": "Wählen Sie den Fenstermodus (eine kontinuierlich scrollende Liste) oder den Popup-Modus (Nachrichtenblasen, die verschwinden). Animationen für das Ein- und Ausblenden von Nachrichten verwenden die Web Animations API, damit sie flüssig bleiben.",
       "popupDirections": {
-        "title": "Popup-Animationsrichtungen & Steuerungen",
-        "desc": "Konfigurieren Sie im Popup-Modus die Animationsrichtungen für neue Nachrichten: Von unten, Von oben, Von links oder Von rechts. Sie können auch die Anzeigedauer (2 bis 60 Sekunden) und die maximale Anzahl von Popups (1 bis 10) einstellen. Popup-Nachrichten bleiben während der Anpassung sichtbar, damit Sie Änderungen live testen können."
+        "title": "Popup-Animationsrichtungen & Steuerung",
+        "desc": "Im Popup-Modus können Sie die Eintrittsrichtung einer Nachricht festlegen: From Bottom, From Top, From Left oder From Right. Sie können auch die Anzeigedauer der Nachricht (2 bis 60 Sekunden) und die maximale Popup-Anzahl (1 bis 10) festlegen. Popup-Nachrichten bleiben sichtbar, während Sie Einstellungen ändern, sodass Sie das Ergebnis sehen können."
       },
       "reducedMotion": {
         "title": "Unterstützung für reduzierte Bewegung",
-        "desc": "Das Overlay berücksichtigt die Systemeinstellung <span class=\"inline-code\">prefers-reduced-motion</span> (z. B. die Option „Bewegung reduzieren“ in den macOS-Bedienungshilfen). Wenn diese Option aktiviert ist, werden die Einblendanimationen für Nachrichten im Fenstermodus deaktiviert und die Übergangsdauern für Pop-ups minimiert, um ein ruhigeres Seherlebnis zu bieten."
+        "desc": "Das Overlay folgt der Systemeinstellung <span class=\"inline-code\">prefers-reduced-motion</span>. Wenn diese Einstellung aktiv ist, hat der Fenstermodus keine Eintrittsanimation und der Popup-Modus verwendet den kürzesten Übergang."
       }
     },
     "config": {
-      "title": "Funktionen des Konfigurations-Panels",
-      "desc": "Klicken Sie in OBS mit der rechten Maustaste auf die Browser-Quelle und wählen Sie <strong>Interagieren</strong>, um das Einstellungsmenü zu öffnen. Verfügbare Optionen umfassen:",
-      "feature1": "<strong>Kanalauswahl:</strong> Wählen Sie Twitch oder YouTube und geben Sie Ihre Kanalinformationen ein, um eine Verbindung herzustellen.",
-      "feature2": "<strong>Schrifteinstellungen:</strong> Durchsuchen Sie Google Fonts, passen Sie die Schriftgröße an und legen Sie die Schriftstärke fest.",
-      "feature3": "<strong>Anzeigelayout:</strong> Wählen Sie den Fenstermodus oder den Popup-Modus. Legen Sie Hintergrundfarben, Deckkraft, Rahmen und Schatten fest.",
-      "feature4": "<strong>Nachrichtenelemente & Ereignisse:</strong> Schalten Sie Plattform-Badges, Benutzer-Badges, Super Chats, Mitgliedschafts-Ereignisse, Pronomen, Zeitstempel, Emote-Vergrößerung, oberen Farbverlaufs-Fade und das Ausblenden von !-Befehlsnachrichten um.",
-      "feature5": "<strong>Emotes & Sicherheit:</strong> Aktivieren Sie Drittanbieter-Emotes und legen Sie 7TV-Inhaltsfilter fest.",
-      "feature6": "<strong>Theme-Verwaltung:</strong> Wählen Sie Preset-Themes, generieren Sie KI-Themes, speichern Sie benutzerdefinierte Theme-Presets und legen Sie benutzerdefinierte Hex-Farben fest."
+      "title": "Funktionen des Konfigurationspanels",
+      "desc": "Klicken Sie in OBS mit der rechten Maustaste auf die Browserquelle. Wählen Sie dann <strong>Interagieren</strong>, um das Konfigurationspanel zu öffnen. Das Panel hat folgende Optionen:",
+      "feature1": "<strong>Kanalauswahl:</strong> Wählen Sie Twitch oder YouTube. Geben Sie dann Ihre Kanalinformationen ein, um die Verbindung herzustellen.",
+      "feature2": "<strong>Schriftart-Einstellungen:</strong> Google Fonts durchsuchen, Schriftgröße festlegen und Schriftstärke festlegen.",
+      "feature3": "<strong>Anzeigelayout:</strong> Fenstermodus oder Popup-Modus auswählen. Hintergrundfarben, Deckkraft, Rahmen und Schatten festlegen.",
+      "feature4": "<strong>Nachrichtenelemente & Ereignisse:</strong> Plattform-Badges, Benutzer-Badges, Super-Chats, Mitgliedschaftsereignisse, Pronomen und Zeitstempel ein- oder ausblenden. Vergrößerung einzelner Emotes und oberen Farbverlauf aktivieren.",
+      "feature5": "<strong>Emotes & Sicherheit:</strong> Drittanbieter-Emotes aktivieren und 7TV-Inhaltsfilter einstellen.",
+      "feature6": "<strong>Design-Verwaltung:</strong> Ein vorgefertigtes Design auswählen, ein KI-Design erstellen, ein benutzerdefiniertes Design-Preset speichern und benutzerdefinierte Hex-Farben festlegen.",
+      "feature7": "<strong>Befehle ausblenden:</strong> Chatnachrichten ausblenden, die mit <span class=\"inline-code\">!</span> beginnen. Für weitere Informationen lesen Sie <strong>Befehlsnachrichten ausblenden</strong>.",
+      "hideCommandsTitle": "Befehlsnachrichten ausblenden",
+      "hideCommandsDesc": "Zuschauer senden Bot-Befehle als Chatnachrichten, die mit <span class=\"inline-code\">!</span> beginnen, zum Beispiel <span class=\"inline-code\">!so</span> oder <span class=\"inline-code\">!lurk</span>. Die Option <strong>Befehle ausblenden</strong> entfernt diese Nachrichten aus Ihrem Overlay.",
+      "hideCommandsWhere": "Die Option befindet sich in der Gruppe <strong>Nachrichtenelemente</strong> des Konfigurationspanels und des Chat Scene Creator. Sie ist standardmäßig deaktiviert.",
+      "hideCommandsNote": "Die Option gilt nur für normale Chatnachrichten. Ein Super-Chat oder ein Mitgliedschaftsereignis, das mit <span class=\"inline-code\">!</span> beginnt, wird weiterhin angezeigt."
     },
     "scenes": {
-      "title": "Chat-Scene-Creator",
-      "desc": "Der <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\">Chat-Scene-Creator</a> ermöglicht es Ihnen, Chat-Szenen für verschiedene Teile Ihres Streams zu erstellen und zu verwalten (zum Beispiel Gaming oder Just Chatting).",
+      "title": "Chat Scene Creator",
+      "desc": "Mit dem <a href=\"https://wildcat.chat/chat-overlay/chat-scene-creator.html\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Chat Scene Creator</a> können Sie benannte Overlay-Szenen für verschiedene Stream-Layouts (zum Beispiel Gaming oder Just Chatting) erstellen und verwalten.",
       "featuresTitle": "Hauptfunktionen",
-      "feature1": "<strong>Szenen-Verwaltung:</strong> Erstellen, duplizieren, löschen, importieren und exportieren Sie Szeneneinstellungsdateien im JSON-Format und verknüpfen Sie bestehende Szenen über Tokens.",
-      "feature2": "<strong>Kanalverbindung:</strong> Geben Sie Twitch-Kanäle und YouTube-Kanal-IDs oder Handles mit sofortiger Übernahme ein.",
-      "feature3": "<strong>Visuelle Einstellungen:</strong> Konfigurieren Sie Google Fonts, Themen-Vorgaben, KI-Themen, eigene Themen-Vorgaben, Farbschemata, Hintergrundbilder, Deckkraft, Chroma-Key-Modus, Popup-Layouts, Badges und Emote-Filter.",
-      "feature4": "<strong>Interaktive Live-Vorschau:</strong> Testen Sie Einstellungen in einem Live-Vorschaufenster. Wechseln Sie die Hintergründe (Dunkel, Hell, Gitter/Schachbrett, Benutzerdefinierte Farbe). Änderungen werden in Echtzeit übertragen.",
+      "feature1": "<strong>Szenenverwaltung:</strong> Szenen erstellen, duplizieren und löschen. JSON-Szenendateien importieren und exportieren. Eine vorhandene Szene mit ihrem Synchronisierungs-Token verknüpfen.",
+      "feature2": "<strong>Kanalverbindung:</strong> Geben Sie einen Twitch-Kanal oder eine YouTube-Kanal-ID bzw. ein Handle ein. Die Änderung wird sofort angewendet.",
+      "feature3": "<strong>Visuelle Einstellungen:</strong> Google Fonts, vorgefertigte Designs, KI-Designs, benutzerdefinierte Design-Presets, Farben, Hintergrundbilder, Deckkraft, Chroma-Key, Popup-Layouts, Badges und Emote-Filter festlegen.",
+      "feature4": "<strong>Interaktive Live-Vorschau:</strong> Testen Sie Ihre Einstellungen in einem Live-Vorschaufeld. Stellen Sie den Vorschauhintergrund auf Dunkel, Hell, Gitter (Schachbrettmuster) oder eine benutzerdefinierte Farbe ein. Jede Änderung wird sofort in der Vorschau angezeigt.",
       "syncTitle": "Automatische Live-Synchronisierung",
-      "syncDesc": "Der Chat Scene Creator generiert automatisch ein eindeutiges Sync-Token in Ihrer OBS-URL: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Im Webinterface gespeicherte Änderungen aktualisieren Ihre OBS-Browserquelle live ohne Neuladen der Seite.",
-      "localNote": "Wenn Sie Einstellungen direkt in OBS konfigurieren, werden diese lokal im OBS-Browserquellencache gespeichert.",
-      "ioTitle": "Szenendateien exportieren & importieren",
+      "syncDesc": "Der Chat Scene Creator fügt Ihrer OBS-URL ein eindeutiges Synchronisierungs-Token hinzu: <span class=\"inline-code\">chat.html?scene=NAME&sync=TOKEN</span>. Wenn Sie eine Änderung im Web speichern, aktualisiert sich die OBS-Browserquelle live. Sie müssen die Seite nicht neu laden.",
+      "localNote": "Wenn Sie Einstellungen in OBS ändern, werden die Einstellungen lokal im Cache der OBS-Browserquelle gespeichert.",
+      "ioTitle": "Szenendateien exportieren und importieren",
       "ioDesc": "Sie können Chat-Szeneneinstellungen mit JSON-Dateien sichern oder übertragen.",
-      "exportSingle": "<strong>Einzelszene exportieren:</strong> Um eine einzelne Szene zu exportieren, wählen Sie die Szene aus und klicken Sie auf <strong>Exportieren</strong>.",
+      "exportSingle": "<strong>Einzelne Szene exportieren:</strong> Um eine Szene zu exportieren, wählen Sie die Szene aus. Klicken Sie dann auf <strong>Exportieren</strong>.",
       "exportAll": "<strong>Alle Szenen exportieren:</strong> Um alle Szenen zu sichern, klicken Sie im linken Bereich auf <strong>Alle exportieren</strong>.",
-      "importFile": "<strong>Szenendatei importieren:</strong> Um Szeneneinstellungen wiederherzustellen, klicken Sie auf <strong>Importieren</strong> und wählen Sie eine gespeicherte JSON-Datei von Ihrem Computer.",
-      "linkTitle": "Bestehende Szenen verknüpfen (Sync-Token)",
-      "linkDesc": "Sie können eine bestehende cloud-synchronisierte Szene mithilfe ihres Sync-Tokens mit einem neuen Browser oder Computer verknüpfen.",
+      "importFile": "<strong>Szenendatei importieren:</strong> Um Szeneneinstellungen wiederherzustellen, klicken Sie auf <strong>Importieren</strong>. Wählen Sie dann eine gespeicherte JSON-Datei auf Ihrem Computer aus.",
+      "linkTitle": "Vorhandene Szene verknüpfen (Synchronisierungs-Token)",
+      "linkDesc": "Sie können eine vorhandene cloud-synchronisierte Szene mit ihrem Synchronisierungs-Token mit einem neuen Browser oder Computer verknüpfen.",
       "linkStep1": "Klicken Sie im linken Bereich auf <strong>Szene verknüpfen</strong>.",
-      "linkStep2": "Geben Sie das Sync-Token aus Ihrer OBS-URL ein (das alfanumerische Token nach <span class=\"inline-code\">sync=</span>).",
-      "linkStep3": "Klicken Sie auf <strong>Verknüpfen</strong>, um Szeneneinstellungen aus der Cloud abzurufen. Verknüpfte Szenen werden live aktualisiert, wenn Sie Änderungen auf einem beliebigen Gerät speichern."
+      "linkStep2": "Geben Sie das Synchronisierungs-Token aus Ihrer OBS-URL ein (das alphanumerische Token nach <span class=\"inline-code\">sync=</span>).",
+      "linkStep3": "Klicken Sie auf <strong>Verknüpfen</strong>, um die Szeneneinstellungen aus der Cloud abzurufen. Wenn Sie eine Änderung auf einem beliebigen Gerät speichern, wird die verknüpfte Szene live aktualisiert."
     },
     "urlParams": {
       "title": "URL-Parameter",
-      "desc": "Die Overlay-URL akzeptiert Abfrageparameter. Der Chat-Scene-Creator fügt die Parameter scene und sync automatisch hinzu. Die übrigen Parameter können Sie manuell ergänzen.",
-      "tableCaption": "URL-Parameter des Chat-Overlays",
+      "desc": "Die Overlay-URL akzeptiert Abfrageparameter. Der Chat Scene Creator fügt die Parameter für Szene und Synchronisierung für Sie hinzu. Sie können die anderen Parameter manuell hinzufügen.",
+      "tableCaption": "URL-Parameter für das Chat-Overlay",
       "colName": "Parameter",
       "colEffect": "Funktion",
       "colExample": "Beispiel",
-      "sceneEffect": "Lädt eine benannte Szene. Ohne diesen Parameter lädt das Overlay die Szene mit dem Namen <span class=\"inline-code\">default</span>.",
-      "syncEffect": "Verbindet die Browserquelle mit einer in der Cloud synchronisierten Szene. Lesen Sie <strong>Automatische Live-Synchronisierung</strong> für weitere Informationen.",
-      "demoEffect": "Zeigt Beispiel-Chatnachrichten an. Das Overlay verbindet sich in diesem Modus nicht mit Twitch oder YouTube.",
-      "debugEffect": "Zeigt Status- und Diagnosemeldungen auf dem Bildschirm an. Standardmäßig blendet das Overlay diese Meldungen aus.",
+      "sceneEffect": "Lädt eine benannte Szene. Wenn Sie diesen Parameter weglassen, lädt das Overlay die Szene mit dem Namen <span class=\"inline-code\">default</span>.",
+      "syncEffect": "Verknüpft die Browserquelle mit einer cloud-synchronisierten Szene. Für weitere Informationen lesen Sie <strong>Automatische Live-Synchronisierung</strong>.",
+      "demoEffect": "Zeigt Beispiel-Chatnachrichten an. Das Overlay stellt in diesem Modus keine Verbindung zu Twitch oder YouTube her.",
+      "debugEffect": "Zeigt Status- und Diagnosemeldungen auf dem Bildschirm an. Das Overlay blendet diese Meldungen standardmäßig aus.",
       "debugTitle": "Diagnosemeldungen",
-      "debugDesc": "Das Overlay blendet standardmäßig alle Statusmeldungen aus. Verbindungshinweise und Fehlertexte erscheinen nicht in Ihrem Stream. Der Parameter <span class=\"inline-code\">debug=1</span> zeigt diese Meldungen über Ihrem Chat an.",
-      "debugConsole": "Das Overlay schreibt dieselben Meldungen immer in die Browser-Konsole. Die Konsole speichert sie auch dann, wenn die URL keinen <span class=\"inline-code\">debug</span>-Parameter enthält.",
-      "debugStatus": "Der Verbindungsstatus für Twitch und YouTube steht im Konfigurations-Panel. Klicken Sie in OBS mit der rechten Maustaste auf die Browserquelle und wählen Sie <strong>Interagieren</strong>, um ihn zu sehen. Der Status zeigt <strong>Verbunden</strong>, <strong>Verbindung wird hergestellt</strong>, <strong>Erneute Verbindung</strong> oder <strong>Getrennt</strong>.",
-      "debugTip": "Entfernen Sie <span class=\"inline-code\">debug=1</span> aus der URL, bevor Sie streamen. Die Meldungen sind für Ihre Zuschauer sichtbar.",
+      "debugDesc": "Das Overlay blendet standardmäßig alle Statusmeldungen aus. Verbindungshinweise und Fehlertexte bleiben außerhalb Ihres Streams. Der Parameter <span class=\"inline-code\">debug=1</span> zeigt diese Meldungen über Ihrem Chat an.",
+      "debugConsole": "Das Overlay schreibt dieselben Meldungen immer in die Browser-Konsole. Dies gilt mit oder ohne den Parameter <span class=\"inline-code\">debug</span>.",
+      "debugStatus": "Der Verbindungsstatus für Twitch und YouTube befindet sich im Konfigurationsfenster. Klicken Sie in OBS mit der rechten Maustaste auf die Browserquelle. Wählen Sie dann <strong>Interagieren</strong> aus, um ihn anzuzeigen. Der Status zeigt <strong>Connected</strong>, <strong>Connecting</strong>, <strong>Reconnecting</strong> oder <strong>Disconnected</strong> an.",
+      "debugTip": "Entfernen Sie <span class=\"inline-code\">debug=1</span> vor dem Streamen aus der URL. Die Meldungen sind für Ihre Zuschauer sichtbar.",
       "demoTitle": "Demo-Modus",
-      "demoDesc": "Der Parameter <span class=\"inline-code\">demo=1</span> zeigt Beispiel-Chatnachrichten in einer Schleife an. Das Overlay verbindet sich mit keiner Chat-Plattform und blendet die Verbindungsaufforderung aus. Der Chat-Scene-Creator nutzt diesen Modus für die Live-Vorschau."
+      "demoDesc": "Der Parameter <span class=\"inline-code\">demo=1</span> zeigt Beispiel-Chatnachrichten in einer Schleife an. Das Overlay stellt keine Verbindung zu einer Chat-Plattform her und blendet die Verbindungsaufforderung aus. Der Chat Scene Creator verwendet diesen Modus für die Live-Vorschau."
     },
     "obsSetup": {
-      "title": "OBS-Setup-Anweisungen",
-      "desc": "Befolgen Sie diese Schritte, um das Chat-Overlay in OBS Studio hinzuzufügen:",
-      "step1": "Gehen Sie in OBS Studio zum Panel <strong>Quellen</strong>, klicken Sie auf <strong>+</strong> und wählen Sie <strong>Browser</strong>.",
-      "step2": "Geben Sie einen erkennbaren Quellennamen ein (zum Beispiel „Twitch Chat“).",
-      "step3": "Fügen Sie die aus dem Chat-Scene-Creator generierte URL in das URL-Feld ein. Deaktivieren Sie „Lokale Datei“, falls das Einfügen nicht möglich ist.",
-      "step4": "Stellen Sie die Breite auf <strong>320</strong> und die Höhe auf <strong>600</strong> ein.",
-      "step5": "Klicken Sie auf „OK“, um die Browserquelle hinzuzufügen.",
-      "step6": "<strong>Einstellungen konfigurieren:</strong> Speichern Sie Ihre Einstellungen im Web Chat Scene Creator, um sie live mit OBS zu synchronisieren. Alternativ klicken Sie mit der rechten Maustaste auf die Browserquelle in OBS und wählen Sie <strong>Interagieren</strong>, um Einstellungen lokal anzupassen.",
-      "step7": "Geben Sie im interaktiven Fenster Ihre Kanalinformationen ein, wählen Sie Einstellungen über das Zahnrad-Symbol (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>) und klicken Sie auf „Verbinden“.",
+      "title": "Anleitung zur OBS-Einrichtung",
+      "desc": "Führen Sie diese Schritte aus, um das Chat-Overlay zu OBS Studio hinzuzufügen:",
+      "step1": "Öffnen Sie in OBS Studio das Panel <strong>Quellen</strong>. Klicken Sie auf <strong>+</strong>. Wählen Sie dann <strong>Browser</strong> aus.",
+      "step2": "Geben Sie einen Namen für die Quelle ein (zum Beispiel „Twitch Chat“).",
+      "step3": "Fügen Sie die URL aus dem Chat Scene Creator in das URL-Feld ein. Wenn Sie die URL nicht einfügen können, deaktivieren Sie das Kontrollkästchen „Lokale Datei“.",
+      "step4": "Setzen Sie die Breite auf <strong>320</strong> und die Höhe auf <strong>600</strong>.",
+      "step5": "Klicken Sie auf „OK“, um die Browserquelle zu Ihrer Szene hinzuzufügen.",
+      "step6": "<strong>Einstellungen ändern:</strong> Speichern Sie Ihre Einstellungen im Chat Scene Creator. Sie werden live mit OBS synchronisiert. Alternativ können Sie in OBS mit der rechten Maustaste auf die Browserquelle klicken. Wählen Sie dann <strong>Interagieren</strong> aus, um die Einstellungen lokal zu ändern.",
+      "step7": "Geben Sie im interaktiven Fenster Ihre Kanalinformationen ein. Klicken Sie auf das Zahnrad für Einstellungen (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Klicken Sie dann auf „Connect“.",
       "tips": {
-        "title": "Fortgeschrittene OBS-Tipps",
-        "tip1": "Aktivieren Sie <span class=\"inline-code\">Quelle bei Nicht-Sichtbarkeit herunterfahren</span>, um CPU- und Speicherressourcen zu sparen.",
-        "tip2": "Um Scrollbalken auszublenden, fügen Sie <span class=\"inline-code\">body { overflow: hidden; }</span> in das Feld für benutzerdefiniertes CSS im Eigenschaftenfenster ein.",
-        "tip3": "Einstellungen werden im OBS-Cache gespeichert. Wenn Sie für diese Quelle jemals den „Cache leeren“, müssen Sie die ästhetischen Einstellungen neu konfigurieren."
+        "title": "Erweiterte OBS-Tipps",
+        "tip1": "Aktivieren Sie <span class=\"inline-code\">Quelle deaktivieren, wenn nicht sichtbar</span>, um Systemressourcen zu sparen.",
+        "tip2": "Um die Bildlaufleisten auszublenden, fügen Sie <span class=\"inline-code\">body { overflow: hidden; }</span> in das Feld für benutzerdefiniertes CSS ein.",
+        "tip3": "Einstellungen werden im OBS-Cache gespeichert. Wenn Sie den OBS-Cache für diese Quelle leeren, legen Sie Ihre visuellen Einstellungen erneut fest."
       }
     }
   }
