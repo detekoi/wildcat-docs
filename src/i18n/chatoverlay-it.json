@@ -114,13 +114,13 @@
       }
     },
     "config": {
-      "title": "Caratteristiche del pannello di configurazione",
-      "desc": "Tutte le modifiche e le personalizzazioni sono gestite direttamente tramite il menu delle opzioni sulla pagina. In OBS, fai clic con il pulsante destro del mouse sulla sorgente browser e seleziona <strong>Interagisci</strong> per aprire il menu. Le opzioni includono:",
-      "feature1": "<strong>Selezione del canale:</strong> Seleziona la piattaforma di streaming (Twitch/YouTube) e fornisci l ID canale o l URL del video corrispondente per connetterti.",
-      "feature2": "<strong>Impostazioni dei font:</strong> Scegli tra una selezione di font Google inclusi e regola la dimensione del testo fino ai limiti massimi.",
-      "feature3": "<strong>Layout di visualizzazione:</strong> Scegli tra la modalità elenco standard e la modalità bolle di chat pop-up. Regola l opacità dello sfondo e i bordi.",
-      "feature4": "<strong>Stemmisti ed emote:</strong> Attiva gli stemmi nativi per Twitch e YouTube e configura le emote di terze parti (BTTV, FFZ, 7TV), la sovrapposizione a larghezza zero e i filtri di sicurezza.",
-      "feature5": "<strong>Gestione dei temi:</strong> Accedi ai temi generati dall IA, seleziona i temi predefiniti e regola manualmente i colori se necessario.",
+      "title": "Funzionalità del pannello di configurazione",
+      "desc": "Fai clic con il pulsante destro del mouse sulla sorgente browser in OBS e seleziona <strong>Interagisci</strong> per aprire il menu delle impostazioni. Le opzioni disponibili includono:",
+      "feature1": "<strong>Selezione del canale:</strong> Seleziona Twitch o YouTube e inserisci le informazioni del tuo canale per connetterti.",
+      "feature2": "<strong>Impostazioni dei caratteri:</strong> Cerca tra i Google Fonts, regola la dimensione del testo e imposta lo spessore del font.",
+      "feature3": "<strong>Layout di visualizzazione:</strong> Scegli la modalità Finestra o la modalità Popup. Imposta colori di sfondo, opacità, bordi e ombre.",
+      "feature4": "<strong>Elementi del messaggio ed eventi:</strong> Attiva/disattiva stemmi della piattaforma, stemmi utente, super chat, eventi di abbonamento, pronomi, timestamp, ingrandimento delle emote, dissolvenza del gradiente superiore e nascondi i messaggi di comando !.",
+      "feature5": "<strong>Emote e sicurezza:</strong> Abilita le emote di terze parti e imposta i filtri per i contenuti di 7TV.",
       "feature6": "<strong>Gestione dei temi:</strong> Seleziona temi predefiniti, genera temi con l'IA, salva preset di temi personalizzati e imposta colori esadecimali personalizzati."
     },
     "scenes": {

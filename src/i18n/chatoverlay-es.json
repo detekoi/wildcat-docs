@@ -115,13 +115,13 @@
     },
     "config": {
       "title": "Características del panel de configuración",
-      "desc": "Todas las modificaciones y personalizaciones se manejan directamente usando el menú de opciones en la página. En OBS, haga clic con el botón derecho en la fuente de navegador y seleccione <strong>Interactuar</strong> para abrir el menú. Las opciones incluyen:",
-      "feature1": "<strong>Selección de canal:</strong> Seleccione la plataforma de transmisión (Twitch/YouTube) y proporcione la ID del canal o URL del video correspondiente para conectarse.",
-      "feature2": "<strong>Configuración de fuentes:</strong> Elija entre una variedad de fuentes de Google incluidas y ajuste el tamaño de fuente hasta los límites máximos, garantizando una legibilidad ideal.",
-      "feature3": "<strong>Diseño de pantalla:</strong> Elija entre el modo de lista estándar o el modo de burbujas de chat emergentes. Ajuste las opacidades de fondo y los bordes.",
-      "feature4": "<strong>Insignias y emoticonos:</strong> Alterne las insignias de plataforma nativas para Twitch y YouTube, y configure emoticonos de terceros (BTTV, FFZ, 7TV), apilamiento de ancho cero y filtros de seguridad de contenido.",
-      "feature5": "<strong>Gestión de temas:</strong> Acceda a sus temas generados por IA, seleccione entre los preajustes y ajuste los colores de forma manual si es necesario.",
-      "feature6": "<strong>Gestión de temas:</strong> Selecciona temas predefinidos, genera temas mediante IA, guarda ajustes preestablecidos personalizados y establece colores hexadecimales personalizados."
+      "desc": "En OBS, haga clic derecho en la fuente de navegador y seleccione <strong>Interactuar</strong> para abrir el menú de configuración. Las opciones disponibles incluyen:",
+      "feature1": "<strong>Selección de canal:</strong> Seleccione Twitch o YouTube e ingrese la información de su canal para conectarse.",
+      "feature2": "<strong>Configuración de fuentes:</strong> Busque en Google Fonts, ajuste el tamaño de fuente y establezca el grosor de fuente.",
+      "feature3": "<strong>Diseño de visualización:</strong> Elija el modo Ventana o el modo Emergente. Establezca colores de fondo, opacidades, bordes y sombras.",
+      "feature4": "<strong>Elementos del mensaje y eventos:</strong> Alterne insignias de plataforma, insignias de usuario, super chats, eventos de membresía, pronombres, marcas de tiempo, ampliación de emoticonos, desvanecimiento de degradado superior y oculte mensajes de comandos !.",
+      "feature5": "<strong>Emoticonos y seguridad:</strong> Habilite emoticonos de terceros y configure filtros de contenido de 7TV.",
+      "feature6": "<strong>Gestión de temas:</strong> Seleccione temas predefinidos, genere temas mediante IA, guarde ajustes preestablecidos de temas personalizados y establezca colores hexadecimales personalizados."
     },
     "scenes": {
       "title": "Creador de escenas de chat",

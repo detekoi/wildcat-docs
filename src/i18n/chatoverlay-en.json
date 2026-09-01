@@ -119,7 +119,7 @@
       "feature1": "<strong>Channel Selection:</strong> Select Twitch or YouTube and enter your channel information to connect.",
       "feature2": "<strong>Font Settings:</strong> Search Google Fonts, adjust font size, and set font weight.",
       "feature3": "<strong>Display Layout:</strong> Choose Window mode or Popup mode. Set background colors, opacities, borders, and shadows.",
-      "feature4": "<strong>Message Elements & Events:</strong> Toggle platform badges, user badges, super chats, membership events, pronouns, timestamps, emote enlargement, and top gradient fade.",
+      "feature4": "<strong>Message Elements & Events:</strong> Toggle platform badges, user badges, super chats, membership events, pronouns, timestamps, emote enlargement, top gradient fade, and hide ! command messages.",
       "feature5": "<strong>Emotes & Safety:</strong> Enable third-party emotes and set 7TV content filters.",
       "feature6": "<strong>Theme Management:</strong> Select preset themes, generate AI themes, save custom theme presets, and set custom hex colors."
     },

@@ -115,13 +115,13 @@
     },
     "config": {
       "title": "Funktionen des Konfigurations-Panels",
-      "desc": "Alle Änderungen und Anpassungen werden direkt über das Einstellungsmenü auf der Seite vorgenommen. Klicken Sie in OBS mit der rechten Maustaste auf die Browser-Quelle und wählen Sie <strong>Interagieren</strong>, um das Menü zu öffnen. Die Optionen umfassen:",
-      "feature1": "<strong>Kanalauswahl:</strong> Wählen Sie die Streaming-Plattform (Twitch/YouTube) und geben Sie die entsprechende Kanal-ID oder Video-URL ein, um eine Verbindung herzustellen.",
-      "feature2": "<strong>Schrifteinstellungen:</strong> Wählen Sie aus einer Vielzahl integrierter Google-Fonts und passen Sie die Schriftgröße bis zu den maximalen Grenzwerten an, um eine ideale Lesbarkeit zu gewährleisten.",
-      "feature3": "<strong>Anzeigelayout:</strong> Wählen Sie zwischen dem Standard-Listenmodus oder dem Popup-Chat-Bubble-Modus. Passen Sie Hintergrundtransparenz und Rahmen an.",
-      "feature4": "<strong>Badges & Emotes:</strong> Schalten Sie Plattform-Badges nativ für Twitch und YouTube um und konfigurieren Sie Drittanbieter-Emotes (BTTV, FFZ, 7TV), Zero-Width-Overlay-Stacking und Inhalts-Sicherheitsfilter.",
-      "feature5": "<strong>Theme-Management:</strong> Greifen Sie auf Ihre KI-generierten Themes zu, wählen Sie aus Voreinstellungen und passen Sie bei Bedarf feine Farbabstimmungen manuell an.",
-      "feature6": "<strong>Themen-Verwaltung:</strong> Wählen Sie Themen-Vorgaben, generieren Sie KI-Themen, speichern Sie eigene Themen-Vorgaben und legen Sie benutzerdefinierte Hex-Farben fest."
+      "desc": "Klicken Sie in OBS mit der rechten Maustaste auf die Browser-Quelle und wählen Sie <strong>Interagieren</strong>, um das Einstellungsmenü zu öffnen. Verfügbare Optionen umfassen:",
+      "feature1": "<strong>Kanalauswahl:</strong> Wählen Sie Twitch oder YouTube und geben Sie Ihre Kanalinformationen ein, um eine Verbindung herzustellen.",
+      "feature2": "<strong>Schrifteinstellungen:</strong> Durchsuchen Sie Google Fonts, passen Sie die Schriftgröße an und legen Sie die Schriftstärke fest.",
+      "feature3": "<strong>Anzeigelayout:</strong> Wählen Sie den Fenstermodus oder den Popup-Modus. Legen Sie Hintergrundfarben, Deckkraft, Rahmen und Schatten fest.",
+      "feature4": "<strong>Nachrichtenelemente & Ereignisse:</strong> Schalten Sie Plattform-Badges, Benutzer-Badges, Super Chats, Mitgliedschafts-Ereignisse, Pronomen, Zeitstempel, Emote-Vergrößerung, oberen Farbverlaufs-Fade und das Ausblenden von !-Befehlsnachrichten um.",
+      "feature5": "<strong>Emotes & Sicherheit:</strong> Aktivieren Sie Drittanbieter-Emotes und legen Sie 7TV-Inhaltsfilter fest.",
+      "feature6": "<strong>Theme-Verwaltung:</strong> Wählen Sie Preset-Themes, generieren Sie KI-Themes, speichern Sie benutzerdefinierte Theme-Presets und legen Sie benutzerdefinierte Hex-Farben fest."
     },
     "scenes": {
       "title": "Chat-Scene-Creator",

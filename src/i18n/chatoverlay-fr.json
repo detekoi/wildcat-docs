@@ -115,13 +115,13 @@
     },
     "config": {
       "title": "Fonctionnalités du panneau de configuration",
-      "desc": "Toutes les modifications et personnalisations sont gérées directement via le menu d'options de la page. Dans OBS, faites un clic droit sur la source navigateur et sélectionnez <strong>Interagir</strong> pour ouvrir le menu. Les options incluent:",
-      "feature1": "<strong>Sélection de chaîne:</strong> Sélectionnez la plateforme de streaming (Twitch/YouTube) et fournissez l'ID de chaîne ou l'URL de vidéo correspondante pour vous connecter.",
-      "feature2": "<strong>Paramètres de police:</strong> Choisissez parmi une sélection de polices Google incluses et ajustez la taille de la police jusqu aux limites maximales.",
-      "feature3": "<strong>Disposition d'affichage:</strong> Choisissez entre le mode liste standard et le mode bulles de chat pop-up. Ajustez les opacités de fond et les bordures.",
-      "feature4": "<strong>Badges et émotes:</strong> Activez les badges natifs pour Twitch et YouTube, et configurez les émotes tierces (BTTV, FFZ, 7TV), l'empilement à largeur zéro et les filtres de sécurité.",
-      "feature5": "<strong>Gestion des thèmes:</strong> Accédez à vos thèmes générés par IA, sélectionnez parmi les préréglages et ajustez manuellement les couleurs si nécessaire.",
-      "feature6": "<strong>Gestion des thèmes :</strong> Sélectionnez des thèmes prédéfinis, générez des thèmes IA, enregistrez des préréglages de thèmes personnalisés et définissez des couleurs hexadécimales."
+      "desc": "Faites un clic droit sur la source navigateur dans OBS et sélectionnez <strong>Interagir</strong> pour ouvrir le menu des paramètres. Les options disponibles incluent :",
+      "feature1": "<strong>Sélection de chaîne :</strong> Sélectionnez Twitch ou YouTube et saisissez les informations de votre chaîne pour vous connecter.",
+      "feature2": "<strong>Paramètres de police :</strong> Recherchez des polices Google Fonts, ajustez la taille et la graisse de la police.",
+      "feature3": "<strong>Disposition d'affichage :</strong> Choisissez le mode Fenêtre ou le mode Pop-up. Définissez les couleurs d'arrière-plan, les opacités, les bordures et les ombres.",
+      "feature4": "<strong>Éléments de message et événements :</strong> Activez/désactivez les badges de plateforme, les badges d'utilisateur, les super chats, les événements d'adhésion, les pronoms, les horodatages, l'agrandissement des émotes, le fondu dégradé supérieur et le masquage des messages de commande !.",
+      "feature5": "<strong>Émotes et sécurité :</strong> Activez les émotes tierces et configurez les filtres de contenu 7TV.",
+      "feature6": "<strong>Gestion des thèmes :</strong> Sélectionnez des thèmes prédéfinis, générez des thèmes IA, enregistrez des préréglages personnalisés et définissez des couleurs hexadécimales personnalisées."
     },
     "scenes": {
       "title": "Créateur de scènes de chat",

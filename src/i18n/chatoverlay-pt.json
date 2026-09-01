@@ -115,13 +115,13 @@
     },
     "config": {
       "title": "Recursos do painel de configuração",
-      "desc": "Todas as modificações e personalizações são gerenciadas diretamente usando o menu de opções na página. No OBS, clique com o botão direito na fonte de navegador e selecione <strong>Interagir</strong> para abrir o menu. As opções incluem:",
-      "feature1": "<strong>Seleção de canal:</strong> Selecione a plataforma de transmissão (Twitch/YouTube) e forneça o ID do canal ou URL do vídeo correspondente para se conectar.",
-      "feature2": "<strong>Configurações de fonte:</strong> Escolha entre uma seleção de fontes do Google incluídas e ajuste o tamanho da fonte até os limites máximos.",
-      "feature3": "<strong>Layout de exibição:</strong> Escolha entre o modo de lista padrão e o modo de bolhas de chat pop-up. Ajuste a opacidade do fundo e as bordas.",
-      "feature4": "<strong>Emblemas e emotes:</strong> Ative emblemas nativos da plataforma para Twitch e YouTube e configure emotes de terceiros (BTTV, FFZ, 7TV), empilhamento de largura zero e filtros de segurança.",
-      "feature5": "<strong>Gerenciamento de temas:</strong> Acesse seus temas gerados por IA, selecione entre os predefinidos e ajuste as cores manualmente, se necessário.",
-      "feature6": "<strong>Gerenciamento de temas:</strong> Selecione temas predefinidos, gere temas com IA, salve predefinições de temas personalizados e defina cores hexadecimais."
+      "desc": "No OBS, clique com o botão direito na fonte de navegador e selecione <strong>Interagir</strong> para abrir o menu de configurações. As opções disponíveis incluem:",
+      "feature1": "<strong>Seleção de canal:</strong> Selecione Twitch ou YouTube e insira as informações do seu canal para se conectar.",
+      "feature2": "<strong>Configurações de fonte:</strong> Pesquise no Google Fonts, ajuste o tamanho da fonte e defina o peso da fonte.",
+      "feature3": "<strong>Layout de exibição:</strong> Escolha o modo Janela ou modo Pop-up. Defina cores de fundo, opacidades, bordas e sombras.",
+      "feature4": "<strong>Elementos de mensagem e eventos:</strong> Ative/desative emblemas de plataforma, emblemas de usuário, super chats, eventos de assinatura, pronomes, carimbos de data/hora, ampliação de emotes, esmaecimento de gradiente superior e oculte mensagens de comando !.",
+      "feature5": "<strong>Emotes e segurança:</strong> Ative emotes de terceiros e defina filtros de conteúdo do 7TV.",
+      "feature6": "<strong>Gerenciamento de temas:</strong> Selecione temas predefinidos, gere temas com IA, salve predefinições de temas personalizados e defina cores hexadecimais personalizadas."
     },
     "scenes": {
       "title": "Criador de cenas de chat",
