@@ -265,15 +265,85 @@ main ol {
   flex: 1 1 auto;
   min-width: 0;
   justify-content: flex-end;
+  /* Every item stretches to the row: when one label wraps, its neighbours
+     grow to match instead of leaving a ragged line of chip heights. */
+  align-items: stretch;
 }
 
 .site-navbar-menu li {
   margin: 0;
+  display: flex;
 }
 
 /* The picker keeps its width; the links are what give. */
 .site-navbar-menu .site-navbar-lang {
   flex: none;
+  position: relative;
+}
+
+/* The language picker is one more chip in the row, so it takes the links'
+   face, case and hover. Uppercasing is safe for the eight languages the docs
+   ship; the caret is drawn in CSS so it inverts with the chip on hover. */
+.site-langselect {
+  flex: 1 1 auto;
+  max-width: 12rem;
+  padding: 6px 30px 6px 12px;
+  padding-inline: 12px 30px;
+  border: 1px solid var(--color-grid-line);
+  border-radius: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.site-navbar-lang::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  inset-inline-end: 13px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  color: var(--color-text);
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.site-langselect:hover,
+.site-langselect:focus-visible {
+  background-color: var(--color-text);
+  color: var(--color-background);
+  border-color: var(--color-text);
+}
+
+.site-navbar-lang:has(.site-langselect:hover, .site-langselect:focus-visible)::after {
+  color: var(--color-background);
+}
+
+/* The popup list is painted by the OS, which does not inherit the page colors;
+   without this the options are black-on-black in dark mode on Windows. */
+.site-langselect option {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  text-transform: none;
+}
+
+/* Shared face for every chip in the row, links and picker alike. */
+.site-navbar-menu a,
+.site-langselect {
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: var(--font-size-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.15;
 }
 
 .site-navbar-menu a {
@@ -283,14 +353,12 @@ main ol {
   text-decoration: none;
   transition: all 0.2s ease;
   padding: 6px 12px;
-  display: block;
-  font-weight: 600;
-  font-size: var(--font-size-small);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0;
   text-align: center;
-  line-height: 1.15;
   /* CJK can break between any two characters; keep a label like ホーム whole
      and break only at spaces, as the Latin labels do. */
   word-break: keep-all;
@@ -321,10 +389,21 @@ main ol {
   .site-navbar-menu {
     gap: var(--spacing-small);
   }
-  .site-navbar-menu a {
+  .site-navbar-menu a,
+  .site-langselect {
     font-size: 0.75rem;
     letter-spacing: 0.03em;
+  }
+  .site-navbar-menu a {
     padding: 5px 10px;
+  }
+  .site-langselect {
+    padding: 5px 26px 5px 10px;
+    padding-inline: 10px 26px;
+  }
+  .site-navbar-lang::after {
+    right: 11px;
+    inset-inline-end: 11px;
   }
 }
 
@@ -758,12 +837,18 @@ footer a:active {
     width: 100%;
   }
 
-  .site-navbar-menu a {
+  .site-navbar-menu a,
+  .site-langselect {
     width: 100%;
+    max-width: none;
     text-align: center;
     margin-bottom: var(--spacing-small);
   }
 
+  .site-navbar-lang::after {
+    /* The chip has a bottom margin now; keep the caret centred on the box. */
+    top: calc(50% - var(--spacing-small) / 2);
+  }
 }
 
 @media (max-width: 768px) {

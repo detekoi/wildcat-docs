@@ -380,62 +380,6 @@ footer {
   }
 }
 
-/* Language selector: a native <select> in the navbar, styled like the menu
-   links. Endonyms are deliberately not uppercased: scripts without case gain
-   nothing and Turkish i/I actively mislead. The chevron is an inline SVG
-   because appearance:none removes the platform one; it is repeated for dark
-   mode since a data URI cannot use currentColor. */
-.site-langselect {
-  height: 34px;
-  max-width: 11rem;
-  padding: 0 26px 0 10px;
-  padding-inline: 10px 26px;
-  border: 1px solid var(--color-grid-line);
-  border-radius: 0;
-  background-color: transparent;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23050505' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 9px center;
-  background-size: 13px 10px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  font-size: var(--font-size-small);
-  font-weight: 600;
-  cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-
-.site-langselect:hover,
-.site-langselect:focus {
-  border-color: var(--color-text);
-}
-
-/* The popup list is painted by the OS, which does not inherit the page colors;
-   without this the options are black-on-black in dark mode on Windows. */
-.site-langselect option {
-  background: var(--color-card-bg);
-  color: var(--color-text);
-}
-
-@media (prefers-color-scheme: dark) {
-  .site-langselect {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
-  }
-}
-
-/* In the collapsed menu every item spans the row; so does this. Breakpoint
-   matches the navbar block in unified.css. */
-@media (max-width: 900px) {
-  .site-langselect {
-    width: 100%;
-    max-width: none;
-    margin-bottom: var(--spacing-small);
-  }
-}
-
 /* =====================================================
    VOICE LIST DROPDOWN
    ===================================================== */
