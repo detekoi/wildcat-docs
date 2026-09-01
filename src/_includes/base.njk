@@ -67,6 +67,13 @@
             <li><a href="wildcatttsdocs.html" data-i18n="nav.wildcatTtsDocs">WildcatTTS Docs</a></li>
             <li><a href="chatoverlay.html" data-i18n="nav.chatOverlayDocs">Chat Overlay Docs</a></li>
             <li><a href="https://parfaitfair.com/#contact" data-i18n="nav.contact">Contact</a></li>
+            {# Native select, matching the WildcatTTS dashboard: keyboard and screen
+               reader support come from the platform, and it sits in the menu so a
+               phone-width bar never has to fit it beside the brand and toggle. #}
+            <li class="site-navbar-lang"><select class="site-langselect" id="page-language-select"
+                    aria-label="Language" data-i18n-aria-label="ui.languageSelector">
+                    <option value="en" lang="en">English</option>
+                </select></li>
         </ul>
     </nav>
     {%- if sidebarLinks %}

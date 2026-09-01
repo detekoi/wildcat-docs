@@ -12,17 +12,6 @@ const AVAILABLE_LANGUAGES = {
   'ru': 'Русский'
   // Add more languages as needed
 };
-// Short labels for language selector icons
-const LANGUAGE_ICONS = {
-  'en': 'en',
-  'es': 'es',
-  'fr': 'fr',
-  'de': 'de',
-  'it': 'it',
-  'pt': 'pt',
-  'ja': '日本',
-  'ru': 'ру'
-};
 
 // Default language
 const DEFAULT_LANGUAGE = 'en';
@@ -445,31 +434,24 @@ function renderLastUpdated() {
 // translatePage() has already run.
 document.addEventListener('lastupdated:change', renderLastUpdated);
 
-// Create language selector
+// Language selector: the native <select> in the navbar (see base.njk). The
+// same control as the WildcatTTS dashboard, so the three sites match.
 function createLanguageSelector() {
-  // Check if language selector already exists
-  if (document.querySelector('.language-selector')) {
-    return;
+  const select = document.getElementById('page-language-select');
+  if (!select || select.dataset.i18nBound) return;
+  select.dataset.i18nBound = 'true';
+
+  select.replaceChildren();
+  for (const code of Object.keys(AVAILABLE_LANGUAGES)) {
+    const option = document.createElement('option');
+    option.value = code;
+    option.textContent = AVAILABLE_LANGUAGES[code];
+    // Each label is written in the language it names; without this a screen
+    // reader pronounces all of them with the page voice.
+    option.lang = code;
+    select.appendChild(option);
   }
-
-  const selector = document.createElement('div');
-  selector.className = 'language-selector';
-  // Appended to <body>, so it sits outside every other landmark. Making it a
-  // labelled region keeps it discoverable instead of orphaned content.
-  selector.setAttribute('role', 'region');
-
-  const currentBtn = document.createElement('button');
-  currentBtn.className = 'current-lang';
-  currentBtn.type = 'button';
-  currentBtn.setAttribute('aria-expanded', 'false');
-  currentBtn.setAttribute('aria-haspopup', 'true');
-  currentBtn.setAttribute('aria-controls', 'language-grid');
-  currentBtn.textContent = LANGUAGE_ICONS[currentLanguage] || currentLanguage;
-  selector.appendChild(currentBtn);
-
-  const grid = document.createElement('div');
-  grid.className = 'language-grid';
-  grid.id = 'language-grid';
+  select.value = currentLanguage;
 
   // The whole page rewrites on selection with no other signal that anything
   // happened, so announce the change politely.
@@ -477,83 +459,24 @@ function createLanguageSelector() {
   status.className = 'visually-hidden';
   status.setAttribute('role', 'status');
   status.setAttribute('aria-live', 'polite');
+  select.insertAdjacentElement('afterend', status);
 
-  function setOpen(open) {
-    selector.classList.toggle('open', open);
-    currentBtn.setAttribute('aria-expanded', String(open));
-  }
-
-  for (const code of Object.keys(AVAILABLE_LANGUAGES)) {
-    const btn = document.createElement('button');
-    btn.className = 'grid-item';
-    btn.type = 'button';
-    btn.dataset.lang = code;
-    // The visible label is an abbreviation, sometimes in another script
-    // ("ру", "日本"). `lang` gets it pronounced with the right voice, and
-    // aria-label announces the full language name rather than the fragment.
-    btn.lang = code;
-    btn.setAttribute('aria-label', AVAILABLE_LANGUAGES[code]);
-    btn.textContent = LANGUAGE_ICONS[code] || code;
-    btn.addEventListener('click', async () => {
-      setOpen(false);
-      await loadTranslations(code);
-      translatePage();
-      if (typeof lucide !== 'undefined') { lucide.createIcons(); }
-      updateLanguageSelector(code);
-      // Selection collapses the grid, which would drop focus to <body>
-      currentBtn.focus();
-      status.textContent = AVAILABLE_LANGUAGES[code];
-    });
-    grid.appendChild(btn);
-  }
-
-  selector.appendChild(grid);
-  selector.appendChild(status);
-
-  currentBtn.addEventListener('click', () => {
-    setOpen(!selector.classList.contains('open'));
+  select.addEventListener('change', async () => {
+    const code = select.value;
+    await loadTranslations(code);
+    translatePage();
+    if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+    updateLanguageSelector(code);
+    status.textContent = AVAILABLE_LANGUAGES[code] || code;
   });
-
-  document.addEventListener('click', (e) => {
-    if (!selector.contains(e.target)) setOpen(false);
-  });
-
-  // Escape closes the grid and returns focus to the trigger
-  selector.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && selector.classList.contains('open')) {
-      e.stopPropagation();
-      setOpen(false);
-      currentBtn.focus();
-    }
-  });
-
-  // Add language selector to the page header or body
-  document.body.appendChild(selector);
 }
 
 // Update language selector to reflect current language
 function updateLanguageSelector(lang) {
-  const selector = document.querySelector('.language-selector');
-  if (!selector) return;
-
-  const label = getTranslation('ui.languageSelector', 'Language');
-  selector.setAttribute('aria-label', label);
-
-  const currentBtn = selector.querySelector('.current-lang');
-  if (currentBtn) {
-    currentBtn.textContent = LANGUAGE_ICONS[lang] || lang;
-    // The visible text is a bare abbreviation; name the control properly
-    currentBtn.setAttribute('aria-label', `${label}: ${AVAILABLE_LANGUAGES[lang] || lang}`);
-  }
-
-  // Mark the active language in the grid
-  selector.querySelectorAll('.grid-item').forEach(btn => {
-    if (btn.dataset.lang === lang) {
-      btn.setAttribute('aria-current', 'true');
-    } else {
-      btn.removeAttribute('aria-current');
-    }
-  });
+  const select = document.getElementById('page-language-select');
+  if (!select) return;
+  select.value = lang;
+  select.setAttribute('aria-label', getTranslation('ui.languageSelector', 'Language'));
 }
 
 // Initialize when DOM is loaded

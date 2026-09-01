@@ -380,85 +380,58 @@ footer {
   }
 }
 
-/* Language Selector Styles */
-.language-selector {
-  position: fixed;
-  right: 0.8rem;
-  bottom: 0.8rem;
-  display: inline-block;
-  z-index: 1000;
-}
-
-.language-selector .current-lang {
-  background: var(--color-background);
-  border-radius: 4px;
-  padding: 0.25rem;
-  cursor: pointer;
-  font-size: 1rem;
+/* Language selector: a native <select> in the navbar, styled like the menu
+   links. Endonyms are deliberately not uppercased: scripts without case gain
+   nothing and Turkish i/I actively mislead. The chevron is an inline SVG
+   because appearance:none removes the platform one; it is repeated for dark
+   mode since a data URI cannot use currentColor. */
+.site-langselect {
+  height: 34px;
+  max-width: 11rem;
+  padding: 0 26px 0 10px;
+  padding-inline: 10px 26px;
+  border: 1px solid var(--color-grid-line);
+  border-radius: 0;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23050505' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 13px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   color: var(--color-text);
   font-family: var(--font-primary);
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: background 0.2s, color 0.2s;
-}
-
-.language-selector .language-grid {
-  display: none;
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  left: auto;
-  background-color: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  padding: 0.5rem;
-  grid-template-columns: repeat(3, auto);
-  gap: 0.25rem;
-  min-width: 120px;
-  max-width: 100vw;
-  box-sizing: border-box;
-  overflow-x: auto;
-  margin-bottom: 0.5rem;
-}
-
-.language-selector.open .language-grid {
-  display: grid;
-}
-
-.language-selector .language-grid button {
-  background: none;
-  border: none;
-  padding: 0.25rem;
+  font-size: var(--font-size-small);
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
-  color: var(--color-text);
-  font-family: var(--font-primary);
-  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.language-selector .language-grid button:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 4px;
+.site-langselect:hover,
+.site-langselect:focus {
+  border-color: var(--color-text);
+}
+
+/* The popup list is painted by the OS, which does not inherit the page colors;
+   without this the options are black-on-black in dark mode on Windows. */
+.site-langselect option {
+  background: var(--color-card-bg);
+  color: var(--color-text);
 }
 
 @media (prefers-color-scheme: dark) {
-  .language-selector .current-lang {
-    background: var(--color-card-bg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  .site-langselect {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   }
+}
 
-  .language-selector .language-grid {
-    background-color: var(--color-card-bg);
-  }
-
-  .language-selector .language-grid button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+/* In the collapsed phone menu every item spans the row; so does this. */
+@media (max-width: 768px) {
+  .site-langselect {
+    width: 100%;
+    max-width: none;
+    margin-bottom: var(--spacing-small);
   }
 }
 
