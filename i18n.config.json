@@ -6,6 +6,8 @@
   "spoken": false,
   "nested": true,
   "localesFile": "../tts-twitch/src/i18n/locales.json",
+  "_locales": "The docs ship eight languages, hand-translated for the other four catalogs and listed in src/scripts/i18n.js. Without this the script would generate the bot's other thirty-one, which the language switcher does not offer.",
+  "locales": ["de", "es", "fr", "it", "ja", "pt", "ru"],
   "catalogs": [
     {
       "id": "wildcat-tts",

@@ -311,7 +311,7 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsPermission.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts permission
                     [everyone|all|subs|vip|mods]</td>
-                <td data-i18n-key="commands.ttsPermission.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPermission"><span class="description-text">Sets who can trigger TTS when the bot is in <span class="inline-code">all</span> mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsPermission.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPermission"><span class="description-text">Sets whose chat messages and <span class="inline-code">!tts</span> messages TTS speaks.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsPermission" hidden>
                 <td colspan="2">
@@ -336,7 +336,7 @@ extraScripts:
                             <span class="inline-code">subs</span>: TTS speaks messages from subscribers, VIPs, moderators, and the broadcaster.<br>
                             <span class="inline-code">vip</span>: TTS speaks messages from VIPs, moderators, and the broadcaster.<br>
                             <span class="inline-code">mods</span>: TTS speaks messages only from moderators and the broadcaster.<br>
-                            This setting does not affect <span class="inline-code">command</span> mode.</span></p>
+                            This setting also applies to <span class="inline-code">!tts &lt;message&gt;</span> in <span class="inline-code">command</span> mode. Cheers and Channel Point redemptions are paid for and are not affected.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -346,7 +346,7 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsBits.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts bits [on|off|min
                     &lt;amount&gt;]</td>
-                <td data-i18n-key="commands.ttsBits.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsBits"><span class="description-text">Controls the Bits-for-TTS feature and sets the minimum Cheer amount for TTS.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsBits.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsBits"><span class="description-text">Controls whether the message attached to a cheer is read aloud, and sets the minimum Bits a cheer needs.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsBits" hidden>
                 <td colspan="2">
@@ -362,13 +362,13 @@ extraScripts:
                     </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsBits.usage.status">!tts bits</code>
-                        <span data-i18n="commands.ttsBits.statusDesc">(shows current Bits-for-TTS status)</span>
+                        <span data-i18n="commands.ttsBits.statusDesc">(shows the current cheer settings)</span>
                     </div>
                     <p><strong data-i18n="commands.common.description">Description:</strong></p>
                     <ul>
-                        <li data-i18n="commands.ttsBits.onDesc"><span class="inline-code">on</span>: Starts Bits-for-TTS mode. TTS reads only messages with enough Bits.</li>
-                        <li data-i18n="commands.ttsBits.offDesc"><span class="inline-code">off</span>: Stops Bits-for-TTS mode.</li>
-                        <li data-i18n="commands.ttsBits.minDesc"><span class="inline-code">min &lt;amount&gt;</span>: Sets the minimum Bits required (for example, <span class="inline-code">min 100</span>).</li>
+                        <li data-i18n="commands.ttsBits.onDesc"><span class="inline-code">on</span>: Read cheer messages. This is the default.</li>
+                        <li data-i18n="commands.ttsBits.offDesc"><span class="inline-code">off</span>: Do not read cheer messages. Has no effect in <span class="inline-code">bits_points_only</span> mode, which always reads them.</li>
+                        <li data-i18n="commands.ttsBits.minDesc"><span class="inline-code">min &lt;amount&gt;</span>: Sets the minimum Bits a cheer needs for its message to be read (for example, <span class="inline-code">min 100</span>). The default is 1. Cheer messages are read in every mode and are not limited by <span class="inline-code">!tts permission</span>.</li>
                     </ul>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
@@ -2077,7 +2077,7 @@ extraScripts:
 
     <h3 data-i18n="eventControls.cheersTitle">Cheer Announcements & Cheermote Filtering</h3>
     <p data-i18n="eventControls.cheersText">When a viewer cheers bits, TTS automatically strips cheermote names like Cheer100 or Party1 from the message. TTS only reads the viewer's custom message.</p>
-    <p data-i18n="eventControls.cheersToggleText">Use the Announce Cheers switch in the Web Dashboard to turn off the "User cheered bits" alert while continuing to read cheer chat messages.</p>
+    <p data-i18n="eventControls.cheersToggleText">Both switches are in the Cheers card of the Web Dashboard. Announce Cheers turns the "User cheered bits" alert on or off. Read Cheer Messages turns reading the attached message on or off. Cheer messages are read in every TTS mode and are not limited by TTS Permission, because the viewer paid for them.</p>
 
     <h3 data-i18n="eventControls.redemptionsTitle">Reward Announcements & Queued Redeems</h3>
     <p data-i18n="eventControls.redemptionsText">When a viewer redeems a channel point reward, TTS speaks an alert with the reward title and the viewer message.</p>
@@ -2129,8 +2129,8 @@ extraScripts:
                 data-i18n="webDashboard.settingAnnounceQueuedRedeemsDesc">Announce queued channel point rewards immediately without waiting for approval.</span></li>
         <li><strong data-i18n="webDashboard.settingUrlTitle">Read Full URLs:</strong> <span
                 data-i18n="webDashboard.settingUrlDesc">Read full web links or only domain names.</span></li>
-        <li><strong data-i18n="webDashboard.settingBitsTitle">Bits → TTS:</strong> <span
-                data-i18n="webDashboard.settingBitsDesc">Require a minimum Bits cheer to trigger TTS audio.</span></li>
+        <li><strong data-i18n="webDashboard.settingBitsTitle">Cheers:</strong> <span
+                data-i18n="webDashboard.settingBitsDesc">Announce cheers, read the message attached to a cheer, and set the minimum Bits a cheer needs.</span></li>
         <li><strong data-i18n="webDashboard.settingChannelPointsTitle">Channel Points → TTS:</strong> <span
                 data-i18n="webDashboard.settingChannelPointsDesc">Create and configure a custom Channel Point
                 reward for TTS.</span></li>
