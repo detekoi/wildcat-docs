@@ -426,8 +426,9 @@ footer {
   }
 }
 
-/* In the collapsed phone menu every item spans the row; so does this. */
-@media (max-width: 768px) {
+/* In the collapsed menu every item spans the row; so does this. Breakpoint
+   matches the navbar block in unified.css. */
+@media (max-width: 900px) {
   .site-langselect {
     width: 100%;
     max-width: none;

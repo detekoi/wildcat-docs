@@ -1,3 +1,7 @@
+// Width at or below which the navbar collapses behind the hamburger. Must match
+// the `@media (max-width: 900px)` navbar block in styles/unified.css.
+const NAV_COLLAPSE_WIDTH = 900;
+
 /**
  * navigation.js - Unified navigation handler for the portfolio website
  * Handles the top navigation bar, active page highlighting, and mobile menu toggle
@@ -70,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu when clicking a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
+                if (window.innerWidth <= NAV_COLLAPSE_WIDTH) {
                     setMenuOpen(false);
                 }
             });
@@ -99,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
-            if (window.innerWidth > 768 && navbarMenu && navbarMenu.classList.contains('active')) {
+            if (window.innerWidth > NAV_COLLAPSE_WIDTH && navbarMenu && navbarMenu.classList.contains('active')) {
                 setMenuOpen(false);
             }
         }, 250);

@@ -256,10 +256,24 @@ main ol {
   list-style: none;
   margin: 0;
   padding: 0;
+  /* The bar is a fixed 60px, and translated labels run long ("WildcatSage
+     Dokumentation"). Let the menu take the slack and its links shrink, so a
+     long language wraps a label onto two lines instead of pushing the last
+     item, the language picker, off the right edge. Items keep flex's default
+     min-width (their longest word), so a one-word label never shrinks into
+     its neighbour; below 900px the hamburger takes over instead. */
+  flex: 1 1 auto;
+  min-width: 0;
+  justify-content: flex-end;
 }
 
 .site-navbar-menu li {
   margin: 0;
+}
+
+/* The picker keeps its width; the links are what give. */
+.site-navbar-menu .site-navbar-lang {
+  flex: none;
 }
 
 .site-navbar-menu a {
@@ -269,13 +283,17 @@ main ol {
   text-decoration: none;
   transition: all 0.2s ease;
   padding: 6px 12px;
-  display: inline-block;
+  display: block;
   font-weight: 600;
   font-size: var(--font-size-small);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 0;
-  white-space: nowrap;
+  text-align: center;
+  line-height: 1.15;
+  /* CJK can break between any two characters; keep a label like ホーム whole
+     and break only at spaces, as the Latin labels do. */
+  word-break: keep-all;
 }
 
 .site-navbar-menu a:hover,
@@ -294,6 +312,20 @@ main ol {
   background-color: var(--color-text);
   color: var(--color-background);
   border-color: var(--color-text);
+}
+
+/* Below about 1200px a long language has to wrap most labels. A smaller,
+   tighter face keeps a two-line label at ~38px inside the 60px bar, where
+   the full size (58px) sat on the border. */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .site-navbar-menu {
+    gap: var(--spacing-small);
+  }
+  .site-navbar-menu a {
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+    padding: 5px 10px;
+  }
 }
 
 /* Mobile menu toggle */
@@ -691,14 +723,10 @@ footer a:active {
 /* =====================================================
    RESPONSIVE ADJUSTMENTS
    ===================================================== */
-@media (max-width: 768px) {
-  :root {
-  }
-
-  main {
-    padding: var(--spacing-medium);
-  }
-
+/* The navbar collapses earlier than the rest of the mobile layout: with the
+   language picker on the bar and labels that run long in translation, 900px is
+   where the shrunken menu stops fitting. navigation.js uses the same number. */
+@media (max-width: 900px) {
   /* Mobile navigation */
   .site-navbar {
     padding: 0 var(--spacing-medium);
@@ -734,6 +762,16 @@ footer a:active {
     width: 100%;
     text-align: center;
     margin-bottom: var(--spacing-small);
+  }
+
+}
+
+@media (max-width: 768px) {
+  :root {
+  }
+
+  main {
+    padding: var(--spacing-medium);
   }
 
   /* Sidebar adjustments */
