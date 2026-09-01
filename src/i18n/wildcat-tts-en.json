@@ -77,11 +77,11 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Aliases: !tts preferences, !tts settings)",
-      "description": "Sends a temporary link to your personal TTS settings page.",
+      "description": "Sends a link to your personal TTS settings page.",
       "aliases": "(Aliases: !tts preferences, !tts settings)",
       "feature1": "Set your own voice, pitch, speed, emotion, and language for this channel.",
       "feature2": "Includes a Danger Zone where you can add yourself to the TTS ignore list. Only a moderator can remove you.",
-      "feature3": "The bot posts the link in chat. The link works only for you and expires after 10 minutes or first use.",
+      "feature3": "The bot posts the link in chat with the channel context loaded.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Sends a temporary link to your personal TTS settings page (same as !tts prefs).",
-      "notes": "Same as !tts prefs. The bot posts the link in chat. The link works only for you and expires after 10 minutes or first use.",
+      "description": "Sends a link to your personal TTS settings page (same as !tts prefs).",
+      "notes": "Same as !tts prefs. The bot posts the link in chat with the channel context loaded.",
       "usage": {
         "basic": "!myvoice"
       }

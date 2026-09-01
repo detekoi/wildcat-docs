@@ -77,11 +77,11 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias : !tts preferences, !tts settings)",
-      "description": "Envoie un lien temporaire vers <strong>votre page personnelle de paramètres TTS</strong>.",
+      "description": "Envoie un lien vers <strong>votre page personnelle de paramètres TTS</strong>.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Définissez votre propre voix, hauteur, vitesse, émotion et langue pour cette chaîne.",
       "feature2": "Comprend une Zone Dangereuse où vous pouvez vous ajouter à la liste d'ignorance TTS. Seul un modérateur peut vous retirer.",
-      "feature3": "Le bot publie le lien dans le chat. Le lien fonctionne uniquement pour vous et expire après 10 minutes ou première utilisation.",
+      "feature3": "Le bot publie le lien dans le chat avec le contexte de la chaîne chargé.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Envoie un lien temporaire vers <strong>votre page personnelle de paramètres TTS</strong> (identique à <span class=\"inline-code\">!tts prefs</span>).",
-      "notes": "Identique à <code>!tts prefs</code>. Le bot publie le lien dans le chat. Le lien fonctionne uniquement pour vous et expire après 10 minutes ou première utilisation.",
+      "description": "Envoie un lien vers <strong>votre page personnelle de paramètres TTS</strong> (identique à <span class=\"inline-code\">!tts prefs</span>).",
+      "notes": "Identique à <code>!tts prefs</code>. Le bot publie le lien dans le chat avec le contexte de la chaîne chargé.",
       "usage": {
         "basic": "!myvoice"
       }

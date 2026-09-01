@@ -168,7 +168,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsPrefs.name">!tts prefs<br><span style="font-size:0.9em;"
                         data-i18n="commands.ttsPrefs.aliases">(Aliases: !tts preferences, !tts settings)</span>
                 </td>
-                <td data-i18n-key="commands.ttsPrefs.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPrefs"><span class="description-text">Sends a temporary link to <strong>your personal TTS settings page</strong>.</span><span
+                <td data-i18n-key="commands.ttsPrefs.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPrefs"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong>.</span><span
                         class="dropdown-toggle">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsPrefs" hidden>
@@ -188,8 +188,7 @@ extraScripts:
                             emotion, and language for this channel.</li>
                         <li data-i18n="commands.ttsPrefs.feature2">Includes a Danger Zone where you can add
                             yourself to the TTS ignore list. Only a moderator can remove you.</li>
-                        <li data-i18n="commands.ttsPrefs.feature3">The bot posts the link in chat. The link
-                            works only for you and expires after 10 minutes or first use.</li>
+                        <li data-i18n="commands.ttsPrefs.feature3">The bot posts the link in chat with the channel context loaded.</li>
                     </ul>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyone">Everyone</span></p>
@@ -200,7 +199,7 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.myvoice.name">!myvoice</td>
-                <td data-i18n-key="commands.myvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-myvoice"><span class="description-text">Sends a temporary link to <strong>your personal TTS settings page</strong> (same as
+                <td data-i18n-key="commands.myvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-myvoice"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong> (same as
                         <span class="inline-code">!tts prefs</span>).</span><span
                         class="dropdown-toggle">&#x25BC;</span></button></td>
             </tr>
@@ -211,7 +210,7 @@ extraScripts:
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
                             data-i18n="commands.myvoice.notes">Same as <code>!tts prefs</code>. The bot posts
-                            the link in chat. The link works only for you and expires after 10 minutes or first use.</span></p>
+                            the link in chat with the channel context loaded.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyone">Everyone</span></p>
                 </td>

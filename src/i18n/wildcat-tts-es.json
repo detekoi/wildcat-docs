@@ -77,11 +77,11 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias: !tts preferences, !tts settings)",
-      "description": "Envía un enlace temporal a <strong>tu página personal de configuración de TTS</strong>.",
+      "description": "Envía un enlace a <strong>tu página personal de configuración de TTS</strong>.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Configura tu propia voz, tono, velocidad, emoción e idioma para este canal.",
       "feature2": "Incluye una Zona de Peligro donde puedes añadirte a la lista de ignorados de TTS. Solo un moderador puede eliminarte.",
-      "feature3": "El bot publica el enlace en el chat. El enlace funciona solo para ti y caduca tras 10 minutos o al primer uso.",
+      "feature3": "El bot publica el enlace en el chat con el contexto del canal cargado.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Envía un enlace temporal a <strong>tu página personal de configuración de TTS</strong> (igual que <span class=\"inline-code\">!tts prefs</span>).",
-      "notes": "Igual que <code>!tts prefs</code>. El bot publica el enlace en el chat. El enlace funciona solo para ti y caduca tras 10 minutos o al primer uso.",
+      "description": "Envía un enlace a <strong>tu página personal de configuración de TTS</strong> (igual que <span class=\"inline-code\">!tts prefs</span>).",
+      "notes": "Igual que <code>!tts prefs</code>. El bot publica el enlace en el chat con el contexto del canal cargado.",
       "usage": {
         "basic": "!myvoice"
       }
