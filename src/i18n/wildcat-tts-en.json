@@ -18,6 +18,7 @@
     "bannedWords": "Banned Words",
     "youtubeTts": "YouTube Integration",
     "urlReading": "URL Reading",
+    "chatCommands": "Chat Commands",
     "eventControls": "Stream Events & Privacy"
   },
   "page": {
@@ -444,6 +445,19 @@
       "listNote": "(shows the muted rewards)",
       "allNote": "(shows all rewards on the channel)",
       "notes": "The bot announces every reward until you mute it. Use this command for a reward that plays its own sound, for example a soundboard. You can type a part of the title. If more than one reward matches, the bot shows the names and asks for the full name. The reply always shows the name of the reward that changed. The bot cannot mute the TTS reward. This command works only when the broadcaster is signed in to the Web Dashboard. You can also select the rewards in the Web Dashboard, under Rewards to Announce."
+    },
+    "ttsReadCommands": {
+      "name": "!tts readcommands <on|off>",
+      "description": "Reads or skips chat messages that start with \"!\" in All Messages mode.",
+      "usage": {
+        "off": "!tts readcommands off",
+        "on": "!tts readcommands on",
+        "status": "!tts readcommands"
+      },
+      "offNote": "(skips chat messages that start with \"!\")",
+      "onNote": "(reads them again)",
+      "statusNote": "(shows the current setting)",
+      "notes": "Other bots, for example Nightbot or StreamElements, use commands that start with \"!\", such as !lurk or !so. In All Messages mode, TTS reads these commands as chat. Switch this setting off to skip them. The setting does not change !tts: !tts still works. The setting has no effect in !tts Command Only mode or Bits/Points Only mode, because these modes never read these messages. A cheer that starts with \"!\" is still read, because the viewer paid for it. You can also change this in the Web Dashboard, under Read Chat Commands."
     }
   },
   "table": {
@@ -523,6 +537,8 @@
     "settingAnnounceQueuedRedeemsDesc": "Announce queued channel point rewards immediately without waiting for approval.",
     "settingUrlTitle": "Read Full URLs:",
     "settingUrlDesc": "Read full web links or only domain names.",
+    "settingReadCommandsTitle": "Read Chat Commands:",
+    "settingReadCommandsDesc": "Read or skip chat messages that start with \"!\" in All Messages mode. !tts always works.",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Announce cheers, read the message attached to a cheer, and set the minimum Bits a cheer needs.",
     "settingChannelPointsTitle": "Channel Points → TTS:",
@@ -670,6 +686,15 @@
     "rule3": "TTS replaces hyphens, underscores, and dots with spaces and words so the domain sounds natural.",
     "toggleTitle": "Read Full URLs Option",
     "toggleText": "If you want TTS to speak entire URLs as typed, turn on the Read Full URLs switch in the Web Dashboard. When this switch is on, TTS speaks the full link without shortening."
+  },
+  "chatCommands": {
+    "title": "Chat Commands from Other Bots",
+    "intro": "Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with \"!\", such as !lurk, !so or !sr. In All Messages mode, WildcatTTS reads these commands aloud as chat.",
+    "toggleTitle": "Read Chat Commands Option",
+    "toggleText": "To skip these messages, switch off Read Chat Commands in the Web Dashboard, or type <span class=\"inline-code\">!tts readcommands off</span> in chat. TTS then ignores every chat message that starts with \"!\".",
+    "rule1": "<span class=\"inline-code\">!tts</span> is not affected. <span class=\"inline-code\">!tts &lt;text&gt;</span> is still spoken, and the other <span class=\"inline-code\">!tts</span> commands still work.",
+    "rule2": "The option applies only in All Messages mode. The other two modes never read these messages.",
+    "rule3": "A cheer whose message starts with \"!\" is still read, because the viewer paid for it."
   },
   "eventControls": {
     "title": "Stream Events & Privacy Controls",

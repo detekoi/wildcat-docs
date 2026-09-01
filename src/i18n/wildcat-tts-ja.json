@@ -18,6 +18,7 @@
     "bannedWords": "禁止ワード",
     "youtubeTts": "YouTube連携",
     "urlReading": "URL読み上げ",
+    "chatCommands": "チャットコマンド",
     "eventControls": "配信イベントとプライバシー"
   },
   "page": {
@@ -444,6 +445,19 @@
       "listNote": "（ミュートされたリワードを表示します）",
       "allNote": "（チャンネル内のすべてのリワードを表示します）",
       "notes": "ボットはミュートするまですべてのリワードを読み上げます。サウンドボードなど独自のサウンドを再生するリワードには、このコマンドを使用します。タイトルの一部を入力できます。複数のリワードが一致した場合、ボットは名前を表示して完全な名前を要求します。返信には常に変更されたリワードの名前が表示されます。ボットはTTSリワードをミュートできません。このコマンドは、配信者がWeb Dashboardにサインインしている場合にのみ動作します。Web Dashboardの「Rewards to Announce」でリワードを選択することもできます。"
+    },
+    "ttsReadCommands": {
+      "name": "!tts readcommands <on|off>",
+      "description": "All Messagesモードで「!」で始まるチャットメッセージを読み上げるかスキップします。",
+      "usage": {
+        "off": "!tts readcommands off",
+        "on": "!tts readcommands on",
+        "status": "!tts readcommands"
+      },
+      "offNote": "（「!」で始まるチャットメッセージをスキップします）",
+      "onNote": "（再び読み上げます）",
+      "statusNote": "（現在の設定を表示します）",
+      "notes": "NightbotやStreamElementsなどの他のボットは、!lurkや!soなど「!」で始まるコマンドを使用します。All Messagesモードでは、TTSはこれらのコマンドをチャットとして読み上げます。スキップするにはこの設定をオフにしてください。この設定は!ttsを変更しません。!ttsは引き続き機能します。!tts Command OnlyモードやBits/Points Onlyモードではこれらのメッセージを一切読み上げないため、この設定による影響はありません。「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。この設定はWeb Dashboardの「Read Chat Commands」でも変更できます。"
     }
   },
   "table": {
@@ -523,6 +537,8 @@
     "settingAnnounceQueuedRedeemsDesc": "承認を待たずに、キューに入ったチャンネルポイントリワードを即座に通知します。",
     "settingUrlTitle": "完全なURLを読み上げる:",
     "settingUrlDesc": "URLを全文読み上げるか、ドメイン名のみ読み上げるかを設定します。",
+    "settingReadCommandsTitle": "チャットコマンドの読み上げ:",
+    "settingReadCommandsDesc": "All Messagesモードで「!」で始まるチャットメッセージを読み上げるかスキップします。!ttsは常に機能します。",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Cheerを通知し、Cheerに添付されたメッセージを読み上げ、Cheerに必要な最小Bits数を設定します。",
     "settingChannelPointsTitle": "チャンネルポイント → TTS:",
@@ -670,6 +686,15 @@
     "rule3": "TTSはハイフン、アンダースコア、ドットをスペースや単語に置き換えて、自然な発音にします。",
     "toggleTitle": "URL全文の読み上げ設定",
     "toggleText": "入力された通りの完全なURLを読み上げたい場合は、Webダッシュボードで「Read Full URLs」スイッチをオンにします。このスイッチがオンの場合、TTSは短縮せずにURL全体を読み上げます。"
+  },
+  "chatCommands": {
+    "title": "他のボットのチャットコマンド",
+    "intro": "多くのチャンネルで、NightbotやStreamElementsなどの別のボットが実行されています。視聴者は!lurk、!so、!srなど「!」で始まるコマンドでそれを操作します。All Messagesモードでは、WildcatTTSはこれらのコマンドをチャットとして音声で読み上げます。",
+    "toggleTitle": "Read Chat Commandsオプション",
+    "toggleText": "これらのメッセージをスキップするには、Web Dashboardで「Read Chat Commands」をオフにするか、チャットで<span class=\"inline-code\">!tts readcommands off</span>と入力します。TTSは「!」で始まるすべてのチャットメッセージを無視します。",
+    "rule1": "<span class=\"inline-code\">!tts</span>は影響を受けません。<span class=\"inline-code\">!tts &lt;text&gt;</span>は引き続き読み上げられ、他の<span class=\"inline-code\">!tts</span>コマンドも引き続き機能します。",
+    "rule2": "このオプションはAll Messagesモードでのみ適用されます。他の2つのモードではこれらのメッセージを一切読み上げません。",
+    "rule3": "メッセージが「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。"
   },
   "eventControls": {
     "title": "配信イベントとプライバシー設定",

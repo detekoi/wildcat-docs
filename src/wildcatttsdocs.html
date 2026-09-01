@@ -20,6 +20,7 @@ sidebarLinks:
   - { href: "#banned-words",       key: sidebar.bannedWords,        label: "Banned Words" }
   - { href: "#youtube-tts",        key: sidebar.youtubeTts,         label: "YouTube Integration" }
   - { href: "#url-reading",        key: sidebar.urlReading,         label: "URL Reading" }
+  - { href: "#chat-commands",      key: sidebar.chatCommands,       label: "Chat Commands" }
   - { href: "#event-controls",     key: sidebar.eventControls,      label: "Stream Events & Privacy" }
   - { href: "#web-dashboard",      key: sidebar.webDashboard,       label: "Web Dashboard" }
   - { href: "#troubleshooting",    key: sidebar.troubleshooting,    label: "Troubleshooting" }
@@ -1104,6 +1105,45 @@ extraScripts:
                 </td>
             </tr>
         </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsReadCommands.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts readcommands
+                    &lt;on|off&gt;</td>
+                <td data-i18n-key="commands.ttsReadCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsReadCommands"><span class="description-text">Reads
+                        or skips chat messages that start with "!" in All Messages mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsReadCommands" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsReadCommands.usage.off">!tts readcommands off</code>
+                        <span data-i18n="commands.ttsReadCommands.offNote">(skips chat messages that start with "!")</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsReadCommands.usage.on">!tts readcommands on</code>
+                        <span data-i18n="commands.ttsReadCommands.onNote">(reads them again)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsReadCommands.usage.status">!tts readcommands</code>
+                        <span data-i18n="commands.ttsReadCommands.statusNote">(shows the current setting)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsReadCommands.notes">Other bots, for example Nightbot or
+                            StreamElements, use commands that start with "!", such as !lurk or !so. In All
+                            Messages mode, TTS reads these commands as chat. Switch this setting off to skip
+                            them. The setting does not change !tts: !tts still works. The setting has no effect
+                            in !tts Command Only mode or Bits/Points Only mode, because these modes never read
+                            these messages. A cheer that starts with "!" is still read, because the viewer paid
+                            for it. You can also change this in the Web Dashboard, under Read Chat
+                            Commands.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
 
     </table>
 </section>
@@ -2113,6 +2153,19 @@ extraScripts:
     <p data-i18n="urlReading.toggleText">If you want TTS to speak entire URLs as typed, turn on the Read Full URLs switch in the Web Dashboard. When this switch is on, TTS speaks the full link without shortening.</p>
 </section>
 
+<section id="chat-commands" class="section">
+    <h2 data-i18n="chatCommands.title">Chat Commands from Other Bots</h2>
+    <p data-i18n="chatCommands.intro">Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with "!", such as !lurk, !so or !sr. In All Messages mode, WildcatTTS reads these commands aloud as chat.</p>
+
+    <h3 data-i18n="chatCommands.toggleTitle">Read Chat Commands Option</h3>
+    <p data-i18n="chatCommands.toggleText">To skip these messages, switch off Read Chat Commands in the Web Dashboard, or type <span class="inline-code">!tts readcommands off</span> in chat. TTS then ignores every chat message that starts with "!".</p>
+    <ul>
+        <li data-i18n="chatCommands.rule1"><span class="inline-code">!tts</span> is not affected. <span class="inline-code">!tts &lt;text&gt;</span> is still spoken, and the other <span class="inline-code">!tts</span> commands still work.</li>
+        <li data-i18n="chatCommands.rule2">The option applies only in All Messages mode. The other two modes never read these messages.</li>
+        <li data-i18n="chatCommands.rule3">A cheer whose message starts with "!" is still read, because the viewer paid for it.</li>
+    </ul>
+</section>
+
 <section id="event-controls" class="section">
     <h2 data-i18n="eventControls.title">Stream Events & Privacy Controls</h2>
     <p data-i18n="eventControls.intro">WildcatTTS gives you granular control over stream event announcements and viewer privacy in the Web Dashboard.</p>
@@ -2174,6 +2227,8 @@ extraScripts:
                 data-i18n="webDashboard.settingAnnounceQueuedRedeemsDesc">Announce queued channel point rewards immediately without waiting for approval.</span></li>
         <li><strong data-i18n="webDashboard.settingUrlTitle">Read Full URLs:</strong> <span
                 data-i18n="webDashboard.settingUrlDesc">Read full web links or only domain names.</span></li>
+        <li><strong data-i18n="webDashboard.settingReadCommandsTitle">Read Chat Commands:</strong> <span
+                data-i18n="webDashboard.settingReadCommandsDesc">Read or skip chat messages that start with "!" in All Messages mode. !tts always works.</span></li>
         <li><strong data-i18n="webDashboard.settingBitsTitle">Cheers:</strong> <span
                 data-i18n="webDashboard.settingBitsDesc">Announce cheers, read the message attached to a cheer, and set the minimum Bits a cheer needs.</span></li>
         <li><strong data-i18n="webDashboard.settingChannelPointsTitle">Channel Points → TTS:</strong> <span

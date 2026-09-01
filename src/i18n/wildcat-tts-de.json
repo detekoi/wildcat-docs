@@ -18,6 +18,7 @@
     "bannedWords": "Verbotene Wörter",
     "youtubeTts": "YouTube-Integration",
     "urlReading": "URL-Vorlesen",
+    "chatCommands": "Chat-Befehle",
     "eventControls": "Stream-Events & Datenschutz"
   },
   "page": {
@@ -444,6 +445,19 @@
       "listNote": "(zeigt die stummgeschalteten Belohnungen)",
       "allNote": "(zeigt alle Belohnungen auf dem Kanal)",
       "notes": "Der Bot sagt jede Belohnung an, bis Sie sie stummschalten. Verwenden Sie diesen Befehl für eine Belohnung, die einen eigenen Ton abspielt, zum Beispiel ein Soundboard. Sie können einen Teil des Titels eingeben. Wenn mehr als eine Belohnung übereinstimmt, zeigt der Bot die Namen an und fragt nach dem vollständigen Namen. Die Antwort zeigt immer den Namen der geänderten Belohnung. Der Bot kann die TTS-Belohnung nicht stummschalten. Dieser Befehl funktioniert nur, wenn der Broadcaster im Web Dashboard angemeldet ist. Sie können die Belohnungen auch im Web Dashboard unter Rewards to Announce auswählen."
+    },
+    "ttsReadCommands": {
+      "name": "!tts readcommands <on|off>",
+      "description": "Liest oder überspringt Chat-Nachrichten, die mit „!“ beginnen, im Modus „Alle Nachrichten“.",
+      "usage": {
+        "off": "!tts readcommands off",
+        "on": "!tts readcommands on",
+        "status": "!tts readcommands"
+      },
+      "offNote": "(überspringt Chat-Nachrichten, die mit „!“ beginnen)",
+      "onNote": "(liest sie wieder vor)",
+      "statusNote": "(zeigt die aktuelle Einstellung)",
+      "notes": "Andere Bots, zum Beispiel Nightbot oder StreamElements, verwenden Befehle, die mit „!“ beginnen, wie etwa !lurk oder !so. Im Modus „Alle Nachrichten“ liest TTS diese Befehle als Chat vor. Schalten Sie diese Einstellung aus, um sie zu überspringen. Die Einstellung ändert !tts nicht: !tts funktioniert weiterhin. Die Einstellung hat keine Auswirkung im Modus „Nur !tts-Befehl“ oder im Modus „Nur Bits/Points“, da diese Modi diese Nachrichten nie vorlesen. Ein Cheer, der mit „!“ beginnt, wird weiterhin vorgelesen, da der Zuschauer dafür bezahlt hat. Sie können dies auch im Web Dashboard unter „Chat-Befehle vorlesen“ ändern."
     }
   },
   "table": {
@@ -523,6 +537,8 @@
     "settingAnnounceQueuedRedeemsDesc": "Kündige Belohnungen in der Twitch-Warteschlange sofort an, ohne auf die Genehmigung zu warten.",
     "settingUrlTitle": "Vollständige URLs vorlesen:",
     "settingUrlDesc": "Lies vollständige Weblinks oder nur Domain-Namen vor.",
+    "settingReadCommandsTitle": "Chat-Befehle vorlesen:",
+    "settingReadCommandsDesc": "Chat-Nachrichten, die mit „!“ beginnen, im Modus „Alle Nachrichten“ vorlesen oder überspringen. !tts funktioniert immer.",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Cheers ankündigen, die an einen Cheer angehängte Nachricht vorlesen und die Mindestanzahl an Bits festlegen, die ein Cheer benötigt.",
     "settingChannelPointsTitle": "Channel Points → TTS:",
@@ -670,6 +686,15 @@
     "rule3": "TTS ersetzt Bindestriche, Unterstriche und Punkte durch Leerzeichen und Wörter, damit die Domain natürlich klingt.",
     "toggleTitle": "Option \"Vollständige URLs vorlesen\"",
     "toggleText": "Wenn TTS vollständige URLs wie eingegeben vorlesen soll, aktivieren Sie den Schalter Vollständige URLs vorlesen im Web-Dashboard. Wenn dieser Schalter aktiviert ist, spricht TTS den vollständigen Link ohne Kürzung aus."
+  },
+  "chatCommands": {
+    "title": "Chat-Befehle von anderen Bots",
+    "intro": "Viele Kanäle nutzen einen zweiten Bot, zum Beispiel Nightbot oder StreamElements. Zuschauer steuern ihn mit Befehlen, die mit „!“ beginnen, wie etwa !lurk, !so oder !sr. Im Modus „Alle Nachrichten“ liest WildcatTTS diese Befehle laut als Chat vor.",
+    "toggleTitle": "Option „Chat-Befehle vorlesen“",
+    "toggleText": "Um diese Nachrichten zu überspringen, schalten Sie „Chat-Befehle vorlesen“ im Web Dashboard aus oder geben Sie <span class=\"inline-code\">!tts readcommands off</span> im Chat ein. TTS ignoriert dann jede Chat-Nachricht, die mit „!“ beginnt.",
+    "rule1": "<span class=\"inline-code\">!tts</span> ist nicht betroffen. <span class=\"inline-code\">!tts &lt;text&gt;</span> wird weiterhin gesprochen und die anderen <span class=\"inline-code\">!tts</span>-Befehle funktionieren weiterhin.",
+    "rule2": "Die Option gilt nur im Modus „Alle Nachrichten“. Die anderen beiden Modi lesen diese Nachrichten nie vor.",
+    "rule3": "Ein Cheer, dessen Nachricht mit „!“ beginnt, wird weiterhin vorgelesen, da der Zuschauer dafür bezahlt hat."
   },
   "eventControls": {
     "title": "Stream-Events & Datenschutz-Steuerung",

@@ -18,6 +18,7 @@
     "bannedWords": "Palabras Prohibidas",
     "youtubeTts": "Integración con YouTube",
     "urlReading": "Lectura de URLs",
+    "chatCommands": "Comandos de chat",
     "eventControls": "Eventos de Transmisión y Privacidad"
   },
   "page": {
@@ -444,6 +445,19 @@
       "listNote": "(muestra las recompensas silenciadas)",
       "allNote": "(muestra todas las recompensas del canal)",
       "notes": "El bot anuncia cada recompensa hasta que la silencia. Use este comando para una recompensa que reproduce su propio sonido, por ejemplo un soundboard. Puede escribir una parte del título. Si coincide más de una recompensa, el bot muestra los nombres y solicita el nombre completo. La respuesta siempre muestra el nombre de la recompensa que cambió. El bot no puede silenciar la recompensa de TTS. Este comando solo funciona cuando el emisor ha iniciado sesión en el Web Dashboard. También puede seleccionar las recompensas en el Web Dashboard, en Rewards to Announce."
+    },
+    "ttsReadCommands": {
+      "name": "!tts readcommands <on|off>",
+      "description": "Lee u omite los mensajes de chat que empiezan con \"!\" en el modo Todos los mensajes.",
+      "usage": {
+        "off": "!tts readcommands off",
+        "on": "!tts readcommands on",
+        "status": "!tts readcommands"
+      },
+      "offNote": "(omite los mensajes de chat que empiezan con \"!\")",
+      "onNote": "(los lee de nuevo)",
+      "statusNote": "(muestra la configuración actual)",
+      "notes": "Otros bots, por ejemplo Nightbot o StreamElements, usan comandos que empiezan con \"!\", como !lurk o !so. En el modo Todos los mensajes, TTS lee estos comandos como chat. Desactive esta opción para omitirlos. La opción no cambia !tts: !tts sigue funcionando. La opción no tiene efecto en el modo Solo comandos !tts ni en el modo Solo Bits/Puntos, porque estos modos nunca leen estos mensajes. Un cheer que empieza con \"!\" todavía se lee, porque el espectador pagó por él. También puede cambiar esto en el Web Dashboard, en Leer comandos de chat."
     }
   },
   "table": {
@@ -523,6 +537,8 @@
     "settingAnnounceQueuedRedeemsDesc": "Anuncia recompensas de puntos de canal en cola de inmediato sin esperar aprobación.",
     "settingUrlTitle": "Leer URLs completas:",
     "settingUrlDesc": "Lee enlaces web completos o solo nombres de dominio.",
+    "settingReadCommandsTitle": "Leer comandos de chat:",
+    "settingReadCommandsDesc": "Lee u omite los mensajes de chat que empiezan con \"!\" en el modo Todos los mensajes. !tts siempre funciona.",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Anuncia cheers, lee el mensaje adjunto a un cheer y establece el mínimo de Bits que necesita un cheer.",
     "settingChannelPointsTitle": "Puntos del Canal → TTS:",
@@ -670,6 +686,15 @@
     "rule3": "El TTS reemplaza guiones, guiones bajos y puntos por espacios y palabras para que el dominio suene natural.",
     "toggleTitle": "Opción de leer URLs completas",
     "toggleText": "Si desea que el TTS pronuncie las URLs completas tal como se escribieron, active el interruptor Leer URLs completas en el Panel Web. Cuando este interruptor está activado, el TTS pronuncia el enlace completo sin acortarlo."
+  },
+  "chatCommands": {
+    "title": "Comandos de chat de otros bots",
+    "intro": "Muchos canales usan un segundo bot, por ejemplo Nightbot o StreamElements. Los espectadores lo controlan con comandos que empiezan con \"!\", como !lurk, !so o !sr. En el modo Todos los mensajes, WildcatTTS lee estos comandos en voz alta como chat.",
+    "toggleTitle": "Opción Leer comandos de chat",
+    "toggleText": "Para omitir estos mensajes, desactive Leer comandos de chat en el Web Dashboard o escriba <span class=\"inline-code\">!tts readcommands off</span> en el chat. Luego, TTS ignora cada mensaje de chat que empieza con \"!\".",
+    "rule1": "<span class=\"inline-code\">!tts</span> no se ve afectado. <span class=\"inline-code\">!tts &lt;texto&gt;</span> todavía se pronuncia y los otros comandos de <span class=\"inline-code\">!tts</span> siguen funcionando.",
+    "rule2": "La opción solo se aplica en el modo Todos los mensajes. Los otros dos modos nunca leen estos mensajes.",
+    "rule3": "Un cheer cuyo mensaje empieza con \"!\" todavía se lee, porque el espectador pagó por él."
   },
   "eventControls": {
     "title": "Eventos de transmisión y controles de privacidad",
