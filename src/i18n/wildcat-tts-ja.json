@@ -117,8 +117,8 @@
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
       "description": "TTSモードを設定または表示します。",
-      "allDesc": "（すべてのチャットメッセージとイベントを読み上げます。<strong>標準モード</strong>）",
-      "commandDesc": "（コマンドと有効なイベントのみ読み上げます）",
+      "allDesc": "（すべてのチャットメッセージとイベントを読み上げます）",
+      "commandDesc": "（コマンドと有効なイベントのみ読み上げます。<strong>標準モード</strong>）",
       "bitsPointsOnlyDesc": "（Bitsチアーとチャンネルポイント引き換えのみ読み上げます）",
       "bitsAlias": "(bits_points_onlyのエイリアス)",
       "pointsAlias": "(bits_points_onlyのエイリアス)",
@@ -557,7 +557,7 @@
   "troubleshooting": {
     "title": "トラブルシューティング",
     "q1": "ボットがコマンドに応答しない?",
-    "a1": "ボットがチャンネルのモデレーターになっているか確認してください。Twitchチャットで <span class=\"inline-code\">/mod wildcatttsbot</span> と入力します。メッセージ取得と返信送信にはモデレーター権限が必要です。",
+    "a1": "ボットがチャンネルのモデレーターになっているか確認してください。Twitchチャットで <span class=\"inline-code\">/mod WildcatTTS</span> と入力します。メッセージ取得と返信送信にはモデレーター権限が必要です。",
     "q2": "ボットが話さない?",
     "a2": "チャットで <span class=\"inline-code\">!tts on</span> を送信してTTSが有効になっているか確認してください。また <span class=\"inline-code\">!tts mode</span> でモードを、<span class=\"inline-code\">!tts permission</span> で権限を確認してください。",
     "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",

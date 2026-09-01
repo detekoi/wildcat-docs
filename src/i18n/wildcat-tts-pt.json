@@ -117,8 +117,8 @@
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only]",
       "description": "Define ou mostra o modo de TTS.",
-      "allDesc": "(Lê todas as mensagens do chat e eventos; <strong>modo padrão</strong>)",
-      "commandDesc": "(Lê apenas comandos e eventos ativados)",
+      "allDesc": "(Lê todas as mensagens do chat e eventos)",
+      "commandDesc": "(Lê apenas comandos e eventos ativados; <strong>modo padrão</strong>)",
       "bitsPointsOnlyDesc": "(Lê apenas cheers de Bits e resgates de Pontos do Canal)",
       "bitsAlias": "(Apelido para bits_points_only)",
       "pointsAlias": "(Apelido para bits_points_only)",
@@ -557,7 +557,7 @@
   "troubleshooting": {
     "title": "Solução de Problemas",
     "q1": "O bot não está respondendo aos comandos?",
-    "a1": "Certifique-se de que o bot é moderador no seu canal. Digite <span class=\"inline-code\">/mod wildcatttsbot</span> no chat da Twitch. O bot precisa de permissões de moderador para ler mensagens e enviar respostas.",
+    "a1": "Certifique-se de que o bot é moderador no seu canal. Digite <span class=\"inline-code\">/mod WildcatTTS</span> no chat da Twitch. O bot precisa de permissões de moderador para ler mensagens e enviar respostas.",
     "q2": "O bot não está falando?",
     "a2": "Certifique-se de que o TTS está ativado com <span class=\"inline-code\">!tts on</span> no chat. Verifique também o modo ativo com <span class=\"inline-code\">!tts mode</span> e as permissões com <span class=\"inline-code\">!tts permission</span>.",
     "q3": "O bot não está falando em um idioma específico, ou lendo números em chinês?",
