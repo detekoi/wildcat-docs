@@ -77,11 +77,11 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias: !tts preferences, !tts settings)",
-      "description": "Invia un collegamento alla <strong>tua pagina personale delle impostazioni TTS</strong>.",
+      "description": "Invia un link alla tua pagina personale delle impostazioni TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Imposta voce, tono, velocità, emozione e lingua personali per questo canale.",
       "feature2": "Include una Zona Pericolosa in cui puoi aggiungerti alla lista ignorati di TTS. Solo un moderatore può rimuoverti.",
-      "feature3": "Il bot invia il collegamento in chat con il contesto del canale caricato.",
+      "feature3": "Il bot pubblica il link nella chat con il contesto del canale caricato.",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Invia un collegamento alla <strong>tua pagina personale delle impostazioni TTS</strong> (uguale a <span class=\"inline-code\">!tts prefs</span>).",
-      "notes": "Uguale a <code>!tts prefs</code>. Il bot invia il collegamento in chat con il contesto del canale caricato.",
+      "description": "Invia un link alla tua pagina personale delle impostazioni TTS (uguale a !tts prefs).",
+      "notes": "Uguale a !tts prefs. Il bot pubblica il link nella chat con il contesto del canale caricato.",
       "usage": {
         "basic": "!myvoice"
       }
@@ -429,6 +429,21 @@
       "notes": "Il filtro è disattivato finché non lo avvii. Sostituisce i termini volgari con parole più miti. Non cancella il messaggio. L'elenco delle Parole Vietate nella Dashboard Web scarta invece l'intero messaggio. Le vecchie parole on e off funzionano ancora: on equivale a block.",
       "blockNote": "(avvia il filtro)",
       "allowNote": "(ferma il filtro)"
+    },
+    "ttsRedeems": {
+      "name": "!tts redeems <mute|unmute|list|all>",
+      "description": "Seleziona quali riscatti con Channel Points il bot annuncia.",
+      "usage": {
+        "mute": "!tts redeems mute <titolo ricompensa>",
+        "unmute": "!tts redeems unmute <titolo ricompensa>",
+        "list": "!tts redeems list",
+        "all": "!tts redeems all"
+      },
+      "muteNote": "(interrompe gli annunci per una ricompensa)",
+      "unmuteNote": "(riattiva gli annunci)",
+      "listNote": "(mostra le ricompense silenziate)",
+      "allNote": "(mostra tutte le ricompense del canale)",
+      "notes": "Il bot annuncia ogni ricompensa finché non la silenzi. Usa questo comando per una ricompensa che riproduce un proprio suono, ad esempio una soundboard. Puoi digitare una parte del titolo. Se più di una ricompensa corrisponde, il bot mostra i nomi e richiede il nome completo. La risposta mostra sempre il nome della ricompensa modificata. Il bot non può silenziare la ricompensa TTS. Questo comando funziona solo quando lo streamer ha effettuato l'accesso alla Web Dashboard. Puoi anche selezionare le ricompense nella Web Dashboard, sotto Ricompense da annunciare."
     }
   },
   "table": {
@@ -502,6 +517,8 @@
     "settingAnnounceCheersDesc": "Attiva o disattiva gli avvisi per i cheer continuando a leggerne i messaggi.",
     "settingAnnounceRedemptionsTitle": "Annuncia riscatti premi:",
     "settingAnnounceRedemptionsDesc": "Attiva o disattiva gli avvisi di riscatto dei punti canale.",
+    "settingRewardsToAnnounceTitle": "Ricompense da annunciare:",
+    "settingRewardsToAnnounceDesc": "Seleziona le ricompense che il bot annuncia. Disattiva una ricompensa che riproduce un proprio suono.",
     "settingAnnounceQueuedRedeemsTitle": "Annuncia subito riscatti in coda:",
     "settingAnnounceQueuedRedeemsDesc": "Annuncia subito i premi dei punti canale in coda senza attendere l'approvazione.",
     "settingUrlTitle": "Leggi URL completi:",
@@ -663,7 +680,8 @@
     "redemptionsTitle": "Annunci premi e riscatti in coda",
     "redemptionsText": "Quando uno spettatore riscatta un premio con i punti canale, il TTS pronuncia un avviso con il titolo del premio e il messaggio dello spettatore.",
     "redemptionsToggleText": "Usa l'interruttore Annuncia riscatti premi nella dashboard web per attivare o disattivare gli avvisi di riscatto.",
-    "queuedRedeemsText": "Per impostazione predefinita, il bot annuncia i premi in coda solo dopo la tua approvazione su Twitch. Attiva l'opzione Annuncia subito riscatti in coda per annunciarli immediatamente al momento del riscatto.",
+    "mutedRewardsText": "Per mantenere silenziosa una ricompensa, ad esempio una soundboard che riproduce un proprio suono, usa Ricompense da annunciare nella Web Dashboard. Seleziona Scegli ricompense e disattiva la ricompensa. Il bot annuncia tutte le altre ricompense. I moderatori possono usare il comando <span class=\"inline-code\">!tts redeems mute</span> nella chat.",
+    "queuedRedeemsText": "Per impostazione predefinita, il bot annuncia immediatamente una ricompensa in coda quando uno spettatore la riscatta. Disattiva Annuncia immediatamente i riscatti in coda per annunciare una ricompensa in coda solo dopo che l'hai accettata su Twitch.",
     "followersTitle": "Privacy e Anonimizzazione dei Follower",
     "followersText": "Per proteggere la privacy degli spettatori, attiva l'interruttore Anonimizza nuovi follower nel Pannello Web. Quando è attivo, il TTS annuncia \"Qualcuno ha appena iniziato a seguire il canale!\" invece di pronunciare il nome utente.",
     "streaksTitle": "Serie di Visualizzazione e Rilevamento dei Pronomi",

@@ -1061,6 +1061,49 @@ extraScripts:
                 </td>
             </tr>
         </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsRedeems.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts redeems
+                    &lt;mute|unmute|list|all&gt;</td>
+                <td data-i18n-key="commands.ttsRedeems.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsRedeems"><span class="description-text">Selects
+                        which channel point redeems the bot announces.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsRedeems" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.mute">!tts redeems mute &lt;reward title&gt;</code>
+                        <span data-i18n="commands.ttsRedeems.muteNote">(stops the announcements for one reward)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.unmute">!tts redeems unmute &lt;reward title&gt;</code>
+                        <span data-i18n="commands.ttsRedeems.unmuteNote">(starts the announcements again)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.list">!tts redeems list</code>
+                        <span data-i18n="commands.ttsRedeems.listNote">(shows the muted rewards)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.all">!tts redeems all</code>
+                        <span data-i18n="commands.ttsRedeems.allNote">(shows all rewards on the channel)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsRedeems.notes">The bot announces every reward until you mute
+                            it. Use this command for a reward that plays its own sound, for example a soundboard.
+                            You can type a part of the title. If more than one reward matches, the bot shows the
+                            names and asks for the full name. The reply always shows the name of the reward that
+                            changed. The bot cannot mute the TTS reward. This command works only when the
+                            broadcaster is signed in to the Web Dashboard. You can also select the rewards in the
+                            Web Dashboard, under Rewards to Announce.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
 
     </table>
 </section>
@@ -2081,7 +2124,8 @@ extraScripts:
     <h3 data-i18n="eventControls.redemptionsTitle">Reward Announcements & Queued Redeems</h3>
     <p data-i18n="eventControls.redemptionsText">When a viewer redeems a channel point reward, TTS speaks an alert with the reward title and the viewer message.</p>
     <p data-i18n="eventControls.redemptionsToggleText">Use the Announce Reward Redeems switch in the Web Dashboard to turn redemption alerts on or off.</p>
-    <p data-i18n="eventControls.queuedRedeemsText">By default, the bot announces queued rewards only after you accept them in Twitch. Enable the Announce Queued Redeems Immediately switch to announce queued rewards immediately when redeemed.</p>
+    <p data-i18n="eventControls.mutedRewardsText">To keep one reward silent, for example a soundboard that plays its own sound, use Rewards to Announce in the Web Dashboard. Select Choose rewards and switch off the reward. The bot announces all other rewards. Moderators can use the <span class="inline-code">!tts redeems mute</span> command in chat.</p>
+    <p data-i18n="eventControls.queuedRedeemsText">By default, the bot announces a queued reward immediately when a viewer redeems it. Switch off Announce Queued Redeems Immediately to announce a queued reward only after you accept it in Twitch.</p>
 
     <h3 data-i18n="eventControls.followersTitle">Follower Privacy & Anonymization</h3>
     <p data-i18n="eventControls.followersText">To protect viewer privacy, turn on the Anonymize New Followers switch in the Web Dashboard. When active, TTS announces "Someone new just followed!" instead of speaking the viewer's username.</p>
@@ -2124,6 +2168,8 @@ extraScripts:
                 read cheer messages.</span></li>
         <li><strong data-i18n="webDashboard.settingAnnounceRedemptionsTitle">Announce Reward Redeems:</strong> <span
                 data-i18n="webDashboard.settingAnnounceRedemptionsDesc">Turn channel point reward redemption alerts on or off.</span></li>
+        <li><strong data-i18n="webDashboard.settingRewardsToAnnounceTitle">Rewards to Announce:</strong> <span
+                data-i18n="webDashboard.settingRewardsToAnnounceDesc">Select the rewards that the bot announces. Switch off a reward that plays its own sound.</span></li>
         <li><strong data-i18n="webDashboard.settingAnnounceQueuedRedeemsTitle">Announce Queued Redeems Immediately:</strong> <span
                 data-i18n="webDashboard.settingAnnounceQueuedRedeemsDesc">Announce queued channel point rewards immediately without waiting for approval.</span></li>
         <li><strong data-i18n="webDashboard.settingUrlTitle">Read Full URLs:</strong> <span

@@ -77,11 +77,11 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(エイリアス: !tts preferences, !tts settings)",
-      "description": "<strong>あなた専用のTTS個人設定ページ</strong>へのリンクを送信します。",
+      "description": "個人用のTTS設定ページへのリンクを送信します。",
       "aliases": "(エイリアス: !tts preferences, !tts settings)",
       "feature1": "このチャンネル専用の声、音程、速度、感情、言語を設定できます。",
       "feature2": "TTS無視リストに自分を追加できるDanger Zoneが含まれます。解除できるのはモデレーターのみです。",
-      "feature3": "ボットはチャンネルコンテキストが読み込まれたリンクをチャットに送信します。",
+      "feature3": "ボットはチャンネル情報を読み込んだ状態で、リンクをチャットに投稿します。",
       "usage": {
         "prefs": "!tts prefs",
         "preferences": "!tts preferences",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "<strong>あなた専用のTTS個人設定ページ</strong>へのリンクを送信します（<span class=\"inline-code\">!tts prefs</span> と同様）。",
-      "notes": "<code>!tts prefs</code> と同一です。ボットはチャンネルコンテキストが読み込まれたリンクをチャットに送信します。",
+      "description": "個人用のTTS設定ページへのリンクを送信します（!tts prefsと同じ）。",
+      "notes": "!tts prefsと同じです。ボットはチャンネル情報を読み込んだ状態で、リンクをチャットに投稿します。",
       "usage": {
         "basic": "!myvoice"
       }
@@ -429,6 +429,21 @@
       "notes": "開始するまでフィルターは無効です。下品な単語を穏やかな表現に置き換えます。メッセージ自体は削除されません。メッセージ全体を破棄したい場合はWebダッシュボードの禁止単語リストを使用してください。以前の on と off も引き続き使用できます。on は block と同じです。",
       "blockNote": "（フィルターを開始）",
       "allowNote": "（フィルターを停止）"
+    },
+    "ttsRedeems": {
+      "name": "!tts redeems <mute|unmute|list|all>",
+      "description": "ボットが読み上げるChannel Pointsの引き換えを選択します。",
+      "usage": {
+        "mute": "!tts redeems mute <reward title>",
+        "unmute": "!tts redeems unmute <reward title>",
+        "list": "!tts redeems list",
+        "all": "!tts redeems all"
+      },
+      "muteNote": "（1つのリワードの読み上げを停止します）",
+      "unmuteNote": "（読み上げを再開します）",
+      "listNote": "（ミュートされたリワードを表示します）",
+      "allNote": "（チャンネル内のすべてのリワードを表示します）",
+      "notes": "ボットはミュートするまですべてのリワードを読み上げます。サウンドボードなど独自のサウンドを再生するリワードには、このコマンドを使用します。タイトルの一部を入力できます。複数のリワードが一致した場合、ボットは名前を表示して完全な名前を要求します。返信には常に変更されたリワードの名前が表示されます。ボットはTTSリワードをミュートできません。このコマンドは、配信者がWeb Dashboardにサインインしている場合にのみ動作します。Web Dashboardの「Rewards to Announce」でリワードを選択することもできます。"
     }
   },
   "table": {
@@ -502,6 +517,8 @@
     "settingAnnounceCheersDesc": "チアーメッセージの読み上げを維持したまま、チアー通知アラートのオン/オフを切り替えます。",
     "settingAnnounceRedemptionsTitle": "リワード引き換えを通知:",
     "settingAnnounceRedemptionsDesc": "チャンネルポイントリワードの引き換え通知をオン/オフします。",
+    "settingRewardsToAnnounceTitle": "読み上げるリワード:",
+    "settingRewardsToAnnounceDesc": "ボットが読み上げるリワードを選択します。独自のサウンドを再生するリワードはオフにします。",
     "settingAnnounceQueuedRedeemsTitle": "承認待ちリワードを即時通知:",
     "settingAnnounceQueuedRedeemsDesc": "承認を待たずに、キューに入ったチャンネルポイントリワードを即座に通知します。",
     "settingUrlTitle": "完全なURLを読み上げる:",
@@ -663,7 +680,8 @@
     "redemptionsTitle": "リワード通知と承認待ちリワードの読み上げ",
     "redemptionsText": "視聴者がチャンネルポイントリワードを引き換えると、TTSがリワード名とメッセージを読み上げます。",
     "redemptionsToggleText": "Webダッシュボードの「リワード引き換えを通知」スイッチで、引き換え通知のオン/オフを切り替えられます。",
-    "queuedRedeemsText": "デフォルトでは、Twitchで承認された後にのみリワードが読み上げられます。「承認待ちリワードを即時通知」をオンにすると、承認を待たずに引き換えられた瞬間に読み上げます。",
+    "mutedRewardsText": "独自のサウンドを再生するサウンドボードなどのリワードを無音にするには、Web Dashboardの「Rewards to Announce」を使用します。「Choose rewards」を選択してリワードをオフにします。ボットは他のすべてのリワードを読み上げます。モデレーターはチャットで<span class=\"inline-code\">!tts redeems mute</span>コマンドを使用できます。",
+    "queuedRedeemsText": "デフォルトでは、視聴者が引き換えると、ボットはキューに入ったリワードをすぐに読み上げます。Twitchで承認した後にのみキューに入ったリワードを読み上げるには、「Announce Queued Redeems Immediately」をオフにします。",
     "followersTitle": "フォロワーのプライバシー保護",
     "followersText": "視聴者のプライバシーを守るため、Webダッシュボードで「Anonymize New Followers」をオンにします。有効にすると、ユーザー名の代わりに「新しいフォロワーが参加しました！」と通知されます。",
     "streaksTitle": "視聴ストリークと代名詞の自動判定",

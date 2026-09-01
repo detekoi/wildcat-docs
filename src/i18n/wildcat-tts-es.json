@@ -77,7 +77,7 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias: !tts preferences, !tts settings)",
-      "description": "Envía un enlace a <strong>tu página personal de configuración de TTS</strong>.",
+      "description": "Envía un enlace a su página personal de configuración de TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Configura tu propia voz, tono, velocidad, emoción e idioma para este canal.",
       "feature2": "Incluye una Zona de Peligro donde puedes añadirte a la lista de ignorados de TTS. Solo un moderador puede eliminarte.",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Envía un enlace a <strong>tu página personal de configuración de TTS</strong> (igual que <span class=\"inline-code\">!tts prefs</span>).",
-      "notes": "Igual que <code>!tts prefs</code>. El bot publica el enlace en el chat con el contexto del canal cargado.",
+      "description": "Envía un enlace a su página personal de configuración de TTS (igual que !tts prefs).",
+      "notes": "Igual que !tts prefs. El bot publica el enlace en el chat con el contexto del canal cargado.",
       "usage": {
         "basic": "!myvoice"
       }
@@ -429,6 +429,21 @@
       "notes": "El filtro está apagado hasta que lo inicias. Reemplaza palabras vulgares con términos más suaves. No elimina el mensaje. La lista de Palabras Prohibidas en el Panel Web descarta el mensaje completo. Las palabras antiguas on y off siguen funcionando: on equivale a block.",
       "blockNote": "(inicia el filtro)",
       "allowNote": "(detiene el filtro)"
+    },
+    "ttsRedeems": {
+      "name": "!tts redeems <mute|unmute|list|all>",
+      "description": "Selecciona qué canjes de Channel Points anuncia el bot.",
+      "usage": {
+        "mute": "!tts redeems mute <título de recompensa>",
+        "unmute": "!tts redeems unmute <título de recompensa>",
+        "list": "!tts redeems list",
+        "all": "!tts redeems all"
+      },
+      "muteNote": "(detiene los anuncios de una recompensa)",
+      "unmuteNote": "(inicia los anuncios nuevamente)",
+      "listNote": "(muestra las recompensas silenciadas)",
+      "allNote": "(muestra todas las recompensas del canal)",
+      "notes": "El bot anuncia cada recompensa hasta que la silencia. Use este comando para una recompensa que reproduce su propio sonido, por ejemplo un soundboard. Puede escribir una parte del título. Si coincide más de una recompensa, el bot muestra los nombres y solicita el nombre completo. La respuesta siempre muestra el nombre de la recompensa que cambió. El bot no puede silenciar la recompensa de TTS. Este comando solo funciona cuando el emisor ha iniciado sesión en el Web Dashboard. También puede seleccionar las recompensas en el Web Dashboard, en Rewards to Announce."
     }
   },
   "table": {
@@ -502,6 +517,8 @@
     "settingAnnounceCheersDesc": "Activa o desactiva alertas de cheer mientras se siguen leyendo los mensajes con cheer.",
     "settingAnnounceRedemptionsTitle": "Anunciar recompensas:",
     "settingAnnounceRedemptionsDesc": "Activa o desactiva las alertas de canje de puntos de canal.",
+    "settingRewardsToAnnounceTitle": "Recompensas para anunciar:",
+    "settingRewardsToAnnounceDesc": "Seleccione las recompensas que el bot anuncia. Desactive una recompensa que reproduce su propio sonido.",
     "settingAnnounceQueuedRedeemsTitle": "Anunciar canjes en cola inmediatamente:",
     "settingAnnounceQueuedRedeemsDesc": "Anuncia recompensas de puntos de canal en cola de inmediato sin esperar aprobación.",
     "settingUrlTitle": "Leer URLs completas:",
@@ -663,7 +680,8 @@
     "redemptionsTitle": "Anuncios de recompensas y canjes en cola",
     "redemptionsText": "Cuando un espectador canjea una recompensa de puntos de canal, TTS reproduce un aviso con el título de la recompensa y el mensaje del espectador.",
     "redemptionsToggleText": "Usa el interruptor Anunciar recompensas en el Panel Web para activar o desactivar las alertas de canje.",
-    "queuedRedeemsText": "Por defecto, el bot anuncia las recompensas en cola solo después de que las aceptes en Twitch. Activa el interruptor Anunciar canjes en cola inmediatamente para anunciarlas en cuanto se canjeen.",
+    "mutedRewardsText": "Para mantener una recompensa en silencio, por ejemplo un soundboard que reproduce su propio sonido, use Rewards to Announce en el Web Dashboard. Seleccione Choose rewards y desactive la recompensa. El bot anuncia todas las demás recompensas. Los moderadores pueden usar el comando <span class=\"inline-code\">!tts redeems mute</span> en el chat.",
+    "queuedRedeemsText": "De forma predeterminada, el bot anuncia una recompensa en cola inmediatamente cuando un espectador la canjea. Desactive Announce Queued Redeems Immediately para anunciar una recompensa en cola solo después de que la acepte en Twitch.",
     "followersTitle": "Privacidad y anonimización de seguidores",
     "followersText": "Para proteger la privacidad de los espectadores, active el interruptor Anonimizar nuevos seguidores en el Panel Web. Cuando está activo, el TTS anuncia \"¡Alguien nuevo acaba de seguir el canal!\" en lugar de pronunciar el nombre de usuario.",
     "streaksTitle": "Rachas de visualización y detección de pronombres",

@@ -429,6 +429,21 @@
       "notes": "The filter is off until you start it. It replaces rude words with milder words. It does not remove the message. The Banned Words list in the Web Dashboard removes a full message. The older words on and off still work: on is the same as block.",
       "blockNote": "(starts the filter)",
       "allowNote": "(stops the filter)"
+    },
+    "ttsRedeems": {
+      "name": "!tts redeems <mute|unmute|list|all>",
+      "description": "Selects which channel point redeems the bot announces.",
+      "usage": {
+        "mute": "!tts redeems mute <reward title>",
+        "unmute": "!tts redeems unmute <reward title>",
+        "list": "!tts redeems list",
+        "all": "!tts redeems all"
+      },
+      "muteNote": "(stops the announcements for one reward)",
+      "unmuteNote": "(starts the announcements again)",
+      "listNote": "(shows the muted rewards)",
+      "allNote": "(shows all rewards on the channel)",
+      "notes": "The bot announces every reward until you mute it. Use this command for a reward that plays its own sound, for example a soundboard. You can type a part of the title. If more than one reward matches, the bot shows the names and asks for the full name. The reply always shows the name of the reward that changed. The bot cannot mute the TTS reward. This command works only when the broadcaster is signed in to the Web Dashboard. You can also select the rewards in the Web Dashboard, under Rewards to Announce."
     }
   },
   "table": {
@@ -502,6 +517,8 @@
     "settingAnnounceCheersDesc": "Turn cheer alerts on or off while continuing to read cheer messages.",
     "settingAnnounceRedemptionsTitle": "Announce Reward Redeems:",
     "settingAnnounceRedemptionsDesc": "Turn channel point reward redemption alerts on or off.",
+    "settingRewardsToAnnounceTitle": "Rewards to Announce:",
+    "settingRewardsToAnnounceDesc": "Select the rewards that the bot announces. Switch off a reward that plays its own sound.",
     "settingAnnounceQueuedRedeemsTitle": "Announce Queued Redeems Immediately:",
     "settingAnnounceQueuedRedeemsDesc": "Announce queued channel point rewards immediately without waiting for approval.",
     "settingUrlTitle": "Read Full URLs:",
@@ -663,7 +680,8 @@
     "redemptionsTitle": "Reward Announcements & Queued Redeems",
     "redemptionsText": "When a viewer redeems a channel point reward, TTS speaks an alert with the reward title and the viewer message.",
     "redemptionsToggleText": "Use the Announce Reward Redeems switch in the Web Dashboard to turn redemption alerts on or off.",
-    "queuedRedeemsText": "By default, the bot announces queued rewards only after you accept them in Twitch. Enable the Announce Queued Redeems Immediately switch to announce queued rewards immediately when redeemed.",
+    "mutedRewardsText": "To keep one reward silent, for example a soundboard that plays its own sound, use Rewards to Announce in the Web Dashboard. Select Choose rewards and switch off the reward. The bot announces all other rewards. Moderators can use the <span class=\"inline-code\">!tts redeems mute</span> command in chat.",
+    "queuedRedeemsText": "By default, the bot announces a queued reward immediately when a viewer redeems it. Switch off Announce Queued Redeems Immediately to announce a queued reward only after you accept it in Twitch.",
     "followersTitle": "Follower Privacy & Anonymization",
     "followersText": "To protect viewer privacy, turn on the Anonymize New Followers switch in the Web Dashboard. When active, TTS announces \"Someone new just followed!\" instead of speaking the viewer's username.",
     "streaksTitle": "Watch Streaks & Pronoun Resolution",

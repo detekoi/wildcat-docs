@@ -77,7 +77,7 @@
     },
     "ttsPrefs": {
       "name": "!tts prefs\n(Alias : !tts preferences, !tts settings)",
-      "description": "Envoie un lien vers <strong>votre page personnelle de paramètres TTS</strong>.",
+      "description": "Envoie un lien vers votre page de paramètres TTS personnels.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Définissez votre propre voix, hauteur, vitesse, émotion et langue pour cette chaîne.",
       "feature2": "Comprend une Zone Dangereuse où vous pouvez vous ajouter à la liste d'ignorance TTS. Seul un modérateur peut vous retirer.",
@@ -90,8 +90,8 @@
     },
     "myvoice": {
       "name": "!myvoice",
-      "description": "Envoie un lien vers <strong>votre page personnelle de paramètres TTS</strong> (identique à <span class=\"inline-code\">!tts prefs</span>).",
-      "notes": "Identique à <code>!tts prefs</code>. Le bot publie le lien dans le chat avec le contexte de la chaîne chargé.",
+      "description": "Envoie un lien vers votre page de paramètres TTS personnels (identique à !tts prefs).",
+      "notes": "Identique à !tts prefs. Le bot publie le lien dans le chat avec le contexte de la chaîne chargé.",
       "usage": {
         "basic": "!myvoice"
       }
@@ -429,6 +429,21 @@
       "notes": "Le filtre est désactivé tant que vous ne l'activez pas. Il remplace les mots grossiers par des mots plus doux. Il ne supprime pas le message. La liste des Mots Interdits dans le tableau de bord supprime le message entier. Les anciens mots on et off fonctionnent toujours : on équivaut à block.",
       "blockNote": "(démarre le filtre)",
       "allowNote": "(arrête le filtre)"
+    },
+    "ttsRedeems": {
+      "name": "!tts redeems <mute|unmute|list|all>",
+      "description": "Sélectionne les échanges de Channel Points que le bot annonce.",
+      "usage": {
+        "mute": "!tts redeems mute <titre de la récompense>",
+        "unmute": "!tts redeems unmute <titre de la récompense>",
+        "list": "!tts redeems list",
+        "all": "!tts redeems all"
+      },
+      "muteNote": "(arrête les annonces pour une récompense)",
+      "unmuteNote": "(reprend les annonces)",
+      "listNote": "(affiche les récompenses coupées)",
+      "allNote": "(affiche toutes les récompenses de la chaîne)",
+      "notes": "Le bot annonce chaque récompense jusqu'à ce que vous la coupiez. Utilisez cette commande pour une récompense qui joue son propre son, par exemple un soundboard. Vous pouvez taper une partie du titre. Si plusieurs récompenses correspondent, le bot affiche les noms et demande le nom complet. La réponse affiche toujours le nom de la récompense modifiée. Le bot ne peut pas couper la récompense TTS. Cette commande fonctionne uniquement lorsque le diffuseur est connecté au Web Dashboard. Vous pouvez aussi sélectionner les récompenses dans le Web Dashboard, sous Récompenses à annoncer."
     }
   },
   "table": {
@@ -502,6 +517,8 @@
     "settingAnnounceCheersDesc": "Activez ou désactivez les alertes de cheer tout en continuant à lire les messages de cheer.",
     "settingAnnounceRedemptionsTitle": "Annoncer les récompenses :",
     "settingAnnounceRedemptionsDesc": "Activez ou désactivez les alertes d'échange de points de chaîne.",
+    "settingRewardsToAnnounceTitle": "Récompenses à annoncer :",
+    "settingRewardsToAnnounceDesc": "Sélectionnez les récompenses que le bot annonce. Désactivez une récompense qui joue son propre son.",
     "settingAnnounceQueuedRedeemsTitle": "Annoncer immédiatement les récompenses en file d'attente :",
     "settingAnnounceQueuedRedeemsDesc": "Annoncez immédiatement les récompenses de points de chaîne en file d'attente sans attendre d'approbation.",
     "settingUrlTitle": "Lire les URLs complètes :",
@@ -663,7 +680,8 @@
     "redemptionsTitle": "Annonces de récompenses et échanges en file d'attente",
     "redemptionsText": "Lorsqu'un spectateur échange une récompense de points de chaîne, TTS énonce une alerte avec le titre de la récompense et le message du spectateur.",
     "redemptionsToggleText": "Utilisez le bouton Annoncer les récompenses dans le tableau de bord pour activer ou désactiver les alertes d'échange.",
-    "queuedRedeemsText": "Par défaut, le bot annonce les récompenses en file d'attente uniquement après votre validation sur Twitch. Activez l'option Annoncer immédiatement les récompenses en file d'attente pour les annoncer dès leur échange.",
+    "mutedRewardsText": "Pour garder une récompense silencieuse, par exemple un soundboard qui joue son propre son, utilisez Récompenses à annoncer dans le Web Dashboard. Sélectionnez Choisir les récompenses et désactivez la récompense. Le bot annonce toutes les autres récompenses. Les modérateurs peuvent utiliser la commande <span class=\"inline-code\">!tts redeems mute</span> dans le chat.",
+    "queuedRedeemsText": "Par défaut, le bot annonce immédiatement une récompense en file d'attente quand un spectateur l'échange. Désactivez Annoncer immédiatement les récompenses en file d'attente pour annoncer une récompense en file d'attente seulement après l'avoir acceptée dans Twitch.",
     "followersTitle": "Confidentialité et Anonymisation des Followers",
     "followersText": "Pour protéger la vie privée des spectateurs, activez le commutateur Anonymiser les nouveaux followers dans le Tableau de Bord Web. Lorsqu'il est activé, le TTS annonce \"Quelqu'un vient de s'abonner au suivi !\" au lieu de prononcer le nom d'utilisateur.",
     "streaksTitle": "Séries de Visionnage et Détection des Pronoms",
