@@ -937,6 +937,9 @@ extraScripts:
     <p style="margin-top: 8px;"><strong data-i18n="aiCommands.tipLabel">Tip:</strong> <span
             data-i18n="aiCommands.tipText">You can convert a text command to AI mode in the dashboard by enabling <strong>AI Mode</strong>. You can also run <span class="inline-code">!command options &lt;name&gt; type=prompt</span> in chat. Switch back with <span class="inline-code">type=text</span>.</span>
     </p>
+    <p style="margin-top: 8px;"><strong data-i18n="aiCommands.previewLabel">Preview:</strong> <span
+            data-i18n="aiCommands.previewText">Before you save an AI command, select <strong>Preview</strong>. The bot writes one sample reply from your prompt and the current stream context. The bot does not post the sample to chat. Each preview is a new reply, so the real message will be different. If the prompt uses <span class="inline-code">$(args)</span>, enter sample arguments in the field next to the button.</span>
+    </p>
 </section>
 
 <section id="web-dashboard" class="section">
@@ -956,6 +959,8 @@ extraScripts:
                 data-i18n="webDashboard.features.commandControl.desc">Create custom commands and enable or disable built-in commands.</span></li>
         <li><strong data-i18n="webDashboard.features.timers.title">Timed Messages:</strong> <span
                 data-i18n="webDashboard.features.timers.desc">Create and manage scheduled chat messages with interval and chat line settings.</span></li>
+        <li><strong data-i18n="webDashboard.features.aiPreview.title">AI Preview:</strong> <span
+                data-i18n="webDashboard.features.aiPreview.desc">Show a sample AI reply for a custom command, a timed message, or the daily check-in before you save it.</span></li>
         <li><strong data-i18n="webDashboard.features.botPersonality.title">Bot Personality:</strong> <span
                 data-i18n="webDashboard.features.botPersonality.desc">Customize tone, humor, and style instructions for AI responses, with automatic Twitch rule checks.</span></li>
         <li><strong data-i18n="webDashboard.features.botLanguage.title">Bot Language:</strong> <span
@@ -1154,6 +1159,7 @@ extraScripts:
             <span class="inline-code">$(user)</span> and <span class="inline-code">$(checkin_count)</span>, or
             enable <strong>AI Mode</strong> for unique replies.
         </li>
+        <li data-i18n="dailyCheckIn.steps.preview">If you enable <strong>AI Mode</strong>, select <strong>Preview</strong> to see a sample reply before you save.</li>
         <li data-i18n="dailyCheckIn.steps.save">Select <strong>Save</strong>. The bot creates the reward on Twitch.</li>
     </ol>
 

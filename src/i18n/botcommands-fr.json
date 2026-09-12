@@ -413,7 +413,9 @@
       }
     },
     "tipLabel": "Astuce :",
-    "tipText": "Vous pouvez convertir une commande texte en mode IA dans le tableau de bord en activant le <strong>Mode IA</strong>. Vous pouvez aussi exécuter <span class=\"inline-code\">!command options &lt;nom&gt; type=prompt</span> dans le chat. Revenez en arrière avec <span class=\"inline-code\">type=text</span>."
+    "tipText": "Vous pouvez convertir une commande texte en mode IA dans le tableau de bord en activant le <strong>Mode IA</strong>. Vous pouvez aussi exécuter <span class=\"inline-code\">!command options &lt;nom&gt; type=prompt</span> dans le chat. Revenez en arrière avec <span class=\"inline-code\">type=text</span>.",
+    "previewLabel": "Aperçu :",
+    "previewText": "Avant d'enregistrer une commande IA, sélectionnez <strong>Aperçu</strong>. Le bot écrit une réponse d'exemple à partir de votre prompt et du contexte actuel du stream. Le bot ne publie pas l'exemple dans le chat. Chaque aperçu est une nouvelle réponse, donc le message réel sera différent. Si le prompt utilise <span class=\"inline-code\">$(args)</span>, saisissez des arguments d'exemple dans le champ à côté du bouton."
   },
   "webDashboard": {
     "title": "Tableau de bord Web",
@@ -439,6 +441,10 @@
       "timers": {
         "title": "Messages programmés :",
         "desc": "Créez et gérez des messages de chat programmés avec des paramètres d'intervalle et de lignes de chat."
+      },
+      "aiPreview": {
+        "title": "Aperçu IA :",
+        "desc": "Affichez une réponse IA d'exemple pour une commande personnalisée, un message programmé ou le check-in quotidien avant de l'enregistrer."
       },
       "botPersonality": {
         "title": "Personnalité du Bot :",
@@ -566,6 +572,7 @@
       "open": "Ouvrez le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord WildcatSage</a> et accédez à la section <strong>Check-In quotidien</strong>.",
       "enable": "Activez l'interrupteur, puis saisissez un titre de récompense et un coût en points de chaîne.",
       "template": "Saisissez un modèle de réponse avec des variables comme <span class=\"inline-code\">$(user)</span> et <span class=\"inline-code\">$(checkin_count)</span>, ou activez le <strong>Mode IA</strong> pour des réponses uniques.",
+      "preview": "Si vous activez le <strong>Mode IA</strong>, sélectionnez <strong>Aperçu</strong> pour voir une réponse d'exemple avant d'enregistrer.",
       "save": "Sélectionnez <strong>Enregistrer</strong>. Le bot créera la récompense sur Twitch."
     },
     "variablesTitle": "Variables disponibles",

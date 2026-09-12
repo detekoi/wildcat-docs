@@ -413,7 +413,9 @@
       }
     },
     "tipLabel": "ヒント:",
-    "tipText": "ダッシュボードで <strong>AIモード</strong> を有効にすることで、既存のテキストコマンドをAIモードに変換できます。チャットで <span class=\"inline-code\">!command options &lt;名前&gt; type=prompt</span> を実行することも可能です。<span class=\"inline-code\">type=text</span> で元に戻せます。"
+    "tipText": "ダッシュボードで <strong>AIモード</strong> を有効にすることで、既存のテキストコマンドをAIモードに変換できます。チャットで <span class=\"inline-code\">!command options &lt;名前&gt; type=prompt</span> を実行することも可能です。<span class=\"inline-code\">type=text</span> で元に戻せます。",
+    "previewLabel": "プレビュー:",
+    "previewText": "AIコマンドを保存する前に、<strong>プレビュー</strong> を選択します。ボットはプロンプトと現在の配信コンテキストからサンプル返答を1つ作成します。ボットはサンプルをチャットに投稿しません。プレビューは毎回新しい返答なので、実際のメッセージは異なります。プロンプトで <span class=\"inline-code\">$(args)</span> を使用する場合は、ボタンの横の入力欄にサンプル引数を入力してください。"
   },
   "webDashboard": {
     "title": "Webダッシュボード",
@@ -439,6 +441,10 @@
       "timers": {
         "title": "タイマーメッセージ:",
         "desc": "間隔とチャット行数の設定を使用して、スケジュールされたチャットメッセージを作成および管理します。"
+      },
+      "aiPreview": {
+        "title": "AIプレビュー:",
+        "desc": "カスタムコマンド、タイマーメッセージ、デイリーチェックインのAI返答のサンプルを、保存する前に表示します。"
       },
       "botPersonality": {
         "title": "ボットの個性:",
@@ -566,6 +572,7 @@
       "open": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSageダッシュボード</a> を開き、<strong>デイリーチェックイン</strong> セクションに移動します。",
       "enable": "トグルを有効にし、報酬タイトルとチャンネルポイントコストを入力します。",
       "template": "<span class=\"inline-code\">$(user)</span> や <span class=\"inline-code\">$(checkin_count)</span> などの変数を使用した応答テンプレートを入力するか、<strong>AIモード</strong> を有効にして毎回ユニークな返答を生成します。",
+      "preview": "<strong>AIモード</strong> を有効にした場合は、<strong>プレビュー</strong> を選択して、保存する前にサンプル返答を確認します。",
       "save": "<strong>保存</strong> を選択します。Twitch上で報酬が自動作成されます。"
     },
     "variablesTitle": "利用可能な変数",

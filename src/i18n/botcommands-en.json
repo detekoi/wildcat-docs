@@ -413,7 +413,9 @@
       }
     },
     "tipLabel": "Tip:",
-    "tipText": "You can convert a text command to AI mode in the dashboard by enabling <strong>AI Mode</strong>. You can also run <span class=\"inline-code\">!command options &lt;name&gt; type=prompt</span> in chat. Switch back with <span class=\"inline-code\">type=text</span>."
+    "tipText": "You can convert a text command to AI mode in the dashboard by enabling <strong>AI Mode</strong>. You can also run <span class=\"inline-code\">!command options &lt;name&gt; type=prompt</span> in chat. Switch back with <span class=\"inline-code\">type=text</span>.",
+    "previewLabel": "Preview:",
+    "previewText": "Before you save an AI command, select <strong>Preview</strong>. The bot writes one sample reply from your prompt and the current stream context. The bot does not post the sample to chat. Each preview is a new reply, so the real message will be different. If the prompt uses <span class=\"inline-code\">$(args)</span>, enter sample arguments in the field next to the button."
   },
   "webDashboard": {
     "title": "Web Dashboard",
@@ -439,6 +441,10 @@
       "timers": {
         "title": "Timed Messages:",
         "desc": "Create and manage scheduled chat messages with interval and chat line settings."
+      },
+      "aiPreview": {
+        "title": "AI Preview:",
+        "desc": "Show a sample AI reply for a custom command, a timed message, or the daily check-in before you save it."
       },
       "botPersonality": {
         "title": "Bot Personality:",
@@ -566,6 +572,7 @@
       "open": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> and go to the <strong>Daily Check-In</strong> section.",
       "enable": "Enable the toggle, then enter a reward title and Channel Point cost.",
       "template": "Enter a response template with variables like <span class=\"inline-code\">$(user)</span> and <span class=\"inline-code\">$(checkin_count)</span>, or enable <strong>AI Mode</strong> for unique replies.",
+      "preview": "If you enable <strong>AI Mode</strong>, select <strong>Preview</strong> to see a sample reply before you save.",
       "save": "Select <strong>Save</strong>. The bot creates the reward on Twitch."
     },
     "variablesTitle": "Available Variables",

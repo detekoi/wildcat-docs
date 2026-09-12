@@ -413,7 +413,9 @@
       }
     },
     "tipLabel": "Tipp:",
-    "tipText": "Du kannst einen Textbefehl im Dashboard in den KI-Modus umwandeln, indem du <strong>KI-Modus</strong> aktivierst. Du kannst im Chat auch <span class=\"inline-code\">!command options &lt;Name&gt; type=prompt</span> ausführen. Wechsle mit <span class=\"inline-code\">type=text</span> zurück."
+    "tipText": "Du kannst einen Textbefehl im Dashboard in den KI-Modus umwandeln, indem du <strong>KI-Modus</strong> aktivierst. Du kannst im Chat auch <span class=\"inline-code\">!command options &lt;Name&gt; type=prompt</span> ausführen. Wechsle mit <span class=\"inline-code\">type=text</span> zurück.",
+    "previewLabel": "Vorschau:",
+    "previewText": "Bevor du einen KI-Befehl speicherst, wähle <strong>Vorschau</strong>. Der Bot schreibt eine Beispielantwort aus deinem Prompt und dem aktuellen Stream-Kontext. Der Bot postet das Beispiel nicht im Chat. Jede Vorschau ist eine neue Antwort, daher wird die echte Nachricht anders sein. Wenn der Prompt <span class=\"inline-code\">$(args)</span> verwendet, gib Beispielargumente in das Feld neben der Schaltfläche ein."
   },
   "webDashboard": {
     "title": "Web Dashboard",
@@ -439,6 +441,10 @@
       "timers": {
         "title": "Geplante Nachrichten:",
         "desc": "Erstellen und verwalten Sie geplante Chat-Nachrichten mit Intervall- und Chatzeileneinstellungen."
+      },
+      "aiPreview": {
+        "title": "KI-Vorschau:",
+        "desc": "Zeigen Sie eine KI-Beispielantwort für einen benutzerdefinierten Befehl, eine geplante Nachricht oder den täglichen Check-In an, bevor Sie speichern."
       },
       "botPersonality": {
         "title": "Bot-Persönlichkeit:",
@@ -566,6 +572,7 @@
       "open": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> und gehe zum Abschnitt <strong>Täglicher Check-In</strong>.",
       "enable": "Aktiviere den Schalter und gib einen Belohnungstitel und Kanalpunkte-Kosten ein.",
       "template": "Gib eine Antwortvorlage mit Variablen wie <span class=\"inline-code\">$(user)</span> und <span class=\"inline-code\">$(checkin_count)</span> ein, oder aktiviere den <strong>KI-Modus</strong> für einzigartige Antworten.",
+      "preview": "Wenn du den <strong>KI-Modus</strong> aktivierst, wähle <strong>Vorschau</strong>, um vor dem Speichern eine Beispielantwort zu sehen.",
       "save": "Wähle <strong>Speichern</strong>. Der Bot erstellt die Belohnung auf Twitch."
     },
     "variablesTitle": "Verfügbare Variablen",

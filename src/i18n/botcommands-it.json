@@ -413,7 +413,9 @@
       }
     },
     "tipLabel": "Suggerimento:",
-    "tipText": "Puoi convertire un comando di testo in modalità IA nella dashboard abilitando <strong>Modalità IA</strong>. Puoi anche eseguire <span class=\"inline-code\">!command options &lt;nome&gt; type=prompt</span> in chat. Torna indietro con <span class=\"inline-code\">type=text</span>."
+    "tipText": "Puoi convertire un comando di testo in modalità IA nella dashboard abilitando <strong>Modalità IA</strong>. Puoi anche eseguire <span class=\"inline-code\">!command options &lt;nome&gt; type=prompt</span> in chat. Torna indietro con <span class=\"inline-code\">type=text</span>.",
+    "previewLabel": "Anteprima:",
+    "previewText": "Prima di salvare un comando IA, seleziona <strong>Anteprima</strong>. Il bot scrive una risposta di esempio dal tuo prompt e dal contesto attuale dello stream. Il bot non pubblica l'esempio in chat. Ogni anteprima è una risposta nuova, quindi il messaggio reale sarà diverso. Se il prompt usa <span class=\"inline-code\">$(args)</span>, inserisci argomenti di esempio nel campo accanto al pulsante."
   },
   "webDashboard": {
     "title": "Dashboard Web",
@@ -439,6 +441,10 @@
       "timers": {
         "title": "Messaggi pianificati:",
         "desc": "Crea e gestisci messaggi di chat pianificati con impostazioni di intervallo e righe di chat."
+      },
+      "aiPreview": {
+        "title": "Anteprima IA:",
+        "desc": "Mostra una risposta IA di esempio per un comando personalizzato, un messaggio pianificato o il check-in giornaliero prima di salvarlo."
       },
       "botPersonality": {
         "title": "Personalità del Bot:",
@@ -566,6 +572,7 @@
       "open": "Apri la <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard di WildcatSage</a> e vai alla sezione <strong>Check-In giornaliero</strong>.",
       "enable": "Attiva l'interruttore e imposta un titolo per la ricompensa e un costo in punti canale.",
       "template": "Inserisci un modello di risposta con variabili come <span class=\"inline-code\">$(user)</span> e <span class=\"inline-code\">$(checkin_count)</span>, oppure attiva la <strong>Modalità IA</strong> per risposte uniche.",
+      "preview": "Se attivi la <strong>Modalità IA</strong>, seleziona <strong>Anteprima</strong> per vedere una risposta di esempio prima di salvare.",
       "save": "Seleziona <strong>Salva</strong>. Il bot creerà la ricompensa su Twitch."
     },
     "variablesTitle": "Variabili disponibili",

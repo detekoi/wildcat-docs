@@ -413,7 +413,9 @@
       }
     },
     "tipLabel": "Dica:",
-    "tipText": "Você pode converter um comando de texto para o modo de IA no painel ativando o <strong>Modo IA</strong>. Você também pode executar <span class=\"inline-code\">!command options &lt;nome&gt; type=prompt</span> no chat. Volte com <span class=\"inline-code\">type=text</span>."
+    "tipText": "Você pode converter um comando de texto para o modo de IA no painel ativando o <strong>Modo IA</strong>. Você também pode executar <span class=\"inline-code\">!command options &lt;nome&gt; type=prompt</span> no chat. Volte com <span class=\"inline-code\">type=text</span>.",
+    "previewLabel": "Prévia:",
+    "previewText": "Antes de salvar um comando de IA, selecione <strong>Prévia</strong>. O bot escreve uma resposta de exemplo a partir do seu prompt e do contexto atual da stream. O bot não publica o exemplo no chat. Cada prévia é uma resposta nova, então a mensagem real será diferente. Se o prompt usa <span class=\"inline-code\">$(args)</span>, digite argumentos de exemplo no campo ao lado do botão."
   },
   "webDashboard": {
     "title": "Painel Web",
@@ -439,6 +441,10 @@
       "timers": {
         "title": "Mensagens agendadas:",
         "desc": "Crie e gerencie mensagens de chat agendadas com configurações de intervalo e linhas de chat."
+      },
+      "aiPreview": {
+        "title": "Prévia de IA:",
+        "desc": "Mostre uma resposta de IA de exemplo para um comando personalizado, uma mensagem agendada ou o check-in diário antes de salvar."
       },
       "botPersonality": {
         "title": "Personalidade do bot:",
@@ -566,6 +572,7 @@
       "open": "Abra o <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel do WildcatSage</a> e vá para a seção <strong>Check-In diário</strong>.",
       "enable": "Ative o botão e insira um título para a recompensa e o custo em pontos de canal.",
       "template": "Digite um modelo de resposta com variáveis como <span class=\"inline-code\">$(user)</span> e <span class=\"inline-code\">$(checkin_count)</span>, ou ative o <strong>Modo IA</strong> para obter respostas únicas.",
+      "preview": "Se você ativar o <strong>Modo IA</strong>, selecione <strong>Prévia</strong> para ver uma resposta de exemplo antes de salvar.",
       "save": "Selecione <strong>Salvar</strong>. O bot criará a recompensa na Twitch."
     },
     "variablesTitle": "Variáveis disponíveis",
