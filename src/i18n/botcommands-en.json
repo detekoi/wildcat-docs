@@ -11,7 +11,8 @@
       "general": "General",
       "customCommands": "Custom Commands",
       "games": "Games",
-      "config": "Config"
+      "config": "Config",
+      "memory": "Channel Memory"
     },
     "caption": "Bot commands"
   },
@@ -279,6 +280,34 @@
     },
     "ping": {
       "description": "Checks if the bot responds. The bot replies with \"Pong!\""
+    },
+    "remember": {
+      "description": "Teaches the bot a fact about your community. The bot keeps the fact from one stream to the next.",
+      "usage": {
+        "basicDesc": "Stores the fact (for example: !remember gary = the rubber duck on the desk)",
+        "replaceDesc": "If a memory with the same phrase exists, the new text replaces the old text"
+      }
+    },
+    "forget": {
+      "description": "Deletes the channel memories that contain a phrase.",
+      "usage": {
+        "basicDesc": "Deletes each memory that contains the phrase (for example: !forget gary)",
+        "lengthDesc": "The phrase must have 3 characters or more"
+      }
+    },
+    "forgetme": {
+      "description": "Deletes the memories about you in this channel. The bot then stores no new memories about you.",
+      "usage": {
+        "basicDesc": "Deletes the memories about you. This command applies to the current channel only"
+      }
+    },
+    "memory": {
+      "description": "Shows or changes the Channel Memory setting. Channel Memory is on by default.",
+      "usage": {
+        "statusDesc": "Shows the setting and the number of stored memories",
+        "offDesc": "Disables Channel Memory. The stored memories stay, but the bot does not use them",
+        "onDesc": "Enables Channel Memory"
+      }
     }
   },
   "sidebar": {
@@ -292,7 +321,9 @@
     "title": "WildcatSage",
     "toggleSidebar": "Toggle Sidebar",
     "botPersonality": "Bot Personality",
-    "botLanguage": "Bot Language"
+    "botLanguage": "Bot Language",
+    "memoryCommands": "Memory Commands",
+    "channelMemory": "Channel Memory"
   },
   "responseVariables": {
     "title": "Response Variables",
@@ -563,6 +594,59 @@
       "checkin": "AI prompts for Daily Check-In"
     },
     "otherPromptsText": "Text commands and text timers do not use the check. The bot sends this text without a change."
+  },
+  "channelMemory": {
+    "title": "Channel Memory",
+    "intro": "With Channel Memory, WildcatSage remembers facts about your community from one stream to the next. Examples are running jokes, words with a special meaning in your channel, and facts about regular viewers. Channel Memory is on by default.",
+    "learnTitle": "How the Bot Learns",
+    "learnIntro": "The bot learns in two ways:",
+    "learn": {
+      "auto": "<strong>From chat:</strong> The bot reads chat in groups of messages. It stores the facts that the community will use again. Most groups contain no such facts.",
+      "manual": "<strong>From moderators:</strong> A moderator teaches a fact with <span class=\"inline-code\">!remember</span>."
+    },
+    "learnPriority": "A fact from a moderator has priority. A fact from chat cannot replace it.",
+    "learnModel": "The bot uses Gemini Flash Lite to read chat. This is the same model that does translation.",
+    "ignoredIntro": "The bot does not read these messages for Channel Memory:",
+    "ignored": {
+      "bot": "Messages from the bot",
+      "commands": "Messages that start with <span class=\"inline-code\">!</span>",
+      "optedOut": "Messages from viewers who used <span class=\"inline-code\">!forgetme</span>"
+    },
+    "storesTitle": "What the Bot Stores",
+    "storesIntro": "The bot stores these types of facts:",
+    "stores": {
+      "meaning": "A word or phrase that has a special meaning in your channel",
+      "jokes": "Running jokes and nicknames",
+      "members": "Harmless facts about regular viewers, for example the character that a viewer plays",
+      "requests": "Facts that chat tells the bot to remember"
+    },
+    "storesNot": "The bot does not store greetings, short reactions, or comments about the current game.",
+    "storesSensitive": "The instructions for the AI model exclude sensitive personal details, such as health, addresses, real names, age, and finances.",
+    "storesErrors": "An AI model can make errors. A moderator can delete an incorrect memory with <span class=\"inline-code\">!forget</span>.",
+    "usesTitle": "How the Bot Uses Memories",
+    "usesIntro": "When a viewer mentions the bot or uses <span class=\"inline-code\">!ask</span>, the bot compares the message with the stored memories. If a memory matches, the bot uses the memory in its reply.",
+    "usesMatch": "The comparison uses the words in the message. If a viewer uses different words for the same subject, the bot can fail to find the memory.",
+    "usesNone": "If the bot has no memory about a subject, the bot says that it does not remember.",
+    "privacyTitle": "Privacy and Opt-Out",
+    "privacyChannel": "A moderator can disable Channel Memory with <span class=\"inline-code\">!memory off</span>. The bot then does not read chat for Channel Memory and does not use the stored memories. The stored memories stay. <span class=\"inline-code\">!memory on</span> enables Channel Memory again.",
+    "privacyViewer": "Each viewer can use <span class=\"inline-code\">!forgetme</span>. The bot deletes the memories about that viewer. After that, the bot does not read the messages of that viewer for Channel Memory. This command applies to one channel only.",
+    "privacyScope": "Memories belong to one channel. The bot does not share memories between channels.",
+    "privacyTraining": "WildcatSage uses a paid Gemini API key. Google does not use chat messages, prompts, or memories to train AI models.",
+    "limitsTitle": "Limits",
+    "table": {
+      "item": "Item",
+      "value": "Value"
+    },
+    "limits": {
+      "countItem": "Maximum memories for each channel",
+      "countValue": "300",
+      "lengthItem": "Maximum length of one memory",
+      "lengthValue": "200 characters",
+      "fullItem": "When the channel has 300 memories",
+      "fullValue": "The bot deletes the memory from chat that has the least use. The bot does not delete memories from moderators.",
+      "timeItem": "Storage time",
+      "timeValue": "No time limit"
+    }
   },
   "dailyCheckIn": {
     "title": "Daily Check-In",

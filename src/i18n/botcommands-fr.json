@@ -11,7 +11,8 @@
       "general": "Général",
       "customCommands": "Commandes personnalisées",
       "games": "Jeux",
-      "config": "Configuration"
+      "config": "Configuration",
+      "memory": "Mémoire de chaîne"
     },
     "caption": "Commandes du bot"
   },
@@ -279,6 +280,34 @@
     },
     "ping": {
       "description": "Vérifie si le bot répond. Le bot répond par « Pong! »"
+    },
+    "remember": {
+      "description": "Enseigne au bot un fait sur votre communauté. Le bot conserve le fait d'un stream à l'autre.",
+      "usage": {
+        "basicDesc": "Enregistre le fait (par exemple : !remember gary = the rubber duck on the desk)",
+        "replaceDesc": "Si un souvenir avec la même expression existe, le nouveau texte remplace l'ancien texte"
+      }
+    },
+    "forget": {
+      "description": "Supprime les souvenirs de la chaîne qui contiennent une expression.",
+      "usage": {
+        "basicDesc": "Supprime chaque souvenir qui contient l'expression (par exemple : !forget gary)",
+        "lengthDesc": "L'expression doit avoir 3 caractères ou plus"
+      }
+    },
+    "forgetme": {
+      "description": "Supprime les souvenirs à votre sujet sur cette chaîne. Le bot n'enregistre ensuite aucun nouveau souvenir à votre sujet.",
+      "usage": {
+        "basicDesc": "Supprime les souvenirs à votre sujet. Cette commande s'applique uniquement à la chaîne actuelle"
+      }
+    },
+    "memory": {
+      "description": "Affiche ou modifie le paramètre de Mémoire de chaîne. La Mémoire de chaîne est activée par défaut.",
+      "usage": {
+        "statusDesc": "Affiche le paramètre et le nombre de souvenirs enregistrés",
+        "offDesc": "Désactive la Mémoire de chaîne. Les souvenirs enregistrés restent, mais le bot ne les utilise pas",
+        "onDesc": "Active la Mémoire de chaîne"
+      }
     }
   },
   "sidebar": {
@@ -292,7 +321,9 @@
     "title": "WildcatSage",
     "toggleSidebar": "Basculer la barre latérale",
     "botPersonality": "Personnalité du Bot",
-    "botLanguage": "Langue du bot"
+    "botLanguage": "Langue du bot",
+    "memoryCommands": "Commandes de mémoire",
+    "channelMemory": "Mémoire de chaîne"
   },
   "responseVariables": {
     "title": "Variables de réponse",
@@ -563,6 +594,59 @@
       "checkin": "Prompts IA pour le Check-In quotidien"
     },
     "otherPromptsText": "Les commandes texte et les minuteurs texte n'utilisent pas le contrôle. Le bot envoie ce texte sans modification."
+  },
+  "channelMemory": {
+    "title": "Mémoire de chaîne",
+    "intro": "Avec la Mémoire de chaîne, WildcatSage se souvient des faits sur votre communauté d'un stream à l'autre. Les exemples incluent les blagues récurrentes, les mots avec un sens particulier sur votre chaîne et les faits sur les spectateurs réguliers. La Mémoire de chaîne est activée par défaut.",
+    "learnTitle": "Comment le bot apprend",
+    "learnIntro": "Le bot apprend de deux façons :",
+    "learn": {
+      "auto": "<strong>Depuis le chat :</strong> Le bot lit le chat par groupes de messages. Il enregistre les faits que la communauté réutilisera. La plupart des groupes ne contiennent aucun fait de ce type.",
+      "manual": "<strong>Par les modérateurs :</strong> Un modérateur enseigne un fait avec <span class=\"inline-code\">!remember</span>."
+    },
+    "learnPriority": "Un fait provenant d'un modérateur a la priorité. Un fait provenant du chat ne peut pas le remplacer.",
+    "learnModel": "Le bot utilise Gemini Flash Lite pour lire le chat. C'est le même modèle qui effectue la traduction.",
+    "ignoredIntro": "Le bot ne lit pas ces messages pour la Mémoire de chaîne :",
+    "ignored": {
+      "bot": "Les messages du bot",
+      "commands": "Les messages qui commencent par <span class=\"inline-code\">!</span>",
+      "optedOut": "Les messages des spectateurs qui ont utilisé <span class=\"inline-code\">!forgetme</span>"
+    },
+    "storesTitle": "Ce que le bot enregistre",
+    "storesIntro": "Le bot enregistre ces types de faits :",
+    "stores": {
+      "meaning": "Un mot ou une expression qui a un sens particulier sur votre chaîne",
+      "jokes": "Des blagues récurrentes et des surnoms",
+      "members": "Des faits inoffensifs sur les spectateurs réguliers, par exemple le personnage qu'un spectateur joue",
+      "requests": "Des faits que le chat demande au bot de retenir"
+    },
+    "storesNot": "Le bot n'enregistre pas les salutations, les réactions courtes ou les commentaires sur le jeu en cours.",
+    "storesSensitive": "Les instructions données au modèle d'IA excluent les détails personnels sensibles, comme la santé, les adresses, les vrais noms, l'âge et les finances.",
+    "storesErrors": "Un modèle d'IA peut faire des erreurs. Un modérateur peut supprimer un souvenir incorrect avec <span class=\"inline-code\">!forget</span>.",
+    "usesTitle": "Comment le bot utilise les souvenirs",
+    "usesIntro": "Quand un spectateur mentionne le bot ou utilise <span class=\"inline-code\">!ask</span>, le bot compare le message aux souvenirs enregistrés. Si un souvenir correspond, le bot utilise ce souvenir dans sa réponse.",
+    "usesMatch": "La comparaison utilise les mots du message. Si un spectateur utilise des mots différents pour le même sujet, le bot peut ne pas trouver le souvenir.",
+    "usesNone": "Si le bot n'a aucun souvenir sur un sujet, le bot dit qu'il ne se souvient pas.",
+    "privacyTitle": "Confidentialité et désactivation",
+    "privacyChannel": "Un modérateur peut désactiver la Mémoire de chaîne avec <span class=\"inline-code\">!memory off</span>. Le bot ne lit alors pas le chat pour la Mémoire de chaîne et n'utilise pas les souvenirs enregistrés. Les souvenirs enregistrés restent. <span class=\"inline-code\">!memory on</span> réactive la Mémoire de chaîne.",
+    "privacyViewer": "Chaque spectateur peut utiliser <span class=\"inline-code\">!forgetme</span>. Le bot supprime les souvenirs concernant ce spectateur. Après cela, le bot ne lit pas les messages de ce spectateur pour la Mémoire de chaîne. Cette commande s'applique à une seule chaîne.",
+    "privacyScope": "Les souvenirs appartiennent à une seule chaîne. Le bot ne partage pas les souvenirs entre les chaînes.",
+    "privacyTraining": "WildcatSage utilise une clé API Gemini payante. Google n'utilise pas les messages de chat, les invites ou les souvenirs pour entraîner des modèles d'IA.",
+    "limitsTitle": "Limites",
+    "table": {
+      "item": "Élément",
+      "value": "Valeur"
+    },
+    "limits": {
+      "countItem": "Nombre maximal de souvenirs pour chaque chaîne",
+      "countValue": "300",
+      "lengthItem": "Longueur maximale d'un souvenir",
+      "lengthValue": "200 caractères",
+      "fullItem": "Quand la chaîne a 300 souvenirs",
+      "fullValue": "Le bot supprime le souvenir issu du chat le moins utilisé. Le bot ne supprime pas les souvenirs créés par les modérateurs.",
+      "timeItem": "Durée de stockage",
+      "timeValue": "Aucune limite de temps"
+    }
   },
   "dailyCheckIn": {
     "title": "Check-In quotidien",

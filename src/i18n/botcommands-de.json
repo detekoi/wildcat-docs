@@ -11,7 +11,8 @@
       "general": "Allgemein",
       "customCommands": "Benutzerdefinierte Befehle",
       "games": "Spiele",
-      "config": "Konfiguration"
+      "config": "Konfiguration",
+      "memory": "Kanalgedächtnis"
     },
     "caption": "Bot-Befehle"
   },
@@ -279,6 +280,34 @@
     },
     "ping": {
       "description": "Prüft, ob der Bot reagiert. Der Bot antwortet mit „Pong!“"
+    },
+    "remember": {
+      "description": "Bringt dem Bot einen Fakt über deine Community bei. Der Bot behält den Fakt von einem Stream zum nächsten.",
+      "usage": {
+        "basicDesc": "Speichert den Fakt (zum Beispiel: !remember gary = the rubber duck on the desk)",
+        "replaceDesc": "Wenn eine Erinnerung mit demselben Ausdruck existiert, ersetzt der neue Text den alten Text"
+      }
+    },
+    "forget": {
+      "description": "Löscht die Erinnerungen des Kanals, die einen Ausdruck enthalten.",
+      "usage": {
+        "basicDesc": "Löscht jede Erinnerung, die den Ausdruck enthält (zum Beispiel: !forget gary)",
+        "lengthDesc": "Der Ausdruck muss 3 oder mehr Zeichen haben"
+      }
+    },
+    "forgetme": {
+      "description": "Löscht die Erinnerungen über dich in diesem Kanal. Der Bot speichert danach keine neuen Erinnerungen über dich.",
+      "usage": {
+        "basicDesc": "Löscht die Erinnerungen über dich. Dieser Befehl gilt nur für den aktuellen Kanal"
+      }
+    },
+    "memory": {
+      "description": "Zeigt oder ändert die Einstellung für das Kanalgedächtnis. Das Kanalgedächtnis ist standardmäßig aktiviert.",
+      "usage": {
+        "statusDesc": "Zeigt die Einstellung und die Anzahl der gespeicherten Erinnerungen",
+        "offDesc": "Deaktiviert das Kanalgedächtnis. Die gespeicherten Erinnerungen bleiben, aber der Bot verwendet sie nicht",
+        "onDesc": "Aktiviert das Kanalgedächtnis"
+      }
     }
   },
   "sidebar": {
@@ -292,7 +321,9 @@
     "title": "WildcatSage",
     "toggleSidebar": "Seitenleiste umschalten",
     "botPersonality": "Bot-Persönlichkeit",
-    "botLanguage": "Bot-Sprache"
+    "botLanguage": "Bot-Sprache",
+    "memoryCommands": "Erinnerungsbefehle",
+    "channelMemory": "Kanalgedächtnis"
   },
   "responseVariables": {
     "title": "Antwortvariablen",
@@ -563,6 +594,59 @@
       "checkin": "KI-Prompts für den täglichen Check-In"
     },
     "otherPromptsText": "Text-Commands und Text-Timer verwenden die Prüfung nicht. Der Bot sendet diesen Text ohne Änderung."
+  },
+  "channelMemory": {
+    "title": "Kanalgedächtnis",
+    "intro": "Mit dem Kanalgedächtnis erinnert sich WildcatSage von einem Stream zum nächsten an Fakten über deine Community. Beispiele sind Running Gags, Wörter mit einer besonderen Bedeutung in deinem Kanal und Fakten über regelmäßige Zuschauer. Das Kanalgedächtnis ist standardmäßig aktiviert.",
+    "learnTitle": "Wie der Bot lernt",
+    "learnIntro": "Der Bot lernt auf zwei Arten:",
+    "learn": {
+      "auto": "<strong>Aus dem Chat:</strong> Der Bot liest den Chat in Gruppen von Nachrichten. Er speichert die Fakten, die die Community wieder verwenden wird. Die meisten Gruppen enthalten keine solchen Fakten.",
+      "manual": "<strong>Von Moderatoren:</strong> Ein Moderator bringt dem Bot einen Fakt mit <span class=\"inline-code\">!remember</span> bei."
+    },
+    "learnPriority": "Ein Fakt von einem Moderator hat Priorität. Ein Fakt aus dem Chat kann ihn nicht ersetzen.",
+    "learnModel": "Der Bot verwendet Gemini Flash Lite, um den Chat zu lesen. Dies ist dasselbe Modell, das Übersetzungen durchführt.",
+    "ignoredIntro": "Der Bot liest diese Nachrichten nicht für das Kanalgedächtnis:",
+    "ignored": {
+      "bot": "Nachrichten vom Bot",
+      "commands": "Nachrichten, die mit <span class=\"inline-code\">!</span> beginnen",
+      "optedOut": "Nachrichten von Zuschauern, die <span class=\"inline-code\">!forgetme</span> verwendet haben"
+    },
+    "storesTitle": "Was der Bot speichert",
+    "storesIntro": "Der Bot speichert diese Arten von Fakten:",
+    "stores": {
+      "meaning": "Ein Wort oder ein Ausdruck mit einer besonderen Bedeutung in deinem Kanal",
+      "jokes": "Running Gags und Spitznamen",
+      "members": "Harmlose Fakten über regelmäßige Zuschauer, zum Beispiel die Figur, die ein Zuschauer spielt",
+      "requests": "Fakten, die der Chat dem Bot zum Merken mitteilt"
+    },
+    "storesNot": "Der Bot speichert keine Begrüßungen, kurzen Reaktionen oder Kommentare zum aktuellen Spiel.",
+    "storesSensitive": "Die Anweisungen für das KI-Modell schließen sensible persönliche Details aus, wie zum Beispiel Gesundheit, Adressen, echte Namen, Alter und Finanzen.",
+    "storesErrors": "Ein KI-Modell kann Fehler machen. Ein Moderator kann eine fehlerhafte Erinnerung mit <span class=\"inline-code\">!forget</span> löschen.",
+    "usesTitle": "Wie der Bot Erinnerungen verwendet",
+    "usesIntro": "Wenn ein Zuschauer den Bot erwähnt oder <span class=\"inline-code\">!ask</span> verwendet, vergleicht der Bot die Nachricht mit den gespeicherten Erinnerungen. Wenn eine Erinnerung übereinstimmt, verwendet der Bot die Erinnerung in seiner Antwort.",
+    "usesMatch": "Der Vergleich verwendet die Wörter in der Nachricht. Wenn ein Zuschauer andere Wörter für dasselbe Thema verwendet, kann der Bot die Erinnerung möglicherweise nicht finden.",
+    "usesNone": "Wenn der Bot keine Erinnerung zu einem Thema hat, sagt der Bot, dass er sich nicht erinnert.",
+    "privacyTitle": "Datenschutz und Opt-out",
+    "privacyChannel": "Ein Moderator kann das Kanalgedächtnis mit <span class=\"inline-code\">!memory off</span> deaktivieren. Der Bot liest den Chat dann nicht für das Kanalgedächtnis und verwendet die gespeicherten Erinnerungen nicht. Die gespeicherten Erinnerungen bleiben erhalten. <span class=\"inline-code\">!memory on</span> aktiviert das Kanalgedächtnis wieder.",
+    "privacyViewer": "Jeder Zuschauer kann <span class=\"inline-code\">!forgetme</span> verwenden. Der Bot löscht die Erinnerungen über diesen Zuschauer. Danach liest der Bot die Nachrichten dieses Zuschauers nicht für das Kanalgedächtnis. Dieser Befehl gilt nur für einen Kanal.",
+    "privacyScope": "Erinnerungen gehören zu einem Kanal. Der Bot teilt Erinnerungen nicht zwischen Kanälen.",
+    "privacyTraining": "WildcatSage verwendet einen kostenpflichtigen Gemini-API-Schlüssel. Google verwendet Chat-Nachrichten, Prompts oder Erinnerungen nicht, um KI-Modelle zu trainieren.",
+    "limitsTitle": "Grenzwerte",
+    "table": {
+      "item": "Element",
+      "value": "Wert"
+    },
+    "limits": {
+      "countItem": "Maximale Anzahl an Erinnerungen pro Kanal",
+      "countValue": "300",
+      "lengthItem": "Maximale Länge einer Erinnerung",
+      "lengthValue": "200 Zeichen",
+      "fullItem": "Wenn der Kanal 300 Erinnerungen hat",
+      "fullValue": "Der Bot löscht die Erinnerung aus dem Chat, die am wenigsten genutzt wird. Der Bot löscht keine Erinnerungen von Moderatoren.",
+      "timeItem": "Speicherdauer",
+      "timeValue": "Keine zeitliche Begrenzung"
+    }
   },
   "dailyCheckIn": {
     "title": "Täglicher Check-In",

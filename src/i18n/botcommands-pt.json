@@ -11,7 +11,8 @@
       "general": "Geral",
       "customCommands": "Comandos personalizados",
       "games": "Jogos",
-      "config": "Configuração"
+      "config": "Configuração",
+      "memory": "Memória do Canal"
     },
     "caption": "Comandos do bot"
   },
@@ -279,6 +280,34 @@
     },
     "ping": {
       "description": "Verifica se o bot está respondendo. O bot responde com \"Pong!\""
+    },
+    "remember": {
+      "description": "Ensina ao bot um fato sobre a sua comunidade. O bot mantém o fato de uma transmissão para a seguinte.",
+      "usage": {
+        "basicDesc": "Armazena o fato (por exemplo: !remember gary = o pato de borracha na mesa)",
+        "replaceDesc": "Se já existir uma memória com a mesma frase, o novo texto substitui o texto antigo"
+      }
+    },
+    "forget": {
+      "description": "Elimina as memórias do canal que contêm uma frase.",
+      "usage": {
+        "basicDesc": "Elimina cada memória que contém a frase (por exemplo: !forget gary)",
+        "lengthDesc": "A frase deve ter 3 caracteres ou mais"
+      }
+    },
+    "forgetme": {
+      "description": "Elimina as memórias sobre você neste canal. Depois disso, o bot não armazena novas memórias sobre você.",
+      "usage": {
+        "basicDesc": "Elimina as memórias sobre você. Este comando aplica-se apenas ao canal atual"
+      }
+    },
+    "memory": {
+      "description": "Mostra ou altera a configuração da Memória do Canal. A Memória do Canal está ativada por padrão.",
+      "usage": {
+        "statusDesc": "Mostra a configuração e o número de memórias armazenadas",
+        "offDesc": "Desativa a Memória do Canal. As memórias armazenadas permanecem, mas o bot não as utiliza",
+        "onDesc": "Ativa a Memória do Canal"
+      }
     }
   },
   "sidebar": {
@@ -292,7 +321,9 @@
     "title": "WildcatSage",
     "toggleSidebar": "Alternar barra lateral",
     "botPersonality": "Personalidade do Bot",
-    "botLanguage": "Idioma do Bot"
+    "botLanguage": "Idioma do Bot",
+    "memoryCommands": "Comandos de Memória",
+    "channelMemory": "Memória do Canal"
   },
   "responseVariables": {
     "title": "Variáveis de resposta",
@@ -563,6 +594,59 @@
       "checkin": "Prompts de IA para o Check-In diário"
     },
     "otherPromptsText": "Comandos de texto e temporizadores de texto não usam a verificação. O bot envia este texto sem alteração."
+  },
+  "channelMemory": {
+    "title": "Memória do Canal",
+    "intro": "Com a Memória do Canal, o WildcatSage lembra-se de fatos sobre a sua comunidade de uma transmissão para a seguinte. Os exemplos incluem piadas recorrentes, palavras com um significado especial no seu canal e fatos sobre espectadores habituais. A Memória do Canal está ativada por padrão.",
+    "learnTitle": "Como o Bot Aprende",
+    "learnIntro": "O bot aprende de duas formas:",
+    "learn": {
+      "auto": "<strong>A partir do chat:</strong> O bot lê o chat em grupos de mensagens. Ele armazena os fatos que a comunidade usará novamente. A maioria dos grupos não contém esses fatos.",
+      "manual": "<strong>A partir de moderadores:</strong> Um moderador ensina um fato com <span class=\"inline-code\">!remember</span>."
+    },
+    "learnPriority": "Um fato de um moderador tem prioridade. Um fato do chat não pode substituí-lo.",
+    "learnModel": "O bot usa o Gemini Flash Lite para ler o chat. Este é o mesmo modelo que faz a tradução.",
+    "ignoredIntro": "O bot não lê estas mensagens para a Memória do Canal:",
+    "ignored": {
+      "bot": "Mensagens do bot",
+      "commands": "Mensagens que começam com <span class=\"inline-code\">!</span>",
+      "optedOut": "Mensagens de espectadores que usaram <span class=\"inline-code\">!forgetme</span>"
+    },
+    "storesTitle": "O que o Bot Armazena",
+    "storesIntro": "O bot armazena estes tipos de fatos:",
+    "stores": {
+      "meaning": "Uma palavra ou frase que tem um significado especial no seu canal",
+      "jokes": "Piadas recorrentes e apelidos",
+      "members": "Fatos inofensivos sobre espectadores habituais, por exemplo o personagem que um espectador joga",
+      "requests": "Fatos que o chat pede para o bot lembrar"
+    },
+    "storesNot": "O bot não armazena saudações, reações curtas ou comentários sobre o jogo atual.",
+    "storesSensitive": "As instruções para o modelo de IA excluem detalhes pessoais sensíveis, como saúde, endereços, nomes reais, idade e finanças.",
+    "storesErrors": "Um modelo de IA pode cometer erros. Um moderador pode eliminar uma memória incorreta com <span class=\"inline-code\">!forget</span>.",
+    "usesTitle": "Como o Bot Usa as Memórias",
+    "usesIntro": "Quando um espectador menciona o bot ou usa <span class=\"inline-code\">!ask</span>, o bot compara a mensagem com as memórias armazenadas. Se uma memória corresponder, o bot usa a memória na sua resposta.",
+    "usesMatch": "A comparação usa as palavras da mensagem. Se um espectador usar palavras diferentes para o mesmo assunto, o bot pode não conseguir encontrar a memória.",
+    "usesNone": "Se o bot não tiver nenhuma memória sobre um assunto, o bot diz que não se lembra.",
+    "privacyTitle": "Privacidade e desativação",
+    "privacyChannel": "Um moderador pode desativar a Memória do Canal com <span class=\"inline-code\">!memory off</span>. O bot então não lê o chat para a Memória do Canal e não usa as memórias armazenadas. As memórias armazenadas permanecem. <span class=\"inline-code\">!memory on</span> ativa a Memória do Canal novamente.",
+    "privacyViewer": "Cada espectador pode usar <span class=\"inline-code\">!forgetme</span>. O bot apaga as memórias sobre esse espectador. Depois disso, o bot não lê as mensagens desse espectador para a Memória do Canal. Este comando se aplica apenas a um canal.",
+    "privacyScope": "As memórias pertencem a um canal. O bot não compartilha memórias entre canais.",
+    "privacyTraining": "O WildcatSage usa uma chave de API paga do Gemini. O Google não usa mensagens de chat, prompts ou memórias para treinar modelos de IA.",
+    "limitsTitle": "Limites",
+    "table": {
+      "item": "Item",
+      "value": "Valor"
+    },
+    "limits": {
+      "countItem": "Máximo de memórias para cada canal",
+      "countValue": "300",
+      "lengthItem": "Comprimento máximo de uma memória",
+      "lengthValue": "200 caracteres",
+      "fullItem": "Quando o canal tem 300 memórias",
+      "fullValue": "O bot apaga a memória do chat que tem menos uso. O bot não apaga memórias de moderadores.",
+      "timeItem": "Tempo de armazenamento",
+      "timeValue": "Sem limite de tempo"
+    }
   },
   "dailyCheckIn": {
     "title": "Check-In diário",

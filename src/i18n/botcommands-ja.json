@@ -11,7 +11,8 @@
       "general": "一般",
       "customCommands": "カスタムコマンド",
       "games": "ゲーム",
-      "config": "設定"
+      "config": "設定",
+      "memory": "チャンネルメモリ"
     },
     "caption": "ボットコマンド"
   },
@@ -279,6 +280,34 @@
     },
     "ping": {
       "description": "ボットが応答するか確認します。ボットは「Pong!」と返答します。"
+    },
+    "remember": {
+      "description": "コミュニティについての情報をBotに教えます。Botは配信をまたいでその情報を保持します。",
+      "usage": {
+        "basicDesc": "情報を保存します（例: !remember gary = the rubber duck on the desk）",
+        "replaceDesc": "同じフレーズを持つメモリが存在する場合、新しいテキストが古いテキストを上書きします"
+      }
+    },
+    "forget": {
+      "description": "指定したフレーズを含むチャンネルメモリを削除します。",
+      "usage": {
+        "basicDesc": "フレーズを含む各メモリを削除します（例: !forget gary）",
+        "lengthDesc": "フレーズは3文字以上である必要があります"
+      }
+    },
+    "forgetme": {
+      "description": "このチャンネル内にある、あなたについてのメモリを削除します。その後、Botはあなたについての新しいメモリを保存しません。",
+      "usage": {
+        "basicDesc": "あなたについてのメモリを削除します。このコマンドは現在のチャンネルにのみ適用されます"
+      }
+    },
+    "memory": {
+      "description": "チャンネルメモリの設定を表示または変更します。チャンネルメモリはデフォルトで有効です。",
+      "usage": {
+        "statusDesc": "設定と保存されているメモリの数を表示します",
+        "offDesc": "チャンネルメモリを無効にします。保存されたメモリは残りますが、Botはそれらを使用しません",
+        "onDesc": "チャンネルメモリを有効にします"
+      }
     }
   },
   "sidebar": {
@@ -292,7 +321,9 @@
     "title": "WildcatSage",
     "toggleSidebar": "サイドバーを切り替え",
     "botPersonality": "ボットの個性",
-    "botLanguage": "ボットの言語"
+    "botLanguage": "ボットの言語",
+    "memoryCommands": "メモリコマンド",
+    "channelMemory": "チャンネルメモリ"
   },
   "responseVariables": {
     "title": "応答変数",
@@ -563,6 +594,59 @@
       "checkin": "デイリーチェックインの AI プロンプト"
     },
     "otherPromptsText": "テキストコマンドとテキストタイマーはチェックを使用しません。ボットはこのテキストを変更せずに送信します。"
+  },
+  "channelMemory": {
+    "title": "チャンネルメモリ",
+    "intro": "チャンネルメモリを使用すると、WildcatSageは配信をまたいでコミュニティについての情報を記憶します。例として、定番のジョーク、チャンネル内で特別な意味を持つ言葉、常連の視聴者についての情報などがあります。チャンネルメモリはデフォルトで有効です。",
+    "learnTitle": "Botが学習する方法",
+    "learnIntro": "Botは2つの方法で学習します:",
+    "learn": {
+      "auto": "<strong>チャットから:</strong> Botはメッセージをグループ単位で読み取ります。コミュニティが再び使用する情報を保存します。ほとんどのグループには、そうした情報は含まれません。",
+      "manual": "<strong>モデレーターから:</strong> モデレーターが<span class=\"inline-code\">!remember</span>で情報を教えます。"
+    },
+    "learnPriority": "モデレーターからの情報が優先されます。チャットからの情報で上書きすることはできません。",
+    "learnModel": "Botはチャットの読み取りにGemini Flash Liteを使用します。これは翻訳を行うモデルと同じです。",
+    "ignoredIntro": "Botはチャンネルメモリ用に以下のメッセージを読み取りません:",
+    "ignored": {
+      "bot": "Botからのメッセージ",
+      "commands": "<span class=\"inline-code\">!</span>で始まるメッセージ",
+      "optedOut": "<span class=\"inline-code\">!forgetme</span>を使用した視聴者からのメッセージ"
+    },
+    "storesTitle": "Botが保存する内容",
+    "storesIntro": "Botは以下の種類の情報を保存します:",
+    "stores": {
+      "meaning": "チャンネル内で特別な意味を持つ単語やフレーズ",
+      "jokes": "定番のジョークやニックネーム",
+      "members": "常連の視聴者に関する無害な情報（例: 視聴者がプレイしているキャラクター）",
+      "requests": "チャットがBotに記憶するように伝えた情報"
+    },
+    "storesNot": "Botは、挨拶、短いリアクション、現在のゲームに関するコメントは保存しません。",
+    "storesSensitive": "AIモデルへの指示では、健康状態、住所、本名、年齢、財務状況などの機密性の高い個人情報を除外しています。",
+    "storesErrors": "AIモデルは誤りを犯すことがあります。モデレーターは<span class=\"inline-code\">!forget</span>を使用して、誤ったメモリを削除できます。",
+    "usesTitle": "Botがメモリを使用する方法",
+    "usesIntro": "視聴者がBotにメンションするか<span class=\"inline-code\">!ask</span>を使用すると、Botはメッセージと保存されているメモリを照合します。一致するメモリがある場合、Botはそのメモリを返信に使用します。",
+    "usesMatch": "照合にはメッセージ内の単語が使用されます。視聴者が同じ対象に対して異なる単語を使用した場合、Botはメモリを見つけられないことがあります。",
+    "usesNone": "対象についてのメモリがない場合、Botは覚えていないと答えます。",
+    "privacyTitle": "プライバシーとオプトアウト",
+    "privacyChannel": "モデレーターは<span class=\"inline-code\">!memory off</span>でチャンネルメモリを無効化できます。ボットはチャンネルメモリ用にチャットを読み取らなくなり、保存されたメモリを使用しません。保存されたメモリは残ります。<span class=\"inline-code\">!memory on</span>でチャンネルメモリを再度有効化できます。",
+    "privacyViewer": "視聴者は各自で<span class=\"inline-code\">!forgetme</span>を使用できます。ボットはその視聴者に関するメモリを削除します。その後、ボットはチャンネルメモリ用にその視聴者のメッセージを読み取りません。このコマンドは1つのチャンネルにのみ適用されます。",
+    "privacyScope": "メモリは1つのチャンネルに属します。ボットはチャンネル間でメモリを共有しません。",
+    "privacyTraining": "WildcatSageは有料のGemini APIキーを使用しています。Googleがチャットメッセージ、プロンプト、メモリをAIモデルのトレーニングに使用することはありません。",
+    "limitsTitle": "制限",
+    "table": {
+      "item": "項目",
+      "value": "値"
+    },
+    "limits": {
+      "countItem": "チャンネルごとの最大メモリ数",
+      "countValue": "300",
+      "lengthItem": "1つのメモリの最大長",
+      "lengthValue": "200文字",
+      "fullItem": "チャンネルのメモリが300個に達したとき",
+      "fullValue": "ボットはチャットから作成されたメモリのうち、最も使用頻度の低いものを削除します。ボットはモデレーターが作成したメモリを削除しません。",
+      "timeItem": "保存期間",
+      "timeValue": "無期限"
+    }
   },
   "dailyCheckIn": {
     "title": "デイリーチェックイン",
