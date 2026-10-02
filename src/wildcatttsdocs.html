@@ -276,15 +276,15 @@ extraScripts:
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.all">!tts mode all</code>
-                        <span data-i18n="commands.ttsMode.allDesc">(Speaks all chat messages and events)</span>
+                        <span data-i18n="commands.ttsMode.allDesc">(Reads all chat messages)</span>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.command">!tts mode command</code>
-                        <span data-i18n="commands.ttsMode.commandDesc">(Only speaks commands and enabled events; <strong>default mode</strong>)</span>
+                        <span data-i18n="commands.ttsMode.commandDesc">(Reads !tts messages; <strong>default mode</strong>)</span>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.bitsPointsOnly">!tts mode bits_points_only</code>
-                        <span data-i18n="commands.ttsMode.bitsPointsOnlyDesc">(Only speaks Bits cheers and Channel Point redemptions)</span>
+                        <span data-i18n="commands.ttsMode.bitsPointsOnlyDesc">(Reads only cheers and the TTS reward)</span>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.bits">!tts mode bits</code>
@@ -296,7 +296,7 @@ extraScripts:
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.highlightedOnly">!tts mode highlighted_only</code>
-                        <span data-i18n="commands.ttsMode.highlightedOnlyDesc">(Only speaks Twitch "Highlight My Message" messages)</span>
+                        <span data-i18n="commands.ttsMode.highlightedOnlyDesc">(Reads Twitch "Highlight My Message" messages)</span>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.highlight">!tts mode highlight</code>
@@ -307,10 +307,11 @@ extraScripts:
                         <span data-i18n="commands.ttsMode.statusDesc">(Shows current mode)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsMode.notes"><span class="inline-code">all</span>: TTS speaks all chat messages (except ignored users) and enabled events, based on <span class="inline-code">!tts permission</span>.<br>
-                            <span class="inline-code">command</span>: TTS speaks only commands (such as <span class="inline-code">!tts &lt;message&gt;</span>) and enabled events. TTS ignores regular chat.<br>
-                            <span class="inline-code">bits_points_only</span>: TTS speaks only Bits cheers and Channel Point redemptions. TTS ignores regular chat and commands.<br>
-                            <span class="inline-code">highlighted_only</span>: TTS speaks only chat messages that a viewer sends with the Twitch "Highlight My Message" Channel Points reward. <span class="inline-code">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class="inline-code">!tts &lt;message&gt;</span>. Cheers (see <span class="inline-code">!tts bits</span>), the TTS Channel Points reward, reward announcements and enabled events work as in <span class="inline-code">command</span> mode. On YouTube, this mode works like <span class="inline-code">bits_points_only</span>.</span></p>
+                            data-i18n="commands.ttsMode.notes">In every mode, TTS reads cheers (see <span class="inline-code">!tts bits</span>), the TTS Channel Points reward, and enabled reward announcements and events. The mode sets which chat messages TTS also reads. The Web Dashboard name of each mode is in parentheses.<br>
+                            <span class="inline-code">all</span> (All Chat Messages): TTS reads all chat messages (except ignored users), based on <span class="inline-code">!tts permission</span>. This includes <span class="inline-code">!tts &lt;message&gt;</span>.<br>
+                            <span class="inline-code">command</span> (!tts Messages): TTS reads <span class="inline-code">!tts &lt;message&gt;</span>, based on <span class="inline-code">!tts permission</span>. TTS ignores other chat.<br>
+                            <span class="inline-code">bits_points_only</span> (Cheers and Rewards Only): TTS reads no chat messages. TTS ignores regular chat, <span class="inline-code">!tts &lt;message&gt;</span> and highlighted messages. This mode always reads cheer messages, also after <span class="inline-code">!tts bits off</span>.<br>
+                            <span class="inline-code">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch "Highlight My Message" Channel Points reward. <span class="inline-code">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class="inline-code">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class="inline-code">bits_points_only</span>.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -426,8 +427,8 @@ extraScripts:
                         <li data-i18n="commands.channelPointsTTS.skipQueueUseCase"><strong>Tip:</strong> Turn on for instant playback. Turn off for moderation review before audio plays.</li>
                     </ul>
                     <p><strong data-i18n="commands.channelPointsTTS.ttsModes">TTS Modes:</strong> <span
-                            data-i18n="commands.channelPointsTTS.ttsModesText">Works with all TTS modes (All
-                            Messages, Commands Only, Bits/Points Only, Highlighted Messages Only).</span></p>
+                            data-i18n="commands.channelPointsTTS.ttsModesText">Works in every TTS mode: All Chat
+                            Messages, !tts Messages, Highlighted Messages, and Cheers and Rewards Only.</span></p>
                     <p><strong data-i18n="commands.channelPointsTTS.requirements">Requirements:</strong> <span
                             data-i18n="commands.channelPointsTTS.requirementsText">Grant <span
                                 class="inline-code">channel:manage:redemptions</span> and <span
@@ -1119,7 +1120,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsReadCommands.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts readcommands
                     &lt;on|off&gt;</td>
                 <td data-i18n-key="commands.ttsReadCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsReadCommands"><span class="description-text">Reads
-                        or skips chat messages that start with "!" in All Messages mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                        or skips chat messages that start with "!" in All Chat Messages mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsReadCommands" hidden>
                 <td colspan="2">
@@ -1141,10 +1142,10 @@ extraScripts:
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
                             data-i18n="commands.ttsReadCommands.notes">Other bots, for example Nightbot or
-                            StreamElements, use commands that start with "!", such as !lurk or !so. In All
+                            StreamElements, use commands that start with "!", such as !lurk or !so. In All Chat
                             Messages mode, TTS reads these commands as chat. Switch this setting off to skip
                             them. The setting does not change !tts: !tts still works. The setting has no effect
-                            in !tts Command Only, Bits/Points Only or Highlighted Messages Only mode, because these modes never read
+                            in !tts Messages, Highlighted Messages or Cheers and Rewards Only mode, because these modes never read
                             these messages. A cheer that starts with "!" is still read, because the viewer paid
                             for it. You can also change this in the Web Dashboard, under Read Chat
                             Commands.</span></p>
@@ -2164,13 +2165,13 @@ extraScripts:
 
 <section id="chat-commands" class="section">
     <h2 data-i18n="chatCommands.title">Chat Commands from Other Bots</h2>
-    <p data-i18n="chatCommands.intro">Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with "!", such as !lurk, !so or !sr. In All Messages mode, WildcatTTS reads these commands aloud as chat.</p>
+    <p data-i18n="chatCommands.intro">Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with "!", such as !lurk, !so or !sr. In All Chat Messages mode, WildcatTTS reads these commands aloud as chat.</p>
 
     <h3 data-i18n="chatCommands.toggleTitle">Read Chat Commands Option</h3>
     <p data-i18n="chatCommands.toggleText">To skip these messages, switch off Read Chat Commands in the Web Dashboard, or type <span class="inline-code">!tts readcommands off</span> in chat. TTS then ignores every chat message that starts with "!".</p>
     <ul>
         <li data-i18n="chatCommands.rule1"><span class="inline-code">!tts</span> is not affected. <span class="inline-code">!tts &lt;text&gt;</span> is still spoken, and the other <span class="inline-code">!tts</span> commands still work.</li>
-        <li data-i18n="chatCommands.rule2">The option applies only in All Messages mode. The other two modes never read these messages.</li>
+        <li data-i18n="chatCommands.rule2">The option applies only in All Chat Messages mode. The other modes never read these messages.</li>
         <li data-i18n="chatCommands.rule3">A cheer whose message starts with "!" is still read, because the viewer paid for it.</li>
     </ul>
 </section>
@@ -2237,7 +2238,7 @@ extraScripts:
         <li><strong data-i18n="webDashboard.settingUrlTitle">Read Full URLs:</strong> <span
                 data-i18n="webDashboard.settingUrlDesc">Read full web links or only domain names.</span></li>
         <li><strong data-i18n="webDashboard.settingReadCommandsTitle">Read Chat Commands:</strong> <span
-                data-i18n="webDashboard.settingReadCommandsDesc">Read or skip chat messages that start with "!" in All Messages mode. !tts always works.</span></li>
+                data-i18n="webDashboard.settingReadCommandsDesc">Read or skip chat messages that start with "!" in All Chat Messages mode. !tts always works.</span></li>
         <li><strong data-i18n="webDashboard.settingBitsTitle">Cheers:</strong> <span
                 data-i18n="webDashboard.settingBitsDesc">Announce cheers, read the message attached to a cheer, and set the minimum Bits a cheer needs.</span></li>
         <li><strong data-i18n="webDashboard.settingChannelPointsTitle">Channel Points → TTS:</strong> <span

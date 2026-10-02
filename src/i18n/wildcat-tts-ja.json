@@ -118,15 +118,15 @@
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
       "description": "TTSモードを設定または表示します。",
-      "allDesc": "（すべてのチャットメッセージとイベントを読み上げます）",
-      "commandDesc": "（コマンドと有効なイベントのみ読み上げます。<strong>標準モード</strong>）",
-      "bitsPointsOnlyDesc": "（Bitsチアーとチャンネルポイント引き換えのみ読み上げます）",
+      "allDesc": "（すべてのチャットメッセージを読み上げます）",
+      "commandDesc": "（!ttsメッセージを読み上げます。<strong>標準モード</strong>）",
+      "bitsPointsOnlyDesc": "（CheerとTTS報酬のみ読み上げます）",
       "bitsAlias": "(bits_points_onlyのエイリアス)",
       "pointsAlias": "(bits_points_onlyのエイリアス)",
-      "highlightedOnlyDesc": "（Twitchの「メッセージをハイライト」のメッセージのみ読み上げます）",
+      "highlightedOnlyDesc": "（Twitchの「メッセージをハイライト」のメッセージを読み上げます）",
       "highlightAlias": "(highlighted_onlyのエイリアス)",
       "statusDesc": "（現在のモードを表示）",
-      "notes": "<span class=\"inline-code\">all</span>: <span class=\"inline-code\">!tts permission</span> に基づき、すべてのチャットメッセージ（無視ユーザーを除く）とイベントを読み上げます。<br><span class=\"inline-code\">command</span>: コマンド（<span class=\"inline-code\">!tts &lt;message&gt;</span> など）と有効なイベントのみ読み上げます。通常のチャットは無視されます。<br><span class=\"inline-code\">bits_points_only</span>: Bitsチアーとチャンネルポイント引き換えのみ読み上げます。通常のチャットやコマンドは無視されます。<br><span class=\"inline-code\">highlighted_only</span>: 視聴者がTwitchのチャンネルポイント報酬「メッセージをハイライト」で送ったチャットメッセージのみ読み上げます。視聴者が支払ったメッセージのため、<span class=\"inline-code\">!tts permission</span> による制限を受けません。その他のチャットと <span class=\"inline-code\">!tts &lt;message&gt;</span> は無視されます。Cheer（<span class=\"inline-code\">!tts bits</span> を参照）、TTSのチャンネルポイント報酬、報酬のアナウンス、有効なイベントは <span class=\"inline-code\">command</span> モードと同じように動作します。YouTubeでは、このモードは <span class=\"inline-code\">bits_points_only</span> と同じように動作します。",
+      "notes": "どのモードでも、Cheer（<span class=\"inline-code\">!tts bits</span> を参照）、TTSのチャンネルポイント報酬、有効な報酬のアナウンスとイベントを読み上げます。モードは、それ以外にどのチャットメッセージを読み上げるかを決めます。括弧内はWeb Dashboardでの各モードの名前です。<br><span class=\"inline-code\">all</span>（すべてのチャットメッセージ）: <span class=\"inline-code\">!tts permission</span> に基づき、すべてのチャットメッセージ（無視ユーザーを除く）を読み上げます。<span class=\"inline-code\">!tts &lt;message&gt;</span> も含まれます。<br><span class=\"inline-code\">command</span>（!ttsメッセージ）: <span class=\"inline-code\">!tts permission</span> に基づき、<span class=\"inline-code\">!tts &lt;message&gt;</span> を読み上げます。その他のチャットは無視されます。<br><span class=\"inline-code\">bits_points_only</span>（Cheerとリワードのみ）: チャットメッセージは読み上げません。通常のチャット、<span class=\"inline-code\">!tts &lt;message&gt;</span>、ハイライトされたメッセージは無視されます。このモードでは、<span class=\"inline-code\">!tts bits off</span> の後でもCheerのメッセージを常に読み上げます。<br><span class=\"inline-code\">highlighted_only</span>（ハイライトされたメッセージ）: 視聴者がTwitchのチャンネルポイント報酬「メッセージをハイライト」で送ったチャットメッセージを読み上げます。視聴者が支払ったメッセージのため、<span class=\"inline-code\">!tts permission</span> による制限を受けません。その他のチャットと <span class=\"inline-code\">!tts &lt;message&gt;</span> は無視されます。YouTubeでは、このモードは <span class=\"inline-code\">bits_points_only</span> と同じように動作します。",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -184,7 +184,7 @@
       "skipQueueDisabled": "<strong>無効時:</strong> TTS再生前にTwitchダッシュボードで手動承認が必要になります。",
       "skipQueueUseCase": "<strong>ヒント:</strong> 即時再生は有効、事前モデレーションは無効にします。",
       "ttsModes": "TTSモード:",
-      "ttsModesText": "すべてのTTSモード(すべてのメッセージ、コマンドのみ、Bits/ポイントのみ、ハイライトされたメッセージのみ)で動作します。",
+      "ttsModesText": "すべてのTTSモード（すべてのチャットメッセージ、!ttsメッセージ、ハイライトされたメッセージ、Cheerとリワードのみ）で動作します。",
       "requirements": "要件:",
       "requirementsText": "ダッシュボード初回ログイン時に <span class=\"inline-code\">channel:manage:redemptions</span> と <span class=\"inline-code\">channel:read:redemptions</span> の権限を付与してください。"
     },
@@ -452,7 +452,7 @@
     },
     "ttsReadCommands": {
       "name": "!tts readcommands <on|off>",
-      "description": "All Messagesモードで「!」で始まるチャットメッセージを読み上げるかスキップします。",
+      "description": "「すべてのチャットメッセージ」モードで「!」で始まるチャットメッセージを読み上げるかスキップします。",
       "usage": {
         "off": "!tts readcommands off",
         "on": "!tts readcommands on",
@@ -461,7 +461,7 @@
       "offNote": "（「!」で始まるチャットメッセージをスキップします）",
       "onNote": "（再び読み上げます）",
       "statusNote": "（現在の設定を表示します）",
-      "notes": "NightbotやStreamElementsなどの他のボットは、!lurkや!soなど「!」で始まるコマンドを使用します。All Messagesモードでは、TTSはこれらのコマンドをチャットとして読み上げます。スキップするにはこの設定をオフにしてください。この設定は!ttsを変更しません。!ttsは引き続き機能します。!tts Command Onlyモード、Bits/Points Onlyモード、Highlighted Messages Onlyモードではこれらのメッセージを一切読み上げないため、この設定による影響はありません。「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。この設定はWeb Dashboardの「Read Chat Commands」でも変更できます。"
+      "notes": "NightbotやStreamElementsなどの他のボットは、!lurkや!soなど「!」で始まるコマンドを使用します。「すべてのチャットメッセージ」モードでは、TTSはこれらのコマンドをチャットとして読み上げます。スキップするにはこの設定をオフにしてください。この設定は!ttsを変更しません。!ttsは引き続き機能します。「!ttsメッセージ」モード、「ハイライトされたメッセージ」モード、「Cheerとリワードのみ」モードではこれらのメッセージを一切読み上げないため、この設定による影響はありません。「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。この設定はWeb Dashboardの「Read Chat Commands」でも変更できます。"
     }
   },
   "table": {
@@ -542,7 +542,7 @@
     "settingUrlTitle": "完全なURLを読み上げる:",
     "settingUrlDesc": "URLを全文読み上げるか、ドメイン名のみ読み上げるかを設定します。",
     "settingReadCommandsTitle": "チャットコマンドの読み上げ:",
-    "settingReadCommandsDesc": "All Messagesモードで「!」で始まるチャットメッセージを読み上げるかスキップします。!ttsは常に機能します。",
+    "settingReadCommandsDesc": "「すべてのチャットメッセージ」モードで「!」で始まるチャットメッセージを読み上げるかスキップします。!ttsは常に機能します。",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Cheerを通知し、Cheerに添付されたメッセージを読み上げ、Cheerに必要な最小Bits数を設定します。",
     "settingChannelPointsTitle": "チャンネルポイント → TTS:",
@@ -693,11 +693,11 @@
   },
   "chatCommands": {
     "title": "他のボットのチャットコマンド",
-    "intro": "多くのチャンネルで、NightbotやStreamElementsなどの別のボットが実行されています。視聴者は!lurk、!so、!srなど「!」で始まるコマンドでそれを操作します。All Messagesモードでは、WildcatTTSはこれらのコマンドをチャットとして音声で読み上げます。",
+    "intro": "多くのチャンネルで、NightbotやStreamElementsなどの別のボットが実行されています。視聴者は!lurk、!so、!srなど「!」で始まるコマンドでそれを操作します。「すべてのチャットメッセージ」モードでは、WildcatTTSはこれらのコマンドをチャットとして音声で読み上げます。",
     "toggleTitle": "Read Chat Commandsオプション",
     "toggleText": "これらのメッセージをスキップするには、Web Dashboardで「Read Chat Commands」をオフにするか、チャットで<span class=\"inline-code\">!tts readcommands off</span>と入力します。TTSは「!」で始まるすべてのチャットメッセージを無視します。",
     "rule1": "<span class=\"inline-code\">!tts</span>は影響を受けません。<span class=\"inline-code\">!tts &lt;text&gt;</span>は引き続き読み上げられ、他の<span class=\"inline-code\">!tts</span>コマンドも引き続き機能します。",
-    "rule2": "このオプションはAll Messagesモードでのみ適用されます。他の2つのモードではこれらのメッセージを一切読み上げません。",
+    "rule2": "このオプションは「すべてのチャットメッセージ」モードでのみ適用されます。他のモードではこれらのメッセージを一切読み上げません。",
     "rule3": "メッセージが「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。"
   },
   "eventControls": {

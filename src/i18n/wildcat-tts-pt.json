@@ -118,15 +118,15 @@
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
       "description": "Define ou mostra o modo de TTS.",
-      "allDesc": "(Lê todas as mensagens do chat e eventos)",
-      "commandDesc": "(Lê apenas comandos e eventos ativados; <strong>modo padrão</strong>)",
-      "bitsPointsOnlyDesc": "(Lê apenas cheers de Bits e resgates de Pontos do Canal)",
+      "allDesc": "(Lê todas as mensagens do chat)",
+      "commandDesc": "(Lê mensagens com !tts; <strong>modo padrão</strong>)",
+      "bitsPointsOnlyDesc": "(Lê apenas cheers e a recompensa de TTS)",
       "bitsAlias": "(Apelido para bits_points_only)",
       "pointsAlias": "(Apelido para bits_points_only)",
-      "highlightedOnlyDesc": "(Lê apenas mensagens da Twitch com \"Destacar minha mensagem\")",
+      "highlightedOnlyDesc": "(Lê mensagens da Twitch com \"Destacar minha mensagem\")",
       "highlightAlias": "(Apelido para highlighted_only)",
       "statusDesc": "(Mostra o modo atual)",
-      "notes": "<span class=\"inline-code\">all</span>: O TTS lê todas as mensagens do chat (exceto de usuários ignorados) e eventos ativados, de acordo com <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: O TTS lê apenas comandos (como <span class=\"inline-code\">!tts &lt;message&gt;</span>) e eventos ativados. O TTS ignora o chat normal.<br><span class=\"inline-code\">bits_points_only</span>: O TTS lê apenas cheers de Bits e resgates de Pontos do Canal. O TTS ignora o chat normal e comandos.<br><span class=\"inline-code\">highlighted_only</span>: O TTS lê apenas as mensagens do chat que um espectador envia com a recompensa de Pontos do Canal da Twitch \"Destacar minha mensagem\". Estas mensagens não são limitadas por <span class=\"inline-code\">!tts permission</span>, porque o espectador pagou por elas. O TTS ignora o restante do chat e <span class=\"inline-code\">!tts &lt;message&gt;</span>. Os cheers (veja <span class=\"inline-code\">!tts bits</span>), a recompensa de Pontos do Canal do TTS, os anúncios de recompensas e os eventos ativados funcionam como no modo <span class=\"inline-code\">command</span>. No YouTube, este modo funciona como <span class=\"inline-code\">bits_points_only</span>.",
+      "notes": "Em todos os modos, o TTS lê os cheers (veja <span class=\"inline-code\">!tts bits</span>), a recompensa de Pontos do Canal do TTS e os anúncios de recompensas e eventos ativados. O modo define quais outras mensagens do chat o TTS lê. O nome de cada modo no Web Dashboard aparece entre parênteses.<br><span class=\"inline-code\">all</span> (Todas as mensagens do chat): O TTS lê todas as mensagens do chat (exceto de usuários ignorados), de acordo com <span class=\"inline-code\">!tts permission</span>. Isso inclui <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Mensagens com !tts): O TTS lê <span class=\"inline-code\">!tts &lt;message&gt;</span>, de acordo com <span class=\"inline-code\">!tts permission</span>. O TTS ignora o restante do chat.<br><span class=\"inline-code\">bits_points_only</span> (Apenas cheers e recompensas): O TTS não lê mensagens do chat. O TTS ignora o chat normal, <span class=\"inline-code\">!tts &lt;message&gt;</span> e as mensagens destacadas. Este modo sempre lê as mensagens dos cheers, mesmo depois de <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Mensagens destacadas): O TTS lê as mensagens do chat que um espectador envia com a recompensa de Pontos do Canal da Twitch \"Destacar minha mensagem\". Estas mensagens não são limitadas por <span class=\"inline-code\">!tts permission</span>, porque o espectador pagou por elas. O TTS ignora o restante do chat e <span class=\"inline-code\">!tts &lt;message&gt;</span>. No YouTube, este modo funciona como <span class=\"inline-code\">bits_points_only</span>.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -184,7 +184,7 @@
       "skipQueueDisabled": "<strong>Quando desativada:</strong> Os resgates aguardam aprovação manual no seu painel da Twitch antes da reprodução.",
       "skipQueueUseCase": "<strong>Dica:</strong> Ative para reprodução instantânea. Desative para moderação antes do áudio.",
       "ttsModes": "Modos de TTS:",
-      "ttsModesText": "Funciona com todos os modos de TTS (Todas as Mensagens, Apenas Comandos, Apenas Bits/Pontos, Apenas Mensagens Destacadas).",
+      "ttsModesText": "Funciona em todos os modos de TTS: Todas as mensagens do chat, Mensagens com !tts, Mensagens destacadas e Apenas cheers e recompensas.",
       "requirements": "Requisitos:",
       "requirementsText": "Conceda as permissões <span class=\"inline-code\">channel:manage:redemptions</span> e <span class=\"inline-code\">channel:read:redemptions</span> durante o login no painel."
     },
@@ -452,7 +452,7 @@
     },
     "ttsReadCommands": {
       "name": "!tts readcommands <on|off>",
-      "description": "Lê ou ignora mensagens de chat que começam com \"!\" no modo All Messages.",
+      "description": "Lê ou ignora mensagens de chat que começam com \"!\" no modo Todas as mensagens do chat.",
       "usage": {
         "off": "!tts readcommands off",
         "on": "!tts readcommands on",
@@ -461,7 +461,7 @@
       "offNote": "(ignora mensagens de chat que começam com \"!\")",
       "onNote": "(lê-as novamente)",
       "statusNote": "(mostra a configuração atual)",
-      "notes": "Outros bots, por exemplo Nightbot ou StreamElements, usam comandos que começam com \"!\", tais como !lurk ou !so. No modo All Messages, o TTS lê estes comandos como chat. Desative esta configuração para os ignorar. A configuração não altera o !tts: o !tts continua a funcionar. A configuração não tem efeito no modo !tts Command Only, no modo Bits/Points Only ou no modo Highlighted Messages Only, porque estes modos nunca leem estas mensagens. Um cheer que comece com \"!\" ainda é lido, porque o espetador pagou por ele. Também pode alterar isto no Web Dashboard, em Read Chat Commands."
+      "notes": "Outros bots, por exemplo Nightbot ou StreamElements, usam comandos que começam com \"!\", tais como !lurk ou !so. No modo Todas as mensagens do chat, o TTS lê estes comandos como chat. Desative esta configuração para os ignorar. A configuração não altera o !tts: o !tts continua a funcionar. A configuração não tem efeito no modo Mensagens com !tts, no modo Mensagens destacadas ou no modo Apenas cheers e recompensas, porque estes modos nunca leem estas mensagens. Um cheer que comece com \"!\" ainda é lido, porque o espetador pagou por ele. Também pode alterar isto no Web Dashboard, em Read Chat Commands."
     }
   },
   "table": {
@@ -542,7 +542,7 @@
     "settingUrlTitle": "Ler URLs completas:",
     "settingUrlDesc": "Leia links da web completos ou apenas nomes de domínio.",
     "settingReadCommandsTitle": "Read Chat Commands:",
-    "settingReadCommandsDesc": "Lê ou ignora mensagens de chat que começam com \"!\" no modo All Messages. O !tts funciona sempre.",
+    "settingReadCommandsDesc": "Lê ou ignora mensagens de chat que começam com \"!\" no modo Todas as mensagens do chat. O !tts funciona sempre.",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Anuncie cheers, leia a mensagem anexada a um cheer e defina o mínimo de Bits que um cheer necessita.",
     "settingChannelPointsTitle": "Pontos de Canal → TTS:",
@@ -693,11 +693,11 @@
   },
   "chatCommands": {
     "title": "Comandos de Chat de Outros Bots",
-    "intro": "Muitos canais usam um segundo bot, por exemplo o Nightbot ou o StreamElements. Os espetadores controlam-no com comandos que começam com \"!\", tais como !lurk, !so ou !sr. No modo All Messages, o WildcatTTS lê estes comandos em voz alta como chat.",
+    "intro": "Muitos canais usam um segundo bot, por exemplo o Nightbot ou o StreamElements. Os espetadores controlam-no com comandos que começam com \"!\", tais como !lurk, !so ou !sr. No modo Todas as mensagens do chat, o WildcatTTS lê estes comandos em voz alta como chat.",
     "toggleTitle": "Opção Read Chat Commands",
     "toggleText": "Para ignorar estas mensagens, desative Read Chat Commands no Web Dashboard ou escreva <span class=\"inline-code\">!tts readcommands off</span> no chat. O TTS ignora então todas as mensagens de chat que começam com \"!\".",
     "rule1": "O <span class=\"inline-code\">!tts</span> não é afetado. <span class=\"inline-code\">!tts &lt;texto&gt;</span> continua a ser falado e os outros comandos <span class=\"inline-code\">!tts</span> continuam a funcionar.",
-    "rule2": "A opção aplica-se apenas no modo All Messages. Os outros dois modos nunca leem estas mensagens.",
+    "rule2": "A opção aplica-se apenas no modo Todas as mensagens do chat. Os outros modos nunca leem estas mensagens.",
     "rule3": "Um cheer cuja mensagem comece com \"!\" continua a ser lido, porque o espetador pagou por ele."
   },
   "eventControls": {

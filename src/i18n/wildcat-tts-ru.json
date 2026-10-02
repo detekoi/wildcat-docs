@@ -118,15 +118,15 @@
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
       "description": "Устанавливает или показывает режим TTS.",
-      "allDesc": "(Озвучивает все сообщения чата и события)",
-      "commandDesc": "(Озвучивает только команды и включенные события; <strong>режим по умолчанию</strong>)",
-      "bitsPointsOnlyDesc": "(Озвучивает только Bits-чиры и награды за Баллы Канала)",
+      "allDesc": "(Озвучивает все сообщения чата)",
+      "commandDesc": "(Озвучивает сообщения с !tts; <strong>режим по умолчанию</strong>)",
+      "bitsPointsOnlyDesc": "(Озвучивает только чиры и TTS-награду)",
       "bitsAlias": "(Псевдоним для bits_points_only)",
       "pointsAlias": "(Псевдоним для bits_points_only)",
-      "highlightedOnlyDesc": "(Озвучивает только сообщения Twitch «Выделить моё сообщение»)",
+      "highlightedOnlyDesc": "(Озвучивает сообщения Twitch «Выделить моё сообщение»)",
       "highlightAlias": "(Псевдоним для highlighted_only)",
       "statusDesc": "(Показывает текущий режим)",
-      "notes": "<span class=\"inline-code\">all</span>: TTS озвучивает все сообщения чата (кроме игнорируемых) и включенные события согласно <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: TTS озвучивает только команды (например, <span class=\"inline-code\">!tts &lt;message&gt;</span>) и события. Обычный чат игнорируется.<br><span class=\"inline-code\">bits_points_only</span>: TTS озвучивает только Bits-чиры и награды за баллы. Обычный чат и команды игнорируются.<br><span class=\"inline-code\">highlighted_only</span>: TTS озвучивает только сообщения чата, которые зритель отправляет с помощью награды за баллы канала Twitch «Выделить моё сообщение». Эти сообщения не ограничиваются <span class=\"inline-code\">!tts permission</span>, потому что зритель за них заплатил. Остальной чат и <span class=\"inline-code\">!tts &lt;message&gt;</span> игнорируются. Чиры (см. <span class=\"inline-code\">!tts bits</span>), TTS-награда за баллы канала, объявления наград и включенные события работают так же, как в режиме <span class=\"inline-code\">command</span>. На YouTube этот режим работает как <span class=\"inline-code\">bits_points_only</span>.",
+      "notes": "В любом режиме TTS озвучивает чиры (см. <span class=\"inline-code\">!tts bits</span>), TTS-награду за баллы канала, а также включенные объявления наград и события. Режим определяет, какие еще сообщения чата озвучивает TTS. В скобках указано название каждого режима в Web Dashboard.<br><span class=\"inline-code\">all</span> (Все сообщения чата): TTS озвучивает все сообщения чата (кроме игнорируемых) согласно <span class=\"inline-code\">!tts permission</span>. Сюда входит <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Сообщения с !tts): TTS озвучивает <span class=\"inline-code\">!tts &lt;message&gt;</span> согласно <span class=\"inline-code\">!tts permission</span>. Остальной чат игнорируется.<br><span class=\"inline-code\">bits_points_only</span> (Только Cheers и награды): TTS не озвучивает сообщения чата. Обычный чат, <span class=\"inline-code\">!tts &lt;message&gt;</span> и выделенные сообщения игнорируются. Этот режим всегда озвучивает сообщения чиров, даже после <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Выделенные сообщения): TTS озвучивает сообщения чата, которые зритель отправляет с помощью награды за баллы канала Twitch «Выделить моё сообщение». Эти сообщения не ограничиваются <span class=\"inline-code\">!tts permission</span>, потому что зритель за них заплатил. Остальной чат и <span class=\"inline-code\">!tts &lt;message&gt;</span> игнорируются. На YouTube этот режим работает как <span class=\"inline-code\">bits_points_only</span>.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -184,7 +184,7 @@
       "skipQueueDisabled": "<strong>При выключении:</strong> Награды ожидают ручного одобрения в панели Twitch перед озвучкой.",
       "skipQueueUseCase": "<strong>Совет:</strong> Включите для мгновенной озвучки. Отключите для предварительной проверки модератором.",
       "ttsModes": "Режимы синтеза речи:",
-      "ttsModesText": "Работает со всеми режимами синтеза речи (все сообщения, только команды, только Bits/точки, только выделенные сообщения).",
+      "ttsModesText": "Работает во всех режимах TTS: «Все сообщения чата», «Сообщения с !tts», «Выделенные сообщения» и «Только Cheers и награды».",
       "requirements": "Требования:",
       "requirementsText": "Предоставьте права <span class=\"inline-code\">channel:manage:redemptions</span> и <span class=\"inline-code\">channel:read:redemptions</span> при входе в панель управления."
     },
@@ -452,7 +452,7 @@
     },
     "ttsReadCommands": {
       "name": "!tts readcommands <on|off>",
-      "description": "Озвучивает или пропускает сообщения чата, которые начинаются с \"!\", в режиме All Messages.",
+      "description": "Озвучивает или пропускает сообщения чата, которые начинаются с \"!\", в режиме «Все сообщения чата».",
       "usage": {
         "off": "!tts readcommands off",
         "on": "!tts readcommands on",
@@ -461,7 +461,7 @@
       "offNote": "(пропускает сообщения чата, которые начинаются с \"!\")",
       "onNote": "(снова озвучивает их)",
       "statusNote": "(показывает текущую настройку)",
-      "notes": "Другие боты, например Nightbot или StreamElements, используют команды, которые начинаются с \"!\", такие как !lurk или !so. В режиме All Messages TTS озвучивает эти команды как сообщения чата. Отключите эту настройку, чтобы пропускать их. Настройка не изменяет !tts: !tts по-прежнему работает. Настройка не влияет на режим !tts Command Only, режим Bits/Points Only или режим Highlighted Messages Only, потому что эти режимы никогда не читают такие сообщения. Cheer, который начинается с \"!\", по-прежнему озвучивается, потому что зритель оплатил его. Вы также можете изменить это в Web Dashboard в разделе Read Chat Commands."
+      "notes": "Другие боты, например Nightbot или StreamElements, используют команды, которые начинаются с \"!\", такие как !lurk или !so. В режиме «Все сообщения чата» TTS озвучивает эти команды как сообщения чата. Отключите эту настройку, чтобы пропускать их. Настройка не изменяет !tts: !tts по-прежнему работает. Настройка не влияет на режимы «Сообщения с !tts», «Выделенные сообщения» и «Только Cheers и награды», потому что эти режимы никогда не читают такие сообщения. Cheer, который начинается с \"!\", по-прежнему озвучивается, потому что зритель оплатил его. Вы также можете изменить это в Web Dashboard в разделе Read Chat Commands."
     }
   },
   "table": {
@@ -542,7 +542,7 @@
     "settingUrlTitle": "Озвучивать полные URL:",
     "settingUrlDesc": "Читайте веб-ссылки полностью или только доменные имена.",
     "settingReadCommandsTitle": "Read Chat Commands:",
-    "settingReadCommandsDesc": "Озвучивать или пропускать сообщения чата, которые начинаются с \"!\", в режиме All Messages. !tts работает всегда.",
+    "settingReadCommandsDesc": "Озвучивать или пропускать сообщения чата, которые начинаются с \"!\", в режиме «Все сообщения чата». !tts работает всегда.",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Оповещать о cheer, читать прикрепленное к cheer сообщение и задавать минимальное количество Bits для cheer.",
     "settingChannelPointsTitle": "Точки канала → TTS:",
@@ -693,11 +693,11 @@
   },
   "chatCommands": {
     "title": "Команды чата от других ботов",
-    "intro": "Многие каналы используют второго бота, например Nightbot или StreamElements. Зрители управляют им с помощью команд, которые начинаются с \"!\", таких как !lurk, !so или !sr. В режиме All Messages WildcatTTS озвучивает эти команды вслух как сообщения чата.",
+    "intro": "Многие каналы используют второго бота, например Nightbot или StreamElements. Зрители управляют им с помощью команд, которые начинаются с \"!\", таких как !lurk, !so или !sr. В режиме «Все сообщения чата» WildcatTTS озвучивает эти команды вслух как сообщения чата.",
     "toggleTitle": "Параметр Read Chat Commands",
     "toggleText": "Чтобы пропускать эти сообщения, отключите Read Chat Commands в Web Dashboard или введите <span class=\"inline-code\">!tts readcommands off</span> в чате. После этого TTS игнорирует каждое сообщение чата, которое начинается с \"!\".",
     "rule1": "Это не влияет на <span class=\"inline-code\">!tts</span>. <span class=\"inline-code\">!tts &lt;text&gt;</span> по-прежнему озвучивается, а другие команды <span class=\"inline-code\">!tts</span> продолжают работать.",
-    "rule2": "Параметр применяется только в режиме All Messages. Два других режима никогда не читают эти сообщения.",
+    "rule2": "Параметр применяется только в режиме «Все сообщения чата». Другие режимы никогда не читают эти сообщения.",
     "rule3": "Cheer, сообщение которого начинается с \"!\", по-прежнему озвучивается, потому что зритель оплатил его."
   },
   "eventControls": {
