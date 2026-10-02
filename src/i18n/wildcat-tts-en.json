@@ -118,15 +118,15 @@
     "ttsMode": {
       "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
       "description": "Sets or shows the TTS mode.",
-      "allDesc": "(Speaks all chat messages and events)",
-      "commandDesc": "(Only speaks commands and enabled events; default mode)",
-      "bitsPointsOnlyDesc": "(Only speaks Bits cheers and Channel Point redemptions)",
+      "allDesc": "(Reads all chat messages)",
+      "commandDesc": "(Reads !tts messages; default mode)",
+      "bitsPointsOnlyDesc": "(Reads only cheers and the TTS reward)",
       "bitsAlias": "(Alias for bits_points_only)",
       "pointsAlias": "(Alias for bits_points_only)",
-      "highlightedOnlyDesc": "(Only speaks Twitch \"Highlight My Message\" messages)",
+      "highlightedOnlyDesc": "(Reads Twitch \"Highlight My Message\" messages)",
       "highlightAlias": "(Alias for highlighted_only)",
       "statusDesc": "(Shows current mode)",
-      "notes": "<span class=\"inline-code\">all</span>: TTS speaks all chat messages (except ignored users) and enabled events, based on <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: TTS speaks only commands (such as <span class=\"inline-code\">!tts &lt;message&gt;</span>) and enabled events. TTS ignores regular chat.<br><span class=\"inline-code\">bits_points_only</span>: TTS speaks only Bits cheers and Channel Point redemptions. TTS ignores regular chat and commands.<br><span class=\"inline-code\">highlighted_only</span>: TTS speaks only chat messages that a viewer sends with the Twitch \"Highlight My Message\" Channel Points reward. <span class=\"inline-code\">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class=\"inline-code\">!tts &lt;message&gt;</span>. Cheers (see <span class=\"inline-code\">!tts bits</span>), the TTS Channel Points reward, reward announcements and enabled events work as in <span class=\"inline-code\">command</span> mode. On YouTube, this mode works like <span class=\"inline-code\">bits_points_only</span>.",
+      "notes": "In every mode, TTS reads cheers (see <span class=\"inline-code\">!tts bits</span>), the TTS Channel Points reward, and enabled reward announcements and events. The mode sets which chat messages TTS also reads. The Web Dashboard name of each mode is in parentheses.<br><span class=\"inline-code\">all</span> (All Chat Messages): TTS reads all chat messages (except ignored users), based on <span class=\"inline-code\">!tts permission</span>. This includes <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (!tts Messages): TTS reads <span class=\"inline-code\">!tts &lt;message&gt;</span>, based on <span class=\"inline-code\">!tts permission</span>. TTS ignores other chat.<br><span class=\"inline-code\">bits_points_only</span> (Cheers and Rewards Only): TTS reads no chat messages. TTS ignores regular chat, <span class=\"inline-code\">!tts &lt;message&gt;</span> and highlighted messages. This mode always reads cheer messages, also after <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch \"Highlight My Message\" Channel Points reward. <span class=\"inline-code\">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class=\"inline-code\">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class=\"inline-code\">bits_points_only</span>.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -184,7 +184,7 @@
       "skipQueueDisabled": "When Off: Redemptions wait in your Twitch dashboard for manual approval before TTS plays.",
       "skipQueueUseCase": "Tip: Turn on for instant playback. Turn off for moderation review before audio plays.",
       "ttsModes": "TTS Modes:",
-      "ttsModesText": "Works with all TTS modes (All Messages, Commands Only, Bits/Points Only, Highlighted Messages Only).",
+      "ttsModesText": "Works in every TTS mode: All Chat Messages, !tts Messages, Highlighted Messages, and Cheers and Rewards Only.",
       "requirements": "Requirements:",
       "requirementsText": "Grant channel:manage:redemptions and channel:read:redemptions permissions during dashboard sign-in."
     },
@@ -452,7 +452,7 @@
     },
     "ttsReadCommands": {
       "name": "!tts readcommands <on|off>",
-      "description": "Reads or skips chat messages that start with \"!\" in All Messages mode.",
+      "description": "Reads or skips chat messages that start with \"!\" in All Chat Messages mode.",
       "usage": {
         "off": "!tts readcommands off",
         "on": "!tts readcommands on",
@@ -461,7 +461,7 @@
       "offNote": "(skips chat messages that start with \"!\")",
       "onNote": "(reads them again)",
       "statusNote": "(shows the current setting)",
-      "notes": "Other bots, for example Nightbot or StreamElements, use commands that start with \"!\", such as !lurk or !so. In All Messages mode, TTS reads these commands as chat. Switch this setting off to skip them. The setting does not change !tts: !tts still works. The setting has no effect in !tts Command Only, Bits/Points Only or Highlighted Messages Only mode, because these modes never read these messages. A cheer that starts with \"!\" is still read, because the viewer paid for it. You can also change this in the Web Dashboard, under Read Chat Commands."
+      "notes": "Other bots, for example Nightbot or StreamElements, use commands that start with \"!\", such as !lurk or !so. In All Chat Messages mode, TTS reads these commands as chat. Switch this setting off to skip them. The setting does not change !tts: !tts still works. The setting has no effect in !tts Messages, Highlighted Messages or Cheers and Rewards Only mode, because these modes never read these messages. A cheer that starts with \"!\" is still read, because the viewer paid for it. You can also change this in the Web Dashboard, under Read Chat Commands."
     }
   },
   "table": {
@@ -542,7 +542,7 @@
     "settingUrlTitle": "Read Full URLs:",
     "settingUrlDesc": "Read full web links or only domain names.",
     "settingReadCommandsTitle": "Read Chat Commands:",
-    "settingReadCommandsDesc": "Read or skip chat messages that start with \"!\" in All Messages mode. !tts always works.",
+    "settingReadCommandsDesc": "Read or skip chat messages that start with \"!\" in All Chat Messages mode. !tts always works.",
     "settingBitsTitle": "Cheers:",
     "settingBitsDesc": "Announce cheers, read the message attached to a cheer, and set the minimum Bits a cheer needs.",
     "settingChannelPointsTitle": "Channel Points → TTS:",
@@ -693,11 +693,11 @@
   },
   "chatCommands": {
     "title": "Chat Commands from Other Bots",
-    "intro": "Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with \"!\", such as !lurk, !so or !sr. In All Messages mode, WildcatTTS reads these commands aloud as chat.",
+    "intro": "Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with \"!\", such as !lurk, !so or !sr. In All Chat Messages mode, WildcatTTS reads these commands aloud as chat.",
     "toggleTitle": "Read Chat Commands Option",
     "toggleText": "To skip these messages, switch off Read Chat Commands in the Web Dashboard, or type <span class=\"inline-code\">!tts readcommands off</span> in chat. TTS then ignores every chat message that starts with \"!\".",
     "rule1": "<span class=\"inline-code\">!tts</span> is not affected. <span class=\"inline-code\">!tts &lt;text&gt;</span> is still spoken, and the other <span class=\"inline-code\">!tts</span> commands still work.",
-    "rule2": "The option applies only in All Messages mode. The other two modes never read these messages.",
+    "rule2": "The option applies only in All Chat Messages mode. The other modes never read these messages.",
     "rule3": "A cheer whose message starts with \"!\" is still read, because the viewer paid for it."
   },
   "eventControls": {
