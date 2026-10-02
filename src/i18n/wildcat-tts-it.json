@@ -116,21 +116,25 @@
       }
     },
     "ttsMode": {
-      "name": "!tts mode [all|command|bits_points_only]",
+      "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
       "description": "Imposta o mostra la modalità TTS.",
       "allDesc": "(Legge tutti i messaggi della chat ed eventi)",
       "commandDesc": "(Legge solo comandi ed eventi abilitati; <strong>modalità predefinita</strong>)",
       "bitsPointsOnlyDesc": "(Legge solo cheer di Bits e riscatti di Punti Canale)",
       "bitsAlias": "(Alias per bits_points_only)",
       "pointsAlias": "(Alias per bits_points_only)",
+      "highlightedOnlyDesc": "(Legge solo i messaggi Twitch \"Evidenzia il mio messaggio\")",
+      "highlightAlias": "(Alias per highlighted_only)",
       "statusDesc": "(Mostra la modalità attuale)",
-      "notes": "<span class=\"inline-code\">all</span>: Il TTS legge tutti i messaggi della chat (tranne utenti ignorati) ed eventi abilitati, in base a <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: Il TTS legge solo comandi (come <span class=\"inline-code\">!tts &lt;message&gt;</span>) ed eventi abilitati. Il TTS ignora la chat normale.<br><span class=\"inline-code\">bits_points_only</span>: Il TTS legge solo cheer di Bits e riscatti di Punti Canale. Il TTS ignora la chat normale e i comandi.",
+      "notes": "<span class=\"inline-code\">all</span>: Il TTS legge tutti i messaggi della chat (tranne utenti ignorati) ed eventi abilitati, in base a <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: Il TTS legge solo comandi (come <span class=\"inline-code\">!tts &lt;message&gt;</span>) ed eventi abilitati. Il TTS ignora la chat normale.<br><span class=\"inline-code\">bits_points_only</span>: Il TTS legge solo cheer di Bits e riscatti di Punti Canale. Il TTS ignora la chat normale e i comandi.<br><span class=\"inline-code\">highlighted_only</span>: Il TTS legge solo i messaggi della chat che uno spettatore invia con la ricompensa Punti Canale di Twitch \"Evidenzia il mio messaggio\". Questi messaggi non sono limitati da <span class=\"inline-code\">!tts permission</span>, perché lo spettatore ha pagato per inviarli. Il TTS ignora il resto della chat e <span class=\"inline-code\">!tts &lt;message&gt;</span>. I cheer (vedi <span class=\"inline-code\">!tts bits</span>), la ricompensa Punti Canale del TTS, gli annunci delle ricompense e gli eventi abilitati funzionano come nella modalità <span class=\"inline-code\">command</span>. Su YouTube, questa modalità funziona come <span class=\"inline-code\">bits_points_only</span>.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
         "bitsPointsOnly": "!tts mode bits_points_only",
         "bits": "!tts mode bits",
         "points": "!tts mode points",
+        "highlightedOnly": "!tts mode highlighted_only",
+        "highlight": "!tts mode highlight",
         "status": "!tts mode"
       }
     },
@@ -180,7 +184,7 @@
       "skipQueueDisabled": "<strong>Se disattivata:</strong> I riscatti attendono l'approvazione manuale nella dashboard di Twitch prima della lettura.",
       "skipQueueUseCase": "<strong>Suggerimento:</strong> Attiva per riproduzione immediata. Disattiva per moderare prima dell'audio.",
       "ttsModes": "Modalità TTS:",
-      "ttsModesText": "Funziona con tutte le modalità TTS (Tutti i Messaggi, Solo Comandi, Solo Bits/Punti).",
+      "ttsModesText": "Funziona con tutte le modalità TTS (Tutti i Messaggi, Solo Comandi, Solo Bits/Punti, Solo Messaggi Evidenziati).",
       "requirements": "Requisiti:",
       "requirementsText": "Concedi le autorizzazioni <span class=\"inline-code\">channel:manage:redemptions</span> e <span class=\"inline-code\">channel:read:redemptions</span> all'accesso alla dashboard."
     },
@@ -457,7 +461,7 @@
       "offNote": "(salta i messaggi di chat che iniziano con \"!\")",
       "onNote": "(li legge di nuovo)",
       "statusNote": "(mostra l'impostazione attuale)",
-      "notes": "Altri bot, ad esempio Nightbot o StreamElements, usano comandi che iniziano con \"!\", come !lurk o !so. Nella modalità All Messages, TTS legge questi comandi come chat. Disattiva questa impostazione per saltarli. L'impostazione non cambia !tts: !tts continua a funzionare. L'impostazione non ha effetto nella modalità !tts Command Only o nella modalità Bits/Points Only, perché queste modalità non leggono mai questi messaggi. Un cheer che inizia con \"!\" viene comunque letto, perché lo spettatore ha pagato per inviarlo. Puoi modificare questa impostazione anche nella Web Dashboard, sotto Leggi comandi chat."
+      "notes": "Altri bot, ad esempio Nightbot o StreamElements, usano comandi che iniziano con \"!\", come !lurk o !so. Nella modalità All Messages, TTS legge questi comandi come chat. Disattiva questa impostazione per saltarli. L'impostazione non cambia !tts: !tts continua a funzionare. L'impostazione non ha effetto nella modalità !tts Command Only, nella modalità Bits/Points Only o nella modalità Highlighted Messages Only, perché queste modalità non leggono mai questi messaggi. Un cheer che inizia con \"!\" viene comunque letto, perché lo spettatore ha pagato per inviarlo. Puoi modificare questa impostazione anche nella Web Dashboard, sotto Leggi comandi chat."
     }
   },
   "table": {

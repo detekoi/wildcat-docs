@@ -116,21 +116,25 @@
       }
     },
     "ttsMode": {
-      "name": "!tts mode [all|command|bits_points_only]",
+      "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
       "description": "Setzt oder zeigt den TTS-Modus an.",
       "allDesc": "(Spricht alle Chat-Nachrichten und Events)",
       "commandDesc": "(Spricht nur Befehle und aktivierte Events; <strong>Standardmodus</strong>)",
       "bitsPointsOnlyDesc": "(Spricht nur Bits-Cheers und Kanalpunkte-Einlösungen)",
       "bitsAlias": "(Alias für bits_points_only)",
       "pointsAlias": "(Alias für bits_points_only)",
+      "highlightedOnlyDesc": "(Spricht nur Twitch-Nachrichten mit „Meine Nachricht hervorheben“)",
+      "highlightAlias": "(Alias für highlighted_only)",
       "statusDesc": "(Zeigt den aktuellen Modus an)",
-      "notes": "<span class=\"inline-code\">all</span>: TTS spricht alle Chat-Nachrichten (außer ignorierte Benutzer) und aktivierte Events, basierend auf <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: TTS spricht nur Befehle (wie <span class=\"inline-code\">!tts &lt;message&gt;</span>) und aktivierte Events. TTS ignoriert normalen Chat.<br><span class=\"inline-code\">bits_points_only</span>: TTS spricht nur Bits-Cheers und Kanalpunkte-Einlösungen. TTS ignoriert normalen Chat und Befehle.",
+      "notes": "<span class=\"inline-code\">all</span>: TTS spricht alle Chat-Nachrichten (außer ignorierte Benutzer) und aktivierte Events, basierend auf <span class=\"inline-code\">!tts permission</span>.<br><span class=\"inline-code\">command</span>: TTS spricht nur Befehle (wie <span class=\"inline-code\">!tts &lt;message&gt;</span>) und aktivierte Events. TTS ignoriert normalen Chat.<br><span class=\"inline-code\">bits_points_only</span>: TTS spricht nur Bits-Cheers und Kanalpunkte-Einlösungen. TTS ignoriert normalen Chat und Befehle.<br><span class=\"inline-code\">highlighted_only</span>: TTS spricht nur Chat-Nachrichten, die ein Zuschauer mit der Twitch-Kanalpunkte-Belohnung „Meine Nachricht hervorheben“ sendet. Diese Nachrichten sind nicht durch <span class=\"inline-code\">!tts permission</span> eingeschränkt, da der Zuschauer dafür bezahlt hat. TTS ignoriert anderen Chat und <span class=\"inline-code\">!tts &lt;message&gt;</span>. Cheers (siehe <span class=\"inline-code\">!tts bits</span>), die TTS-Kanalpunkte-Belohnung, Belohnungsansagen und aktivierte Events funktionieren wie im Modus <span class=\"inline-code\">command</span>. Auf YouTube funktioniert dieser Modus wie <span class=\"inline-code\">bits_points_only</span>.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
         "bitsPointsOnly": "!tts mode bits_points_only",
         "bits": "!tts mode bits",
         "points": "!tts mode points",
+        "highlightedOnly": "!tts mode highlighted_only",
+        "highlight": "!tts mode highlight",
         "status": "!tts mode"
       }
     },
@@ -180,7 +184,7 @@
       "skipQueueDisabled": "<strong>Wenn deaktiviert:</strong> Einlösungen warten in deinem Twitch-Dashboard auf manuelle Genehmigung, bevor TTS sie abspielt.",
       "skipQueueUseCase": "<strong>Tipp:</strong> Aktivieren für sofortige Wiedergabe. Deaktivieren für Moderationsprüfung vor der Audiowiedergabe.",
       "ttsModes": "TTS-Modi:",
-      "ttsModesText": "Funktioniert mit allen TTS-Modi (Alle Nachrichten, Nur Befehle, Bits/Punkte Nur).",
+      "ttsModesText": "Funktioniert mit allen TTS-Modi (Alle Nachrichten, Nur Befehle, Bits/Punkte Nur, Nur hervorgehobene Nachrichten).",
       "requirements": "Anforderungen:",
       "requirementsText": "Gewähre die Berechtigungen <span class=\"inline-code\">channel:manage:redemptions</span> und <span class=\"inline-code\">channel:read:redemptions</span> bei der Dashboard-Anmeldung."
     },
@@ -457,7 +461,7 @@
       "offNote": "(überspringt Chat-Nachrichten, die mit „!“ beginnen)",
       "onNote": "(liest sie wieder vor)",
       "statusNote": "(zeigt die aktuelle Einstellung)",
-      "notes": "Andere Bots, zum Beispiel Nightbot oder StreamElements, verwenden Befehle, die mit „!“ beginnen, wie etwa !lurk oder !so. Im Modus „Alle Nachrichten“ liest TTS diese Befehle als Chat vor. Schalten Sie diese Einstellung aus, um sie zu überspringen. Die Einstellung ändert !tts nicht: !tts funktioniert weiterhin. Die Einstellung hat keine Auswirkung im Modus „Nur !tts-Befehl“ oder im Modus „Nur Bits/Points“, da diese Modi diese Nachrichten nie vorlesen. Ein Cheer, der mit „!“ beginnt, wird weiterhin vorgelesen, da der Zuschauer dafür bezahlt hat. Sie können dies auch im Web Dashboard unter „Chat-Befehle vorlesen“ ändern."
+      "notes": "Andere Bots, zum Beispiel Nightbot oder StreamElements, verwenden Befehle, die mit „!“ beginnen, wie etwa !lurk oder !so. Im Modus „Alle Nachrichten“ liest TTS diese Befehle als Chat vor. Schalten Sie diese Einstellung aus, um sie zu überspringen. Die Einstellung ändert !tts nicht: !tts funktioniert weiterhin. Die Einstellung hat keine Auswirkung im Modus „Nur !tts-Befehl“, im Modus „Nur Bits/Points“ oder im Modus „Nur hervorgehobene Nachrichten“, da diese Modi diese Nachrichten nie vorlesen. Ein Cheer, der mit „!“ beginnt, wird weiterhin vorgelesen, da der Zuschauer dafür bezahlt hat. Sie können dies auch im Web Dashboard unter „Chat-Befehle vorlesen“ ändern."
     }
   },
   "table": {
