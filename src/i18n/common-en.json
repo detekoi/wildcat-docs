@@ -42,7 +42,23 @@
       "dark": "Dark"
     },
     "search": "Search docs",
-    "noResults": "No pages match. Try a command name, such as !tts or !geo.",
+    "topics": "Topics",
+    "searchDialog": {
+      "label": "Search the docs",
+      "placeholder": "Search commands, settings, voice IDs…",
+      "hint": "Search the text of every page, for example: forgetme, cheermote, or a voice ID.",
+      "noResults": "No results. Try a command name, such as !tts or !geo.",
+      "loading": "Loading…",
+      "failed": "Search could not load. Check your connection, then type again.",
+      "results": {
+        "one": "{n} result",
+        "other": "{n} results"
+      },
+      "navigate": "move",
+      "open": "open",
+      "close": "Close search",
+      "closeHint": "close"
+    },
     "onThisPage": "On this page",
     "previous": "Previous",
     "next": "Next",

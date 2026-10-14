@@ -16,7 +16,7 @@ toc:
         emotes in chat messages. Instead of reading the emote code (for example, "LUL"), TTS speaks a description
         such as "a person laughing." The bot caches descriptions permanently to prevent repeated AI requests.</p>
 
-    <h3 data-i18n="emoteDescriptions.howItWorksTitle">How It Works</h3>
+    <h3 id="emote-descriptions-how-it-works" data-i18n="emoteDescriptions.howItWorksTitle">How It Works</h3>
     <ol>
         <li data-i18n="emoteDescriptions.step1">When an emote appears for the first time, AI analyzes the
             emote image and creates a short description.</li>
@@ -28,7 +28,7 @@ toc:
     <p data-i18n="emoteDescriptions.localeText">The AI writes each description in the language of the channel.
         The bot keeps a separate description for each language.</p>
 
-    <h3 data-i18n="emoteDescriptions.managementTitle">Managing Descriptions</h3>
+    <h3 id="emote-descriptions-management" data-i18n="emoteDescriptions.managementTitle">Managing Descriptions</h3>
     <p data-i18n="emoteDescriptions.managementText">Moderators can use <span
             class="inline-code">!tts emote</span> to view, regenerate, or set emote descriptions. See the
         <a href="tts-commands.html#cat-emoteDescriptions" class="default-link-style">Emote Description Management</a> table for
@@ -43,7 +43,7 @@ toc:
         "good luck have fun". WildcatTTS includes a built-in list of about 70 common short forms. You can also add
         your own entries.</p>
 
-    <h3 data-i18n="pronunciation.howItWorksTitle">How It Works</h3>
+    <h3 id="pronunciation-how-it-works" data-i18n="pronunciation.howItWorksTitle">How It Works</h3>
     <ul>
         <li data-i18n="pronunciation.rule1">The word is not case-sensitive. An entry for
             <span class="inline-code">lfg</span> also matches <span class="inline-code">LFG</span>.</li>
@@ -57,7 +57,7 @@ toc:
             and Slovak, <span class="inline-code">ty</span> is a common word, so the dictionary keeps it.</li>
     </ul>
 
-    <h3 data-i18n="pronunciation.customTitle">Your Own Entries</h3>
+    <h3 id="pronunciation-custom" data-i18n="pronunciation.customTitle">Your Own Entries</h3>
     <p data-i18n="pronunciation.customText">Moderators can add entries with the <span class="inline-code">!tts
             pronounce</span> command or in the Web Dashboard. Custom entries are useful for channel names,
         game terms, and difficult words.</p>
@@ -71,7 +71,7 @@ toc:
             replaces a built-in entry keeps the languages of that built-in entry.</li>
     </ul>
 
-    <h3 data-i18n="pronunciation.switchTitle">How To Stop It</h3>
+    <h3 id="pronunciation-switch" data-i18n="pronunciation.switchTitle">How To Stop It</h3>
     <p data-i18n="pronunciation.switchText">The dictionary is active for all channels by default. To turn it off,
         disable Expand Chat Acronyms in the Web Dashboard. TTS then speaks short forms letter by letter.</p>
 
@@ -90,14 +90,14 @@ toc:
         TTS speaks them. For example, TTS speaks "what the fuck" as "what the freak". The filter is off until a
         moderator starts it.</p>
 
-    <h3 data-i18n="profanityFilter.startTitle">How To Start It</h3>
+    <h3 id="profanity-filter-start" data-i18n="profanityFilter.startTitle">How To Start It</h3>
     <p data-i18n="profanityFilter.startText">Use <span class="inline-code">!tts profanity block</span> in chat, or
         set the "Profanity Filter" control to on in the Web Dashboard. Use <span class="inline-code">!tts
             profanity allow</span> to stop the filter again, and <span class="inline-code">!tts
             profanity status</span> to see the state, the language, and the number of words in the list. The
         older <span class="inline-code">on</span> and <span class="inline-code">off</span> words still work.</p>
 
-    <h3 data-i18n="profanityFilter.behaviorTitle">What It Does</h3>
+    <h3 id="profanity-filter-behavior" data-i18n="profanityFilter.behaviorTitle">What It Does</h3>
     <ul>
         <li data-i18n="profanityFilter.behavior1">The filter replaces a rude word with a milder word. It does
             not remove the message, and it does not make a bleep sound.</li>
@@ -110,7 +110,7 @@ toc:
             "class".</li>
     </ul>
 
-    <h3 data-i18n="profanityFilter.languageTitle">Languages</h3>
+    <h3 id="profanity-filter-language" data-i18n="profanityFilter.languageTitle">Languages</h3>
     <p data-i18n="profanityFilter.languageText">The filter has word lists for all 40 languages that Language
         Boost supports. The filter uses the list for your channel language. If a viewer selects a different
         language for their own messages, the filter uses both lists. The filter always includes the English
@@ -135,7 +135,7 @@ toc:
         If a chat message contains a banned word or phrase, TTS skips the message completely. The bot does not
         generate audio for skipped messages.</p>
 
-    <h3 data-i18n="bannedWords.howItWorksTitle">How It Works</h3>
+    <h3 id="banned-words-how-it-works" data-i18n="bannedWords.howItWorksTitle">How It Works</h3>
     <ul>
         <li data-i18n="bannedWords.rule1">Matching is not case-sensitive. If you ban "badword", TTS also catches
             "BadWord" and "BADWORD".</li>
@@ -147,7 +147,7 @@ toc:
             banned word in their name, TTS does not skip the message.</li>
     </ul>
 
-    <h3 data-i18n="bannedWords.eventsTitle">Stream Events and Redemptions</h3>
+    <h3 id="banned-words-events" data-i18n="bannedWords.eventsTitle">Stream Events and Redemptions</h3>
     <p data-i18n="bannedWords.eventsIntro">The bot handles events and chat messages differently when a message
         contains a banned word:</p>
     <ul>
@@ -163,7 +163,7 @@ toc:
             reward has a content policy, the bot rejects redemptions that contain banned words.</li>
     </ul>
 
-    <h3 data-i18n="bannedWords.manageTitle">How To Manage Banned Words</h3>
+    <h3 id="banned-words-manage" data-i18n="bannedWords.manageTitle">How To Manage Banned Words</h3>
     <p data-i18n="bannedWords.manageIntro">You can configure banned words in the Web Dashboard. Changes take effect
         immediately.</p>
     <ol>

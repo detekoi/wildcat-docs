@@ -42,7 +42,24 @@
       "dark": "Escuro"
     },
     "search": "Pesquisar na documentação",
-    "noResults": "Nenhuma página corresponde. Tente um nome de comando, como !tts ou !geo.",
+    "topics": "Tópicos",
+    "searchDialog": {
+      "label": "Pesquisar na documentação",
+      "placeholder": "Pesquisar comandos, configurações, IDs de voz…",
+      "hint": "Pesquisa o texto de todas as páginas, por exemplo: forgetme, cheermote ou um ID de voz.",
+      "noResults": "Nenhum resultado. Tente um nome de comando, como !tts ou !geo.",
+      "loading": "Carregando…",
+      "failed": "Não foi possível carregar a pesquisa. Verifique sua conexão e digite novamente.",
+      "results": {
+        "one": "{n} resultado",
+        "many": "{n} resultados",
+        "other": "{n} resultados"
+      },
+      "navigate": "mover",
+      "open": "abrir",
+      "close": "Fechar a pesquisa",
+      "closeHint": "fechar"
+    },
     "onThisPage": "Nesta página",
     "previous": "Anterior",
     "next": "Próximo",

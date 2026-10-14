@@ -89,20 +89,36 @@
     <div class="wch-docgrid">
         <aside class="wch-side" aria-label="Docs navigation" data-i18n-aria-label="docsNav.sidebarNav">
             <div class="wch-side-inner">
-                <input type="search" class="form-control wch-side-search" id="docs-search" placeholder="Search docs"
-                    aria-label="Search docs" data-i18n-placeholder="docsNav.search" data-i18n-aria-label="docsNav.search"
-                    autocomplete="off" spellcheck="false">
+                {#- The search opens a dialog (scripts/search.js) that searches the text of every page. #}
+                <div class="wch-side-bar">
+                    {#- Phones only: the topic list collapses behind this, so a page opens on its content. #}
+                    <button type="button" class="wch-side-toggle" aria-expanded="false" aria-controls="docs-side-nav" hidden>
+                        <span class="wc-readout" data-i18n="docsNav.topics">Topics</span>
+                        {%- if cur %}
+                        <span class="wch-side-toggle-page" data-i18n="docsNav.pages.{{ cur.id }}.title">{{ cur.title }}</span>
+                        {%- elif group %}
+                        <span class="wch-side-toggle-page" data-i18n="docsNav.groups.{{ group.id }}">{{ group.label }}</span>
+                        {%- endif %}
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <button type="button" class="form-control wch-side-search" id="docs-search-open" aria-haspopup="dialog"
+                        aria-controls="docs-search" aria-keyshortcuts="Control+K Meta+K /">
+                        <i data-lucide="search"></i>
+                        <span class="wch-side-search-label" data-i18n="docsNav.search">Search docs</span>
+                        <kbd class="wch-kbd" id="docs-search-kbd" aria-hidden="true">Ctrl K</kbd>
+                    </button>
+                </div>
+                <div class="wch-side-nav" id="docs-side-nav">
                 {%- for g in docsNav %}
                 <nav class="wch-side-group" aria-labelledby="side-{{ g.id }}" data-group="{{ g.id }}">
                     <span class="wc-readout wch-side-label" id="side-{{ g.id }}" data-i18n="docsNav.groups.{{ g.id }}">{{ g.label }}</span>
                     {%- for it in g.items %}
                     <a class="wch-side-link" href="{{ it.url }}"{% if it.id == navId %} aria-current="page"{% endif %}
-                        data-page="{{ it.id }}"{% if it.commands %} data-commands{% endif %}
-                        data-i18n="docsNav.pages.{{ it.id }}.title">{{ it.title }}</a>
+                        data-page="{{ it.id }}" data-i18n="docsNav.pages.{{ it.id }}.title">{{ it.title }}</a>
                     {%- endfor %}
                 </nav>
                 {%- endfor %}
-                <p class="wc-help wch-side-empty" id="docs-search-empty" hidden data-i18n="docsNav.noResults">No pages match. Try a command name, such as !tts or !geo.</p>
+                </div>
             </div>
         </aside>
 
@@ -157,8 +173,32 @@
         {%- endif %}
     </div>
 
+    <dialog class="wch-search" id="docs-search" aria-labelledby="docs-search-title">
+        <div class="wch-search-box">
+            <div class="wch-search-field">
+                <h2 class="visually-hidden" id="docs-search-title" data-i18n="docsNav.searchDialog.label">Search the docs</h2>
+                <i data-lucide="search"></i>
+                <input type="text" class="wch-search-input" id="docs-search-input" role="combobox" enterkeyhint="search"
+                    aria-autocomplete="list" aria-expanded="false" aria-controls="docs-search-results"
+                    aria-labelledby="docs-search-title" placeholder="Search commands, settings, voice IDs…"
+                    data-i18n-placeholder="docsNav.searchDialog.placeholder" autocomplete="off" spellcheck="false">
+                <button type="button" class="wc-iconbtn wch-search-close" aria-label="Close search"
+                    data-i18n-aria-label="docsNav.searchDialog.close"><i data-lucide="x"></i></button>
+            </div>
+            <ul class="wch-search-results" id="docs-search-results" role="listbox" aria-labelledby="docs-search-title"></ul>
+            <p class="wc-help wch-search-msg" id="docs-search-msg"></p>
+            <div class="wch-search-foot" aria-hidden="true">
+                <span><kbd class="wch-kbd">↑</kbd><kbd class="wch-kbd">↓</kbd> <span data-i18n="docsNav.searchDialog.navigate">move</span></span>
+                <span><kbd class="wch-kbd">↵</kbd> <span data-i18n="docsNav.searchDialog.open">open</span></span>
+                <span><kbd class="wch-kbd">esc</kbd> <span data-i18n="docsNav.searchDialog.closeHint">close</span></span>
+            </div>
+            <div class="visually-hidden" role="status" aria-live="polite" id="docs-search-status"></div>
+        </div>
+    </dialog>
+
     <script src="scripts/i18n.js"></script>
     <script src="scripts/docs.js"></script>
+    <script src="scripts/search.js"></script>
     {%- if cur and cur.id != 'home' %}
     <script src="scripts/last-updated.js"></script>
     {%- endif %}

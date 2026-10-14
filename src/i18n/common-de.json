@@ -42,7 +42,23 @@
       "dark": "Dunkel"
     },
     "search": "Doku durchsuchen",
-    "noResults": "Keine Seite passt. Versuchen Sie einen Befehlsnamen wie !tts oder !geo.",
+    "topics": "Themen",
+    "searchDialog": {
+      "label": "Doku durchsuchen",
+      "placeholder": "Befehle, Einstellungen, Stimmen-IDs suchen…",
+      "hint": "Durchsucht den Text aller Seiten, zum Beispiel: forgetme, cheermote oder eine Stimmen-ID.",
+      "noResults": "Keine Treffer. Versuchen Sie einen Befehlsnamen wie !tts oder !geo.",
+      "loading": "Wird geladen…",
+      "failed": "Die Suche konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und tippen Sie erneut.",
+      "results": {
+        "one": "{n} Treffer",
+        "other": "{n} Treffer"
+      },
+      "navigate": "wechseln",
+      "open": "öffnen",
+      "close": "Suche schließen",
+      "closeHint": "schließen"
+    },
     "onThisPage": "Auf dieser Seite",
     "previous": "Zurück",
     "next": "Weiter",

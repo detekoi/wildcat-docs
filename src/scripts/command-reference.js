@@ -16,11 +16,9 @@
         (typeof getTranslation === 'function' && getTranslation(key)) || fallback;
 
     function countLabel(n) {
-        const lang = document.documentElement.lang || 'en';
-        let form = 'other';
-        try { form = new Intl.PluralRules(lang).select(n); } catch (e) { /* unknown locale */ }
-        const template = t('docsNav.commands.count.' + form, null) || t('docsNav.commands.count.other', '{n} commands');
-        return template.replace('{n}', String(n));
+        return typeof translatePlural === 'function'
+            ? translatePlural('docsNav.commands.count', n, n + ' commands')
+            : n + ' commands';
     }
 
     function init() {
@@ -143,17 +141,29 @@
         document.addEventListener('i18n:translated', relabel);
         relabel();
 
-        // An old link to a category or command (#games, #dd-commands-ask) still lands:
-        // open a linked command's row.
-        // Its details row is hidden at load, so the browser could not scroll to it.
-        let hashId = '';
-        try { hashId = decodeURIComponent(location.hash.slice(1)); } catch (e) { /* malformed hash */ }
-        const target = hashId && document.getElementById(hashId);
-        const group = target && target.closest('.dropdown-group');
-        if (group) {
-            setOpen(group, true);
-            group.scrollIntoView();
+        // A link to a category or command (#games, #dd-commands-ask) lands: open a
+        // linked command's row. Its details row is hidden, so the browser could not
+        // scroll to it. Also on hashchange, for a search result on this same page.
+        function openLinked() {
+            let hashId = '';
+            try { hashId = decodeURIComponent(location.hash.slice(1)); } catch (e) { /* malformed hash */ }
+            const target = hashId && document.getElementById(hashId);
+            if (!target || !table.contains(target)) return;
+            // The command's rows, or the category header's tbody.
+            const group = target.closest('.dropdown-group');
+            const box = group || target.closest('tbody') || target;
+            // A filter or chip that hides it would leave nothing to scroll to.
+            if (box.hidden) {
+                input.value = '';
+                active = 'all';
+                chips.querySelectorAll('button').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.cat === active)));
+                apply();
+            }
+            if (group) setOpen(group, true);
+            box.scrollIntoView();
         }
+        openLinked();
+        window.addEventListener('hashchange', openLinked);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

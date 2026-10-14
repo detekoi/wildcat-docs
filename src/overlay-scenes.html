@@ -12,7 +12,7 @@ toc:
     <h2 data-i18n="chatOverlay.scenes.title">Chat Scene Creator</h2>
     <p data-i18n="chatOverlay.scenes.desc">With the <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a>, you can make and manage named overlay scenes for different stream layouts (for example, Gaming or Just Chatting).</p>
 
-    <h3 data-i18n="chatOverlay.scenes.featuresTitle">Key Features</h3>
+    <h3 id="chat-overlay-scenes-features" data-i18n="chatOverlay.scenes.featuresTitle">Key Features</h3>
     <ul>
         <li data-i18n="chatOverlay.scenes.feature1"><strong>Scene Management:</strong> Create, duplicate, and delete scenes. Import and export JSON scene files. Link an existing scene with its sync token.</li>
         <li data-i18n="chatOverlay.scenes.feature2"><strong>Channel Connection:</strong> Enter a Twitch channel, or a YouTube channel ID or handle. The change applies immediately.</li>
@@ -20,11 +20,11 @@ toc:
         <li data-i18n="chatOverlay.scenes.feature4"><strong>Interactive Live Preview:</strong> Test your settings in a live preview box. Set the preview background to Dark, Light, Grid (Checkerboard), or a custom color. Each change shows in the preview immediately.</li>
     </ul>
 
-    <h3 data-i18n="chatOverlay.scenes.syncTitle">Automatic Live Sync</h3>
+    <h3 id="chat-overlay-scenes-sync" data-i18n="chatOverlay.scenes.syncTitle">Automatic Live Sync</h3>
     <p data-i18n="chatOverlay.scenes.syncDesc">The Chat Scene Creator adds a unique sync token to your OBS URL: <span class="inline-code">chat.html?scene=NAME&sync=TOKEN</span>. When you save a change on the web, the OBS browser source updates live. You do not need to refresh the page.</p>
     <p data-i18n="chatOverlay.scenes.localNote">If you change settings in OBS, the settings save locally in the cache of the OBS browser source.</p>
 
-    <h3 data-i18n="chatOverlay.scenes.ioTitle">Export and Import Scene Files</h3>
+    <h3 id="chat-overlay-scenes-io" data-i18n="chatOverlay.scenes.ioTitle">Export and Import Scene Files</h3>
     <p data-i18n="chatOverlay.scenes.ioDesc">You can back up or move chat scene settings with JSON files.</p>
     <ul>
         <li data-i18n="chatOverlay.scenes.exportSingle"><strong>Export Single Scene:</strong> To export one scene, select the scene. Then click <strong>Export</strong>.</li>
@@ -32,7 +32,7 @@ toc:
         <li data-i18n="chatOverlay.scenes.importFile"><strong>Import Scene File:</strong> To restore scene settings, click <strong>Import</strong>. Then select a saved JSON file on your computer.</li>
     </ul>
 
-    <h3 data-i18n="chatOverlay.scenes.linkTitle">Link an Existing Scene (Sync Token)</h3>
+    <h3 id="chat-overlay-scenes-link" data-i18n="chatOverlay.scenes.linkTitle">Link an Existing Scene (Sync Token)</h3>
     <p data-i18n="chatOverlay.scenes.linkDesc">You can link an existing cloud-synced scene to a new browser or computer with its sync token.</p>
     <ol>
         <li data-i18n="chatOverlay.scenes.linkStep1">Click <strong>Link Scene</strong> in the left panel.</li>
@@ -54,7 +54,7 @@ toc:
         <li data-i18n="chatOverlay.config.feature7"><strong>Hide Commands:</strong> Hide chat messages that start with <span class="inline-code">!</span>. Read <strong>Hide Command Messages</strong> for more information.</li>
     </ul>
 
-    <h3 data-i18n="chatOverlay.config.hideCommandsTitle">Hide Command Messages</h3>
+    <h3 id="chat-overlay-config-hide-commands" data-i18n="chatOverlay.config.hideCommandsTitle">Hide Command Messages</h3>
     <p data-i18n="chatOverlay.config.hideCommandsDesc">Viewers send bot commands as chat messages that start with <span class="inline-code">!</span>, for example <span class="inline-code">!so</span> or <span class="inline-code">!lurk</span>. The <strong>Hide Commands</strong> option keeps these messages off your overlay.</p>
     <p data-i18n="chatOverlay.config.hideCommandsWhere">The option is in the <strong>Message Elements</strong> group of the config panel and of the Chat Scene Creator. It is off by default.</p>
     <p data-i18n="chatOverlay.config.hideCommandsNote">The option applies to normal chat messages only. A super chat or a membership event that starts with <span class="inline-code">!</span> still shows.</p>
