@@ -6,8 +6,9 @@
  * tr.category-header holds each category's h2, then one .dropdown-group tbody per command
  * (dropdown-table.js opens and closes them). This adds, above the table:
  * a filter field and one chip per category, and on each category heading a
- * "N commands" count. Typing three or more characters that match a command
- * name opens that command's details.
+ * "N commands" count. When the filter narrows the names to one command, that
+ * command's details open; they close again when the filter moves on, unless the
+ * reader opened them.
  */
 
 (function () {
@@ -59,6 +60,8 @@
         const chips = tools.querySelector('.wch-cmdchips');
         const empty = tools.querySelector('#command-filter-empty');
         let active = 'all';
+        // Rows the filter opened, so it closes only those and never one the reader opened.
+        const autoOpened = new Set();
 
         function addChip(id, labelFor) {
             const b = document.createElement('button');
@@ -77,14 +80,23 @@
         addChip('all', () => t('docsNav.commands.all', 'All'));
         categories.forEach((c) => addChip(c.id, () => (c.heading ? c.heading.textContent.trim() : c.id)));
 
+        // The command as typed in chat, without the Mod badge.
         function nameOf(row) {
             const cell = row.querySelector('.dropdown-summary > td:first-child');
-            return cell ? cell.textContent.toLowerCase() : '';
+            if (!cell) return '';
+            const clone = cell.cloneNode(true);
+            clone.querySelectorAll('.mod-badge').forEach((b) => b.remove());
+            return clone.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+        }
+
+        function setOpen(row, open) {
+            if (row.classList.contains('open') !== open) row.querySelector('.dropdown-trigger')?.click();
         }
 
         function apply() {
             const q = input.value.trim().toLowerCase();
             let total = 0;
+            const named = [];
             categories.forEach((c) => {
                 const inCat = active === 'all' || active === c.id;
                 let shown = 0;
@@ -94,10 +106,7 @@
                     row.hidden = !match;
                     if (match) {
                         shown++;
-                        // A typed command name opens its details; clearing the filter leaves them as the reader set them.
-                        if (q.length > 2 && name.includes(q) && !row.classList.contains('open')) {
-                            row.querySelector('.dropdown-trigger')?.click();
-                        }
+                        if (name.includes(q)) named.push(row);
                     }
                 });
                 c.header.hidden = shown === 0;
@@ -106,6 +115,19 @@
                 total += shown;
             });
             empty.hidden = total > 0;
+
+            // Open a command once the filter names only it ("!tts st" matches every
+            // !tts command, "!tts sto" only !tts stop); close what the filter opened before.
+            const pick = q.length > 2 && named.length === 1 ? named[0] : null;
+            autoOpened.forEach((row) => {
+                if (row === pick) return;
+                if (row.classList.contains('open')) setOpen(row, false);
+                autoOpened.delete(row);
+            });
+            if (pick && !pick.classList.contains('open')) {
+                setOpen(pick, true);
+                autoOpened.add(pick);
+            }
         }
 
         function relabel() {
@@ -123,9 +145,15 @@
 
         // An old link to a category or command (#games, #dd-commands-ask) still lands:
         // open a linked command's row.
-        const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        // Its details row is hidden at load, so the browser could not scroll to it.
+        let hashId = '';
+        try { hashId = decodeURIComponent(location.hash.slice(1)); } catch (e) { /* malformed hash */ }
+        const target = hashId && document.getElementById(hashId);
         const group = target && target.closest('.dropdown-group');
-        if (group && !group.classList.contains('open')) group.querySelector('.dropdown-trigger')?.click();
+        if (group) {
+            setOpen(group, true);
+            group.scrollIntoView();
+        }
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

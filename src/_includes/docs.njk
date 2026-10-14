@@ -145,16 +145,16 @@
             {%- endif %}
         </main>
 
+        {%- if toc and toc.length %}
         <aside class="wch-toc" aria-labelledby="toc-title">
-            {%- if toc and toc.length %}
             <span class="wc-readout wch-toc-label" id="toc-title" data-i18n="docsNav.onThisPage">On this page</span>
             <nav class="wch-toc-list" aria-labelledby="toc-title">
                 {%- for t in toc %}
                 <a class="wc-link wc-link--muted" href="#{{ t[0] }}"{% if t[1] %} data-i18n="{{ t[1] }}"{% endif %}>{{ t[2] }}</a>
                 {%- endfor %}
             </nav>
-            {%- endif %}
         </aside>
+        {%- endif %}
     </div>
 
     <script src="scripts/i18n.js"></script>
