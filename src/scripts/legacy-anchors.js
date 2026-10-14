@@ -13,7 +13,11 @@
     if (!data || !location.hash) return;
     let map;
     try { map = JSON.parse(data.textContent); } catch (e) { return; }
-    const id = decodeURIComponent(location.hash.slice(1));
-    const dest = map[id];
-    if (dest) location.replace(dest + location.search + '#' + encodeURIComponent(id));
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    // Only the map's own entries ("constructor" is not an old anchor), and only
+    // to a page beside this one: the map holds bare names like "sage-commands.html".
+    const dest = Object.prototype.hasOwnProperty.call(map, id) ? map[id] : null;
+    if (typeof dest !== 'string' || !/^[a-z0-9-]+\.html$/.test(dest)) return;
+    location.replace(dest + location.search + '#' + encodeURIComponent(id));
 })();
