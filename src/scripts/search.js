@@ -388,7 +388,8 @@
     }
 
     document.addEventListener('keydown', (ev) => {
-        if ((ev.metaKey || ev.ctrlKey) && !ev.altKey && ev.key.toLowerCase() === 'k') {
+        // Not with Shift: Ctrl+Shift+K and Cmd+Shift+K are browser shortcuts (Firefox's console).
+        if ((ev.metaKey || ev.ctrlKey) && !ev.altKey && !ev.shiftKey && ev.key.toLowerCase() === 'k') {
             ev.preventDefault();
             if (dialog.open) dialog.close();
             else open();
