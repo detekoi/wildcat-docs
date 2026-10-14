@@ -42,7 +42,22 @@
       "dark": "Scuro"
     },
     "search": "Cerca nella documentazione",
-    "noResults": "Nessuna pagina corrisponde. Prova con il nome di un comando, come !tts o !geo.",
+    "topics": "Argomenti",
+    "searchDialog": {
+      "label": "Cerca nella documentazione",
+      "placeholder": "Cerca comandi, impostazioni, ID voce…",
+      "hint": "Cerca nel testo di tutte le pagine, ad esempio: forgetme, cheermote o un ID voce.",
+      "noResults": "Nessun risultato. Prova con il nome di un comando, come !tts o !geo.",
+      "results": {
+        "one": "{n} risultato",
+        "many": "{n} risultati",
+        "other": "{n} risultati"
+      },
+      "navigate": "sposta",
+      "open": "apri",
+      "close": "Chiudi la ricerca",
+      "closeHint": "chiudi"
+    },
     "onThisPage": "In questa pagina",
     "previous": "Precedente",
     "next": "Successivo",

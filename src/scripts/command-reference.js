@@ -143,17 +143,27 @@
         document.addEventListener('i18n:translated', relabel);
         relabel();
 
-        // An old link to a category or command (#games, #dd-commands-ask) still lands:
-        // open a linked command's row.
-        // Its details row is hidden at load, so the browser could not scroll to it.
-        let hashId = '';
-        try { hashId = decodeURIComponent(location.hash.slice(1)); } catch (e) { /* malformed hash */ }
-        const target = hashId && document.getElementById(hashId);
-        const group = target && target.closest('.dropdown-group');
-        if (group) {
+        // A link to a category or command (#games, #dd-commands-ask) lands: open a
+        // linked command's row. Its details row is hidden, so the browser could not
+        // scroll to it. Also on hashchange, for a search result on this same page.
+        function openLinked() {
+            let hashId = '';
+            try { hashId = decodeURIComponent(location.hash.slice(1)); } catch (e) { /* malformed hash */ }
+            const target = hashId && document.getElementById(hashId);
+            const group = target && target.closest('.dropdown-group');
+            if (!group) return;
+            // A filter that hides the row would leave nothing to scroll to.
+            if (group.hidden) {
+                input.value = '';
+                active = 'all';
+                chips.querySelectorAll('button').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.cat === active)));
+                apply();
+            }
             setOpen(group, true);
             group.scrollIntoView();
         }
+        openLinked();
+        window.addEventListener('hashchange', openLinked);
     }
 
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

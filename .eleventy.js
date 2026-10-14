@@ -1,3 +1,5 @@
+const searchIndex = require("./lib/search-index.js");
+
 module.exports = function (eleventyConfig) {
     // Static assets pass through unchanged. i18n is included here on purpose:
     // scripts/i18n.js fetches `./i18n/<page>-<lang>.json` at runtime, so the
@@ -22,6 +24,15 @@ module.exports = function (eleventyConfig) {
         const i = flat.findIndex((it) => it.id === id);
         return i < 0 ? null : flat[i + step] || null;
     });
+
+    // Full-text search (lib/search-index.js): index each topic page as it renders,
+    // giving id-less headings an id so results can link to them, then write one
+    // search/<lang>.json per language for scripts/search.js.
+    eleventyConfig.addTransform("search-index", function (content) {
+        if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
+        return searchIndex.collect(content, this.page.url);
+    });
+    eleventyConfig.on("eleventy.after", ({ dir }) => searchIndex.write(dir.output));
 
     return {
         dir: {

@@ -42,7 +42,20 @@
       "dark": "ダーク"
     },
     "search": "ドキュメントを検索",
-    "noResults": "一致するページはありません。!tts や !geo などのコマンド名で検索してください。",
+    "topics": "トピック",
+    "searchDialog": {
+      "label": "ドキュメントを検索",
+      "placeholder": "コマンド、設定、ボイス ID を検索…",
+      "hint": "すべてのページの本文を検索します。例：forgetme、cheermote、ボイス ID。",
+      "noResults": "結果はありません。!tts や !geo などのコマンド名で検索してください。",
+      "results": {
+        "other": "{n} 件"
+      },
+      "navigate": "移動",
+      "open": "開く",
+      "close": "検索を閉じる",
+      "closeHint": "閉じる"
+    },
     "onThisPage": "このページの内容",
     "previous": "前へ",
     "next": "次へ",

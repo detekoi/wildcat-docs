@@ -77,6 +77,15 @@ bots, dashboards and blog posts link to them: `scripts/legacy-anchors.js` sends 
 such as `botcommands.html#games` to the page that holds that section now, using
 `src/_data/legacyAnchors.json`.
 
+## Search
+
+The search dialog (`scripts/search.js`; Ctrl+K, Cmd+K or `/`) searches the text of every topic
+page. The build writes its index: `lib/search-index.js` splits each rendered page into one record
+per `h2`/`h3` and per command row, then writes `public/search/<lang>.json` for each language,
+taking the text from that language's catalogs by the same `data-i18n` keys the page uses. A heading
+without an `id` gets one at build time, so every result links to its section. New pages and new
+catalog strings are indexed with no extra step.
+
 ## Adding Documentation Pages
 
 1. Add the page to its group in `src/_data/docsNav.js` (id, url, catalog, title, lede).

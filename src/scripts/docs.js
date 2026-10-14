@@ -1,7 +1,7 @@
 /**
  * docs.js - Behaviour every docs page shares: icons, the Light/Dark switch,
- * and the sidebar search. Mirrors wildcat.chat's
- * site.js, and uses the same storage key so the theme carries across sites.
+ * and the phone topic-list toggle. The search dialog is scripts/search.js.
+ * Mirrors wildcat.chat's site.js, and uses the same storage key so the theme carries across sites.
  *
  * The initial theme is applied by an inline script in docs.njk before first
  * paint; this file keeps the switch, storage and <html data-theme> in step.
@@ -45,35 +45,20 @@
         });
     }
 
-    // Filter the sidebar's page titles. A query starting with "!" is a command
-    // name, so both Commands pages stay listed whatever follows the "!".
-    function initSidebarSearch() {
-        const input = document.getElementById('docs-search');
-        const empty = document.getElementById('docs-search-empty');
-        if (!input) return;
-        const groups = Array.from(document.querySelectorAll('.wch-side-group'));
-        function apply() {
-            const q = input.value.trim().toLowerCase();
-            let shown = 0;
-            groups.forEach((group) => {
-                const label = (group.querySelector('.wch-side-label')?.textContent || '').toLowerCase();
-                let groupShown = 0;
-                group.querySelectorAll('.wch-side-link').forEach((link) => {
-                    const match = !q
-                        || link.textContent.toLowerCase().includes(q)
-                        || label.includes(q)
-                        || (q.startsWith('!') && link.hasAttribute('data-commands'));
-                    link.hidden = !match;
-                    if (match) groupShown++;
-                });
-                group.hidden = groupShown === 0;
-                shown += groupShown;
-            });
-            if (empty) empty.hidden = shown > 0;
-        }
-        input.addEventListener('input', apply);
-        // Translated titles arrive after load; re-run so a typed query still matches.
-        document.addEventListener('i18n:translated', apply);
+    // On phones the sidebar sits above the content, so the topic list collapses
+    // behind a toggle: a page opens on its content, not on the list. The list
+    // stays open without JS; the CSS collapses it only once this has run.
+    function initSideToggle() {
+        const side = document.querySelector('.wch-side');
+        const toggle = side && side.querySelector('.wch-side-toggle');
+        if (!toggle) return;
+        side.setAttribute('data-collapsible', '');
+        toggle.hidden = false;
+        toggle.addEventListener('click', () => {
+            const open = toggle.getAttribute('aria-expanded') !== 'true';
+            toggle.setAttribute('aria-expanded', String(open));
+            side.toggleAttribute('data-open', open);
+        });
     }
 
     function initIcons() {
@@ -84,7 +69,7 @@
 
     function init() {
         initThemeSwitch();
-        initSidebarSearch();
+        initSideToggle();
         initIcons();
     }
 
