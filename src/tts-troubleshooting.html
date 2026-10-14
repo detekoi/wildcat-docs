@@ -1,0 +1,39 @@
+---
+layout: docs.njk
+navId: tts-troubleshooting
+catalog: wildcat-tts
+title: "Troubleshooting – Wildcat Docs"
+description: "Fixes for the most common WildcatTTS problems."
+---
+<section id="troubleshooting" class="section">
+    <h2 data-i18n="troubleshooting.title">Troubleshooting</h2>
+    <ul>
+        <li><strong data-i18n="troubleshooting.q1">Bot not responding to commands?</strong> <span
+                data-i18n="troubleshooting.a1">Make sure that the bot is a moderator in your channel. Type
+                <span class="inline-code">/mod WildcatTTS</span> in your Twitch chat. The bot requires moderator
+                permissions to read messages and send replies.</span></li>
+        <li><strong data-i18n="troubleshooting.q2">Bot not speaking?</strong> <span
+                data-i18n="troubleshooting.a2">Make sure that TTS is enabled with <span class="inline-code">!tts on</span>
+                in chat. Also check the active mode with <span class="inline-code">!tts mode</span> and permissions
+                with <span class="inline-code">!tts permission</span>.</span></li>
+        <li><strong data-i18n="troubleshooting.q3">Bot not speaking in a specific language, or reading numbers
+                in Chinese?</strong> <span data-i18n="troubleshooting.a3">Set Language Boost to your language with
+                <span class="inline-code">!tts language &lt;language_name&gt;</span> (or <span
+                    class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel). Show
+                the active setting with <span class="inline-code">!tts defaultlanguage</span>.</span></li>
+        <li><strong data-i18n="troubleshooting.q4">TTS generation taking too long or failing?</strong> <span
+                data-i18n="troubleshooting.a4">The bot uses 302.ai with automatic fallback to Wavespeed AI. If
+                audio delays occur, use <span class="inline-code">!tts stop</span> to cancel stuck generation.
+                The bot retries failed requests automatically.</span></li>
+        <li><strong data-i18n="troubleshooting.q5">Emotion not working?</strong> <span
+                data-i18n="troubleshooting.a5">The auto emotion is not supported. Use <span
+                    class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span
+                    class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span
+                    class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, or <span
+                    class="inline-code">surprised</span>.</span></li>
+        <li><strong data-i18n="troubleshooting.q6">Need help?</strong> <span
+                data-i18n="troubleshooting.a6">Contact the developer through the <a
+                    href="https://parfaitfair.com/#contact" class="default-link-style"
+                    target="_blank" rel="noopener noreferrer">contact form</a> at Henry's portfolio website.</span></li>
+    </ul>
+</section>

@@ -249,7 +249,7 @@
       "description": "Définit votre préférence d'optimisation linguistique pour vos messages de chat.",
       "alias": "(Alias: !tts lang)",
       "statusDesc": "(affiche la préférence personnelle actuelle)",
-      "notes": "L'optimisation linguistique améliore la prononciation pour une langue. Utilisez <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> pour la valeur par défaut. Consultez la section <a href=\"#language-boost\" class=\"default-link-style\">Optimisation Linguistique</a> ou utilisez <span class=\"inline-code\">!tts languageslist</span> pour voir toutes les options.",
+      "notes": "L'optimisation linguistique améliore la prononciation pour une langue. Utilisez <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> pour la valeur par défaut. Consultez la section <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Optimisation Linguistique</a> ou utilisez <span class=\"inline-code\">!tts languageslist</span> pour voir toutes les options.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -344,7 +344,7 @@
       "name": "!tts defaultlanguage <language|reset>",
       "description": "Définit l'optimisation linguistique par défaut pour la <em>chaîne</em>.",
       "statusDesc": "(affiche la valeur par défaut actuelle du canal)",
-      "notes": "Utilisez <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> pour la valeur par défaut. Consultez la section <a href=\"#language-boost\" class=\"default-link-style\">Optimisation Linguistique</a> ou utilisez <span class=\"inline-code\">!tts languageslist</span> pour voir les options.",
+      "notes": "Utilisez <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> pour la valeur par défaut. Consultez la section <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Optimisation Linguistique</a> ou utilisez <span class=\"inline-code\">!tts languageslist</span> pour voir les options.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -514,7 +514,7 @@
     "step2": "Le bot met en cache la description de façon permanente après la première génération.",
     "step3": "Les utilisations ultérieures de l'emote utilisent immédiatement la description en cache sans nouveau traitement IA.",
     "managementTitle": "Gestion des Descriptions",
-    "managementText": "Les modérateurs peuvent utiliser <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir les descriptions d'emotes. Consultez le tableau <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> pour plus de détails.",
+    "managementText": "Les modérateurs peuvent utiliser <span class=\"inline-code\">!tts emote</span> pour afficher, régénérer ou définir les descriptions d'emotes. Consultez le tableau <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Gestion des Descriptions d'Emotes</a> pour plus de détails.",
     "localeText": "L'IA écrit chaque description dans la langue de la chaîne. Le bot conserve une description distincte pour chaque langue."
   },
   "webDashboard": {

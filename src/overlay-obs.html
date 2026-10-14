@@ -1,0 +1,47 @@
+---
+layout: docs.njk
+navId: overlay-obs
+catalog: chatoverlay
+title: "Set up in OBS – Wildcat Docs"
+description: "The Wildcat Chat Overlay shows Twitch and YouTube Live chat messages in OBS Studio. You can change its settings in the Chat Scene Creator on the web, or in the config panel of the OBS browser source."
+toc:
+  - ["overview", "chatOverlay.overview.title", "Overview"]
+  - ["platforms", "chatOverlay.platforms.title", "Platform Support"]
+  - ["obs-setup", "chatOverlay.obsSetup.title", "OBS Setup Instructions"]
+---
+<section id="overview" class="section">
+    <h2 data-i18n="chatOverlay.overview.title">Overview</h2>
+    <p data-i18n="chatOverlay.overview.desc">The Wildcat Chat Overlay shows Twitch and YouTube Live chat messages in OBS Studio. You can change its settings in the <a href="https://wildcat.chat/chat-overlay/chat-scene-creator.html" class="default-link-style" target="_blank" rel="noopener noreferrer">Chat Scene Creator</a> on the web, or in the config panel of the OBS browser source.</p>
+    <p><a href="https://wildcat.chat/chat-overlay/" class="default-link-style" target="_blank" rel="noopener noreferrer"
+            data-i18n="chatOverlay.overview.getStarted">Get Started with the Chat Overlay</a></p>
+</section>
+
+<section id="platforms" class="section">
+    <h2 data-i18n="chatOverlay.platforms.title">Platform Support</h2>
+    <p data-i18n="chatOverlay.platforms.desc">The overlay connects to Twitch and to YouTube. You select the platform in the config panel.</p>
+    <ul>
+        <li data-i18n="chatOverlay.platforms.twitch"><strong>Twitch:</strong> Enter your channel name (for example, <span class="inline-code">wildcatgamer</span>). Badges and emotes load automatically.</li>
+        <li data-i18n="chatOverlay.platforms.youtube"><strong>YouTube:</strong> The overlay supports YouTube live chat for public and unlisted streams. For a public stream, enter your channel username, channel ID, video URL, or video ID. For an unlisted stream, enter the video URL. Private streams are not supported.</li>
+    </ul>
+</section>
+
+<section id="obs-setup" class="section">
+    <h2 data-i18n="chatOverlay.obsSetup.title">OBS Setup Instructions</h2>
+    <p data-i18n="chatOverlay.obsSetup.desc">Do these steps to add the chat overlay to OBS Studio:</p>
+    <ol>
+        <li data-i18n="chatOverlay.obsSetup.step1">In OBS Studio, open the <strong>Sources</strong> panel. Click <strong>+</strong>. Then select <strong>Browser</strong>.</li>
+        <li data-i18n="chatOverlay.obsSetup.step2">Enter a name for the source (for example, "Twitch Chat").</li>
+        <li data-i18n="chatOverlay.obsSetup.step3">Paste the URL from the Chat Scene Creator into the URL field. If you cannot paste the URL, clear the "Local file" checkbox.</li>
+        <li data-i18n="chatOverlay.obsSetup.step4">Set Width to <strong>320</strong> and Height to <strong>600</strong>.</li>
+        <li data-i18n="chatOverlay.obsSetup.step5">Click "OK" to add the browser source to your canvas.</li>
+        <li data-i18n="chatOverlay.obsSetup.step6"><strong>Change the Settings:</strong> Save your settings in the Chat Scene Creator. They sync live to OBS. As an alternative, right-click the Browser Source in OBS. Then select <strong>Interact</strong> to change the settings locally.</li>
+        <li data-i18n="chatOverlay.obsSetup.step7">In the interactive window, enter your channel information. Click the settings gear (<i data-lucide="settings" class="lucide-inline"></i>). Then click "Connect".</li>
+    </ol>
+
+    <h3 data-i18n="chatOverlay.obsSetup.tips.title">Advanced OBS Tips</h3>
+    <ul>
+        <li data-i18n="chatOverlay.obsSetup.tips.tip1">For live sync from the Chat Scene Creator, leave <span class="inline-code">Shutdown source when not visible</span> and <span class="inline-code">Refresh browser when scene becomes active</span> cleared.</li>
+        <li data-i18n="chatOverlay.obsSetup.tips.tip2">To hide the scrollbars, add <span class="inline-code">body { overflow: hidden; }</span> to the Custom CSS field.</li>
+        <li data-i18n="chatOverlay.obsSetup.tips.tip3">Settings save to the OBS cache. If you clear the OBS cache for this source, set your visual settings again.</li>
+    </ul>
+</section>

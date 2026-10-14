@@ -45,5 +45,14 @@
       "step4": "ボット設定を構成",
       "step5": "詳細なコマンドリファレンスについては、ドキュメントページを確認"
     }
+  },
+  "home": {
+    "titleLine": "ドキュメント",
+    "lede": "WildcatSage、WildcatTTS、Wildcat Chat Overlay の設定ガイドとコマンドリファレンスです。",
+    "products": {
+      "sage": "質問に答え、Web を検索し、チャットゲームを進めるチャットボットです。",
+      "tts": "チャットメッセージとアラートを自然な音声で読み上げます。",
+      "overlay": "言葉で説明したテーマを使える、OBS 用の Twitch・YouTube チャットオーバーレイです。"
+    }
   }
 }

@@ -1,0 +1,84 @@
+---
+layout: docs.njk
+navId: sage-memory
+catalog: botcommands
+title: "Channel memory – Wildcat Docs"
+description: "What WildcatSage remembers about your channel from one stream to the next, and how viewers and moderators control it."
+toc:
+  - ["channel-memory-learn", "channelMemory.learnTitle", "How the Bot Learns"]
+  - ["channel-memory-stores", "channelMemory.storesTitle", "What the Bot Stores"]
+  - ["channel-memory-uses", "channelMemory.usesTitle", "How the Bot Uses Memories"]
+  - ["channel-memory-privacy", "channelMemory.privacyTitle", "Privacy and Opt-Out"]
+  - ["channel-memory-limits", "channelMemory.limitsTitle", "Limits"]
+---
+<section id="channel-memory" class="section">
+    <h2 data-i18n="channelMemory.title">Channel Memory</h2>
+    <p data-i18n="channelMemory.intro">With Channel Memory, WildcatSage remembers facts about your community from one stream to the next. Examples are running jokes, words with a special meaning in your channel, and facts about regular viewers. Channel Memory is on by default.</p>
+
+    <h3 id="channel-memory-learn" data-i18n="channelMemory.learnTitle">How the Bot Learns</h3>
+    <p data-i18n="channelMemory.learnIntro">The bot learns in two ways:</p>
+    <ul>
+        <li data-i18n="channelMemory.learn.auto"><strong>From chat:</strong> The bot reads chat in groups of messages. It stores the facts that the community will use again. Most groups contain no such facts.</li>
+        <li data-i18n="channelMemory.learn.manual"><strong>From moderators:</strong> A moderator teaches a fact with <span class="inline-code">!remember</span>.</li>
+    </ul>
+    <p data-i18n="channelMemory.learnPriority">A fact from a moderator has priority. A fact from chat cannot replace it.</p>
+    <p data-i18n="channelMemory.learnModel">The bot uses Gemini Flash Lite to read chat. This is the same model that does translation.</p>
+    <p data-i18n="channelMemory.ignoredIntro">The bot does not read these messages for Channel Memory:</p>
+    <ul>
+        <li data-i18n="channelMemory.ignored.bot">Messages from the bot</li>
+        <li data-i18n="channelMemory.ignored.commands">Messages that start with <span class="inline-code">!</span></li>
+        <li data-i18n="channelMemory.ignored.optedOut">Messages from viewers who used <span class="inline-code">!forgetme</span></li>
+    </ul>
+
+    <h3 id="channel-memory-stores" data-i18n="channelMemory.storesTitle">What the Bot Stores</h3>
+    <p data-i18n="channelMemory.storesIntro">The bot stores these types of facts:</p>
+    <ul>
+        <li data-i18n="channelMemory.stores.meaning">A word or phrase that has a special meaning in your channel</li>
+        <li data-i18n="channelMemory.stores.jokes">Running jokes and nicknames</li>
+        <li data-i18n="channelMemory.stores.members">Harmless facts about regular viewers, for example the character that a viewer plays</li>
+        <li data-i18n="channelMemory.stores.requests">Facts that chat tells the bot to remember</li>
+    </ul>
+    <p data-i18n="channelMemory.storesNot">The bot does not store greetings, short reactions, or comments about the current game.</p>
+    <p data-i18n="channelMemory.storesSensitive">The instructions for the AI model exclude sensitive personal details, such as health, addresses, real names, age, and finances.</p>
+    <p data-i18n="channelMemory.storesErrors">An AI model can make errors. A moderator can delete an incorrect memory with <span class="inline-code">!forget</span>.</p>
+
+    <h3 id="channel-memory-uses" data-i18n="channelMemory.usesTitle">How the Bot Uses Memories</h3>
+    <p data-i18n="channelMemory.usesIntro">When a viewer mentions the bot or uses <span class="inline-code">!ask</span>, the bot compares the message with the stored memories. If a memory matches, the bot uses the memory in its reply.</p>
+    <p data-i18n="channelMemory.usesMatch">The comparison uses the words in the message. If a viewer uses different words for the same subject, the bot can fail to find the memory.</p>
+    <p data-i18n="channelMemory.usesNone">If the bot has no memory about a subject, the bot says that it does not remember.</p>
+
+    <h3 id="channel-memory-privacy" data-i18n="channelMemory.privacyTitle">Privacy and Opt-Out</h3>
+    <p data-i18n="channelMemory.privacyChannel">A moderator can disable Channel Memory with <span class="inline-code">!memory off</span>. The bot then does not read chat for Channel Memory and does not use the stored memories. The stored memories stay. <span class="inline-code">!memory on</span> enables Channel Memory again.</p>
+    <p data-i18n="channelMemory.privacyViewer">Each viewer can use <span class="inline-code">!forgetme</span>. The bot deletes the memories about that viewer. After that, the bot does not read the messages of that viewer for Channel Memory. This command applies to one channel only.</p>
+    <p data-i18n="channelMemory.privacyScope">Memories belong to one channel. The bot does not share memories between channels.</p>
+    <p data-i18n="channelMemory.privacyTraining">WildcatSage uses a paid Gemini API key. Google does not use chat messages, prompts, or memories to train AI models.</p>
+
+    <h3 id="channel-memory-limits" data-i18n="channelMemory.limitsTitle">Limits</h3>
+    <table>
+        <caption class="visually-hidden" data-i18n="channelMemory.limitsTitle">Limits</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="channelMemory.table.item">Item</th>
+                <th scope="col" data-i18n="channelMemory.table.value">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-i18n="channelMemory.limits.countItem">Maximum memories for each channel</td>
+                <td data-i18n="channelMemory.limits.countValue">300</td>
+            </tr>
+            <tr>
+                <td data-i18n="channelMemory.limits.lengthItem">Maximum length of one memory</td>
+                <td data-i18n="channelMemory.limits.lengthValue">200 characters</td>
+            </tr>
+            <tr>
+                <td data-i18n="channelMemory.limits.fullItem">When the channel has 300 memories</td>
+                <td data-i18n="channelMemory.limits.fullValue">The bot deletes the memory from chat that has the least use. The bot does not delete memories from moderators.</td>
+            </tr>
+            <tr>
+                <td data-i18n="channelMemory.limits.timeItem">Storage time</td>
+                <td data-i18n="channelMemory.limits.timeValue">No time limit</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

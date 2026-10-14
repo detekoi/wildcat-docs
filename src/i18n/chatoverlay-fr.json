@@ -181,7 +181,7 @@
       "step7": "Dans la fenêtre interactive, entrez les informations de votre chaîne. Cliquez sur l'engrenage des paramètres (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Cliquez ensuite sur « Connect ».",
       "tips": {
         "title": "Conseils avancés pour OBS",
-        "tip1": "Activez <span class=\"inline-code\">Désactiver la source quand elle n'est pas visible</span> pour économiser les ressources système.",
+        "tip1": "Pour la synchronisation en direct depuis le Chat Scene Creator, laissez <span class=\"inline-code\">Désactiver la source quand elle n'est pas visible</span> et <span class=\"inline-code\">Actualiser le navigateur lorsque la scène devient active</span> décochées.",
         "tip2": "Pour masquer les barres de défilement, ajoutez <span class=\"inline-code\">body { overflow: hidden; }</span> dans le champ CSS personnalisé.",
         "tip3": "Les paramètres sont enregistrés dans le cache d'OBS. Si vous videz le cache d'OBS pour cette source, configurez de nouveau vos paramètres visuels."
       }

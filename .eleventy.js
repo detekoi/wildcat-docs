@@ -12,6 +12,17 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/favicon.ico");
     eleventyConfig.addPassthroughCopy("src/logo192.png");
 
+    // Docs navigation (src/_data/docsNav.js). Flattened once so the sidebar,
+    // the previous/next pager and the page header read the same order.
+    eleventyConfig.addFilter("flatNav", (groups) =>
+        groups.flatMap((g) => g.items.map((it) => ({ ...it, group: g.id }))));
+    eleventyConfig.addFilter("navItem", (flat, id) => flat.find((it) => it.id === id) || null);
+    eleventyConfig.addFilter("navGroup", (groups, id) => groups.find((g) => g.id === id) || null);
+    eleventyConfig.addFilter("navNeighbor", (flat, id, step) => {
+        const i = flat.findIndex((it) => it.id === id);
+        return i < 0 ? null : flat[i + step] || null;
+    });
+
     return {
         dir: {
             input: "src",

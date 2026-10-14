@@ -181,7 +181,7 @@
       "step7": "In the interactive window, enter your channel information. Click the settings gear (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Then click \"Connect\".",
       "tips": {
         "title": "Advanced OBS Tips",
-        "tip1": "Turn on <span class=\"inline-code\">Shutdown source when not visible</span> to save system resources.",
+        "tip1": "For live sync from the Chat Scene Creator, leave <span class=\"inline-code\">Shutdown source when not visible</span> and <span class=\"inline-code\">Refresh browser when scene becomes active</span> cleared.",
         "tip2": "To hide the scrollbars, add <span class=\"inline-code\">body { overflow: hidden; }</span> to the Custom CSS field.",
         "tip3": "Settings save to the OBS cache. If you clear the OBS cache for this source, set your visual settings again."
       }

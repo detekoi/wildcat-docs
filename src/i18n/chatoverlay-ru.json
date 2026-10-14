@@ -181,7 +181,7 @@
       "step7": "В интерактивном окне введите информацию о вашем канале. Нажмите на значок шестеренки настроек (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Затем нажмите «Connect».",
       "tips": {
         "title": "Дополнительные советы по OBS",
-        "tip1": "Включите опцию <span class=\"inline-code\">Shutdown source when not visible</span>, чтобы экономить системные ресурсы.",
+        "tip1": "Для синхронизации в реальном времени из Chat Scene Creator оставьте <span class=\"inline-code\">Shutdown source when not visible</span> и <span class=\"inline-code\">Refresh browser when scene becomes active</span> выключенными.",
         "tip2": "Чтобы скрыть полосы прокрутки, добавьте <span class=\"inline-code\">body { overflow: hidden; }</span> в поле Custom CSS.",
         "tip3": "Настройки сохраняются в кэше OBS. Если вы очистите кэш OBS для этого источника, настройте визуальные параметры заново."
       }

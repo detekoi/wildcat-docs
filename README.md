@@ -48,10 +48,38 @@ firebase deploy --only hosting
 3. Enter your domain name (for example, `docs.yourdomain.com`).
 4. Add the specified DNS records at your domain provider.
 
+## Design system
+
+The site uses the Wildcat design system shared with the WildcatSage and WildcatTTS dashboards and
+wildcat.chat. `src/styles/design-system.css` is a copy of `design-system.css` from the
+[wildcat-design-system](https://github.com/detekoi/wildcat-design-system) repo; do not edit it here.
+Site rules go in `src/styles/docs.css`. With both repos checked out side by side:
+
+```bash
+npm run sync:design-system   # copy ../wildcat-design-system/design-system.css into place
+npm run check                # fail if the copy has drifted, then build
+```
+
+## Page structure
+
+Every page uses `src/_includes/docs.njk`: the app bar, a sidebar of all pages, the page header,
+previous/next links and an "On this page" list. The sidebar order, page titles and ledes come from
+`src/_data/docsNav.js`.
+
+Each topic page names its i18n catalog in front matter (`catalog`). Sage pages read
+`botcommands-<lang>.json`, TTS pages `wildcat-tts-<lang>.json`, overlay pages
+`chatoverlay-<lang>.json`, and the home page `index-<lang>.json`. Shared chrome (sidebar, titles,
+ledes, pager, command filter) lives under `docsNav` in `common-<lang>.json`.
+
+`botcommands.html`, `wildcatttsdocs.html` and `chatoverlay.html` used to hold each product's whole
+documentation. They are now indexes of that product's topic pages. Their URLs stay live because
+bots, dashboards and blog posts link to them: `scripts/legacy-anchors.js` sends an old deep link
+such as `botcommands.html#games` to the page that holds that section now, using
+`src/_data/legacyAnchors.json`.
+
 ## Adding Documentation Pages
 
-To add new documentation pages:
-
-1. Create Nunjucks (`.njk`) or HTML templates in `src/`.
-2. Add links to new pages in `src/index.njk` or navigation components.
-3. Run `npm run build` to compile the site.
+1. Add the page to its group in `src/_data/docsNav.js` (id, url, catalog, title, lede).
+2. Create `src/<page>.html` with `layout: docs.njk`, `navId`, `catalog` and optional `toc`.
+3. Add the page's title and lede to `docsNav.pages.<id>` in every `common-<lang>.json`.
+4. Run `npm run build` to compile the site.

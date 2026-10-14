@@ -181,7 +181,7 @@
       "step7": "Geben Sie im interaktiven Fenster Ihre Kanalinformationen ein. Klicken Sie auf das Zahnrad für Einstellungen (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Klicken Sie dann auf „Connect“.",
       "tips": {
         "title": "Erweiterte OBS-Tipps",
-        "tip1": "Aktivieren Sie <span class=\"inline-code\">Quelle deaktivieren, wenn nicht sichtbar</span>, um Systemressourcen zu sparen.",
+        "tip1": "Für die Live-Synchronisierung aus dem Chat Scene Creator lassen Sie <span class=\"inline-code\">Quelle deaktivieren, wenn nicht sichtbar</span> und <span class=\"inline-code\">Browser aktualisieren, wenn Szene aktiv wird</span> deaktiviert.",
         "tip2": "Um die Bildlaufleisten auszublenden, fügen Sie <span class=\"inline-code\">body { overflow: hidden; }</span> in das Feld für benutzerdefiniertes CSS ein.",
         "tip3": "Einstellungen werden im OBS-Cache gespeichert. Wenn Sie den OBS-Cache für diese Quelle leeren, legen Sie Ihre visuellen Einstellungen erneut fest."
       }

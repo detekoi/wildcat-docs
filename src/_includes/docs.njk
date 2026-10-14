@@ -1,0 +1,170 @@
+{#- Shared docs layout: app bar, sidebar, page header, content, pager, "On this page".
+    Front matter a page sets:
+      navId     its id in _data/docsNav.js (the current page in the sidebar, title, lede)
+      catalog   the i18n catalog its content keys live in (index, botcommands,
+                wildcat-tts, chatoverlay); i18n.js reads it from <html data-i18n-page>
+      toc       [[id, catalog key, English label], ...] for "On this page"
+      legacyGroup  set on the three old long pages, now indexes: the nav group they list
+-#}
+{%- set flat = docsNav | flatNav %}
+{%- set cur = flat | navItem(navId) %}
+{%- set group = docsNav | navGroup(legacyGroup or (cur and cur.group)) %}
+<!DOCTYPE html>
+<html lang="en" data-i18n-page="{{ catalog }}"{% if cur %} data-title-key="docsNav.pages.{{ cur.id }}.title"{% endif %}>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    {%- if description %}
+    <meta name="description" content="{{ description }}">
+    {%- endif %}
+
+    <!-- Apply the saved or system theme before first paint. The key is shared with
+         wildcat.chat so a choice made on one site carries to the other. -->
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('wildcat-home-theme'); } catch (e) {}
+            if (t !== 'light' && t !== 'dark') {
+                t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="logo192.png">
+
+    <!-- Fonts: Archivo names things, Public Sans sets copy, DM Mono sets readouts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Public+Sans:wght@400..700&family=DM+Mono:wght@400;500&display=swap">
+
+    <!-- design-system.css is vendored from wildcat-design-system
+         (npm run sync:design-system); do not edit it here. docs.css is the site layer. -->
+    <link rel="stylesheet" href="styles/design-system.css">
+    <link rel="stylesheet" href="styles/docs.css">
+
+    <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.min.js"></script>
+    <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
+</head>
+
+<body>
+    <a href="#content" class="wc-skip-link" data-i18n="nav.skipToContent">Skip to main content</a>
+
+    <header class="wc-appbar">
+        <div class="wc-appbar-brand">
+            <a class="wch-brand" href="https://wildcat.chat/" aria-label="Wildcat.chat home" data-i18n-aria-label="nav.homeLink">
+                <img class="wch-brand-icon" src="logo192.png" alt="" width="22" height="22">
+                <span class="wc-lockup">Wildcat</span>
+            </a>
+            <span class="wc-sep" aria-hidden="true"></span>
+            <span class="wc-appbar-page" data-i18n="docsNav.appbarPage">Docs</span>
+        </div>
+        <nav class="wch-tools" aria-label="Open a Wildcat tool" data-i18n-aria-label="docsNav.toolsNav">
+            <a class="wc-chipbtn" href="https://app.wildcat.chat"><i data-lucide="bot"></i>Sage</a>
+            <a class="wc-chipbtn" href="https://tts.wildcat.chat"><i data-lucide="mic"></i>TTS</a>
+            <a class="wc-chipbtn" href="https://wildcat.chat/chat-overlay/"><i data-lucide="message-square"></i>Overlay</a>
+        </nav>
+        <div class="wc-appbar-actions wch-actions">
+            <span class="wch-rule wch-desk" aria-hidden="true"></span>
+            <nav class="wch-links wch-desk" aria-label="Resources" data-i18n-aria-label="docsNav.resourcesNav">
+                <a class="wc-link" href="index.html"{% if navId == 'home' %} aria-current="page"{% endif %} data-i18n="docsNav.links.docs">Docs</a>
+                <a class="wc-link wc-link--muted" href="https://wildcat.chat/blog/" data-i18n="docsNav.links.blog">Blog</a>
+                <a class="wc-link wc-link--muted" href="https://github.com/detekoi" data-i18n="docsNav.links.github">GitHub</a>
+            </nav>
+            {#- Native select, matching the WildcatTTS dashboard. i18n.js fills the options. #}
+            <select class="wc-langselect" id="page-language-select" aria-label="Language" data-i18n-aria-label="ui.languageSelector">
+                <option value="en" lang="en">English</option>
+            </select>
+            <div class="wc-themeswitch" role="group" aria-label="Color theme" data-i18n-aria-label="docsNav.theme.label">
+                <button type="button" data-theme-value="light" aria-pressed="false" data-i18n="docsNav.theme.light">Light</button>
+                <button type="button" data-theme-value="dark" aria-pressed="false" data-i18n="docsNav.theme.dark">Dark</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="wch-docgrid">
+        <aside class="wch-side" aria-label="Docs navigation" data-i18n-aria-label="docsNav.sidebarNav">
+            <div class="wch-side-inner">
+                <input type="search" class="form-control wch-side-search" id="docs-search" placeholder="Search docs"
+                    aria-label="Search docs" data-i18n-placeholder="docsNav.search" data-i18n-aria-label="docsNav.search"
+                    autocomplete="off" spellcheck="false">
+                {%- for g in docsNav %}
+                <nav class="wch-side-group" aria-labelledby="side-{{ g.id }}" data-group="{{ g.id }}">
+                    <span class="wc-readout wch-side-label" id="side-{{ g.id }}" data-i18n="docsNav.groups.{{ g.id }}">{{ g.label }}</span>
+                    {%- for it in g.items %}
+                    <a class="wch-side-link" href="{{ it.url }}"{% if it.id == navId %} aria-current="page"{% endif %}
+                        data-page="{{ it.id }}"{% if it.commands %} data-commands{% endif %}
+                        data-i18n="docsNav.pages.{{ it.id }}.title">{{ it.title }}</a>
+                    {%- endfor %}
+                </nav>
+                {%- endfor %}
+                <p class="wc-help wch-side-empty" id="docs-search-empty" hidden data-i18n="docsNav.noResults">No pages match. Try a command name, such as !tts or !geo.</p>
+            </div>
+        </aside>
+
+        <main id="content" class="wch-doc" tabindex="-1">
+            {%- if cur and cur.id != 'home' %}
+            <header class="wch-doc-head">
+                <span class="wc-readout" data-i18n="docsNav.groups.{{ cur.group }}">{{ group.label }}</span>
+                <h1 class="wc-title wch-doc-title" data-i18n="docsNav.pages.{{ cur.id }}.title">{{ cur.title }}</h1>
+                <p class="wc-lede wch-doc-lede" data-i18n="docsNav.pages.{{ cur.id }}.lede">{{ cur.lede }}</p>
+            </header>
+            {%- endif %}
+
+            <div class="wch-prose{% if cur and cur.commands %} wch-commands{% endif %}">
+{{ content | safe }}
+            </div>
+
+            {%- if cur and cur.id != 'home' %}
+            {%- set prev = flat | navNeighbor(cur.id, -1) %}
+            {%- set next = flat | navNeighbor(cur.id, 1) %}
+            <footer class="wch-doc-foot">
+                <nav class="wch-pager" aria-label="Previous and next" data-i18n-aria-label="docsNav.pager">
+                    {%- if prev %}
+                    <a class="wch-pager-link" href="{{ prev.url }}" rel="prev">
+                        <span class="wc-readout" data-i18n="docsNav.previous">Previous</span>
+                        <span class="wch-pager-title" data-i18n="docsNav.pages.{{ prev.id }}.title">{{ prev.title }}</span>
+                    </a>
+                    {%- endif %}
+                    {%- if next %}
+                    <a class="wch-pager-link wch-pager-link--next" href="{{ next.url }}" rel="next">
+                        <span class="wc-readout" data-i18n="docsNav.next">Next</span>
+                        <span class="wch-pager-title" data-i18n="docsNav.pages.{{ next.id }}.title">{{ next.title }}</span>
+                    </a>
+                    {%- endif %}
+                </nav>
+                <div class="wch-doc-meta">
+                    <a class="wc-link wc-link--muted" href="https://github.com/detekoi/wildcat-docs/blob/main/{{ page.inputPath | replace('./', '') }}" target="_blank" rel="noopener" data-i18n="docsNav.editOnGithub">Edit this page on GitHub</a>
+                    <span class="wc-readout" id="last-updated"></span>
+                </div>
+            </footer>
+            {%- endif %}
+        </main>
+
+        <aside class="wch-toc" aria-labelledby="toc-title">
+            {%- if toc and toc.length %}
+            <span class="wc-readout wch-toc-label" id="toc-title" data-i18n="docsNav.onThisPage">On this page</span>
+            <nav class="wch-toc-list" aria-labelledby="toc-title">
+                {%- for t in toc %}
+                <a class="wc-link wc-link--muted" href="#{{ t[0] }}"{% if t[1] %} data-i18n="{{ t[1] }}"{% endif %}>{{ t[2] }}</a>
+                {%- endfor %}
+            </nav>
+            {%- endif %}
+        </aside>
+    </div>
+
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/docs.js"></script>
+    {%- if cur and cur.id != 'home' %}
+    <script src="scripts/last-updated.js"></script>
+    {%- endif %}
+    {%- for src in extraScripts %}
+    <script src="{{ src }}"></script>
+    {%- endfor %}
+</body>
+
+</html>

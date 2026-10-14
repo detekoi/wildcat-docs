@@ -24,5 +24,131 @@
       "command": "Commande",
       "description": "Description"
     }
+  },
+  "docsNav": {
+    "siteTitle": "Documentation Wildcat",
+    "appbarPage": "Docs",
+    "toolsNav": "Ouvrir un outil Wildcat",
+    "resourcesNav": "Ressources",
+    "sidebarNav": "Navigation de la documentation",
+    "links": {
+      "docs": "Docs",
+      "blog": "Blog",
+      "github": "GitHub"
+    },
+    "theme": {
+      "label": "Thème de couleur",
+      "light": "Clair",
+      "dark": "Sombre"
+    },
+    "search": "Rechercher dans la documentation",
+    "noResults": "Aucune page ne correspond. Essayez un nom de commande, par exemple !tts ou !geo.",
+    "onThisPage": "Sur cette page",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "pager": "Précédent et suivant",
+    "editOnGithub": "Modifier cette page sur GitHub",
+    "legacy": {
+      "lede": "Cette documentation est maintenant répartie sur les pages ci-dessous."
+    },
+    "groups": {
+      "start": "Bien démarrer",
+      "sage": "WildcatSage",
+      "tts": "WildcatTTS",
+      "overlay": "Chat Overlay"
+    },
+    "commands": {
+      "all": "Toutes",
+      "filter": "Filtrer les commandes, par exemple : quote",
+      "filterLabel": "Filtrer les commandes",
+      "category": "Catégorie de commandes",
+      "none": "Aucune commande ne correspond. Effacez le filtre ou choisissez Toutes.",
+      "count": {
+        "one": "{n} commande",
+        "many": "{n} commandes",
+        "other": "{n} commandes"
+      }
+    },
+    "pages": {
+      "home": {
+        "title": "Vue d'ensemble"
+      },
+      "sage-setup": {
+        "title": "Configurer le tableau de bord",
+        "lede": "Connectez-vous au tableau de bord WildcatSage, ajoutez le bot à votre chaîne et vérifiez les autorisations qu'il demande."
+      },
+      "sage-commands": {
+        "title": "Commandes",
+        "lede": "Toutes les commandes de chat de WildcatSage. Sélectionnez une commande pour voir ses options. Les commandes marquées Mod fonctionnent uniquement pour les modérateurs et le streamer."
+      },
+      "sage-custom-commands": {
+        "title": "Commandes personnalisées et variables",
+        "lede": "Les variables utilisables dans les réponses des commandes personnalisées, avec des exemples, et comment les commandes IA écrivent une nouvelle réponse à chaque fois."
+      },
+      "sage-personality": {
+        "title": "Personnalité du bot",
+        "lede": "Modifiez la façon dont WildcatSage parle sur votre chaîne, et découvrez les règles qui restent en place quoi que vous écriviez."
+      },
+      "sage-memory": {
+        "title": "Mémoire de la chaîne",
+        "lede": "Ce dont WildcatSage se souvient de votre chaîne d'un stream à l'autre, et comment les spectateurs et les modérateurs le contrôlent."
+      },
+      "sage-language": {
+        "title": "Langue du bot",
+        "lede": "Comment WildcatSage choisit la langue de ses réponses, et comment la définir vous-même."
+      },
+      "sage-checkin": {
+        "title": "Check-in quotidien",
+        "lede": "Permettez aux spectateurs de faire un check-in une fois par jour avec une récompense Channel Points, et choisissez ce que le bot répond."
+      },
+      "tts-setup": {
+        "title": "Configurer le tableau de bord et OBS",
+        "lede": "Configurez WildcatTTS dans le Web Dashboard, calibrez le volume des voix et ajoutez le son à OBS."
+      },
+      "tts-commands": {
+        "title": "Commandes",
+        "lede": "Toutes les commandes de chat de WildcatTTS. Sélectionnez une commande pour voir ses options. Les commandes marquées Mod fonctionnent uniquement pour les modérateurs et le streamer."
+      },
+      "tts-voices": {
+        "title": "Voix et Language Boost",
+        "lede": "Choisissez une voix dans la liste complète, et indiquez au moteur vocal la langue de votre chat."
+      },
+      "tts-filtering": {
+        "title": "Filtres et prononciation",
+        "lede": "Contrôlez ce que TTS lit à voix haute : décrire les emotes, développer les abréviations du chat, adoucir les mots grossiers et ignorer les messages contenant des mots interdits."
+      },
+      "tts-events": {
+        "title": "Événements du stream et confidentialité",
+        "lede": "Choisissez les événements du stream que TTS annonce, la façon dont il traite les commandes des autres bots et comment il lit les liens."
+      },
+      "tts-youtube": {
+        "title": "Chat YouTube",
+        "lede": "Faites lire le chat YouTube Live en plus de votre chat Twitch lorsque vous diffusez sur les deux."
+      },
+      "tts-troubleshooting": {
+        "title": "Dépannage",
+        "lede": "Solutions aux problèmes les plus courants de WildcatTTS."
+      },
+      "overlay-obs": {
+        "title": "Configurer dans OBS",
+        "lede": "Wildcat Chat Overlay affiche les messages du chat Twitch et YouTube Live dans OBS Studio. Vous pouvez modifier ses paramètres dans le Chat Scene Creator sur le web, ou dans le panneau de configuration de la source navigateur OBS."
+      },
+      "overlay-appearance": {
+        "title": "Thèmes et apparence",
+        "lede": "Générez un thème à partir d'une description, puis ajustez les couleurs, les polices et l'affichage des messages."
+      },
+      "overlay-emotes": {
+        "title": "Emotes",
+        "lede": "Comment l'overlay affiche les emotes BetterTTV, FrankerFaceZ et 7TV, y compris les emotes superposées."
+      },
+      "overlay-scenes": {
+        "title": "Chat Scene Creator",
+        "lede": "Enregistrez des scènes de chat nommées sur le web, synchronisez les modifications avec OBS en direct et utilisez le panneau de configuration dans OBS."
+      },
+      "overlay-url": {
+        "title": "Paramètres d'URL",
+        "lede": "Les paramètres à placer dans l'URL de l'overlay, les messages de diagnostic et le mode démo."
+      }
+    }
   }
 }

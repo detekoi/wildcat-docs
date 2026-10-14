@@ -181,7 +181,7 @@
       "step7": "En la ventana interactiva, ingrese la información de su canal. Haga clic en el engranaje de configuración (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Luego haga clic en \"Conectar\".",
       "tips": {
         "title": "Consejos avanzados de OBS",
-        "tip1": "Active <span class=\"inline-code\">Shutdown source when not visible</span> para ahorrar recursos del sistema.",
+        "tip1": "Para la sincronización en directo desde el Chat Scene Creator, deje <span class=\"inline-code\">Shutdown source when not visible</span> y <span class=\"inline-code\">Refresh browser when scene becomes active</span> desactivadas.",
         "tip2": "Para ocultar las barras de desplazamiento, agregue <span class=\"inline-code\">body { overflow: hidden; }</span> al campo Custom CSS.",
         "tip3": "La configuración se guarda en la memoria caché de OBS. Si borra la memoria caché de OBS para esta fuente, configure sus ajustes visuales nuevamente."
       }

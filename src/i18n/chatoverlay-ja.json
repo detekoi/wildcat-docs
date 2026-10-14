@@ -181,7 +181,7 @@
       "step7": "対話ウィンドウでチャンネル情報を入力します。設定ギア（<i data-lucide=\"settings\" class=\"lucide-inline\"></i>）をクリックします。次に「Connect」をクリックします。",
       "tips": {
         "title": "OBSの高度なヒント",
-        "tip1": "<span class=\"inline-code\">表示されていないときにソースを閉じる</span>をオンにして、システムリソースを節約します。",
+        "tip1": "Chat Scene Creator からライブで同期するには、<span class=\"inline-code\">表示されていないときにソースを閉じる</span>と<span class=\"inline-code\">シーンがアクティブになったときにブラウザを更新</span>をオフのままにします。",
         "tip2": "スクロールバーを非表示にするには、「カスタムCSS」フィールドに<span class=\"inline-code\">body { overflow: hidden; }</span>を追加します。",
         "tip3": "設定はOBSのキャッシュに保存されます。このソースのOBSキャッシュをクリアした場合は、外観設定を再度行ってください。"
       }

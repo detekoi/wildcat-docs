@@ -24,5 +24,130 @@
       "command": "Befehl",
       "description": "Beschreibung"
     }
+  },
+  "docsNav": {
+    "siteTitle": "Wildcat-Doku",
+    "appbarPage": "Doku",
+    "toolsNav": "Ein Wildcat-Tool öffnen",
+    "resourcesNav": "Ressourcen",
+    "sidebarNav": "Doku-Navigation",
+    "links": {
+      "docs": "Doku",
+      "blog": "Blog",
+      "github": "GitHub"
+    },
+    "theme": {
+      "label": "Farbschema",
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "search": "Doku durchsuchen",
+    "noResults": "Keine Seite passt. Versuchen Sie einen Befehlsnamen wie !tts oder !geo.",
+    "onThisPage": "Auf dieser Seite",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "pager": "Zurück und weiter",
+    "editOnGithub": "Diese Seite auf GitHub bearbeiten",
+    "legacy": {
+      "lede": "Diese Dokumentation ist jetzt auf die folgenden Seiten verteilt."
+    },
+    "groups": {
+      "start": "Erste Schritte",
+      "sage": "WildcatSage",
+      "tts": "WildcatTTS",
+      "overlay": "Chat-Overlay"
+    },
+    "commands": {
+      "all": "Alle",
+      "filter": "Befehle filtern, zum Beispiel: quote",
+      "filterLabel": "Befehle filtern",
+      "category": "Befehlskategorie",
+      "none": "Kein Befehl passt. Leeren Sie den Filter oder wählen Sie Alle.",
+      "count": {
+        "one": "{n} Befehl",
+        "other": "{n} Befehle"
+      }
+    },
+    "pages": {
+      "home": {
+        "title": "Übersicht"
+      },
+      "sage-setup": {
+        "title": "Dashboard einrichten",
+        "lede": "Melden Sie sich im WildcatSage-Dashboard an, fügen Sie den Bot Ihrem Kanal hinzu und prüfen Sie die Berechtigungen, die er anfordert."
+      },
+      "sage-commands": {
+        "title": "Befehle",
+        "lede": "Alle Chatbefehle von WildcatSage. Wählen Sie einen Befehl aus, um seine Optionen zu sehen. Mit Mod markierte Befehle funktionieren nur für Moderatoren und den Streamer."
+      },
+      "sage-custom-commands": {
+        "title": "Eigene Befehle & Variablen",
+        "lede": "Variablen für die Antworten eigener Befehle, mit Beispielen, und wie KI-Befehle jedes Mal eine neue Antwort schreiben."
+      },
+      "sage-personality": {
+        "title": "Bot-Persönlichkeit",
+        "lede": "Ändern Sie, wie WildcatSage in Ihrem Kanal spricht, und die Regeln, die immer gelten, egal was Sie schreiben."
+      },
+      "sage-memory": {
+        "title": "Kanalgedächtnis",
+        "lede": "Was WildcatSage sich von Stream zu Stream über Ihren Kanal merkt, und wie Zuschauer und Moderatoren das steuern."
+      },
+      "sage-language": {
+        "title": "Bot-Sprache",
+        "lede": "Wie WildcatSage die Sprache seiner Antworten wählt und wie Sie sie selbst festlegen."
+      },
+      "sage-checkin": {
+        "title": "Täglicher Check-in",
+        "lede": "Lassen Sie Zuschauer sich einmal am Tag mit einer Channel Points-Belohnung melden, und legen Sie fest, was der Bot antwortet."
+      },
+      "tts-setup": {
+        "title": "Dashboard & OBS einrichten",
+        "lede": "Richten Sie WildcatTTS im Web Dashboard ein, kalibrieren Sie die Lautstärke der Stimmen und fügen Sie den Ton in OBS hinzu."
+      },
+      "tts-commands": {
+        "title": "Befehle",
+        "lede": "Alle Chatbefehle von WildcatTTS. Wählen Sie einen Befehl aus, um seine Optionen zu sehen. Mit Mod markierte Befehle funktionieren nur für Moderatoren und den Streamer."
+      },
+      "tts-voices": {
+        "title": "Stimmen & Language Boost",
+        "lede": "Wählen Sie eine Stimme aus der vollständigen Liste, und teilen Sie der Sprachsynthese mit, welche Sprache Ihr Chat spricht."
+      },
+      "tts-filtering": {
+        "title": "Filter & Aussprache",
+        "lede": "Steuern Sie, was TTS vorliest: Emotes beschreiben, Chat-Abkürzungen ausschreiben, unhöfliche Wörter abmildern und Nachrichten mit gesperrten Wörtern überspringen."
+      },
+      "tts-events": {
+        "title": "Stream-Ereignisse & Privatsphäre",
+        "lede": "Legen Sie fest, welche Stream-Ereignisse TTS ansagt, wie es Befehle anderer Bots behandelt und wie es Links vorliest."
+      },
+      "tts-youtube": {
+        "title": "YouTube-Chat",
+        "lede": "Lassen Sie den YouTube-Live-Chat neben Ihrem Twitch-Chat vorlesen, wenn Sie auf beiden Plattformen streamen."
+      },
+      "tts-troubleshooting": {
+        "title": "Fehlerbehebung",
+        "lede": "Lösungen für die häufigsten Probleme mit WildcatTTS."
+      },
+      "overlay-obs": {
+        "title": "In OBS einrichten",
+        "lede": "Das Wildcat Chat Overlay zeigt Chatnachrichten von Twitch und YouTube Live in OBS Studio an. Sie können die Einstellungen im Chat Scene Creator im Web oder im Konfigurationsbereich der OBS-Browserquelle ändern."
+      },
+      "overlay-appearance": {
+        "title": "Themes & Aussehen",
+        "lede": "Erstellen Sie ein Theme aus einer Beschreibung und passen Sie dann Farben, Schriften und die Anzeige der Nachrichten an."
+      },
+      "overlay-emotes": {
+        "title": "Emotes",
+        "lede": "Wie das Overlay Emotes von BetterTTV, FrankerFaceZ und 7TV anzeigt, auch übereinandergelegte Emotes."
+      },
+      "overlay-scenes": {
+        "title": "Chat Scene Creator",
+        "lede": "Speichern Sie benannte Chat-Szenen im Web, übertragen Sie Änderungen live an OBS und nutzen Sie den Konfigurationsbereich in OBS."
+      },
+      "overlay-url": {
+        "title": "URL-Parameter",
+        "lede": "Einstellungen, die Sie in die Overlay-URL schreiben können, Diagnosemeldungen und der Demomodus."
+      }
+    }
   }
 }

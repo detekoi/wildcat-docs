@@ -1,0 +1,72 @@
+---
+layout: docs.njk
+navId: sage-setup
+catalog: botcommands
+title: "Set up the dashboard – Wildcat Docs"
+description: "Sign in to the WildcatSage dashboard, add the bot to your channel, and review the permissions it asks for."
+toc:
+  - ["web-dashboard-features", "webDashboard.featuresTitle", "Dashboard Features"]
+  - ["web-dashboard-gettingstarted", "webDashboard.gettingStartedTitle", "Getting Started"]
+  - ["web-dashboard-oauth", "webDashboard.oauthTitle", "OAuth Permissions"]
+---
+<section id="web-dashboard" class="section">
+    <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
+    <p data-i18n="webDashboard.intro">The <a href="https://bot.wildcat.chat/" class="default-link-style"
+            target="_blank" rel="noopener noreferrer">WildcatSage Web Dashboard</a> lets streamers configure bot settings for their channel. Sign in with your Twitch account to access the dashboard.</p>
+
+    <h3 id="web-dashboard-features" data-i18n="webDashboard.featuresTitle">Dashboard Features</h3>
+    <ul>
+        <li><strong data-i18n="webDashboard.features.botManagement.title">Bot Management:</strong> <span
+                data-i18n="webDashboard.features.botManagement.desc">Add or remove WildcatSage from your channel.</span></li>
+        <li><strong data-i18n="webDashboard.features.channelConfig.title">Channel Settings:</strong> <span
+                data-i18n="webDashboard.features.channelConfig.desc">Configure auto-chat frequency, stream event messages, and ad break notifications.</span></li>
+        <li><strong data-i18n="webDashboard.features.streamEvents.title">Stream Events:</strong> <span
+                data-i18n="webDashboard.features.streamEvents.desc">Enable AI greetings, farewells, and celebration messages for new followers, subscribers, and incoming raids.</span></li>
+        <li><strong data-i18n="webDashboard.features.commandControl.title">Command Management:</strong> <span
+                data-i18n="webDashboard.features.commandControl.desc">Create custom commands and enable or disable built-in commands.</span></li>
+        <li><strong data-i18n="webDashboard.features.timers.title">Timed Messages:</strong> <span
+                data-i18n="webDashboard.features.timers.desc">Create and manage scheduled chat messages with interval and chat line settings.</span></li>
+        <li><strong data-i18n="webDashboard.features.aiPreview.title">AI Preview:</strong> <span
+                data-i18n="webDashboard.features.aiPreview.desc">Show a sample AI reply for a custom command, a timed message, or the daily check-in before you save it.</span></li>
+        <li><strong data-i18n="webDashboard.features.botPersonality.title">Bot Personality:</strong> <span
+                data-i18n="webDashboard.features.botPersonality.desc">Customize tone, humor, and style instructions for AI responses, with automatic Twitch rule checks.</span></li>
+        <li><strong data-i18n="webDashboard.features.botLanguage.title">Bot Language:</strong> <span
+                data-i18n="webDashboard.features.botLanguage.desc">Set the language the bot speaks in your channel, or use the stream language from Twitch.</span></li>
+        <li><strong data-i18n="webDashboard.features.dailyCheckIn.title">Daily Check-In:</strong> <span
+                data-i18n="webDashboard.features.dailyCheckIn.desc">Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses.</span></li>
+        <li><strong data-i18n="webDashboard.features.language.title">Dashboard Language:</strong> <span
+                data-i18n="webDashboard.features.language.desc">Show the dashboard in one of eight languages. This setting is separate from the bot language.</span></li>
+    </ul>
+
+    <h3 id="web-dashboard-gettingstarted" data-i18n="webDashboard.gettingStartedTitle">Getting Started</h3>
+    <ol>
+        <li><strong data-i18n="webDashboard.steps.visit.title">Visit the Dashboard:</strong> <span
+                data-i18n="webDashboard.steps.visit.desc">Go to <a href="https://bot.wildcat.chat/"
+                    class="default-link-style" target="_blank" rel="noopener noreferrer">https://bot.wildcat.chat/</a>.</span></li>
+        <li><strong data-i18n="webDashboard.steps.authorize.title">Authorize:</strong> <span
+                data-i18n="webDashboard.steps.authorize.desc">Select "Sign in with Twitch" and approve the required permissions.</span></li>
+        <li><strong data-i18n="webDashboard.steps.addBot.title">Add the Bot:</strong> <span
+                data-i18n="webDashboard.steps.addBot.desc">Select "Add bot to my channel" to invite WildcatSage to your channel.</span></li>
+        <li><strong data-i18n="webDashboard.steps.configure.title">Configure:</strong> <span
+                data-i18n="webDashboard.steps.configure.desc">Change bot settings in the dashboard.</span></li>
+        <li><strong data-i18n="webDashboard.steps.grantPerms.title">Troubleshooting:</strong> <span
+                data-i18n="webDashboard.steps.grantPerms.desc">If the bot does not respond, enter <span class="inline-code">/mod WildcatSage</span> in Twitch chat to grant moderator permissions.</span></li>
+    </ol>
+
+    <h3 id="web-dashboard-oauth" data-i18n="webDashboard.oauthTitle">OAuth Permissions</h3>
+    <p data-i18n="webDashboard.oauthIntro">The dashboard requires these Twitch OAuth permissions:</p>
+    <ul>
+        <li><span class="inline-code">user:read:email</span> - <span data-i18n="webDashboard.oauth.readEmail">Reads your email address for account identification.</span></li>
+        <li><span class="inline-code">channel:read:ads</span> - <span data-i18n="webDashboard.oauth.readAds">Receives ad break notifications for your channel.</span></li>
+        <li><span class="inline-code">channel:manage:moderators</span> - <span
+                data-i18n="webDashboard.oauth.manageModerators">Grants moderator permissions to the bot.</span></li>
+        <li><span class="inline-code">moderator:read:followers</span> - <span data-i18n="webDashboard.oauth.readFollowers">Reads follower data for commands such as !followage.</span></li>
+        <li><span class="inline-code">channel:manage:redemptions</span> - <span
+                data-i18n="webDashboard.oauth.manageRedemptions">Creates and manages Channel Point Rewards for features such as Daily Check-In.</span></li>
+    </ul>
+
+    <p><strong data-i18n="webDashboard.noteLabel">Note:</strong> <span
+            data-i18n="webDashboard.noteText">WildcatSage is currently invite-only. If your channel does not appear in the dashboard, <a href="https://parfaitfair.com/#contact"
+                class="default-link-style" target="_blank" rel="noopener noreferrer">request access through the contact form</a>.</span>
+    </p>
+</section>

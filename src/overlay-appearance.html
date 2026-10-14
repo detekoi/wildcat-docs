@@ -1,0 +1,95 @@
+---
+layout: docs.njk
+navId: overlay-appearance
+catalog: chatoverlay
+title: "Themes & appearance – Wildcat Docs"
+description: "Generate a theme from a description, then adjust colors, fonts, and how messages appear."
+toc:
+  - ["customization", "chatOverlay.customization.title", "Customization & Themes"]
+  - ["colors", "chatOverlay.colors.title", "Color Customization"]
+  - ["fonts", "chatOverlay.fonts.title", "Google Fonts & Typography"]
+  - ["animations", "chatOverlay.animations.title", "Display Modes & Animations"]
+---
+<section id="customization" class="section">
+    <h2 data-i18n="chatOverlay.customization.title">Customization & Themes</h2>
+    <p data-i18n="chatOverlay.customization.desc">You can change the look of the overlay in the config panel or in the Chat Scene Creator.</p>
+
+    <div class="expand-tip wc-note">
+        <i data-lucide="info" class="tip-icon"></i>
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="chatOverlay.customization.obsConfig.title"><strong><i data-lucide="settings" class="lucide-inline"></i> Configuration Options:</strong> There are two ways to change the settings:</div>
+            <ol style="margin-left: 1.5rem; margin-top: 0.5rem; list-style-type: decimal;">
+                <li data-i18n="chatOverlay.customization.obsConfig.step1"><strong>Web Chat Scene Creator (Recommended):</strong> Set channel connections, fonts, themes, colors, and layouts on the web. The Chat Scene Creator sends each saved change to OBS live.</li>
+                <li data-i18n="chatOverlay.customization.obsConfig.step2"><strong>OBS Config Panel:</strong> In OBS, right-click the Browser Source. Then select <strong>Interact</strong>. Move the pointer over the chat. Then click the settings gear (<i data-lucide="settings" class="lucide-inline"></i>). Settings that you change here stay local to this OBS source.</li>
+                <li data-i18n="chatOverlay.customization.obsConfig.step3">The overlay saves the settings of each scene source automatically.</li>
+            </ol>
+        </div>
+    </div>
+
+    <h3 data-i18n="chatOverlay.themes.title">Automatic AI Themes</h3>
+    <p data-i18n="chatOverlay.themes.desc">The overlay has an AI theme generator. In the config panel, type a description of the look that you want (for example, "cyberpunk neon night" or "cozy wooden cabin"). The overlay makes the CSS variables, adjusts the color contrast, sets matching pronoun badge colors, and applies the theme live.</p>
+
+    <h3 data-i18n="chatOverlay.themes.carouselTitle">Theme Carousel & Custom Themes</h3>
+    <p data-i18n="chatOverlay.themes.carouselDesc">Use the theme carousel to select a preset theme, an AI theme, or a custom theme. The carousel stores up to 50 saved themes. You can delete a custom theme. The overlay asks you to confirm the deletion. The active theme is the same on every page.</p>
+
+    <h3 data-i18n="chatOverlay.themes.userPresetsTitle">Custom Theme Presets</h3>
+    <p data-i18n="chatOverlay.themes.userPresetsDesc">You can save your current visual settings as a named theme preset. You can save a preset from the Chat Scene Creator or from the config panel. Presets go to the cloud theme carousel.</p>
+    <ul>
+        <li data-i18n="chatOverlay.themes.presetSync"><strong>Cloud Sync & Deletion:</strong> The overlay removes duplicate presets, backs them up to the cloud, and lets you delete them.</li>
+        <li data-i18n="chatOverlay.themes.presetBgImage"><strong>Background Image Support:</strong> In the Chat Scene Creator, a preset saves your uploaded background image. In the config panel, a preset uses the background image of the active theme.</li>
+    </ul>
+</section>
+
+<section id="colors" class="section">
+    <h2 data-i18n="chatOverlay.colors.title">Color Customization</h2>
+    <p data-i18n="chatOverlay.colors.desc">You can set the color of every chat element. Enter a hex color code (for example <span class="inline-code">#FF5500</span>). Swatches show your current colors. For a transparent background, enter <span class="inline-code">transparent</span> or a hex code with an alpha value.</p>
+
+    <div class="expand-tip wc-note">
+        <i data-lucide="info" class="tip-icon"></i>
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="chatOverlay.colors.tip"><strong>Tip:</strong> Search the web for "color picker" to find an interactive color tool. Copy the hex code and paste it into the settings field.</div>
+        </div>
+    </div>
+
+    <h3 data-i18n="chatOverlay.colors.available.title">Available Color Settings</h3>
+    <ul>
+        <li data-i18n="chatOverlay.colors.available.bg"><strong>Background Color:</strong> The main background of chat messages. Use it with the background opacity slider to control transparency.</li>
+        <li data-i18n="chatOverlay.colors.available.border"><strong>Border Color:</strong> The border around chat message bubbles.</li>
+        <li data-i18n="chatOverlay.colors.available.text"><strong>Text Color:</strong> The color of chat message text.</li>
+        <li data-i18n="chatOverlay.colors.available.username"><strong>Username Color:</strong> The default color of usernames. Turn on <strong>Override User Colors</strong> to apply your color to all usernames.</li>
+        <li data-i18n="chatOverlay.colors.available.timestamp"><strong>Timestamp Color:</strong> The color of the message timestamps.</li>
+        <li data-i18n="chatOverlay.colors.available.pronoun"><strong>Pronoun Badge Color:</strong> The color of the pronoun badge next to a username. You can set it to the timestamp color.</li>
+        <li data-i18n="chatOverlay.colors.available.bgOpacity"><strong>Background Opacity:</strong> Sets the opacity of the message background, from 0% (fully transparent) to 100%.</li>
+        <li data-i18n="chatOverlay.colors.available.bgImageOpacity"><strong>Background Image Upload & Opacity:</strong> Upload a background image in the Chat Scene Creator. Set its opacity with the background image opacity slider.</li>
+        <li data-i18n="chatOverlay.colors.available.chromaKey"><strong>Chroma Key Mode:</strong> Sets a solid green background for green screen keying in OBS.</li>
+    </ul>
+</section>
+
+<section id="fonts" class="section">
+    <h2 data-i18n="chatOverlay.fonts.title">Google Fonts & Typography</h2>
+    <p data-i18n="chatOverlay.fonts.desc">You can set the font style, the font size, and the layout limits to match your stream layout.</p>
+
+    <h3 data-i18n="chatOverlay.fonts.searchTitle">Searchable Google Fonts</h3>
+    <p data-i18n="chatOverlay.fonts.searchDesc">Use the font picker to search Google Fonts and select one. The overlay loads the font stylesheet live in the preview and in OBS.</p>
+
+    <h3 data-i18n="chatOverlay.fonts.settingsTitle">Typography & Layout Settings</h3>
+    <ul>
+        <li data-i18n="chatOverlay.fonts.fontSize"><strong>Font Size:</strong> Sets the font size, from 10px to 40px.</li>
+        <li data-i18n="chatOverlay.fonts.fontWeight"><strong>Font Weight:</strong> Select Normal, Bold, 500, 600, 700, or 800 Extra Bold.</li>
+        <li data-i18n="chatOverlay.fonts.borderRadius"><strong>Border Radius:</strong> Select a border radius preset (0px, 8px, 16px, or 24px).</li>
+        <li data-i18n="chatOverlay.fonts.boxShadow"><strong>Box Shadow:</strong> Select a shadow depth preset (None, Soft, Simple 3D, Intense 3D, or Sharp).</li>
+        <li data-i18n="chatOverlay.fonts.textShadow"><strong>Text Shadow:</strong> Select a text shadow preset (None, Soft, Sharp, Outline, Strong, or Glow).</li>
+        <li data-i18n="chatOverlay.fonts.chatDimensions"><strong>Chat Dimensions:</strong> Sets the width (20% to 100%) and the height (20% to 100%) of the chat container.</li>
+    </ul>
+</section>
+
+<section id="animations" class="section">
+    <h2 data-i18n="chatOverlay.animations.title">Display Modes & Animations</h2>
+    <p data-i18n="chatOverlay.animations.desc">Select Window mode (a continuous scrolling list) or Popup mode (message bubbles that disappear). Message entry and exit animations use the Web Animations API, so they stay smooth.</p>
+
+    <h3 data-i18n="chatOverlay.animations.popupDirections.title">Popup Animation Directions & Controls</h3>
+    <p data-i18n="chatOverlay.animations.popupDirections.desc">In Popup mode, you can set the entry direction of a message: From Bottom, From Top, From Left, or From Right. You can also set the message duration (2 to 60 seconds) and the maximum popup count (1 to 10). Popup messages stay visible while you change settings, so you can see the result.</p>
+
+    <h3 data-i18n="chatOverlay.animations.reducedMotion.title">Reduced Motion Support</h3>
+    <p data-i18n="chatOverlay.animations.reducedMotion.desc">The overlay obeys the <span class="inline-code">prefers-reduced-motion</span> setting of the system. When this setting is on, Window mode has no entry animation, and Popup mode uses the shortest transition.</p>
+</section>

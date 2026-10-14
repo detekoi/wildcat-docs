@@ -1,0 +1,1140 @@
+---
+layout: docs.njk
+navId: tts-commands
+catalog: wildcat-tts
+title: "Commands – Wildcat Docs"
+description: "Every WildcatTTS chat command. Select a command to see its options. Commands marked Mod work for moderators and the broadcaster only."
+toc:
+  - ["cat-directTTS", "table.categories.directTTS", "Direct TTS"]
+  - ["cat-ttsGeneral", "table.categories.ttsGeneral", "General"]
+  - ["cat-engineModeControl", "table.categories.engineModeControl", "Engine & Mode Control\n                    (Moderator Only)"]
+  - ["cat-channelPointsTTS", "table.categories.channelPointsTTS", "Channel Points → TTS (Web\n                    Dashboard Only)"]
+  - ["cat-queueManagement", "table.categories.queueManagement", "Queue Management (Moderator Only)\n                "]
+  - ["cat-userEventPreferences", "table.categories.userEventPreferences", "User & Event Preferences\n                "]
+  - ["cat-channelDefaults", "table.categories.channelDefaults", "Channel-Wide Default Configuration\n                    (Moderator Only)"]
+  - ["cat-emoteDescriptions", "table.categories.emoteDescriptions", "Emote Description Management (Moderator Only)\n                "]
+  - ["cat-pronunciationFiltering", "table.categories.pronunciationFiltering", "Pronunciation & Filtering (Moderator Only)\n                "]
+extraScripts:
+  - scripts/dropdown-table.js
+  - scripts/command-reference.js
+---
+<section id="commands" class="section">
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="commands.prefixTip">All TTS commands start with <span
+                    class="inline-code">!tts</span>.</div>
+            <div class="tip-text" data-i18n="commands.exampleTip">For example: <span class="inline-code">!tts
+                    status</span></div>
+            <div class="tip-text" data-i18n="commands.expandTip">Select any command row below to show usage details.</div>
+        </div>
+    </div>
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="commands.webDashboardTip">Broadcasters and viewers can also
+                change settings in the <a href="https://tts.wildcat.chat/" class="default-link-style"
+                    target="_blank" rel="noopener noreferrer">WildcatTTS Web Dashboard</a>.</div>
+            <!-- Updated text to include !tts settings and !myvoice aliases -->
+            <div class="tip-text" data-i18n="commands.myvoiceTip">Viewers can set personal TTS preferences in the web
+                dashboard with <span class="inline-code">!myvoice</span> in chat.</div>
+        </div>
+    </div>
+    <span id="tts-commands"></span>
+    <table>
+        <caption class="visually-hidden" data-i18n="commands.ttsCommandsTitle">Text-To-Speech Commands</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="table.headers.command">Command</th>
+                <th scope="col" data-i18n="table.headers.description">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-directTTS" data-i18n="table.categories.directTTS">Direct TTS</h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;</td>
+                <td data-i18n-key="commands.ttsMessage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMessage"><span class="description-text">Adds the message to the TTS queue immediately. This command works in all and command modes. TTS uses your preferences (or channel defaults) for voice, pitch, speed, and emotion.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsMessage" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMessage.usage.basic">!tts Welcome everyone to the stream!</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-ttsGeneral" data-i18n="table.categories.ttsGeneral">General</h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsStatus.name">!tts status</td>
+                <td data-i18n-key="commands.ttsStatus.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStatus"><span class="description-text">Shows the current TTS status for the channel.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsStatus" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsStatus.usage.basic">!tts status</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsStatus.notes">Shows engine state, mode, queue length,
+                            default voice, pitch, speed, emotion, and language boost settings.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsVoices.name">!tts voices</td>
+                <td data-i18n-key="commands.ttsVoices.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsVoices"><span class="description-text">Shows a link to the list of available TTS voices.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsVoices" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsVoices.usage.basic">!tts voices</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsLanguageslist.name">!tts languageslist</td>
+                <td data-i18n-key="commands.ttsLanguageslist.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsLanguageslist"><span
+                        class="description-text">Shows a link to the list of available TTS language boost options.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsLanguageslist" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsLanguageslist.usage.basic">!tts languageslist</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsCommands.name">!tts commands<br><span style="font-size:0.9em;"
+                        data-i18n="commands.ttsCommands.alias">(Alias: !tts help)</span></td>
+                <td data-i18n-key="commands.ttsCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsCommands"><span class="description-text">Shows a link to the full list of <span class="inline-code">!tts</span> subcommands.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsCommands" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsCommands.usage.commands">!tts commands</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsCommands.usage.help">!tts help</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <!-- Updated alias text to include !tts settings -->
+                <td data-i18n-key="commands.ttsPrefs.name">!tts prefs<br><span style="font-size:0.9em;"
+                        data-i18n="commands.ttsPrefs.aliases">(Aliases: !tts preferences, !tts settings)</span>
+                </td>
+                <td data-i18n-key="commands.ttsPrefs.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPrefs"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong>.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsPrefs" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPrefs.usage.prefs">!tts prefs</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPrefs.usage.preferences">!tts preferences</code>
+                    </div>
+                    <!-- Added !tts settings alias -->
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPrefs.usage.settings">!tts settings</code>
+                    </div>
+                    <ul>
+                        <li data-i18n="commands.ttsPrefs.feature1">Set your own voice, pitch, speed,
+                            emotion, and language for this channel.</li>
+                        <li data-i18n="commands.ttsPrefs.feature2">Includes a Danger Zone where you can add
+                            yourself to the TTS ignore list. Only a moderator can remove you.</li>
+                        <li data-i18n="commands.ttsPrefs.feature3">The bot posts the link in chat with the channel context loaded.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <!-- Added new command: !myvoice -->
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.myvoice.name">!myvoice</td>
+                <td data-i18n-key="commands.myvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-myvoice"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong> (same as
+                        <span class="inline-code">!tts prefs</span>).</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-myvoice" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.myvoice.usage.basic">!myvoice</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.myvoice.notes">Same as <code>!tts prefs</code>. The bot posts
+                            the link in chat with the channel context loaded.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyone">Everyone</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-engineModeControl" data-i18n="table.categories.engineModeControl">Engine &amp; Mode Control
+                    (Moderator Only)</h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsOn.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts on<br><span
+                        style="font-size:0.9em;" data-i18n="commands.ttsOn.alias">(Alias: !tts enable)</span>
+                </td>
+                <td data-i18n-key="commands.ttsOn.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsOn"><span class="description-text">Starts the TTS engine. TTS speaks messages and events based on the active mode.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsOn" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsOn.usage.on">!tts on</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsOn.usage.enable">!tts enable</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsOff.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts off<br><span
+                        style="font-size:0.9em;" data-i18n="commands.ttsOff.alias">(Alias: !tts disable)</span>
+                </td>
+                <td data-i18n-key="commands.ttsOff.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsOff"><span class="description-text">Stops the TTS engine completely. TTS will not speak messages or events.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsOff" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsOff.usage.off">!tts off</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsOff.usage.disable">!tts disable</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsMode.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts mode
+                    [all|command|bits_points_only|highlighted_only]</td>
+                <td data-i18n-key="commands.ttsMode.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMode"><span class="description-text">Sets or shows the TTS mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsMode" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.all">!tts mode all</code>
+                        <span data-i18n="commands.ttsMode.allDesc">(Reads all chat messages)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.command">!tts mode command</code>
+                        <span data-i18n="commands.ttsMode.commandDesc">(Reads !tts messages; <strong>default mode</strong>)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.bitsPointsOnly">!tts mode bits_points_only</code>
+                        <span data-i18n="commands.ttsMode.bitsPointsOnlyDesc">(Reads only cheers and the TTS reward)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.bits">!tts mode bits</code>
+                        <span data-i18n="commands.ttsMode.bitsAlias">(Alias for bits_points_only)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.points">!tts mode points</code>
+                        <span data-i18n="commands.ttsMode.pointsAlias">(Alias for bits_points_only)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.highlightedOnly">!tts mode highlighted_only</code>
+                        <span data-i18n="commands.ttsMode.highlightedOnlyDesc">(Reads Twitch "Highlight My Message" messages)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.highlight">!tts mode highlight</code>
+                        <span data-i18n="commands.ttsMode.highlightAlias">(Alias for highlighted_only)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.status">!tts mode</code>
+                        <span data-i18n="commands.ttsMode.statusDesc">(Shows current mode)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsMode.notes">In every mode, TTS reads cheers (see <span class="inline-code">!tts bits</span>), the TTS Channel Points reward, and enabled reward announcements and events. The mode sets which chat messages TTS also reads. The Web Dashboard name of each mode is in parentheses.<br>
+                            <span class="inline-code">all</span> (All Chat Messages): TTS reads all chat messages (except ignored users), based on <span class="inline-code">!tts permission</span>. This includes <span class="inline-code">!tts &lt;message&gt;</span>.<br>
+                            <span class="inline-code">command</span> (!tts Messages): TTS reads <span class="inline-code">!tts &lt;message&gt;</span>, based on <span class="inline-code">!tts permission</span>. TTS ignores other chat.<br>
+                            <span class="inline-code">bits_points_only</span> (Cheers and Rewards Only): TTS reads no chat messages. TTS ignores regular chat, <span class="inline-code">!tts &lt;message&gt;</span> and highlighted messages. This mode always reads cheer messages, also after <span class="inline-code">!tts bits off</span>.<br>
+                            <span class="inline-code">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch "Highlight My Message" Channel Points reward. <span class="inline-code">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class="inline-code">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class="inline-code">bits_points_only</span>.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsPermission.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts permission
+                    [everyone|all|subs|vip|mods]</td>
+                <td data-i18n-key="commands.ttsPermission.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPermission"><span class="description-text">Sets whose chat messages and <span class="inline-code">!tts</span> messages TTS speaks.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsPermission" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPermission.usage.everyone">!tts permission everyone</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPermission.usage.subs">!tts permission subs</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPermission.usage.vip">!tts permission vip</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPermission.usage.mods">!tts permission mods</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPermission.usage.status">!tts permission</code>
+                        <span data-i18n="commands.ttsPermission.statusDesc">(shows the current permission filter)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsPermission.notes"><span class="inline-code">everyone</span> or <span class="inline-code">all</span>: TTS speaks messages from all users (<strong>Default</strong>).<br>
+                            <span class="inline-code">subs</span>: TTS speaks messages from subscribers, VIPs, moderators, and the broadcaster.<br>
+                            <span class="inline-code">vip</span>: TTS speaks messages from VIPs, moderators, and the broadcaster.<br>
+                            <span class="inline-code">mods</span>: TTS speaks messages only from moderators and the broadcaster.<br>
+                            This setting also applies to <span class="inline-code">!tts &lt;message&gt;</span> in <span class="inline-code">command</span> mode. Cheers and Channel Point redemptions are paid for and are not affected.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsBits.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts bits [on|off|min
+                    &lt;amount&gt;]</td>
+                <td data-i18n-key="commands.ttsBits.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsBits"><span class="description-text">Controls whether the message attached to a cheer is read aloud, and sets the minimum Bits a cheer needs.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsBits" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsBits.usage.on">!tts bits on</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsBits.usage.off">!tts bits off</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsBits.usage.min">!tts bits min 100</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsBits.usage.status">!tts bits</code>
+                        <span data-i18n="commands.ttsBits.statusDesc">(shows the current cheer settings)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.description">Description:</strong></p>
+                    <ul>
+                        <li data-i18n="commands.ttsBits.onDesc"><span class="inline-code">on</span>: Read cheer messages. This is the default.</li>
+                        <li data-i18n="commands.ttsBits.offDesc"><span class="inline-code">off</span>: Do not read cheer messages. Has no effect in <span class="inline-code">bits_points_only</span> mode, which always reads them.</li>
+                        <li data-i18n="commands.ttsBits.minDesc"><span class="inline-code">min &lt;amount&gt;</span>: Sets the minimum Bits a cheer needs for its message to be read (for example, <span class="inline-code">min 100</span>). The default is 1. Cheer messages are read in every mode and are not limited by <span class="inline-code">!tts permission</span>.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-channelPointsTTS" data-i18n="table.categories.channelPointsTTS">Channel Points → TTS (Web
+                    Dashboard Only)</h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.channelPointsTTS.name">Channel Points → TTS</td>
+                <td data-i18n-key="commands.channelPointsTTS.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-channelPointsTTS"><span class="description-text">Create a custom Channel Point reward for viewers to send messages that TTS reads aloud.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-channelPointsTTS" hidden>
+                <td colspan="2">
+                    <p><strong data-i18n="commands.common.note">Note:</strong> <span
+                            data-i18n="commands.channelPointsTTS.noteText">This feature is configured
+                            exclusively through the <a href="https://tts.wildcat.chat/"
+                                class="default-link-style" target="_blank" rel="noopener noreferrer">WildcatTTS Web Dashboard</a> under the
+                            "Channel Points → TTS" section.</span></p>
+                    <p><strong data-i18n="commands.channelPointsTTS.howItWorks">How It Works:</strong></p>
+                    <ol>
+                        <li data-i18n="commands.channelPointsTTS.step1"><strong>Streamer Setup:</strong> Turn on the feature in the dashboard.</li>
+                        <li data-i18n="commands.channelPointsTTS.step2"><strong>Reward Creation:</strong> The bot creates a custom Channel Point reward on your Twitch channel.</li>
+                        <li data-i18n="commands.channelPointsTTS.step3"><strong>Viewer Redemption:</strong> Viewers redeem the reward with a message that TTS speaks.</li>
+                        <li data-i18n="commands.channelPointsTTS.step4"><strong>Content Policy:</strong> Filter text with length limits, link blocking, and banned words.</li>
+                    </ol>
+                    <p><strong data-i18n="commands.channelPointsTTS.configOptions">Configuration
+                            Options:</strong></p>
+                    <ul>
+                        <li data-i18n="commands.channelPointsTTS.basicSettings"><strong>Basic Settings:</strong> Reward title, cost in points, prompt text, and queue settings.</li>
+                        <li data-i18n="commands.channelPointsTTS.advancedSettings"><strong>Advanced Settings:</strong> Global cooldown, stream limit, and user limit.</li>
+                        <li data-i18n="commands.channelPointsTTS.contentPolicy"><strong>Content Policy:</strong> Minimum and maximum message length, link blocking, and banned words.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.channelPointsTTS.skipQueue">Skip the Reward Queue:</strong>
+                    </p>
+                    <ul>
+                        <li data-i18n="commands.channelPointsTTS.skipQueueDefault"><strong>Default Setting:</strong> This option is on by default for immediate TTS playback.</li>
+                        <li data-i18n="commands.channelPointsTTS.skipQueueEnabled"><strong>When On:</strong> TTS plays redemptions immediately without adding them to your Twitch review queue.</li>
+                        <li data-i18n="commands.channelPointsTTS.skipQueueDisabled"><strong>When Off:</strong> Redemptions wait in your Twitch dashboard for manual approval before TTS plays.</li>
+                        <li data-i18n="commands.channelPointsTTS.skipQueueUseCase"><strong>Tip:</strong> Turn on for instant playback. Turn off for moderation review before audio plays.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.channelPointsTTS.ttsModes">TTS Modes:</strong> <span
+                            data-i18n="commands.channelPointsTTS.ttsModesText">Works in every TTS mode: All Chat
+                            Messages, !tts Messages, Highlighted Messages, and Cheers and Rewards Only.</span></p>
+                    <p><strong data-i18n="commands.channelPointsTTS.requirements">Requirements:</strong> <span
+                            data-i18n="commands.channelPointsTTS.requirementsText">Grant <span
+                                class="inline-code">channel:manage:redemptions</span> and <span
+                                class="inline-code">channel:read:redemptions</span> permissions during dashboard sign-in.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.streamerBroadcaster">Streamer/Broadcaster (via Web
+                            Dashboard)</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-queueManagement" data-i18n="table.categories.queueManagement">Queue Management (Moderator Only)
+                </h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsPause.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts pause</td>
+                <td data-i18n-key="commands.ttsPause.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPause"><span class="description-text">Pauses processing of the TTS queue.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
+                </button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsPause" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPause.usage.basic">!tts pause</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsPause.notes">The bot adds new messages and events to the queue, but does not speak them until resumed.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsResume.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts resume</td>
+                <td data-i18n-key="commands.ttsResume.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsResume"><span class="description-text">Resumes processing of the TTS queue.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsResume" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsResume.usage.basic">!tts resume</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsClear.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts clear</td>
+                <td data-i18n-key="commands.ttsClear.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsClear"><span class="description-text">Removes all waiting messages and events from the TTS queue.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsClear" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsClear.usage.basic">!tts clear</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsClear.notes">This command removes messages from the queue. It does <strong>not</strong> stop audio that is playing or generating.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsStop.name">!tts stop</td>
+                <td data-i18n-key="commands.ttsStop.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStop"><span class="description-text">Stops active or generating TTS audio.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsStop" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsStop.usage.basic">!tts stop</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong>
+                    <ul>
+                        <li data-i18n="commands.ttsStop.note1">If TTS is speaking or generating audio, this command stops the playback.</li>
+                        <li data-i18n="commands.ttsStop.note2">Any user can stop a message that their own chat message triggered.</li>
+                        <li data-i18n="commands.ttsStop.note3">Moderators and the broadcaster can stop all TTS audio.</li>
+                    </ul>
+                    </p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.ttsStop.permission">Everyone for their own messages, Moderator
+                            for others</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-userEventPreferences" data-i18n="table.categories.userEventPreferences">User &amp; Event Preferences
+                </h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsVoice.name">!tts voice &lt;voice_id|reset&gt;</td>
+                <td data-i18n-key="commands.ttsVoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsVoice"><span class="description-text">Sets your personal voice preference for your chat messages.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsVoice" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsVoice.usage.example">!tts voice Friendly_Person</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsVoice.usage.reset">!tts voice reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsVoice.usage.status">!tts voice</code>
+                        <span data-i18n="commands.ttsVoice.statusDesc">(displays current personal preference)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsVoice.notes">Use <span class="inline-code">reset</span> to use the channel default voice. Use <span class="inline-code">!tts voices</span> to get a list of voice IDs.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
+                            preference)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsEmotion.name">!tts emotion &lt;emotion_name|reset|auto&gt;</td>
+                <td data-i18n-key="commands.ttsEmotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmotion"><span class="description-text">Sets your personal emotion preference for your chat messages.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsEmotion" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsEmotion.usage.example">!tts emotion happy</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsEmotion.usage.reset">!tts emotion reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsEmotion.usage.status">!tts emotion</code>
+                        <span data-i18n="commands.ttsEmotion.statusDesc">(displays current personal preference)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsEmotion.notes">Valid emotions: <span
+                                class="inline-code">neutral</span>, <span class="inline-code">happy</span>,
+                            <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span
+                                class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>,
+                            <span class="inline-code">surprised</span>. Use <span
+                                class="inline-code">reset</span> for the channel default.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
+                            preference)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsLanguage.name">!tts language &lt;language|reset&gt;<br><span
+                        style="font-size:0.9em;" data-i18n="commands.ttsLanguage.alias">(Alias: !tts
+                        lang)</span></td>
+                <td data-i18n-key="commands.ttsLanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsLanguage"><span class="description-text">Sets your personal language boost preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
+                </button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsLanguage" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsLanguage.usage.example">!tts language English</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsLanguage.usage.langAlias">!tts lang Japanese</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsLanguage.usage.reset">!tts language reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsLanguage.usage.status">!tts language</code>
+                        <span data-i18n="commands.ttsLanguage.statusDesc">(displays current personal preference)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsLanguage.notes">Language boost improves pronunciation for a language. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the channel default. See <a href="tts-voices.html#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> to see all options.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
+                            preference)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsPitch.name">!tts pitch &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsPitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPitch"><span class="description-text">Sets your personal TTS pitch for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsPitch" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPitch.usage.positive">!tts pitch 2</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPitch.usage.negative">!tts pitch -3</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPitch.usage.reset">!tts pitch reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsPitch.usage.status">!tts pitch</code>
+                        <span data-i18n="commands.ttsPitch.statusDesc">(displays current personal preference)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsPitch.notes">Value must be an integer from -12 to 12 (0 is default). Use <span class="inline-code">reset</span> for the channel default.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
+                            preference)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsSpeed.name">!tts speed &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsSpeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsSpeed"><span class="description-text">Sets your personal TTS speech speed for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsSpeed" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpeed.usage.faster">!tts speed 1.2</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpeed.usage.slower">!tts speed 0.8</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpeed.usage.reset">!tts speed reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpeed.usage.status">!tts speed</code>
+                        <span data-i18n="commands.ttsSpeed.statusDesc">(displays current personal preference)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsSpeed.notes">Value must be a number from 0.5 to 2.0 (1.0 is default). Use <span class="inline-code">reset</span> for the channel default.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
+                            preference)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsIgnore.name">!tts ignore &lt;username&gt;<br>!tts ignore add
+                    &lt;username&gt;</td>
+                <td><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnore">
+                    <span data-i18n-key="commands.ttsIgnore.descriptionUser"><strong>For any user:</strong> Add <em>yourself</em> to the TTS ignore list. TTS will not speak your messages.</span><br>
+                    <span data-i18n-key="commands.ttsIgnore.descriptionMod"><strong>For moderators and broadcasters:</strong> Add <em>a Twitch user</em> to the channel TTS ignore list.</span><br>
+                    <span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
+                </button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsIgnore" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsIgnore.usage.self">!tts ignore yourusername</code>
+                        <span data-i18n="commands.ttsIgnore.usageSelfNote">(if you want to ignore
+                            yourself)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsIgnore.usage.mod">!tts ignore add SomeOtherUser</code>
+                        <span data-i18n="commands.ttsIgnore.usageModNote">(if you are a
+                            mod/broadcaster)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.ttsIgnore.permission">Everyone (to add themselves), Moderator
+                            (to add others)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsIgnoreDel.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts ignore del
+                    &lt;username&gt;<br><span style="font-size:0.9em;"
+                        data-i18n="commands.ttsIgnoreDel.aliases">(Aliases: delete, rem, remove)</span></td>
+                <td data-i18n-key="commands.ttsIgnoreDel.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnoreDel"><span class="description-text">Removes a Twitch user from the channel TTS ignore list.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsIgnoreDel" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsIgnoreDel.usage.basic">!tts ignore del SomeUser</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsIgnored.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts ignored</td>
+                <td data-i18n-key="commands.ttsIgnored.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnored"><span class="description-text">Lists all users on the channel TTS ignore list.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsIgnored" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsIgnored.usage.basic">!tts ignored</code>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsEvents.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts events [on|off]</td>
+                <td data-i18n-key="commands.ttsEvents.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEvents"><span class="description-text">Turns Twitch event announcements (such as subscriptions, cheers, and raids) on or off.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsEvents" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsEvents.usage.on">!tts events on</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsEvents.usage.off">!tts events off</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsEvents.usage.status">!tts events</code>
+                        <span data-i18n="commands.ttsEvents.statusDesc">(shows current event announcement status)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-channelDefaults" data-i18n="table.categories.channelDefaults">Channel-Wide Default Configuration
+                    (Moderator Only)</h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsDefaultvoice.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultvoice
+                    &lt;voice_id|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultvoice"><span class="description-text">Sets the default TTS voice for the channel.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultvoice" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultvoice.usage.example">!tts defaultvoice Friendly_Person</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultvoice.usage.reset">!tts defaultvoice reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultvoice.usage.status">!tts defaultvoice</code>
+                        <span data-i18n="commands.ttsDefaultvoice.statusDesc">(displays current channel default)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsDefaultvoice.notes">Use <span class="inline-code">reset</span> for the system default. Use <span class="inline-code">!tts voices</span> to see available voice IDs.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsDefaultemotion.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultemotion
+                    &lt;emotion_name|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultemotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultemotion"><span class="description-text">Sets the default TTS emotion for the channel.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultemotion" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultemotion.usage.example">!tts defaultemotion happy</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultemotion.usage.reset">!tts defaultemotion reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultemotion.usage.status">!tts defaultemotion</code>
+                        <span data-i18n="commands.ttsDefaultemotion.statusDesc">(displays current channel default)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsDefaultemotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for the system default (<span class="inline-code">neutral</span>).</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsDefaultlanguage.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultlanguage
+                    &lt;language|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultlanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultlanguage"><span class="description-text">Sets the default TTS language boost for the channel.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultlanguage" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultlanguage.usage.example">!tts defaultlanguage English</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultlanguage.usage.reset">!tts defaultlanguage reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultlanguage.usage.status">!tts defaultlanguage</code>
+                        <span data-i18n="commands.ttsDefaultlanguage.statusDesc">(displays current channel default)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsDefaultlanguage.notes">Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the system default. See <a href="tts-voices.html#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> to see available options.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsDefaultpitch.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultpitch
+                    &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultpitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultpitch"><span class="description-text">Sets the default TTS pitch for the channel.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultpitch" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultpitch.usage.example">!tts defaultpitch 2</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultpitch.usage.reset">!tts defaultpitch reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultpitch.usage.status">!tts defaultpitch</code>
+                        <span data-i18n="commands.ttsDefaultpitch.statusDesc">(displays current channel default)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsDefaultpitch.notes">Value must be an integer from -12 to 12 (0 is default). Use <span class="inline-code">reset</span> for the system default (0).</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsDefaultspeed.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultspeed
+                    &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultspeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultspeed"><span class="description-text">Sets the default TTS speed for the channel.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultspeed" hidden>
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultspeed.usage.example">!tts defaultspeed 1.2</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultspeed.usage.reset">!tts defaultspeed reset</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsDefaultspeed.usage.status">!tts defaultspeed</code>
+                        <span data-i18n="commands.ttsDefaultspeed.statusDesc">(displays current channel default)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsDefaultspeed.notes">Value must be a number from 0.5 to 2.0 (1.0 is default). Use <span class="inline-code">reset</span> for the system default (1.0).</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="category-header">
+                <td colspan="2" ><h2 class="category-heading" id="cat-emoteDescriptions" data-i18n="table.categories.emoteDescriptions">Emote Description Management (Moderator Only)
+                </h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsEmote.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts emote
+                    &lt;emoteName&gt;</td>
+                <td data-i18n-key="commands.ttsEmote.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmote"><span class="description-text">Views, clears, or sets cached emote descriptions for TTS.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsEmote" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsEmote.usage.view">!tts emote LUL</code>
+                        <span data-i18n="commands.ttsEmote.viewNote">(shows the current cached
+                            description)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsEmote.usage.regenerate">!tts emote regenerate LUL</code>
+                        <span data-i18n="commands.ttsEmote.regenerateNote">(clears cache; AI will
+                            re-describe on next use)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsEmote.usage.set">!tts emote set LUL = a person laughing</code>
+                        <span data-i18n="commands.ttsEmote.setNote">(sets a custom description — channel emotes only)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.description">Description:</strong></p>
+                    <ul>
+                        <li data-i18n="commands.ttsEmote.viewDesc">Show the current AI description for an emote.</li>
+                        <li data-i18n="commands.ttsEmote.regenerateDesc">Clear the cached description so AI creates a new description on next use.</li>
+                        <li data-i18n="commands.ttsEmote.setDesc">Set a custom description for a channel emote.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsEmote.notes">When an emote appears in chat for the first time, AI generates a text description. The bot caches descriptions permanently. Use this command to view, change, or regenerate emote descriptions.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.ttsEmote.permission">Moderator (set/regenerate only for channel emotes)</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+        <tbody>
+            <tr class="category-row">
+                <td colspan="2" ><h2 class="category-heading" id="cat-pronunciationFiltering" data-i18n="table.categories.pronunciationFiltering">Pronunciation &amp; Filtering (Moderator Only)
+                </h2></td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsPronounce.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts pronounce
+                    &lt;word&gt; = &lt;how to say it&gt;</td>
+                <td data-i18n-key="commands.ttsPronounce.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPronounce"><span class="description-text">Controls
+                        how TTS says a specific word or short form.</span><span
+                        class="dropdown-toggle">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsPronounce" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsPronounce.usage.add">!tts pronounce wcat = wildcat</code>
+                        <span data-i18n="commands.ttsPronounce.addNote">(adds or changes an entry)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsPronounce.usage.list">!tts pronounce list</code>
+                        <span data-i18n="commands.ttsPronounce.listNote">(shows the entries for this channel)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsPronounce.usage.remove">!tts pronounce remove wcat</code>
+                        <span data-i18n="commands.ttsPronounce.removeNote">(removes an entry)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsPronounce.usage.off">!tts pronounce off lfg</code>
+                        <span data-i18n="commands.ttsPronounce.offNote">(stops a built-in entry)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsPronounce.usage.test">!tts pronounce test ngl that was wild</code>
+                        <span data-i18n="commands.ttsPronounce.testNote">(shows the result without speaking)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsPronounce.usage.defaults">!tts pronounce defaults</code>
+                        <span data-i18n="commands.ttsPronounce.defaultsNote">(lists the built-in entries)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.description">Description:</strong></p>
+                    <ul>
+                        <li data-i18n="commands.ttsPronounce.addDesc">Add a word and the text that TTS speaks
+                            in its place. Your entry replaces a built-in entry with the same word.</li>
+                        <li data-i18n="commands.ttsPronounce.removeDesc">Remove your entry. If a built-in entry
+                            has the same word, that built-in entry becomes active again.</li>
+                        <li data-i18n="commands.ttsPronounce.offDesc">Stop a built-in entry. To start it again,
+                            use the remove sub-command.</li>
+                        <li data-i18n="commands.ttsPronounce.testDesc">Show what TTS will say for some text.
+                            The bot does not speak the text.</li>
+                        <li data-i18n="commands.ttsPronounce.clearDesc">The broadcaster can use <span
+                                class="inline-code">!tts pronounce clear</span> to remove all entries for the
+                            channel. Built-in entries stay active.</li>
+                    </ul>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsPronounce.notes">The word is not case-sensitive, and it must
+                            match a full word. A channel can have a maximum of 100 entries. A word can have a
+                            maximum of 40 characters. A spoken form can have a maximum of 120 characters. You
+                            can also change these entries in the Web Dashboard.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.ttsPronounce.permission">Moderator (broadcaster only for clear)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsProfanity.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts profanity
+                    &lt;block|allow|status&gt;</td>
+                <td data-i18n-key="commands.ttsProfanity.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsProfanity"><span class="description-text">Starts
+                        or stops the profanity filter, which replaces rude words with milder
+                        words.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsProfanity" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsProfanity.usage.block">!tts profanity block</code>
+                        <span data-i18n="commands.ttsProfanity.blockNote">(starts the filter)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsProfanity.usage.allow">!tts profanity allow</code>
+                        <span data-i18n="commands.ttsProfanity.allowNote">(stops the filter)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsProfanity.usage.status">!tts profanity status</code>
+                        <span data-i18n="commands.ttsProfanity.statusNote">(shows the state, the language,
+                            and the number of words)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsProfanity.notes">The filter is off until you start it. It
+                            replaces rude words with milder words. It does not remove the message. The Banned
+                            Words list in the Web Dashboard removes a full message. The older
+                            <span class="inline-code">on</span> and <span class="inline-code">off</span> words
+                            still work: <span class="inline-code">on</span> is the same as
+                            <span class="inline-code">block</span>.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsRedeems.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts redeems
+                    &lt;mute|unmute|list|all&gt;</td>
+                <td data-i18n-key="commands.ttsRedeems.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsRedeems"><span class="description-text">Selects
+                        which channel point redeems the bot announces.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsRedeems" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.mute">!tts redeems mute &lt;reward title&gt;</code>
+                        <span data-i18n="commands.ttsRedeems.muteNote">(stops the announcements for one reward)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.unmute">!tts redeems unmute &lt;reward title&gt;</code>
+                        <span data-i18n="commands.ttsRedeems.unmuteNote">(starts the announcements again)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.list">!tts redeems list</code>
+                        <span data-i18n="commands.ttsRedeems.listNote">(shows the muted rewards)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsRedeems.usage.all">!tts redeems all</code>
+                        <span data-i18n="commands.ttsRedeems.allNote">(shows all rewards on the channel)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsRedeems.notes">The bot announces every reward until you mute
+                            it. Use this command for a reward that plays its own sound, for example a soundboard.
+                            You can type a part of the title. If more than one reward matches, the bot shows the
+                            names and asks for the full name. The reply always shows the name of the reward that
+                            changed. The bot cannot mute the TTS reward. This command works only when the
+                            broadcaster is signed in to the Web Dashboard. You can also select the rewards in the
+                            Web Dashboard, under Rewards to Announce.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsReadCommands.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts readcommands
+                    &lt;on|off&gt;</td>
+                <td data-i18n-key="commands.ttsReadCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsReadCommands"><span class="description-text">Reads
+                        or skips chat messages that start with "!" in All Chat Messages mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsReadCommands" hidden>
+                <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsReadCommands.usage.off">!tts readcommands off</code>
+                        <span data-i18n="commands.ttsReadCommands.offNote">(skips chat messages that start with "!")</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsReadCommands.usage.on">!tts readcommands on</code>
+                        <span data-i18n="commands.ttsReadCommands.onNote">(reads them again)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code
+                            data-i18n-cmd="commands.ttsReadCommands.usage.status">!tts readcommands</code>
+                        <span data-i18n="commands.ttsReadCommands.statusNote">(shows the current setting)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsReadCommands.notes">Other bots, for example Nightbot or
+                            StreamElements, use commands that start with "!", such as !lurk or !so. In All Chat
+                            Messages mode, TTS reads these commands as chat. Switch this setting off to skip
+                            them. The setting does not change !tts: !tts still works. The setting has no effect
+                            in !tts Messages, Highlighted Messages or Cheers and Rewards Only mode, because these modes never read
+                            these messages. A cheer that starts with "!" is still read, because the viewer paid
+                            for it. You can also change this in the Web Dashboard, under Read Chat
+                            Commands.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</section>

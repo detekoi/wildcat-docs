@@ -514,7 +514,7 @@
     "step2": "The bot caches the description permanently after first generation.",
     "step3": "Later uses of the emote use the cached description instantly without new AI processing.",
     "managementTitle": "Managing Descriptions",
-    "managementText": "Moderators can use <span class=\"inline-code\">!tts emote</span> to view, regenerate, or set emote descriptions. See the <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Emote Description Management</a> table for details.",
+    "managementText": "Moderators can use <span class=\"inline-code\">!tts emote</span> to view, regenerate, or set emote descriptions. See the <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Emote Description Management</a> table for details.",
     "localeText": "The AI writes each description in the language of the channel. The bot keeps a separate description for each language."
   },
   "webDashboard": {
