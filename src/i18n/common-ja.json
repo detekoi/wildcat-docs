@@ -24,5 +24,129 @@
       "command": "コマンド",
       "description": "説明"
     }
+  },
+  "docsNav": {
+    "siteTitle": "Wildcat ドキュメント",
+    "appbarPage": "ドキュメント",
+    "toolsNav": "Wildcat のツールを開く",
+    "resourcesNav": "リソース",
+    "sidebarNav": "ドキュメントのナビゲーション",
+    "links": {
+      "docs": "ドキュメント",
+      "blog": "ブログ",
+      "github": "GitHub"
+    },
+    "theme": {
+      "label": "カラーテーマ",
+      "light": "ライト",
+      "dark": "ダーク"
+    },
+    "search": "ドキュメントを検索",
+    "noResults": "一致するページはありません。!tts や !geo などのコマンド名で検索してください。",
+    "onThisPage": "このページの内容",
+    "previous": "前へ",
+    "next": "次へ",
+    "pager": "前後のページ",
+    "editOnGithub": "GitHub でこのページを編集",
+    "legacy": {
+      "lede": "このドキュメントは、以下のページに分かれました。"
+    },
+    "groups": {
+      "start": "はじめに",
+      "sage": "WildcatSage",
+      "tts": "WildcatTTS",
+      "overlay": "チャットオーバーレイ"
+    },
+    "commands": {
+      "all": "すべて",
+      "filter": "コマンドを絞り込む（例：quote）",
+      "filterLabel": "コマンドを絞り込む",
+      "category": "コマンドのカテゴリ",
+      "none": "一致するコマンドはありません。絞り込みを消すか、「すべて」を選んでください。",
+      "count": {
+        "other": "{n} 件のコマンド"
+      }
+    },
+    "pages": {
+      "home": {
+        "title": "概要"
+      },
+      "sage-setup": {
+        "title": "ダッシュボードを設定する",
+        "lede": "WildcatSage のダッシュボードにサインインし、ボットをチャンネルに追加して、ボットが求める権限を確認します。"
+      },
+      "sage-commands": {
+        "title": "コマンド",
+        "lede": "WildcatSage のすべてのチャットコマンドです。コマンドを選ぶと、オプションが表示されます。Mod の付いたコマンドは、モデレーターと配信者だけが使えます。"
+      },
+      "sage-custom-commands": {
+        "title": "カスタムコマンドと変数",
+        "lede": "カスタムコマンドの返信に使える変数と例、そして AI コマンドが毎回新しい返信を書く仕組みです。"
+      },
+      "sage-personality": {
+        "title": "ボットの人格",
+        "lede": "チャンネルでの WildcatSage の話し方を変更します。何を書いても変わらないルールも説明します。"
+      },
+      "sage-memory": {
+        "title": "チャンネルメモリー",
+        "lede": "WildcatSage が配信をまたいでチャンネルについて覚えることと、視聴者やモデレーターがそれを管理する方法です。"
+      },
+      "sage-language": {
+        "title": "ボットの言語",
+        "lede": "WildcatSage が返信の言語を選ぶ仕組みと、自分で設定する方法です。"
+      },
+      "sage-checkin": {
+        "title": "デイリーチェックイン",
+        "lede": "視聴者が Channel Points の報酬で 1 日 1 回チェックインできるようにし、ボットの返信を選びます。"
+      },
+      "tts-setup": {
+        "title": "ダッシュボードと OBS を設定する",
+        "lede": "Web Dashboard で WildcatTTS を設定し、音声の音量を調整して、音声を OBS に追加します。"
+      },
+      "tts-commands": {
+        "title": "コマンド",
+        "lede": "WildcatTTS のすべてのチャットコマンドです。コマンドを選ぶと、オプションが表示されます。Mod の付いたコマンドは、モデレーターと配信者だけが使えます。"
+      },
+      "tts-voices": {
+        "title": "音声と Language Boost",
+        "lede": "一覧から音声を選び、チャットの言語を音声エンジンに伝えます。"
+      },
+      "tts-filtering": {
+        "title": "フィルターと発音",
+        "lede": "TTS が読み上げる内容を管理します。エモートの説明、チャットの略語の展開、乱暴な言葉の言い換え、禁止語を含むメッセージの省略を行います。"
+      },
+      "tts-events": {
+        "title": "配信イベントとプライバシー",
+        "lede": "TTS が読み上げる配信イベント、ほかのボットのコマンドの扱い、リンクの読み上げ方を選びます。"
+      },
+      "tts-youtube": {
+        "title": "YouTube チャット",
+        "lede": "両方で配信するときに、Twitch のチャットと一緒に YouTube Live のチャットも読み上げます。"
+      },
+      "tts-troubleshooting": {
+        "title": "トラブルシューティング",
+        "lede": "WildcatTTS でよくある問題の解決方法です。"
+      },
+      "overlay-obs": {
+        "title": "OBS で設定する",
+        "lede": "Wildcat Chat Overlay は、Twitch と YouTube Live のチャットメッセージを OBS Studio に表示します。設定は、Web の Chat Scene Creator または OBS ブラウザソースの設定パネルで変更できます。"
+      },
+      "overlay-appearance": {
+        "title": "テーマと外観",
+        "lede": "説明文からテーマを作成し、色、フォント、メッセージの表示方法を調整します。"
+      },
+      "overlay-emotes": {
+        "title": "エモート",
+        "lede": "オーバーレイで BetterTTV、FrankerFaceZ、7TV のエモート（重ねたエモートを含む）を表示する仕組みです。"
+      },
+      "overlay-scenes": {
+        "title": "Chat Scene Creator",
+        "lede": "名前を付けたチャットシーンを Web に保存し、変更を OBS にライブで同期して、OBS 内の設定パネルを使います。"
+      },
+      "overlay-url": {
+        "title": "URL パラメーター",
+        "lede": "オーバーレイの URL に入れられる設定、診断メッセージ、デモモードです。"
+      }
+    }
   }
 }

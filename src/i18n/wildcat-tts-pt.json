@@ -249,7 +249,7 @@
       "description": "Define sua preferência de otimização de idioma para suas mensagens de chat.",
       "alias": "(Alias: !tts lang)",
       "statusDesc": "(exibe a preferência pessoal atual)",
-      "notes": "A otimização de idioma melhora a pronúncia para um idioma. Use <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> para o padrão do canal. Consulte a seção <a href=\"#language-boost\" class=\"default-link-style\">Otimização de Idioma</a> ou use <span class=\"inline-code\">!tts languageslist</span> para ver todas as opções.",
+      "notes": "A otimização de idioma melhora a pronúncia para um idioma. Use <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> para o padrão do canal. Consulte a seção <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Otimização de Idioma</a> ou use <span class=\"inline-code\">!tts languageslist</span> para ver todas as opções.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -344,7 +344,7 @@
       "name": "!tts defaultlanguage <language|reset>",
       "description": "Define a otimização de idioma padrão para o <em>canal</em>.",
       "statusDesc": "(exibe o padrão atual do canal)",
-      "notes": "Use <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> para o padrão do sistema. Consulte a seção <a href=\"#language-boost\" class=\"default-link-style\">Otimização de Idioma</a> ou use <span class=\"inline-code\">!tts languageslist</span> para ver as opções.",
+      "notes": "Use <span class=\"inline-code\">reset</span> ou <span class=\"inline-code\">auto</span> para o padrão do sistema. Consulte a seção <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Otimização de Idioma</a> ou use <span class=\"inline-code\">!tts languageslist</span> para ver as opções.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -514,7 +514,7 @@
     "step2": "O bot salva a descrição permanentemente após a primeira geração.",
     "step3": "Usos posteriores do emote aproveitam a descrição salva instantaneamente sem novo processamento de IA.",
     "managementTitle": "Gerenciamento de Descrições",
-    "managementText": "Moderadores podem usar <span class=\"inline-code\">!tts emote</span> para ver, regenerar ou definir descrições de emotes. Consulte a tabela <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Gerenciamento de Descrição de Emotes</a> para detalhes.",
+    "managementText": "Moderadores podem usar <span class=\"inline-code\">!tts emote</span> para ver, regenerar ou definir descrições de emotes. Consulte a tabela <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Gerenciamento de Descrição de Emotes</a> para detalhes.",
     "localeText": "A IA escreve cada descrição no idioma do canal. O bot mantém uma descrição separada para cada idioma."
   },
   "webDashboard": {

@@ -1,0 +1,87 @@
+---
+layout: docs.njk
+navId: sage-checkin
+catalog: botcommands
+title: "Daily check-in – Wildcat Docs"
+description: "Let viewers check in once a day with a Channel Points reward, and choose what the bot replies."
+toc:
+  - ["daily-check-in-setup", "dailyCheckIn.setupTitle", "Setup"]
+  - ["daily-check-in-variables", "dailyCheckIn.variablesTitle", "Available Variables"]
+  - ["daily-check-in-example", "dailyCheckIn.exampleTitle", "Examples"]
+---
+<section id="daily-check-in" class="section">
+    <h2 data-i18n="dailyCheckIn.title">Daily Check-In</h2>
+    <p data-i18n="dailyCheckIn.intro">Daily Check-In is a Channel Point Reward. Viewers check in once per stream to track their daily streak. The dashboard creates and manages the reward on Twitch.</p>
+
+    <h3 id="daily-check-in-setup" data-i18n="dailyCheckIn.setupTitle">Setup</h3>
+    <ol>
+        <li data-i18n="dailyCheckIn.steps.open">Open the <a href="https://bot.wildcat.chat/"
+                class="default-link-style" target="_blank" rel="noopener noreferrer">WildcatSage Dashboard</a> and go to the
+            <strong>Daily Check-In</strong> section.
+        </li>
+        <li data-i18n="dailyCheckIn.steps.enable">Enable the toggle, then enter a reward title and Channel Point cost.</li>
+        <li data-i18n="dailyCheckIn.steps.template">Enter a response template with variables like
+            <span class="inline-code">$(user)</span> and <span class="inline-code">$(checkin_count)</span>, or
+            enable <strong>AI Mode</strong> for unique replies.
+        </li>
+        <li data-i18n="dailyCheckIn.steps.preview">If you enable <strong>AI Mode</strong>, select <strong>Preview</strong> to see a sample reply before you save.</li>
+        <li data-i18n="dailyCheckIn.steps.save">Select <strong>Save</strong>. The bot creates the reward on Twitch.</li>
+    </ol>
+
+    <h3 id="daily-check-in-variables" data-i18n="dailyCheckIn.variablesTitle">Available Variables</h3>
+    <table>
+        <caption class="visually-hidden" data-i18n="dailyCheckIn.variablesTitle">Available Variables</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="responseVariables.table.variable">Variable</th>
+                <th scope="col" data-i18n="responseVariables.table.whatItDoes">What it does</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="inline-code">$(user)</span></td>
+                <td data-i18n="dailyCheckIn.variables.user">Display name of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(checkin_count)</span></td>
+                <td data-i18n="dailyCheckIn.variables.checkinCount">Total number of check-ins for the viewer</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(channel)</span></td>
+                <td data-i18n="dailyCheckIn.variables.channel">Channel name</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronouns)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronouns">Pronouns of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_subject)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronounSubject">Subject pronoun of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_object)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronounObject">Object pronoun of the viewer who checked in</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_possessive)</span></td>
+                <td data-i18n="dailyCheckIn.variables.pronounPossessive">Possessive pronoun of the viewer who checked in</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="daily-check-in-example" data-i18n="dailyCheckIn.exampleTitle">Examples</h3>
+    <p data-i18n="dailyCheckIn.exampleTemplate"><strong>Template:</strong>
+        <code>$(user) checked in! Day #$(checkin_count) 🎉</code>
+    </p>
+    <p data-i18n="dailyCheckIn.exampleOutput"><strong>Output:</strong> <em>WildcatGamer checked in! Day #14
+            🎉</em></p>
+
+    <p data-i18n="dailyCheckIn.aiExamplePrompt"><strong>AI Mode Prompt:</strong>
+        <code>Write a fun, short congratulatory message for $(user) on check-in number $(checkin_count).</code>
+    </p>
+    <p data-i18n="dailyCheckIn.aiExampleOutput"><strong>Output:</strong> <em>"WildcatGamer, 14 days straight?
+            You're on fire! At this rate you'll outlast the sun. ☀️"</em> — replies vary with each use.</p>
+
+    <p><strong data-i18n="dailyCheckIn.requirementLabel">Requirement:</strong> <span
+            data-i18n="dailyCheckIn.requirementText">You must have Twitch Affiliate or Partner status to create Channel Point Rewards.</span></p>
+</section>

@@ -1,0 +1,198 @@
+---
+layout: docs.njk
+navId: sage-custom-commands
+catalog: botcommands
+title: "Custom commands & variables – Wildcat Docs"
+description: "Variables you can put in custom command responses, with examples, and how AI commands write a new reply each time."
+toc:
+  - ["response-variables-examples", "responseVariables.examplesTitle", "Examples"]
+  - ["response-variables-title", "aiCommands.title", "AI Commands"]
+---
+<section id="response-variables" class="section">
+    <h2 data-i18n="responseVariables.title">Response Variables</h2>
+    <p><span data-i18n="responseVariables.intro1">You can use <strong>response variables</strong> to insert dynamic text into custom commands. Put <code>$(variable)</code> in your command response. The bot replaces the variable when a user runs the command.</span></p>
+
+    <table>
+        <caption class="visually-hidden" data-i18n="responseVariables.title">Response Variables</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="responseVariables.table.variable">Variable</th>
+                <th scope="col" data-i18n="responseVariables.table.whatItDoes">What it does</th>
+                <th scope="col" data-i18n="responseVariables.table.exampleOutput">Example output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="inline-code">$(user)</span></td>
+                <td data-i18n="responseVariables.variables.user.desc">Username of the person who ran the command</td>
+                <td>WildcatGamer</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(channel)</span></td>
+                <td data-i18n="responseVariables.variables.channel.desc">Channel name</td>
+                <td>WildcatStreamer</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(args)</span></td>
+                <td data-i18n="responseVariables.variables.args.desc">All text after the command name as one string</td>
+                <td data-i18n="responseVariables.variables.args.example">If a user runs <span class="inline-code">!shout hello world</span>, $(args) = <strong>hello world</strong></td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(1)</span> <span class="inline-code">$(2)</span> ...</td>
+                <td data-i18n="responseVariables.variables.numbered.desc">A single word by position: $(1) is the first word, $(2) is the second word</td>
+                <td data-i18n="responseVariables.variables.numbered.example">If a user runs <span class="inline-code">!shout hello world</span>, $(1) = <strong>hello</strong>, $(2) = <strong>world</strong></td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(count)</span></td>
+                <td data-i18n="responseVariables.variables.count.desc">Total number of times users ran this command</td>
+                <td>42</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(random X-Y)</span></td>
+                <td data-i18n="responseVariables.variables.random.desc">A random number between X and Y</td>
+                <td data-i18n="responseVariables.variables.random.example">17 from <span
+                        class="inline-code">$(random 1-20)</span></td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(uptime)</span></td>
+                <td data-i18n="responseVariables.variables.uptime.desc">Current stream uptime</td>
+                <td data-i18n="responseVariables.variables.uptime.example">2h 30m</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(game)</span></td>
+                <td data-i18n="responseVariables.variables.game.desc">Current stream game title</td>
+                <td data-i18n="responseVariables.variables.game.example">Metroid Prime</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(followage)</span></td>
+                <td data-i18n="responseVariables.variables.followage.desc">How long the user has followed the channel</td>
+                <td data-i18n="responseVariables.variables.followage.example">2 years 3 months</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(checkin_count)</span></td>
+                <td data-i18n="responseVariables.variables.checkinCount.desc">The viewer daily check-in total (Channel Point Rewards only)</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronouns)</span></td>
+                <td data-i18n="responseVariables.variables.pronouns.desc">Pronouns of the user who ran the command</td>
+                <td>They/Them</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_subject)</span></td>
+                <td data-i18n="responseVariables.variables.pronounSubject.desc">Subject pronoun of the user who ran the command</td>
+                <td>they</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_object)</span></td>
+                <td data-i18n="responseVariables.variables.pronounObject.desc">Object pronoun of the user who ran the command</td>
+                <td>them</td>
+            </tr>
+            <tr>
+                <td><span class="inline-code">$(pronoun_possessive)</span></td>
+                <td data-i18n="responseVariables.variables.pronounPossessive.desc">Possessive pronoun of the user who ran the command</td>
+                <td>their</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text"><strong data-i18n="responseVariables.compatibilityTitle">Variable Compatibility:</strong></div>
+            <ul>
+                <li data-i18n="responseVariables.compatibilityCustom"><strong>Custom Commands and Daily Check-In:</strong> Support all variables, including user-specific variables.</li>
+                <li data-i18n="responseVariables.compatibilityTimers"><strong>Timed Messages (Timers):</strong> Run on a schedule without an active user. Timers support only channel and stream variables (<code>$(channel)</code>, <code>$(game)</code>, <code>$(uptime)</code>, <code>$(count)</code>, <code>$(random X-Y)</code>).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 id="response-variables-examples" data-i18n="responseVariables.examplesTitle">Examples</h3>
+    <p style="margin-bottom: 6px;" data-i18n="responseVariables.examplesIntro">Here are example custom commands:</p>
+    <table>
+        <caption class="visually-hidden" data-i18n="responseVariables.examplesCaption">Response variable examples</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="responseVariables.examplesTable.command">Chat command</th>
+                <th scope="col" data-i18n="responseVariables.examplesTable.botSays">Bot response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-i18n="responseVariables.examples.hi.command"><span class="inline-code">!command add hi
+                        Hello $(user)! Welcome!</span></td>
+                <td data-i18n="responseVariables.examples.hi.result">Hello WildcatGamer! Welcome!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.roll.command"><span class="inline-code">!command add
+                        roll $(user) rolled a $(random 1-20)!</span></td>
+                <td data-i18n="responseVariables.examples.roll.result">WildcatGamer rolled a 17!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.live.command"><span class="inline-code">!command add
+                        live We have been live for $(uptime) playing $(game)!</span></td>
+                <td data-i18n="responseVariables.examples.live.result">We have been live for 2h 30m playing Metroid Prime!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.hug.command"><span class="inline-code">!command add
+                        hug $(user) hugs $(1)!</span></td>
+                <td data-i18n="responseVariables.examples.hug.result">WildcatGamer hugs WildcatStreamer!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.cheer.command"><span class="inline-code">!command add
+                        cheer $(user) arrived! Welcome $(pronoun_object)!</span></td>
+                <td data-i18n="responseVariables.examples.cheer.result">WildcatGamer arrived! Welcome them!</td>
+            </tr>
+            <tr>
+                <td data-i18n="responseVariables.examples.uses.command"><span class="inline-code">!command add
+                        uses This command was used $(count) times!</span></td>
+                <td data-i18n="responseVariables.examples.uses.result">This command was used 42 times!</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="response-variables-title" data-i18n="aiCommands.title">AI Commands</h3>
+    <p style="margin-bottom: 6px;"><span data-i18n="aiCommands.intro1">AI commands use a prompt instead of a fixed text response. The bot sends the prompt to an AI model to generate a unique reply every time. You can also use response variables in prompts.</span></p>
+
+    <p style="margin-bottom: 6px;"><span data-i18n="aiCommands.intro2">You can create AI commands in the
+            <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.
+            Select <strong>+ Add</strong>, enable <strong>AI Mode</strong>, and enter your prompt.
+            You can also create AI commands in chat with
+            <code>!command addai &lt;name&gt; &lt;prompt&gt;</code>.</span>
+    </p>
+
+    <table>
+        <caption class="visually-hidden" data-i18n="aiCommands.table.caption">AI command examples</caption>
+        <thead>
+            <tr>
+                <th scope="col" data-i18n="aiCommands.table.prompt">AI Prompt</th>
+                <th scope="col" data-i18n="aiCommands.table.whatHappens">Bot response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-i18n="aiCommands.examples.vibe.prompt">Name: <span
+                        class="inline-code">vibe</span><br>Prompt: <span class="inline-code">Tell
+                        $(user) what kind of vibe "$(args)" gives off in one sentence.</span></td>
+                <td data-i18n="aiCommands.examples.vibe.result">If a user enters <span class="inline-code">!vibe I just ate an entire pizza</span>, the AI can reply: <em>"WildcatGamer your message gives off deeply respectable goblin energy."</em> Replies vary with each use.</td>
+            </tr>
+            <tr>
+                <td data-i18n="aiCommands.examples.hug.prompt">Name: <span
+                        class="inline-code">hug</span><br>Prompt: <span class="inline-code">Write a
+                        short, funny hug message from $(user) to $(1).</span></td>
+                <td data-i18n="aiCommands.examples.hug.result">If a user enters <span class="inline-code">!hug WildcatStreamer</span>, the AI can reply: <em>"WildcatGamer wraps WildcatStreamer in a hug so warm it could melt a glacier."</em></td>
+            </tr>
+            <tr>
+                <td data-i18n="aiCommands.examples.fortune.prompt">Name: <span
+                        class="inline-code">fortune</span><br>Prompt: <span class="inline-code">Give
+                        $(user) a short fortune cookie message.</span></td>
+                <td data-i18n="aiCommands.examples.fortune.result">A unique fortune for each use: <em>"WildcatGamer, today you will find a rare item in an unexpected place."</em></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="margin-top: 8px;"><strong data-i18n="aiCommands.tipLabel">Tip:</strong> <span
+            data-i18n="aiCommands.tipText">You can convert a text command to AI mode in the dashboard by enabling <strong>AI Mode</strong>. You can also run <span class="inline-code">!command options &lt;name&gt; type=prompt</span> in chat. Switch back with <span class="inline-code">type=text</span>.</span>
+    </p>
+    <p style="margin-top: 8px;"><strong data-i18n="aiCommands.previewLabel">Preview:</strong> <span
+            data-i18n="aiCommands.previewText">Before you save an AI command, select <strong>Preview</strong>. The bot writes one sample reply from your prompt and the current stream context. The bot does not post the sample to chat. Each preview is a new reply, so the real message will be different. If the prompt uses <span class="inline-code">$(args)</span>, enter sample arguments in the field next to the button.</span>
+    </p>
+</section>

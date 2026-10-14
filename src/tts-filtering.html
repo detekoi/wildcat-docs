@@ -1,0 +1,186 @@
+---
+layout: docs.njk
+navId: tts-filtering
+catalog: wildcat-tts
+title: "Filtering & pronunciation – Wildcat Docs"
+description: "Control what TTS says aloud: describe emotes, expand chat short forms, soften rude words, and skip messages with banned words."
+toc:
+  - ["emote-descriptions", "emoteDescriptions.title", "Emote Descriptions"]
+  - ["pronunciation", "pronunciation.title", "Pronunciation Dictionary"]
+  - ["profanity-filter", "profanityFilter.title", "Profanity Filter"]
+  - ["banned-words", "bannedWords.title", "Banned Words"]
+---
+<section id="emote-descriptions" class="section">
+    <h2 data-i18n="emoteDescriptions.title">Emote Descriptions</h2>
+    <p data-i18n="emoteDescriptions.introText">WildcatTTS uses Google Gemini AI to describe Twitch
+        emotes in chat messages. Instead of reading the emote code (for example, "LUL"), TTS speaks a description
+        such as "a person laughing." The bot caches descriptions permanently to prevent repeated AI requests.</p>
+
+    <h3 data-i18n="emoteDescriptions.howItWorksTitle">How It Works</h3>
+    <ol>
+        <li data-i18n="emoteDescriptions.step1">When an emote appears for the first time, AI analyzes the
+            emote image and creates a short description.</li>
+        <li data-i18n="emoteDescriptions.step2">The bot caches the description permanently after first generation.</li>
+        <li data-i18n="emoteDescriptions.step3">Later uses of the emote use the cached description instantly
+            without new AI processing.</li>
+    </ol>
+
+    <p data-i18n="emoteDescriptions.localeText">The AI writes each description in the language of the channel.
+        The bot keeps a separate description for each language.</p>
+
+    <h3 data-i18n="emoteDescriptions.managementTitle">Managing Descriptions</h3>
+    <p data-i18n="emoteDescriptions.managementText">Moderators can use <span
+            class="inline-code">!tts emote</span> to view, regenerate, or set emote descriptions. See the
+        <a href="tts-commands.html#cat-emoteDescriptions" class="default-link-style">Emote Description Management</a> table for
+        details.</p>
+</section>
+
+<section id="pronunciation" class="section">
+    <h2 data-i18n="pronunciation.title">Pronunciation Dictionary</h2>
+    <p data-i18n="pronunciation.introText">Chat uses many short forms that TTS speaks one letter at a time.
+        The pronunciation dictionary changes them into full words. For example, TTS speaks
+        <span class="inline-code">ngl</span> as "not gonna lie" and <span class="inline-code">glhf</span> as
+        "good luck have fun". WildcatTTS includes a built-in list of about 70 common short forms. You can also add
+        your own entries.</p>
+
+    <h3 data-i18n="pronunciation.howItWorksTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="pronunciation.rule1">The word is not case-sensitive. An entry for
+            <span class="inline-code">lfg</span> also matches <span class="inline-code">LFG</span>.</li>
+        <li data-i18n="pronunciation.rule2">An entry must match a full word. An entry for
+            <span class="inline-code">fr</span> does not change the word "friend".</li>
+        <li data-i18n="pronunciation.rule3">The dictionary does not change text inside a link.</li>
+        <li data-i18n="pronunciation.rule4">The dictionary changes each word one time. TTS does not scan
+            replaced text for more entries.</li>
+        <li data-i18n="pronunciation.rule5">Some entries work in specific languages only. For example, the
+            dictionary changes <span class="inline-code">ty</span> to "thank you" in English. In Polish, Czech,
+            and Slovak, <span class="inline-code">ty</span> is a common word, so the dictionary keeps it.</li>
+    </ul>
+
+    <h3 data-i18n="pronunciation.customTitle">Your Own Entries</h3>
+    <p data-i18n="pronunciation.customText">Moderators can add entries with the <span class="inline-code">!tts
+            pronounce</span> command or in the Web Dashboard. Custom entries are useful for channel names,
+        game terms, and difficult words.</p>
+    <ul>
+        <li data-i18n="pronunciation.custom1">Your entry replaces a built-in entry that has the same word.</li>
+        <li data-i18n="pronunciation.custom2">To stop a built-in entry, use <span class="inline-code">!tts
+                pronounce off &lt;word&gt;</span>. To restore it, use <span class="inline-code">!tts
+                pronounce remove &lt;word&gt;</span>.</li>
+        <li data-i18n="pronunciation.custom3">A channel can have a maximum of 100 entries.</li>
+        <li data-i18n="pronunciation.custom4">A new entry of your own works in all languages. An entry that
+            replaces a built-in entry keeps the languages of that built-in entry.</li>
+    </ul>
+
+    <h3 data-i18n="pronunciation.switchTitle">How To Stop It</h3>
+    <p data-i18n="pronunciation.switchText">The dictionary is active for all channels by default. To turn it off,
+        disable Expand Chat Acronyms in the Web Dashboard. TTS then speaks short forms letter by letter.</p>
+
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="pronunciation.lolTip">TTS already speaks
+                <span class="inline-code">lol</span> as "el oh el". This is standard behavior and requires no
+                dictionary entry.</div>
+        </div>
+    </div>
+</section>
+
+<section id="profanity-filter" class="section">
+    <h2 data-i18n="profanityFilter.title">Profanity Filter</h2>
+    <p data-i18n="profanityFilter.introText">The profanity filter replaces rude words with milder words before
+        TTS speaks them. For example, TTS speaks "what the fuck" as "what the freak". The filter is off until a
+        moderator starts it.</p>
+
+    <h3 data-i18n="profanityFilter.startTitle">How To Start It</h3>
+    <p data-i18n="profanityFilter.startText">Use <span class="inline-code">!tts profanity block</span> in chat, or
+        set the "Profanity Filter" control to on in the Web Dashboard. Use <span class="inline-code">!tts
+            profanity allow</span> to stop the filter again, and <span class="inline-code">!tts
+            profanity status</span> to see the state, the language, and the number of words in the list. The
+        older <span class="inline-code">on</span> and <span class="inline-code">off</span> words still work.</p>
+
+    <h3 data-i18n="profanityFilter.behaviorTitle">What It Does</h3>
+    <ul>
+        <li data-i18n="profanityFilter.behavior1">The filter replaces a rude word with a milder word. It does
+            not remove the message, and it does not make a bleep sound.</li>
+        <li data-i18n="profanityFilter.behavior2">The filter replaces a slur with the word "slur". This
+            replacement keeps the meaning of the slur out of the audio.</li>
+        <li data-i18n="profanityFilter.behavior3">The filter also applies to short forms from the pronunciation
+            dictionary. When the filter is on, TTS speaks <span class="inline-code">lfg</span> as "let's
+            freaking go".</li>
+        <li data-i18n="profanityFilter.behavior4">A word must match fully. The filter does not change the word
+            "class".</li>
+    </ul>
+
+    <h3 data-i18n="profanityFilter.languageTitle">Languages</h3>
+    <p data-i18n="profanityFilter.languageText">The filter has word lists for all 40 languages that Language
+        Boost supports. The filter uses the list for your channel language. If a viewer selects a different
+        language for their own messages, the filter uses both lists. The filter always includes the English
+        list, because the pronunciation dictionary is in English.</p>
+    <p data-i18n="profanityFilter.languageAutoText">If your Language Boost is "Automatic", the filter uses the
+        English list. The bot cannot identify the language of each message.</p>
+    <p data-i18n="profanityFilter.languageCoverageText">The English list is the largest. The lists for other
+        languages are smaller. Slurs are in the English list only.</p>
+
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="profanityFilter.bannedWordsTip">The profanity filter is not the same
+                as the Banned Words list. Banned Words removes the full message. The profanity filter speaks
+                the message, but with milder words.</div>
+        </div>
+    </div>
+</section>
+
+<section id="banned-words" class="section">
+    <h2 data-i18n="bannedWords.title">Banned Words</h2>
+    <p data-i18n="bannedWords.introText">The Banned Words feature stops WildcatTTS from speaking unwanted messages.
+        If a chat message contains a banned word or phrase, TTS skips the message completely. The bot does not
+        generate audio for skipped messages.</p>
+
+    <h3 data-i18n="bannedWords.howItWorksTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="bannedWords.rule1">Matching is not case-sensitive. If you ban "badword", TTS also catches
+            "BadWord" and "BADWORD".</li>
+        <li data-i18n="bannedWords.rule2">TTS matches parts of words. If you ban "spam", TTS also skips messages
+            that contain "spammer" or "spammy".</li>
+        <li data-i18n="bannedWords.rule3">You can ban multi-word phrases. For example, you can ban phrases such
+            as "follow my link" or "free followers".</li>
+        <li data-i18n="bannedWords.rule4">TTS ignores the username in replies. If a reply mentions a user with a
+            banned word in their name, TTS does not skip the message.</li>
+    </ul>
+
+    <h3 data-i18n="bannedWords.eventsTitle">Stream Events and Redemptions</h3>
+    <p data-i18n="bannedWords.eventsIntro">The bot handles events and chat messages differently when a message
+        contains a banned word:</p>
+    <ul>
+        <li data-i18n="bannedWords.eventChat"><strong>Chat Messages:</strong> TTS skips the full message. No
+            voice audio plays.</li>
+        <li data-i18n="bannedWords.eventResub"><strong>Resubscriptions:</strong> The bot announces the
+            resubscription, but omits the attached viewer message.</li>
+        <li data-i18n="bannedWords.eventStreak"><strong>Watch Streaks:</strong> The bot announces the streak
+            count, but omits the attached viewer message.</li>
+        <li data-i18n="bannedWords.eventRedemption"><strong>Channel Point Redemptions:</strong> The bot announces
+            the reward redemption, but omits the custom text input.</li>
+        <li data-i18n="bannedWords.eventRewardPolicy"><strong>Custom Reward Policy:</strong> If a Channel Point
+            reward has a content policy, the bot rejects redemptions that contain banned words.</li>
+    </ul>
+
+    <h3 data-i18n="bannedWords.manageTitle">How To Manage Banned Words</h3>
+    <p data-i18n="bannedWords.manageIntro">You can configure banned words in the Web Dashboard. Changes take effect
+        immediately.</p>
+    <ol>
+        <li data-i18n="bannedWords.step1">Sign in to the Web Dashboard at tts.wildcat.chat with your Twitch
+            account.</li>
+        <li data-i18n="bannedWords.step2">Scroll to the Banned Words / Phrases card in the Ignored Users section.</li>
+        <li data-i18n="bannedWords.step3">Type a word or phrase into the input field.</li>
+        <li data-i18n="bannedWords.step4">Click Add, or press Enter on your keyboard.</li>
+        <li data-i18n="bannedWords.step5">If you want to remove an entry, click Remove next to the word in the
+            list.</li>
+    </ol>
+
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="bannedWords.comparisonTip">Banned Words skips the full message. The
+                Profanity Filter speaks the message with milder words. If a message contains words on both lists,
+                TTS skips the message.</div>
+        </div>
+    </div>
+</section>

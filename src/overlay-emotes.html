@@ -1,0 +1,29 @@
+---
+layout: docs.njk
+navId: overlay-emotes
+catalog: chatoverlay
+title: "Emotes – Wildcat Docs"
+description: "How the overlay shows BetterTTV, FrankerFaceZ, and 7TV emotes, including stacked emotes."
+toc:
+  - ["emotes-zero-width", "chatOverlay.emotes.zeroWidth.title", "Zero-Width & Overlay Stacking"]
+  - ["emotes-precedence", "chatOverlay.emotes.precedence.title", "Priority & Matching"]
+  - ["emotes-safety", "chatOverlay.emotes.safety.title", "Content Safety & Customization"]
+---
+<section id="emotes" class="section">
+    <h2 data-i18n="chatOverlay.emotes.title">Third-Party Emotes & Stacking</h2>
+    <p data-i18n="chatOverlay.emotes.desc">The overlay supports three third-party Twitch emote providers: BetterTTV (BTTV), FrankerFaceZ (FFZ), and 7TV. Global and channel emote sets load automatically for Twitch channels.</p>
+
+    <h3 id="emotes-zero-width" data-i18n="chatOverlay.emotes.zeroWidth.title">Zero-Width & Overlay Stacking</h3>
+    <p data-i18n="chatOverlay.emotes.zeroWidth.desc">A zero-width emote (for example, a hat or a rain effect) stacks on the emote before it. Put a space between the two emotes (for example <span class="inline-code">catJAM cvHazmat</span>). You can chain zero-width emotes to make a stack with many layers. Single-emote enlargement also applies to a stacked emote.</p>
+
+    <h3 id="emotes-precedence" data-i18n="chatOverlay.emotes.precedence.title">Priority & Matching</h3>
+    <p data-i18n="chatOverlay.emotes.precedence.desc">An emote matches an exact, case-sensitive word. A Twitch emote has priority over a third-party emote. A channel emote has priority over a global emote.</p>
+
+    <h3 id="emotes-safety" data-i18n="chatOverlay.emotes.safety.title">Content Safety & Customization</h3>
+    <p data-i18n="chatOverlay.emotes.safety.desc">You can change these third-party emote settings in the config panel:</p>
+    <ul>
+        <li data-i18n="chatOverlay.emotes.safety.toggle"><strong>Third-Party Emotes Toggle:</strong> The master switch that turns all third-party emotes on or off.</li>
+        <li data-i18n="chatOverlay.emotes.safety.channelToggle"><strong>Show Channel Emotes:</strong> Shows or hides the third-party emotes of the channel.</li>
+        <li data-i18n="chatOverlay.emotes.safety.filters"><strong>7TV Content Filters:</strong> Hide sensitive emotes by category (Twitch Disallowed, Sexual Content, Epilepsy / Flashing, and Edgy / Offensive).</li>
+    </ul>
+</section>

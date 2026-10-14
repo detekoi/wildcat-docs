@@ -181,7 +181,7 @@
       "step7": "Nella finestra interattiva, inserisci le informazioni del tuo canale. Fai clic sull'ingranaggio delle impostazioni (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Poi fai clic su \"Connect\".",
       "tips": {
         "title": "Suggerimenti avanzati per OBS",
-        "tip1": "Attiva <span class=\"inline-code\">Disattiva la sorgente quando non è visibile</span> per risparmiare risorse di sistema.",
+        "tip1": "Per la sincronizzazione in tempo reale dal Chat Scene Creator, lascia <span class=\"inline-code\">Disattiva la sorgente quando non è visibile</span> e <span class=\"inline-code\">Aggiorna il browser quando la scena diventa attiva</span> disattivate.",
         "tip2": "Per nascondere le barre di scorrimento, aggiungi <span class=\"inline-code\">body { overflow: hidden; }</span> al campo CSS personalizzato.",
         "tip3": "Le impostazioni vengono salvate nella cache di OBS. Se svuoti la cache di OBS per questa sorgente, definisci di nuovo le impostazioni visive."
       }

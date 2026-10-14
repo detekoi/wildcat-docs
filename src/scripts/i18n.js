@@ -105,6 +105,10 @@ async function initI18n() {
 
 // Get the current page identifier for loading the correct translation file
 function getCurrentPageId() {
+  // Topic pages name their catalog on <html data-i18n-page>: the content moved
+  // out of the three long pages with its keys, so it still lives in their catalogs.
+  const declared = document.documentElement.dataset.i18nPage;
+  if (declared) return declared;
   const path = window.location.pathname;
   // Check for index.html or root path first
   if (path.includes('index.html') || path === '/' || path.endsWith('/')) {
@@ -306,6 +310,7 @@ function translatePage() {
   // attribute through innerHTML.
   const TRANSLATED_ATTRIBUTES = {
     'data-i18n-aria-label': 'aria-label',
+    'data-i18n-placeholder': 'placeholder',
     'data-i18n-alt': 'alt',
     'data-i18n-title': 'title'
   };
@@ -338,7 +343,13 @@ function translatePage() {
   // Special handling for elements with HTML content or specific needs
 
   // Translate title
-  document.title = getTranslation('meta.title', 'Bot Commands');
+  // A topic page titles itself from its nav entry; the three catalogs' own
+  // meta.title names the old long page the content came from.
+  const titleKey = document.documentElement.dataset.titleKey;
+  const pageTitle = titleKey ? getTranslation(titleKey) : null;
+  document.title = pageTitle
+    ? pageTitle + ' – ' + getTranslation('docsNav.siteTitle', 'Wildcat Docs')
+    : getTranslation('meta.title', 'Bot Commands');
 
   // Translate command rows - preserve the dropdown toggle
   document.querySelectorAll('.dropdown-summary').forEach(row => {
@@ -407,6 +418,9 @@ function translatePage() {
   });
 
   renderLastUpdated();
+
+  // Scripts that render their own text (the command reference's counts) redraw on this.
+  document.dispatchEvent(new CustomEvent('i18n:translated'));
 }
 
 // Render the "Last updated" line. last-updated.js owns *when* the date is known
@@ -434,7 +448,7 @@ function renderLastUpdated() {
 // translatePage() has already run.
 document.addEventListener('lastupdated:change', renderLastUpdated);
 
-// Language selector: the native <select> in the navbar (see base.njk). The
+// Language selector: the native <select> in the navbar (see docs.njk). The
 // same control as the WildcatTTS dashboard, so the three sites match.
 function createLanguageSelector() {
   const select = document.getElementById('page-language-select');

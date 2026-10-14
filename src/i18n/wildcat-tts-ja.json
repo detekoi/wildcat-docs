@@ -249,7 +249,7 @@
       "description": "自分のチャットメッセージ用の希望言語ブーストを指定します。",
       "alias": "(エイリアス: !tts lang)",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "言語ブーストは特定言語の発音を向上させます。初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
+      "notes": "言語ブーストは特定言語の発音を向上させます。初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -344,7 +344,7 @@
       "name": "!tts defaultlanguage <言語|reset>",
       "description": "<em>チャンネル全体</em> の標準TTS言語ブーストを指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "システム初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
+      "notes": "システム初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -514,7 +514,7 @@
     "step2": "初回生成後、ボットはその説明文を永続的にキャッシュします。",
     "step3": "以降の同じエモートの読み上げはキャッシュを使用し、AI処理なしで即座に実行されます。",
     "managementTitle": "説明の管理",
-    "managementText": "モデレーターは <span class=\"inline-code\">!tts emote</span> コマンドでエモート説明の確認・再生成・手動設定が可能です。詳細はコマンド一覧の <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a> をご覧ください。",
+    "managementText": "モデレーターは <span class=\"inline-code\">!tts emote</span> コマンドでエモート説明の確認・再生成・手動設定が可能です。詳細はコマンド一覧の <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a> をご覧ください。",
     "localeText": "AIは各説明をチャンネルの言語で作成します。botは言語ごとに個別の説明を保持します。"
   },
   "webDashboard": {

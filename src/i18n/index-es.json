@@ -45,5 +45,14 @@
       "step4": "Configura los ajustes de tu bot",
       "step5": "Consulta las páginas de documentación para referencias detalladas de comandos"
     }
+  },
+  "home": {
+    "titleLine": "Documentación",
+    "lede": "Guías de configuración y referencias de comandos para WildcatSage, WildcatTTS y Wildcat Chat Overlay.",
+    "products": {
+      "sage": "Un chatbot que responde preguntas, busca en la web y organiza juegos en el chat.",
+      "tts": "Lee en voz alta los mensajes del chat y las alertas con voces naturales.",
+      "overlay": "Un overlay de chat de Twitch y YouTube para OBS, con temas que usted describe con palabras."
+    }
   }
 }

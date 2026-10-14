@@ -1,0 +1,59 @@
+---
+layout: docs.njk
+navId: tts-events
+catalog: wildcat-tts
+title: "Stream events & privacy – Wildcat Docs"
+description: "Choose which stream events TTS announces, how it treats other bots' commands, and how it reads links aloud."
+toc:
+  - ["event-controls", "eventControls.title", "Stream Events & Privacy Controls"]
+  - ["chat-commands", "chatCommands.title", "Chat Commands from Other Bots"]
+  - ["url-reading", "urlReading.title", "Speech-Friendly URL Reading"]
+---
+<section id="event-controls" class="section">
+    <h2 data-i18n="eventControls.title">Stream Events & Privacy Controls</h2>
+    <p data-i18n="eventControls.intro">WildcatTTS gives you granular control over stream event announcements and viewer privacy in the Web Dashboard.</p>
+
+    <h3 data-i18n="eventControls.cheersTitle">Cheer Announcements & Cheermote Filtering</h3>
+    <p data-i18n="eventControls.cheersText">When a viewer cheers bits, TTS automatically strips cheermote names like Cheer100 or Party1 from the message. TTS only reads the viewer's custom message.</p>
+    <p data-i18n="eventControls.cheersToggleText">Both switches are in the Cheers card of the Web Dashboard. Announce Cheers turns the "User cheered bits" alert on or off. Read Cheer Messages turns reading the attached message on or off. Cheer messages are read in every TTS mode and are not limited by TTS Permission, because the viewer paid for them.</p>
+
+    <h3 data-i18n="eventControls.redemptionsTitle">Reward Announcements & Queued Redeems</h3>
+    <p data-i18n="eventControls.redemptionsText">When a viewer redeems a channel point reward, TTS speaks an alert with the reward title and the viewer message.</p>
+    <p data-i18n="eventControls.redemptionsToggleText">Use the Announce Reward Redeems switch in the Web Dashboard to turn redemption alerts on or off.</p>
+    <p data-i18n="eventControls.mutedRewardsText">To keep one reward silent, for example a soundboard that plays its own sound, use Rewards to Announce in the Web Dashboard. Select Choose rewards and switch off the reward. The bot announces all other rewards. Moderators can use the <span class="inline-code">!tts redeems mute</span> command in chat.</p>
+    <p data-i18n="eventControls.queuedRedeemsText">By default, the bot announces a queued reward immediately when a viewer redeems it. Switch off Announce Queued Redeems Immediately to announce a queued reward only after you accept it in Twitch.</p>
+
+    <h3 data-i18n="eventControls.followersTitle">Follower Privacy & Anonymization</h3>
+    <p data-i18n="eventControls.followersText">To protect viewer privacy, turn on the Anonymize New Followers switch in the Web Dashboard. When active, TTS announces "Someone new just followed!" instead of speaking the viewer's username.</p>
+
+    <h3 data-i18n="eventControls.streaksTitle">Watch Streaks & Pronoun Resolution</h3>
+    <p data-i18n="eventControls.streaksText">When a viewer hits a watch streak milestone, the bot announces the streak count. If the viewer attached a message, the bot checks pronouns.alejo.io to speak their pronouns (for example, "They said: ...").</p>
+</section>
+
+<section id="chat-commands" class="section">
+    <h2 data-i18n="chatCommands.title">Chat Commands from Other Bots</h2>
+    <p data-i18n="chatCommands.intro">Many channels run a second bot, for example Nightbot or StreamElements. Viewers control it with commands that start with "!", such as !lurk, !so or !sr. In All Chat Messages mode, WildcatTTS reads these commands aloud as chat.</p>
+
+    <h3 data-i18n="chatCommands.toggleTitle">Read Chat Commands Option</h3>
+    <p data-i18n="chatCommands.toggleText">To skip these messages, switch off Read Chat Commands in the Web Dashboard, or type <span class="inline-code">!tts readcommands off</span> in chat. TTS then ignores every chat message that starts with "!".</p>
+    <ul>
+        <li data-i18n="chatCommands.rule1"><span class="inline-code">!tts</span> is not affected. <span class="inline-code">!tts &lt;text&gt;</span> is still spoken, and the other <span class="inline-code">!tts</span> commands still work.</li>
+        <li data-i18n="chatCommands.rule2">The option applies only in All Chat Messages mode. The other modes never read these messages.</li>
+        <li data-i18n="chatCommands.rule3">A cheer whose message starts with "!" is still read, because the viewer paid for it.</li>
+    </ul>
+</section>
+
+<section id="url-reading" class="section">
+    <h2 data-i18n="urlReading.title">Speech-Friendly URL Reading</h2>
+    <p data-i18n="urlReading.intro">Chat messages often contain long web links with parameters and tracking codes. WildcatTTS simplifies links so they sound natural when spoken.</p>
+
+    <h3 data-i18n="urlReading.howItWorksTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="urlReading.rule1">By default, TTS replaces links with speech-friendly domain names. For example, TTS speaks a search link as "google dot com link".</li>
+        <li data-i18n="urlReading.rule2">TTS removes protocol prefixes such as "https://" and "www." before speaking the domain name.</li>
+        <li data-i18n="urlReading.rule3">TTS replaces hyphens, underscores, and dots with spaces and words so the domain sounds natural.</li>
+    </ul>
+
+    <h3 data-i18n="urlReading.toggleTitle">Read Full URLs Option</h3>
+    <p data-i18n="urlReading.toggleText">If you want TTS to speak entire URLs as typed, turn on the Read Full URLs switch in the Web Dashboard. When this switch is on, TTS speaks the full link without shortening.</p>
+</section>

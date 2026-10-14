@@ -249,7 +249,7 @@
       "description": "Legt deine persönliche Sprachunterstützung für deine Chat-Nachrichten fest.",
       "alias": "(Alias: !tts lang)",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
-      "notes": "Sprachunterstützung verbessert die Aussprache für eine Sprache. Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den Kanal-Standard. Siehe Bereich <a href=\"#language-boost\" class=\"default-link-style\">Sprachunterstützung</a> oder nutze <span class=\"inline-code\">!tts languageslist</span> für alle Optionen.",
+      "notes": "Sprachunterstützung verbessert die Aussprache für eine Sprache. Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den Kanal-Standard. Siehe Bereich <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprachunterstützung</a> oder nutze <span class=\"inline-code\">!tts languageslist</span> für alle Optionen.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -344,7 +344,7 @@
       "name": "!tts defaultlanguage <language|reset>",
       "description": "Legt die Standard-TTS-Sprachunterstützung für den <em>Kanal</em> fest.",
       "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
-      "notes": "Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den System-Standard. Siehe Bereich <a href=\"#language-boost\" class=\"default-link-style\">Sprachunterstützung</a> oder nutze <span class=\"inline-code\">!tts languageslist</span> für Optionen.",
+      "notes": "Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den System-Standard. Siehe Bereich <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprachunterstützung</a> oder nutze <span class=\"inline-code\">!tts languageslist</span> für Optionen.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -514,7 +514,7 @@
     "step2": "Der Bot speichert die Beschreibung nach der ersten Erstellung dauerhaft.",
     "step3": "Spätere Verwendungen des Emotes nutzen die gespeicherte Beschreibung sofort ohne neue KI-Verarbeitung.",
     "managementTitle": "Beschreibungen verwalten",
-    "managementText": "Moderatoren können <span class=\"inline-code\">!tts emote</span> nutzen, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder festzulegen. Siehe Tabelle <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Emote-Beschreibungs-Verwaltung</a> für Details.",
+    "managementText": "Moderatoren können <span class=\"inline-code\">!tts emote</span> nutzen, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder festzulegen. Siehe Tabelle <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Emote-Beschreibungs-Verwaltung</a> für Details.",
     "localeText": "Die KI schreibt jede Beschreibung in der Sprache des Kanals. Der Bot behält eine separate Beschreibung für jede Sprache."
   },
   "webDashboard": {

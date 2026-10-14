@@ -1,0 +1,32 @@
+---
+layout: docs.njk
+navId: tts-youtube
+catalog: wildcat-tts
+title: "YouTube chat – Wildcat Docs"
+description: "Read YouTube Live chat aloud next to your Twitch chat when you stream to both."
+toc:
+  - ["youtube-tts-features", "youtubeTts.featuresTitle", "How It Works"]
+  - ["youtube-tts-setup", "youtubeTts.setupTitle", "How To Enable YouTube TTS"]
+---
+<section id="youtube-tts" class="section">
+    <h2 data-i18n="youtubeTts.title">YouTube Live Chat Integration</h2>
+    <p data-i18n="youtubeTts.intro">WildcatTTS can read YouTube Live chat messages aloud into your OBS audio feed. If you stream to Twitch and YouTube at the same time, the bot reads messages from both chats into one audio source.</p>
+
+    <h3 id="youtube-tts-features" data-i18n="youtubeTts.featuresTitle">How It Works</h3>
+    <ul>
+        <li data-i18n="youtubeTts.feature1"><strong>Multi-streaming support:</strong> Messages from Twitch and YouTube play through the same OBS Browser Source without extra audio setup.</li>
+        <li data-i18n="youtubeTts.feature2"><strong>Background polling:</strong> If you turn on the feature before you start your YouTube stream, the bot waits and connects when you go live.</li>
+        <li data-i18n="youtubeTts.feature3"><strong>Heartbeat system:</strong> The bot sends regular heartbeat signals to keep the YouTube connection active during slow chat.</li>
+        <li data-i18n="youtubeTts.feature4"><strong>Unified formatting:</strong> Custom YouTube emotes, URLs, and channel default voice settings apply to YouTube messages automatically.</li>
+    </ul>
+
+    <h3 id="youtube-tts-setup" data-i18n="youtubeTts.setupTitle">How To Enable YouTube TTS</h3>
+    <p data-i18n="youtubeTts.setupIntro">You can configure YouTube TTS in the Web Dashboard. Changes take effect immediately.</p>
+    <ol>
+        <li data-i18n="youtubeTts.step1">Sign in to the Web Dashboard at tts.wildcat.chat with your Twitch account.</li>
+        <li data-i18n="youtubeTts.step2">Scroll to the YouTube Integration card.</li>
+        <li data-i18n="youtubeTts.step3">Turn on the YouTube TTS Enabled switch.</li>
+        <li data-i18n="youtubeTts.step4">Enter your YouTube handle (for example, @yourchannel).</li>
+        <li data-i18n="youtubeTts.step5">If your stream is already live, OBS begins speaking your YouTube chat messages immediately.</li>
+    </ol>
+</section>

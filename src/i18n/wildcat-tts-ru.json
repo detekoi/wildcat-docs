@@ -249,7 +249,7 @@
       "description": "Устанавливает предпочитаемое языковое усиление для ваших сообщений в чате.",
       "alias": "(Псевдоним: !tts lang)",
       "statusDesc": "(отображает текущее личное предпочтение)",
-      "notes": "Языковое усиление оптимизирует произношение для конкретного языка. Используйте <span class=\"inline-code\">reset</span> или <span class=\"inline-code\">auto</span> для значения по умолчанию. См. раздел <a href=\"#language-boost\" class=\"default-link-style\">Языковое Усиление</a> или введите <span class=\"inline-code\">!tts languageslist</span>.",
+      "notes": "Языковое усиление оптимизирует произношение для конкретного языка. Используйте <span class=\"inline-code\">reset</span> или <span class=\"inline-code\">auto</span> для значения по умолчанию. См. раздел <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Языковое Усиление</a> или введите <span class=\"inline-code\">!tts languageslist</span>.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -344,7 +344,7 @@
       "name": "!tts defaultlanguage <language|reset>",
       "description": "Устанавливает языковое усиление по умолчанию для <em>канала</em>.",
       "statusDesc": "(отображает текущее стандартное значение канала)",
-      "notes": "Используйте <span class=\"inline-code\">reset</span> или <span class=\"inline-code\">auto</span> для системного значения. См. раздел <a href=\"#language-boost\" class=\"default-link-style\">Языковое Усиление</a> или введите <span class=\"inline-code\">!tts languageslist</span>.",
+      "notes": "Используйте <span class=\"inline-code\">reset</span> или <span class=\"inline-code\">auto</span> для системного значения. См. раздел <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Языковое Усиление</a> или введите <span class=\"inline-code\">!tts languageslist</span>.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -514,7 +514,7 @@
     "step2": "Бот сохраняет описание в постоянный кэш после первой генерации.",
     "step3": "При последующих появлениях эмодзи используется готовое описание из кэша без нагрузки на ИИ.",
     "managementTitle": "Управление описаниями",
-    "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, перегенерации или ручной установки описаний эмодзи. См. таблицу <a href=\"#cat-emoteDescriptions\" class=\"default-link-style\">Управление Описаниями Эмодзи</a>.",
+    "managementText": "Модераторы могут использовать команду <span class=\"inline-code\">!tts emote</span> для просмотра, перегенерации или ручной установки описаний эмодзи. См. таблицу <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Управление Описаниями Эмодзи</a>.",
     "localeText": "ИИ пишет каждое описание на языке канала. Бот хранит отдельное описание для каждого языка."
   },
   "webDashboard": {

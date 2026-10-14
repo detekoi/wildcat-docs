@@ -1,0 +1,134 @@
+---
+layout: docs.njk
+navId: tts-setup
+catalog: wildcat-tts
+title: "Set up the dashboard & OBS – Wildcat Docs"
+description: "Configure WildcatTTS in the Web Dashboard, calibrate voice volume, and add the audio to OBS."
+toc:
+  - ["web-dashboard-settings", "webDashboard.settingsTitle", "Available Dashboard Settings"]
+  - ["web-dashboard-voicecalibration", "webDashboard.voiceCalibrationTitle", "Voice Calibration"]
+  - ["web-dashboard-obssetup", "webDashboard.obsSetupTitle", "OBS Browser Source Setup"]
+---
+<section id="web-dashboard" class="section">
+    <h2 data-i18n="webDashboard.title">Web Dashboard</h2>
+    <p data-i18n="webDashboard.introText">The <a href="https://tts.wildcat.chat/" class="default-link-style"
+            target="_blank" rel="noopener noreferrer">WildcatTTS Web Dashboard</a> lets broadcasters configure
+            all TTS settings. Sign in with your Twitch account to access the dashboard.</p>
+
+
+
+    <h3 id="web-dashboard-settings" data-i18n="webDashboard.settingsTitle">Available Dashboard Settings</h3>
+    <ul>
+        <li><strong data-i18n="webDashboard.settingEngineTitle">Engine Control:</strong> <span
+                data-i18n="webDashboard.settingEngineDesc">Turn TTS on or off, announce stream events, and set TTS
+                mode and permissions.</span></li>
+        <li><strong data-i18n="webDashboard.settingViewerTitle">Viewer Preferences:</strong> <span
+                data-i18n="webDashboard.settingViewerDesc">Allow viewer custom voices, or force the channel default
+                voice for all messages.</span></li>
+        <li><strong data-i18n="webDashboard.settingAllowPreferencesTitle">Allow Viewer Voice Preferences:</strong> <span
+                data-i18n="webDashboard.settingAllowPreferencesDesc">Allow viewers to choose custom voices with
+                !myvoice, or lock TTS to the channel default voice.</span></li>
+        <li><strong data-i18n="webDashboard.settingBotChatTitle">Bot Responds in Chat:</strong> <span
+                data-i18n="webDashboard.settingBotChatDesc">Turn chat text replies on or off while keeping TTS
+                voice audio active.</span></li>
+        <li><strong data-i18n="webDashboard.settingPageLanguageTitle">Page Language:</strong> <span
+                data-i18n="webDashboard.settingPageLanguageDesc">Select the language of the dashboard text. The
+                selector is at the top of the page. This selector does not change the voice or the
+                announcements.</span></li>
+        <li><strong data-i18n="webDashboard.settingAnonymizeFollowersTitle">Anonymize New Followers:</strong> <span
+                data-i18n="webDashboard.settingAnonymizeFollowersDesc">Announce new followers without speaking
+                usernames for viewer privacy.</span></li>
+        <li><strong data-i18n="webDashboard.settingAnnounceCheersTitle">Announce Cheers:</strong> <span
+                data-i18n="webDashboard.settingAnnounceCheersDesc">Turn cheer alerts on or off while continuing to
+                read cheer messages.</span></li>
+        <li><strong data-i18n="webDashboard.settingAnnounceRedemptionsTitle">Announce Reward Redeems:</strong> <span
+                data-i18n="webDashboard.settingAnnounceRedemptionsDesc">Turn channel point reward redemption alerts on or off.</span></li>
+        <li><strong data-i18n="webDashboard.settingRewardsToAnnounceTitle">Rewards to Announce:</strong> <span
+                data-i18n="webDashboard.settingRewardsToAnnounceDesc">Select the rewards that the bot announces. Switch off a reward that plays its own sound.</span></li>
+        <li><strong data-i18n="webDashboard.settingAnnounceQueuedRedeemsTitle">Announce Queued Redeems Immediately:</strong> <span
+                data-i18n="webDashboard.settingAnnounceQueuedRedeemsDesc">Announce queued channel point rewards immediately without waiting for approval.</span></li>
+        <li><strong data-i18n="webDashboard.settingUrlTitle">Read Full URLs:</strong> <span
+                data-i18n="webDashboard.settingUrlDesc">Read full web links or only domain names.</span></li>
+        <li><strong data-i18n="webDashboard.settingReadCommandsTitle">Read Chat Commands:</strong> <span
+                data-i18n="webDashboard.settingReadCommandsDesc">Read or skip chat messages that start with "!" in All Chat Messages mode. !tts always works.</span></li>
+        <li><strong data-i18n="webDashboard.settingBitsTitle">Cheers:</strong> <span
+                data-i18n="webDashboard.settingBitsDesc">Announce cheers, read the message attached to a cheer, and set the minimum Bits a cheer needs.</span></li>
+        <li><strong data-i18n="webDashboard.settingChannelPointsTitle">Channel Points → TTS:</strong> <span
+                data-i18n="webDashboard.settingChannelPointsDesc">Create and configure a custom Channel Point
+                reward for TTS.</span></li>
+        <li><strong data-i18n="webDashboard.settingYoutubeTitle">YouTube Integration:</strong> <span
+                data-i18n="webDashboard.settingYoutubeDesc">Enable YouTube Live chat TTS and set your YouTube
+                handle or stream URL.</span></li>
+        <li><strong data-i18n="webDashboard.settingIgnoreTitle">Ignored Users:</strong> <span
+                data-i18n="webDashboard.settingIgnoreDesc">Manage the TTS ignore list, banned words, and pronunciation
+                dictionary.</span></li>
+        <li><strong data-i18n="webDashboard.settingBannedWordsTitle">Banned Words / Phrases:</strong> <span
+                data-i18n="webDashboard.settingBannedWordsDesc">Block specific words or phrases so TTS skips matching
+                messages.</span></li>
+        <li><strong data-i18n="webDashboard.settingVoiceTitle">Default Voice Settings:</strong> <span
+                data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, volume, emotion,
+                pitch, speed, language, and text normalization.</span></li>
+        <li><strong data-i18n="webDashboard.settingCalibrationTitle">Voice Calibration:</strong> <span
+                data-i18n="webDashboard.settingCalibrationDesc">Set volume multipliers for individual voices to
+                balance audio levels.</span></li>
+        <li><strong data-i18n="webDashboard.settingObsTitle">OBS Browser Source Setup:</strong> <span
+                data-i18n="webDashboard.settingObsDesc">Get your secure OBS browser source URL and setup
+                instructions.</span></li>
+        <li><strong data-i18n="webDashboard.settingPreviewTitle">Voice Preview:</strong> <span
+                data-i18n="webDashboard.settingPreviewDesc">Test your voice settings before you go live.</span></li>
+    </ul>
+
+    <h3 id="web-dashboard-voicecalibration" data-i18n="webDashboard.voiceCalibrationTitle">Voice Calibration</h3>
+    <p data-i18n="webDashboard.voiceCalibrationIntro">Some voices are naturally louder or quieter than
+        other voices. Voice Calibration lets you set volume multipliers for individual voices to balance audio
+        levels.</p>
+    <ul>
+        <li data-i18n="webDashboard.voiceCalibrationFeature1"><strong>Per-Voice Volume:</strong> Select a voice
+            and assign a volume multiplier (0.1x to 10.0x). <em>(Caution: Values over 1.0 can be loud)</em></li>
+        <li data-i18n="webDashboard.voiceCalibrationFeature2"><strong>Auto-Apply:</strong> When a viewer selects
+            a calibrated voice, the bot applies the custom volume automatically.</li>
+        <li data-i18n="webDashboard.voiceCalibrationFeature3"><strong>Overrides:</strong> Calibrated voice
+            volumes override the channel default volume setting.</li>
+    </ul>
+
+    <h3 id="web-dashboard-obssetup" data-i18n="webDashboard.obsSetupTitle">OBS Browser Source Setup</h3>
+    <p><strong data-i18n="webDashboard.obsStep1Title">Step 1: Add Browser Source in OBS</strong></p>
+    <ol>
+        <li data-i18n="webDashboard.obsStep1_1">In OBS, click the "+" icon under Sources</li>
+        <li data-i18n="webDashboard.obsStep1_2">Select "Browser"</li>
+        <li data-i18n="webDashboard.obsStep1_3">Name the source (for example, "WildcatTTS")</li>
+        <li><span data-i18n="webDashboard.obsStep1_4">Configure the source:</span>
+            <ul>
+                <li><strong data-i18n="webDashboard.obsConfigUrlTitle">URL:</strong> <span
+                        data-i18n="webDashboard.obsConfigUrlDesc">Paste your unique TTS URL from the
+                        dashboard</span></li>
+                <li><strong data-i18n="webDashboard.obsConfigSizeTitle">Width/Height:</strong> <span
+                        data-i18n="webDashboard.obsConfigSizeDesc">Set 300x100 (size does not affect
+                        audio)</span></li>
+                <li data-i18n="webDashboard.obsConfigControl"><strong>✓ Control audio via OBS</strong> (must be
+                    checked)</li>
+                <li data-i18n="webDashboard.obsConfigShutdown">Uncheck "Shutdown source when not visible" so audio
+                    plays consistently</li>
+            </ul>
+        </li>
+    </ol>
+
+    <p><strong data-i18n="webDashboard.obsStep2Title">Step 2: Enable Audio Monitoring</strong></p>
+    <ol>
+        <li data-i18n="webDashboard.obsStep2_1">Locate the audio mixer in OBS (bottom panel)</li>
+        <li data-i18n="webDashboard.obsStep2_2">Click the gear (⚙️) next to "WildcatTTS" → "Advanced Audio
+            Properties"</li>
+        <li><span data-i18n="webDashboard.obsStep2_3">Set "Audio Monitoring" to:</span>
+            <ul>
+                <li><strong data-i18n="webDashboard.obsMonitorOutputTitle">Monitor and Output</strong> <span
+                        data-i18n="webDashboard.obsMonitorOutputDesc">- You and your stream hear the audio</span></li>
+                <li><strong data-i18n="webDashboard.obsMonitorOnlyTitle">Monitor Only</strong> <span
+                        data-i18n="webDashboard.obsMonitorOnlyDesc">- Only you hear the audio (for testing)</span></li>
+            </ul>
+        </li>
+    </ol>
+
+    <p><strong data-i18n="webDashboard.obsImportantTitle">Important:</strong> <span
+            data-i18n="webDashboard.obsImportantDesc">Make sure that the source is unmuted in your audio mixer
+            and the volume is set appropriately.</span></p>
+</section>

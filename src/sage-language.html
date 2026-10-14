@@ -1,0 +1,65 @@
+---
+layout: docs.njk
+navId: sage-language
+catalog: botcommands
+title: "Bot language – Wildcat Docs"
+description: "How WildcatSage picks the language it replies in, and how to set it yourself."
+toc:
+  - ["bot-language-auto", "botLanguage.autoTitle", "Automatic Detection"]
+  - ["bot-language-set", "botLanguage.setTitle", "Set the Language"]
+  - ["bot-language-dashboardset", "botLanguage.dashboardSetTitle", "Set the Language in the Dashboard"]
+  - ["bot-language-chatset", "botLanguage.chatSetTitle", "Set the Language in Chat"]
+  - ["bot-language-written", "botLanguage.writtenTitle", "Languages With Written Translations"]
+  - ["bot-language-ai", "botLanguage.aiTitle", "AI Replies"]
+  - ["bot-language-dashboard", "botLanguage.dashboardTitle", "Dashboard Language"]
+---
+<section id="bot-language" class="section">
+    <h2 data-i18n="botLanguage.title">Bot Language</h2>
+    <p data-i18n="botLanguage.intro">WildcatSage can speak a language other than English in your channel. The language applies to command replies, game messages, and AI replies.</p>
+
+    <h3 id="bot-language-auto" data-i18n="botLanguage.autoTitle">Automatic Detection</h3>
+    <p data-i18n="botLanguage.autoIntro">You set a stream language on your Twitch channel. WildcatSage reads this value and uses it as the default language for your channel.</p>
+    <ul>
+        <li data-i18n="botLanguage.auto.default">Detection gives a default only. A language set in the dashboard or with <span class="inline-code">!botlang</span> always wins.</li>
+        <li data-i18n="botLanguage.auto.live">The bot reads the Twitch value each time it needs it. If you change the language on Twitch, the bot changes with it.</li>
+        <li data-i18n="botLanguage.auto.english">Channels with English as the stream language stay in English.</li>
+    </ul>
+
+    <h3 id="bot-language-set" data-i18n="botLanguage.setTitle">Set the Language</h3>
+    <p data-i18n="botLanguage.setIntro">You can set the bot language in the dashboard or in chat. Only the broadcaster and moderators can change it.</p>
+
+    <h3 id="bot-language-dashboardset" data-i18n="botLanguage.dashboardSetTitle">Set the Language in the Dashboard</h3>
+    <p data-i18n="botLanguage.dashboardSetIntro">Open the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>. Find the <strong>Bot Language</strong> card. Then select a language from the list.</p>
+    <ul>
+        <li data-i18n="botLanguage.dashboardSet.auto">Select <strong>Automatic</strong> to use the stream language from Twitch. This option is the default.</li>
+        <li data-i18n="botLanguage.dashboardSet.manual">Select a language to hold the channel in that language. The Twitch stream language then has no effect.</li>
+        <li data-i18n="botLanguage.dashboardSet.groups">The list has two groups. <strong>Written in advance</strong> holds the eight languages with translations ready. <strong>Translated when sent</strong> holds the other languages.</li>
+        <li data-i18n="botLanguage.dashboardSet.save">The dashboard saves your choice immediately. The bot changes language a few seconds later.</li>
+    </ul>
+
+    <h3 id="bot-language-chatset" data-i18n="botLanguage.chatSetTitle">Set the Language in Chat</h3>
+    <p data-i18n="botLanguage.chatSetIntro">Chat accepts more languages than the dashboard list. Use these commands:</p>
+    <ul>
+        <li><span class="inline-code">!botlang spanish</span> - <span data-i18n="botLanguage.commands.set">Sets the channel language to Spanish.</span></li>
+        <li><span class="inline-code">!botlang status</span> - <span data-i18n="botLanguage.commands.status">Shows the current language and where it came from.</span></li>
+        <li><span class="inline-code">!botlang off</span> - <span data-i18n="botLanguage.commands.off">Returns the channel to English.</span></li>
+    </ul>
+    <p><strong data-i18n="botLanguage.noteLabel">Note:</strong> <span data-i18n="botLanguage.offNote"><span class="inline-code">!botlang off</span> and the <strong>English</strong> option both hold the channel in English. Automatic detection does not change it back.</span></p>
+    <p data-i18n="botLanguage.autoNote">To use automatic detection again, select <strong>Automatic</strong> in the dashboard.</p>
+
+    <h3 id="bot-language-written" data-i18n="botLanguage.writtenTitle">Languages With Written Translations</h3>
+    <p data-i18n="botLanguage.writtenIntro">Eight languages have translations that are written in advance: English, Spanish, French, German, Italian, Portuguese, Japanese, and Russian.</p>
+    <p data-i18n="botLanguage.writtenBenefit">In these languages, fixed messages such as game announcements go to chat immediately. The words are the same each time.</p>
+    <p data-i18n="botLanguage.writtenOther">The <span class="inline-code">!botlang</span> command accepts more languages than these eight. For a language without written translations, the bot translates each message as it sends it.</p>
+    <p data-i18n="botLanguage.writtenOtherCost">These messages are correct, but they are slower and the words can change between messages.</p>
+
+    <h3 id="bot-language-ai" data-i18n="botLanguage.aiTitle">AI Replies</h3>
+    <p data-i18n="botLanguage.aiIntro">The bot writes AI replies new each time, so they are not limited to the eight languages.</p>
+    <p data-i18n="botLanguage.aiRule">The bot answers each person in the language that person used. If the language is not clear, the bot uses the language of your stream.</p>
+    <p data-i18n="botLanguage.aiUnits">Time periods and language names follow the channel language. As an example, <span class="inline-code">!followage</span> writes its units in the channel language.</p>
+
+    <h3 id="bot-language-dashboard" data-i18n="botLanguage.dashboardTitle">Dashboard Language</h3>
+    <p data-i18n="botLanguage.dashboardIntro">The dashboard has its own language setting. This setting is separate from the bot language.</p>
+    <p data-i18n="botLanguage.dashboardPicker">The language picker is in the bottom corner of every dashboard page. The dashboard uses your browser language until you make a choice.</p>
+    <p data-i18n="botLanguage.dashboardUrl">To see one page in a different language, add <span class="inline-code">?lang=ja</span> to the end of the address.</p>
+</section>
