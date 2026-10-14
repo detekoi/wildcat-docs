@@ -25,12 +25,14 @@ module.exports = function (eleventyConfig) {
         return i < 0 ? null : flat[i + step] || null;
     });
 
-    // Full-text search (lib/search-index.js): index each topic page as it renders,
-    // giving id-less headings an id so results can link to them, then write one
-    // search/<lang>.json per language for scripts/search.js.
+    // Full-text search (lib/search-index.js): index each topic page as it renders
+    // (the page itself is left as rendered), then write one search/<lang>.json per
+    // language for scripts/search.js.
     eleventyConfig.addTransform("search-index", function (content) {
-        if (!this.page.outputPath || !this.page.outputPath.endsWith(".html")) return content;
-        return searchIndex.collect(content, this.page.url);
+        if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
+            searchIndex.collect(content, this.page.url);
+        }
+        return content;
     });
     eleventyConfig.on("eleventy.after", ({ dir }) => searchIndex.write(dir.output));
 

@@ -82,13 +82,15 @@ such as `botcommands.html#games` to the page that holds that section now, using
 The search dialog (`scripts/search.js`; Ctrl+K, Cmd+K or `/`) searches the text of every topic
 page. The build writes its index: `lib/search-index.js` splits each rendered page into one record
 per `h2`/`h3` and per command row, then writes `public/search/<lang>.json` for each language,
-taking the text from that language's catalogs by the same `data-i18n` keys the page uses. A heading
-without an `id` gets one at build time, so every result links to its section. New pages and new
-catalog strings are indexed with no extra step.
+taking the text from that language's catalogs by the same `data-i18n` keys the page uses. Each result
+links to its heading's `id`, so every `h2`/`h3` on a topic page needs one; the build fails and names
+the heading when one is missing. (A section's first `h2` links to the section's own `id` instead.)
+New pages and new catalog strings are indexed with no extra step.
 
 ## Adding Documentation Pages
 
 1. Add the page to its group in `src/_data/docsNav.js` (id, url, catalog, title, lede).
-2. Create `src/<page>.html` with `layout: docs.njk`, `navId`, `catalog` and optional `toc`.
+2. Create `src/<page>.html` with `layout: docs.njk`, `navId`, `catalog` and optional `toc`. Give
+   every `h2`/`h3` an `id`, so search results can link to it.
 3. Add the page's title and lede to `docsNav.pages.<id>` in every `common-<lang>.json`.
 4. Run `npm run build` to compile the site.

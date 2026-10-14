@@ -48,6 +48,8 @@
       "placeholder": "コマンド、設定、ボイス ID を検索…",
       "hint": "すべてのページの本文を検索します。例：forgetme、cheermote、ボイス ID。",
       "noResults": "結果はありません。!tts や !geo などのコマンド名で検索してください。",
+      "loading": "読み込み中…",
+      "failed": "検索を読み込めませんでした。接続を確認してから、もう一度入力してください。",
       "results": {
         "other": "{n} 件"
       },

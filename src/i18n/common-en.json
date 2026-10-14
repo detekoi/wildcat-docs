@@ -48,6 +48,8 @@
       "placeholder": "Search commands, settings, voice IDs…",
       "hint": "Search the text of every page, for example: forgetme, cheermote, or a voice ID.",
       "noResults": "No results. Try a command name, such as !tts or !geo.",
+      "loading": "Loading…",
+      "failed": "Search could not load. Check your connection, then type again.",
       "results": {
         "one": "{n} result",
         "other": "{n} results"

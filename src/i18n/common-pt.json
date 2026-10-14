@@ -48,6 +48,8 @@
       "placeholder": "Pesquisar comandos, configurações, IDs de voz…",
       "hint": "Pesquisa o texto de todas as páginas, por exemplo: forgetme, cheermote ou um ID de voz.",
       "noResults": "Nenhum resultado. Tente um nome de comando, como !tts ou !geo.",
+      "loading": "Carregando…",
+      "failed": "Não foi possível carregar a pesquisa. Verifique sua conexão e digite novamente.",
       "results": {
         "one": "{n} resultado",
         "many": "{n} resultados",

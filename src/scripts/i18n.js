@@ -223,6 +223,16 @@ function getTranslation(key, defaultValue = null) {
   return result;
 }
 
+// A count in the current language: `baseKey.<plural form>` (one, few, many,
+// other, as Intl.PluralRules names them), else `baseKey.other`, else fallback,
+// with {n} replaced.
+function translatePlural(baseKey, n, fallback) {
+  let form = 'other';
+  try { form = new Intl.PluralRules(currentLanguage).select(n); } catch (e) { /* unknown locale */ }
+  const template = getTranslation(baseKey + '.' + form) || getTranslation(baseKey + '.other') || fallback;
+  return String(template).replace('{n}', String(n));
+}
+
 // Translate the entire page
 function translatePage() {
   // First translate non-span elements with data-i18n

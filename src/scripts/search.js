@@ -19,7 +19,13 @@
 
     const dialog = document.getElementById('docs-search');
     const opener = document.getElementById('docs-search-open');
-    if (!dialog || !opener || typeof dialog.showModal !== 'function') return;
+    if (!dialog || !opener) return;
+    // A browser without <dialog> (before Safari 15.4 / Firefox 98) gets no search
+    // rather than a button that does nothing.
+    if (typeof dialog.showModal !== 'function') {
+        opener.hidden = true;
+        return;
+    }
     const input = document.getElementById('docs-search-input');
     const list = document.getElementById('docs-search-results');
     const msg = document.getElementById('docs-search-msg');
@@ -34,6 +40,7 @@
     const indexes = new Map(); // lang -> Promise<entries>
     let entries = null;
     let entriesLang = null;
+    let loadState = 'idle'; // idle | loading | failed
 
     // Lower case, accents off, one character at a time so `map` can point each
     // normalized character back at the original string for the snippet.
@@ -42,7 +49,7 @@
         const map = [];
         let i = 0;
         for (const ch of s) {
-            const n = ch.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase();
+            const n = ch.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
             for (let j = 0; j < n.length; j++) map.push(i);
             out += n;
             i += ch.length;
@@ -59,7 +66,10 @@
                     const text = normalize(e.t);
                     // A page's lead record has no heading: it stands for the page.
                     const h = e.h || e.p;
-                    return { ...e, h, hN: normalize(h).out, pN: normalize(e.p).out, tN: text.out, tMap: text.map, lead: !e.u.includes('#') };
+                    return {
+                        ...e, h, hN: normalize(h).out, pN: normalize(e.p).out, gN: normalize(e.g).out,
+                        tN: text.out, tMap: text.map, lead: !e.u.includes('#'),
+                    };
                 }))
                 .catch((err) => {
                     indexes.delete(lang);
@@ -75,15 +85,26 @@
         return document.documentElement.lang || 'en';
     }
 
+    // Fetch the index for the current language, then render. Called on opening and
+    // on each keystroke, never from render(): a failed fetch is dropped from the
+    // cache, so the reader's next keystroke tries again.
     function ensureIndex() {
         const lang = currentLang();
-        if (entries && entriesLang === lang) return Promise.resolve(entries);
-        return load(lang).then((rows) => {
-            if (currentLang() === lang) {
-                entries = rows;
-                entriesLang = lang;
+        if ((entries && entriesLang === lang) || loadState === 'loading') return;
+        loadState = 'loading';
+        load(lang).then((rows) => {
+            loadState = 'idle';
+            if (currentLang() !== lang) {
+                // The language changed while this one loaded.
+                ensureIndex();
+                return;
             }
-            return rows;
+            entries = rows;
+            entriesLang = lang;
+            if (dialog.open) render();
+        }, () => {
+            loadState = 'failed';
+            if (dialog.open) render();
         });
     }
 
@@ -98,7 +119,10 @@
             const iH = e.hN.indexOf(term);
             const iT = e.tN.indexOf(term);
             const iP = e.pN.indexOf(term);
-            if (iH < 0 && iT < 0 && iP < 0) return 0;
+            // The product name ("overlay", "WildcatSage") finds every page of that
+            // product, through the one record each page has for itself.
+            const iG = e.lead ? e.gN.indexOf(term) : -1;
+            if (iH < 0 && iT < 0 && iP < 0 && iG < 0) return 0;
             if (iH >= 0) {
                 inSection = true;
                 s += 30 + (isWordStart(e.hN, iH) ? 10 : 0);
@@ -112,6 +136,7 @@
                 s += n;
             }
             if (iP >= 0) s += e.lead ? 20 : 2;
+            if (iG >= 0) s += 15;
         }
         // A section must hold one of the words itself; the page title alone
         // would list every section of that page.
@@ -208,11 +233,9 @@
     }
 
     function countLabel(n) {
-        let form = 'other';
-        try { form = new Intl.PluralRules(currentLang()).select(n); } catch (e) { /* unknown locale */ }
-        const template = t('docsNav.searchDialog.results.' + form, null)
-            || t('docsNav.searchDialog.results.other', '{n} results');
-        return template.replace('{n}', String(n));
+        return typeof translatePlural === 'function'
+            ? translatePlural('docsNav.searchDialog.results', n, n + ' results')
+            : n + ' results';
     }
 
     function render() {
@@ -264,11 +287,15 @@
         if (results.length) setActive(0);
 
         list.hidden = results.length === 0;
-        if (!terms.length) msg.textContent = t('docsNav.searchDialog.hint', 'Search the text of every page, for example: forgetme, cheermote, or a voice ID.');
-        else if (!entries) msg.textContent = '';
-        else if (!results.length) msg.textContent = t('docsNav.searchDialog.noResults', 'No results. Try a command name, such as !tts or !geo.');
+        let text = '';
+        if (!terms.length) text = t('docsNav.searchDialog.hint', 'Search the text of every page, for example: forgetme, cheermote, or a voice ID.');
+        else if (entries) text = results.length ? '' : t('docsNav.searchDialog.noResults', 'No results. Try a command name, such as !tts or !geo.');
+        else if (loadState === 'failed') text = t('docsNav.searchDialog.failed', 'Search could not load. Check your connection, then type again.');
+        else text = t('docsNav.searchDialog.loading', 'Loading…');
+        msg.textContent = text;
         msg.hidden = results.length > 0;
-        status.textContent = terms.length && entries ? countLabel(results.length) : '';
+        // Announce the count, or why there is none yet.
+        status.textContent = terms.length ? (entries ? countLabel(results.length) : text) : '';
     }
 
     let timer = 0;
@@ -286,16 +313,29 @@
             location.href = url.href;
             return;
         }
-        // Same page: no reload. hashchange lets the command table open a linked row.
+        // Same page: no reload. hashchange lets the command table open a linked row
+        // or clear a filter hiding it; focus moves once that has run.
+        let id = '';
+        try { id = decodeURIComponent(url.hash.slice(1)); } catch (err) { /* malformed */ }
+        function arrive() {
+            const target = id ? document.getElementById(id) : document.getElementById('content');
+            if (!target) return;
+            // Closing the dialog sent focus back to the sidebar button; move it to what
+            // the reader chose. A command's details row is hidden, so its row's button.
+            const group = target.closest('.dropdown-group');
+            const focusEl = group ? group.querySelector('.dropdown-trigger') : target;
+            if (!focusEl) return;
+            if (!group && !focusEl.hasAttribute('tabindex')) focusEl.setAttribute('tabindex', '-1');
+            focusEl.focus({ preventScroll: true });
+            if (!group) target.scrollIntoView();
+        }
         if (location.hash !== url.hash) {
+            window.addEventListener('hashchange', arrive, { once: true });
             location.hash = url.hash;
         } else {
             window.dispatchEvent(new HashChangeEvent('hashchange'));
+            arrive();
         }
-        let id = '';
-        try { id = decodeURIComponent(url.hash.slice(1)); } catch (err) { /* malformed */ }
-        const target = id ? document.getElementById(id) : document.getElementById('content');
-        if (target && !target.closest('.dropdown-details')) target.scrollIntoView();
     }
 
     // ---- Open and close ----
@@ -304,17 +344,29 @@
         if (dialog.open) return;
         dialog.showModal();
         input.select();
+        ensureIndex();
         render();
-        ensureIndex().then(render).catch(() => { /* no index: the hint stays */ });
     }
 
     opener.addEventListener('click', open);
     dialog.querySelector('.wch-search-close').addEventListener('click', () => dialog.close());
     // A click on the backdrop lands on the <dialog> itself; the box fills the rest.
-    dialog.addEventListener('click', (ev) => { if (ev.target === dialog) dialog.close(); });
+    // The press must start there too: a text selection dragged out of the input
+    // ends with a click on the dialog, and must not close it.
+    let pressedBackdrop = false;
+    dialog.addEventListener('pointerdown', (ev) => { pressedBackdrop = ev.target === dialog; });
+    dialog.addEventListener('click', (ev) => {
+        if (ev.target === dialog && pressedBackdrop) dialog.close();
+        pressedBackdrop = false;
+    });
 
-    input.addEventListener('input', scheduleRender);
+    input.addEventListener('input', () => {
+        ensureIndex();
+        scheduleRender();
+    });
     input.addEventListener('keydown', (ev) => {
+        // Enter and the arrows belong to the IME while Japanese text is being composed.
+        if (ev.isComposing || ev.keyCode === 229) return;
         if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
             ev.preventDefault();
             if (!results.length) return;
@@ -349,10 +401,10 @@
 
     // A language switch: the next search reads that language's index.
     document.addEventListener('i18n:translated', () => {
-        if (entriesLang !== currentLang()) {
-            entries = null;
-            if (dialog.open) ensureIndex().then(render).catch(() => {});
+        if (entriesLang !== currentLang()) entries = null;
+        if (dialog.open) {
+            ensureIndex();
+            render();
         }
-        if (dialog.open) render();
     });
 })();

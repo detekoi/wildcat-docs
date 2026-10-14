@@ -48,6 +48,8 @@
       "placeholder": "Befehle, Einstellungen, Stimmen-IDs suchen…",
       "hint": "Durchsucht den Text aller Seiten, zum Beispiel: forgetme, cheermote oder eine Stimmen-ID.",
       "noResults": "Keine Treffer. Versuchen Sie einen Befehlsnamen wie !tts oder !geo.",
+      "loading": "Wird geladen…",
+      "failed": "Die Suche konnte nicht geladen werden. Prüfen Sie Ihre Verbindung und tippen Sie erneut.",
       "results": {
         "one": "{n} Treffer",
         "other": "{n} Treffer"

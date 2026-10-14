@@ -16,7 +16,7 @@ toc:
         in commands such as <span class="inline-code">!tts voice &lt;voice_id&gt;</span>.
     </p>
 
-    <h3 data-i18n="voices.popularTitle">Popular Voice IDs</h3>
+    <h3 id="voices-popular" data-i18n="voices.popularTitle">Popular Voice IDs</h3>
     <p data-i18n="voices.popularText">Popular voices from the MiniMax <span class="inline-code">speech-2.8-turbo</span>
         model. To select a voice, use <span class="inline-code">!tts voice &lt;voice_id&gt;</span> in chat.
     </p>
@@ -48,7 +48,7 @@ toc:
         <li>English_Kind-heartedGirl</li>
     </ul>
 
-    <h3 data-i18n="voices.completeListTitle">Complete Voice List (from <a
+    <h3 id="voices-complete-list" data-i18n="voices.completeListTitle">Complete Voice List (from <a
             href="https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo"
             target="_blank" rel="noopener noreferrer" class="default-link-style">Wavespeed AI minimax/speech-02-turbo Schema</a> —
         fallback provider)</h3>
@@ -729,7 +729,7 @@ toc:
             class="inline-code">!tts language &lt;language_name&gt;</span>. Moderators can set a channel
         default with <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span>.</p>
 
-    <h3 data-i18n="languageBoost.optionsTitle">Available Language Boost Options</h3>
+    <h3 id="language-boost-options" data-i18n="languageBoost.optionsTitle">Available Language Boost Options</h3>
     <p data-i18n="languageBoost.optionsIntro">The following values are accepted:</p>
     <ul class="language-list">
         <li>auto</li>
@@ -779,7 +779,7 @@ toc:
         detection. For English chats, set <span class="inline-code">English</span>. Selecting a specific language
         improves pronunciation for that language.</p>
 
-    <h3 data-i18n="languageBoost.announcementsTitle">Announcements and Chat Replies</h3>
+    <h3 id="language-boost-announcements" data-i18n="languageBoost.announcementsTitle">Announcements and Chat Replies</h3>
     <p data-i18n="languageBoost.announcementsText1">The channel language also selects the language of the text
         that the bot writes. This text includes stream event announcements, emote descriptions, and chat replies
         to commands.</p>
@@ -790,7 +790,7 @@ toc:
         announcements, because the whole channel hears them. The <span class="inline-code">auto</span> setting
         names no language, so a channel on <span class="inline-code">auto</span> gets announcements in English.</p>
 
-    <h3 data-i18n="languageBoost.detectionTitle">Automatic Detection</h3>
+    <h3 id="language-boost-detection" data-i18n="languageBoost.detectionTitle">Automatic Detection</h3>
     <p data-i18n="languageBoost.detectionText1">WildcatTTS reads the language that your channel declares on Twitch.
         The bot then sets the channel default for you.</p>
     <p data-i18n="languageBoost.detectionText2">The bot changes this setting only for a channel that has no
