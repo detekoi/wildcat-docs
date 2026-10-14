@@ -218,7 +218,10 @@ a.wc-chipbtn:hover {
     top: 57px;
     max-height: calc(100vh - 57px);
     overflow-y: auto;
+    margin-inline-start: -6px;
     padding: 28px 20px 40px 0;
+    padding-inline-start: 6px;
+    padding-inline-end: 20px;
     border-inline-end: 1px solid var(--wc-hairline);
     scrollbar-width: thin;
     scrollbar-color: var(--wc-border-strong) transparent;
@@ -268,7 +271,10 @@ a.wc-chipbtn:hover {
     .wch-side {
         position: static;
         max-height: none;
+        overflow: visible;
+        margin-inline-start: 0;
         padding: 20px 0;
+        padding-inline: 0;
         border-inline-end: 0;
         border-bottom: 1px solid var(--wc-hairline);
     }
