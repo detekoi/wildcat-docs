@@ -87,6 +87,16 @@
         "userDesc": "Mostra da quanto tempo un altro utente segue il canale"
       }
     },
+    "so": {
+      "name": "!so",
+      "description": "Fa uno shoutout a un altro streamer, con il gioco a cui gioca e un link al suo canale.",
+      "usage": {
+        "userCmd": "!so <nome utente>",
+        "userDesc": "Pubblica il gioco a cui lo streamer gioca ora, o ha giocato per ultimo, e invia uno Shoutout di Twitch",
+        "twitchNote": "Twitch invia lo Shoutout solo mentre la tua live è attiva: una volta ogni 2 minuti, e una volta ogni 60 minuti per lo stesso streamer. Il messaggio in chat viene pubblicato ogni volta",
+        "customNote": "Se il tuo canale ha un comando personalizzato !so, il bot esegue invece il tuo comando"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">Crea, modifica e gestisce comandi personalizzati del canale. Puoi gestirli anche nella <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Dashboard Web</a>.</span>",
@@ -524,6 +534,7 @@
       "readAds": "Riceve le notifiche delle pause pubblicitarie per il tuo canale.",
       "manageModerators": "Concede i privilegi di moderatore al bot.",
       "readFollowers": "Legge i dati dei follower per comandi come !followage.",
+      "manageShoutouts": "Invia uno Shoutout di Twitch per !so.",
       "manageRedemptions": "Crea e gestisce le ricompense in punti canale per funzioni come il check-in giornaliero."
     },
     "noteLabel": "Nota:",

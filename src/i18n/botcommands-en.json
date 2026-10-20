@@ -87,6 +87,16 @@
         "userDesc": "Shows another user's follow time"
       }
     },
+    "so": {
+      "name": "!so",
+      "description": "Shouts out another streamer, with the game they play and a link to their channel.",
+      "usage": {
+        "userCmd": "!so <username>",
+        "userDesc": "Posts the game that the streamer plays now, or played last, and sends a Twitch Shoutout",
+        "twitchNote": "Twitch sends the Shoutout only while your stream is live: once every 2 minutes, and once every 60 minutes for the same streamer. The chat message posts every time",
+        "customNote": "If your channel has a custom !so command, the bot runs your command instead"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">Creates, edits, and manages custom channel commands. You can also manage custom commands in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web Dashboard</a>.</span>",
@@ -524,6 +534,7 @@
       "readAds": "Receives ad break notifications for your channel.",
       "manageModerators": "Grants moderator permissions to the bot.",
       "readFollowers": "Reads follower data for commands such as !followage.",
+      "manageShoutouts": "Sends a Twitch Shoutout for !so.",
       "manageRedemptions": "Creates and manages Channel Point Rewards for features such as Daily Check-In."
     },
     "noteLabel": "Note:",

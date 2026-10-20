@@ -87,6 +87,16 @@
         "userDesc": "他のユーザーのフォロー期間を表示"
       }
     },
+    "so": {
+      "name": "!so",
+      "description": "他の配信者をシャウトアウトします。プレイ中のゲームとチャンネルへのリンクを表示します。",
+      "usage": {
+        "userCmd": "!so <ユーザー名>",
+        "userDesc": "配信者が現在プレイ中、または最後にプレイしたゲームを投稿し、Twitchのシャウトアウトを送信",
+        "twitchNote": "Twitchがシャウトアウトを送信するのは配信中のみです。2分に1回、同じ配信者には60分に1回まで送信できます。チャットメッセージは毎回投稿されます",
+        "customNote": "チャンネルにカスタムの !so コマンドがある場合、ボットは代わりにそのコマンドを実行します"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">カスタムチャンネルコマンドを作成、編集、管理します。<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Webダッシュボード</a>でも管理できます。</span>",
@@ -524,6 +534,7 @@
       "readAds": "チャンネルの広告ブレイク通知を受信します。",
       "manageModerators": "ボットにモデレーター権限を付与します。",
       "readFollowers": "!followage などのコマンド用にフォロワー情報を読み取ります。",
+      "manageShoutouts": "!so でTwitchのシャウトアウトを送信します。",
       "manageRedemptions": "デイリーチェックインなどの機能のためにチャンネルポイント報酬を作成・管理します。"
     },
     "noteLabel": "注:",
