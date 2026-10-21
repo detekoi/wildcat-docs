@@ -160,6 +160,12 @@
                 apply();
             }
             if (group) setOpen(group, true);
+            // Once the details row shows, the browser scrolls to it by itself, and on
+            // page load that can come after this. A margin the height of the command's
+            // row keeps that row in view too, under the sticky header.
+            if (group && target !== group) {
+                target.style.scrollMarginTop = (target.getBoundingClientRect().top - group.getBoundingClientRect().top) + 'px';
+            }
             box.scrollIntoView();
         }
         openLinked();
