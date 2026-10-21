@@ -89,11 +89,11 @@
     },
     "so": {
       "name": "!so",
-      "description": "Dá um shoutout para outro streamer, com o jogo que ele joga e um link para o canal dele.",
+      "description": "Recomenda outro streamer para o seu chat. O bot publica o jogo que o streamer joga e um link para o canal dele.",
       "usage": {
         "userCmd": "!so <nome de usuário>",
-        "userDesc": "Publica o jogo que o streamer joga agora, ou jogou por último, e envia um Shoutout da Twitch",
-        "twitchNote": "A Twitch envia o Shoutout somente enquanto sua live está no ar: uma vez a cada 2 minutos, e uma vez a cada 60 minutos para o mesmo streamer. A mensagem no chat é publicada sempre",
+        "userDesc": "Publica o jogo que o streamer joga agora ou jogou por último, e envia um Shoutout da Twitch",
+        "twitchNote": "A Twitch envia um Shoutout somente enquanto sua live está no ar. A Twitch envia no máximo um Shoutout a cada 2 minutos, e no máximo um Shoutout para o mesmo streamer a cada 60 minutos. O bot publica a mensagem no chat todas as vezes",
         "customNote": "Se o seu canal tem um comando personalizado !so, o bot executa o seu comando no lugar"
       }
     },
