@@ -89,12 +89,13 @@
     },
     "so": {
       "name": "!so",
-      "description": "Recommends another streamer to your chat. The bot posts the game that the streamer plays and a link to their channel.",
+      "description": "Recommends another streamer to your chat. The bot posts a message about the streamer and a link to their channel.",
       "usage": {
         "userCmd": "!so <username>",
-        "userDesc": "Posts the game that the streamer plays now or played last, and sends a Twitch Shoutout",
+        "userDesc": "Posts a message about the streamer, with a link to their channel, and sends a Twitch Shoutout",
+        "aiNote": "The AI writes the message from the game, the stream title, the tags, the bio and the pronouns of the streamer. If the AI is off or fails, the bot posts a fixed message that names the game",
         "twitchNote": "Twitch sends a Shoutout only while your stream is live. Twitch sends one Shoutout every 2 minutes at most, and one Shoutout to the same streamer every 60 minutes at most. The bot posts the chat message each time",
-        "customNote": "If your channel has a custom !so command, the bot runs your command instead"
+        "settingsNote": "You can turn off the AI message and the Twitch Shoutout in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>"
       }
     },
     "command": {

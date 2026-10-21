@@ -89,12 +89,13 @@
     },
     "so": {
       "name": "!so",
-      "description": "Recomienda a otro streamer en tu chat. El bot publica el juego al que juega el streamer y un enlace a su canal.",
+      "description": "Recomienda a otro streamer en tu chat. El bot publica un mensaje sobre el streamer y un enlace a su canal.",
       "usage": {
         "userCmd": "!so <nombre de usuario>",
-        "userDesc": "Publica el juego al que el streamer juega ahora o jugó por última vez, y envía un Shoutout de Twitch",
+        "userDesc": "Publica un mensaje sobre el streamer, con un enlace a su canal, y envía un Shoutout de Twitch",
+        "aiNote": "La IA escribe el mensaje a partir del juego, el título del stream, las etiquetas, la biografía y los pronombres del streamer. Si la IA está desactivada o falla, el bot publica un mensaje fijo que nombra el juego",
         "twitchNote": "Twitch envía un Shoutout solo mientras tu stream está en directo. Twitch envía como máximo un Shoutout cada 2 minutos, y como máximo un Shoutout al mismo streamer cada 60 minutos. El bot publica el mensaje del chat cada vez",
-        "customNote": "Si tu canal tiene un comando personalizado !so, el bot ejecuta tu comando en su lugar"
+        "settingsNote": "Puedes desactivar el mensaje de IA y el Shoutout de Twitch en el <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Panel Web</a>"
       }
     },
     "command": {
