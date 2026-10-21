@@ -87,6 +87,16 @@
         "userDesc": "Zeigt die Follow-Dauer eines anderen Benutzers an"
       }
     },
+    "so": {
+      "name": "!so",
+      "description": "Empfiehlt deinem Chat einen anderen Streamer. Der Bot postet das Spiel, das der Streamer spielt, und einen Link zu seinem Kanal.",
+      "usage": {
+        "userCmd": "!so <Benutzername>",
+        "userDesc": "Postet das Spiel, das der Streamer jetzt spielt oder zuletzt gespielt hat, und sendet ein Twitch-Shoutout",
+        "twitchNote": "Twitch sendet ein Shoutout nur, während dein Stream live ist. Twitch sendet höchstens ein Shoutout alle 2 Minuten und höchstens ein Shoutout an denselben Streamer alle 60 Minuten. Der Bot postet die Chatnachricht jedes Mal",
+        "customNote": "Wenn dein Kanal einen eigenen !so-Befehl hat, führt der Bot stattdessen deinen Befehl aus"
+      }
+    },
     "command": {
       "name": "!command <span class=\"mod-badge\">Mod</span>",
       "description": "<span class=\"description-text\">Erstellt, bearbeitet und verwaltet benutzerdefinierte Kanalbefehle. Du kannst benutzerdefinierte Befehle auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\">Web-Dashboard</a> verwalten.</span>",
@@ -524,6 +534,7 @@
       "readAds": "Empfängt Werbebenachrichtigungen für deinen Kanal.",
       "manageModerators": "Erteilt dem Bot Moderatorrechte.",
       "readFollowers": "Liest Follower-Daten für Befehle wie !followage.",
+      "manageShoutouts": "Sendet ein Twitch-Shoutout für !so.",
       "manageRedemptions": "Erstellt und verwaltet Kanalpunkte-Belohnungen für Funktionen wie den täglichen Check-In."
     },
     "noteLabel": "Hinweis:",
