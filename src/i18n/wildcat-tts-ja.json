@@ -81,7 +81,7 @@
       "description": "個人用のTTS設定ページへのリンクを送信します。",
       "aliases": "(エイリアス: !tts preferences, !tts settings)",
       "feature1": "このチャンネル専用の声、音程、速度、感情、言語を設定できます。",
-      "feature2": "TTS無視リストに自分を追加できるDanger Zoneが含まれます。解除できるのはモデレーターのみです。",
+      "feature2": "「TTS読み上げから除外」セクションがあります。1つのチャンネルまたはすべてのチャンネルでTTSから除外でき、元に戻すこともできます。モデレーターがチャンネルであなたを除外した場合、元に戻せるのはモデレーターだけです。すべてのチャンネルで除外しても、サブスク、Cheer、ギフトのアナウンスは引き続き行われますが、追加したメッセージは読み上げられません。",
       "feature3": "ボットはチャンネル情報を読み込んだ状態で、リンクをチャットに投稿します。",
       "usage": {
         "prefs": "!tts prefs",
@@ -294,10 +294,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
-      "description": "チャンネルのTTS無視リストから指定ユーザーを削除します。",
+      "name": "!tts ignore del [ユーザー名]\n(エイリアス: delete, rem, remove)",
+      "description": "チャンネルのTTS無視リストからユーザーを削除します。モデレーターが追加した場合を除き、どのユーザーも自分自身を削除できます。",
       "aliases": "(エイリアス: delete, rem, remove)",
+      "usageSelfNote": "(自分を削除したい場合)",
+      "usageModNote": "(あなたがモデレーターまたは配信者の場合)",
+      "permission": "全員(自分自身を削除する場合)、モデレーター(他のユーザーを削除する場合)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del ユーザー"
       }
     },

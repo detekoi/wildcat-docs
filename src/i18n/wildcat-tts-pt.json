@@ -81,7 +81,7 @@
       "description": "Envia um link para a sua página pessoal de configurações de TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Defina sua própria voz, tom, velocidade, emoção e idioma para este canal.",
-      "feature2": "Inclui uma Zona de Perigo onde você pode se adicionar à lista de ignorados do TTS. Apenas um moderador pode remover você.",
+      "feature2": "Inclui uma seção \"Desativar TTS\". Você pode desativar o TTS em um canal ou em todos os canais, e pode reativá-lo. Se um moderador desativou o TTS para você em um canal, só um moderador pode desfazer isso. Quando você desativa em todos os canais, o TTS ainda anuncia suas inscrições, cheers e presentes, mas não a mensagem que você adiciona.",
       "feature3": "O bot publica o link no chat com o contexto do canal carregado.",
       "usage": {
         "prefs": "!tts prefs",
@@ -294,10 +294,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Apelidos: delete, rem, remove)",
-      "description": "Remove um usuário da Twitch da lista de ignorados do TTS do canal.",
+      "name": "!tts ignore del [username]\n(Apelidos: delete, rem, remove)",
+      "description": "Remove um usuário da lista de ignorados do TTS do canal. Qualquer usuário pode remover a si mesmo, a menos que um moderador o tenha adicionado.",
       "aliases": "(Alias: delete, rem, remove)",
+      "usageSelfNote": "(se você quiser se remover)",
+      "usageModNote": "(se você for moderador ou broadcaster)",
+      "permission": "Todos (para se remover), Moderador (para remover outros)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del AlgumUsuario"
       }
     },
