@@ -81,7 +81,7 @@
       "description": "Envía un enlace a su página personal de configuración de TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Configura tu propia voz, tono, velocidad, emoción e idioma para este canal.",
-      "feature2": "Incluye una sección «Desactivar TTS». Puedes desactivar el TTS en un canal o en todos los canales, y puedes volver a activarlo. Si un moderador te excluyó de un canal, solo un moderador puede deshacerlo. Cuando lo desactivas en todos los canales, el TTS sigue anunciando tus suscripciones, cheers y regalos, pero no el mensaje que añades.",
+      "feature2": "Incluye una sección «Desactivar TTS». Puedes desactivar el TTS en un canal o en todos los canales, y puedes volver a activarlo. Si un moderador te excluyó de un canal, solo un moderador puede deshacerlo. Cuando lo desactivas en todos los canales, el TTS sigue anunciando tus suscripciones, cheers y regalos, pero no el mensaje que añades. Si canjeas la recompensa de TTS, el TTS lee ese mensaje.",
       "feature3": "El bot publica el enlace en el chat con el contexto del canal cargado.",
       "usage": {
         "prefs": "!tts prefs",

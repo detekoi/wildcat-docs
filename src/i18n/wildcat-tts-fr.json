@@ -81,7 +81,7 @@
       "description": "Envoie un lien vers votre page de paramètres TTS personnels.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Définissez votre propre voix, hauteur, vitesse, émotion et langue pour cette chaîne.",
-      "feature2": "Comprend une section « Désactiver le TTS pour vous ». Vous pouvez désactiver le TTS sur une chaîne ou sur toutes les chaînes, et le réactiver. Si un modérateur vous a exclu d'une chaîne, seul un modérateur peut annuler cela. Quand vous le désactivez sur toutes les chaînes, le TTS annonce toujours vos abonnements, cheers et cadeaux, mais pas le message que vous ajoutez.",
+      "feature2": "Comprend une section « Désactiver le TTS pour vous ». Vous pouvez désactiver le TTS sur une chaîne ou sur toutes les chaînes, et le réactiver. Si un modérateur vous a exclu d'une chaîne, seul un modérateur peut annuler cela. Quand vous le désactivez sur toutes les chaînes, le TTS annonce toujours vos abonnements, cheers et cadeaux, mais pas le message que vous ajoutez. Si vous échangez la récompense TTS, le TTS lit ce message.",
       "feature3": "Le bot publie le lien dans le chat avec le contexte de la chaîne chargé.",
       "usage": {
         "prefs": "!tts prefs",

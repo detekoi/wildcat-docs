@@ -81,7 +81,7 @@
       "description": "Sends a link to your personal TTS settings page.",
       "aliases": "(Aliases: !tts preferences, !tts settings)",
       "feature1": "Set your own voice, pitch, speed, emotion, and language for this channel.",
-      "feature2": "Includes an Opt out of TTS section. You can opt out of TTS in one channel or in every channel, and you can opt back in. If a moderator opted you out of a channel, only a moderator can undo that. When you opt out in every channel, TTS still announces your subs, cheers and gifts, but not the message that you add.",
+      "feature2": "Includes an Opt out of TTS section. You can opt out of TTS in one channel or in every channel, and you can opt back in. If a moderator opted you out of a channel, only a moderator can undo that. When you opt out in every channel, TTS still announces your subs, cheers and gifts, but not the message that you add. If you redeem the TTS reward, TTS reads that message.",
       "feature3": "The bot posts the link in chat with the channel context loaded.",
       "usage": {
         "prefs": "!tts prefs",

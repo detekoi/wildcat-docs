@@ -81,7 +81,7 @@
       "description": "Invia un link alla tua pagina personale delle impostazioni TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Imposta voce, tono, velocità, emozione e lingua personali per questo canale.",
-      "feature2": "Include una sezione «Disattiva il TTS». Puoi disattivare il TTS in un canale o in tutti i canali, e puoi riattivarlo. Se un moderatore ti ha escluso da un canale, solo un moderatore può annullarlo. Quando lo disattivi in tutti i canali, il TTS annuncia comunque i tuoi abbonamenti, cheer e regali, ma non il messaggio che aggiungi.",
+      "feature2": "Include una sezione «Disattiva il TTS». Puoi disattivare il TTS in un canale o in tutti i canali, e puoi riattivarlo. Se un moderatore ti ha escluso da un canale, solo un moderatore può annullarlo. Quando lo disattivi in tutti i canali, il TTS annuncia comunque i tuoi abbonamenti, cheer e regali, ma non il messaggio che aggiungi. Se riscatti la ricompensa TTS, il TTS legge quel messaggio.",
       "feature3": "Il bot pubblica il link nella chat con il contesto del canale caricato.",
       "usage": {
         "prefs": "!tts prefs",

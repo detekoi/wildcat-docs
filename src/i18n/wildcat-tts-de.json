@@ -81,7 +81,7 @@
       "description": "Sendet einen Link zu Ihrer persönlichen TTS-Einstellungsseite.",
       "aliases": "(Aliase: !tts preferences, !tts settings)",
       "feature1": "Stelle deine eigene Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprache für diesen Kanal ein.",
-      "feature2": "Enthält einen Bereich „TTS deaktivieren“. Du kannst TTS in einem Kanal oder in allen Kanälen deaktivieren und wieder aktivieren. Wenn ein Moderator TTS für dich in einem Kanal deaktiviert hat, kann nur ein Moderator das rückgängig machen. Wenn du TTS in allen Kanälen deaktivierst, kündigt TTS deine Subs, Cheers und Geschenke weiterhin an, aber nicht die Nachricht, die du hinzufügst.",
+      "feature2": "Enthält einen Bereich „TTS deaktivieren“. Du kannst TTS in einem Kanal oder in allen Kanälen deaktivieren und wieder aktivieren. Wenn ein Moderator TTS für dich in einem Kanal deaktiviert hat, kann nur ein Moderator das rückgängig machen. Wenn du TTS in allen Kanälen deaktivierst, kündigt TTS deine Subs, Cheers und Geschenke weiterhin an, aber nicht die Nachricht, die du hinzufügst. Wenn du die TTS-Belohnung einlöst, liest TTS diese Nachricht vor.",
       "feature3": "Der Bot postet den Link im Chat mit geladenem Kanal-Kontext.",
       "usage": {
         "prefs": "!tts prefs",
