@@ -81,7 +81,7 @@
       "description": "Sendet einen Link zu Ihrer persönlichen TTS-Einstellungsseite.",
       "aliases": "(Aliase: !tts preferences, !tts settings)",
       "feature1": "Stelle deine eigene Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprache für diesen Kanal ein.",
-      "feature2": "Enthält eine Gefahrenzone, in der du dich selbst zur TTS-Ignorierliste hinzufügen kannst. Nur ein Moderator kann dich entfernen.",
+      "feature2": "Enthält einen Bereich „TTS deaktivieren“. Du kannst TTS in einem Kanal oder in allen Kanälen deaktivieren und wieder aktivieren. Wenn ein Moderator TTS für dich in einem Kanal deaktiviert hat, kann nur ein Moderator das rückgängig machen. Wenn du TTS in allen Kanälen deaktivierst, kündigt TTS deine Subs, Cheers und Geschenke weiterhin an, aber nicht die Nachricht, die du hinzufügst. Wenn du die TTS-Belohnung einlöst, liest TTS diese Nachricht vor.",
       "feature3": "Der Bot postet den Link im Chat mit geladenem Kanal-Kontext.",
       "usage": {
         "prefs": "!tts prefs",
@@ -180,9 +180,10 @@
       "contentPolicy": "<strong>Inhaltsrichtlinie:</strong> Minimale/maximale Nachrichtenlänge, Link-Blockierung und verbotene Wörter.",
       "skipQueue": "Warteschlange überspringen:",
       "skipQueueDefault": "<strong>Standardeinstellung:</strong> Diese Option ist standardmäßig aktiviert für sofortige TTS-Wiedergabe.",
-      "skipQueueEnabled": "<strong>Wenn aktiviert:</strong> TTS spielt Einlösungen sofort ab, ohne sie zu deiner Twitch-Prüfwarteschlange hinzuzufügen.",
+      "skipQueueEnabled": "<strong>Wenn aktiviert:</strong> TTS genehmigt jede Einlösung und spielt sie sofort ab. Du musst sie nicht prüfen.",
       "skipQueueDisabled": "<strong>Wenn deaktiviert:</strong> Einlösungen warten in deinem Twitch-Dashboard auf manuelle Genehmigung, bevor TTS sie abspielt.",
       "skipQueueUseCase": "<strong>Tipp:</strong> Aktivieren für sofortige Wiedergabe. Deaktivieren für Moderationsprüfung vor der Audiowiedergabe.",
+      "refunds": "<strong>Rückerstattung:</strong> TTS erstattet eine Einlösung, die es nicht abspielt. Diese Einlösungen werden erstattet: eine Nachricht, die die Inhaltsrichtlinie blockiert, ein Zuschauer, den ein Moderator in deinem Kanal stummgeschaltet hat, und jede Einlösung, während TTS ausgeschaltet ist.",
       "ttsModes": "TTS-Modi:",
       "ttsModesText": "Funktioniert in jedem TTS-Modus: Alle Chatnachrichten, !tts-Nachrichten, Hervorgehobene Nachrichten und Nur Cheers und Belohnungen.",
       "requirements": "Anforderungen:",
@@ -294,10 +295,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Aliase: delete, rem, remove)",
-      "description": "Entfernt einen Twitch-Benutzer von der Kanal-TTS-Ignorierliste.",
+      "name": "!tts ignore del [username]\n(Aliase: delete, rem, remove)",
+      "description": "Entfernt einen Benutzer von der Kanal-TTS-Ignorierliste. Jeder Benutzer kann sich selbst entfernen, außer ein Moderator hat ihn hinzugefügt.",
       "aliases": "(Aliase: delete, rem, remove)",
+      "usageSelfNote": "(wenn du dich selbst entfernen möchtest)",
+      "usageModNote": "(wenn du Moderator oder Broadcaster bist)",
+      "permission": "Alle (um sich selbst zu entfernen), Moderator (um andere zu entfernen)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del EinBenutzer"
       }
     },

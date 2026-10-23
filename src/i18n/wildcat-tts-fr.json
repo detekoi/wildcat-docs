@@ -81,7 +81,7 @@
       "description": "Envoie un lien vers votre page de paramètres TTS personnels.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Définissez votre propre voix, hauteur, vitesse, émotion et langue pour cette chaîne.",
-      "feature2": "Comprend une Zone Dangereuse où vous pouvez vous ajouter à la liste d'ignorance TTS. Seul un modérateur peut vous retirer.",
+      "feature2": "Comprend une section « Désactiver le TTS pour vous ». Vous pouvez désactiver le TTS sur une chaîne ou sur toutes les chaînes, et le réactiver. Si un modérateur vous a exclu d'une chaîne, seul un modérateur peut annuler cela. Quand vous le désactivez sur toutes les chaînes, le TTS annonce toujours vos abonnements, cheers et cadeaux, mais pas le message que vous ajoutez. Si vous échangez la récompense TTS, le TTS lit ce message.",
       "feature3": "Le bot publie le lien dans le chat avec le contexte de la chaîne chargé.",
       "usage": {
         "prefs": "!tts prefs",
@@ -180,9 +180,10 @@
       "contentPolicy": "<strong>Politique de Contenu :</strong> Longueur min/max du message, blocage de liens et mots interdits.",
       "skipQueue": "Sauter la File d'Attente :",
       "skipQueueDefault": "<strong>Option par Défaut :</strong> Cette option est activée par défaut pour une lecture TTS immédiate.",
-      "skipQueueEnabled": "<strong>Si activée :</strong> Le TTS lit immédiatement les échanges sans les ajouter à votre file d'attente Twitch.",
+      "skipQueueEnabled": "<strong>Si activée :</strong> TTS approuve chaque échange et le lit aussitôt. Vous n'avez pas besoin de le vérifier.",
       "skipQueueDisabled": "<strong>Si désactivée :</strong> Les échanges attendent une approbation manuelle sur votre tableau de bord Twitch avant la lecture.",
       "skipQueueUseCase": "<strong>Conseil :</strong> Activez pour une lecture instantanée. Désactivez pour modérer avant l'émission audio.",
+      "refunds": "<strong>Remboursements :</strong> TTS rembourse un échange qu'il ne lit pas. Ces échanges sont remboursés : un message que la politique de contenu bloque, un spectateur qu'un modérateur a rendu muet sur votre chaîne, et tout échange pendant que TTS est désactivé.",
       "ttsModes": "Modes TTS :",
       "ttsModesText": "Fonctionne dans tous les modes TTS : Tous les messages du chat, Messages !tts, Messages mis en évidence et Cheers et récompenses uniquement.",
       "requirements": "Exigences :",
@@ -294,10 +295,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Alias : delete, rem, remove)",
-      "description": "Retire un utilisateur Twitch de la liste d'ignorance TTS de la chaîne.",
+      "name": "!tts ignore del [username]\n(Alias : delete, rem, remove)",
+      "description": "Retire un utilisateur de la liste d'ignorés TTS de la chaîne. Tout utilisateur peut se retirer lui-même, sauf si un modérateur l'a ajouté.",
       "aliases": "(Alias: delete, rem, remove)",
+      "usageSelfNote": "(si vous voulez vous retirer vous-même)",
+      "usageModNote": "(si vous êtes modérateur ou diffuseur)",
+      "permission": "Tout le monde (pour se retirer eux-mêmes), Modérateur (pour retirer d'autres)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del UnUtilisateur"
       }
     },

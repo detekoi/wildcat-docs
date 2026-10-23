@@ -81,7 +81,7 @@
       "description": "Sends a link to your personal TTS settings page.",
       "aliases": "(Aliases: !tts preferences, !tts settings)",
       "feature1": "Set your own voice, pitch, speed, emotion, and language for this channel.",
-      "feature2": "Includes a Danger Zone where you can add yourself to the TTS ignore list. Only a moderator can remove you.",
+      "feature2": "Includes an Opt out of TTS section. You can opt out of TTS in one channel or in every channel, and you can opt back in. If a moderator opted you out of a channel, only a moderator can undo that. When you opt out in every channel, TTS still announces your subs, cheers and gifts, but not the message that you add. If you redeem the TTS reward, TTS reads that message.",
       "feature3": "The bot posts the link in chat with the channel context loaded.",
       "usage": {
         "prefs": "!tts prefs",
@@ -180,9 +180,10 @@
       "contentPolicy": "Content Policy: Minimum and maximum message length, link blocking, and banned words.",
       "skipQueue": "Skip the Reward Queue:",
       "skipQueueDefault": "Default Setting: This option is on by default for immediate TTS playback.",
-      "skipQueueEnabled": "When On: TTS plays redemptions immediately without adding them to your Twitch review queue.",
+      "skipQueueEnabled": "When On: TTS approves each redemption and plays it at once. You do not need to review it.",
       "skipQueueDisabled": "When Off: Redemptions wait in your Twitch dashboard for manual approval before TTS plays.",
       "skipQueueUseCase": "Tip: Turn on for instant playback. Turn off for moderation review before audio plays.",
+      "refunds": "Refunds: TTS refunds a redemption that it does not play. These redemptions get a refund: a message that the content policy blocks, a viewer that a moderator muted in your channel, and any redemption while TTS is off.",
       "ttsModes": "TTS Modes:",
       "ttsModesText": "Works in every TTS mode: All Chat Messages, !tts Messages, Highlighted Messages, and Cheers and Rewards Only.",
       "requirements": "Requirements:",
@@ -294,10 +295,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Aliases: delete, rem, remove)",
-      "description": "Removes a Twitch user from the channel TTS ignore list.",
+      "name": "!tts ignore del [username]\n(Aliases: delete, rem, remove)",
+      "description": "Removes a user from the channel TTS ignore list. Any user can remove themselves, unless a moderator added them.",
       "aliases": "(Aliases: delete, rem, remove)",
+      "usageSelfNote": "(if you want to remove yourself)",
+      "usageModNote": "(if you are a moderator or broadcaster)",
+      "permission": "Everyone (to remove themselves), Moderator (to remove others)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del SomeUser"
       }
     },

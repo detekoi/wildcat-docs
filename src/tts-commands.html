@@ -168,8 +168,11 @@ extraScripts:
                     <ul>
                         <li data-i18n="commands.ttsPrefs.feature1">Set your own voice, pitch, speed,
                             emotion, and language for this channel.</li>
-                        <li data-i18n="commands.ttsPrefs.feature2">Includes a Danger Zone where you can add
-                            yourself to the TTS ignore list. Only a moderator can remove you.</li>
+                        <li data-i18n="commands.ttsPrefs.feature2">Includes an Opt out of TTS section. You can opt
+                            out of TTS in one channel or in every channel, and you can opt back in. If a moderator
+                            opted you out of a channel, only a moderator can undo that. When you opt out in every
+                            channel, TTS still announces your subs, cheers and gifts, but not the message that you
+                            add. If you redeem the TTS reward, TTS reads that message.</li>
                         <li data-i18n="commands.ttsPrefs.feature3">The bot posts the link in chat with the channel context loaded.</li>
                     </ul>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
@@ -403,9 +406,10 @@ extraScripts:
                     </p>
                     <ul>
                         <li data-i18n="commands.channelPointsTTS.skipQueueDefault"><strong>Default Setting:</strong> This option is on by default for immediate TTS playback.</li>
-                        <li data-i18n="commands.channelPointsTTS.skipQueueEnabled"><strong>When On:</strong> TTS plays redemptions immediately without adding them to your Twitch review queue.</li>
+                        <li data-i18n="commands.channelPointsTTS.skipQueueEnabled"><strong>When On:</strong> TTS approves each redemption and plays it at once. You do not need to review it.</li>
                         <li data-i18n="commands.channelPointsTTS.skipQueueDisabled"><strong>When Off:</strong> Redemptions wait in your Twitch dashboard for manual approval before TTS plays.</li>
                         <li data-i18n="commands.channelPointsTTS.skipQueueUseCase"><strong>Tip:</strong> Turn on for instant playback. Turn off for moderation review before audio plays.</li>
+                        <li data-i18n="commands.channelPointsTTS.refunds"><strong>Refunds:</strong> TTS refunds a redemption that it does not play. These redemptions get a refund: a message that the content policy blocks, a viewer that a moderator muted in your channel, and any redemption while TTS is off.</li>
                     </ul>
                     <p><strong data-i18n="commands.channelPointsTTS.ttsModes">TTS Modes:</strong> <span
                             data-i18n="commands.channelPointsTTS.ttsModesText">Works in every TTS mode: All Chat
@@ -685,20 +689,29 @@ extraScripts:
         </tbody>
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
-                <td data-i18n-key="commands.ttsIgnoreDel.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts ignore del
-                    &lt;username&gt;<br><span style="font-size:0.9em;"
+                <td data-i18n-key="commands.ttsIgnoreDel.name">!tts ignore del
+                    [username]<br><span style="font-size:0.9em;"
                         data-i18n="commands.ttsIgnoreDel.aliases">(Aliases: delete, rem, remove)</span></td>
-                <td data-i18n-key="commands.ttsIgnoreDel.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnoreDel"><span class="description-text">Removes a Twitch user from the channel TTS ignore list.</span><span
+                <td data-i18n-key="commands.ttsIgnoreDel.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnoreDel"><span class="description-text">Removes a user from the channel TTS ignore list. Any user can remove themselves, unless a moderator added them.</span><span
                         class="dropdown-toggle">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsIgnoreDel" hidden>
                 <td colspan="2">
+                    <strong data-i18n="commands.common.usage">Usage:</strong>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsIgnoreDel.usage.self">!tts ignore del</code>
+                        <span data-i18n="commands.ttsIgnoreDel.usageSelfNote">(if you want to remove
+                            yourself)</span>
+                    </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
                             data-i18n-cmd="commands.ttsIgnoreDel.usage.basic">!tts ignore del SomeUser</code>
+                        <span data-i18n="commands.ttsIgnoreDel.usageModNote">(if you are a moderator or
+                            broadcaster)</span>
                     </div>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
-                            data-i18n="commands.common.moderator">Moderator</span></p>
+                            data-i18n="commands.ttsIgnoreDel.permission">Everyone (to remove themselves), Moderator
+                            (to remove others)</span></p>
                 </td>
             </tr>
         </tbody>

@@ -81,7 +81,7 @@
       "description": "Envia um link para a sua página pessoal de configurações de TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Defina sua própria voz, tom, velocidade, emoção e idioma para este canal.",
-      "feature2": "Inclui uma Zona de Perigo onde você pode se adicionar à lista de ignorados do TTS. Apenas um moderador pode remover você.",
+      "feature2": "Inclui uma seção \"Desativar TTS\". Você pode desativar o TTS em um canal ou em todos os canais, e pode reativá-lo. Se um moderador desativou o TTS para você em um canal, só um moderador pode desfazer isso. Quando você desativa em todos os canais, o TTS ainda anuncia suas inscrições, cheers e presentes, mas não a mensagem que você adiciona. Se você resgatar a recompensa de TTS, o TTS lê essa mensagem.",
       "feature3": "O bot publica o link no chat com o contexto do canal carregado.",
       "usage": {
         "prefs": "!tts prefs",
@@ -180,9 +180,10 @@
       "contentPolicy": "<strong>Política de Conteúdo:</strong> Tamanho mínimo/máximo da mensagem, bloqueio de links e palavras proibidas.",
       "skipQueue": "Ignorar a Fila de Recompensas:",
       "skipQueueDefault": "<strong>Configuração Padrão:</strong> Esta opção fica ativada por padrão para reprodução imediata do TTS.",
-      "skipQueueEnabled": "<strong>Quando ativada:</strong> O TTS reproduz os resgates imediatamente sem adicioná-los à sua fila de solicitações da Twitch.",
+      "skipQueueEnabled": "<strong>Quando ativada:</strong> O TTS aprova cada resgate e o reproduz na hora. Você não precisa revisá-lo.",
       "skipQueueDisabled": "<strong>Quando desativada:</strong> Os resgates aguardam aprovação manual no seu painel da Twitch antes da reprodução.",
       "skipQueueUseCase": "<strong>Dica:</strong> Ative para reprodução instantânea. Desative para moderação antes do áudio.",
+      "refunds": "<strong>Reembolsos:</strong> O TTS reembolsa um resgate que ele não reproduz. Estes resgates são reembolsados: uma mensagem que a política de conteúdo bloqueia, um espectador que um moderador silenciou no seu canal e qualquer resgate enquanto o TTS está desligado.",
       "ttsModes": "Modos de TTS:",
       "ttsModesText": "Funciona em todos os modos de TTS: Todas as mensagens do chat, Mensagens com !tts, Mensagens destacadas e Apenas cheers e recompensas.",
       "requirements": "Requisitos:",
@@ -294,10 +295,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Apelidos: delete, rem, remove)",
-      "description": "Remove um usuário da Twitch da lista de ignorados do TTS do canal.",
+      "name": "!tts ignore del [username]\n(Apelidos: delete, rem, remove)",
+      "description": "Remove um usuário da lista de ignorados do TTS do canal. Qualquer usuário pode remover a si mesmo, a menos que um moderador o tenha adicionado.",
       "aliases": "(Alias: delete, rem, remove)",
+      "usageSelfNote": "(se você quiser se remover)",
+      "usageModNote": "(se você for moderador ou broadcaster)",
+      "permission": "Todos (para se remover), Moderador (para remover outros)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del AlgumUsuario"
       }
     },

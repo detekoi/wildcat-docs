@@ -81,7 +81,7 @@
       "description": "個人用のTTS設定ページへのリンクを送信します。",
       "aliases": "(エイリアス: !tts preferences, !tts settings)",
       "feature1": "このチャンネル専用の声、音程、速度、感情、言語を設定できます。",
-      "feature2": "TTS無視リストに自分を追加できるDanger Zoneが含まれます。解除できるのはモデレーターのみです。",
+      "feature2": "「TTS読み上げから除外」セクションがあります。1つのチャンネルまたはすべてのチャンネルでTTSから除外でき、元に戻すこともできます。モデレーターがチャンネルであなたを除外した場合、元に戻せるのはモデレーターだけです。すべてのチャンネルで除外しても、サブスク、Cheer、ギフトのアナウンスは引き続き行われますが、追加したメッセージは読み上げられません。TTSリワードを引き換えた場合、そのメッセージはTTSで読み上げられます。",
       "feature3": "ボットはチャンネル情報を読み込んだ状態で、リンクをチャットに投稿します。",
       "usage": {
         "prefs": "!tts prefs",
@@ -180,9 +180,10 @@
       "contentPolicy": "<strong>コンテンツポリシー:</strong> 最小/最大文字数、リンク遮断、禁止用語リスト。",
       "skipQueue": "報酬キューをスキップ:",
       "skipQueueDefault": "<strong>初期設定:</strong> 即時TTS再生のため初期状態で有効になっています。",
-      "skipQueueEnabled": "<strong>有効時:</strong> Twitchの審査キューに入れず、即座にTTS再生します。",
+      "skipQueueEnabled": "<strong>有効時:</strong> TTSが各引き換えを承認し、すぐに再生します。確認する必要はありません。",
       "skipQueueDisabled": "<strong>無効時:</strong> TTS再生前にTwitchダッシュボードで手動承認が必要になります。",
       "skipQueueUseCase": "<strong>ヒント:</strong> 即時再生は有効、事前モデレーションは無効にします。",
+      "refunds": "<strong>払い戻し:</strong> TTSは再生しない引き換えを払い戻します。払い戻しの対象は、コンテンツポリシーでブロックされたメッセージ、チャンネルでモデレーターにミュートされた視聴者、TTSがオフの間のすべての引き換えです。",
       "ttsModes": "TTSモード:",
       "ttsModesText": "すべてのTTSモード（すべてのチャットメッセージ、!ttsメッセージ、ハイライトされたメッセージ、Cheerとリワードのみ）で動作します。",
       "requirements": "要件:",
@@ -294,10 +295,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <ユーザー名>\n(エイリアス: delete, rem, remove)",
-      "description": "チャンネルのTTS無視リストから指定ユーザーを削除します。",
+      "name": "!tts ignore del [ユーザー名]\n(エイリアス: delete, rem, remove)",
+      "description": "チャンネルのTTS無視リストからユーザーを削除します。モデレーターが追加した場合を除き、どのユーザーも自分自身を削除できます。",
       "aliases": "(エイリアス: delete, rem, remove)",
+      "usageSelfNote": "(自分を削除したい場合)",
+      "usageModNote": "(あなたがモデレーターまたは配信者の場合)",
+      "permission": "全員(自分自身を削除する場合)、モデレーター(他のユーザーを削除する場合)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del ユーザー"
       }
     },

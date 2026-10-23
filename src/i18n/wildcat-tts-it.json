@@ -81,7 +81,7 @@
       "description": "Invia un link alla tua pagina personale delle impostazioni TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
       "feature1": "Imposta voce, tono, velocità, emozione e lingua personali per questo canale.",
-      "feature2": "Include una Zona Pericolosa in cui puoi aggiungerti alla lista ignorati di TTS. Solo un moderatore può rimuoverti.",
+      "feature2": "Include una sezione «Disattiva il TTS». Puoi disattivare il TTS in un canale o in tutti i canali, e puoi riattivarlo. Se un moderatore ti ha escluso da un canale, solo un moderatore può annullarlo. Quando lo disattivi in tutti i canali, il TTS annuncia comunque i tuoi abbonamenti, cheer e regali, ma non il messaggio che aggiungi. Se riscatti la ricompensa TTS, il TTS legge quel messaggio.",
       "feature3": "Il bot pubblica il link nella chat con il contesto del canale caricato.",
       "usage": {
         "prefs": "!tts prefs",
@@ -180,9 +180,10 @@
       "contentPolicy": "<strong>Regole sui Contenuti:</strong> Lunghezza minima/massima, blocco link e parole vietate.",
       "skipQueue": "Salta la Coda dei Premi:",
       "skipQueueDefault": "<strong>Impostazione Predefinita:</strong> Questa opzione è attiva per impostazione predefinita per la riproduzione immediata.",
-      "skipQueueEnabled": "<strong>Se attiva:</strong> Il TTS riproduce subito i riscatti senza aggiungerli alla coda di revisione di Twitch.",
+      "skipQueueEnabled": "<strong>Se attiva:</strong> TTS approva ogni riscatto e lo riproduce subito. Non devi controllarlo.",
       "skipQueueDisabled": "<strong>Se disattivata:</strong> I riscatti attendono l'approvazione manuale nella dashboard di Twitch prima della lettura.",
       "skipQueueUseCase": "<strong>Suggerimento:</strong> Attiva per riproduzione immediata. Disattiva per moderare prima dell'audio.",
+      "refunds": "<strong>Rimborsi:</strong> TTS rimborsa un riscatto che non riproduce. Questi riscatti vengono rimborsati: un messaggio bloccato dalla politica dei contenuti, uno spettatore che un moderatore ha silenziato nel tuo canale e qualsiasi riscatto mentre TTS è disattivato.",
       "ttsModes": "Modalità TTS:",
       "ttsModesText": "Funziona in tutte le modalità TTS: Tutti i messaggi della chat, Messaggi con !tts, Messaggi evidenziati e Solo Cheer e ricompense.",
       "requirements": "Requisiti:",
@@ -294,10 +295,14 @@
       }
     },
     "ttsIgnoreDel": {
-      "name": "!tts ignore del <username>\n(Alias: delete, rem, remove)",
-      "description": "Rimuove un utente Twitch dalla lista ignorati di TTS del canale.",
+      "name": "!tts ignore del [username]\n(Alias: delete, rem, remove)",
+      "description": "Rimuove un utente dalla lista di ignorati TTS del canale. Ogni utente può rimuovere se stesso, a meno che non l'abbia aggiunto un moderatore.",
       "aliases": "(Alias: delete, rem, remove)",
+      "usageSelfNote": "(se vuoi rimuovere te stesso)",
+      "usageModNote": "(se sei moderatore o broadcaster)",
+      "permission": "Tutti (per rimuovere se stessi), Moderatore (per rimuovere altri)",
       "usage": {
+        "self": "!tts ignore del",
         "basic": "!tts ignore del UnUtente"
       }
     },
