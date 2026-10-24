@@ -7,9 +7,12 @@
 
 html {
     scroll-padding-top: 80px;
-    color-scheme: light;
+    color-scheme: light dark;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
+[data-theme="light"] { color-scheme: light; }
 [data-theme="dark"] { color-scheme: dark; }
 
 /* ---- Reset (the web UIs ship their own; this site needs the basics) ---- */
@@ -19,16 +22,17 @@ html {
     box-sizing: border-box;
 }
 
-html {
-    -webkit-text-size-adjust: 100%;
-}
-
 body {
     margin: 0;
     min-height: 100vh;
     background: var(--wc-bg);
     color: var(--wc-text-1);
     font-family: var(--wc-font-body);
+    font-size-adjust: from-font;
+}
+
+h1, h2, h3, h4, h5, h6, code, pre, .wc-mono {
+    font-size-adjust: from-font;
 }
 
 img {
@@ -114,6 +118,8 @@ body.wch-fill {
 
 .wch-brand-icon {
     display: block;
+    width: 22px;
+    height: 22px;
     align-self: center;
     margin-inline-end: -4px;
     image-rendering: pixelated;
@@ -224,7 +230,13 @@ a.wc-chipbtn:hover {
     padding-inline-end: 20px;
     border-inline-end: 1px solid var(--wc-hairline);
     scrollbar-width: thin;
-    scrollbar-color: var(--wc-border-strong) transparent;
+    scrollbar-color: var(--wc-scrollbar-thumb, var(--wc-border-strong)) var(--wc-scrollbar-track, transparent);
+}
+
+@supports not (scrollbar-color: auto) {
+    .wch-side::-webkit-scrollbar { width: 8px; height: 8px; }
+    .wch-side::-webkit-scrollbar-track { background: var(--wc-scrollbar-track, transparent); }
+    .wch-side::-webkit-scrollbar-thumb { background-color: var(--wc-scrollbar-thumb, var(--wc-border-strong)); border-radius: 9999px; }
 }
 
 .wch-side-inner {
@@ -252,7 +264,7 @@ a.wc-chipbtn:hover {
 }
 
 .wch-side-search.form-control:hover { border-color: var(--wc-accent); color: var(--wc-text-2); }
-.wch-side-search svg { width: 14px; height: 14px; flex: none; }
+.wch-side-search :is(svg, i[data-lucide]) { width: 14px; height: 14px; flex: none; }
 .wch-side-search-label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .wch-kbd {
@@ -341,11 +353,16 @@ a.wc-chipbtn:hover {
 
     .wch-side-toggle .wc-readout { flex: none; }
     .wch-side-toggle-page { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
-    .wch-side-toggle svg { width: 14px; height: 14px; flex: none; transition: transform 0.15s ease; }
-    .wch-side-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+    .wch-side-toggle :is(svg, i[data-lucide]) { width: 14px; height: 14px; flex: none; transition: transform 0.15s ease; }
+    .wch-side-toggle[aria-expanded="true"] :is(svg, i[data-lucide]) { transform: rotate(180deg); }
 
     .wch-side[data-collapsible]:not([data-open]) .wch-side-nav { display: none; }
     .wch-side[data-collapsible]:not([data-open]) { padding-bottom: 16px; }
+
+    @media (scripting: none) {
+        .wch-side[data-collapsible] .wch-side-toggle { display: none; }
+        .wch-side[data-collapsible]:not([data-open]) .wch-side-nav { display: flex; }
+    }
 
     /* No keyboard shortcut to advertise on a phone. */
     .wch-side-search .wch-kbd { display: none; }
@@ -364,13 +381,44 @@ dialog.wch-search {
     color: var(--wc-text-1);
     box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
     overflow: hidden;
+    overscroll-behavior: contain;
 }
-
-dialog.wch-search:not([open]) { display: none; }
 
 dialog.wch-search::backdrop {
     background-color: var(--wc-overlay);
     backdrop-filter: blur(2px);
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    dialog.wch-search,
+    dialog.wch-search::backdrop {
+        transition-property: opacity, transform, overlay, display;
+        transition-duration: 0.16s;
+        transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+        transition-behavior: allow-discrete;
+    }
+
+    dialog.wch-search:not([open]) {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    dialog.wch-search:not([open])::backdrop {
+        opacity: 0;
+    }
+
+    @starting-style {
+        dialog.wch-search[open] {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+
+        dialog.wch-search[open]::backdrop {
+            opacity: 0;
+        }
+    }
 }
 
 .wch-search-box {
@@ -387,7 +435,7 @@ dialog.wch-search::backdrop {
     border-bottom: 1px solid var(--wc-border);
 }
 
-.wch-search-field > svg { width: 16px; height: 16px; flex: none; color: var(--wc-text-3); }
+.wch-search-field > :is(svg, i[data-lucide]) { width: 16px; height: 16px; flex: none; color: var(--wc-text-3); }
 
 .wch-search-input {
     flex: 1;
@@ -507,11 +555,17 @@ dialog.wch-search::backdrop {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    scroll-target-group: auto;
 }
 
 .wch-toc-list a {
     font-size: 12.5px;
     line-height: 1.4;
+}
+
+.wch-toc-list a:is(:target-current, .\:target-current) {
+    color: var(--wc-accent);
+    font-weight: 600;
 }
 
 /* ---- Content column ---- */
@@ -607,6 +661,11 @@ dialog.wch-search::backdrop {
     display: flex;
     flex-direction: column;
     gap: 14px;
+}
+
+.wch-prose .section:nth-of-type(n + 3) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 220px;
 }
 
 .wch-prose .section > * { margin: 0; }
@@ -724,7 +783,7 @@ dialog.wch-search::backdrop {
 
 .lucide-inline { width: 1em; height: 1em; vertical-align: -0.125em; }
 
-.visually-hidden {
+.visually-hidden:where(:not(:focus-within, :active)) {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -876,6 +935,11 @@ dialog.wch-search::backdrop {
 
 .wch-commands .dropdown-group { border-bottom: 1px solid var(--wc-hairline); }
 
+.wch-commands .dropdown-group:nth-of-type(n + 14) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto none auto 52px;
+}
+
 .wch-commands .dropdown-summary {
     display: grid;
     grid-template-columns: minmax(120px, 190px) minmax(0, 1fr);
@@ -923,12 +987,16 @@ dialog.wch-search::backdrop {
 
 .wch-commands .dropdown-toggle::before {
     content: "+";
+    content: "+" / "";
     font-family: var(--wc-font-mono);
     font-size: 12px;
     color: var(--wc-text-3);
 }
 
-.wch-commands .dropdown-group.open .dropdown-toggle::before { content: "\2212"; }
+.wch-commands .dropdown-group.open .dropdown-toggle::before {
+    content: "\2212";
+    content: "\2212" / "";
+}
 
 .wch-commands .dropdown-details > td {
     margin: 0 0 14px;
@@ -940,7 +1008,7 @@ dialog.wch-search::backdrop {
     color: var(--wc-text-2);
 }
 
-.wch-commands .dropdown-details[hidden] { display: none; }
+.wch-commands .dropdown-details[hidden]:not([hidden="until-found"]) { display: none; }
 
 .wch-commands .usage-line {
     display: grid;

@@ -340,24 +340,46 @@
 
     // ---- Open and close ----
 
-    function open() {
-        if (dialog.open) return;
-        dialog.showModal();
+    function onOpen() {
         input.select();
         ensureIndex();
         render();
     }
 
-    opener.addEventListener('click', open);
-    dialog.querySelector('.wch-search-close').addEventListener('click', () => dialog.close());
-    // A click on the backdrop lands on the <dialog> itself; the box fills the rest.
-    // The press must start there too: a text selection dragged out of the input
-    // ends with a click on the dialog, and must not close it.
-    let pressedBackdrop = false;
-    dialog.addEventListener('pointerdown', (ev) => { pressedBackdrop = ev.target === dialog; });
-    dialog.addEventListener('click', (ev) => {
-        if (ev.target === dialog && pressedBackdrop) dialog.close();
-        pressedBackdrop = false;
+    function open() {
+        if (!dialog.open) dialog.showModal();
+        onOpen();
+    }
+
+    const closeBtn = dialog.querySelector('.wch-search-close');
+    if (!('commandForElement' in HTMLButtonElement.prototype)) {
+        opener.addEventListener('click', open);
+        if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+    } else {
+        opener.addEventListener('click', onOpen);
+    }
+
+    // Fallback for browsers without native <dialog closedby="any"> support.
+    if (!('closedBy' in HTMLDialogElement.prototype)) {
+        let pressedBackdrop = false;
+        dialog.addEventListener('pointerdown', (ev) => { pressedBackdrop = ev.target === dialog; });
+        dialog.addEventListener('click', (ev) => {
+            if (ev.target === dialog && pressedBackdrop) {
+                const rect = dialog.getBoundingClientRect();
+                const clickedInDialog =
+                    ev.clientX >= rect.left &&
+                    ev.clientX <= rect.right &&
+                    ev.clientY >= rect.top &&
+                    ev.clientY <= rect.bottom;
+                if (!clickedInDialog) dialog.close();
+            }
+            pressedBackdrop = false;
+        });
+    }
+
+    let lastCompositionEndTime = 0;
+    input.addEventListener('compositionend', (ev) => {
+        lastCompositionEndTime = ev.timeStamp;
     });
 
     input.addEventListener('input', () => {
@@ -365,8 +387,9 @@
         scheduleRender();
     });
     input.addEventListener('keydown', (ev) => {
-        // Enter and the arrows belong to the IME while Japanese text is being composed.
-        if (ev.isComposing || ev.keyCode === 229) return;
+        // Enter and the arrows belong to the IME while CJK text is being composed
+        // (including Safari's inverted compositionend/keydown timing within 50ms).
+        if (ev.isComposing || ev.keyCode === 229 || (ev.timeStamp - lastCompositionEndTime < 50)) return;
         if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
             ev.preventDefault();
             if (!results.length) return;

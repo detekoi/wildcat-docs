@@ -1,6 +1,66 @@
+const fs = require("node:fs");
+const path = require("node:path");
 const searchIndex = require("./lib/search-index.js");
 
+function minifyCss(css) {
+    return css.replace(
+        /("(?:\\[\s\S]|[^"\\])*")|('(?:\\[\s\S]|[^'\\])*')|\/\*[\s\S]*?\*\/|\s*([{};,])\s*|:\s+|\s+/g,
+        (m, dq, sq, punc) => {
+            if (dq || sq) return m;
+            if (m.startsWith("/*")) return "";
+            if (punc) return punc;
+            if (m.startsWith(":")) return ":";
+            return " ";
+        }
+    ).replace(/;\}/g, "}").trim();
+}
+
+function safeMinifyHtml(html) {
+    return html
+        .replace(/<!--[\s\S]*?-->/g, "")
+        .replace(/^\s+/gm, "")
+        .replace(/\n+/g, "\n")
+        .trim();
+}
+
+function minifyJs(js) {
+    const out = js
+        .replace(/^\s*\/\*[\s\S]*?\*\/\s*$/gm, "")
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((line) => line && !line.startsWith("//"))
+        .join("\n");
+    new Function(out);
+    return out;
+}
+
+function minifyOutputAssets(outputDir) {
+    const stylesDir = path.join(outputDir, "styles");
+    if (fs.existsSync(stylesDir)) {
+        for (const f of fs.readdirSync(stylesDir)) {
+            if (!f.endsWith(".css")) continue;
+            const p = path.join(stylesDir, f);
+            fs.writeFileSync(p, minifyCss(fs.readFileSync(p, "utf8")));
+        }
+    }
+    const scriptsDir = path.join(outputDir, "scripts");
+    if (fs.existsSync(scriptsDir)) {
+        for (const f of fs.readdirSync(scriptsDir)) {
+            if (!f.endsWith(".js")) continue;
+            const p = path.join(scriptsDir, f);
+            try {
+                fs.writeFileSync(p, minifyJs(fs.readFileSync(p, "utf8")));
+            } catch (_) {
+                // Keep original file if syntax check fails.
+            }
+        }
+    }
+}
+
 module.exports = function (eleventyConfig) {
+    if (typeof eleventyConfig.setServerPassthroughCopyBehavior === "function") {
+        eleventyConfig.setServerPassthroughCopyBehavior("copy");
+    }
     // Static assets pass through unchanged. i18n is included here on purpose:
     // scripts/i18n.js fetches `./i18n/<page>-<lang>.json` at runtime, so the
     // JSON must land in the output tree verbatim rather than being treated as
@@ -9,10 +69,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/scripts");
     eleventyConfig.addPassthroughCopy("src/i18n");
 
-    // Favicons. logo512.png was dropped: nothing referenced it -- there is no
-    // manifest.json and no og:image/twitter:image tag on any page.
+    // Favicons and compact navbar icon.
     eleventyConfig.addPassthroughCopy("src/favicon.ico");
     eleventyConfig.addPassthroughCopy("src/logo192.png");
+    eleventyConfig.addPassthroughCopy("src/logo-nav.webp");
+    eleventyConfig.addPassthroughCopy("src/robots.txt");
 
     // Docs navigation (src/_data/docsNav.js). Flattened once so the sidebar,
     // the previous/next pager and the page header read the same order.
@@ -31,10 +92,14 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addTransform("search-index", function (content) {
         if (this.page.outputPath && this.page.outputPath.endsWith(".html")) {
             searchIndex.collect(content, this.page.url);
+            return safeMinifyHtml(content);
         }
         return content;
     });
-    eleventyConfig.on("eleventy.after", ({ dir }) => searchIndex.write(dir.output));
+    eleventyConfig.on("eleventy.after", ({ dir }) => {
+        searchIndex.write(dir.output);
+        minifyOutputAssets(dir.output);
+    });
 
     return {
         dir: {

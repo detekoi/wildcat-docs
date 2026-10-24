@@ -18,6 +18,19 @@ extraScripts:
     <span data-i18n="page.expandTip">Select any command row below to show usage details.</span>
 </div>
 
+<search class="wch-cmdtools">
+    <input type="search" class="form-control" id="command-filter" placeholder="Filter commands, for example: quote" aria-label="Filter commands" autocomplete="off" spellcheck="false">
+    <div class="wch-cmdchips" role="group" aria-label="Command category">
+        <button type="button" class="wc-chipbtn" data-cat="all" aria-pressed="true">All</button>
+        <button type="button" class="wc-chipbtn" data-cat="general" aria-pressed="false">General</button>
+        <button type="button" class="wc-chipbtn" data-cat="custom-commands" aria-pressed="false">Custom Commands</button>
+        <button type="button" class="wc-chipbtn" data-cat="memory-commands" aria-pressed="false">Channel Memory</button>
+        <button type="button" class="wc-chipbtn" data-cat="games" aria-pressed="false">Games</button>
+        <button type="button" class="wc-chipbtn" data-cat="config" aria-pressed="false">Config</button>
+    </div>
+    <p class="wc-help" id="command-filter-empty" hidden>No commands match. Clear the filter or choose All.</p>
+</search>
+
 <table>
     <caption class="visually-hidden" data-i18n="table.caption">Bot commands</caption>
     <thead>
@@ -36,7 +49,7 @@ extraScripts:
             <td data-i18n-key="commands.ask.name">!ask / !sage</td>
             <td data-i18n-key="commands.ask.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ask"><span class="description-text">Ask Sage a question. Sage searches the web for answers.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-ask" hidden>
+        <tr class="dropdown-details" id="dd-commands-ask" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code data-i18n-cmd="commands.ask.usage.question">!ask &lt;question&gt;</code>
@@ -59,7 +72,7 @@ extraScripts:
             <td data-i18n-key="commands.search.name">!search</td>
             <td data-i18n-key="commands.search.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-search"><span class="description-text">Searches the web for information about a topic.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-search" hidden>
+        <tr class="dropdown-details" id="dd-commands-search" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code data-i18n-cmd="commands.search.usage.query">!search &lt;query&gt;</code>
@@ -70,10 +83,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td data-i18n-key="commands.game.name">!game</td>
-            <td data-i18n-key="commands.game.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-game"><span class="description-text">Shows information about the current stream game. Add "analyze" to inspect stream visuals with AI (uses stream thumbnails that update every 5 minutes).</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.game.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-game"><span class="description-text">Shows information about the current stream game. Add "analyze" to inspect stream visuals with AI (uses stream thumbnails that update every 5 minutes).</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-game" hidden>
+        <tr class="dropdown-details" id="dd-commands-game" hidden="until-found">
             <td colspan="2">
                 <div style="margin-bottom: 8px;">
                     <strong>Modes:</strong>
@@ -109,10 +121,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td data-i18n-key="commands.translate.name">!translate</td>
-            <td data-i18n-key="commands.translate.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-translate"><span class="description-text">Manages automatic chat translation for users.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.translate.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-translate"><span class="description-text">Manages automatic chat translation for users.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-translate" hidden>
+        <tr class="dropdown-details" id="dd-commands-translate" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code data-i18n-cmd="commands.translate.usage.lang">!translate &lt;lang&gt;</code>
@@ -140,7 +151,7 @@ extraScripts:
             <td data-i18n-key="commands.help.name">!commands / !help</td>
             <td data-i18n-key="commands.help.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-help"><span class="description-text">Shows a link to the list of available bot commands.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-help" hidden>
+        <tr class="dropdown-details" id="dd-commands-help" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code data-i18n-cmd="commands.help.usage.basic">!help or !commands</code>
@@ -151,10 +162,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td>!lurk</td>
-            <td data-i18n-key="commands.lurk.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-lurk"><span class="description-text">Tells chat that you are lurking. You can add a reason for a custom message.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.lurk.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-lurk"><span class="description-text">Tells chat that you are lurking. You can add a reason for a custom message.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-lurk" hidden>
+        <tr class="dropdown-details" id="dd-commands-lurk" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!lurk [your reason for lurking]</code>
@@ -167,7 +177,7 @@ extraScripts:
             <td data-i18n-key="commands.quote.name">!quote</td>
             <td data-i18n-key="commands.quote.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-quote"><span class="description-text">Adds, views, or searches channel quotes. Quotes can include an author.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-quote" hidden>
+        <tr class="dropdown-details" id="dd-commands-quote" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code data-i18n-cmd="commands.quote.usage.random">!quote</code>
@@ -209,10 +219,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td data-i18n-key="commands.followage.name">!followage</td>
-            <td data-i18n-key="commands.followage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-followage"><span class="description-text">Shows how long a user has followed the channel.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.followage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-followage"><span class="description-text">Shows how long a user has followed the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-followage" hidden>
+        <tr class="dropdown-details" id="dd-commands-followage" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code data-i18n-cmd="commands.followage.usage.basic">!followage</code>
@@ -228,10 +237,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td><span data-i18n-key="commands.so.name">!so</span> <span class="mod-badge">Mod</span></td>
-            <td data-i18n-key="commands.so.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-so"><span class="description-text">Recommends another streamer to your chat. The bot posts a message about the streamer and a link to their channel.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.so.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-so"><span class="description-text">Recommends another streamer to your chat. The bot posts a message about the streamer and a link to their channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-so" hidden>
+        <tr class="dropdown-details" id="dd-commands-so" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -258,10 +266,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td data-i18n-key="commands.command.name">!command <span class="mod-badge">Mod</span></td>
-            <td data-i18n-key="commands.command.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-command"><span class="description-text">Creates, edits, and manages custom channel commands. You can also manage custom commands in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.command.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-command"><span class="description-text">Creates, edits, and manages custom channel commands. You can also manage custom commands in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-command" hidden>
+        <tr class="dropdown-details" id="dd-commands-command" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -311,7 +318,7 @@ extraScripts:
             <td data-i18n-key="commands.timer.name">!timer <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.timer.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-timer"><span class="description-text">Creates, edits, and manages automated chat timers. You can also manage timers in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-timer" hidden>
+        <tr class="dropdown-details" id="dd-commands-timer" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.timer.usage.addCmd">!timer add &lt;name&gt; &lt;interval&gt; &lt;response&gt;</code>
@@ -366,7 +373,7 @@ extraScripts:
             <td>!remember <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.remember.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-remember"><span class="description-text">Teaches the bot a fact about your community. The bot keeps the fact from one stream to the next.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-remember" hidden>
+        <tr class="dropdown-details" id="dd-commands-remember" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!remember &lt;fact&gt;</code>
@@ -383,7 +390,7 @@ extraScripts:
             <td>!forget <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.forget.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-forget"><span class="description-text">Deletes the channel memories that contain a phrase.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-forget" hidden>
+        <tr class="dropdown-details" id="dd-commands-forget" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!forget &lt;phrase&gt;</code>
@@ -400,7 +407,7 @@ extraScripts:
             <td>!forgetme</td>
             <td data-i18n-key="commands.forgetme.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-forgetme"><span class="description-text">Deletes the memories about you in this channel. The bot then stores no new memories about you.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-forgetme" hidden>
+        <tr class="dropdown-details" id="dd-commands-forgetme" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!forgetme</code>
@@ -414,7 +421,7 @@ extraScripts:
             <td>!memory <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.memory.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-memory"><span class="description-text">Shows or changes the Channel Memory setting. Channel Memory is on by default.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-memory" hidden>
+        <tr class="dropdown-details" id="dd-commands-memory" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!memory</code>
@@ -439,10 +446,9 @@ extraScripts:
     <tbody class="dropdown-group">
         <tr class="dropdown-summary">
             <td data-i18n-key="commands.geo.name">!geo</td>
-            <td data-i18n-key="commands.geo.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-geo"><span class="description-text">Starts or manages Geo-Game, a geography guessing game for real or virtual locations.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.geo.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-geo"><span class="description-text">Starts or manages Geo-Game, a geography guessing game for real or virtual locations.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-geo" hidden>
+        <tr class="dropdown-details" id="dd-commands-geo" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!geo</code> <span data-i18n="commands.geo.usage.basic">Starts a real-world game with locations across the world</span>
@@ -540,7 +546,7 @@ extraScripts:
             <td data-i18n-key="commands.riddle.name">!riddle</td>
             <td data-i18n-key="commands.riddle.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-riddle"><span class="description-text">Starts or manages a Riddle game about general topics, stream games, or custom subjects.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-riddle" hidden>
+        <tr class="dropdown-details" id="dd-commands-riddle" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!riddle</code> <span data-i18n="commands.riddle.usage.basic">Starts a general knowledge riddle game</span>
@@ -632,7 +638,7 @@ extraScripts:
             <td data-i18n-key="commands.trivia.name">!trivia</td>
             <td data-i18n-key="commands.trivia.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-trivia"><span class="description-text">Starts or manages Trivia games with questions about various topics or the stream game.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-trivia" hidden>
+        <tr class="dropdown-details" id="dd-commands-trivia" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!trivia</code> <span data-i18n="commands.trivia.usage.basic">Starts a general knowledge trivia game</span>
@@ -719,10 +725,9 @@ extraScripts:
         <tr class="dropdown-summary">
             <td><span data-i18n-key="commands.botlang.name">!botlang</span> <span class="mod-badge">Mod</span>
             </td>
-            <td data-i18n-key="commands.botlang.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-botlang"><span class="description-text">Sets the default language for bot responses across the channel. You can also set the language in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span
-                    class="dropdown-toggle">&#x25BC;</span></button></td>
+            <td data-i18n-key="commands.botlang.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-botlang"><span class="description-text">Sets the default language for bot responses across the channel. You can also set the language in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-botlang" hidden>
+        <tr class="dropdown-details" id="dd-commands-botlang" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -748,7 +753,7 @@ extraScripts:
             <td data-i18n-key="commands.auto.name">!auto <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.auto.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-auto"><span class="description-text">Configures automated chat messages and stream event notifications.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-auto" hidden>
+        <tr class="dropdown-details" id="dd-commands-auto" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!auto</code> <span data-i18n="commands.auto.usage.status">Shows current auto-chat mode, frequency, and active categories</span>
@@ -801,7 +806,7 @@ extraScripts:
             <td>!disable <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.disable.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-disable"><span class="description-text">Disables a command for this channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-disable" hidden>
+        <tr class="dropdown-details" id="dd-commands-disable" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!disable &lt;command&gt;</code>
@@ -820,7 +825,7 @@ extraScripts:
             <td>!enable <span class="mod-badge">Mod</span></td>
             <td data-i18n-key="commands.enable.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-enable"><span class="description-text">Enables a previously disabled command for this channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-enable" hidden>
+        <tr class="dropdown-details" id="dd-commands-enable" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!enable &lt;command&gt;</code>
@@ -836,7 +841,7 @@ extraScripts:
             <td>!ping</td>
             <td data-i18n-key="commands.ping.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ping"><span class="description-text">Checks if the bot responds. The bot replies with "Pong!"</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
         </tr>
-        <tr class="dropdown-details" id="dd-commands-ping" hidden>
+        <tr class="dropdown-details" id="dd-commands-ping" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
                     <code>!ping</code>

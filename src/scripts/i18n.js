@@ -22,13 +22,39 @@ let translations = {};
 
 // Sanitize HTML translations to prevent XSS (defense-in-depth)
 const SAFE_TAGS = new Set(['a', 'br', 'code', 'em', 'i', 'span', 'strong']);
-const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel', 'data-lucide']);
+const SAFE_ATTRS = new Set(['href', 'class', 'target', 'rel', 'data-lucide', 'aria-hidden']);
+const SANITIZER_CONFIG = {
+  elements: Array.from(SAFE_TAGS),
+  attributes: Array.from(SAFE_ATTRS)
+};
 
 function sanitizeHTML(html) {
   const template = document.createElement('template');
   template.innerHTML = html;
   sanitizeNode(template.content);
   return template.innerHTML;
+}
+
+function setSanitizedHTML(element, html) {
+  const clean = sanitizeHTML(html);
+  if (element.innerHTML.trim() === clean.trim()) return;
+  if (typeof element.setHTML === 'function') {
+    try {
+      element.setHTML(clean, { sanitizer: SANITIZER_CONFIG });
+      return;
+    } catch (_) {
+      // Fall back to pre-sanitized innerHTML if Sanitizer config signature differs
+    }
+  }
+  element.innerHTML = clean;
+}
+
+function setTranslatedContent(element, translation) {
+  if (translation.includes('<') && translation.includes('>')) {
+    setSanitizedHTML(element, translation);
+  } else if (element.textContent.trim() !== translation.trim()) {
+    element.textContent = translation;
+  }
 }
 
 function sanitizeNode(node) {
@@ -240,11 +266,7 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key);
     if (translation === null) return;
-    if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = sanitizeHTML(translation);
-    } else {
-      element.textContent = translation;
-    }
+    setTranslatedContent(element, translation);
   });
 
   // Handle div elements with data-i18n that may contain HTML (like tip-text divs)
@@ -252,11 +274,7 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key);
     if (translation === null) return;
-    if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = sanitizeHTML(translation);
-    } else {
-      element.textContent = translation;
-    }
+    setTranslatedContent(element, translation);
   });
 
   // Handle complete description translations
@@ -268,11 +286,7 @@ function translatePage() {
     const translation = getTranslation(key);
     if (translation === null) return;
 
-    if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = sanitizeHTML(translation);
-    } else {
-      element.textContent = translation;
-    }
+    setTranslatedContent(element, translation);
   });
 
   // Handle nested translations (words inside descriptions)
@@ -280,11 +294,7 @@ function translatePage() {
     const key = element.getAttribute('data-i18n');
     const translation = getTranslation(key);
     if (translation === null) return;
-    if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = sanitizeHTML(translation);
-    } else {
-      element.textContent = translation;
-    }
+    setTranslatedContent(element, translation);
   });
 
   // Handle data-i18n-key on span and other elements (not just table cells)
@@ -292,11 +302,7 @@ function translatePage() {
     const key = element.getAttribute('data-i18n-key');
     const translation = getTranslation(key);
     if (translation === null) return;
-    if (translation.includes('<') && translation.includes('>')) {
-      element.innerHTML = sanitizeHTML(translation);
-    } else {
-      element.textContent = translation;
-    }
+    setTranslatedContent(element, translation);
   });
 
   // Handle command examples that need parameter translation
@@ -305,7 +311,7 @@ function translatePage() {
       const key = element.getAttribute('data-i18n-cmd');
       const translation = getTranslation(key, null);
 
-      if (translation) {
+      if (translation && element.textContent !== translation) {
         // Replace only the parameters in the command example, keep the command structure
         element.textContent = translation;
       }
@@ -397,22 +403,14 @@ function translatePage() {
       if (translation === null) return;
 
       if (descriptionTextSpan) {
-        if (translation.includes('<') && translation.includes('>')) {
-          descriptionTextSpan.innerHTML = sanitizeHTML(translation);
-        } else {
-          descriptionTextSpan.textContent = translation;
-        }
+        setTranslatedContent(descriptionTextSpan, translation);
       } else {
         // Fallback if for some reason description-text span is not found
-        if (translation.includes('<') && translation.includes('>')) {
-          trigger.innerHTML = sanitizeHTML(translation);
-        } else {
-          trigger.textContent = translation;
-        }
+        setTranslatedContent(trigger, translation);
       }
 
-      // Re-append the dropdown toggle (this part remains the same, but now it's safe)
-      if (dropdownToggle) {
+      // Re-append the dropdown toggle only if it was detached
+      if (dropdownToggle && dropdownToggle.parentNode !== trigger) {
         trigger.appendChild(dropdownToggle);
       }
     } else {
@@ -423,8 +421,9 @@ function translatePage() {
   // Translate permission badges. These are real elements now, so the <style>
   // element that used to rewrite `.mod-command::before { content: ... }` is
   // gone -- this one pass covers every badge on the page.
+  const modLabel = getTranslation('ui.mod', 'Mod');
   document.querySelectorAll('.mod-badge').forEach(badge => {
-    badge.textContent = getTranslation('ui.mod', 'Mod');
+    if (badge.textContent !== modLabel) badge.textContent = modLabel;
   });
 
   renderLastUpdated();
@@ -465,15 +464,18 @@ function createLanguageSelector() {
   if (!select || select.dataset.i18nBound) return;
   select.dataset.i18nBound = 'true';
 
-  select.replaceChildren();
-  for (const code of Object.keys(AVAILABLE_LANGUAGES)) {
-    const option = document.createElement('option');
-    option.value = code;
-    option.textContent = AVAILABLE_LANGUAGES[code];
-    // Each label is written in the language it names; without this a screen
-    // reader pronounces all of them with the page voice.
-    option.lang = code;
-    select.appendChild(option);
+  const codes = Object.keys(AVAILABLE_LANGUAGES);
+  if (select.options.length !== codes.length) {
+    select.replaceChildren();
+    for (const code of codes) {
+      const option = document.createElement('option');
+      option.value = code;
+      option.textContent = AVAILABLE_LANGUAGES[code];
+      // Each label is written in the language it names; without this a screen
+      // reader pronounces all of them with the page voice.
+      option.lang = code;
+      select.appendChild(option);
+    }
   }
   select.value = currentLanguage;
 

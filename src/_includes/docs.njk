@@ -15,10 +15,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="text-scale" content="scale">
     <title>{{ title }}</title>
     {%- if description %}
     <meta name="description" content="{{ description }}">
     {%- endif %}
+    <link rel="canonical" href="https://docs.wildcat.chat/{{ '' if page.url == '/' else (page.url | replace('/', '')) }}">
 
     <!-- Apply the saved or system theme before first paint. The key is shared with
          wildcat.chat so a choice made on one site carries to the other. -->
@@ -39,15 +42,27 @@
     <!-- Fonts: Archivo names things, Public Sans sets copy, DM Mono sets readouts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Public+Sans:wght@400..700&family=DM+Mono:wght@400;500&display=swap">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Public+Sans:wght@400..700&family=DM+Mono:wght@400;500&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Public+Sans:wght@400..700&family=DM+Mono:wght@400;500&display=swap">
+    </noscript>
 
     <!-- design-system.css is vendored from wildcat-design-system
          (npm run sync:design-system); do not edit it here. docs.css is the site layer. -->
     <link rel="stylesheet" href="styles/design-system.css">
     <link rel="stylesheet" href="styles/docs.css">
 
-    <script src="https://unpkg.com/lucide@0.473.0/dist/umd/lucide.min.js"></script>
+    <script type="speculationrules">
+        {
+            "prefetch": [{
+                "where": { "href_matches": "/*.html" },
+                "eagerness": "moderate"
+            }]
+        }
+    </script>
     <script src="https://app.rybbit.io/api/script.js" data-site-id="86f2e2886568" defer></script>
 </head>
 
@@ -57,16 +72,16 @@
     <header class="wc-appbar">
         <div class="wc-appbar-brand">
             <a class="wch-brand" href="https://wildcat.chat/" aria-label="Wildcat.chat home" data-i18n-aria-label="nav.homeLink">
-                <img class="wch-brand-icon" src="logo192.png" alt="" width="22" height="22">
+                <img class="wch-brand-icon" src="logo-nav.webp" alt="" width="22" height="22" decoding="async">
                 <span class="wc-lockup">Wildcat</span>
             </a>
             <span class="wc-sep" aria-hidden="true"></span>
             <span class="wc-appbar-page" data-i18n="docsNav.appbarPage">Docs</span>
         </div>
         <nav class="wch-tools" aria-label="Open a Wildcat tool" data-i18n-aria-label="docsNav.toolsNav">
-            <a class="wc-chipbtn" href="https://bot.wildcat.chat"><i data-lucide="bot"></i>Sage</a>
-            <a class="wc-chipbtn" href="https://tts.wildcat.chat"><i data-lucide="mic"></i>TTS</a>
-            <a class="wc-chipbtn" href="https://wildcat.chat/chat-overlay/"><i data-lucide="message-square"></i>Overlay</a>
+            <a class="wc-chipbtn" href="https://bot.wildcat.chat"><i data-lucide="bot" aria-hidden="true"></i>Sage</a>
+            <a class="wc-chipbtn" href="https://tts.wildcat.chat"><i data-lucide="mic" aria-hidden="true"></i>TTS</a>
+            <a class="wc-chipbtn" href="https://wildcat.chat/chat-overlay/"><i data-lucide="message-square" aria-hidden="true"></i>Overlay</a>
         </nav>
         <div class="wc-appbar-actions wch-actions">
             <span class="wch-rule wch-desk" aria-hidden="true"></span>
@@ -75,9 +90,16 @@
                 <a class="wc-link wc-link--muted" href="https://wildcat.chat/blog/" data-i18n="docsNav.links.blog">Blog</a>
                 <a class="wc-link wc-link--muted" href="https://github.com/detekoi" data-i18n="docsNav.links.github">GitHub</a>
             </nav>
-            {#- Native select, matching the WildcatTTS dashboard. i18n.js fills the options. #}
+            {#- Native select, matching the WildcatTTS dashboard. All options are pre-rendered so width never shifts. #}
             <select class="wc-langselect" id="page-language-select" aria-label="Language" data-i18n-aria-label="ui.languageSelector">
                 <option value="en" lang="en">English</option>
+                <option value="es" lang="es">Español</option>
+                <option value="fr" lang="fr">Français</option>
+                <option value="de" lang="de">Deutsch</option>
+                <option value="it" lang="it">Italiano</option>
+                <option value="pt" lang="pt">Português</option>
+                <option value="ja" lang="ja">日本語</option>
+                <option value="ru" lang="ru">Русский</option>
             </select>
             <div class="wc-themeswitch" role="group" aria-label="Color theme" data-i18n-aria-label="docsNav.theme.label">
                 <button type="button" data-theme-value="light" aria-pressed="false" data-i18n="docsNav.theme.light">Light</button>
@@ -87,23 +109,24 @@
     </header>
 
     <div class="wch-docgrid">
-        <aside class="wch-side" aria-label="Docs navigation" data-i18n-aria-label="docsNav.sidebarNav">
+        <aside class="wch-side" data-collapsible aria-label="Docs navigation" data-i18n-aria-label="docsNav.sidebarNav">
             <div class="wch-side-inner">
                 {#- The search opens a dialog (scripts/search.js) that searches the text of every page. #}
                 <div class="wch-side-bar">
                     {#- Phones only: the topic list collapses behind this, so a page opens on its content. #}
-                    <button type="button" class="wch-side-toggle" aria-expanded="false" aria-controls="docs-side-nav" hidden>
+                    <button type="button" class="wch-side-toggle" aria-expanded="false" aria-controls="docs-side-nav">
                         <span class="wc-readout" data-i18n="docsNav.topics">Topics</span>
                         {%- if cur %}
                         <span class="wch-side-toggle-page" data-i18n="docsNav.pages.{{ cur.id }}.title">{{ cur.title }}</span>
                         {%- elif group %}
                         <span class="wch-side-toggle-page" data-i18n="docsNav.groups.{{ group.id }}">{{ group.label }}</span>
                         {%- endif %}
-                        <i data-lucide="chevron-down"></i>
+                        <i data-lucide="chevron-down" aria-hidden="true"></i>
                     </button>
-                    <button type="button" class="form-control wch-side-search" id="docs-search-open" aria-haspopup="dialog"
+                    <button type="button" class="form-control wch-side-search" id="docs-search-open"
+                        commandfor="docs-search" command="show-modal" aria-haspopup="dialog"
                         aria-controls="docs-search" aria-keyshortcuts="Control+K Meta+K /">
-                        <i data-lucide="search"></i>
+                        <i data-lucide="search" aria-hidden="true"></i>
                         <span class="wch-side-search-label" data-i18n="docsNav.search">Search docs</span>
                         <kbd class="wch-kbd" id="docs-search-kbd" aria-hidden="true">Ctrl K</kbd>
                     </button>
@@ -173,18 +196,18 @@
         {%- endif %}
     </div>
 
-    <dialog class="wch-search" id="docs-search" aria-labelledby="docs-search-title">
+    <dialog class="wch-search" id="docs-search" closedby="any" aria-labelledby="docs-search-title">
         <div class="wch-search-box">
-            <div class="wch-search-field">
+            <search class="wch-search-field">
                 <h2 class="visually-hidden" id="docs-search-title" data-i18n="docsNav.searchDialog.label">Search the docs</h2>
-                <i data-lucide="search"></i>
+                <i data-lucide="search" aria-hidden="true"></i>
                 <input type="text" class="wch-search-input" id="docs-search-input" role="combobox" enterkeyhint="search"
                     aria-autocomplete="list" aria-expanded="false" aria-controls="docs-search-results"
                     aria-labelledby="docs-search-title" placeholder="Search commands, settings, voice IDs…"
                     data-i18n-placeholder="docsNav.searchDialog.placeholder" autocomplete="off" spellcheck="false">
-                <button type="button" class="wc-iconbtn wch-search-close" aria-label="Close search"
-                    data-i18n-aria-label="docsNav.searchDialog.close"><i data-lucide="x"></i></button>
-            </div>
+                <button type="button" class="wc-iconbtn wch-search-close" commandfor="docs-search" command="close"
+                    aria-label="Close search" data-i18n-aria-label="docsNav.searchDialog.close"><i data-lucide="x" aria-hidden="true"></i></button>
+            </search>
             <ul class="wch-search-results" id="docs-search-results" role="listbox" aria-labelledby="docs-search-title"></ul>
             <p class="wc-help wch-search-msg" id="docs-search-msg"></p>
             <div class="wch-search-foot" aria-hidden="true">
@@ -196,14 +219,14 @@
         </div>
     </dialog>
 
-    <script src="scripts/i18n.js"></script>
-    <script src="scripts/docs.js"></script>
-    <script src="scripts/search.js"></script>
+    <script src="scripts/i18n.js" defer></script>
+    <script src="scripts/docs.js" defer></script>
+    <script src="scripts/search.js" defer></script>
     {%- if cur and cur.id != 'home' %}
-    <script src="scripts/last-updated.js"></script>
+    <script src="scripts/last-updated.js" defer></script>
     {%- endif %}
     {%- for src in extraScripts %}
-    <script src="{{ src }}"></script>
+    <script src="{{ src }}" defer></script>
     {%- endfor %}
 </body>
 

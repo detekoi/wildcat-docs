@@ -17,15 +17,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function setOpen(open) {
             group.classList.toggle('open', open);
-            details.hidden = !open;
+            if (open) {
+                details.removeAttribute('hidden');
+            } else {
+                details.setAttribute('hidden', 'until-found');
+            }
             trigger.setAttribute('aria-expanded', String(open));
         }
 
         // Sync state with whatever the markup shipped with
         setOpen(group.classList.contains('open'));
 
+        // Synchronize wrapper state and ARIA attributes when native find-in-page
+        // reveals a hidden="until-found" details row.
+        details.addEventListener('beforematch', function () {
+            setOpen(true);
+        });
+
         trigger.addEventListener('click', function () {
-            setOpen(details.hidden);
+            setOpen(details.hasAttribute('hidden'));
         });
 
         // Keep the whole row clickable for pointer users, without

@@ -45,14 +45,17 @@
         });
         if (!categories.length) return;
 
-        // Filter field and chips, inserted before the table.
-        const tools = document.createElement('div');
-        tools.className = 'wch-cmdtools';
-        tools.innerHTML =
-            '<input type="search" class="form-control" id="command-filter" autocomplete="off" spellcheck="false">' +
-            '<div class="wch-cmdchips" role="group"></div>' +
-            '<p class="wc-help" id="command-filter-empty" hidden></p>';
-        table.parentNode.insertBefore(tools, table);
+        // Filter field and chips, pre-rendered before the table or inserted if absent.
+        let tools = table.parentNode.querySelector('.wch-cmdtools');
+        if (!tools) {
+            tools = document.createElement('search');
+            tools.className = 'wch-cmdtools';
+            tools.innerHTML =
+                '<input type="search" class="form-control" id="command-filter" autocomplete="off" spellcheck="false">' +
+                '<div class="wch-cmdchips" role="group"></div>' +
+                '<p class="wc-help" id="command-filter-empty" hidden></p>';
+            table.parentNode.insertBefore(tools, table);
+        }
 
         const input = tools.querySelector('input');
         const chips = tools.querySelector('.wch-cmdchips');
@@ -62,18 +65,21 @@
         const autoOpened = new Set();
 
         function addChip(id, labelFor) {
-            const b = document.createElement('button');
-            b.type = 'button';
-            b.className = 'wc-chipbtn';
-            b.dataset.cat = id;
-            b.setAttribute('aria-pressed', String(id === active));
+            let b = chips.querySelector(`button[data-cat="${CSS.escape(id)}"]`);
+            if (!b) {
+                b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'wc-chipbtn';
+                b.dataset.cat = id;
+                b.setAttribute('aria-pressed', String(id === active));
+                chips.appendChild(b);
+            }
             b.addEventListener('click', () => {
                 active = id;
                 chips.querySelectorAll('button').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.cat === active)));
                 apply();
             });
             b._label = labelFor;
-            chips.appendChild(b);
         }
         addChip('all', () => t('docsNav.commands.all', 'All'));
         categories.forEach((c) => addChip(c.id, () => (c.heading ? c.heading.textContent.trim() : c.id)));
@@ -129,11 +135,20 @@
         }
 
         function relabel() {
-            input.placeholder = t('docsNav.commands.filter', 'Filter commands, for example: quote');
-            input.setAttribute('aria-label', t('docsNav.commands.filterLabel', 'Filter commands'));
-            chips.setAttribute('aria-label', t('docsNav.commands.category', 'Command category'));
-            chips.querySelectorAll('button').forEach((b) => { b.textContent = b._label(); });
-            empty.textContent = t('docsNav.commands.none', 'No commands match. Clear the filter or choose All.');
+            const nextPlaceholder = t('docsNav.commands.filter', 'Filter commands, for example: quote');
+            if (input.placeholder !== nextPlaceholder) input.placeholder = nextPlaceholder;
+            const nextFilterLabel = t('docsNav.commands.filterLabel', 'Filter commands');
+            if (input.getAttribute('aria-label') !== nextFilterLabel) input.setAttribute('aria-label', nextFilterLabel);
+            const nextCatLabel = t('docsNav.commands.category', 'Command category');
+            if (chips.getAttribute('aria-label') !== nextCatLabel) chips.setAttribute('aria-label', nextCatLabel);
+            chips.querySelectorAll('button').forEach((b) => {
+                if (typeof b._label === 'function') {
+                    const lbl = b._label();
+                    if (b.textContent !== lbl) b.textContent = lbl;
+                }
+            });
+            const nextEmpty = t('docsNav.commands.none', 'No commands match. Clear the filter or choose All.');
+            if (empty.textContent !== nextEmpty) empty.textContent = nextEmpty;
             apply();
         }
 

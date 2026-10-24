@@ -39,6 +39,22 @@ extraScripts:
         </div>
     </div>
     <span id="tts-commands"></span>
+    <search class="wch-cmdtools">
+        <input type="search" class="form-control" id="command-filter" placeholder="Filter commands, for example: quote" aria-label="Filter commands" autocomplete="off" spellcheck="false">
+        <div class="wch-cmdchips" role="group" aria-label="Command category">
+            <button type="button" class="wc-chipbtn" data-cat="all" aria-pressed="true">All</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-directTTS" aria-pressed="false">Direct TTS</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-ttsGeneral" aria-pressed="false">General</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-engineModeControl" aria-pressed="false">Engine &amp; Mode Control (Moderator Only)</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-channelPointsTTS" aria-pressed="false">Channel Points → TTS (Web Dashboard Only)</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-queueManagement" aria-pressed="false">Queue Management (Moderator Only)</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-userEventPreferences" aria-pressed="false">User &amp; Event Preferences</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-channelDefaults" aria-pressed="false">Channel-Wide Default Configuration (Moderator Only)</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-emoteDescriptions" aria-pressed="false">Emote Description Management (Moderator Only)</button>
+            <button type="button" class="wc-chipbtn" data-cat="cat-pronunciationFiltering" aria-pressed="false">Pronunciation &amp; Filtering (Moderator Only)</button>
+        </div>
+        <p class="wc-help" id="command-filter-empty" hidden>No commands match. Clear the filter or choose All.</p>
+    </search>
     <table>
         <caption class="visually-hidden" data-i18n="commands.ttsCommandsTitle">Text-To-Speech Commands</caption>
         <thead>
@@ -57,7 +73,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;</td>
                 <td data-i18n-key="commands.ttsMessage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMessage"><span class="description-text">Adds the message to the TTS queue immediately. This command works in all and command modes. TTS uses your preferences (or channel defaults) for voice, pitch, speed, and emotion.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsMessage" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsMessage" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMessage.usage.basic">!tts Welcome everyone to the stream!</code>
@@ -76,10 +92,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsStatus.name">!tts status</td>
-                <td data-i18n-key="commands.ttsStatus.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStatus"><span class="description-text">Shows the current TTS status for the channel.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsStatus.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStatus"><span class="description-text">Shows the current TTS status for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsStatus" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsStatus" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsStatus.usage.basic">!tts status</code>
@@ -95,10 +110,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsVoices.name">!tts voices</td>
-                <td data-i18n-key="commands.ttsVoices.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsVoices"><span class="description-text">Shows a link to the list of available TTS voices.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsVoices.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsVoices"><span class="description-text">Shows a link to the list of available TTS voices.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsVoices" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsVoices" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsVoices.usage.basic">!tts voices</code>
@@ -114,7 +128,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsLanguageslist.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsLanguageslist"><span
                         class="description-text">Shows a link to the list of available TTS language boost options.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsLanguageslist" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsLanguageslist" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsLanguageslist.usage.basic">!tts languageslist</code>
@@ -128,10 +142,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsCommands.name">!tts commands<br><span style="font-size:0.9em;"
                         data-i18n="commands.ttsCommands.alias">(Alias: !tts help)</span></td>
-                <td data-i18n-key="commands.ttsCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsCommands"><span class="description-text">Shows a link to the full list of <span class="inline-code">!tts</span> subcommands.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsCommands"><span class="description-text">Shows a link to the full list of <span class="inline-code">!tts</span> subcommands.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsCommands" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsCommands" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsCommands.usage.commands">!tts commands</code>
@@ -150,10 +163,9 @@ extraScripts:
                 <td data-i18n-key="commands.ttsPrefs.name">!tts prefs<br><span style="font-size:0.9em;"
                         data-i18n="commands.ttsPrefs.aliases">(Aliases: !tts preferences, !tts settings)</span>
                 </td>
-                <td data-i18n-key="commands.ttsPrefs.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPrefs"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong>.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsPrefs.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPrefs"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsPrefs" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsPrefs" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsPrefs.usage.prefs">!tts prefs</code>
@@ -185,10 +197,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.myvoice.name">!myvoice</td>
                 <td data-i18n-key="commands.myvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-myvoice"><span class="description-text">Sends a link to <strong>your personal TTS settings page</strong> (same as
-                        <span class="inline-code">!tts prefs</span>).</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                        <span class="inline-code">!tts prefs</span>).</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-myvoice" hidden>
+            <tr class="dropdown-details" id="dd-commands-myvoice" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.myvoice.usage.basic">!myvoice</code>
@@ -213,10 +224,9 @@ extraScripts:
                 <td data-i18n-key="commands.ttsOn.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts on<br><span
                         style="font-size:0.9em;" data-i18n="commands.ttsOn.alias">(Alias: !tts enable)</span>
                 </td>
-                <td data-i18n-key="commands.ttsOn.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsOn"><span class="description-text">Starts the TTS engine. TTS speaks messages and events based on the active mode.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsOn.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsOn"><span class="description-text">Starts the TTS engine. TTS speaks messages and events based on the active mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsOn" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsOn" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsOn.usage.on">!tts on</code>
@@ -234,10 +244,9 @@ extraScripts:
                 <td data-i18n-key="commands.ttsOff.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts off<br><span
                         style="font-size:0.9em;" data-i18n="commands.ttsOff.alias">(Alias: !tts disable)</span>
                 </td>
-                <td data-i18n-key="commands.ttsOff.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsOff"><span class="description-text">Stops the TTS engine completely. TTS will not speak messages or events.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsOff.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsOff"><span class="description-text">Stops the TTS engine completely. TTS will not speak messages or events.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsOff" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsOff" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsOff.usage.off">!tts off</code>
@@ -256,7 +265,7 @@ extraScripts:
                     [all|command|bits_points_only|highlighted_only]</td>
                 <td data-i18n-key="commands.ttsMode.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMode"><span class="description-text">Sets or shows the TTS mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsMode" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsMode" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.all">!tts mode all</code>
@@ -307,7 +316,7 @@ extraScripts:
                     [everyone|all|subs|vip|mods]</td>
                 <td data-i18n-key="commands.ttsPermission.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPermission"><span class="description-text">Sets whose chat messages and <span class="inline-code">!tts</span> messages TTS speaks.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsPermission" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsPermission" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsPermission.usage.everyone">!tts permission everyone</code>
@@ -342,7 +351,7 @@ extraScripts:
                     &lt;amount&gt;]</td>
                 <td data-i18n-key="commands.ttsBits.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsBits"><span class="description-text">Controls whether the message attached to a cheer is read aloud, and sets the minimum Bits a cheer needs.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsBits" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsBits" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsBits.usage.on">!tts bits on</code>
@@ -381,7 +390,7 @@ extraScripts:
                 <td data-i18n-key="commands.channelPointsTTS.name">Channel Points → TTS</td>
                 <td data-i18n-key="commands.channelPointsTTS.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-channelPointsTTS"><span class="description-text">Create a custom Channel Point reward for viewers to send messages that TTS reads aloud.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-channelPointsTTS" hidden>
+            <tr class="dropdown-details" id="dd-commands-channelPointsTTS" hidden="until-found">
                 <td colspan="2">
                     <p><strong data-i18n="commands.common.note">Note:</strong> <span
                             data-i18n="commands.channelPointsTTS.noteText">This feature is configured
@@ -437,7 +446,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsPause.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPause"><span class="description-text">Pauses processing of the TTS queue.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
                 </button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsPause" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsPause" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsPause.usage.basic">!tts pause</code>
@@ -452,10 +461,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsResume.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts resume</td>
-                <td data-i18n-key="commands.ttsResume.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsResume"><span class="description-text">Resumes processing of the TTS queue.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsResume.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsResume"><span class="description-text">Resumes processing of the TTS queue.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsResume" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsResume" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsResume.usage.basic">!tts resume</code>
@@ -468,10 +476,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsClear.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts clear</td>
-                <td data-i18n-key="commands.ttsClear.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsClear"><span class="description-text">Removes all waiting messages and events from the TTS queue.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsClear.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsClear"><span class="description-text">Removes all waiting messages and events from the TTS queue.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsClear" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsClear" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsClear.usage.basic">!tts clear</code>
@@ -486,10 +493,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsStop.name">!tts stop</td>
-                <td data-i18n-key="commands.ttsStop.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStop"><span class="description-text">Stops active or generating TTS audio.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsStop.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStop"><span class="description-text">Stops active or generating TTS audio.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsStop" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsStop" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsStop.usage.basic">!tts stop</code>
@@ -516,10 +522,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsVoice.name">!tts voice &lt;voice_id|reset&gt;</td>
-                <td data-i18n-key="commands.ttsVoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsVoice"><span class="description-text">Sets your personal voice preference for your chat messages.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsVoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsVoice"><span class="description-text">Sets your personal voice preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsVoice" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsVoice" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsVoice.usage.example">!tts voice Friendly_Person</code>
@@ -542,10 +547,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsEmotion.name">!tts emotion &lt;emotion_name|reset|auto&gt;</td>
-                <td data-i18n-key="commands.ttsEmotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmotion"><span class="description-text">Sets your personal emotion preference for your chat messages.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsEmotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmotion"><span class="description-text">Sets your personal emotion preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsEmotion" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsEmotion" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsEmotion.usage.example">!tts emotion happy</code>
@@ -578,7 +582,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsLanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsLanguage"><span class="description-text">Sets your personal language boost preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
                 </button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsLanguage" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsLanguage" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsLanguage.usage.example">!tts language English</code>
@@ -606,7 +610,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsPitch.name">!tts pitch &lt;value|reset&gt;</td>
                 <td data-i18n-key="commands.ttsPitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPitch"><span class="description-text">Sets your personal TTS pitch for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsPitch" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsPitch" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsPitch.usage.positive">!tts pitch 2</code>
@@ -634,7 +638,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsSpeed.name">!tts speed &lt;value|reset&gt;</td>
                 <td data-i18n-key="commands.ttsSpeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsSpeed"><span class="description-text">Sets your personal TTS speech speed for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsSpeed" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsSpeed" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsSpeed.usage.faster">!tts speed 1.2</code>
@@ -667,7 +671,7 @@ extraScripts:
                     <span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
                 </button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsIgnore" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsIgnore" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
@@ -692,10 +696,9 @@ extraScripts:
                 <td data-i18n-key="commands.ttsIgnoreDel.name">!tts ignore del
                     [username]<br><span style="font-size:0.9em;"
                         data-i18n="commands.ttsIgnoreDel.aliases">(Aliases: delete, rem, remove)</span></td>
-                <td data-i18n-key="commands.ttsIgnoreDel.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnoreDel"><span class="description-text">Removes a user from the channel TTS ignore list. Any user can remove themselves, unless a moderator added them.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsIgnoreDel.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnoreDel"><span class="description-text">Removes a user from the channel TTS ignore list. Any user can remove themselves, unless a moderator added them.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsIgnoreDel" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsIgnoreDel" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
@@ -718,10 +721,9 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsIgnored.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts ignored</td>
-                <td data-i18n-key="commands.ttsIgnored.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnored"><span class="description-text">Lists all users on the channel TTS ignore list.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsIgnored.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsIgnored"><span class="description-text">Lists all users on the channel TTS ignore list.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsIgnored" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsIgnored" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -737,7 +739,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsEvents.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts events [on|off]</td>
                 <td data-i18n-key="commands.ttsEvents.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEvents"><span class="description-text">Turns Twitch event announcements (such as subscriptions, cheers, and raids) on or off.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsEvents" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsEvents" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsEvents.usage.on">!tts events on</code>
@@ -767,10 +769,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultvoice.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultvoice
                     &lt;voice_id|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultvoice"><span class="description-text">Sets the default TTS voice for the channel.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultvoice.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultvoice"><span class="description-text">Sets the default TTS voice for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsDefaultvoice" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultvoice" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -796,10 +797,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultemotion.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultemotion
                     &lt;emotion_name|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultemotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultemotion"><span class="description-text">Sets the default TTS emotion for the channel.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultemotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultemotion"><span class="description-text">Sets the default TTS emotion for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsDefaultemotion" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultemotion" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -825,10 +825,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultlanguage.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultlanguage
                     &lt;language|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultlanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultlanguage"><span class="description-text">Sets the default TTS language boost for the channel.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultlanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultlanguage"><span class="description-text">Sets the default TTS language boost for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsDefaultlanguage" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultlanguage" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -854,10 +853,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultpitch.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultpitch
                     &lt;value|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultpitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultpitch"><span class="description-text">Sets the default TTS pitch for the channel.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultpitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultpitch"><span class="description-text">Sets the default TTS pitch for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsDefaultpitch" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultpitch" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -883,10 +881,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultspeed.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultspeed
                     &lt;value|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultspeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultspeed"><span class="description-text">Sets the default TTS speed for the channel.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultspeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultspeed"><span class="description-text">Sets the default TTS speed for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsDefaultspeed" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultspeed" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -919,10 +916,9 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsEmote.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts emote
                     &lt;emoteName&gt;</td>
-                <td data-i18n-key="commands.ttsEmote.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmote"><span class="description-text">Views, clears, or sets cached emote descriptions for TTS.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsEmote.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmote"><span class="description-text">Views, clears, or sets cached emote descriptions for TTS.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsEmote" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsEmote" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
@@ -967,10 +963,9 @@ extraScripts:
                 <td data-i18n-key="commands.ttsPronounce.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts pronounce
                     &lt;word&gt; = &lt;how to say it&gt;</td>
                 <td data-i18n-key="commands.ttsPronounce.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPronounce"><span class="description-text">Controls
-                        how TTS says a specific word or short form.</span><span
-                        class="dropdown-toggle">&#x25BC;</span></button></td>
+                        how TTS says a specific word or short form.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsPronounce" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsPronounce" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
@@ -1035,7 +1030,7 @@ extraScripts:
                         or stops the profanity filter, which replaces rude words with milder
                         words.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsProfanity" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsProfanity" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
@@ -1073,7 +1068,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsRedeems.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsRedeems"><span class="description-text">Selects
                         which channel point redeems the bot announces.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsRedeems" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsRedeems" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">
@@ -1116,7 +1111,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsReadCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsReadCommands"><span class="description-text">Reads
                         or skips chat messages that start with "!" in All Chat Messages mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
-            <tr class="dropdown-details" id="dd-commands-ttsReadCommands" hidden>
+            <tr class="dropdown-details" id="dd-commands-ttsReadCommands" hidden="until-found">
                 <td colspan="2">
                     <strong data-i18n="commands.common.usage">Usage:</strong>
                     <div class="usage-line">

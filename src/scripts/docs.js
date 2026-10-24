@@ -43,6 +43,13 @@
         systemDark.addEventListener('change', (event) => {
             if (!readSavedTheme()) applyTheme(event.matches ? 'dark' : 'light');
         });
+
+        // Synchronize theme changes across multiple open tabs.
+        window.addEventListener('storage', (event) => {
+            if (event.key === THEME_KEY) {
+                applyTheme(readSavedTheme() || (systemDark.matches ? 'dark' : 'light'));
+            }
+        });
     }
 
     // On phones the sidebar sits above the content, so the topic list collapses
@@ -61,6 +68,53 @@
         });
     }
 
+    // Scrollspy for "On this page": native CSS scroll-target-group with an
+    // IntersectionObserver fallback and aria-current="true" sync on scrollend.
+    function initScrollspy() {
+        const tocList = document.querySelector('.wch-toc-list');
+        if (!tocList) return;
+        const tocLinks = Array.from(tocList.querySelectorAll('a[href^="#"]'));
+        if (!tocLinks.length) return;
+
+        if (!(window.CSS && typeof CSS.supports === 'function' && CSS.supports('scroll-target-group', 'auto'))
+            && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        tocLinks.forEach((link) => {
+                            link.classList.toggle(':target-current', link.getAttribute('href') === `#${entry.target.id}`);
+                        });
+                    }
+                });
+            }, { rootMargin: '-10% 0px -80% 0px' });
+
+            tocLinks.forEach((link) => {
+                const id = link.getAttribute('href').slice(1);
+                const target = id && document.getElementById(id);
+                if (target) observer.observe(target);
+            });
+        }
+
+        function syncAriaCurrent() {
+            tocLinks.forEach((link) => {
+                let isCurrent = false;
+                try {
+                    isCurrent = link.matches(':target-current, .\\:target-current');
+                } catch (e) {
+                    isCurrent = link.classList.contains(':target-current');
+                }
+                if (isCurrent) {
+                    link.setAttribute('aria-current', 'true');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        }
+
+        document.addEventListener('scrollend', syncAriaCurrent, { passive: true });
+        syncAriaCurrent();
+    }
+
     function initIcons() {
         if (window.lucide && typeof window.lucide.createIcons === 'function') {
             window.lucide.createIcons();
@@ -70,6 +124,7 @@
     function init() {
         initThemeSwitch();
         initSideToggle();
+        initScrollspy();
         initIcons();
     }
 
