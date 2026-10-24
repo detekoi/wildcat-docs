@@ -964,15 +964,31 @@ dialog.wch-search::backdrop {
 .wch-commands .dropdown-details ul { padding-inline-start: 18px; }
 .wch-commands .dropdown-details li + li { margin-top: 4px; }
 
-/* A mod-only usage line leads with a Mod badge: badge and code share the first
-   column, and the explanation stays in the second. */
-.wch-commands .usage-line > .mod-badge-leading { grid-area: 1 / 1; align-self: baseline; margin: 0; }
-.wch-commands .usage-line > .mod-badge-leading + code { grid-area: 1 / 1; padding-inline-start: 36px; }
+/* A mod-only usage line leads with a Mod badge: badge in col 1, code in col 2,
+   and explanation in col 3. */
+.wch-commands .usage-line:has(> .mod-badge-leading) {
+    grid-template-columns: max-content minmax(0, 260px) minmax(0, 1fr);
+    column-gap: 8px;
+}
+.wch-commands .usage-line > .mod-badge-leading {
+    align-self: baseline;
+    margin: 0;
+}
+.wch-commands .usage-line > .mod-badge-leading ~ :last-child:not(code) {
+    padding-inline-start: 8px;
+}
 .wch-commands .dropdown-summary .mod-badge-leading { margin-inline-end: 8px; }
 
 @media (max-width: 560px) {
     .wch-commands .dropdown-summary { grid-template-columns: minmax(0, 1fr); gap: 4px; }
     .wch-commands .usage-line { grid-template-columns: minmax(0, 1fr); }
+    .wch-commands .usage-line:has(> .mod-badge-leading) {
+        grid-template-columns: max-content minmax(0, 1fr);
+    }
+    .wch-commands .usage-line > .mod-badge-leading ~ :last-child:not(code) {
+        grid-column: 1 / -1;
+        padding-inline-start: 0;
+    }
 }
 
 /* ---- Old long-page URLs, now indexes of their topic pages ---- */
