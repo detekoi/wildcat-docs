@@ -159,9 +159,8 @@
         "interval": "Sets the delay between clues (30 to 300 seconds)",
         "duration": "Sets the round duration (3 to 20 minutes)",
         "configRegion": "Sets default regions (for example: Europe,Asia or USA,Canada)",
-        "configGame": "Sets preferred game titles as a comma-separated list",
+        "configGame": "Sets the preferred game titles, with a comma between titles. If !geo game has no title, the bot picks one of these games",
         "pointsBase": "Sets base points per round (1 to 100)",
-        "maxRounds": "Sets maximum rounds per game (1 to 10)",
         "clearLeaderboard": "Alias: !geo resetstats",
         "report": "Reports incorrect locations or clues",
         "regionCmd": "!geo <region>",
@@ -172,7 +171,6 @@
         "durationCmd": "!geo config duration <minutes>",
         "configGameCmd": "!geo config game <titles>",
         "pointsBaseCmd": "!geo config pointsbase <number>",
-        "maxRoundsCmd": "!geo config maxrounds <number>",
         "reportCmd": "!geo report <reason>",
         "gameTitleCmd": "!geo game [Game Title]",
         "japan": "Japan",
@@ -180,7 +178,8 @@
         "europe": "Europe",
         "asia": "Asia",
         "usa": "USA",
-        "canada": "Canada"
+        "canada": "Canada",
+        "settingsNote": "You can also change these settings in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>"
       }
     },
     "riddle": {
@@ -195,7 +194,7 @@
         "report": "Reports incorrect or broken riddles",
         "stop": "Stops the game (game starter, moderators, or broadcaster)",
         "questionTime": "Sets answer time per riddle (15 to 120 seconds)",
-        "pointsBase": "Sets base points per riddle (1 to 100)",
+        "pointsBase": "Sets base points per riddle (1 to 1000)",
         "maxRounds": "Sets maximum rounds per game (1 to 20)",
         "keywordsLimit": "Sets number of recent keywords to exclude (for example: 20 to 100)",
         "roundDelay": "Sets delay between rounds in milliseconds",
@@ -212,7 +211,8 @@
         "keywordsLimitCmd": "!riddle config keywordslimit <number>",
         "roundDelayCmd": "!riddle config rounddelay <milliseconds>",
         "animals": "animals",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "You can also change these settings in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>"
       }
     },
     "trivia": {
@@ -228,8 +228,7 @@
         "stop": "Stops the game (game starter, moderators, or broadcaster)",
         "time": "Sets answer time per question (10 to 120 seconds)",
         "pointsBase": "Sets base points per question (1 to 100)",
-        "configTopic": "Sets preferred topics as a comma-separated list",
-        "maxRounds": "Sets maximum rounds per game (1 to 10)",
+        "configTopic": "Sets the preferred topics, with a comma between topics. If a game starts with no topic, the bot picks one of these topics",
         "topicCmd": "!trivia <topic>",
         "roundsCmd": "!trivia <rounds>",
         "topicRoundsCmd": "!trivia <topic> <rounds>",
@@ -238,9 +237,9 @@
         "timeCmd": "!trivia config time <seconds>",
         "pointsBaseCmd": "!trivia config pointsbase <number>",
         "configTopicCmd": "!trivia config topic <topics>",
-        "maxRoundsCmd": "!trivia config maxrounds <number>",
         "science": "science",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "You can also change these settings in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>"
       }
     },
     "botlang": {

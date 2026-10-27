@@ -159,9 +159,8 @@
         "interval": "ヒント間の待機時間を設定（30〜300秒）",
         "duration": "ラウンドの制限時間を設定（3〜20分）",
         "configRegion": "デフォルトの地域を設定（例: Europe,Asia または USA,Canada）",
-        "configGame": "優先するゲームタイトルをカンマ区切りで設定",
+        "configGame": "優先するゲームタイトルをカンマ区切りで設定。!geo game にタイトルがない場合、ボットがこの中から1つを選択",
         "pointsBase": "ラウンドごとの基本ポイントを設定（1〜100）",
-        "maxRounds": "ゲームあたりの最大ラウンド数を設定（1〜10）",
         "clearLeaderboard": "エイリアス: !geo resetstats",
         "report": "誤った場所やヒントを報告",
         "regionCmd": "!geo <地域>",
@@ -172,7 +171,6 @@
         "durationCmd": "!geo config duration <分数>",
         "configGameCmd": "!geo config game <タイトル>",
         "pointsBaseCmd": "!geo config pointsbase <数値>",
-        "maxRoundsCmd": "!geo config maxrounds <数値>",
         "reportCmd": "!geo report <理由>",
         "gameTitleCmd": "!geo game [ゲームタイトル]",
         "japan": "Japan",
@@ -180,7 +178,8 @@
         "europe": "Europe",
         "asia": "Asia",
         "usa": "USA",
-        "canada": "Canada"
+        "canada": "Canada",
+        "settingsNote": "これらの設定は<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも変更できます"
       }
     },
     "riddle": {
@@ -195,7 +194,7 @@
         "report": "誤ったなぞなぞを報告",
         "stop": "ゲームを停止（ゲーム開始者、モデレーター、または配信者）",
         "questionTime": "なぞなぞごとの回答時間を設定（15〜120秒）",
-        "pointsBase": "なぞなぞごとの基本ポイントを設定（1〜100）",
+        "pointsBase": "なぞなぞごとの基本ポイントを設定（1〜1000）",
         "maxRounds": "ゲームあたりの最大ラウンド数を設定（1〜20）",
         "keywordsLimit": "除外する直近キーワード数を設定（例: 20〜100）",
         "roundDelay": "ラウンド間の待機時間をミリ秒で設定",
@@ -212,7 +211,8 @@
         "keywordsLimitCmd": "!riddle config keywordslimit <数値>",
         "roundDelayCmd": "!riddle config rounddelay <ミリ秒>",
         "animals": "animals",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "これらの設定は<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも変更できます"
       }
     },
     "trivia": {
@@ -228,8 +228,7 @@
         "stop": "ゲームを停止（ゲーム開始者、モデレーター、または配信者）",
         "time": "問題ごとの回答時間を設定（10〜120秒）",
         "pointsBase": "問題ごとの基本ポイントを設定（1〜100）",
-        "configTopic": "優先トピックをカンマ区切りで設定",
-        "maxRounds": "ゲームあたりの最大ラウンド数を設定（1〜10）",
+        "configTopic": "優先するトピックをカンマ区切りで設定。トピックなしでゲームを開始した場合、ボットがこの中から1つを選択",
         "topicCmd": "!trivia <トピック>",
         "roundsCmd": "!trivia <ラウンド数>",
         "topicRoundsCmd": "!trivia <トピック> <ラウンド数>",
@@ -238,9 +237,9 @@
         "timeCmd": "!trivia config time <秒数>",
         "pointsBaseCmd": "!trivia config pointsbase <数値>",
         "configTopicCmd": "!trivia config topic <トピック>",
-        "maxRoundsCmd": "!trivia config maxrounds <数値>",
         "science": "science",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "これらの設定は<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも変更できます"
       }
     },
     "botlang": {
