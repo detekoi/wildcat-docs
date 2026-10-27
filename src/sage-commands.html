@@ -503,7 +503,7 @@ extraScripts:
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
                         data-i18n-cmd="commands.geo.usage.configGameCmd">!geo config game &lt;titles&gt;</code>
-                    <span data-i18n="commands.geo.usage.configGame">Sets preferred game titles as a comma-separated list</span>
+                    <span data-i18n="commands.geo.usage.configGame">Sets the preferred game titles, with a comma between titles. If !geo game has no title, the bot picks one of these games</span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -520,12 +520,10 @@ extraScripts:
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!geo config scoretracking &lt;true|false&gt;</code>
                 </div>
                 <div class="usage-line">
-                    <span class="mod-badge mod-badge-leading">Mod</span><code
-                        data-i18n-cmd="commands.geo.usage.maxRoundsCmd">!geo config maxrounds &lt;number&gt;</code>
-                    <span data-i18n="commands.geo.usage.maxRounds">Sets maximum rounds per game (1 to 10)</span>
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo resetconfig</code>
                 </div>
                 <div class="usage-line">
-                    <span class="mod-badge mod-badge-leading">Mod</span><code>!geo resetconfig</code>
+                    <span data-i18n="commands.geo.usage.settingsNote">You can also change these settings in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a></span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!geo clearleaderboard</code> <span
@@ -594,7 +592,7 @@ extraScripts:
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
                         data-i18n-cmd="commands.riddle.usage.pointsBaseCmd">!riddle config pointsbase &lt;number&gt;</code>
-                    <span data-i18n="commands.riddle.usage.pointsBase">Sets base points per riddle (1 to 100)</span>
+                    <span data-i18n="commands.riddle.usage.pointsBase">Sets base points per riddle (1 to 1000)</span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle config pointstimebonus &lt;true|false&gt;</code>
@@ -622,6 +620,9 @@ extraScripts:
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle resetconfig</code>
+                </div>
+                <div class="usage-line">
+                    <span data-i18n="commands.riddle.usage.settingsNote">You can also change these settings in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a></span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!riddle clearleaderboard</code> <span
@@ -697,15 +698,13 @@ extraScripts:
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
                         data-i18n-cmd="commands.trivia.usage.configTopicCmd">!trivia config topic &lt;topics&gt;</code>
-                    <span data-i18n="commands.trivia.usage.configTopic">Sets preferred topics as a comma-separated list</span>
-                </div>
-                <div class="usage-line">
-                    <span class="mod-badge mod-badge-leading">Mod</span><code
-                        data-i18n-cmd="commands.trivia.usage.maxRoundsCmd">!trivia config maxrounds &lt;number&gt;</code>
-                    <span data-i18n="commands.trivia.usage.maxRounds">Sets maximum rounds per game (1 to 10)</span>
+                    <span data-i18n="commands.trivia.usage.configTopic">Sets the preferred topics, with a comma between topics. If a game starts with no topic, the bot picks one of these topics</span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia resetconfig</code>
+                </div>
+                <div class="usage-line">
+                    <span data-i18n="commands.trivia.usage.settingsNote">You can also change these settings in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a></span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!trivia clearleaderboard</code>

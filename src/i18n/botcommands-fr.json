@@ -159,9 +159,8 @@
         "interval": "Définit le délai entre les indices (30 à 300 secondes)",
         "duration": "Définit la durée du tour (3 à 20 minutes)",
         "configRegion": "Définit les régions par défaut (par exemple : Europe,Asia ou USA,Canada)",
-        "configGame": "Définit les titres de jeux préférés sous forme de liste séparée par des virgules",
+        "configGame": "Définit les titres de jeux préférés, séparés par une virgule. Si !geo game n'a aucun titre spécifié, le bot en choisit un parmi cette liste",
         "pointsBase": "Définit les points de base par tour (1 à 100)",
-        "maxRounds": "Définit le nombre maximal de tours par partie (1 à 10)",
         "clearLeaderboard": "Alias : !geo resetstats",
         "report": "Signale des lieux ou des indices incorrects",
         "regionCmd": "!geo <région>",
@@ -172,7 +171,6 @@
         "durationCmd": "!geo config duration <minutes>",
         "configGameCmd": "!geo config game <titres>",
         "pointsBaseCmd": "!geo config pointsbase <nombre>",
-        "maxRoundsCmd": "!geo config maxrounds <nombre>",
         "reportCmd": "!geo report <raison>",
         "gameTitleCmd": "!geo game [Titre du jeu]",
         "japan": "Japan",
@@ -180,7 +178,8 @@
         "europe": "Europe",
         "asia": "Asia",
         "usa": "USA",
-        "canada": "Canada"
+        "canada": "Canada",
+        "settingsNote": "Tu peux aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">tableau de bord Web</a>"
       }
     },
     "riddle": {
@@ -195,7 +194,7 @@
         "report": "Signale des énigmes incorrectes ou défectueuses",
         "stop": "Arrête la partie (créateur, modérateurs ou diffuseur)",
         "questionTime": "Définit le temps de réponse par énigme (15 à 120 secondes)",
-        "pointsBase": "Définit les points de base par énigme (1 à 100)",
+        "pointsBase": "Définit les points de base par énigme (1 à 1000)",
         "maxRounds": "Définit le nombre maximal de tours par partie (1 à 20)",
         "keywordsLimit": "Définit le nombre de mots-clés récents à exclure (par exemple : 20 à 100)",
         "roundDelay": "Définit le délai entre les tours en millisecondes",
@@ -212,7 +211,8 @@
         "keywordsLimitCmd": "!riddle config keywordslimit <nombre>",
         "roundDelayCmd": "!riddle config rounddelay <millisecondes>",
         "animals": "animals",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "Tu peux aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">tableau de bord Web</a>"
       }
     },
     "trivia": {
@@ -228,8 +228,7 @@
         "stop": "Arrête la partie (créateur, modérateurs ou diffuseur)",
         "time": "Définit le temps de réponse par question (10 à 120 secondes)",
         "pointsBase": "Définit les points de base par question (1 à 100)",
-        "configTopic": "Définit les thèmes préférés sous forme de liste séparée par des virgules",
-        "maxRounds": "Définit le nombre maximal de tours par partie (1 à 10)",
+        "configTopic": "Définit les thèmes préférés, séparés par une virgule. Si une partie démarre sans thème spécifié, le bot en choisit un parmi cette liste",
         "topicCmd": "!trivia <thème>",
         "roundsCmd": "!trivia <tours>",
         "topicRoundsCmd": "!trivia <thème> <tours>",
@@ -238,9 +237,9 @@
         "timeCmd": "!trivia config time <secondes>",
         "pointsBaseCmd": "!trivia config pointsbase <nombre>",
         "configTopicCmd": "!trivia config topic <thèmes>",
-        "maxRoundsCmd": "!trivia config maxrounds <nombre>",
         "science": "science",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "Tu peux aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">tableau de bord Web</a>"
       }
     },
     "botlang": {

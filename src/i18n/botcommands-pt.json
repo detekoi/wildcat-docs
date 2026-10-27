@@ -159,9 +159,8 @@
         "interval": "Define o intervalo entre pistas (30 a 300 segundos)",
         "duration": "Define a duração da rodada (3 a 20 minutos)",
         "configRegion": "Define regiões padrão (por exemplo: Europa,Ásia ou EUA,Canadá)",
-        "configGame": "Define títulos de jogos preferidos como lista separada por vírgulas",
+        "configGame": "Define os títulos de jogos preferidos, separados por vírgula. Se o !geo game não tiver título, o bot escolhe um desses jogos",
         "pointsBase": "Define pontos base por rodada (1 a 100)",
-        "maxRounds": "Define o máximo de rodadas por jogo (1 a 10)",
         "clearLeaderboard": "Alias: !geo resetstats",
         "report": "Reporta locais ou pistas incorretas",
         "regionCmd": "!geo <região>",
@@ -172,7 +171,6 @@
         "durationCmd": "!geo config duration <minutos>",
         "configGameCmd": "!geo config game <títulos>",
         "pointsBaseCmd": "!geo config pointsbase <número>",
-        "maxRoundsCmd": "!geo config maxrounds <número>",
         "reportCmd": "!geo report <motivo>",
         "gameTitleCmd": "!geo game [Título do Jogo]",
         "japan": "Japão",
@@ -180,7 +178,8 @@
         "europe": "Europa",
         "asia": "Ásia",
         "usa": "EUA",
-        "canada": "Canadá"
+        "canada": "Canadá",
+        "settingsNote": "Você também pode alterar essas configurações no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>"
       }
     },
     "riddle": {
@@ -195,7 +194,7 @@
         "report": "Reporta adivinhas incorretas ou com erro",
         "stop": "Para o jogo (iniciador, moderadores ou streamer)",
         "questionTime": "Define o tempo de resposta por adivinha (15 a 120 segundos)",
-        "pointsBase": "Define pontos base por adivinha (1 a 100)",
+        "pointsBase": "Define os pontos base por enigma (1 a 1000)",
         "maxRounds": "Define o máximo de rodadas por jogo (1 a 20)",
         "keywordsLimit": "Define a quantidade de palavras-chave recentes a excluir (por exemplo: 20 a 100)",
         "roundDelay": "Define o atraso entre rodadas em milissegundos",
@@ -212,7 +211,8 @@
         "keywordsLimitCmd": "!riddle config keywordslimit <número>",
         "roundDelayCmd": "!riddle config rounddelay <milissegundos>",
         "animals": "animais",
-        "history": "história"
+        "history": "história",
+        "settingsNote": "Você também pode alterar essas configurações no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>"
       }
     },
     "trivia": {
@@ -228,8 +228,7 @@
         "stop": "Para o jogo (iniciador, moderadores ou streamer)",
         "time": "Define o tempo de resposta por pergunta (10 a 120 segundos)",
         "pointsBase": "Define pontos base por pergunta (1 a 100)",
-        "configTopic": "Define temas preferidos como lista separada por vírgulas",
-        "maxRounds": "Define o máximo de rodadas por jogo (1 a 10)",
+        "configTopic": "Define os tópicos preferidos, separados por vírgula. Se um jogo começar sem tópico, o bot escolhe um desses tópicos",
         "topicCmd": "!trivia <tema>",
         "roundsCmd": "!trivia <rodadas>",
         "topicRoundsCmd": "!trivia <tema> <rodadas>",
@@ -238,9 +237,9 @@
         "timeCmd": "!trivia config time <segundos>",
         "pointsBaseCmd": "!trivia config pointsbase <número>",
         "configTopicCmd": "!trivia config topic <temas>",
-        "maxRoundsCmd": "!trivia config maxrounds <número>",
         "science": "science",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "Você também pode alterar essas configurações no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>"
       }
     },
     "botlang": {

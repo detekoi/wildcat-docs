@@ -159,9 +159,8 @@
         "interval": "Устанавливает паузу между подсказками (от 30 до 300 секунд)",
         "duration": "Устанавливает длительность раунда (от 3 до 20 минут)",
         "configRegion": "Устанавливает регионы по умолчанию (например: Europe,Asia или USA,Canada)",
-        "configGame": "Устанавливает предпочитаемые игры списком через запятую",
+        "configGame": "Задаёт список игр через запятую. Если в !geo game не указана игра, бот выберет одну из них",
         "pointsBase": "Устанавливает базовые очки за раунд (от 1 до 100)",
-        "maxRounds": "Устанавливает максимальное число раундов на игру (от 1 до 10)",
         "clearLeaderboard": "Псевдоним: !geo resetstats",
         "report": "Сообщает о неверных локациях или подсказках",
         "regionCmd": "!geo <регион>",
@@ -172,7 +171,6 @@
         "durationCmd": "!geo config duration <минуты>",
         "configGameCmd": "!geo config game <игры>",
         "pointsBaseCmd": "!geo config pointsbase <число>",
-        "maxRoundsCmd": "!geo config maxrounds <число>",
         "reportCmd": "!geo report <причина>",
         "gameTitleCmd": "!geo game [Название игры]",
         "japan": "Japan",
@@ -180,7 +178,8 @@
         "europe": "Europe",
         "asia": "Asia",
         "usa": "USA",
-        "canada": "Canada"
+        "canada": "Canada",
+        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-дашборде</a>"
       }
     },
     "riddle": {
@@ -195,7 +194,7 @@
         "report": "Сообщает о неверных или сломанных загадках",
         "stop": "Останавливает игру (создатель, модераторы или стример)",
         "questionTime": "Устанавливает время ответа на загадку (от 15 до 120 секунд)",
-        "pointsBase": "Устанавливает базовые очки за загадку (от 1 до 100)",
+        "pointsBase": "Задаёт базовые очки за загадку (от 1 до 1000)",
         "maxRounds": "Устанавливает максимальное число раундов на игру (от 1 до 20)",
         "keywordsLimit": "Устанавливает число исключаемых недавних ключевых слов (например: от 20 до 100)",
         "roundDelay": "Устанавливает паузу между раундами в миллисекундах",
@@ -212,7 +211,8 @@
         "keywordsLimitCmd": "!riddle config keywordslimit <число>",
         "roundDelayCmd": "!riddle config rounddelay <миллисекунды>",
         "animals": "animals",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-дашборде</a>"
       }
     },
     "trivia": {
@@ -228,8 +228,7 @@
         "stop": "Останавливает игру (создатель, модераторы или стример)",
         "time": "Устанавливает время ответа на вопрос (от 10 до 120 секунд)",
         "pointsBase": "Устанавливает базовые очки за вопрос (от 1 до 100)",
-        "configTopic": "Устанавливает предпочитаемые темы списком через запятую",
-        "maxRounds": "Устанавливает максимальное число раундов на игру (от 1 до 10)",
+        "configTopic": "Задаёт список тем через запятую. Если игра запускается без темы, бот выберет одну из них",
         "topicCmd": "!trivia <тема>",
         "roundsCmd": "!trivia <раунды>",
         "topicRoundsCmd": "!trivia <тема> <раунды>",
@@ -238,9 +237,9 @@
         "timeCmd": "!trivia config time <секунды>",
         "pointsBaseCmd": "!trivia config pointsbase <число>",
         "configTopicCmd": "!trivia config topic <темы>",
-        "maxRoundsCmd": "!trivia config maxrounds <число>",
         "science": "science",
-        "history": "history"
+        "history": "history",
+        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-дашборде</a>"
       }
     },
     "botlang": {
