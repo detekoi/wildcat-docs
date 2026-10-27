@@ -179,7 +179,7 @@
         "asia": "Asia",
         "usa": "USA",
         "canada": "Canada",
-        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-дашборде</a>"
+        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-панели</a>"
       }
     },
     "riddle": {
@@ -212,7 +212,7 @@
         "roundDelayCmd": "!riddle config rounddelay <миллисекунды>",
         "animals": "animals",
         "history": "history",
-        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-дашборде</a>"
+        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-панели</a>"
       }
     },
     "trivia": {
@@ -239,7 +239,7 @@
         "configTopicCmd": "!trivia config topic <темы>",
         "science": "science",
         "history": "history",
-        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-дашборде</a>"
+        "settingsNote": "Вы также можете изменить эти настройки в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-панели</a>"
       }
     },
     "botlang": {

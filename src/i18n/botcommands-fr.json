@@ -179,7 +179,7 @@
         "asia": "Asia",
         "usa": "USA",
         "canada": "Canada",
-        "settingsNote": "Tu peux aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">tableau de bord Web</a>"
+        "settingsNote": "Vous pouvez aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>"
       }
     },
     "riddle": {
@@ -212,7 +212,7 @@
         "roundDelayCmd": "!riddle config rounddelay <millisecondes>",
         "animals": "animals",
         "history": "history",
-        "settingsNote": "Tu peux aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">tableau de bord Web</a>"
+        "settingsNote": "Vous pouvez aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>"
       }
     },
     "trivia": {
@@ -239,7 +239,7 @@
         "configTopicCmd": "!trivia config topic <thèmes>",
         "science": "science",
         "history": "history",
-        "settingsNote": "Tu peux aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">tableau de bord Web</a>"
+        "settingsNote": "Vous pouvez aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>"
       }
     },
     "botlang": {

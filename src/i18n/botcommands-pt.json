@@ -194,7 +194,7 @@
         "report": "Reporta adivinhas incorretas ou com erro",
         "stop": "Para o jogo (iniciador, moderadores ou streamer)",
         "questionTime": "Define o tempo de resposta por adivinha (15 a 120 segundos)",
-        "pointsBase": "Define os pontos base por enigma (1 a 1000)",
+        "pointsBase": "Define os pontos base por adivinha (1 a 1000)",
         "maxRounds": "Define o máximo de rodadas por jogo (1 a 20)",
         "keywordsLimit": "Define a quantidade de palavras-chave recentes a excluir (por exemplo: 20 a 100)",
         "roundDelay": "Define o atraso entre rodadas em milissegundos",
