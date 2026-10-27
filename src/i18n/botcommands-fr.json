@@ -499,6 +499,10 @@
         "title": "Check-In quotidien :",
         "desc": "Configurez une récompense de points de chaîne pour les check-ins quotidiens avec suivi des séries et réponses IA facultatives."
       },
+      "chatGames": {
+        "title": "Jeux du chat :",
+        "desc": "Définissez la difficulté, le temps de réponse, les points et les thèmes préférés pour !trivia, !geo et !riddle."
+      },
       "language": {
         "title": "Langue du tableau de bord :",
         "desc": "Affichez le tableau de bord dans l'une des huit langues. Ce paramètre est distinct de la langue du bot."

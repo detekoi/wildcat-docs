@@ -499,6 +499,10 @@
         "title": "Check-In diário:",
         "desc": "Configure uma recompensa de pontos de canal para check-ins diários com rastreamento de sequência e respostas opcionais de IA."
       },
+      "chatGames": {
+        "title": "Jogos do chat:",
+        "desc": "Defina a dificuldade, o tempo de resposta, os pontos e os tópicos preferidos para !trivia, !geo e !riddle."
+      },
       "language": {
         "title": "Idioma do Dashboard:",
         "desc": "Mostra o dashboard em um de oito idiomas. Esta configuração é separada do idioma do bot."

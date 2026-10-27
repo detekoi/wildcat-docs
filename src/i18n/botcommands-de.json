@@ -499,6 +499,10 @@
         "title": "Täglicher Check-In:",
         "desc": "Richte eine Kanalpunkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-Antworten ein."
       },
+      "chatGames": {
+        "title": "Chat-Spiele:",
+        "desc": "Lege Schwierigkeitsgrad, Antwortzeit, Punkte und bevorzugte Themen für !trivia, !geo und !riddle fest."
+      },
       "language": {
         "title": "Dashboard-Sprache:",
         "desc": "Zeigen Sie das Dashboard in einer von acht Sprachen an. Diese Einstellung ist von der Bot-Sprache getrennt."
