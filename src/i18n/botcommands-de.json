@@ -95,7 +95,7 @@
         "userDesc": "Postet eine Nachricht über den Streamer mit einem Link zu seinem Kanal und sendet ein Twitch-Shoutout",
         "aiNote": "Die KI schreibt die Nachricht aus dem Spiel, dem Streamtitel, den Tags, der Bio und den Pronomen des Streamers. Wenn die KI aus ist oder fehlschlägt, postet der Bot eine feste Nachricht, die das Spiel nennt",
         "twitchNote": "Twitch sendet ein Shoutout nur, während dein Stream live ist. Twitch sendet höchstens ein Shoutout alle 2 Minuten und höchstens ein Shoutout an denselben Streamer alle 60 Minuten. Der Bot postet die Chatnachricht jedes Mal",
-        "raidNote": "Wenn du „Shoutout für Raider“ im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> einschaltest, sendet der Bot ein !so-Shoutout für jeden Streamer, der deinen Kanal raidet. Der Bot sendet es nach der Raid-Nachricht. Diese Option ist standardmäßig aus",
+        "raidNote": "Wenn du „Shoutout für Raider“ im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> einschaltest, sendet der Bot ein !so-Shoutout für jeden Streamer, der deinen Kanal raidet. Die anderen !so-Optionen gelten auch. Wenn !so im Kanal aus ist, sendet der Bot kein Raid-Shoutout. Wenn die Raid-Willkommensnachricht an ist, kommt das Shoutout danach. Diese Option ist standardmäßig aus",
         "settingsNote": "Du kannst die KI-Nachricht und das Twitch-Shoutout im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> ausschalten"
       }
     },
@@ -245,17 +245,17 @@
     },
     "timedgames": {
       "name": "!timedgames <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Startet Chat-Spiele per Timer, während der Stream live ist. Zeitgesteuerte Spiele sind standardmäßig aus. Du kannst die Einstellungen auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> ändern.</span>",
+      "description": "Startet Chat-Spiele per Timer, während der Stream live ist. Zeitgesteuerte Spiele sind standardmäßig aus. Du kannst die Einstellungen auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> ändern.",
       "usage": {
-        "status": "Zeigt, ob zeitgesteuerte Spiele an sind, die Zeit zwischen den Spielen, die Spiele und das nächste Spiel",
+        "status": "Zeigt, ob zeitgesteuerte Spiele an sind, die Zeit zwischen den Spielen und die Spiele. Wenn zeitgesteuerte Spiele an sind, zeigt es auch das nächste Spiel",
         "on": "Schaltet zeitgesteuerte Spiele ein. In jedem Intervall startet der Bot eine Runde des nächsten Spiels, während der Stream live ist",
         "off": "Schaltet zeitgesteuerte Spiele aus. Danach starten Spiele nur noch über Chat-Befehle",
         "intervalCmd": "!timedgames interval <Minuten>",
         "interval": "Legt die Zeit vom Start eines Spiels bis zum Start des nächsten Spiels fest (5 bis 720 Minuten)",
         "gamesCmd": "!timedgames games <Spiele>",
-        "games": "Legt die Spiele fest, die der Bot nacheinander verwendet, getrennt durch Kommas (zum Beispiel: !timedgames games trivia,riddle)",
+        "games": "Legt die Spiele fest, die der Bot nacheinander verwendet, getrennt durch Kommas (zum Beispiel: !timedgames games trivia,riddle). Der Bot verwendet sie immer in dieser Reihenfolge: trivia, geo, riddle",
         "waitNote": "Wenn ein Spiel läuft, wartet der Bot, bis dieses Spiel endet. Wenn der Befehl für ein Spiel im Kanal aus ist, überspringt der Bot dieses Spiel",
-        "topicNote": "Ein zeitgesteuertes Trivia-Spiel verwendet eines der bevorzugten Themen. Ein zeitgesteuertes Geo-Game verwendet einen der bevorzugten Spieletitel. Wenn keine Titel festgelegt sind, verwendet es echte Orte",
+        "topicNote": "Ein zeitgesteuertes Trivia-Spiel verwendet eines der bevorzugten Themen. Wenn keine Themen festgelegt sind, verwendet es Allgemeinwissen. Ein zeitgesteuertes Geo-Game verwendet einen der bevorzugten Spieletitel. Wenn keine Titel festgelegt sind, verwendet es echte Orte in den Standardregionen. Wenn keine Regionen festgelegt sind, verwendet es Orte auf der ganzen Welt",
         "stopNote": "Moderatoren können ein zeitgesteuertes Spiel mit !trivia stop, !geo stop oder !riddle stop stoppen",
         "settingsNote": "Du kannst diese Einstellungen auch unter „Zeitgesteuerte Spiele“ im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> ändern"
       }

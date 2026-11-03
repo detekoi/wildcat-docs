@@ -253,7 +253,7 @@ extraScripts:
                     <span data-i18n="commands.so.usage.twitchNote">Twitch sends a Shoutout only while your stream is live. Twitch sends one Shoutout every 2 minutes at most, and one Shoutout to the same streamer every 60 minutes at most. The bot posts the chat message each time</span>
                 </div>
                 <div class="usage-line">
-                    <span data-i18n="commands.so.usage.raidNote">If you turn on "Shout out raiders" in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>, the bot sends a !so shoutout for each streamer who raids your channel. The bot sends it after the raid message. This option is off by default</span>
+                    <span data-i18n="commands.so.usage.raidNote">If you turn on "Shout out raiders" in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>, the bot sends a !so shoutout for each streamer who raids your channel. The other !so options also apply. If !so is off in the channel, the bot sends no raid shoutout. If the raid welcome message is on, the shoutout comes after it. This option is off by default</span>
                 </div>
                 <div class="usage-line">
                     <span data-i18n="commands.so.usage.settingsNote">You can turn off the AI message and the Twitch Shoutout in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a></span>
@@ -726,7 +726,7 @@ extraScripts:
         <tr class="dropdown-details" id="dd-commands-timedgames" hidden="until-found">
             <td colspan="2">
                 <div class="usage-line">
-                    <span class="mod-badge mod-badge-leading">Mod</span><code>!timedgames</code> <span data-i18n="commands.timedgames.usage.status">Shows whether timed games are on, the time between games, the games, and the next game</span>
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!timedgames</code> <span data-i18n="commands.timedgames.usage.status">Shows whether timed games are on, the time between games, and the games. While timed games are on, it also shows the next game</span>
                 </div>
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code>!timedgames on</code> <span data-i18n="commands.timedgames.usage.on">Turns on timed games. At each interval, the bot starts one round of the next game while the stream is live</span>
@@ -742,13 +742,13 @@ extraScripts:
                 <div class="usage-line">
                     <span class="mod-badge mod-badge-leading">Mod</span><code
                         data-i18n-cmd="commands.timedgames.usage.gamesCmd">!timedgames games &lt;games&gt;</code>
-                    <span data-i18n="commands.timedgames.usage.games">Sets the games that the bot uses in turn, with a comma between games (for example: !timedgames games trivia,riddle)</span>
+                    <span data-i18n="commands.timedgames.usage.games">Sets the games that the bot uses in turn, with a comma between games (for example: !timedgames games trivia,riddle). The bot always uses them in this order: trivia, geo, riddle</span>
                 </div>
                 <div class="usage-line">
                     <span data-i18n="commands.timedgames.usage.waitNote">If a game is in progress, the bot waits until that game ends. If the command for a game is off in the channel, the bot skips that game</span>
                 </div>
                 <div class="usage-line">
-                    <span data-i18n="commands.timedgames.usage.topicNote">A timed trivia game uses one of the preferred topics. A timed Geo-Game uses one of the preferred game titles. If no titles are set, it uses real places</span>
+                    <span data-i18n="commands.timedgames.usage.topicNote">A timed trivia game uses one of the preferred topics. If no topics are set, it uses general knowledge. A timed Geo-Game uses one of the preferred game titles. If no titles are set, it uses real places in the default regions. If no regions are set, it uses places across the world</span>
                 </div>
                 <div class="usage-line">
                     <span data-i18n="commands.timedgames.usage.stopNote">Moderators can stop a timed game with !trivia stop, !geo stop or !riddle stop</span>

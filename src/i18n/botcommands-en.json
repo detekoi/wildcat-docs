@@ -95,7 +95,7 @@
         "userDesc": "Posts a message about the streamer, with a link to their channel, and sends a Twitch Shoutout",
         "aiNote": "The AI writes the message from the game, the stream title, the tags, the bio and the pronouns of the streamer. If the AI is off or fails, the bot posts a fixed message that names the game",
         "twitchNote": "Twitch sends a Shoutout only while your stream is live. Twitch sends one Shoutout every 2 minutes at most, and one Shoutout to the same streamer every 60 minutes at most. The bot posts the chat message each time",
-        "raidNote": "If you turn on \"Shout out raiders\" in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>, the bot sends a !so shoutout for each streamer who raids your channel. The bot sends it after the raid message. This option is off by default",
+        "raidNote": "If you turn on \"Shout out raiders\" in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>, the bot sends a !so shoutout for each streamer who raids your channel. The other !so options also apply. If !so is off in the channel, the bot sends no raid shoutout. If the raid welcome message is on, the shoutout comes after it. This option is off by default",
         "settingsNote": "You can turn off the AI message and the Twitch Shoutout in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>"
       }
     },
@@ -245,17 +245,17 @@
     },
     "timedgames": {
       "name": "!timedgames <span class=\"mod-badge\">Mod</span>",
-      "description": "<span class=\"description-text\">Starts chat games on a timer while the stream is live. Timed games are off by default. You can also change the settings in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>.</span>",
+      "description": "Starts chat games on a timer while the stream is live. Timed games are off by default. You can also change the settings in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>.",
       "usage": {
-        "status": "Shows whether timed games are on, the time between games, the games, and the next game",
+        "status": "Shows whether timed games are on, the time between games, and the games. While timed games are on, it also shows the next game",
         "on": "Turns on timed games. At each interval, the bot starts one round of the next game while the stream is live",
         "off": "Turns off timed games. After this, games start only from chat commands",
         "intervalCmd": "!timedgames interval <minutes>",
         "interval": "Sets the time from the start of one game to the start of the next game (5 to 720 minutes)",
         "gamesCmd": "!timedgames games <games>",
-        "games": "Sets the games that the bot uses in turn, with a comma between games (for example: !timedgames games trivia,riddle)",
+        "games": "Sets the games that the bot uses in turn, with a comma between games (for example: !timedgames games trivia,riddle). The bot always uses them in this order: trivia, geo, riddle",
         "waitNote": "If a game is in progress, the bot waits until that game ends. If the command for a game is off in the channel, the bot skips that game",
-        "topicNote": "A timed trivia game uses one of the preferred topics. A timed Geo-Game uses one of the preferred game titles. If no titles are set, it uses real places",
+        "topicNote": "A timed trivia game uses one of the preferred topics. If no topics are set, it uses general knowledge. A timed Geo-Game uses one of the preferred game titles. If no titles are set, it uses real places in the default regions. If no regions are set, it uses places across the world",
         "stopNote": "Moderators can stop a timed game with !trivia stop, !geo stop or !riddle stop",
         "settingsNote": "You can also change these settings in Timed Games in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>"
       }
