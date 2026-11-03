@@ -95,6 +95,7 @@
         "userDesc": "Publica uma mensagem sobre o streamer, com um link para o canal dele, e envia um Shoutout da Twitch",
         "aiNote": "A IA escreve a mensagem a partir do jogo, do título da live, das tags, da bio e dos pronomes do streamer. Se a IA estiver desativada ou falhar, o bot publica uma mensagem fixa com o nome do jogo",
         "twitchNote": "A Twitch envia um Shoutout somente enquanto sua live está no ar. A Twitch envia no máximo um Shoutout a cada 2 minutos, e no máximo um Shoutout para o mesmo streamer a cada 60 minutos. O bot publica a mensagem no chat todas as vezes",
+        "raidNote": "Se você ativar \"Dar shoutout aos raiders\" no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>, o bot envia um shoutout de !so para cada streamer que fizer raid no seu canal. O bot o envia depois da mensagem de raid. Esta opção fica desativada por padrão",
         "settingsNote": "Você pode desativar a mensagem da IA e o Shoutout da Twitch no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>"
       }
     },
@@ -240,6 +241,23 @@
         "science": "science",
         "history": "history",
         "settingsNote": "Você também pode alterar essas configurações no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>"
+      }
+    },
+    "timedgames": {
+      "name": "!timedgames <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">Inicia jogos no chat com um temporizador enquanto a live está no ar. Os jogos temporizados ficam desativados por padrão. Você também pode alterar as configurações no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>.</span>",
+      "usage": {
+        "status": "Mostra se os jogos temporizados estão ativados, o tempo entre os jogos, os jogos e o próximo jogo",
+        "on": "Ativa os jogos temporizados. A cada intervalo, o bot inicia uma rodada do próximo jogo enquanto a live está no ar",
+        "off": "Desativa os jogos temporizados. Depois disso, os jogos começam apenas com comandos do chat",
+        "intervalCmd": "!timedgames interval <minutos>",
+        "interval": "Define o tempo entre o início de um jogo e o início do próximo jogo (de 5 a 720 minutos)",
+        "gamesCmd": "!timedgames games <jogos>",
+        "games": "Define os jogos que o bot usa em sequência, separados por vírgula (por exemplo: !timedgames games trivia,riddle)",
+        "waitNote": "Se um jogo estiver em andamento, o bot espera até ele terminar. Se o comando de um jogo estiver desativado no canal, o bot pula esse jogo",
+        "topicNote": "Um jogo de trivia temporizado usa um dos tópicos preferidos. Um Geo-Game temporizado usa um dos títulos de jogos preferidos. Se não houver títulos, ele usa lugares reais",
+        "stopNote": "Moderadores podem parar um jogo temporizado com !trivia stop, !geo stop ou !riddle stop",
+        "settingsNote": "Você também pode alterar essas configurações em \"Jogos Temporizados\" no <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Painel Web</a>"
       }
     },
     "botlang": {
@@ -502,6 +520,10 @@
       "chatGames": {
         "title": "Jogos do chat:",
         "desc": "Defina a dificuldade, o tempo de resposta, os pontos e os tópicos preferidos para !trivia, !geo e !riddle."
+      },
+      "timedGames": {
+        "title": "Jogos Temporizados:",
+        "desc": "Inicie !trivia, !geo e !riddle com um temporizador enquanto você está ao vivo. Defina o tempo entre os jogos e os jogos que serão usados."
       },
       "language": {
         "title": "Idioma do Dashboard:",

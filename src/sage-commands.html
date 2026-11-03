@@ -253,6 +253,9 @@ extraScripts:
                     <span data-i18n="commands.so.usage.twitchNote">Twitch sends a Shoutout only while your stream is live. Twitch sends one Shoutout every 2 minutes at most, and one Shoutout to the same streamer every 60 minutes at most. The bot posts the chat message each time</span>
                 </div>
                 <div class="usage-line">
+                    <span data-i18n="commands.so.usage.raidNote">If you turn on "Shout out raiders" in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>, the bot sends a !so shoutout for each streamer who raids your channel. The bot sends it after the raid message. This option is off by default</span>
+                </div>
+                <div class="usage-line">
                     <span data-i18n="commands.so.usage.settingsNote">You can turn off the AI message and the Twitch Shoutout in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a></span>
                 </div>
             </td>
@@ -711,6 +714,47 @@ extraScripts:
                 </div>
                 <div class="usage-line">
                     <code>!trivia help</code>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody class="dropdown-group">
+        <tr class="dropdown-summary">
+            <td data-i18n-key="commands.timedgames.name">!timedgames <span class="mod-badge">Mod</span></td>
+            <td data-i18n-key="commands.timedgames.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-timedgames"><span class="description-text">Starts chat games on a timer while the stream is live. Timed games are off by default. You can also change the settings in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a>.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+        </tr>
+        <tr class="dropdown-details" id="dd-commands-timedgames" hidden="until-found">
+            <td colspan="2">
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!timedgames</code> <span data-i18n="commands.timedgames.usage.status">Shows whether timed games are on, the time between games, the games, and the next game</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!timedgames on</code> <span data-i18n="commands.timedgames.usage.on">Turns on timed games. At each interval, the bot starts one round of the next game while the stream is live</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code>!timedgames off</code> <span data-i18n="commands.timedgames.usage.off">Turns off timed games. After this, games start only from chat commands</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.timedgames.usage.intervalCmd">!timedgames interval &lt;minutes&gt;</code>
+                    <span data-i18n="commands.timedgames.usage.interval">Sets the time from the start of one game to the start of the next game (5 to 720 minutes)</span>
+                </div>
+                <div class="usage-line">
+                    <span class="mod-badge mod-badge-leading">Mod</span><code
+                        data-i18n-cmd="commands.timedgames.usage.gamesCmd">!timedgames games &lt;games&gt;</code>
+                    <span data-i18n="commands.timedgames.usage.games">Sets the games that the bot uses in turn, with a comma between games (for example: !timedgames games trivia,riddle)</span>
+                </div>
+                <div class="usage-line">
+                    <span data-i18n="commands.timedgames.usage.waitNote">If a game is in progress, the bot waits until that game ends. If the command for a game is off in the channel, the bot skips that game</span>
+                </div>
+                <div class="usage-line">
+                    <span data-i18n="commands.timedgames.usage.topicNote">A timed trivia game uses one of the preferred topics. A timed Geo-Game uses one of the preferred game titles. If no titles are set, it uses real places</span>
+                </div>
+                <div class="usage-line">
+                    <span data-i18n="commands.timedgames.usage.stopNote">Moderators can stop a timed game with !trivia stop, !geo stop or !riddle stop</span>
+                </div>
+                <div class="usage-line">
+                    <span data-i18n="commands.timedgames.usage.settingsNote">You can also change these settings in Timed Games in the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">Web Dashboard</a></span>
                 </div>
             </td>
         </tr>

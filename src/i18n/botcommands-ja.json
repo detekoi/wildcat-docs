@@ -95,6 +95,7 @@
         "userDesc": "配信者についてのメッセージをチャンネルへのリンク付きで投稿し、Twitchのシャウトアウトを送信",
         "aiNote": "AIは、配信者のゲーム、配信タイトル、タグ、プロフィール、代名詞からメッセージを作成します。AIがオフの場合や失敗した場合、ボットはゲーム名を含む固定メッセージを投稿します",
         "twitchNote": "Twitchがシャウトアウトを送信するのは配信中のみです。Twitchが送信できるシャウトアウトは2分に1回まで、同じ配信者には60分に1回までです。ボットはチャットメッセージを毎回投稿します",
+        "raidNote": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>で「レイド配信者をシャウトアウト」をオンにすると、チャンネルにレイドした配信者ごとに、ボットが !so のシャウトアウトを送ります。ボットはレイドのメッセージの後に送ります。このオプションはデフォルトでオフです",
         "settingsNote": "AIメッセージとTwitchのシャウトアウトは<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でオフにできます"
       }
     },
@@ -240,6 +241,23 @@
         "science": "science",
         "history": "history",
         "settingsNote": "これらの設定は<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも変更できます"
+      }
+    },
+    "timedgames": {
+      "name": "!timedgames <span class=\"mod-badge\">Mod</span>",
+      "description": "<span class=\"description-text\">配信中に、タイマーでチャットゲームを開始します。定期ゲームはデフォルトでオフです。設定は<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも変更できます。</span>",
+      "usage": {
+        "status": "定期ゲームがオンかどうか、ゲームの間隔、ゲーム、次のゲームを表示",
+        "on": "定期ゲームをオンにします。配信中、ボットは間隔ごとに次のゲームを1ラウンド開始します",
+        "off": "定期ゲームをオフにします。以降、ゲームはチャットコマンドでのみ開始します",
+        "intervalCmd": "!timedgames interval <分>",
+        "interval": "あるゲームの開始から次のゲームの開始までの時間を設定（5〜720分）",
+        "gamesCmd": "!timedgames games <ゲーム>",
+        "games": "ボットが順番に使うゲームをカンマ区切りで設定（例: !timedgames games trivia,riddle）",
+        "waitNote": "ゲームが進行中の場合、ボットはそのゲームが終わるまで待ちます。チャンネルでゲームのコマンドがオフの場合、ボットはそのゲームをスキップします",
+        "topicNote": "定期トリビアゲームは優先するトピックの1つを使います。定期Geoゲームは優先するゲームタイトルの1つを使います。タイトルが設定されていない場合は、実在の場所を使います",
+        "stopNote": "モデレーターは !trivia stop、!geo stop、!riddle stop で定期ゲームを停止できます",
+        "settingsNote": "これらの設定は<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>の「定期ゲーム」でも変更できます"
       }
     },
     "botlang": {
@@ -502,6 +520,10 @@
       "chatGames": {
         "title": "チャットゲーム:",
         "desc": "!trivia、!geo、!riddleの難易度、回答時間、ポイント、優先するトピックを設定します。"
+      },
+      "timedGames": {
+        "title": "定期ゲーム:",
+        "desc": "配信中に !trivia、!geo、!riddle をタイマーで開始します。ゲームの間隔と使うゲームを設定します。"
       },
       "language": {
         "title": "ダッシュボードの言語:",
