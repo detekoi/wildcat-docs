@@ -95,6 +95,7 @@
         "userDesc": "Publie un message sur le streamer, avec un lien vers sa chaîne, et envoie un Shoutout Twitch",
         "aiNote": "L'IA écrit le message à partir du jeu, du titre du stream, des tags, de la bio et des pronoms du streamer. Si l'IA est désactivée ou échoue, le bot publie un message fixe qui nomme le jeu",
         "twitchNote": "Twitch envoie un Shoutout uniquement pendant que votre stream est en direct. Twitch envoie au maximum un Shoutout toutes les 2 minutes, et au maximum un Shoutout au même streamer toutes les 60 minutes. Le bot publie le message dans le chat à chaque fois",
+        "raidNote": "Si vous activez « Shoutout aux raideurs » dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>, le bot envoie un shoutout !so pour chaque streamer qui fait un raid sur votre chaîne. Les autres options de !so s'appliquent aussi. Si !so est désactivé dans la chaîne, le bot n'envoie pas de shoutout de raid. Si le message de bienvenue du raid est activé, le shoutout vient après. Cette option est désactivée par défaut",
         "settingsNote": "Vous pouvez désactiver le message IA et le Shoutout Twitch dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>"
       }
     },
@@ -240,6 +241,23 @@
         "science": "science",
         "history": "history",
         "settingsNote": "Vous pouvez aussi modifier ces paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>"
+      }
+    },
+    "timedgames": {
+      "name": "!timedgames <span class=\"mod-badge\">Mod</span>",
+      "description": "Lance des jeux de chat avec un minuteur pendant que le stream est en direct. Les jeux programmés sont désactivés par défaut. Vous pouvez aussi modifier les paramètres dans le <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>.",
+      "usage": {
+        "status": "Indique si les jeux programmés sont activés, le temps entre les jeux et les jeux. Si les jeux programmés sont activés, indique aussi le prochain jeu",
+        "on": "Active les jeux programmés. À chaque intervalle, le bot lance une manche du jeu suivant pendant que le stream est en direct",
+        "off": "Désactive les jeux programmés. Ensuite, les jeux démarrent uniquement avec les commandes du chat",
+        "intervalCmd": "!timedgames interval <minutes>",
+        "interval": "Définit le temps entre le début d'un jeu et le début du jeu suivant (de 5 à 720 minutes)",
+        "gamesCmd": "!timedgames games <jeux>",
+        "games": "Définit les jeux que le bot utilise à tour de rôle, séparés par une virgule (par exemple : !timedgames games trivia,riddle). Le bot les utilise toujours dans cet ordre : trivia, geo, riddle",
+        "waitNote": "Si un jeu est en cours, le bot attend la fin de ce jeu. Si la commande d'un jeu est désactivée dans la chaîne, le bot ignore ce jeu",
+        "topicNote": "Une partie de trivia programmée utilise un des thèmes préférés. Si aucun thème n'est défini, elle utilise la culture générale. Un Jeu Géo programmé utilise un des titres de jeux préférés. Si aucun titre n'est défini, il utilise des lieux réels dans les régions par défaut. Si aucune région n'est définie, il utilise des lieux du monde entier",
+        "stopNote": "Les modérateurs peuvent arrêter un jeu programmé avec !trivia stop, !geo stop ou !riddle stop",
+        "settingsNote": "Vous pouvez aussi modifier ces paramètres dans « Jeux programmés » du <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Tableau de bord Web</a>"
       }
     },
     "botlang": {
@@ -502,6 +520,10 @@
       "chatGames": {
         "title": "Jeux du chat :",
         "desc": "Définissez la difficulté, le temps de réponse, les points et les thèmes préférés pour !trivia, !geo et !riddle."
+      },
+      "timedGames": {
+        "title": "Jeux programmés :",
+        "desc": "Lancez !trivia, !geo et !riddle avec un minuteur pendant que vous êtes en direct. Définissez le temps entre les jeux et les jeux à utiliser."
       },
       "language": {
         "title": "Langue du tableau de bord :",
