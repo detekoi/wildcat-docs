@@ -229,7 +229,7 @@
         "stop": "Detiene la partida (iniciador, moderadores o streamer)",
         "time": "Establece el tiempo de respuesta por pregunta (10 a 120 segundos)",
         "pointsBase": "Establece los puntos base por pregunta (1 a 100)",
-        "configTopic": "Establece los temas preferidos, separados por comas. Si una partida empieza sin tema, el bot elige uno de estos temas",
+        "configTopic": "Establece los temas preferidos, separados por comas. Si una partida empieza sin tema, el bot elige uno de estos temas. Con el tema \"game\", las preguntas son sobre el juego que transmites",
         "topicCmd": "!trivia <tema>",
         "roundsCmd": "!trivia <rondas>",
         "topicRoundsCmd": "!trivia <tema> <rondas>",

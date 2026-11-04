@@ -229,7 +229,7 @@
         "stop": "Arrête la partie (créateur, modérateurs ou diffuseur)",
         "time": "Définit le temps de réponse par question (10 à 120 secondes)",
         "pointsBase": "Définit les points de base par question (1 à 100)",
-        "configTopic": "Définit les thèmes préférés, séparés par une virgule. Si une partie démarre sans thème spécifié, le bot en choisit un parmi cette liste",
+        "configTopic": "Définit les thèmes préférés, séparés par une virgule. Si une partie démarre sans thème spécifié, le bot en choisit un parmi cette liste. Avec le thème « game », les questions portent sur le jeu que vous streamez",
         "topicCmd": "!trivia <thème>",
         "roundsCmd": "!trivia <tours>",
         "topicRoundsCmd": "!trivia <thème> <tours>",
