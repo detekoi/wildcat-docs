@@ -229,7 +229,7 @@
         "stop": "Para o jogo (iniciador, moderadores ou streamer)",
         "time": "Define o tempo de resposta por pergunta (10 a 120 segundos)",
         "pointsBase": "Define pontos base por pergunta (1 a 100)",
-        "configTopic": "Define os tópicos preferidos, separados por vírgula. Se um jogo começar sem tópico, o bot escolhe um desses tópicos",
+        "configTopic": "Define os tópicos preferidos, separados por vírgula. Se um jogo começar sem tópico, o bot escolhe um desses tópicos. Com o tópico \"game\", as perguntas são sobre o jogo que você transmite",
         "topicCmd": "!trivia <tema>",
         "roundsCmd": "!trivia <rodadas>",
         "topicRoundsCmd": "!trivia <tema> <rodadas>",

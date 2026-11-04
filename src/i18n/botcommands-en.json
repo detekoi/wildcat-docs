@@ -229,7 +229,7 @@
         "stop": "Stops the game (game starter, moderators, or broadcaster)",
         "time": "Sets answer time per question (10 to 120 seconds)",
         "pointsBase": "Sets base points per question (1 to 100)",
-        "configTopic": "Sets the preferred topics, with a comma between topics. If a game starts with no topic, the bot picks one of these topics",
+        "configTopic": "Sets the preferred topics, with a comma between topics. If a game starts with no topic, the bot picks one of these topics. If you type game as a topic, the questions are about the game that you stream",
         "topicCmd": "!trivia <topic>",
         "roundsCmd": "!trivia <rounds>",
         "topicRoundsCmd": "!trivia <topic> <rounds>",
