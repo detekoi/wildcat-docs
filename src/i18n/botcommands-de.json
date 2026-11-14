@@ -270,6 +270,14 @@
         "langCmd": "!botlang <Sprache>"
       }
     },
+    "deslop": {
+      "description": "Zeigt oder ändert die De-Slop-Einstellung. De-Slop ist standardmäßig deaktiviert. Du kannst die Einstellung auch im <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web-Dashboard</a> ändern.",
+      "usage": {
+        "statusDesc": "Zeigt die Einstellung",
+        "onDesc": "Aktiviert De-Slop",
+        "offDesc": "Deaktiviert De-Slop"
+      }
+    },
     "auto": {
       "name": "!auto",
       "description": "Konfiguriert automatisierte Chatnachrichten und Stream-Ereignis-Benachrichtigungen.",
@@ -513,6 +521,10 @@
         "title": "Bot-Sprache:",
         "desc": "Lege die Sprache fest, die der Bot in deinem Kanal spricht, oder verwende die Streamsprache von Twitch."
       },
+      "deslop": {
+        "title": "De-Slop:",
+        "desc": "Gib dem Bot Regeln, damit er ohne die typischen KI-Gewohnheiten schreibt, zum Beispiel Hype-Wörter und lange Gedankenstriche."
+      },
       "dailyCheckIn": {
         "title": "Täglicher Check-In:",
         "desc": "Richte eine Kanalpunkte-Belohnung für tägliche Check-Ins mit Streak-Tracking und optionalen KI-Antworten ein."
@@ -630,7 +642,21 @@
       "timers": "KI-Prompts für Timer",
       "checkin": "KI-Prompts für den täglichen Check-In"
     },
-    "otherPromptsText": "Text-Commands und Text-Timer verwenden die Prüfung nicht. Der Bot sendet diesen Text ohne Änderung."
+    "otherPromptsText": "Text-Commands und Text-Timer verwenden die Prüfung nicht. Der Bot sendet diesen Text ohne Änderung.",
+    "deslopTitle": "De-Slop",
+    "deslop": {
+      "intro": "KI-Text hat Gewohnheiten, die Lesern auffallen. Beispiele sind leere Einleitungen, Hype-Wörter und lange Gedankenstriche. De-Slop gibt dem Bot Regeln, damit er ohne diese Gewohnheiten schreibt. Die Persönlichkeit des Bots bleibt gleich.",
+      "default": "De-Slop ist standardmäßig deaktiviert.",
+      "steps": {
+        "open": "Öffne das <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> und gehe zum Tab <strong>Bot</strong>.",
+        "toggle": "Aktiviere in der Karte <strong>De-Slop</strong> die Option <strong>Schlichte Schreibregeln nutzen</strong>."
+      },
+      "saves": "Das Dashboard speichert die Änderung sofort. Ein Moderator kann auch <span class=\"inline-code\">!deslop on</span> und <span class=\"inline-code\">!deslop off</span> im Chat verwenden.",
+      "scope": "Die Regeln gelten für KI-Antworten, automatische Nachrichten und Spieltext. Der Bot ändert keine Zitate, Text-Commands oder Text-Timer.",
+      "shared": "In einer Twitch-Sitzung mit geteiltem Chat gilt die Einstellung des Host-Kanals.",
+      "cost": "De-Slop fügt den Anfragen, die der Bot bereits an die KI sendet, eine kurze Liste von Regeln hinzu. Es sendet keine weiteren Anfragen.",
+      "credit": "Die Regeln stammen aus <a href=\"https://github.com/blader/humanizer\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Humanizer</a> von Siqi Chen. Humanizer steht unter der <a href=\"https://github.com/blader/humanizer/blob/main/LICENSE\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">MIT-Lizenz</a>."
+    }
   },
   "channelMemory": {
     "title": "Kanalgedächtnis",
