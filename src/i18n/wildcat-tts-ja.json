@@ -80,7 +80,7 @@
       "name": "!tts prefs\n(エイリアス: !tts preferences, !tts settings)",
       "description": "個人用のTTS設定ページへのリンクを送信します。",
       "aliases": "(エイリアス: !tts preferences, !tts settings)",
-      "feature1": "このチャンネルで使用する自分の音声、スタイル、感情、速度、高さ、言語を設定します。",
+      "feature1": "このチャンネルで自分の音声、スタイル、速度、ピッチ、言語を設定します。",
       "feature2": "「TTS読み上げから除外」セクションがあります。1つのチャンネルまたはすべてのチャンネルでTTSから除外でき、元に戻すこともできます。モデレーターがチャンネルであなたを除外した場合、元に戻せるのはモデレーターだけです。すべてのチャンネルで除外しても、サブスク、Cheer、ギフトのアナウンスは引き続き行われますが、追加したメッセージは読み上げられません。TTSリワードを引き換えた場合、そのメッセージはTTSで読み上げられます。",
       "feature3": "ボットはチャンネル情報を読み込んだ状態で、リンクをチャットに投稿します。",
       "usage": {
@@ -237,9 +237,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "自分のチャットメッセージ用の希望感情を指定します。",
+      "description": "感情名からスタイルを設定します。このコマンドは !tts style の旧称です。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、<span class=\"inline-code\">fluent</span>。チャンネルのデフォルトに戻すには <span class=\"inline-code\">reset</span> を指定します。感情を設定すると、カスタムスタイルは削除されます。",
+      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、<span class=\"inline-code\">fluent</span>。ボットはその感情のスタイル語句（たとえば <span class=\"inline-code\">happy</span> なら \"happy and cheerful\"）を保存します。チャンネルのデフォルトに戻すには <span class=\"inline-code\">reset</span> を使用します。自分の言葉で音声を指定するには、<span class=\"inline-code\">!tts style</span> を使用します。",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -337,9 +337,9 @@
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "<em>チャンネル全体</em> の標準TTS感情を指定します。",
+      "description": "感情名からチャンネルのデフォルトスタイルを設定します。このコマンドは !tts defaultstyle の旧称です。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、<span class=\"inline-code\">fluent</span>。システムのデフォルト（neutral）に戻すには <span class=\"inline-code\">reset</span> を指定します。感情を設定すると、チャンネルのデフォルトスタイルは削除されます。",
+      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、<span class=\"inline-code\">fluent</span>。ボットはその感情のスタイル語句（たとえば <span class=\"inline-code\">happy</span> なら \"happy and cheerful\"）を保存します。デフォルトスタイルを削除するには、<span class=\"inline-code\">reset</span> または <span class=\"inline-code\">neutral</span> を使用します。自分の言葉で音声を指定するには、<span class=\"inline-code\">!tts defaultstyle</span> を使用します。",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -480,7 +480,7 @@
       },
       "offDesc": "（スタイルを削除します）",
       "statusDesc": "（現在の個人設定を表示します）",
-      "notes": "スタイルは音声に話し方を指示する自由なテキストで、最大120文字まで入力できます。音声はスタイルを読み上げず、スタイルによってメッセージの言葉が変わることもありません。スタイルが設定されている間、感情の設定は無視されます。あなたのメッセージでは、あなたのスタイルがチャンネルのスタイルや感情も上書きします。チャンネルの禁止ワードを含むスタイルは拒否されます。チャンネルが視聴者の個人設定を許可していない場合は、チャンネルの設定が使用されます。"
+      "notes": "スタイルは音声の話し方を指示するもので、最大 120 文字です。音声はスタイルを読み上げず、スタイルがメッセージの言葉を変更することもありません。あなたのメッセージに対しては、あなたのスタイルがチャンネルのスタイルを置き換えます。ボットはチャンネルの禁止ワードを含むスタイルを拒否します。チャンネルが視聴者の設定を許可していない場合、ボットはチャンネル設定を使用します。"
     },
     "ttsDefaultstyle": {
       "name": "!tts defaultstyle <テキスト|off>",
@@ -492,7 +492,7 @@
       },
       "offDesc": "(デフォルトのスタイルを削除します)",
       "statusDesc": "(現在のチャンネルデフォルトを表示します)",
-      "notes": "スタイルは、音声の話し方を指定する自由テキストで、最大120文字です。音声はスタイルを読み上げず、スタイルでメッセージの単語を変更することはできません。チャンネルにデフォルトのスタイルが設定されている間、ボットはデフォルトの感情を無視します。視聴者のスタイルまたは感情は、その視聴者のメッセージに対してデフォルトのスタイルを上書きします。ボットは、チャンネルの禁止ワードを含むスタイルを拒否します。スタイルは Web Dashboard でも設定できます。"
+      "notes": "スタイルは音声の話し方を指示するもので、最大 120 文字です。音声はスタイルを読み上げず、スタイルがメッセージの言葉を変更することもありません。視聴者のスタイルは、その視聴者のメッセージに対してデフォルトスタイルを置き換えます。ボットはチャンネルの禁止ワードを含むスタイルを拒否します。スタイルは Web Dashboard でも設定できます。"
     },
     "ttsTags": {
       "name": "!tts tags <off|on> <tag|all>",
@@ -645,7 +645,7 @@
     "settingBannedWordsTitle": "禁止ワード / フレーズ:",
     "settingBannedWordsDesc": "特定単語またはフレーズをブロックし、該当メッセージの読み上げをスキップします。",
     "settingVoiceTitle": "デフォルト音声設定:",
-    "settingVoiceDesc": "音声、音量、スタイル、感情、速度、ピッチ、言語のチャンネルのデフォルト設定を行います。",
+    "settingVoiceDesc": "音声、音量、スタイル、速度、ピッチ、言語のチャンネルデフォルトを設定します。",
     "settingObsTitle": "OBSブラウザソース設定:",
     "settingObsDesc": "安全なOBSブラウザソースURLと詳細な設定手順を取得します。",
     "settingPreviewTitle": "音声プレビュー:",
@@ -674,7 +674,7 @@
     "obsImportantDesc": "音声ミキサーでソースがミュートになっておらず、適切な音量に設定されていることを確認してください。",
     "voiceCalibrationTitle": "音声キャリブレーション",
     "voiceCalibrationIntro": "音声によって音量が大きかったり小さかったりする場合があります。音声キャリブレーション機能により、音声ごとに音量倍率を設定して配信全体の音量を均一化できます。",
-    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 音声を選択して倍率（0.1x〜2.0x）を設定します。<em>（注意: 1.0より大きい値は非常に大きくなる場合があります）</em>",
+    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 音声を選択し、音量倍率（0.1x〜2.0x）を割り当てます。<em>（注意: 1.0を超える値は音が大きくなる場合があります）</em>",
     "voiceCalibrationFeature2": "<strong>自動適用:</strong> 視聴者がキャリブレーション設定された音声を指定すると、自動的にカスタム音量が適用されます。",
     "voiceCalibrationFeature3": "<strong>優先度:</strong> キャリブレーション設定された音量はチャンネルの標準音量設定よりも優先されます。",
     "settingCalibrationTitle": "音声キャリブレーション:",
@@ -686,8 +686,8 @@
     "voiceDefaultsTitle": "デフォルトの音声設定",
     "voiceDefaultsIntro": "デフォルトの音声設定は、個人設定を持たない視聴者からの各メッセージに適用されます。配信を開始する前に、音声プレビューを使用して結果を確認してください。",
     "voiceDefaultsVoice": "音声を見つけるには、説明を検索するか、言語、性別、ピッチで絞り込みます。このドキュメントの<a href=\"tts-voices.html#voices\" class=\"default-link-style\">音声リスト</a>にも同じ音声があります。",
-    "voiceDefaultsStyle": "スタイルは、音声に話し方を指示する自由テキストです（例: \"whispering\"）。最大120文字で、音声がそれを読み上げることはありません。",
-    "voiceDefaultsEmotion": "感情は、<span class=\"inline-code\">happy</span> や <span class=\"inline-code\">calm</span> などのプリセットスタイルです。感情とスタイルは同時に機能しません。一方を設定すると、ボットはもう一方を削除します。",
+    "voiceDefaultsStyle": "スタイルは「ささやき」など、音声の話し方を指定します。独自の言葉を入力するか、プリセットを選択してボックスに言葉を入れます。プリセットの言葉は変更できます。スタイルは最大120文字で、音声はそれを読み上げません。",
+    "voiceDefaultsEmotion": "チャットコマンド <span class=\"inline-code\">!tts emotion</span> は <span class=\"inline-code\">!tts style</span> の旧称です。感情名のスタイル語句（たとえば <span class=\"inline-code\">happy</span> なら \"happy and cheerful\"）を設定します。",
     "voiceDefaultsSpeedPitch": "速度とピッチにはそれぞれ5つの段階があります。ボットが音声に対して言葉で話し方を指示するため、結果はおおよそのものになります。",
     "voiceDefaultsVolume": "ボットは音声が発話した後にオーディオへ音量を適用するため、音量は正確です。",
     "voiceDefaultsLanguage": "言語は、数字などの短いか不明瞭なテキストのためのヒントです。<a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語</a>を参照してください。",
@@ -704,7 +704,7 @@
     "q4": "TTS生成に時間がかかりすぎるか失敗する?",
     "a4": "音声は通常、ボットがメッセージを受け取ってから約0.5秒後に再生されます。音声モデルが失敗した場合、ボットは自動的に再試行します。メッセージがキューに残って再生されない場合は、<span class=\"inline-code\">!tts stop</span> を使用してキャンセルしてください。",
     "q5": "感情が機能しない?",
-    "a5": "<span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、または <span class=\"inline-code\">fluent</span> を使用します。カスタムスタイルを設定すると感情は上書きされます。感情を再び使用するには、<span class=\"inline-code\">!tts style off</span>（チャンネル全体の場合は <span class=\"inline-code\">!tts defaultstyle off</span>）でスタイルを削除してください。",
+    "a5": "感情はスタイルです。<span class=\"inline-code\">!tts emotion happy</span> はスタイルを \"happy and cheerful\" に設定します。自分のスタイルを確認するには、<span class=\"inline-code\">!tts style</span> を使用します。削除するには、<span class=\"inline-code\">!tts style off</span>（チャンネルの場合は <span class=\"inline-code\">!tts defaultstyle off</span>）を使用します。",
     "q6": "ヘルプが必要?",
     "a6": "Henryのポートフォリオサイトの <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォーム</a> から開発者へご連絡ください。",
     "qVoiceChanged": "声が以前と違って聞こえますか？",

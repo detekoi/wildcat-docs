@@ -80,7 +80,7 @@
       "name": "!tts prefs\n(Alias: !tts preferences, !tts settings)",
       "description": "Envía un enlace a su página personal de configuración de TTS.",
       "aliases": "(Alias: !tts preferences, !tts settings)",
-      "feature1": "Configura tu propia voz, estilo, emoción, velocidad, tono e idioma para este canal.",
+      "feature1": "Establece tu propia voz, estilo, velocidad, tono e idioma para este canal.",
       "feature2": "Incluye una sección «Desactivar TTS». Puedes desactivar el TTS en un canal o en todos los canales, y puedes volver a activarlo. Si un moderador te excluyó de un canal, solo un moderador puede deshacerlo. Cuando lo desactivas en todos los canales, el TTS sigue anunciando tus suscripciones, cheers y regalos, pero no el mensaje que añades. Si canjeas la recompensa de TTS, el TTS lee ese mensaje.",
       "feature3": "El bot publica el enlace en el chat con el contexto del canal cargado.",
       "usage": {
@@ -237,9 +237,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "Establece tu emoción preferida para tus mensajes de chat.",
+      "description": "Establece tu estilo a partir del nombre de una emoción. Este comando es el nombre anterior de !tts style.",
       "statusDesc": "(muestra la preferencia personal actual)",
-      "notes": "Emociones válidas: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Usa <span class=\"inline-code\">reset</span> para el valor predeterminado del canal. Si configuras una emoción, el bot elimina tu estilo personalizado.",
+      "notes": "Emociones válidas: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. El bot guarda las palabras de estilo de la emoción, por ejemplo, \"feliz y alegre\" para <span class=\"inline-code\">happy</span>. Usa <span class=\"inline-code\">reset</span> para el valor predeterminado del canal. Para describir la voz con tus propias palabras, usa <span class=\"inline-code\">!tts style</span>.",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -337,9 +337,9 @@
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Establece la emoción de TTS por defecto para el <em>canal</em>.",
+      "description": "Establece el estilo predeterminado del canal a partir del nombre de una emoción. Este comando es el nombre anterior de !tts defaultstyle.",
       "statusDesc": "(muestra el predeterminado actual del canal)",
-      "notes": "Emociones válidas: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Usa <span class=\"inline-code\">reset</span> para el valor predeterminado del sistema (neutral). Si configuras una emoción, el bot elimina el estilo predeterminado del canal.",
+      "notes": "Emociones válidas: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. El bot guarda las palabras de estilo de la emoción, por ejemplo, \"feliz y alegre\" para <span class=\"inline-code\">happy</span>. Usa <span class=\"inline-code\">reset</span> o <span class=\"inline-code\">neutral</span> para quitar el estilo predeterminado. Para describir la voz con tus propias palabras, usa <span class=\"inline-code\">!tts defaultstyle</span>.",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -480,7 +480,7 @@
       },
       "offDesc": "(elimina tu estilo)",
       "statusDesc": "(muestra la preferencia personal actual)",
-      "notes": "Un estilo es texto libre que le indica a la voz cómo hablar, y tiene un máximo de 120 caracteres. La voz no lee el estilo en voz alta, y un estilo no puede cambiar las palabras de un mensaje. Mientras tienes un estilo, el bot ignora tu emoción. Para tus mensajes, tu estilo también reemplaza el estilo o la emoción del canal. El bot rechaza un estilo que contiene una palabra prohibida del canal. Si el canal no permite preferencias de espectadores, el bot usa la configuración del canal."
+      "notes": "Un estilo indica a la voz cómo hablar y tiene un máximo de 120 caracteres. La voz no lee el estilo en voz alta y un estilo no puede cambiar las palabras de un mensaje. Para tus mensajes, tu estilo también reemplaza el estilo del canal. El bot rechaza un estilo que contenga una palabra prohibida del canal. Si el canal no permite preferencias de espectadores, el bot usa la configuración del canal."
     },
     "ttsDefaultstyle": {
       "name": "!tts defaultstyle <texto|off>",
@@ -492,7 +492,7 @@
       },
       "offDesc": "(elimina el estilo predeterminado)",
       "statusDesc": "(muestra el valor predeterminado actual del canal)",
-      "notes": "Un estilo es texto libre que indica a la voz cómo hablar y tiene un máximo de 120 caracteres. La voz no lee el estilo en voz alta y un estilo no puede cambiar las palabras de un mensaje. Mientras el canal tiene un estilo predeterminado, el bot ignora la emoción predeterminada. El estilo o la emoción de un espectador reemplaza el estilo predeterminado para los mensajes de ese espectador. El bot rechaza un estilo que contiene una palabra prohibida del canal. También puedes establecer el estilo en el Web Dashboard."
+      "notes": "Un estilo indica a la voz cómo hablar y tiene un máximo de 120 caracteres. La voz no lee el estilo en voz alta y un estilo no puede cambiar las palabras de un mensaje. El estilo de un espectador reemplaza el estilo predeterminado para los mensajes de ese espectador. El bot rechaza un estilo que contenga una palabra prohibida del canal. También puedes establecer el estilo en el Web Dashboard."
     },
     "ttsTags": {
       "name": "!tts tags <off|on> <tag|all>",
@@ -645,7 +645,7 @@
     "settingBannedWordsTitle": "Palabras / Frases prohibidas:",
     "settingBannedWordsDesc": "Bloquea palabras o frases específicas para que TTS omita mensajes coincidentes.",
     "settingVoiceTitle": "Configuración de Voz Predeterminada:",
-    "settingVoiceDesc": "Establece los valores predeterminados del canal para voz, volumen, estilo, emoción, velocidad, tono e idioma.",
+    "settingVoiceDesc": "Establece los valores predeterminados del canal para voz, volumen, estilo, velocidad, tono e idioma.",
     "settingObsTitle": "Configuración de fuente de navegador OBS:",
     "settingObsDesc": "Obtén tu URL segura de fuente de navegador para OBS e instrucciones de configuración.",
     "settingPreviewTitle": "Vista Previa de Voz:",
@@ -674,7 +674,7 @@
     "obsImportantDesc": "Asegúrate de que la fuente no esté silenciada en tu mezclador de audio y que el volumen esté ajustado correctamente.",
     "voiceCalibrationTitle": "Calibración de voz",
     "voiceCalibrationIntro": "Algunas voces son naturalmente más altas o más bajas que otras. La Calibración de Voz te permite definir multiplicadores de volumen para voces individuales para equilibrar los niveles de audio.",
-    "voiceCalibrationFeature1": "<strong>Volumen por Voz:</strong> Selecciona una voz y asigna un multiplicador (0.1x a 2.0x). <em>(Precaución: Valores superiores a 1.0 pueden sonar muy altos)</em>",
+    "voiceCalibrationFeature1": "<strong>Volumen por voz:</strong> Selecciona una voz y asigna un multiplicador de volumen (de 0.1x a 2.0x). <em>(Precaución: los valores superiores a 1.0 pueden sonar fuerte)</em>",
     "voiceCalibrationFeature2": "<strong>Aplicación Automática:</strong> Cuando un espectador elige una voz calibrada, el bot aplica el volumen personalizado automáticamente.",
     "voiceCalibrationFeature3": "<strong>Prioridad:</strong> Los volúmenes de voz calibrados tienen prioridad sobre el volumen por defecto del canal.",
     "settingCalibrationTitle": "Calibración de voz:",
@@ -686,8 +686,8 @@
     "voiceDefaultsTitle": "Configuración de voz predeterminada",
     "voiceDefaultsIntro": "La configuración de voz predeterminada se aplica a cada mensaje de un espectador que no tiene configuración personal. Usa Vista previa de voz para escuchar el resultado antes de transmitir en directo.",
     "voiceDefaultsVoice": "Para encontrar una voz, busca en las descripciones o filtra por idioma, género y tono. La <a href=\"tts-voices.html#voices\" class=\"default-link-style\">lista de voces</a> en esta documentación tiene las mismas voces.",
-    "voiceDefaultsStyle": "Un estilo es texto libre que indica a la voz cómo hablar, por ejemplo \"susurrando\". Tiene un máximo de 120 caracteres y la voz no lo lee en voz alta.",
-    "voiceDefaultsEmotion": "Una emoción es un estilo preestablecido, como <span class=\"inline-code\">happy</span> o <span class=\"inline-code\">calm</span>. Una emoción y un estilo no funcionan juntos. Cuando estableces uno, el bot elimina el otro.",
+    "voiceDefaultsStyle": "Un estilo indica a la voz cómo hablar, por ejemplo, \"susurrando\". Escribe tus propias palabras o selecciona un ajuste preestablecido para poner sus palabras en el cuadro. Puedes cambiar las palabras de un ajuste preestablecido. Un estilo tiene un máximo de 120 caracteres y la voz no lo lee en voz alta.",
+    "voiceDefaultsEmotion": "El comando de chat <span class=\"inline-code\">!tts emotion</span> es el nombre anterior de <span class=\"inline-code\">!tts style</span>. Establece las palabras de estilo de un nombre de emoción, por ejemplo, \"feliz y alegre\" para <span class=\"inline-code\">happy</span>.",
     "voiceDefaultsSpeedPitch": "La velocidad y el tono tienen cinco niveles cada uno. El resultado es aproximado, porque el bot indica a la voz con palabras cómo hablar.",
     "voiceDefaultsVolume": "El volumen es exacto, porque el bot lo aplica al audio después de que la voz habla.",
     "voiceDefaultsLanguage": "El idioma es una pista para texto corto o poco claro, como un número. Consulta <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Idioma</a>.",
@@ -704,7 +704,7 @@
     "q4": "¿La generación de TTS tarda demasiado o falla?",
     "a4": "El audio suele comenzar aproximadamente medio segundo después de que el bot recibe el mensaje. Si el modelo de voz falla, el bot lo intenta de nuevo automáticamente. Si un mensaje se queda en la cola y no se reproduce, usa <span class=\"inline-code\">!tts stop</span> para cancelarlo.",
     "q5": "¿La emoción no funciona?",
-    "a5": "Usa <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span> o <span class=\"inline-code\">fluent</span>. Un estilo personalizado reemplaza la emoción. Para volver a usar la emoción, quita el estilo con <span class=\"inline-code\">!tts style off</span> (o <span class=\"inline-code\">!tts defaultstyle off</span> para el canal).",
+    "a5": "Una emoción es un estilo. <span class=\"inline-code\">!tts emotion happy</span> establece el estilo \"feliz y alegre\". Para ver tu estilo, usa <span class=\"inline-code\">!tts style</span>. Para quitarlo, usa <span class=\"inline-code\">!tts style off</span> (o <span class=\"inline-code\">!tts defaultstyle off</span> para el canal).",
     "q6": "¿Necesitas ayuda?",
     "a6": "Contacta con el desarrollador mediante el <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">formulario de contacto</a> en el sitio web de Henry.",
     "qVoiceChanged": "¿La voz suena diferente que antes?",

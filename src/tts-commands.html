@@ -177,7 +177,7 @@ extraScripts:
                         <code data-i18n-cmd="commands.ttsPrefs.usage.settings">!tts settings</code>
                     </div>
                     <ul>
-                        <li data-i18n="commands.ttsPrefs.feature1">Set your own voice, style, emotion, speed, pitch, and language for this channel.</li>
+                        <li data-i18n="commands.ttsPrefs.feature1">Set your own voice, style, speed, pitch, and language for this channel.</li>
                         <li data-i18n="commands.ttsPrefs.feature2">Includes an Opt out of TTS section. You can opt
                             out of TTS in one channel or in every channel, and you can opt back in. If a moderator
                             opted you out of a channel, only a moderator can undo that. When you opt out in every
@@ -548,7 +548,7 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsEmotion.name">!tts emotion &lt;emotion_name|reset|auto&gt;</td>
-                <td data-i18n-key="commands.ttsEmotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmotion"><span class="description-text">Sets your personal emotion preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsEmotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsEmotion"><span class="description-text">Sets your style from an emotion name. This command is the old name of !tts style.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsEmotion" hidden="until-found">
                 <td colspan="2">
@@ -563,7 +563,7 @@ extraScripts:
                         <span data-i18n="commands.ttsEmotion.statusDesc">(displays current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsEmotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, <span class="inline-code">fluent</span>. Use <span class="inline-code">reset</span> for the channel default. If you set an emotion, the bot removes your custom style.</span></p>
+                            data-i18n="commands.ttsEmotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, <span class="inline-code">fluent</span>. The bot stores the style words of the emotion, for example "happy and cheerful" for <span class="inline-code">happy</span>. Use <span class="inline-code">reset</span> for the channel default. To describe the voice in your own words, use <span class="inline-code">!tts style</span>.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -592,7 +592,7 @@ extraScripts:
                         <span data-i18n="commands.ttsStyle.statusDesc">(shows current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsStyle.notes">A style is free text that tells the voice how to speak, and it has a maximum of 120 characters. The voice does not read the style aloud, and a style cannot change the words of a message. While you have a style, the bot ignores your emotion. For your messages, your style also replaces the style or emotion of the channel. The bot refuses a style that contains a banned word of the channel. If the channel does not allow viewer preferences, the bot uses the channel settings.</span></p>
+                            data-i18n="commands.ttsStyle.notes">A style tells the voice how to speak, and it has a maximum of 120 characters. The voice does not read the style aloud, and a style cannot change the words of a message. For your messages, your style also replaces the style of the channel. The bot refuses a style that contains a banned word of the channel. If the channel does not allow viewer preferences, the bot uses the channel settings.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -822,7 +822,7 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultemotion.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultemotion
                     &lt;emotion_name|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultemotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultemotion"><span class="description-text">Sets the default TTS emotion for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultemotion.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultemotion"><span class="description-text">Sets the default style for the channel from an emotion name. This command is the old name of !tts defaultstyle.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsDefaultemotion" hidden="until-found">
                 <td colspan="2">
@@ -840,7 +840,7 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultemotion.statusDesc">(displays current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultemotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, <span class="inline-code">fluent</span>. Use <span class="inline-code">reset</span> for the system default (neutral). If you set an emotion, the bot removes the default style of the channel.</span></p>
+                            data-i18n="commands.ttsDefaultemotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, <span class="inline-code">fluent</span>. The bot stores the style words of the emotion, for example "happy and cheerful" for <span class="inline-code">happy</span>. Use <span class="inline-code">reset</span> or <span class="inline-code">neutral</span> to remove the default style. To describe the voice in your own words, use <span class="inline-code">!tts defaultstyle</span>.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -865,7 +865,7 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultstyle.statusDesc">(shows current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultstyle.notes">A style is free text that tells the voice how to speak, and it has a maximum of 120 characters. The voice does not read the style aloud, and a style cannot change the words of a message. While the channel has a default style, the bot ignores the default emotion. The style or emotion of a viewer replaces the default style for the messages of that viewer. The bot refuses a style that contains a banned word of the channel. You can also set the style in the Web Dashboard.</span></p>
+                            data-i18n="commands.ttsDefaultstyle.notes">A style tells the voice how to speak, and it has a maximum of 120 characters. The voice does not read the style aloud, and a style cannot change the words of a message. The style of a viewer replaces the default style for the messages of that viewer. The bot refuses a style that contains a banned word of the channel. You can also set the style in the Web Dashboard.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
