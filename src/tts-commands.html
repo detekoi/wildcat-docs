@@ -71,7 +71,7 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsMessage.name">!tts &lt;message&gt;</td>
-                <td data-i18n-key="commands.ttsMessage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMessage"><span class="description-text">Adds the message to the TTS queue immediately. This command works in all and command modes. TTS uses your preferences (or channel defaults) for voice, pitch, speed, and emotion.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsMessage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMessage"><span class="description-text">Adds the message to the TTS queue immediately. This command works in all and command modes. TTS uses your preferences (or channel defaults) for voice, style, emotion, speed, and pitch.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsMessage" hidden="until-found">
                 <td colspan="2">
@@ -100,8 +100,7 @@ extraScripts:
                         <code data-i18n-cmd="commands.ttsStatus.usage.basic">!tts status</code>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsStatus.notes">Shows engine state, mode, queue length,
-                            default voice, pitch, speed, emotion, and language boost settings.</span></p>
+                            data-i18n="commands.ttsStatus.notes">Shows the engine state, the mode, the queue length, the pause state, and the default voice.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyone">Everyone</span></p>
                 </td>
@@ -142,7 +141,7 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsCommands.name">!tts commands<br><span style="font-size:0.9em;"
                         data-i18n="commands.ttsCommands.alias">(Alias: !tts help)</span></td>
-                <td data-i18n-key="commands.ttsCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsCommands"><span class="description-text">Shows a link to the full list of <span class="inline-code">!tts</span> subcommands.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsCommands.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsCommands"><span class="description-text">Shows a link to the full list of !tts subcommands.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsCommands" hidden="until-found">
                 <td colspan="2">
@@ -178,8 +177,7 @@ extraScripts:
                         <code data-i18n-cmd="commands.ttsPrefs.usage.settings">!tts settings</code>
                     </div>
                     <ul>
-                        <li data-i18n="commands.ttsPrefs.feature1">Set your own voice, pitch, speed,
-                            emotion, and language for this channel.</li>
+                        <li data-i18n="commands.ttsPrefs.feature1">Set your own voice, style, emotion, speed, pitch, and language for this channel.</li>
                         <li data-i18n="commands.ttsPrefs.feature2">Includes an Opt out of TTS section. You can opt
                             out of TTS in one channel or in every channel, and you can opt back in. If a moderator
                             opted you out of a channel, only a moderator can undo that. When you opt out in every
@@ -527,7 +525,10 @@ extraScripts:
             <tr class="dropdown-details" id="dd-commands-ttsVoice" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
-                        <code data-i18n-cmd="commands.ttsVoice.usage.example">!tts voice Friendly_Person</code>
+                        <code data-i18n-cmd="commands.ttsVoice.usage.example">!tts voice puck</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsVoice.usage.library">!tts voice en-gb-storyteller-3</code>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsVoice.usage.reset">!tts voice reset</code>
@@ -537,7 +538,7 @@ extraScripts:
                         <span data-i18n="commands.ttsVoice.statusDesc">(displays current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsVoice.notes">Use <span class="inline-code">reset</span> to use the channel default voice. Use <span class="inline-code">!tts voices</span> to get a list of voice IDs.</span></p>
+                            data-i18n="commands.ttsVoice.notes">Use <span class="inline-code">reset</span> to use the channel default voice. Find the voice IDs in the <a href="tts-voices.html#voices" class="default-link-style">voice list</a>. The command <span class="inline-code">!tts voices</span> gives the link in chat.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -562,12 +563,36 @@ extraScripts:
                         <span data-i18n="commands.ttsEmotion.statusDesc">(displays current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsEmotion.notes">Valid emotions: <span
-                                class="inline-code">neutral</span>, <span class="inline-code">happy</span>,
-                            <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span
-                                class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>,
-                            <span class="inline-code">surprised</span>. Use <span
-                                class="inline-code">reset</span> for the channel default.</span></p>
+                            data-i18n="commands.ttsEmotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, <span class="inline-code">fluent</span>. Use <span class="inline-code">reset</span> for the channel default. If you set an emotion, the bot removes your custom style.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
+                            preference)</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsStyle.name">!tts style &lt;text|off&gt;</td>
+                <td data-i18n-key="commands.ttsStyle.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsStyle"><span class="description-text">Sets how the voice speaks your chat messages, in your own words.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsStyle" hidden="until-found">
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsStyle.usage.example">!tts style whispering</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsStyle.usage.phrase">!tts style like a tired pirate</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsStyle.usage.off">!tts style off</code>
+                        <span data-i18n="commands.ttsStyle.offDesc">(removes your style)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsStyle.usage.status">!tts style</code>
+                        <span data-i18n="commands.ttsStyle.statusDesc">(shows current personal preference)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsStyle.notes">A style is free text that tells the voice how to speak, and it has a maximum of 120 characters. The voice does not read the style aloud, and a style cannot change the words of a message. While you have a style, the bot ignores your emotion. For your messages, your style also replaces the style or emotion of the channel. The bot refuses a style that contains a banned word of the channel. If the channel does not allow viewer preferences, the bot uses the channel settings.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -579,7 +604,7 @@ extraScripts:
                 <td data-i18n-key="commands.ttsLanguage.name">!tts language &lt;language|reset&gt;<br><span
                         style="font-size:0.9em;" data-i18n="commands.ttsLanguage.alias">(Alias: !tts
                         lang)</span></td>
-                <td data-i18n-key="commands.ttsLanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsLanguage"><span class="description-text">Sets your personal language boost preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
+                <td data-i18n-key="commands.ttsLanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsLanguage"><span class="description-text">Sets your personal language preference for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span>
                 </button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsLanguage" hidden="until-found">
@@ -598,7 +623,7 @@ extraScripts:
                         <span data-i18n="commands.ttsLanguage.statusDesc">(displays current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsLanguage.notes">Language boost improves pronunciation for a language. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the channel default. See <a href="tts-voices.html#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> to see all options.</span></p>
+                            data-i18n="commands.ttsLanguage.notes">The language is a hint for short or unclear text, such as a number. Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the channel default. See the <a href="tts-voices.html#language-boost" class="default-link-style">Language</a> section or use <span class="inline-code">!tts languageslist</span> to see all options.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -607,13 +632,13 @@ extraScripts:
         </tbody>
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
-                <td data-i18n-key="commands.ttsPitch.name">!tts pitch &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsPitch.name">!tts pitch &lt;step|number|reset&gt;</td>
                 <td data-i18n-key="commands.ttsPitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsPitch"><span class="description-text">Sets your personal TTS pitch for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsPitch" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
-                        <code data-i18n-cmd="commands.ttsPitch.usage.positive">!tts pitch 2</code>
+                        <code data-i18n-cmd="commands.ttsPitch.usage.word">!tts pitch high</code>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsPitch.usage.negative">!tts pitch -3</code>
@@ -626,7 +651,7 @@ extraScripts:
                         <span data-i18n="commands.ttsPitch.statusDesc">(displays current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsPitch.notes">Value must be an integer from -12 to 12 (0 is default). Use <span class="inline-code">reset</span> for the channel default.</span></p>
+                            data-i18n="commands.ttsPitch.notes">Pitch has five steps: <span class="inline-code">very-low</span>, <span class="inline-code">low</span>, <span class="inline-code">normal</span>, <span class="inline-code">high</span>, <span class="inline-code">very-high</span>. You can also type a whole number from -12 to 12. The bot changes a number to the nearest step. The result is approximate, because the bot tells the voice in words how to speak. Use <span class="inline-code">reset</span> for the channel default.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -635,13 +660,13 @@ extraScripts:
         </tbody>
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
-                <td data-i18n-key="commands.ttsSpeed.name">!tts speed &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsSpeed.name">!tts speed &lt;step|number|reset&gt;</td>
                 <td data-i18n-key="commands.ttsSpeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsSpeed"><span class="description-text">Sets your personal TTS speech speed for your chat messages.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsSpeed" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
-                        <code data-i18n-cmd="commands.ttsSpeed.usage.faster">!tts speed 1.2</code>
+                        <code data-i18n-cmd="commands.ttsSpeed.usage.word">!tts speed fast</code>
                     </div>
                     <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsSpeed.usage.slower">!tts speed 0.8</code>
@@ -654,7 +679,7 @@ extraScripts:
                         <span data-i18n="commands.ttsSpeed.statusDesc">(displays current personal preference)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsSpeed.notes">Value must be a number from 0.5 to 2.0 (1.0 is default). Use <span class="inline-code">reset</span> for the channel default.</span></p>
+                            data-i18n="commands.ttsSpeed.notes">Speed has five steps: <span class="inline-code">very-slow</span>, <span class="inline-code">slow</span>, <span class="inline-code">normal</span>, <span class="inline-code">fast</span>, <span class="inline-code">very-fast</span>. You can also type a number from 0.5 to 2.0. The bot changes a number to the nearest step. The result is approximate, because the bot tells the voice in words how to speak. Use <span class="inline-code">reset</span> for the channel default.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.everyoneOwnPreference">Everyone (for their own
                             preference)</span></p>
@@ -775,7 +800,7 @@ extraScripts:
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.ttsDefaultvoice.usage.example">!tts defaultvoice Friendly_Person</code>
+                            data-i18n-cmd="commands.ttsDefaultvoice.usage.example">!tts defaultvoice kore</code>
                     </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -787,7 +812,7 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultvoice.statusDesc">(displays current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultvoice.notes">Use <span class="inline-code">reset</span> for the system default. Use <span class="inline-code">!tts voices</span> to see available voice IDs.</span></p>
+                            data-i18n="commands.ttsDefaultvoice.notes">Use <span class="inline-code">reset</span> for the system default. Find the voice IDs in the <a href="tts-voices.html#voices" class="default-link-style">voice list</a>. The command <span class="inline-code">!tts voices</span> gives the link in chat.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -815,7 +840,32 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultemotion.statusDesc">(displays current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultemotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>. Use <span class="inline-code">reset</span> for the system default (<span class="inline-code">neutral</span>).</span></p>
+                            data-i18n="commands.ttsDefaultemotion.notes">Valid emotions: <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, <span class="inline-code">fluent</span>. Use <span class="inline-code">reset</span> for the system default (neutral). If you set an emotion, the bot removes the default style of the channel.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsDefaultstyle.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultstyle &lt;text|off&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultstyle.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultstyle"><span class="description-text">Sets the default style for the channel, in your own words.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsDefaultstyle" hidden="until-found">
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsDefaultstyle.usage.example">!tts defaultstyle calm and friendly</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsDefaultstyle.usage.off">!tts defaultstyle off</code>
+                        <span data-i18n="commands.ttsDefaultstyle.offDesc">(removes the default style)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsDefaultstyle.usage.status">!tts defaultstyle</code>
+                        <span data-i18n="commands.ttsDefaultstyle.statusDesc">(shows current channel default)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsDefaultstyle.notes">A style is free text that tells the voice how to speak, and it has a maximum of 120 characters. The voice does not read the style aloud, and a style cannot change the words of a message. While the channel has a default style, the bot ignores the default emotion. The style or emotion of a viewer replaces the default style for the messages of that viewer. The bot refuses a style that contains a banned word of the channel. You can also set the style in the Web Dashboard.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -825,7 +875,7 @@ extraScripts:
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsDefaultlanguage.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultlanguage
                     &lt;language|reset&gt;</td>
-                <td data-i18n-key="commands.ttsDefaultlanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultlanguage"><span class="description-text">Sets the default TTS language boost for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+                <td data-i18n-key="commands.ttsDefaultlanguage.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultlanguage"><span class="description-text">Sets the default TTS language for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsDefaultlanguage" hidden="until-found">
                 <td colspan="2">
@@ -843,7 +893,7 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultlanguage.statusDesc">(displays current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultlanguage.notes">Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the system default. See <a href="tts-voices.html#language-boost" class="default-link-style">Language Boost</a> section or use <span class="inline-code">!tts languageslist</span> to see available options.</span></p>
+                            data-i18n="commands.ttsDefaultlanguage.notes">Use <span class="inline-code">reset</span> or <span class="inline-code">auto</span> for the system default. See the <a href="tts-voices.html#language-boost" class="default-link-style">Language</a> section or use <span class="inline-code">!tts languageslist</span> to see all options.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -851,15 +901,14 @@ extraScripts:
         </tbody>
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
-                <td data-i18n-key="commands.ttsDefaultpitch.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultpitch
-                    &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultpitch.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultpitch &lt;step|number|reset&gt;</td>
                 <td data-i18n-key="commands.ttsDefaultpitch.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultpitch"><span class="description-text">Sets the default TTS pitch for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsDefaultpitch" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.ttsDefaultpitch.usage.example">!tts defaultpitch 2</code>
+                            data-i18n-cmd="commands.ttsDefaultpitch.usage.example">!tts defaultpitch low</code>
                     </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -871,7 +920,7 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultpitch.statusDesc">(displays current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultpitch.notes">Value must be an integer from -12 to 12 (0 is default). Use <span class="inline-code">reset</span> for the system default (0).</span></p>
+                            data-i18n="commands.ttsDefaultpitch.notes">Pitch has five steps: <span class="inline-code">very-low</span>, <span class="inline-code">low</span>, <span class="inline-code">normal</span>, <span class="inline-code">high</span>, <span class="inline-code">very-high</span>. You can also type a whole number from -12 to 12. The bot changes a number to the nearest step. The result is approximate, because the bot tells the voice in words how to speak. Use <span class="inline-code">reset</span> for the system default (<span class="inline-code">normal</span>).</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -879,15 +928,14 @@ extraScripts:
         </tbody>
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
-                <td data-i18n-key="commands.ttsDefaultspeed.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultspeed
-                    &lt;value|reset&gt;</td>
+                <td data-i18n-key="commands.ttsDefaultspeed.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts defaultspeed &lt;step|number|reset&gt;</td>
                 <td data-i18n-key="commands.ttsDefaultspeed.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsDefaultspeed"><span class="description-text">Sets the default TTS speed for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsDefaultspeed" hidden="until-found">
                 <td colspan="2">
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
-                            data-i18n-cmd="commands.ttsDefaultspeed.usage.example">!tts defaultspeed 1.2</code>
+                            data-i18n-cmd="commands.ttsDefaultspeed.usage.example">!tts defaultspeed fast</code>
                     </div>
                     <div class="usage-line">
                         <span class="mod-badge mod-badge-leading">Mod</span><code
@@ -899,7 +947,7 @@ extraScripts:
                         <span data-i18n="commands.ttsDefaultspeed.statusDesc">(displays current channel default)</span>
                     </div>
                     <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
-                            data-i18n="commands.ttsDefaultspeed.notes">Value must be a number from 0.5 to 2.0 (1.0 is default). Use <span class="inline-code">reset</span> for the system default (1.0).</span></p>
+                            data-i18n="commands.ttsDefaultspeed.notes">Speed has five steps: <span class="inline-code">very-slow</span>, <span class="inline-code">slow</span>, <span class="inline-code">normal</span>, <span class="inline-code">fast</span>, <span class="inline-code">very-fast</span>. You can also type a number from 0.5 to 2.0. The bot changes a number to the nearest step. The result is approximate, because the bot tells the voice in words how to speak. Use <span class="inline-code">reset</span> for the system default (<span class="inline-code">normal</span>).</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -1056,6 +1104,38 @@ extraScripts:
                             <span class="inline-code">on</span> and <span class="inline-code">off</span> words
                             still work: <span class="inline-code">on</span> is the same as
                             <span class="inline-code">block</span>.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsTags.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts tags &lt;off|on&gt; &lt;tag|all&gt;</td>
+                <td data-i18n-key="commands.ttsTags.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsTags"><span class="description-text">Turns sound tags such as <span class="inline-code">&lt;laugh&gt;</span> off or on for the channel.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsTags" hidden="until-found">
+                <td colspan="2">
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsTags.usage.off">!tts tags off scream</code>
+                        <span data-i18n="commands.ttsTags.offNote">(the bot removes this tag from messages)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsTags.usage.on">!tts tags on scream</code>
+                        <span data-i18n="commands.ttsTags.onNote">(the voice makes this sound again)</span>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsTags.usage.offAll">!tts tags off all</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsTags.usage.onAll">!tts tags on all</code>
+                    </div>
+                    <div class="usage-line">
+                        <span class="mod-badge mod-badge-leading">Mod</span><code data-i18n-cmd="commands.ttsTags.usage.list">!tts tags list</code>
+                        <span data-i18n="commands.ttsTags.listNote">(shows the tags that are off)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsTags.notes">A sound tag is a word in angle brackets that the voice turns into a sound, for example <span class="inline-code">&lt;laugh&gt;</span>. All tags are on by default. When a tag is off, the bot removes it from messages. See <a href="tts-filtering.html#sound-tags" class="default-link-style">Sound Tags</a> for the list of tags. You can also change the tags in the Web Dashboard.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>

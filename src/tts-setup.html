@@ -6,6 +6,7 @@ title: "Set up the dashboard & OBS – Wildcat Docs"
 description: "Configure WildcatTTS in the Web Dashboard, calibrate voice volume, and add the audio to OBS."
 toc:
   - ["web-dashboard-settings", "webDashboard.settingsTitle", "Available Dashboard Settings"]
+  - ["web-dashboard-voicedefaults", "webDashboard.voiceDefaultsTitle", "Default Voice Settings"]
   - ["web-dashboard-voicecalibration", "webDashboard.voiceCalibrationTitle", "Voice Calibration"]
   - ["web-dashboard-obssetup", "webDashboard.obsSetupTitle", "OBS Browser Source Setup"]
 ---
@@ -26,8 +27,7 @@ toc:
                 data-i18n="webDashboard.settingViewerDesc">Allow viewer custom voices, or force the channel default
                 voice for all messages.</span></li>
         <li><strong data-i18n="webDashboard.settingAllowPreferencesTitle">Allow Viewer Voice Preferences:</strong> <span
-                data-i18n="webDashboard.settingAllowPreferencesDesc">Allow viewers to choose custom voices with
-                !myvoice, or lock TTS to the channel default voice.</span></li>
+                data-i18n="webDashboard.settingAllowPreferencesDesc">Allow viewers to use their own voice, style, and other preferences from !myvoice, or use the channel defaults for all messages.</span></li>
         <li><strong data-i18n="webDashboard.settingBotChatTitle">Bot Responds in Chat:</strong> <span
                 data-i18n="webDashboard.settingBotChatDesc">Turn chat text replies on or off while keeping TTS
                 voice audio active.</span></li>
@@ -65,9 +65,10 @@ toc:
         <li><strong data-i18n="webDashboard.settingBannedWordsTitle">Banned Words / Phrases:</strong> <span
                 data-i18n="webDashboard.settingBannedWordsDesc">Block specific words or phrases so TTS skips matching
                 messages.</span></li>
+        <li><strong data-i18n="webDashboard.settingSoundTagsTitle">Sound Tags:</strong> <span
+                data-i18n="webDashboard.settingSoundTagsDesc">Turn single sound tags, such as <span class="inline-code">&lt;scream&gt;</span>, off or on.</span></li>
         <li><strong data-i18n="webDashboard.settingVoiceTitle">Default Voice Settings:</strong> <span
-                data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, volume, emotion,
-                pitch, speed, language, and text normalization.</span></li>
+                data-i18n="webDashboard.settingVoiceDesc">Set channel defaults for voice, volume, style, emotion, speed, pitch, and language.</span></li>
         <li><strong data-i18n="webDashboard.settingCalibrationTitle">Voice Calibration:</strong> <span
                 data-i18n="webDashboard.settingCalibrationDesc">Set volume multipliers for individual voices to
                 balance audio levels.</span></li>
@@ -76,6 +77,17 @@ toc:
                 instructions.</span></li>
         <li><strong data-i18n="webDashboard.settingPreviewTitle">Voice Preview:</strong> <span
                 data-i18n="webDashboard.settingPreviewDesc">Test your voice settings before you go live.</span></li>
+    </ul>
+
+    <h3 id="web-dashboard-voicedefaults" data-i18n="webDashboard.voiceDefaultsTitle">Default Voice Settings</h3>
+    <p data-i18n="webDashboard.voiceDefaultsIntro">The default voice settings apply to each message from a viewer who has no personal settings. Use Voice Preview to hear the result before you go live.</p>
+    <ul>
+        <li data-i18n="webDashboard.voiceDefaultsVoice">To find a voice, search the descriptions or filter by language, gender, and pitch. The <a href="tts-voices.html#voices" class="default-link-style">voice list</a> in this documentation has the same voices.</li>
+        <li data-i18n="webDashboard.voiceDefaultsStyle">A style is free text that tells the voice how to speak, for example "whispering". It has a maximum of 120 characters, and the voice does not read it aloud.</li>
+        <li data-i18n="webDashboard.voiceDefaultsEmotion">An emotion is a preset style, such as <span class="inline-code">happy</span> or <span class="inline-code">calm</span>. An emotion and a style do not work together. When you set one, the bot removes the other.</li>
+        <li data-i18n="webDashboard.voiceDefaultsSpeedPitch">Speed and pitch have five steps each. The result is approximate, because the bot tells the voice in words how to speak.</li>
+        <li data-i18n="webDashboard.voiceDefaultsVolume">The volume is exact, because the bot applies it to the audio after the voice speaks.</li>
+        <li data-i18n="webDashboard.voiceDefaultsLanguage">The language is a hint for short or unclear text, such as a number. See <a href="tts-voices.html#language-boost" class="default-link-style">Language</a>.</li>
     </ul>
 
     <h3 id="web-dashboard-voicecalibration" data-i18n="webDashboard.voiceCalibrationTitle">Voice Calibration</h3>
@@ -131,4 +143,9 @@ toc:
     <p><strong data-i18n="webDashboard.obsImportantTitle">Important:</strong> <span
             data-i18n="webDashboard.obsImportantDesc">Make sure that the source is unmuted in your audio mixer
             and the volume is set appropriately.</span></p>
+    <div class="expand-tip wc-note">
+        <div class="tip-content">
+            <div class="tip-text" data-i18n="webDashboard.obsRefreshTip">A browser source from before the change to the Gemini voices continues to work. If you refresh the browser source one time, the audio starts sooner.</div>
+        </div>
+    </div>
 </section>

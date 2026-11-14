@@ -89,14 +89,14 @@ module.exports = [
             },
             {
                 id: "tts-voices", url: "tts-voices.html", catalog: "wildcat-tts",
-                title: "Voices & language boost",
-                lede: "Pick a voice from the full list, and tell the voice engine which language your chat speaks.",
+                title: "Voices and language",
+                lede: "Search the full list of voices, and set a language hint for short or unclear messages.",
                 sections: ["voices", "language-boost"],
             },
             {
                 id: "tts-filtering", url: "tts-filtering.html", catalog: "wildcat-tts",
                 title: "Filtering & pronunciation",
-                lede: "Control what TTS says aloud: describe emotes, expand chat short forms, soften rude words, and skip messages with banned words.",
+                lede: "Control what TTS says aloud: describe emotes, expand chat short forms, turn sound tags off, soften rude words, and skip messages with banned words.",
                 sections: ["emote-descriptions", "pronunciation", "profanity-filter", "banned-words"],
             },
             {

@@ -16,21 +16,23 @@ description: "Fixes for the most common WildcatTTS problems."
                 data-i18n="troubleshooting.a2">Make sure that TTS is enabled with <span class="inline-code">!tts on</span>
                 in chat. Also check the active mode with <span class="inline-code">!tts mode</span> and permissions
                 with <span class="inline-code">!tts permission</span>.</span></li>
-        <li><strong data-i18n="troubleshooting.q3">Bot not speaking in a specific language, or reading numbers
-                in Chinese?</strong> <span data-i18n="troubleshooting.a3">Set Language Boost to your language with
-                <span class="inline-code">!tts language &lt;language_name&gt;</span> (or <span
-                    class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel). Show
-                the active setting with <span class="inline-code">!tts defaultlanguage</span>.</span></li>
+        <li><strong data-i18n="troubleshooting.q3">Numbers or short messages in the wrong language?</strong> <span data-i18n="troubleshooting.a3">The voice finds the language from the text of each message. A number or a very short message gives too little text. Set the language with <span class="inline-code">!tts language &lt;language_name&gt;</span> (or <span class="inline-code">!tts defaultlanguage &lt;language_name&gt;</span> for the channel). To see the active setting, use <span class="inline-code">!tts defaultlanguage</span>.</span></li>
         <li><strong data-i18n="troubleshooting.q4">TTS generation taking too long or failing?</strong> <span
-                data-i18n="troubleshooting.a4">The bot uses 302.ai with automatic fallback to Wavespeed AI. If
-                audio delays occur, use <span class="inline-code">!tts stop</span> to cancel stuck generation.
-                The bot retries failed requests automatically.</span></li>
+                data-i18n="troubleshooting.a4">The audio usually starts about half a second after the bot gets the message. If the speech model fails, the bot tries again automatically. If a message stays in the queue and does not play, use <span class="inline-code">!tts stop</span> to cancel it.</span></li>
         <li><strong data-i18n="troubleshooting.q5">Emotion not working?</strong> <span
-                data-i18n="troubleshooting.a5">The auto emotion is not supported. Use <span
-                    class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span
-                    class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span
-                    class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, or <span
-                    class="inline-code">surprised</span>.</span></li>
+                data-i18n="troubleshooting.a5">Use <span class="inline-code">neutral</span>, <span class="inline-code">happy</span>, <span class="inline-code">sad</span>, <span class="inline-code">angry</span>, <span class="inline-code">fearful</span>, <span class="inline-code">disgusted</span>, <span class="inline-code">surprised</span>, <span class="inline-code">calm</span>, or <span class="inline-code">fluent</span>. A custom style replaces the emotion. To use the emotion again, remove the style with <span class="inline-code">!tts style off</span> (or <span class="inline-code">!tts defaultstyle off</span> for the channel).</span></li>
+        <li><strong data-i18n="troubleshooting.qVoiceChanged">Voice sounds different from before?</strong> <span
+                data-i18n="troubleshooting.aVoiceChanged">WildcatTTS replaced its earlier voices with Gemini voices. The bot changed each saved voice to the nearest new voice, so the voice does not sound the same. To select a different voice, search the <a href="tts-voices.html#voices" class="default-link-style">voice list</a>.</span></li>
+        <li><strong data-i18n="troubleshooting.qExpressive">Voice laughs, sighs, or sounds different from message to message?</strong> <span
+                data-i18n="troubleshooting.aExpressive">This behavior is normal. The new voices read chat more like a person. The voice can turn "lol" or "lmao" into a real laugh, and it sometimes adds a small laugh or a sigh. The same voice also changes a little from message to message. The voice can read a message that is only "?" as "What?".</span></li>
+        <li><strong data-i18n="troubleshooting.qSoundTags">Voice screams, coughs, or makes other sounds?</strong> <span
+                data-i18n="troubleshooting.aSoundTags">A viewer typed a sound tag such as <span class="inline-code">&lt;scream&gt;</span>. Moderators can turn a tag off with <span class="inline-code">!tts tags off &lt;tag&gt;</span>. See <a href="tts-filtering.html#sound-tags" class="default-link-style">Sound Tags</a>.</span></li>
+        <li><strong data-i18n="troubleshooting.qApproximate">Speed or pitch not exact?</strong> <span
+                data-i18n="troubleshooting.aApproximate">Speed and pitch have five steps each. The result is approximate, because the bot tells the voice in words how to speak. The volume is exact.</span></li>
+        <li><strong data-i18n="troubleshooting.qSkipped">One message skipped without a reason?</strong> <span
+                data-i18n="troubleshooting.aSkipped">The speech model from Google has a content filter. If the content filter refuses a message, the bot skips that message and gives no error. The bot also skips a message that contains a banned word, and messages from ignored users.</span></li>
+        <li><strong data-i18n="troubleshooting.qObsRefresh">Is a refresh of the OBS browser source necessary?</strong> <span
+                data-i18n="troubleshooting.aObsRefresh">No. A browser source from before the change to the Gemini voices continues to work. If you refresh the browser source one time, the audio starts sooner.</span></li>
         <li><strong data-i18n="troubleshooting.q6">Need help?</strong> <span
                 data-i18n="troubleshooting.a6">Contact the developer through the <a
                     href="https://parfaitfair.com/#contact" class="default-link-style"

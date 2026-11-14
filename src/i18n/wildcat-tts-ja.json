@@ -9,7 +9,7 @@
     "toggleSubmenu": "サブメニューの切り替え",
     "ttsCommands": "読み上げコマンド",
     "voices": "音声",
-    "languageBoost": "言語ブースト",
+    "languageBoost": "言語",
     "emoteDescriptions": "エモート説明",
     "webDashboard": "Webダッシュボード",
     "troubleshooting": "トラブルシューティング",
@@ -48,7 +48,7 @@
     "ttsStatus": {
       "name": "!tts status",
       "description": "チャンネルの現在のTTS状態を表示します。",
-      "notes": "エンジン状態、モード、キューの長さ、標準音声、音程、速度、感情、言語ブースト設定を表示します。",
+      "notes": "エンジンの状態、モード、キューの長さ、一時停止の状態、およびデフォルトの音声を表示します。",
       "usage": {
         "basic": "!tts status"
       }
@@ -62,7 +62,7 @@
     },
     "ttsLanguageslist": {
       "name": "!tts languageslist",
-      "description": "利用可能な言語ブースト設定一覧へのリンクを表示します。",
+      "description": "TTS言語オプションの一覧へのリンクを表示します。",
       "usage": {
         "basic": "!tts languageslist"
       }
@@ -80,7 +80,7 @@
       "name": "!tts prefs\n(エイリアス: !tts preferences, !tts settings)",
       "description": "個人用のTTS設定ページへのリンクを送信します。",
       "aliases": "(エイリアス: !tts preferences, !tts settings)",
-      "feature1": "このチャンネル専用の声、音程、速度、感情、言語を設定できます。",
+      "feature1": "このチャンネルで使用する自分の音声、スタイル、感情、速度、高さ、言語を設定します。",
       "feature2": "「TTS読み上げから除外」セクションがあります。1つのチャンネルまたはすべてのチャンネルでTTSから除外でき、元に戻すこともできます。モデレーターがチャンネルであなたを除外した場合、元に戻せるのはモデレーターだけです。すべてのチャンネルで除外しても、サブスク、Cheer、ギフトのアナウンスは引き続き行われますが、追加したメッセージは読み上げられません。TTSリワードを引き換えた場合、そのメッセージはTTSで読み上げられます。",
       "feature3": "ボットはチャンネル情報を読み込んだ状態で、リンクをチャットに投稿します。",
       "usage": {
@@ -227,18 +227,19 @@
       "name": "!tts voice <voice_id|reset>",
       "description": "自分のチャットメッセージ用の希望音声を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "チャンネル初期音声に戻すには <span class=\"inline-code\">reset</span> を指定します。音声ID一覧は <span class=\"inline-code\">!tts voices</span> で確認できます。",
+      "notes": "チャンネルのデフォルト音声を使用するには <span class=\"inline-code\">reset</span> を指定します。音声IDは<a href=\"tts-voices.html#voices\" class=\"default-link-style\">音声一覧</a>で確認できます。チャットで <span class=\"inline-code\">!tts voices</span> コマンドを実行するとリンクが表示されます。",
       "usage": {
-        "example": "!tts voice Friendly_Person",
+        "example": "!tts voice puck",
         "reset": "!tts voice reset",
-        "status": "!tts voice"
+        "status": "!tts voice",
+        "library": "!tts voice en-gb-storyteller-3"
       }
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
       "description": "自分のチャットメッセージ用の希望感情を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>。初期値に戻すには <span class=\"inline-code\">reset</span> を指定します。",
+      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、<span class=\"inline-code\">fluent</span>。チャンネルのデフォルトに戻すには <span class=\"inline-code\">reset</span> を指定します。感情を設定すると、カスタムスタイルは削除されます。",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -247,10 +248,10 @@
     },
     "ttsLanguage": {
       "name": "!tts language <言語|reset>\n(エイリアス: !tts lang)",
-      "description": "自分のチャットメッセージ用の希望言語ブーストを指定します。",
+      "description": "自分のチャットメッセージに対する個人用の言語設定を指定します。",
       "alias": "(エイリアス: !tts lang)",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "言語ブーストは特定言語の発音を向上させます。初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
+      "notes": "言語設定は、数字などの短く判別しにくいテキストのヒントとして使用されます。チャンネルのデフォルトに戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。すべてのオプションを確認するには、<a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語</a>セクションを参照するか、<span class=\"inline-code\">!tts languageslist</span> を使用してください。",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -259,27 +260,27 @@
       }
     },
     "ttsPitch": {
-      "name": "!tts pitch <値|reset>",
+      "name": "!tts pitch <段階|数値|reset>",
       "description": "自分のチャットメッセージ用のTTS音程を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "値は -12 から 12 の整数（標準は0）です。初期値に戻すには <span class=\"inline-code\">reset</span> を指定します。",
+      "notes": "高さには5つの段階があります: <span class=\"inline-code\">very-low</span>、<span class=\"inline-code\">low</span>、<span class=\"inline-code\">normal</span>、<span class=\"inline-code\">high</span>、<span class=\"inline-code\">very-high</span>。-12から12までの整数を入力することもできます。ボットは数値を最も近い段階に変換します。ボットが音声に言葉で話し方を指示するため、結果はおおよそのものになります。チャンネルのデフォルトに戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
-        "positive": "!tts pitch 2",
         "negative": "!tts pitch -3",
         "reset": "!tts pitch reset",
-        "status": "!tts pitch"
+        "status": "!tts pitch",
+        "word": "!tts pitch high"
       }
     },
     "ttsSpeed": {
-      "name": "!tts speed <値|reset>",
+      "name": "!tts speed <段階|数値|reset>",
       "description": "自分のチャットメッセージ用のTTS話速を指定します。",
       "statusDesc": "(現在の個人設定を表示)",
-      "notes": "値は 0.5 から 2.0 の数値（標準は1.0）です。初期値に戻すには <span class=\"inline-code\">reset</span> を指定します。",
+      "notes": "速度には5つの段階があります: <span class=\"inline-code\">very-slow</span>、<span class=\"inline-code\">slow</span>、<span class=\"inline-code\">normal</span>、<span class=\"inline-code\">fast</span>、<span class=\"inline-code\">very-fast</span>。0.5から2.0までの数値を入力することもできます。ボットは数値を最も近い段階に変換します。ボットが音声に言葉で話し方を指示するため、結果はおおよそのものになります。チャンネルのデフォルトに戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
-        "faster": "!tts speed 1.2",
         "slower": "!tts speed 0.8",
         "reset": "!tts speed reset",
-        "status": "!tts speed"
+        "status": "!tts speed",
+        "word": "!tts speed fast"
       }
     },
     "ttsIgnore": {
@@ -327,9 +328,9 @@
       "name": "!tts defaultvoice <voice_id|reset>",
       "description": "<em>チャンネル全体</em> の標準TTS音声を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "システム標準に戻すには <span class=\"inline-code\">reset</span> を指定します。音声IDは <span class=\"inline-code\">!tts voices</span> で確認できます。",
+      "notes": "システムのデフォルトに戻すには <span class=\"inline-code\">reset</span> を指定します。音声IDは<a href=\"tts-voices.html#voices\" class=\"default-link-style\">音声一覧</a>で確認できます。チャットで <span class=\"inline-code\">!tts voices</span> コマンドを実行するとリンクが表示されます。",
       "usage": {
-        "example": "!tts defaultvoice Friendly_Person",
+        "example": "!tts defaultvoice kore",
         "reset": "!tts defaultvoice reset",
         "status": "!tts defaultvoice"
       }
@@ -338,7 +339,7 @@
       "name": "!tts defaultemotion <emotion_name|reset>",
       "description": "<em>チャンネル全体</em> の標準TTS感情を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>。初期値（<span class=\"inline-code\">neutral</span>）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
+      "notes": "有効な感情: <span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、<span class=\"inline-code\">fluent</span>。システムのデフォルト（neutral）に戻すには <span class=\"inline-code\">reset</span> を指定します。感情を設定すると、チャンネルのデフォルトスタイルは削除されます。",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -347,9 +348,9 @@
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <言語|reset>",
-      "description": "<em>チャンネル全体</em> の標準TTS言語ブーストを指定します。",
+      "description": "チャンネルのデフォルトTTS言語を設定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "システム初期値に戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。詳細は <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語ブースト</a> または <span class=\"inline-code\">!tts languageslist</span> をご覧ください。",
+      "notes": "システムのデフォルトに戻すには <span class=\"inline-code\">reset</span> または <span class=\"inline-code\">auto</span> を指定します。すべてのオプションを確認するには、<a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語</a>セクションを参照するか、<span class=\"inline-code\">!tts languageslist</span> を使用してください。",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -357,30 +358,30 @@
       }
     },
     "ttsDefaultpitch": {
-      "name": "!tts defaultpitch <値|reset>",
+      "name": "!tts defaultpitch <段階|数値|reset>",
       "description": "<em>チャンネル全体</em> の標準TTS音程を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "値は -12 から 12 の整数（標準は0）です。システム初期値（0）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
+      "notes": "高さには5つの段階があります: <span class=\"inline-code\">very-low</span>、<span class=\"inline-code\">low</span>、<span class=\"inline-code\">normal</span>、<span class=\"inline-code\">high</span>、<span class=\"inline-code\">very-high</span>。-12から12までの整数を入力することもできます。ボットは数値を最も近い段階に変換します。ボットが音声に言葉で話し方を指示するため、結果はおおよそのものになります。システムのデフォルト（<span class=\"inline-code\">normal</span>）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
-        "example": "!tts defaultpitch 2",
+        "example": "!tts defaultpitch low",
         "reset": "!tts defaultpitch reset",
         "status": "!tts defaultpitch"
       }
     },
     "ttsDefaultspeed": {
-      "name": "!tts defaultspeed <値|reset>",
+      "name": "!tts defaultspeed <段階|数値|reset>",
       "description": "<em>チャンネル全体</em> の標準TTS話速を指定します。",
       "statusDesc": "(現在のチャンネルデフォルトを表示)",
-      "notes": "値は 0.5 から 2.0 の数値（標準は1.0）です。システム初期値（1.0）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
+      "notes": "速度には5つの段階があります: <span class=\"inline-code\">very-slow</span>、<span class=\"inline-code\">slow</span>、<span class=\"inline-code\">normal</span>、<span class=\"inline-code\">fast</span>、<span class=\"inline-code\">very-fast</span>。0.5から2.0までの数値を入力することもできます。ボットは数値を最も近い段階に変換します。ボットが音声に言葉で話し方を指示するため、結果はおおよそのものになります。システムのデフォルト（<span class=\"inline-code\">normal</span>）に戻すには <span class=\"inline-code\">reset</span> を指定します。",
       "usage": {
-        "example": "!tts defaultspeed 1.2",
+        "example": "!tts defaultspeed fast",
         "reset": "!tts defaultspeed reset",
         "status": "!tts defaultspeed"
       }
     },
     "ttsMessage": {
       "name": "!tts <メッセージ>",
-      "description": "指定したメッセージを直ちにTTSキューに追加します。allモードとcommandモードの両方で動作します。声、音程、速度、感情はユーザーの個人設定（またはチャンネルの初期設定）を使用します。",
+      "description": "メッセージを即座にTTSキューに追加します。このコマンドはallモードとcommandモードの両方で動作します。TTSは音声、スタイル、感情、速度、高さについて、あなたの個人設定（またはチャンネルのデフォルト）を使用します。",
       "usage": {
         "basic": "!tts 皆さん配信へようこそ!"
       }
@@ -467,6 +468,46 @@
       "onNote": "（再び読み上げます）",
       "statusNote": "（現在の設定を表示します）",
       "notes": "NightbotやStreamElementsなどの他のボットは、!lurkや!soなど「!」で始まるコマンドを使用します。「すべてのチャットメッセージ」モードでは、TTSはこれらのコマンドをチャットとして読み上げます。スキップするにはこの設定をオフにしてください。この設定は!ttsを変更しません。!ttsは引き続き機能します。「!ttsメッセージ」モード、「ハイライトされたメッセージ」モード、「Cheerとリワードのみ」モードではこれらのメッセージを一切読み上げないため、この設定による影響はありません。「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。この設定はWeb Dashboardの「Read Chat Commands」でも変更できます。"
+    },
+    "ttsStyle": {
+      "name": "!tts style <テキスト|off>",
+      "description": "チャットメッセージを音声がどのように話すかを自由な言葉で設定します。",
+      "usage": {
+        "example": "!tts style ささやくように",
+        "phrase": "!tts style 疲れた海賊のように",
+        "off": "!tts style off",
+        "status": "!tts style"
+      },
+      "offDesc": "（スタイルを削除します）",
+      "statusDesc": "（現在の個人設定を表示します）",
+      "notes": "スタイルは音声に話し方を指示する自由なテキストで、最大120文字まで入力できます。音声はスタイルを読み上げず、スタイルによってメッセージの言葉が変わることもありません。スタイルが設定されている間、感情の設定は無視されます。あなたのメッセージでは、あなたのスタイルがチャンネルのスタイルや感情も上書きします。チャンネルの禁止ワードを含むスタイルは拒否されます。チャンネルが視聴者の個人設定を許可していない場合は、チャンネルの設定が使用されます。"
+    },
+    "ttsDefaultstyle": {
+      "name": "!tts defaultstyle <テキスト|off>",
+      "description": "チャンネルのデフォルトスタイルを自由な言葉で設定します。",
+      "usage": {
+        "example": "!tts defaultstyle 落ち着いて親しみやすく",
+        "off": "!tts defaultstyle off",
+        "status": "!tts defaultstyle"
+      },
+      "offDesc": "(デフォルトのスタイルを削除します)",
+      "statusDesc": "(現在のチャンネルデフォルトを表示します)",
+      "notes": "スタイルは、音声の話し方を指定する自由テキストで、最大120文字です。音声はスタイルを読み上げず、スタイルでメッセージの単語を変更することはできません。チャンネルにデフォルトのスタイルが設定されている間、ボットはデフォルトの感情を無視します。視聴者のスタイルまたは感情は、その視聴者のメッセージに対してデフォルトのスタイルを上書きします。ボットは、チャンネルの禁止ワードを含むスタイルを拒否します。スタイルは Web Dashboard でも設定できます。"
+    },
+    "ttsTags": {
+      "name": "!tts tags <off|on> <tag|all>",
+      "description": "チャンネルで <span class=\"inline-code\">&lt;laugh&gt;</span> などのサウンドタグをオフまたはオンにします。",
+      "usage": {
+        "off": "!tts tags off scream",
+        "on": "!tts tags on scream",
+        "offAll": "!tts tags off all",
+        "onAll": "!tts tags on all",
+        "list": "!tts tags list"
+      },
+      "offNote": "(ボットはこのタグをメッセージから削除します)",
+      "onNote": "(音声がこの音を再び出します)",
+      "listNote": "(オフになっているタグを表示します)",
+      "notes": "サウンドタグとは、音声が音に変換する山括弧で囲まれた単語（例: <span class=\"inline-code\">&lt;laugh&gt;</span>）です。デフォルトではすべてのタグがオンです。タグがオフの場合、ボットはメッセージからそのタグを削除します。タグの一覧については、<a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">サウンドタグ</a>を参照してください。タグは Web Dashboard でも変更できます。"
     }
   },
   "table": {
@@ -488,28 +529,73 @@
   },
   "voices": {
     "title": "音声",
-    "introText": "ボットはMiniMax <span class=\"inline-code\">speech-2.8-turbo</span> モデルから45言語にわたる472種類の音声を提供します。プライマリプロバイダーが利用できない場合、自動的に <span class=\"inline-code\">speech-02-turbo</span> へフォールバックします。<span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> のように <span class=\"inline-code\">voice_id</span> を指定して使用します。",
-    "popularTitle": "人気の音声ID",
-    "popularText": "MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> モデルの人気音声です。使用するにはチャットで <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> を入力します。",
-    "completeListTitle": "完全な音声リスト（<a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turboスキーマ</a>から — フォールバックプロバイダー）",
-    "completeListText": "言語プレフィックス別に整理された利用可能な全472音声の一覧です。",
-    "expandText": "選択して全音声一覧（45言語・472音声）を展開",
-    "completeListNote": "注意: ボットはMiniMax <span class=\"inline-code\">speech-2.8-turbo</span> を使用し、自動的に <span class=\"inline-code\">speech-02-turbo</span> にフォールバックします。言語プレフィックス別に分類された472音声が含まれます。<span class=\"inline-code\">!tts voices</span> コマンドからこの項目へリンクしています。"
+    "introText": "WildcatTTS は Google の Gemini 音声モデルを使用しています。2,000以上の音声から選択できます。各音声には音声IDがあり、これはコマンドで入力する名前です。",
+    "selectText": "自分のメッセージ用の音声を選択するには、チャットで <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> と入力します。<span class=\"inline-code\">!tts prefs</span> で開く個人設定ページでも音声を選択できます。モデレーターは、<span class=\"inline-code\">!tts defaultvoice &lt;voice_id&gt;</span> または Web Dashboard でチャンネルの音声を設定します。",
+    "changedText": "WildcatTTS は以前の MiniMax 音声を Gemini 音声に置き換えました。ボットは保存されている各音声を最も近い新しい音声に自動で変更しました。音声を再度選択する必要はありませんが、新しい音声は古い音声とは異なる聞こえ方をします。",
+    "studioTitle": "スタジオ音声",
+    "studioText": "スタジオ音声はすべての言語を話します。チャットで複数の言語を使用する場合はスタジオ音声を使用してください。説明は英語のみです。",
+    "studioCaption": "スタジオ音声",
+    "finderTitle": "すべての音声を検索",
+    "finderText": "その他の各音声には、言語、アクセント、性別、ピッチがあります。以下の検索にはすべての音声が含まれます。複数の単語を入力すると、表にはすべての単語に一致する音声のみが表示されます。",
+    "everyLanguage": "すべての言語",
+    "copy": "コピー",
+    "copyLabel": "音声ID {id} をコピー",
+    "copied": "コピーしました",
+    "copiedLabel": "音声ID {id} がクリップボードにコピーされました。",
+    "copyFailed": "コピーできませんでした。音声ID {id} を選択してコピーしてください。",
+    "table": {
+      "voice": "音声",
+      "id": "音声ID",
+      "language": "言語とアクセント",
+      "gender": "性別",
+      "pitch": "ピッチ",
+      "description": "説明"
+    },
+    "gender": {
+      "female": "女性",
+      "male": "男性",
+      "neutral": "中性"
+    },
+    "pitch": {
+      "low": "低",
+      "medium": "中",
+      "high": "高"
+    },
+    "finder": {
+      "noScript": "検索には JavaScript が必要です。JavaScript がない場合、このページにはスタジオ音声のみが表示されます。",
+      "searchLabel": "音声を検索",
+      "searchPlaceholder": "例: calm storyteller",
+      "searchHelp": "名前、説明、アクセント、言語、または音声 ID の単語を入力してください。説明は英語のみです。",
+      "language": "言語",
+      "allLanguages": "すべての言語",
+      "studioOption": "すべての言語（スタジオ音声）",
+      "anyGender": "すべての性別",
+      "anyPitch": "すべてのピッチ",
+      "clear": "検索とフィルターをクリア",
+      "caption": "検索に一致する音声",
+      "count": "見つかった音声: {n} 件。",
+      "shown": "表には最初の {shown} 件が表示されます。",
+      "more": "さらに音声を表示",
+      "none": "一致する音声がありません。検索語を変更するか、フィルターをクリアしてください。",
+      "loading": "音声リストを読み込んでいます。",
+      "error": "音声リストを読み込めませんでした。ページを再読み込みしてください。"
+    }
   },
   "languageBoost": {
-    "title": "言語ブースト",
-    "introText": "<span class=\"inline-code\">language_boost</span> 機能は特定言語や方言の発音精度を向上させます。多言語チャットや英語以外の配信で役立ちます。",
+    "title": "言語",
+    "introText": "音声モデルは各メッセージの言語を自動で判別し、100以上の言語に対応しています。言語設定は、数字や非常に短いメッセージなど、モデルに十分な情報がないテキストに対するヒントです。この設定の以前の名称は Language Boost でした。",
     "commandText": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span> で個人の希望言語を設定できます。モデレーターは <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> でチャンネル全体の初期値を設定できます。",
-    "optionsTitle": "利用可能な言語ブーストオプション",
+    "optionsTitle": "利用可能な言語オプション",
     "optionsIntro": "次の値が受け入れられます:",
-    "usageText": "<span class=\"inline-code\">auto</span> 設定は自動言語検出を使用します。主に英語のチャットでは <span class=\"inline-code\">English</span> を指定します。特定言語を指定するとその言語の発音精度が向上します。",
+    "usageText": "<span class=\"inline-code\">auto</span> を使用すると、モデルは各メッセージのテキストから言語を選択します。チャットで1つの言語を使用している場合は、その言語を設定してください。設定すると、音声は数字や短いメッセージをその言語で読み上げます。",
     "announcementsTitle": "アナウンスとチャット返信",
     "announcementsText1": "チャンネル言語は、botが書き出すテキストの言語も選択します。このテキストには、配信イベントのアナウンス、エモートの説明、コマンドへのチャット返信が含まれます。",
     "announcementsText2": "たとえば、視聴者がスペイン語のチャンネルをサブスクライブすると、botはスペイン語でアナウンスを行います。",
-    "announcementsText3": "<span class=\"inline-code\">!tts language</span> による個人の言語設定は、自身のメッセージの音声のみを変更します。アナウンスはチャンネル全体に聞こえるため、個人の言語設定によってアナウンスが変更されることはありません。<span class=\"inline-code\">auto</span> 設定は言語を指定しないため、<span class=\"inline-code\">auto</span> に設定されているチャンネルでは英語でアナウンスが行われます。",
-    "detectionTitle": "自動検出",
+    "announcementsText3": "<span class=\"inline-code\">!tts language</span> による個人用言語は、自分のメッセージにのみ適用されます。個人用言語はアナウンスを変更しません。アナウンスはチャンネル全体が聞くためです。<span class=\"inline-code\">auto</span> 設定では言語が指定されないため、<span class=\"inline-code\">auto</span> に設定されたチャンネルのアナウンスは英語になります。",
+    "detectionTitle": "Twitch からのチャンネル言語",
     "detectionText1": "WildcatTTSは、チャンネルがTwitchで宣言している言語を読み取ります。その後、botが自動的にチャンネルのデフォルトを設定します。",
-    "detectionText2": "botはこの設定を、独自の言語設定がないチャンネルに対してのみ変更します。自身で選択した設定は常に維持されます。Twitchには音声エンジンがサポートしていない言語がいくつかあります。これらの言語の場合、チャンネルは <span class=\"inline-code\">auto</span> のままになります。"
+    "detectionText2": "ボットがこの設定を変更するのは、独自の言語設定がないチャンネルに対してのみです。ご自身の選択は常に保持されます。Twitch には上のリストにない言語がいくつかあります。それらの言語では、チャンネルは <span class=\"inline-code\">auto</span> のままになります。",
+    "profanityText": "チャンネル言語は、不適切語句フィルターの単語リストも選択します。<a href=\"tts-filtering.html#profanity-filter-language\" class=\"default-link-style\">不適切語句フィルター</a>を参照してください。"
   },
   "emoteDescriptions": {
     "title": "エモート説明",
@@ -519,7 +605,7 @@
     "step2": "初回生成後、ボットはその説明文を永続的にキャッシュします。",
     "step3": "以降の同じエモートの読み上げはキャッシュを使用し、AI処理なしで即座に実行されます。",
     "managementTitle": "説明の管理",
-    "managementText": "モデレーターは <span class=\"inline-code\">!tts emote</span> コマンドでエモート説明の確認・再生成・手動設定が可能です。詳細はコマンド一覧の <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明管理</a> をご覧ください。",
+    "managementText": "モデレーターは <span class=\"inline-code\">!tts emote</span> を使用して、エモートの説明を表示、再生成、または設定できます。詳細は<a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">エモート説明の管理</a>の表を参照してください。",
     "localeText": "AIは各説明をチャンネルの言語で作成します。botは言語ごとに個別の説明を保持します。"
   },
   "webDashboard": {
@@ -531,7 +617,7 @@
     "settingViewerTitle": "視聴者の設定:",
     "settingViewerDesc": "視聴者のカスタム音声を許可するか、チャンネル標準音声に固定します。",
     "settingAllowPreferencesTitle": "視聴者の音声設定を許可:",
-    "settingAllowPreferencesDesc": "視聴者が !myvoice で音声を選択できるようにするか、標準音声に固定します。",
+    "settingAllowPreferencesDesc": "視聴者が !myvoice の自分の音声、スタイル、その他の設定を使用できるようにするか、すべてのメッセージにチャンネルのデフォルト設定を使用します。",
     "settingBotChatTitle": "ボットのチャット応答:",
     "settingBotChatDesc": "TTS音声を有効にしたまま、ボットのチャット返答テキストのみをオン/オフします。",
     "settingAnonymizeFollowersTitle": "新規フォロワーの匿名化:",
@@ -559,7 +645,7 @@
     "settingBannedWordsTitle": "禁止ワード / フレーズ:",
     "settingBannedWordsDesc": "特定単語またはフレーズをブロックし、該当メッセージの読み上げをスキップします。",
     "settingVoiceTitle": "デフォルト音声設定:",
-    "settingVoiceDesc": "声、音量、感情、音程、速度、言語、テキスト正規化のチャンネル標準値を設定します。",
+    "settingVoiceDesc": "音声、音量、スタイル、感情、速度、ピッチ、言語のチャンネルのデフォルト設定を行います。",
     "settingObsTitle": "OBSブラウザソース設定:",
     "settingObsDesc": "安全なOBSブラウザソースURLと詳細な設定手順を取得します。",
     "settingPreviewTitle": "音声プレビュー:",
@@ -594,7 +680,18 @@
     "settingCalibrationTitle": "音声キャリブレーション:",
     "settingCalibrationDesc": "音声ごとの音量倍率を設定して音量レベルを均一化します。",
     "settingPageLanguageTitle": "ページの言語:",
-    "settingPageLanguageDesc": "ダッシュボードのテキストの言語を選択します。選択ツールはページ上部にあります。この選択ツールで音声やアナウンスが変更されることはありません。"
+    "settingPageLanguageDesc": "ダッシュボードのテキストの言語を選択します。選択ツールはページ上部にあります。この選択ツールで音声やアナウンスが変更されることはありません。",
+    "settingSoundTagsTitle": "サウンドタグ:",
+    "settingSoundTagsDesc": "<span class=\"inline-code\">&lt;scream&gt;</span> などの単一のサウンドタグをオフまたはオンにします。",
+    "voiceDefaultsTitle": "デフォルトの音声設定",
+    "voiceDefaultsIntro": "デフォルトの音声設定は、個人設定を持たない視聴者からの各メッセージに適用されます。配信を開始する前に、音声プレビューを使用して結果を確認してください。",
+    "voiceDefaultsVoice": "音声を見つけるには、説明を検索するか、言語、性別、ピッチで絞り込みます。このドキュメントの<a href=\"tts-voices.html#voices\" class=\"default-link-style\">音声リスト</a>にも同じ音声があります。",
+    "voiceDefaultsStyle": "スタイルは、音声に話し方を指示する自由テキストです（例: \"whispering\"）。最大120文字で、音声がそれを読み上げることはありません。",
+    "voiceDefaultsEmotion": "感情は、<span class=\"inline-code\">happy</span> や <span class=\"inline-code\">calm</span> などのプリセットスタイルです。感情とスタイルは同時に機能しません。一方を設定すると、ボットはもう一方を削除します。",
+    "voiceDefaultsSpeedPitch": "速度とピッチにはそれぞれ5つの段階があります。ボットが音声に対して言葉で話し方を指示するため、結果はおおよそのものになります。",
+    "voiceDefaultsVolume": "ボットは音声が発話した後にオーディオへ音量を適用するため、音量は正確です。",
+    "voiceDefaultsLanguage": "言語は、数字などの短いか不明瞭なテキストのためのヒントです。<a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">言語</a>を参照してください。",
+    "obsRefreshTip": "Gemini 音声への変更前からあるブラウザソースもそのまま動作します。ブラウザソースを1回更新すると、音声がより早く再生開始されます。"
   },
   "troubleshooting": {
     "title": "トラブルシューティング",
@@ -602,14 +699,26 @@
     "a1": "ボットがチャンネルのモデレーターになっているか確認してください。Twitchチャットで <span class=\"inline-code\">/mod WildcatTTS</span> と入力します。メッセージ取得と返信送信にはモデレーター権限が必要です。",
     "q2": "ボットが話さない?",
     "a2": "チャットで <span class=\"inline-code\">!tts on</span> を送信してTTSが有効になっているか確認してください。また <span class=\"inline-code\">!tts mode</span> でモードを、<span class=\"inline-code\">!tts permission</span> で権限を確認してください。",
-    "q3": "ボットが特定の言語で話さない、または数字を中国語で読む?",
-    "a3": "<span class=\"inline-code\">!tts language &lt;language_name&gt;</span>（またはチャンネル用に <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>）で言語ブーストを目的の言語に設定します。現在の設定は <span class=\"inline-code\">!tts defaultlanguage</span> で確認できます。",
+    "q3": "数字や短いメッセージが別の言語で読み上げられますか？",
+    "a3": "音声は各メッセージのテキストから言語を判定します。数字や非常に短いメッセージではテキストが少なすぎます。<span class=\"inline-code\">!tts language &lt;language_name&gt;</span>（チャンネル全体の場合は <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span>）で言語を設定してください。現在の設定を確認するには、<span class=\"inline-code\">!tts defaultlanguage</span> を使用します。",
     "q4": "TTS生成に時間がかかりすぎるか失敗する?",
-    "a4": "ボットは302.aiを使用し、自動的にWavespeed AIへフォールバックします。遅延が発生した場合は <span class=\"inline-code\">!tts stop</span> で停止してください。失敗したリクエストは自動で再試行されます。",
+    "a4": "音声は通常、ボットがメッセージを受け取ってから約0.5秒後に再生されます。音声モデルが失敗した場合、ボットは自動的に再試行します。メッセージがキューに残って再生されない場合は、<span class=\"inline-code\">!tts stop</span> を使用してキャンセルしてください。",
     "q5": "感情が機能しない?",
-    "a5": "auto感情は非対応です。<span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span> を使用してください。",
+    "a5": "<span class=\"inline-code\">neutral</span>、<span class=\"inline-code\">happy</span>、<span class=\"inline-code\">sad</span>、<span class=\"inline-code\">angry</span>、<span class=\"inline-code\">fearful</span>、<span class=\"inline-code\">disgusted</span>、<span class=\"inline-code\">surprised</span>、<span class=\"inline-code\">calm</span>、または <span class=\"inline-code\">fluent</span> を使用します。カスタムスタイルを設定すると感情は上書きされます。感情を再び使用するには、<span class=\"inline-code\">!tts style off</span>（チャンネル全体の場合は <span class=\"inline-code\">!tts defaultstyle off</span>）でスタイルを削除してください。",
     "q6": "ヘルプが必要?",
-    "a6": "Henryのポートフォリオサイトの <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォーム</a> から開発者へご連絡ください。"
+    "a6": "Henryのポートフォリオサイトの <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">お問い合わせフォーム</a> から開発者へご連絡ください。",
+    "qVoiceChanged": "声が以前と違って聞こえますか？",
+    "aVoiceChanged": "WildcatTTS は従来の音声を Gemini 音声に置き換えました。ボットは保存されていた各音声を最も近い新しい音声に変更したため、同じ声には聞こえません。別の音声を選択するには、<a href=\"tts-voices.html#voices\" class=\"default-link-style\">音声リスト</a>を検索してください。",
+    "qExpressive": "音声が笑ったり、ため息をついたり、メッセージごとに違って聞こえたりしますか？",
+    "aExpressive": "この動作は正常です。新しい音声はより人間らしくチャットを読み上げます。音声は「lol」や「lmao」を実際の笑い声に変えたり、小さな笑い声やため息を加えたりすることがあります。また、同じ音声でもメッセージごとに少しずつ変化します。「?」のみのメッセージを「What?」のように読み上げることもあります。",
+    "qSoundTags": "音声が叫んだり、咳をしたり、他の音を出したりしますか？",
+    "aSoundTags": "視聴者が <span class=\"inline-code\">&lt;scream&gt;</span> などのサウンドタグを入力しました。モデレーターは <span class=\"inline-code\">!tts tags off &lt;tag&gt;</span> でタグをオフにできます。<a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">サウンドタグ</a>を参照してください。",
+    "qApproximate": "速度やピッチが正確ではありませんか？",
+    "aApproximate": "速度とピッチにはそれぞれ5段階あります。ボットは話し方を言葉で音声に指示するため、結果はおおよそのものになります。音量は正確です。",
+    "qSkipped": "メッセージが1件、理由なくスキップされますか？",
+    "aSkipped": "Google の音声モデルにはコンテンツフィルターがあります。コンテンツフィルターがメッセージを拒否した場合、ボットはそのメッセージをスキップし、エラーを出しません。また、ボットは禁止ワードを含むメッセージや、無視リストに登録されたユーザーからのメッセージもスキップします。",
+    "qObsRefresh": "OBS ブラウザソースの更新は必要ですか？",
+    "aObsRefresh": "いいえ。Gemini 音声への変更前からあるブラウザソースもそのまま動作します。ブラウザソースを1回更新すると、音声がより早く再生開始されます。"
   },
   "pronunciation": {
     "title": "発音辞書",
@@ -626,9 +735,18 @@
     "custom3": "1チャンネルあたり最大100件のエントリを登録できます。",
     "switchTitle": "辞書を無効にする方法",
     "switchText": "発音辞書はすべてのチャンネルで標準有効です。無効化するにはWebダッシュボードで「チャット略語を展開」をオフにします。オフ時は略語が1文字ずつ読み上げられます。",
-    "lolTip": "TTSは <span class=\"inline-code\">lol</span> を既に「el oh el」と読み上げます。これは標準動作であり辞書登録は不要です。",
+    "lolTip": "辞書には <span class=\"inline-code\">lol</span>、<span class=\"inline-code\">lmao</span>、<span class=\"inline-code\">rofl</span> の項目がありません。音声はこれらの短縮形を実際の笑い声に変えます。",
     "rule5": "一部のエントリは特定の言語でのみ機能します。たとえば英語では、辞書が <span class=\"inline-code\">ty</span> を「thank you」に変更します。ポーランド語、チェコ語、スロバキア語では <span class=\"inline-code\">ty</span> は一般的な単語であるため、辞書はこれを変更せず維持します。",
     "custom4": "自身で追加した新しいエントリは、すべての言語で機能します。組み込みエントリを置き換えるエントリは、その組み込みエントリの言語を維持します。"
+  },
+  "soundTags": {
+    "title": "サウンドタグ",
+    "introText": "サウンドタグとは、山括弧で囲まれた単語で、音声がそれを音に変えます。視聴者はチャットメッセージにサウンドタグを入力できます。たとえば、<span class=\"inline-code\">Wait… &lt;gasp&gt; no way! &lt;laugh&gt;</span> というメッセージでは、音声は息を呑んでから笑います。音声はタグを単語としては読み上げません。",
+    "listTitle": "使用可能なタグ",
+    "listIntro": "音声は次のタグに対応しています:",
+    "parenText": "<span class=\"inline-code\">(laughs)</span> のような丸括弧を使った従来の表記も機能します。タグは音声へのリクエストであり、音は毎回異なる場合があります。",
+    "offTitle": "タグをオフにする方法",
+    "offText": "すべてのタグはデフォルトでオンになっています。モデレーターは <span class=\"inline-code\">!tts tags off &lt;tag&gt;</span> で1つのタグをオフにするか、<span class=\"inline-code\">!tts tags off all</span> ですべてのタグをオフにできます。Web Dashboard でタグを変更することもできます。タグがオフの場合、ボットはメッセージからタグを削除し、音声は他の単語を読み上げます。すべてのオプションについては、<a href=\"tts-commands.html#dd-commands-ttsTags\" class=\"default-link-style\">!tts tags</a> コマンドを参照してください。"
   },
   "profanityFilter": {
     "title": "不適切表現フィルター",
@@ -641,8 +759,8 @@
     "behavior3": "発音辞書で展開された略語にも適用されます。フィルター有効時、<span class=\"inline-code\">lfg</span> は「let's freaking go」と読み上げられます。",
     "behavior4": "単語全体が一致した場合のみ適用されます。「class」などの単語の一部を誤って置換することはありません。",
     "languageTitle": "対応言語",
-    "languageText": "言語ブーストが対応する全40言語の単語リストを収録しています。チャンネル設定言語のリストが使用されます。視聴者が個人言語を設定している場合は両方のリストが適用されます。発音辞書が英語基準のため英語リストは常に有効です。",
-    "languageAutoText": "言語ブーストが「auto」の場合、英語リストが使用されます。メッセージごとの言語を個別に完全検出することはできません。",
+    "languageText": "フィルターには、言語設定の40言語すべての単語リストがあります。フィルターはチャンネルの言語のリストを使用します。視聴者が自分のメッセージに別の言語を選択した場合、フィルターは両方のリストを使用します。発音辞書が英語であるため、フィルターには常に英語のリストが含まれます。",
+    "languageAutoText": "チャンネルの言語が <span class=\"inline-code\">auto</span> の場合、フィルターは英語のリストを使用します。音声モデルは各メッセージの言語を判定しますが、フィルターは音声モデルより前に実行されます。",
     "languageCoverageText": "英語の単語リストが最も充実しています。他言語のリストは小規模です。スラー置換は英語リストのみに含まれます。",
     "bannedWordsTip": "禁止用語フィルターは「禁止単語」機能とは異なります。「禁止単語」はメッセージ全体をスキップしますが、禁止用語フィルターは単語を置換してメッセージを読み上げます。"
   },

@@ -770,6 +770,64 @@ dialog.wch-search::backdrop {
 .wch-prose ul.extensive-voice-list { columns: 2 220px; column-gap: 28px; }
 .wch-prose .extensive-voice-list li { break-inside: avoid; }
 
+/* ---- Voice tables and the voice search (tts-voices.html, scripts/voice-finder.js) ---- */
+.wch-voicetools {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 12px;
+    align-items: end;
+    margin: 4px 0 6px;
+}
+
+.wch-voicetools[hidden],
+.wch-voicescroll[hidden] { display: none; }
+
+.wch-voicefield { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.wch-voicefield--search { grid-column: 1 / -1; }
+.wch-voicefield label { font-size: 13px; font-weight: 600; color: var(--wc-text-1); }
+.wch-voicefield .wc-help { margin: 0; }
+.wch-voicetools > .wc-chipbtn { grid-column: 1 / -1; justify-self: start; }
+.wch-voicetools > .wc-chipbtn:disabled { opacity: 0.55; cursor: default; }
+
+@media (max-width: 560px) {
+    .wch-voicetools { grid-template-columns: minmax(0, 1fr); }
+}
+
+#voice-count { margin: 14px 0 4px; font-size: 12px; color: var(--wc-text-2); }
+#voice-more { margin-top: 14px; }
+
+/* The table scrolls sideways on a narrow screen. The table keeps display: table,
+   so a screen reader still reads rows and column headers. */
+.wch-voicescroll { overflow-x: auto; }
+
+.wch-prose:not(.wch-commands) .section table.wch-voicetable {
+    display: table;
+    min-width: 640px;
+}
+
+.wch-prose:not(.wch-commands) .section .wch-voicetable tbody th {
+    font-family: var(--wc-font-body);
+    font-size: inherit;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--wc-text-1);
+    border-bottom-color: var(--wc-hairline);
+}
+
+.wch-voicetable td:last-child { min-width: 240px; }
+.wch-voicetable .wch-voiceid { white-space: nowrap; }
+.wch-voicetable .wch-voiceid code { overflow-wrap: normal; }
+.wch-voicetable .wch-voiceaccent { display: block; color: var(--wc-text-2); font-size: 12.5px; }
+
+.wch-voicetable .wch-copy {
+    height: 24px;
+    margin-inline-start: 8px;
+    padding: 0 8px;
+    font-size: 10px;
+    vertical-align: 1px;
+}
+
 .wch-prose .mod-badge {
     display: inline-block;
     margin-inline-end: 6px;

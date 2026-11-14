@@ -68,6 +68,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/styles");
     eleventyConfig.addPassthroughCopy("src/scripts");
     eleventyConfig.addPassthroughCopy("src/i18n");
+    // Every voice, for scripts/voice-finder.js. `npm run sync:voices` writes it.
+    eleventyConfig.addPassthroughCopy("src/data");
 
     // Favicons and compact navbar icon.
     eleventyConfig.addPassthroughCopy("src/favicon.ico");
