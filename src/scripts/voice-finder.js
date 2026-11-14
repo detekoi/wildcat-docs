@@ -166,7 +166,7 @@
                 .sort((a, b) => a[1].localeCompare(b[1], locale));
             setOptions(languageSelect, [
                 ['', t('voices.finder.allLanguages', 'All languages')],
-                ['studio', t('voices.finder.studioOption', 'Every language (studio voices)')],
+                ['studio', t('voices.finder.studioOption', 'Every language')],
                 ...sorted,
             ]);
             setOptions(genderSelect, [['', t('voices.finder.anyGender', 'Any gender')],
