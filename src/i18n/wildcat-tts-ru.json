@@ -80,7 +80,7 @@
       "name": "!tts prefs\n(Псевдонимы: !tts preferences, !tts settings)",
       "description": "Отправляет ссылку на страницу ваших личных настроек TTS.",
       "aliases": "(Псевдонимы: !tts preferences, !tts settings)",
-      "feature1": "Задайте свой голос, стиль, эмоцию, скорость, высоту тона и язык для этого канала.",
+      "feature1": "Настройте собственный голос, стиль, скорость, высоту тона и язык для этого канала.",
       "feature2": "Содержит раздел «Отказ от TTS». Вы можете отказаться от TTS на одном канале или на всех каналах и снова включить его. Если модератор отключил вам TTS на канале, отменить это может только модератор. Если вы отказались на всех каналах, TTS по-прежнему объявляет ваши подписки, cheers и подарки, но без сообщения, которое вы добавляете. Если вы активируете награду TTS, TTS прочитает это сообщение.",
       "feature3": "Бот отправляет ссылку в чат с загруженным контекстом канала.",
       "usage": {
@@ -237,9 +237,9 @@
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
-      "description": "Устанавливает предпочитаемую эмоцию для ваших сообщений в чате.",
+      "description": "Задает ваш стиль по названию эмоции. Эта команда — старое название !tts style.",
       "statusDesc": "(отображает текущее личное предпочтение)",
-      "notes": "Допустимые эмоции: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Используйте <span class=\"inline-code\">reset</span> для значения канала по умолчанию. Если вы зададите эмоцию, бот удалит ваш пользовательский стиль.",
+      "notes": "Допустимые эмоции: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Бот сохраняет слова стиля для эмоции, например \"happy and cheerful\" для <span class=\"inline-code\">happy</span>. Используйте <span class=\"inline-code\">reset</span> для настройки канала по умолчанию. Чтобы описать голос своими словами, используйте <span class=\"inline-code\">!tts style</span>.",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -337,9 +337,9 @@
     },
     "ttsDefaultemotion": {
       "name": "!tts defaultemotion <emotion_name|reset>",
-      "description": "Устанавливает эмоцию TTS по умолчанию для <em>канала</em>.",
+      "description": "Задает стиль канала по умолчанию по названию эмоции. Эта команда — старое название !tts defaultstyle.",
       "statusDesc": "(отображает текущее стандартное значение канала)",
-      "notes": "Допустимые эмоции: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Используйте <span class=\"inline-code\">reset</span> для системного значения по умолчанию (neutral). Если вы зададите эмоцию, бот удалит стиль канала по умолчанию.",
+      "notes": "Допустимые эмоции: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Бот сохраняет слова стиля для эмоции, например \"happy and cheerful\" для <span class=\"inline-code\">happy</span>. Используйте <span class=\"inline-code\">reset</span> или <span class=\"inline-code\">neutral</span>, чтобы удалить стиль по умолчанию. Чтобы описать голос своими словами, используйте <span class=\"inline-code\">!tts defaultstyle</span>.",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -480,7 +480,7 @@
       },
       "offDesc": "(удаляет ваш стиль)",
       "statusDesc": "(показывает текущую личную настройку)",
-      "notes": "Стиль — это произвольный текст длиной до 120 символов, который указывает голосу, как говорить. Голос не читает стиль вслух, и стиль не может изменить слова сообщения. Пока у вас задан стиль, бот игнорирует вашу эмоцию. Для ваших сообщений ваш стиль также заменяет стиль или эмоцию канала. Бот отклоняет стиль, содержащий запрещённое на канале слово. Если канал не разрешает настройки зрителей, бот использует настройки канала."
+      "notes": "Стиль указывает голосу, как говорить, и содержит не более 120 символов. Голос не читает стиль вслух, и стиль не может изменить слова сообщения. Для ваших сообщений ваш стиль также заменяет стиль канала. Бот отклоняет стиль, который содержит запрещенное слово канала. Если канал не разрешает личные настройки зрителей, бот использует настройки канала."
     },
     "ttsDefaultstyle": {
       "name": "!tts defaultstyle <текст|off>",
@@ -492,7 +492,7 @@
       },
       "offDesc": "(удаляет стиль по умолчанию)",
       "statusDesc": "(показывает текущую настройку канала по умолчанию)",
-      "notes": "Стиль — это произвольный текст длиной не более 120 символов, который указывает голосу, как говорить. Голос не зачитывает стиль вслух, и стиль не может изменить слова сообщения. Пока на канале задан стиль по умолчанию, бот игнорирует эмоцию по умолчанию. Стиль или эмоция зрителя заменяет стиль по умолчанию для сообщений этого зрителя. Бот отклоняет стиль, который содержит запрещённое на канале слово. Вы также можете задать стиль в Web Dashboard."
+      "notes": "Стиль указывает голосу, как говорить, и содержит не более 120 символов. Голос не читает стиль вслух, и стиль не может изменить слова сообщения. Стиль зрителя заменяет стиль по умолчанию для сообщений этого зрителя. Бот отклоняет стиль, который содержит запрещенное слово канала. Вы также можете задать стиль в Web Dashboard."
     },
     "ttsTags": {
       "name": "!tts tags <off|on> <tag|all>",
@@ -645,7 +645,7 @@
     "settingBannedWordsTitle": "Запрещенные слова / фразы:",
     "settingBannedWordsDesc": "Блокируйте определенные слова или фразы, чтобы TTS пропускал соответствующие сообщения.",
     "settingVoiceTitle": "Настройки голоса по умолчанию:",
-    "settingVoiceDesc": "Задайте настройки канала по умолчанию для голоса, громкости, стиля, эмоции, скорости, высоты голоса и языка.",
+    "settingVoiceDesc": "Задайте настройки канала по умолчанию для голоса, громкости, стиля, скорости, высоты тона и языка.",
     "settingObsTitle": "Настройка источника браузера OBS:",
     "settingObsDesc": "Получите уникальный защищенный URL источника браузера OBS и инструкции по настройке.",
     "settingPreviewTitle": "Предпросмотр голоса:",
@@ -674,7 +674,7 @@
     "obsImportantDesc": "Убедитесь, что источник не заглушен в аудиомикшере, а уровень громкости настроен правильно.",
     "voiceCalibrationTitle": "Калибровка голосов",
     "voiceCalibrationIntro": "Некоторые голоса могут звучать громче или тише других. Калибровка Голосов позволяет установить множители громкости для отдельных голосов для идеального баланса звука на стриме.",
-    "voiceCalibrationFeature1": "<strong>Громкость по Голосам:</strong> Выберите голос и задайте множитель громкости (от 0.1x до 2.0x). <em>(Предупреждение: значения выше 1.0 могут быть слишком громкими)</em>",
+    "voiceCalibrationFeature1": "<strong>Громкость для каждого голоса:</strong> выберите голос и назначьте множитель громкости (от 0.1x до 2.0x). <em>(Внимание: значения выше 1.0 могут быть громкими)</em>",
     "voiceCalibrationFeature2": "<strong>Автоприменение:</strong> Когда зритель выбирает откалиброванный голос, бот автоматически применяет персональную громкость.",
     "voiceCalibrationFeature3": "<strong>Приоритет:</strong> Индивидуальная громкость голоса имеет приоритет над общей громкостью канала по умолчанию.",
     "settingCalibrationTitle": "Калибровка голосов:",
@@ -686,8 +686,8 @@
     "voiceDefaultsTitle": "Настройки голоса по умолчанию",
     "voiceDefaultsIntro": "Настройки голоса по умолчанию применяются к каждому сообщению зрителя, у которого нет личных настроек. Используйте предпрослушивание голоса, чтобы услышать результат перед началом трансляции.",
     "voiceDefaultsVoice": "Чтобы найти голос, выполните поиск по описаниям или отфильтруйте по языку, полу и высоте голоса. В <a href=\"tts-voices.html#voices\" class=\"default-link-style\">списке голосов</a> в этой документации приведены те же голоса.",
-    "voiceDefaultsStyle": "Стиль — это произвольный текст, который указывает голосу, как говорить, например «шёпотом». Его длина не превышает 120 символов, и голос не читает его вслух.",
-    "voiceDefaultsEmotion": "Эмоция — это предустановленный стиль, например <span class=\"inline-code\">happy</span> или <span class=\"inline-code\">calm</span>. Эмоция и стиль не работают вместе. Когда вы задаете одно, бот удаляет другое.",
+    "voiceDefaultsStyle": "Стиль указывает голосу, как говорить, например \"шепотом\". Введите собственные слова или выберите шаблон, чтобы вставить его слова в поле. Вы можете изменить слова шаблона. Стиль может содержать не более 120 символов, и голос не читает его вслух.",
+    "voiceDefaultsEmotion": "Команда чата <span class=\"inline-code\">!tts emotion</span> — это старое название <span class=\"inline-code\">!tts style</span>. Она задает слова стиля для названия эмоции, например \"happy and cheerful\" для <span class=\"inline-code\">happy</span>.",
     "voiceDefaultsSpeedPitch": "Скорость и высота голоса имеют по пять уровней. Результат приблизительный, потому что бот словами указывает голосу, как говорить.",
     "voiceDefaultsVolume": "Громкость точная, потому что бот применяет ее к аудио после того, как голос произнесет текст.",
     "voiceDefaultsLanguage": "Язык — это подсказка для короткого или неясного текста, например для числа. См. раздел <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Язык</a>.",
@@ -704,7 +704,7 @@
     "q4": "Генерация TTS занимает слишком много времени или не работает?",
     "a4": "Звук обычно начинается примерно через полсекунды после того, как бот получает сообщение. Если модель речи даёт сбой, бот автоматически повторяет попытку. Если сообщение остаётся в очереди и не воспроизводится, используйте <span class=\"inline-code\">!tts stop</span>, чтобы отменить его.",
     "q5": "Эмоция не работает?",
-    "a5": "Используйте <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span> или <span class=\"inline-code\">fluent</span>. Пользовательский стиль заменяет эмоцию. Чтобы снова использовать эмоцию, удалите стиль командой <span class=\"inline-code\">!tts style off</span> (или <span class=\"inline-code\">!tts defaultstyle off</span> для канала).",
+    "a5": "Эмоция — это стиль. <span class=\"inline-code\">!tts emotion happy</span> задает стиль \"happy and cheerful\". Чтобы посмотреть свой стиль, используйте <span class=\"inline-code\">!tts style</span>. Чтобы удалить его, используйте <span class=\"inline-code\">!tts style off</span> (или <span class=\"inline-code\">!tts defaultstyle off</span> для канала).",
     "q6": "Нужна помощь?",
     "a6": "Свяжитесь с разработчиком через <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">форму обратной связи</a> на сайте портфолио Henry.",
     "qVoiceChanged": "Голос звучит иначе, чем раньше?",
