@@ -3,7 +3,7 @@ layout: docs.njk
 navId: sage-personality
 catalog: botcommands
 title: "Bot personality – Wildcat Docs"
-description: "Change how WildcatSage talks in your channel, and the rules that stay in place whatever you write."
+description: "Change how WildcatSage talks in your channel, the rules that stay in place whatever you write, and the De-Slop setting for plainer AI text."
 toc:
   - ["bot-personality-setup", "botPersonality.setupTitle", "Setup"]
   - ["bot-personality-limits", "botPersonality.limitsTitle", "Limits"]
@@ -13,6 +13,7 @@ toc:
   - ["bot-personality-reset", "botPersonality.resetTitle", "Reset to Default"]
   - ["bot-personality-shared", "botPersonality.sharedTitle", "Shared Chat"]
   - ["bot-personality-otherprompts", "botPersonality.otherPromptsTitle", "Other AI Prompts"]
+  - ["bot-personality-deslop", "botPersonality.deslopTitle", "De-Slop"]
 ---
 <section id="bot-personality" class="section">
     <h2 data-i18n="botPersonality.title">Bot Personality</h2>
@@ -101,4 +102,17 @@ toc:
         <li data-i18n="botPersonality.otherPrompts.checkin">AI prompts for Daily Check-In</li>
     </ul>
     <p data-i18n="botPersonality.otherPromptsText">Text commands and text timers do not use the check. The bot sends this text without a change.</p>
+
+    <h3 id="bot-personality-deslop" data-i18n="botPersonality.deslopTitle">De-Slop</h3>
+    <p data-i18n="botPersonality.deslop.intro">AI text has habits that readers notice. Examples are empty openers, hype words, and long dashes. De-Slop gives the bot rules to write without these habits. The personality of the bot stays the same.</p>
+    <p data-i18n="botPersonality.deslop.default">De-Slop is off by default.</p>
+    <ol>
+        <li data-i18n="botPersonality.deslop.steps.open">Open the <a href="https://bot.wildcat.chat/" class="default-link-style" target="_blank" rel="noopener noreferrer">WildcatSage Dashboard</a> and go to the <strong>Bot</strong> tab.</li>
+        <li data-i18n="botPersonality.deslop.steps.toggle">In the <strong>De-Slop</strong> card, turn on <strong>Use the plain writing rules</strong>.</li>
+    </ol>
+    <p data-i18n="botPersonality.deslop.saves">The dashboard saves the change immediately. A moderator can also use <span class="inline-code">!deslop on</span> and <span class="inline-code">!deslop off</span> in chat.</p>
+    <p data-i18n="botPersonality.deslop.scope">The rules apply to AI replies, automatic messages, and game text. The bot does not change quotes, text commands, or text timers.</p>
+    <p data-i18n="botPersonality.deslop.shared">In a Twitch shared chat session, the setting of the host channel applies.</p>
+    <p data-i18n="botPersonality.deslop.cost">De-Slop adds a short list of rules to the requests that the bot already sends to the AI. It does not send more requests.</p>
+    <p data-i18n="botPersonality.deslop.credit">The rules come from <a href="https://github.com/blader/humanizer" class="default-link-style" target="_blank" rel="noopener noreferrer">Humanizer</a> by Siqi Chen. Humanizer has the <a href="https://github.com/blader/humanizer/blob/main/LICENSE" class="default-link-style" target="_blank" rel="noopener noreferrer">MIT License</a>.</p>
 </section>

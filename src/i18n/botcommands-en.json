@@ -270,6 +270,14 @@
         "langCmd": "!botlang <language>"
       }
     },
+    "deslop": {
+      "description": "Shows or changes the De-Slop setting. De-Slop is off by default. You can also change the setting in the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Web Dashboard</a>.",
+      "usage": {
+        "statusDesc": "Shows the setting",
+        "onDesc": "Turns on De-Slop",
+        "offDesc": "Turns off De-Slop"
+      }
+    },
     "auto": {
       "name": "!auto",
       "description": "Configures automated chat messages and stream event notifications.",
@@ -513,6 +521,10 @@
         "title": "Bot Language:",
         "desc": "Set the language the bot speaks in your channel, or use the stream language from Twitch."
       },
+      "deslop": {
+        "title": "De-Slop:",
+        "desc": "Give the bot rules to write without the usual AI habits, such as hype words and long dashes."
+      },
       "dailyCheckIn": {
         "title": "Daily Check-In:",
         "desc": "Configure a Channel Point Reward for daily check-ins with streak tracking and optional AI responses."
@@ -630,7 +642,21 @@
       "timers": "AI prompts for timers",
       "checkin": "AI prompts for Daily Check-In"
     },
-    "otherPromptsText": "Text commands and text timers do not use the check. The bot sends this text without a change."
+    "otherPromptsText": "Text commands and text timers do not use the check. The bot sends this text without a change.",
+    "deslopTitle": "De-Slop",
+    "deslop": {
+      "intro": "AI text has habits that readers notice. Examples are empty openers, hype words, and long dashes. De-Slop gives the bot rules to write without these habits. The personality of the bot stays the same.",
+      "default": "De-Slop is off by default.",
+      "steps": {
+        "open": "Open the <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage Dashboard</a> and go to the <strong>Bot</strong> tab.",
+        "toggle": "In the <strong>De-Slop</strong> card, turn on <strong>Use the plain writing rules</strong>."
+      },
+      "saves": "The dashboard saves the change immediately. A moderator can also use <span class=\"inline-code\">!deslop on</span> and <span class=\"inline-code\">!deslop off</span> in chat.",
+      "scope": "The rules apply to AI replies, automatic messages, and game text. The bot does not change quotes, text commands, or text timers.",
+      "shared": "In a Twitch shared chat session, the setting of the host channel applies.",
+      "cost": "De-Slop adds a short list of rules to the requests that the bot already sends to the AI. It does not send more requests.",
+      "credit": "The rules come from <a href=\"https://github.com/blader/humanizer\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Humanizer</a> by Siqi Chen. Humanizer has the <a href=\"https://github.com/blader/humanizer/blob/main/LICENSE\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">MIT License</a>."
+    }
   },
   "channelMemory": {
     "title": "Channel Memory",

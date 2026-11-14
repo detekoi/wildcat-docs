@@ -270,6 +270,14 @@
         "langCmd": "!botlang <lingua>"
       }
     },
+    "deslop": {
+      "description": "Mostra o modifica l'impostazione De-Slop. De-Slop è disattivato per impostazione predefinita. Puoi modificare l'impostazione anche nella <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard Web</a>.",
+      "usage": {
+        "statusDesc": "Mostra l'impostazione",
+        "onDesc": "Attiva De-Slop",
+        "offDesc": "Disattiva De-Slop"
+      }
+    },
     "auto": {
       "name": "!auto",
       "description": "Configura i messaggi automatici della chat e le notifiche degli eventi dello stream.",
@@ -513,6 +521,10 @@
         "title": "Lingua del bot:",
         "desc": "Imposta la lingua che il bot parla nel tuo canale, oppure usa la lingua dello stream su Twitch."
       },
+      "deslop": {
+        "title": "De-Slop:",
+        "desc": "Dai al bot regole per scrivere senza le abitudini tipiche dell'IA, come le parole esagerate e i trattini lunghi."
+      },
       "dailyCheckIn": {
         "title": "Check-In giornaliero:",
         "desc": "Configura una ricompensa in punti canale per check-in giornalieri con conteggio delle serie e risposte IA facoltative."
@@ -630,7 +642,21 @@
       "timers": "Prompt IA per i timer",
       "checkin": "Prompt IA per il Check-In giornaliero"
     },
-    "otherPromptsText": "I comandi di testo e i timer di testo non usano il controllo. Il bot invia questo testo senza modifiche."
+    "otherPromptsText": "I comandi di testo e i timer di testo non usano il controllo. Il bot invia questo testo senza modifiche.",
+    "deslopTitle": "De-Slop",
+    "deslop": {
+      "intro": "Il testo dell'IA ha abitudini che i lettori notano. Alcuni esempi sono le aperture vuote, le parole esagerate e i trattini lunghi. De-Slop dà al bot regole per scrivere senza queste abitudini. La personalità del bot non cambia.",
+      "default": "De-Slop è disattivato per impostazione predefinita.",
+      "steps": {
+        "open": "Apri la <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Dashboard di WildcatSage</a> e vai alla scheda <strong>Bot</strong>.",
+        "toggle": "Nel riquadro <strong>De-Slop</strong>, attiva <strong>Usa le regole di scrittura semplice</strong>."
+      },
+      "saves": "La dashboard salva la modifica subito. Un moderatore può anche usare <span class=\"inline-code\">!deslop on</span> e <span class=\"inline-code\">!deslop off</span> in chat.",
+      "scope": "Le regole si applicano alle risposte IA, ai messaggi automatici e al testo dei giochi. Il bot non modifica le citazioni, i comandi di testo o i timer di testo.",
+      "shared": "In una sessione di chat condivisa di Twitch, si applica l'impostazione del canale host.",
+      "cost": "De-Slop aggiunge un breve elenco di regole alle richieste che il bot invia già all'IA. Non invia altre richieste.",
+      "credit": "Le regole provengono da <a href=\"https://github.com/blader/humanizer\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Humanizer</a> di Siqi Chen. Humanizer ha la <a href=\"https://github.com/blader/humanizer/blob/main/LICENSE\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">licenza MIT</a>."
+    }
   },
   "channelMemory": {
     "title": "Memoria del canale",

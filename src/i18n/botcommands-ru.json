@@ -270,6 +270,14 @@
         "langCmd": "!botlang <язык>"
       }
     },
+    "deslop": {
+      "description": "Показывает или изменяет настройку De-Slop. De-Slop отключен по умолчанию. Вы также можете изменить настройку в <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">веб-панели</a>.",
+      "usage": {
+        "statusDesc": "Показывает настройку",
+        "onDesc": "Включает De-Slop",
+        "offDesc": "Отключает De-Slop"
+      }
+    },
     "auto": {
       "name": "!auto",
       "description": "Настраивает автоматические сообщения чата и уведомления о событиях стрима.",
@@ -513,6 +521,10 @@
         "title": "Язык бота:",
         "desc": "Задайте язык, на котором бот говорит на вашем канале, или используйте язык стрима на Twitch."
       },
+      "deslop": {
+        "title": "De-Slop:",
+        "desc": "Дайте боту правила, чтобы он писал без типичных привычек ИИ, таких как громкие слова и длинные тире."
+      },
       "dailyCheckIn": {
         "title": "Ежедневный чекин:",
         "desc": "Настраивайте награду за баллы канала для ежедневного чекина с подсчетом серий и дополнительными ответами ИИ."
@@ -630,7 +642,21 @@
       "timers": "ИИ-промпты для таймеров",
       "checkin": "ИИ-промпты для ежедневного чекина"
     },
-    "otherPromptsText": "Текстовые команды и текстовые таймеры не используют проверку. Бот отправляет этот текст без изменений."
+    "otherPromptsText": "Текстовые команды и текстовые таймеры не используют проверку. Бот отправляет этот текст без изменений.",
+    "deslopTitle": "De-Slop",
+    "deslop": {
+      "intro": "У текста ИИ есть привычки, которые замечают читатели. Например, пустые вступления, громкие слова и длинные тире. De-Slop дает боту правила, чтобы он писал без этих привычек. Личность бота не меняется.",
+      "default": "De-Slop отключен по умолчанию.",
+      "steps": {
+        "open": "Откройте <a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">панель управления WildcatSage</a> и перейдите на вкладку <strong>Бот</strong>.",
+        "toggle": "В карточке <strong>De-Slop</strong> включите <strong>Использовать правила простого текста</strong>."
+      },
+      "saves": "Панель сразу сохраняет изменение. Модератор также может использовать <span class=\"inline-code\">!deslop on</span> и <span class=\"inline-code\">!deslop off</span> в чате.",
+      "scope": "Правила применяются к ответам ИИ, автоматическим сообщениям и тексту игр. Бот не изменяет цитаты, текстовые команды и текстовые таймеры.",
+      "shared": "В сессии общего чата Twitch применяется настройка канала-хоста.",
+      "cost": "De-Slop добавляет короткий список правил к запросам, которые бот уже отправляет ИИ. Он не отправляет дополнительных запросов.",
+      "credit": "Правила взяты из <a href=\"https://github.com/blader/humanizer\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Humanizer</a> от Siqi Chen. Humanizer распространяется по <a href=\"https://github.com/blader/humanizer/blob/main/LICENSE\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">лицензии MIT</a>."
+    }
   },
   "channelMemory": {
     "title": "Память канала",

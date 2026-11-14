@@ -270,6 +270,14 @@
         "langCmd": "!botlang <言語>"
       }
     },
+    "deslop": {
+      "description": "De-Slop の設定を表示または変更します。De-Slop はデフォルトで無効です。<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Webダッシュボード</a>でも設定を変更できます。",
+      "usage": {
+        "statusDesc": "設定を表示します",
+        "onDesc": "De-Slop を有効にします",
+        "offDesc": "De-Slop を無効にします"
+      }
+    },
     "auto": {
       "name": "!auto",
       "description": "自動チャットメッセージと配信イベント通知を設定します。",
@@ -513,6 +521,10 @@
         "title": "ボットの言語:",
         "desc": "チャンネルでボットが使う言語を設定します。Twitchの配信言語を使用することもできます。"
       },
+      "deslop": {
+        "title": "De-Slop:",
+        "desc": "大げさな言葉や長いダッシュなど、AI特有の癖のない文章を書くためのルールをボットに与えます。"
+      },
       "dailyCheckIn": {
         "title": "デイリーチェックイン:",
         "desc": "連続記録のトラッキングとAI応答を備えたデイリーチェックイン用チャンネルポイント報酬を設定します。"
@@ -630,7 +642,21 @@
       "timers": "タイマーの AI プロンプト",
       "checkin": "デイリーチェックインの AI プロンプト"
     },
-    "otherPromptsText": "テキストコマンドとテキストタイマーはチェックを使用しません。ボットはこのテキストを変更せずに送信します。"
+    "otherPromptsText": "テキストコマンドとテキストタイマーはチェックを使用しません。ボットはこのテキストを変更せずに送信します。",
+    "deslopTitle": "De-Slop",
+    "deslop": {
+      "intro": "AIの文章には、読者が気づく癖があります。たとえば、中身のない前置き、大げさな言葉、長いダッシュです。De-Slop は、これらの癖のない文章を書くためのルールをボットに与えます。ボットの個性は変わりません。",
+      "default": "De-Slop はデフォルトで無効です。",
+      "steps": {
+        "open": "<a href=\"https://bot.wildcat.chat/\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">WildcatSage ダッシュボード</a>を開き、<strong>ボット</strong>タブに移動します。",
+        "toggle": "<strong>De-Slop</strong> カードで、<strong>シンプルな文章ルールを使う</strong>をオンにします。"
+      },
+      "saves": "ダッシュボードは変更をすぐに保存します。モデレーターはチャットで <span class=\"inline-code\">!deslop on</span> と <span class=\"inline-code\">!deslop off</span> も使用できます。",
+      "scope": "ルールは、AIの返信、自動メッセージ、ゲームのテキストに適用されます。ボットは、引用、テキストコマンド、テキストタイマーを変更しません。",
+      "shared": "Twitch の共有チャットセッションでは、ホストチャンネルの設定が適用されます。",
+      "cost": "De-Slop は、ボットがすでにAIに送信しているリクエストに短いルールのリストを追加します。リクエストの数は増えません。",
+      "credit": "ルールは Siqi Chen 氏の <a href=\"https://github.com/blader/humanizer\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Humanizer</a> に基づいています。Humanizer は<a href=\"https://github.com/blader/humanizer/blob/main/LICENSE\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">MITライセンス</a>です。"
+    }
   },
   "channelMemory": {
     "title": "チャンネルメモリ",
