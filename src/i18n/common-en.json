@@ -125,12 +125,12 @@
         "lede": "Every WildcatTTS chat command. Select a command to see its options. Commands marked Mod work for moderators and the broadcaster only."
       },
       "tts-voices": {
-        "title": "Voices & language boost",
-        "lede": "Pick a voice from the full list, and tell the voice engine which language your chat speaks."
+        "title": "Voices and language",
+        "lede": "Search the full list of voices, and set a language hint for short or unclear messages."
       },
       "tts-filtering": {
         "title": "Filtering & pronunciation",
-        "lede": "Control what TTS says aloud: describe emotes, expand chat short forms, soften rude words, and skip messages with banned words."
+        "lede": "Control what TTS says aloud: describe emotes, expand chat short forms, turn sound tags off, soften rude words, and skip messages with banned words."
       },
       "tts-events": {
         "title": "Stream events & privacy",

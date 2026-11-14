@@ -1,0 +1,218 @@
+{
+  "total": 2114,
+  "studioCount": 30,
+  "libraryCount": 2084,
+  "languageCount": 39,
+  "studio": [
+    {
+      "id": "achernar",
+      "name": "Achernar",
+      "gender": "female",
+      "pitch": "high",
+      "description": "Soft, calm, and soothing voice with a higher pitch. Recommended for quiet or personal storytelling."
+    },
+    {
+      "id": "achird",
+      "name": "Achird",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Friendly, approachable, and warm voice with a lower-middle pitch. Recommended for casual walkthroughs or vlogs."
+    },
+    {
+      "id": "algenib",
+      "name": "Algenib",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Gravelly, grounded, and hard-hitting voice with a low pitch. Recommended for dramatic narration or intense stories."
+    },
+    {
+      "id": "algieba",
+      "name": "Algieba",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Smooth, relaxed, and polished voice with a low pitch. Recommended for corporate videos or polished explainers."
+    },
+    {
+      "id": "alnilam",
+      "name": "Alnilam",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Firm, direct, and commanding voice with a lower-middle pitch. Recommended for authoritative instructions or announcements."
+    },
+    {
+      "id": "aoede",
+      "name": "Aoede",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Breezy, light, and relaxed voice with a medium pitch. Recommended for lifestyle or travel vlogs."
+    },
+    {
+      "id": "autonoe",
+      "name": "Autonoe",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Bright, positive, and enthusiastic voice with a medium pitch. Recommended for promotions or product feature updates."
+    },
+    {
+      "id": "callirrhoe",
+      "name": "Callirrhoe",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Easy-going, relaxed, and casual voice with a medium pitch. Recommended for friendly guides or casual vlogs."
+    },
+    {
+      "id": "charon",
+      "name": "Charon",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Informative and steady voice with a low pitch. Recommended for technical explainers or documentaries."
+    },
+    {
+      "id": "despina",
+      "name": "Despina",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Smooth, mellow, and polished voice with a medium pitch. Recommended for marketing ads or professional e-learning."
+    },
+    {
+      "id": "enceladus",
+      "name": "Enceladus",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Breathy, intimate, and soft-spoken voice with a low pitch. Recommended for storytelling or intimate narrations."
+    },
+    {
+      "id": "erinome",
+      "name": "Erinome",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Clear, articulate, and precise voice with a medium pitch. Recommended for training walkthroughs or instructions."
+    },
+    {
+      "id": "fenrir",
+      "name": "Fenrir",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Excitable, high-energy, and passionate voice with a lower-middle pitch. Recommended for sports clips or energetic intros."
+    },
+    {
+      "id": "gacrux",
+      "name": "Gacrux",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Mature, authoritative, and professional voice with a medium pitch. Recommended for official announcements or serious presentations."
+    },
+    {
+      "id": "iapetus",
+      "name": "Iapetus",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Clear, crisp, and articulate voice with a lower-middle pitch. Recommended for help videos or onboarding walkthroughs."
+    },
+    {
+      "id": "kore",
+      "name": "Kore",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Firm, direct, and authoritative voice with a medium pitch. Recommended for news reports or official messages."
+    },
+    {
+      "id": "laomedeia",
+      "name": "Laomedeia",
+      "gender": "female",
+      "pitch": "high",
+      "description": "Upbeat, energetic, and positive voice with a higher pitch. Recommended for sales pitches or social media marketing."
+    },
+    {
+      "id": "leda",
+      "name": "Leda",
+      "gender": "female",
+      "pitch": "high",
+      "description": "Youthful, vibrant, and energetic voice with a higher pitch. Recommended for pop culture updates or gaming content."
+    },
+    {
+      "id": "orus",
+      "name": "Orus",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Firm, serious, and no-nonsense voice with a lower-middle pitch. Recommended for project reports or safety readouts."
+    },
+    {
+      "id": "puck",
+      "name": "Puck",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Upbeat, energetic, and cheerful voice with a rich, approachable tone. Recommended for podcasts, conversational agents, entertainment reviews, or ads."
+    },
+    {
+      "id": "pulcherrima",
+      "name": "Pulcherrima",
+      "gender": "neutral",
+      "pitch": "medium",
+      "description": "Forward, confident, and direct voice with a medium pitch. Recommended for sales calls or direct prompts."
+    },
+    {
+      "id": "rasalgethi",
+      "name": "Rasalgethi",
+      "gender": "male",
+      "pitch": "medium",
+      "description": "Informative and measured voice with a medium pitch. Recommended for history lectures or audiobooks."
+    },
+    {
+      "id": "sadachbia",
+      "name": "Sadachbia",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Lively, animated, and engaging voice with a low pitch. Recommended for daily digests or podcasts."
+    },
+    {
+      "id": "sadaltager",
+      "name": "Sadaltager",
+      "gender": "male",
+      "pitch": "medium",
+      "description": "Knowledgeable and steady voice with a medium pitch. Recommended for scientific explanations or deep dives."
+    },
+    {
+      "id": "schedar",
+      "name": "Schedar",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Even, balanced, and steady voice with a lower-middle pitch. Recommended for neutral scripts or documentation readouts."
+    },
+    {
+      "id": "sulafat",
+      "name": "Sulafat",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Warm, inviting, and comforting voice with a medium pitch. Recommended for onboarding screens or warm welcomes."
+    },
+    {
+      "id": "umbriel",
+      "name": "Umbriel",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Easy-going, laid-back, and casual voice with a lower-middle pitch. Recommended for reviews or casual explainers."
+    },
+    {
+      "id": "vindemiatrix",
+      "name": "Vindemiatrix",
+      "gender": "female",
+      "pitch": "medium",
+      "description": "Gentle, mild, and calming voice with a medium pitch. Recommended for kids content or meditation videos."
+    },
+    {
+      "id": "zephyr",
+      "name": "Zephyr",
+      "gender": "female",
+      "pitch": "high",
+      "description": "Bright, positive, and forward-looking voice with a higher pitch. Recommended for showreels or product announcements."
+    },
+    {
+      "id": "zubenelgenubi",
+      "name": "Zubenelgenubi",
+      "gender": "male",
+      "pitch": "low",
+      "description": "Casual, conversational, and laid-back voice with a lower-middle pitch. Recommended for startup updates or casual pitches."
+    }
+  ]
+}
