@@ -674,7 +674,7 @@
     "obsImportantDesc": "Certifique-se de que a fonte não esteja silenciada no seu mixer de áudio e que o volume esteja ajustado corretamente.",
     "voiceCalibrationTitle": "Calibração de voz",
     "voiceCalibrationIntro": "Algumas vozes são naturalmente mais altas ou mais baixas do que outras. A Calibração de Voz permite definir multiplicadores de volume para vozes individuais para equilibrar os níveis de áudio.",
-    "voiceCalibrationFeature1": "<strong>Volume por Voz:</strong> Selecione uma voz e atribua um multiplicador (0.1x a 10.0x). <em>(Atenção: valores acima de 1.0 podem ser altos)</em>",
+    "voiceCalibrationFeature1": "<strong>Volume por Voz:</strong> Selecione uma voz e atribua um multiplicador (0.1x a 2.0x). <em>(Atenção: valores acima de 1.0 podem ser altos)</em>",
     "voiceCalibrationFeature2": "<strong>Aplicação Automática:</strong> Quando um espectador escolhe uma voz calibrada, o bot aplica o volume personalizado automaticamente.",
     "voiceCalibrationFeature3": "<strong>Prioridade:</strong> Volumes de vozes calibradas têm prioridade sobre o volume padrão do canal.",
     "settingCalibrationTitle": "Calibração de voz:",

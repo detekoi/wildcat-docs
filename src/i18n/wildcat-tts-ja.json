@@ -674,7 +674,7 @@
     "obsImportantDesc": "音声ミキサーでソースがミュートになっておらず、適切な音量に設定されていることを確認してください。",
     "voiceCalibrationTitle": "音声キャリブレーション",
     "voiceCalibrationIntro": "音声によって音量が大きかったり小さかったりする場合があります。音声キャリブレーション機能により、音声ごとに音量倍率を設定して配信全体の音量を均一化できます。",
-    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 音声を選択して倍率（0.1x〜10.0x）を設定します。<em>（注意: 1.0より大きい値は非常に大きくなる場合があります）</em>",
+    "voiceCalibrationFeature1": "<strong>音声ごとの音量:</strong> 音声を選択して倍率（0.1x〜2.0x）を設定します。<em>（注意: 1.0より大きい値は非常に大きくなる場合があります）</em>",
     "voiceCalibrationFeature2": "<strong>自動適用:</strong> 視聴者がキャリブレーション設定された音声を指定すると、自動的にカスタム音量が適用されます。",
     "voiceCalibrationFeature3": "<strong>優先度:</strong> キャリブレーション設定された音量はチャンネルの標準音量設定よりも優先されます。",
     "settingCalibrationTitle": "音声キャリブレーション:",

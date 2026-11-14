@@ -674,7 +674,7 @@
     "obsImportantDesc": "Stelle sicher, dass die Quelle im Audio-Mixer nicht stummgeschaltet ist und die Lautstärke passend eingestellt ist.",
     "voiceCalibrationTitle": "Sprachkalibrierung",
     "voiceCalibrationIntro": "Einige Stimmen sind von Natur aus lauter oder leiser als andere. Mit der Stimmen-Kalibrierung kannst du Lautstärke-Multiplikatoren für einzelne Stimmen festlegen, um Audiopegel auszugleichen.",
-    "voiceCalibrationFeature1": "<strong>Lautstärke pro Stimme:</strong> Wähle eine Stimme und weise einen Multiplikator (0.1x bis 10.0x) zu. <em>(Vorsicht: Werte über 1.0 können laut sein)</em>",
+    "voiceCalibrationFeature1": "<strong>Lautstärke pro Stimme:</strong> Wähle eine Stimme und weise einen Multiplikator (0.1x bis 2.0x) zu. <em>(Vorsicht: Werte über 1.0 können laut sein)</em>",
     "voiceCalibrationFeature2": "<strong>Automatische Anwendung:</strong> Wenn ein Zuschauer eine kalibrierte Stimme wählt, wendet der Bot die Lautstärke automatisch an.",
     "voiceCalibrationFeature3": "<strong>Überschreibungen:</strong> Kalibrierte Lautstärken überschreiben die Standardlautstärke des Kanals.",
     "settingCalibrationTitle": "Sprachkalibrierung:",

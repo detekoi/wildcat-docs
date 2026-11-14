@@ -674,7 +674,7 @@
     "obsImportantDesc": "Vérifiez que la source n'est pas muette dans votre mélangeur audio et que le volume est correctement réglé.",
     "voiceCalibrationTitle": "Calibrage des voix",
     "voiceCalibrationIntro": "Certaines voix sont naturellement plus fortes ou plus douces que d'autres. L'Étalonnage Vocal vous permet de définir des multiplicateurs de volume pour des voix spécifiques afin d'harmoniser le niveau audio.",
-    "voiceCalibrationFeature1": "<strong>Volume par Voix :</strong> Sélectionnez une voix et attribuez un multiplicateur (0.1x à 10.0x). <em>(Attention : les valeurs supérieures à 1.0 peuvent être fortes)</em>",
+    "voiceCalibrationFeature1": "<strong>Volume par Voix :</strong> Sélectionnez une voix et attribuez un multiplicateur (0.1x à 2.0x). <em>(Attention : les valeurs supérieures à 1.0 peuvent être fortes)</em>",
     "voiceCalibrationFeature2": "<strong>Application Automatique :</strong> Lorsqu'un spectateur choisit une voix étalonnée, le bot applique automatiquement le volume personnalisé.",
     "voiceCalibrationFeature3": "<strong>Priorité :</strong> Les volumes étalonnés prévalent sur le volume par défaut de la chaîne.",
     "settingCalibrationTitle": "Calibrage des voix :",

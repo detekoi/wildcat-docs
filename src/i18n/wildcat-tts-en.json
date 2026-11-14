@@ -674,7 +674,7 @@
     "obsImportantDesc": "Make sure that the source is unmuted in your audio mixer and the volume is set appropriately.",
     "voiceCalibrationTitle": "Voice Calibration",
     "voiceCalibrationIntro": "Some voices are naturally louder or quieter than other voices. Voice Calibration lets you set volume multipliers for individual voices to balance audio levels.",
-    "voiceCalibrationFeature1": "<strong>Per-Voice Volume:</strong> Select a voice and assign a volume multiplier (0.1x to 10.0x). <em>(Caution: Values over 1.0 can be loud)</em>",
+    "voiceCalibrationFeature1": "<strong>Per-Voice Volume:</strong> Select a voice and assign a volume multiplier (0.1x to 2.0x). <em>(Caution: Values over 1.0 can be loud)</em>",
     "voiceCalibrationFeature2": "<strong>Auto-Apply:</strong> When a viewer selects a calibrated voice, the bot applies the custom volume automatically.",
     "voiceCalibrationFeature3": "<strong>Overrides:</strong> Calibrated voice volumes override the channel default volume setting.",
     "settingCalibrationTitle": "Voice Calibration:",
