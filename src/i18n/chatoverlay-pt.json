@@ -181,7 +181,7 @@
       "step7": "Na janela interativa, introduza as informações do seu canal. Clique na engrenagem de definições (<i data-lucide=\"settings\" class=\"lucide-inline\"></i>). Depois, clique em \"Connect\".",
       "tips": {
         "title": "Dicas avançadas do OBS",
-        "tip1": "Para a sincronização ao vivo pelo Chat Scene Creator, deixe <span class=\"inline-code\">Desativar fonte quando invisível</span> e <span class=\"inline-code\">Atualizar o navegador quando a cena ficar ativa</span> desmarcadas.",
+        "tip1": "Para sincronização em tempo real a partir do Criador de Cenas de Chat, deixe <span class=\"inline-code\">Desativar fonte quando não estiver visível</span> e <span class=\"inline-code\">Atualizar navegador quando a cena ficar ativa</span> desmarcadas.",
         "tip2": "Para ocultar as barras de deslocamento, adicione <span class=\"inline-code\">body { overflow: hidden; }</span> ao campo Custom CSS.",
         "tip3": "As definições são guardadas na cache do OBS. Se limpar a cache do OBS para esta fonte, configure novamente as suas definições visuais."
       }

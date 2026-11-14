@@ -9,7 +9,7 @@
     "toggleSubmenu": "Untermenü umschalten",
     "ttsCommands": "Text-zu-Sprache Befehle",
     "voices": "Stimmen",
-    "languageBoost": "Sprachunterstützung",
+    "languageBoost": "Sprache",
     "emoteDescriptions": "Emote-Beschreibungen",
     "webDashboard": "Web Dashboard",
     "troubleshooting": "Fehlerbehebung",
@@ -48,7 +48,7 @@
     "ttsStatus": {
       "name": "!tts status",
       "description": "Zeigt den aktuellen TTS-Status für den Kanal an.",
-      "notes": "Zeigt Engine-Status, Modus, Warteschlangenlänge, Standard-Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprachunterstützung an.",
+      "notes": "Zeigt den Engine-Status, den Modus, die Länge der Warteschlange, den Pausenstatus und die Standardstimme an.",
       "usage": {
         "basic": "!tts status"
       }
@@ -62,7 +62,7 @@
     },
     "ttsLanguageslist": {
       "name": "!tts languageslist",
-      "description": "Zeigt einen Link zur Liste der verfügbaren Optionen für Sprachunterstützung an.",
+      "description": "Zeigt einen Link zur Liste der TTS-Sprachoptionen an.",
       "usage": {
         "basic": "!tts languageslist"
       }
@@ -80,7 +80,7 @@
       "name": "!tts prefs\n(Aliase: !tts preferences, !tts settings)",
       "description": "Sendet einen Link zu Ihrer persönlichen TTS-Einstellungsseite.",
       "aliases": "(Aliase: !tts preferences, !tts settings)",
-      "feature1": "Stelle deine eigene Stimme, Tonhöhe, Geschwindigkeit, Emotion und Sprache für diesen Kanal ein.",
+      "feature1": "Lege deine eigene Stimme, deinen Stil, deine Emotion, Geschwindigkeit, Tonhöhe und Sprache für diesen Kanal fest.",
       "feature2": "Enthält einen Bereich „TTS deaktivieren“. Du kannst TTS in einem Kanal oder in allen Kanälen deaktivieren und wieder aktivieren. Wenn ein Moderator TTS für dich in einem Kanal deaktiviert hat, kann nur ein Moderator das rückgängig machen. Wenn du TTS in allen Kanälen deaktivierst, kündigt TTS deine Subs, Cheers und Geschenke weiterhin an, aber nicht die Nachricht, die du hinzufügst. Wenn du die TTS-Belohnung einlöst, liest TTS diese Nachricht vor.",
       "feature3": "Der Bot postet den Link im Chat mit geladenem Kanal-Kontext.",
       "usage": {
@@ -227,18 +227,19 @@
       "name": "!tts voice <voice_id|reset>",
       "description": "Legt deine persönliche Stimmen-Einstellung für deine Chat-Nachrichten fest.",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
-      "notes": "Verwende <span class=\"inline-code\">reset</span>, um die Kanal-Standardstimme zu nutzen. Verwende <span class=\"inline-code\">!tts voices</span> für eine Liste der Stimmen-IDs.",
+      "notes": "Verwende <span class=\"inline-code\">reset</span>, um die Standardstimme des Kanals zu nutzen. Du findest die Voice-IDs in der <a href=\"tts-voices.html#voices\" class=\"default-link-style\">Stimmenliste</a>. Der Befehl <span class=\"inline-code\">!tts voices</span> gibt den Link im Chat aus.",
       "usage": {
-        "example": "!tts voice Friendly_Person",
+        "example": "!tts voice puck",
         "reset": "!tts voice reset",
-        "status": "!tts voice"
+        "status": "!tts voice",
+        "library": "!tts voice en-gb-storyteller-3"
       }
     },
     "ttsEmotion": {
       "name": "!tts emotion <emotion_name|reset|auto>",
       "description": "Legt deine persönliche Emotion für deine Chat-Nachrichten fest.",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
-      "notes": "Gültige Emotionen: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>. Verwende <span class=\"inline-code\">reset</span> für den Kanal-Standard.",
+      "notes": "Gültige Emotionen: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Verwende <span class=\"inline-code\">reset</span> für den Kanalstandard. Wenn du eine Emotion festlegst, entfernt der Bot deinen eigenen Stil.",
       "usage": {
         "example": "!tts emotion happy",
         "reset": "!tts emotion reset",
@@ -247,10 +248,10 @@
     },
     "ttsLanguage": {
       "name": "!tts language <language|reset>\n(Alias: !tts lang)",
-      "description": "Legt deine persönliche Sprachunterstützung für deine Chat-Nachrichten fest.",
+      "description": "Legt deine persönliche Spracheinstellung für deine Chatnachrichten fest.",
       "alias": "(Alias: !tts lang)",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
-      "notes": "Sprachunterstützung verbessert die Aussprache für eine Sprache. Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den Kanal-Standard. Siehe Bereich <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprachunterstützung</a> oder nutze <span class=\"inline-code\">!tts languageslist</span> für alle Optionen.",
+      "notes": "Die Sprache dient als Hinweis für kurzen oder unklaren Text, zum Beispiel eine Zahl. Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den Kanalstandard. Sieh dir den Abschnitt <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprache</a> an oder verwende <span class=\"inline-code\">!tts languageslist</span>, um alle Optionen zu sehen.",
       "usage": {
         "example": "!tts language English",
         "langAlias": "!tts lang Japanese",
@@ -259,27 +260,27 @@
       }
     },
     "ttsPitch": {
-      "name": "!tts pitch <value|reset>",
+      "name": "!tts pitch <Stufe|Zahl|reset>",
       "description": "Legt deine persönliche TTS-Tonhöhe für deine Chat-Nachrichten fest.",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
-      "notes": "Wert muss eine Ganzzahl von -12 bis 12 sein (0 ist Standard). Verwende <span class=\"inline-code\">reset</span> für den Kanal-Standard.",
+      "notes": "Die Tonhöhe hat fünf Stufen: <span class=\"inline-code\">very-low</span>, <span class=\"inline-code\">low</span>, <span class=\"inline-code\">normal</span>, <span class=\"inline-code\">high</span>, <span class=\"inline-code\">very-high</span>. Du kannst auch eine ganze Zahl von -12 bis 12 eingeben. Der Bot wandelt eine Zahl in die nächste Stufe um. Das Ergebnis ist ungefähr, weil der Bot der Stimme in Worten sagt, wie sie sprechen soll. Verwende <span class=\"inline-code\">reset</span> für den Kanalstandard.",
       "usage": {
-        "positive": "!tts pitch 2",
         "negative": "!tts pitch -3",
         "reset": "!tts pitch reset",
-        "status": "!tts pitch"
+        "status": "!tts pitch",
+        "word": "!tts pitch high"
       }
     },
     "ttsSpeed": {
-      "name": "!tts speed <value|reset>",
+      "name": "!tts speed <Stufe|Zahl|reset>",
       "description": "Legt deine persönliche TTS-Sprechgeschwindigkeit für deine Chat-Nachrichten fest.",
       "statusDesc": "(zeigt aktuelle persönliche Voreinstellung an)",
-      "notes": "Wert muss eine Zahl von 0.5 bis 2.0 sein (1.0 ist Standard). Verwende <span class=\"inline-code\">reset</span> für den Kanal-Standard.",
+      "notes": "Die Geschwindigkeit hat fünf Stufen: <span class=\"inline-code\">very-slow</span>, <span class=\"inline-code\">slow</span>, <span class=\"inline-code\">normal</span>, <span class=\"inline-code\">fast</span>, <span class=\"inline-code\">very-fast</span>. Du kannst auch eine Zahl von 0.5 bis 2.0 eingeben. Der Bot wandelt eine Zahl in die nächste Stufe um. Das Ergebnis ist ungefähr, weil der Bot der Stimme in Worten sagt, wie sie sprechen soll. Verwende <span class=\"inline-code\">reset</span> für den Kanalstandard.",
       "usage": {
-        "faster": "!tts speed 1.2",
         "slower": "!tts speed 0.8",
         "reset": "!tts speed reset",
-        "status": "!tts speed"
+        "status": "!tts speed",
+        "word": "!tts speed fast"
       }
     },
     "ttsIgnore": {
@@ -327,9 +328,9 @@
       "name": "!tts defaultvoice <voice_id|reset>",
       "description": "Legt die Standard-TTS-Stimme für den <em>Kanal</em> fest.",
       "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
-      "notes": "Verwende <span class=\"inline-code\">reset</span> für den System-Standard. Verwende <span class=\"inline-code\">!tts voices</span> für verfügbare Stimmen-IDs.",
+      "notes": "Verwende <span class=\"inline-code\">reset</span> für den Systemstandard. Du findest die Voice-IDs in der <a href=\"tts-voices.html#voices\" class=\"default-link-style\">Stimmenliste</a>. Der Befehl <span class=\"inline-code\">!tts voices</span> gibt den Link im Chat aus.",
       "usage": {
-        "example": "!tts defaultvoice Friendly_Person",
+        "example": "!tts defaultvoice kore",
         "reset": "!tts defaultvoice reset",
         "status": "!tts defaultvoice"
       }
@@ -338,7 +339,7 @@
       "name": "!tts defaultemotion <emotion_name|reset>",
       "description": "Legt die Standard-TTS-Emotion für den <em>Kanal</em> fest.",
       "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
-      "notes": "Gültige Emotionen: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>. Verwende <span class=\"inline-code\">reset</span> für den System-Standard (<span class=\"inline-code\">neutral</span>).",
+      "notes": "Gültige Emotionen: <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span>, <span class=\"inline-code\">fluent</span>. Verwende <span class=\"inline-code\">reset</span> für den Systemstandard (neutral). Wenn du eine Emotion festlegst, entfernt der Bot den Standardstil des Kanals.",
       "usage": {
         "example": "!tts defaultemotion happy",
         "reset": "!tts defaultemotion reset",
@@ -347,9 +348,9 @@
     },
     "ttsDefaultlanguage": {
       "name": "!tts defaultlanguage <language|reset>",
-      "description": "Legt die Standard-TTS-Sprachunterstützung für den <em>Kanal</em> fest.",
+      "description": "Legt die Standard-TTS-Sprache für den Kanal fest.",
       "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
-      "notes": "Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den System-Standard. Siehe Bereich <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprachunterstützung</a> oder nutze <span class=\"inline-code\">!tts languageslist</span> für Optionen.",
+      "notes": "Verwende <span class=\"inline-code\">reset</span> oder <span class=\"inline-code\">auto</span> für den Systemstandard. Sieh dir den Abschnitt <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprache</a> an oder verwende <span class=\"inline-code\">!tts languageslist</span>, um alle Optionen zu sehen.",
       "usage": {
         "example": "!tts defaultlanguage English",
         "reset": "!tts defaultlanguage reset",
@@ -357,30 +358,30 @@
       }
     },
     "ttsDefaultpitch": {
-      "name": "!tts defaultpitch <value|reset>",
+      "name": "!tts defaultpitch <Stufe|Zahl|reset>",
       "description": "Legt die Standard-TTS-Tonhöhe für den <em>Kanal</em> fest.",
       "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
-      "notes": "Wert muss eine Ganzzahl von -12 bis 12 sein (0 ist Standard). Verwende <span class=\"inline-code\">reset</span> für den System-Standard (0).",
+      "notes": "Die Tonhöhe hat fünf Stufen: <span class=\"inline-code\">very-low</span>, <span class=\"inline-code\">low</span>, <span class=\"inline-code\">normal</span>, <span class=\"inline-code\">high</span>, <span class=\"inline-code\">very-high</span>. Du kannst auch eine ganze Zahl von -12 bis 12 eingeben. Der Bot wandelt eine Zahl in die nächste Stufe um. Das Ergebnis ist ungefähr, weil der Bot der Stimme in Worten sagt, wie sie sprechen soll. Verwende <span class=\"inline-code\">reset</span> für den Systemstandard (<span class=\"inline-code\">normal</span>).",
       "usage": {
-        "example": "!tts defaultpitch 2",
+        "example": "!tts defaultpitch low",
         "reset": "!tts defaultpitch reset",
         "status": "!tts defaultpitch"
       }
     },
     "ttsDefaultspeed": {
-      "name": "!tts defaultspeed <value|reset>",
+      "name": "!tts defaultspeed <Stufe|Zahl|reset>",
       "description": "Legt die Standard-TTS-Geschwindigkeit für den <em>Kanal</em> fest.",
       "statusDesc": "(zeigt aktuellen Kanal-Standard an)",
-      "notes": "Wert muss eine Zahl von 0.5 bis 2.0 sein (1.0 ist Standard). Verwende <span class=\"inline-code\">reset</span> für den System-Standard (1.0).",
+      "notes": "Die Geschwindigkeit hat fünf Stufen: <span class=\"inline-code\">very-slow</span>, <span class=\"inline-code\">slow</span>, <span class=\"inline-code\">normal</span>, <span class=\"inline-code\">fast</span>, <span class=\"inline-code\">very-fast</span>. Du kannst auch eine Zahl von 0.5 bis 2.0 eingeben. Der Bot wandelt eine Zahl in die nächste Stufe um. Das Ergebnis ist ungefähr, weil der Bot der Stimme in Worten sagt, wie sie sprechen soll. Verwende <span class=\"inline-code\">reset</span> für den Systemstandard (<span class=\"inline-code\">normal</span>).",
       "usage": {
-        "example": "!tts defaultspeed 1.2",
+        "example": "!tts defaultspeed fast",
         "reset": "!tts defaultspeed reset",
         "status": "!tts defaultspeed"
       }
     },
     "ttsMessage": {
       "name": "!tts <message>",
-      "description": "Fügt die Nachricht sofort zur TTS-Warteschlange hinzu. Funktioniert im Modus 'all' und 'command'. TTS verwendet deine Einstellungen (oder Kanal-Standards) für Stimme, Tonhöhe, Geschwindigkeit und Emotion.",
+      "description": "Fügt die Nachricht sofort zur TTS-Warteschlange hinzu. Dieser Befehl funktioniert in den Modi Alle und Befehl. TTS verwendet deine Einstellungen (oder die Kanalstandards) für Stimme, Stil, Emotion, Geschwindigkeit und Tonhöhe.",
       "usage": {
         "basic": "!tts Willkommen alle zum Stream!"
       }
@@ -467,6 +468,46 @@
       "onNote": "(liest sie wieder vor)",
       "statusNote": "(zeigt die aktuelle Einstellung)",
       "notes": "Andere Bots, zum Beispiel Nightbot oder StreamElements, verwenden Befehle, die mit „!“ beginnen, wie etwa !lurk oder !so. Im Modus „Alle Chatnachrichten“ liest TTS diese Befehle als Chat vor. Schalten Sie diese Einstellung aus, um sie zu überspringen. Die Einstellung ändert !tts nicht: !tts funktioniert weiterhin. Die Einstellung hat keine Auswirkung im Modus „!tts-Nachrichten“, im Modus „Hervorgehobene Nachrichten“ oder im Modus „Nur Cheers und Belohnungen“, da diese Modi diese Nachrichten nie vorlesen. Ein Cheer, der mit „!“ beginnt, wird weiterhin vorgelesen, da der Zuschauer dafür bezahlt hat. Sie können dies auch im Web Dashboard unter „Chat-Befehle vorlesen“ ändern."
+    },
+    "ttsStyle": {
+      "name": "!tts style <Text|off>",
+      "description": "Legt in deinen eigenen Worten fest, wie die Stimme deine Chatnachrichten spricht.",
+      "usage": {
+        "example": "!tts style flüsternd",
+        "phrase": "!tts style wie ein müder Pirat",
+        "off": "!tts style off",
+        "status": "!tts style"
+      },
+      "offDesc": "(entfernt deinen Stil)",
+      "statusDesc": "(zeigt die aktuelle persönliche Einstellung an)",
+      "notes": "Ein Stil ist freier Text, der der Stimme sagt, wie sie sprechen soll, und hat maximal 120 Zeichen. Die Stimme liest den Stil nicht laut vor, und ein Stil kann die Wörter einer Nachricht nicht ändern. Solange du einen Stil hast, ignoriert der Bot deine Emotion. Für deine Nachrichten ersetzt dein Stil auch den Stil oder die Emotion des Kanals. Der Bot lehnt einen Stil ab, der ein gesperrtes Wort des Kanals enthält. Wenn der Kanal keine Zuschauereinstellungen erlaubt, verwendet der Bot die Kanaleinstellungen."
+    },
+    "ttsDefaultstyle": {
+      "name": "!tts defaultstyle <Text|off>",
+      "description": "Legt den Standardstil für den Kanal in deinen eigenen Worten fest.",
+      "usage": {
+        "example": "!tts defaultstyle ruhig und freundlich",
+        "off": "!tts defaultstyle off",
+        "status": "!tts defaultstyle"
+      },
+      "offDesc": "(entfernt den Standardstil)",
+      "statusDesc": "(zeigt die aktuelle Kanalvorgabe)",
+      "notes": "Ein Stil ist ein Freitext, der der Stimme vorgibt, wie sie sprechen soll, und maximal 120 Zeichen lang ist. Die Stimme liest den Stil nicht laut vor, und ein Stil kann die Wörter einer Nachricht nicht ändern. Solange der Kanal einen Standardstil hat, ignoriert der Bot die Standardemotion. Der Stil oder die Emotion eines Zuschauers ersetzt den Standardstil für die Nachrichten dieses Zuschauers. Der Bot lehnt einen Stil ab, der ein gesperrtes Wort des Kanals enthält. Sie können den Stil auch im Web Dashboard festlegen."
+    },
+    "ttsTags": {
+      "name": "!tts tags <off|on> <tag|all>",
+      "description": "Schaltet Sound-Tags wie <span class=\"inline-code\">&lt;laugh&gt;</span> für den Kanal aus oder ein.",
+      "usage": {
+        "off": "!tts tags off scream",
+        "on": "!tts tags on scream",
+        "offAll": "!tts tags off all",
+        "onAll": "!tts tags on all",
+        "list": "!tts tags list"
+      },
+      "offNote": "(der Bot entfernt dieses Tag aus Nachrichten)",
+      "onNote": "(die Stimme erzeugt dieses Geräusch wieder)",
+      "listNote": "(zeigt die Tags, die ausgeschaltet sind)",
+      "notes": "Ein Sound-Tag ist ein Wort in spitzen Klammern, das die Stimme in ein Geräusch umwandelt, zum Beispiel <span class=\"inline-code\">&lt;laugh&gt;</span>. Alle Tags sind standardmäßig eingeschaltet. Wenn ein Tag ausgeschaltet ist, entfernt der Bot es aus Nachrichten. Die Liste der Tags finden Sie unter <a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">Sound-Tags</a>. Sie können die Tags auch im Web Dashboard ändern."
     }
   },
   "table": {
@@ -488,28 +529,73 @@
   },
   "voices": {
     "title": "Stimmen",
-    "introText": "Der Bot bietet 472 Stimmen in 45 Sprachen aus dem Modell MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Ist der Hauptanbieter nicht erreichbar, greift der Bot automatisch auf <span class=\"inline-code\">speech-02-turbo</span> zurück. Verwende die <span class=\"inline-code\">voice_id</span> in Befehlen wie <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span>.",
-    "popularTitle": "Beliebte Stimmen-IDs",
-    "popularText": "Beliebte Stimmen aus dem Modell MiniMax <span class=\"inline-code\">speech-2.8-turbo</span>. Um eine Stimme auszuwählen, nutze <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> im Chat.",
-    "completeListTitle": "Vollständige Stimmenliste (von <a href=\"https://wavespeed.ai/center/default/api/v1/model_schema/minimax/speech-02-turbo\" target=\"_blank\" class=\"default-link-style\">Wavespeed AI minimax/speech-02-turbo Schema</a> — Fallback-Anbieter)",
-    "completeListText": "Diese Liste enthält alle 472 verfügbaren Stimmen, geordnet nach Sprachpräfix.",
-    "expandText": "Auswählen, um die vollständige Stimmenliste zu erweitern (472 Stimmen in 45 Sprachen)",
-    "completeListNote": "Hinweis: Der Bot verwendet MiniMax <span class=\"inline-code\">speech-2.8-turbo</span> mit automatischem Fallback auf <span class=\"inline-code\">speech-02-turbo</span>. Die Liste enthält 472 Stimmen nach Sprachpräfix. Der Befehl <span class=\"inline-code\">!tts voices</span> verlinkt hierher."
+    "introText": "WildcatTTS verwendet das Gemini-Sprachmodell von Google. Sie können aus mehr als 2.000 Stimmen auswählen. Jede Stimme hat eine Stimmen-ID, also den Namen, den Sie in einen Befehl eingeben.",
+    "selectText": "Um eine Stimme für Ihre eigenen Nachrichten auszuwählen, geben Sie <span class=\"inline-code\">!tts voice &lt;voice_id&gt;</span> im Chat ein. Sie können eine Stimme auch auf Ihrer persönlichen Einstellungsseite auswählen, die <span class=\"inline-code\">!tts prefs</span> öffnet. Moderatoren legen die Stimme des Kanals mit <span class=\"inline-code\">!tts defaultvoice &lt;voice_id&gt;</span> oder im Web Dashboard fest.",
+    "changedText": "WildcatTTS hat die früheren MiniMax-Stimmen durch Gemini-Stimmen ersetzt. Der Bot hat jede gespeicherte Stimme automatisch auf die ähnlichste neue Stimme umgestellt. Sie müssen keine Stimme erneut auswählen, aber die neue Stimme klingt anders als die alte Stimme.",
+    "studioTitle": "Studio-Stimmen",
+    "studioText": "Eine Studio-Stimme spricht jede Sprache. Verwenden Sie eine Studio-Stimme, wenn Ihr Chat mehr als eine Sprache verwendet. Die Beschreibungen sind nur auf Englisch.",
+    "studioCaption": "Studio-Stimmen",
+    "finderTitle": "Alle Stimmen durchsuchen",
+    "finderText": "Jede der anderen Stimmen hat eine Sprache, einen Akzent, ein Geschlecht und eine Tonhöhe. Die Suche unten umfasst alle Stimmen. Wenn Sie mehr als ein Wort eingeben, zeigt die Tabelle nur die Stimmen, die zu allen Wörtern passen.",
+    "everyLanguage": "Jede Sprache",
+    "copy": "Kopieren",
+    "copyLabel": "Stimmen-ID {id} kopieren",
+    "copied": "Kopiert",
+    "copiedLabel": "Die Stimmen-ID {id} befindet sich in Ihrer Zwischenablage.",
+    "copyFailed": "Das Kopieren hat nicht funktioniert. Wählen Sie die Stimmen-ID {id} aus und kopieren Sie sie.",
+    "table": {
+      "voice": "Stimme",
+      "id": "Stimmen-ID",
+      "language": "Sprache und Akzent",
+      "gender": "Geschlecht",
+      "pitch": "Tonhöhe",
+      "description": "Beschreibung"
+    },
+    "gender": {
+      "female": "Weiblich",
+      "male": "Männlich",
+      "neutral": "Neutral"
+    },
+    "pitch": {
+      "low": "Tief",
+      "medium": "Mittel",
+      "high": "Hoch"
+    },
+    "finder": {
+      "noScript": "Die Suche benötigt JavaScript. Ohne JavaScript zeigt diese Seite nur die Studio-Stimmen an.",
+      "searchLabel": "Stimmen suchen",
+      "searchPlaceholder": "Zum Beispiel: ruhiger Erzähler",
+      "searchHelp": "Gib Wörter aus dem Namen, der Beschreibung, dem Akzent, der Sprache oder der Stimmen-ID ein. Die Beschreibungen sind nur auf Englisch.",
+      "language": "Sprache",
+      "allLanguages": "Alle Sprachen",
+      "studioOption": "Jede Sprache (Studio-Stimmen)",
+      "anyGender": "Beliebiges Geschlecht",
+      "anyPitch": "Beliebige Tonhöhe",
+      "clear": "Suche und Filter löschen",
+      "caption": "Stimmen, die deiner Suche entsprechen",
+      "count": "Gefundene Stimmen: {n}.",
+      "shown": "Die Tabelle zeigt die ersten {shown}.",
+      "more": "Mehr Stimmen anzeigen",
+      "none": "Keine Stimmen passen. Ändere die Suchwörter oder lösche die Filter.",
+      "loading": "Die Stimmenliste wird geladen.",
+      "error": "Die Stimmenliste wurde nicht geladen. Lade die Seite neu."
+    }
   },
   "languageBoost": {
-    "title": "Sprachunterstützung",
-    "introText": "Die Funktion <span class=\"inline-code\">language_boost</span> verbessert die Aussprache für bestimmte Sprachen und Dialekte. Diese Einstellung hilft in mehrsprachigen Chats und nicht-englischen Streams.",
+    "title": "Sprache",
+    "introText": "Das Sprachmodell erkennt die Sprache jeder Nachricht selbstständig und unterstützt mehr als 100 Sprachen. Die Einstellung Sprache ist ein Hinweis für Text, der dem Modell zu wenig Information gibt, wie eine Zahl oder eine sehr kurze Nachricht. Der frühere Name dieser Einstellung war Language Boost.",
     "commandText": "Lege eine persönliche Spracheinstellung mit <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> fest. Moderatoren können einen Kanal-Standard mit <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> festlegen.",
-    "optionsTitle": "Verfügbare Sprachunterstützungsoptionen",
+    "optionsTitle": "Verfügbare Sprachoptionen",
     "optionsIntro": "Die folgenden Werte werden akzeptiert:",
-    "usageText": "Die Einstellung <span class=\"inline-code\">auto</span> nutzt die automatische Spracherkennung. Für englische Chats wähle <span class=\"inline-code\">English</span>. Die Auswahl einer bestimmten Sprache verbessert die Aussprache für diese Sprache.",
+    "usageText": "Mit <span class=\"inline-code\">auto</span> wählt das Modell die Sprache anhand des Texts jeder Nachricht aus. Wenn dein Chat eine Sprache verwendet, lege diese Sprache fest. Die Stimme liest Zahlen und kurze Nachrichten dann in dieser Sprache.",
     "announcementsTitle": "Ankündigungen und Chat-Antworten",
     "announcementsText1": "Die Kanalsprache wählt auch die Sprache des Textes, den der Bot schreibt. Dieser Text umfasst Ankündigungen von Stream-Ereignissen, Emote-Beschreibungen und Chat-Antworten auf Befehle.",
     "announcementsText2": "Ein Zuschauer abonniert zum Beispiel einen spanischen Kanal. Der Bot macht die Ankündigung dann auf Spanisch.",
-    "announcementsText3": "Eine persönliche Sprache über <span class=\"inline-code\">!tts language</span> ändert die Stimme nur für Ihre eigenen Nachrichten. Eine persönliche Sprache ändert die Ankündigungen nicht, da der gesamte Kanal sie hört. Die Einstellung <span class=\"inline-code\">auto</span> gibt keine Sprache an, daher erhält ein Kanal auf <span class=\"inline-code\">auto</span> Ankündigungen auf Englisch.",
-    "detectionTitle": "Automatische Erkennung",
+    "announcementsText3": "Eine persönliche Sprache über <span class=\"inline-code\">!tts language</span> gilt nur für deine eigenen Nachrichten. Eine persönliche Sprache ändert die Ankündigungen nicht, weil der gesamte Kanal sie hört. Die Einstellung <span class=\"inline-code\">auto</span> legt keine Sprache fest, daher erhält ein Kanal mit <span class=\"inline-code\">auto</span> Ankündigungen auf Englisch.",
+    "detectionTitle": "Kanalsprache von Twitch",
     "detectionText1": "WildcatTTS liest die Sprache, die Ihr Kanal auf Twitch angibt. Der Bot legt den Kanalstandard dann für Sie fest.",
-    "detectionText2": "Der Bot ändert diese Einstellung nur für einen Kanal, der keine eigene Sprache hat. Ihre eigene Auswahl bleibt immer erhalten. Twitch hat einige Sprachen, die die Voice-Engine nicht unterstützt. Für diese Sprachen bleibt der Kanal auf <span class=\"inline-code\">auto</span>."
+    "detectionText2": "Der Bot ändert diese Einstellung nur für einen Kanal, der noch keine eigene Sprache hat. Deine eigene Auswahl bleibt immer bestehen. Twitch hat einige Sprachen, die nicht in der Liste oben stehen. Für diese Sprachen bleibt der Kanal auf <span class=\"inline-code\">auto</span>.",
+    "profanityText": "Die Kanalsprache wählt auch die Wortliste des Schimpfwortfilters aus. Siehe <a href=\"tts-filtering.html#profanity-filter-language\" class=\"default-link-style\">Schimpfwortfilter</a>."
   },
   "emoteDescriptions": {
     "title": "Emote-Beschreibungen",
@@ -519,7 +605,7 @@
     "step2": "Der Bot speichert die Beschreibung nach der ersten Erstellung dauerhaft.",
     "step3": "Spätere Verwendungen des Emotes nutzen die gespeicherte Beschreibung sofort ohne neue KI-Verarbeitung.",
     "managementTitle": "Beschreibungen verwalten",
-    "managementText": "Moderatoren können <span class=\"inline-code\">!tts emote</span> nutzen, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder festzulegen. Siehe Tabelle <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Emote-Beschreibungs-Verwaltung</a> für Details.",
+    "managementText": "Moderatoren können <span class=\"inline-code\">!tts emote</span> verwenden, um Emote-Beschreibungen anzuzeigen, neu zu generieren oder festzulegen. Siehe die Tabelle <a href=\"tts-commands.html#cat-emoteDescriptions\" class=\"default-link-style\">Verwaltung von Emote-Beschreibungen</a> für Einzelheiten.",
     "localeText": "Die KI schreibt jede Beschreibung in der Sprache des Kanals. Der Bot behält eine separate Beschreibung für jede Sprache."
   },
   "webDashboard": {
@@ -531,7 +617,7 @@
     "settingViewerTitle": "Zuschauerpräferenzen:",
     "settingViewerDesc": "Erlaube eigene Zuschauer-Stimmen oder erzwinge die Standardstimme des Kanals für alle Nachrichten.",
     "settingAllowPreferencesTitle": "Zuschauer-Stimmeinstellungen zulassen:",
-    "settingAllowPreferencesDesc": "Erlaube Zuschauern eigene Stimmen mit !myvoice, oder sperre TTS auf die Standardstimme des Kanals.",
+    "settingAllowPreferencesDesc": "Erlaube Zuschauern, ihre eigene Stimme, ihren Stil und andere Einstellungen aus !myvoice zu verwenden, oder nutze die Kanalstandards für alle Nachrichten.",
     "settingBotChatTitle": "Bot antwortet im Chat:",
     "settingBotChatDesc": "Schalte Chat-Textantworten ein oder aus, während die TTS-Audioausgabe aktiv bleibt.",
     "settingAnonymizeFollowersTitle": "Neue Follower anonymisieren:",
@@ -559,7 +645,7 @@
     "settingBannedWordsTitle": "Verbotene Wörter / Ausdrücke:",
     "settingBannedWordsDesc": "Blockiere bestimmte Wörter oder Ausdrücke, sodass TTS passende Nachrichten überspringt.",
     "settingVoiceTitle": "Standard-Spracheinstellungen:",
-    "settingVoiceDesc": "Lege Kanal-Standards für Stimme, Lautstärke, Emotion, Tonhöhe, Geschwindigkeit, Sprache und Textnormalisierung fest.",
+    "settingVoiceDesc": "Lege Kanalstandards für Stimme, Lautstärke, Stil, Emotion, Geschwindigkeit, Tonhöhe und Sprache fest.",
     "settingObsTitle": "OBS Browserquellen-Einrichtung:",
     "settingObsDesc": "Erhalte deine sichere OBS Browserquellen-URL und Einrichtungsanweisungen.",
     "settingPreviewTitle": "Stimmen-Vorschau:",
@@ -594,7 +680,18 @@
     "settingCalibrationTitle": "Sprachkalibrierung:",
     "settingCalibrationDesc": "Lege Lautstärke-Multiplikatoren für einzelne Stimmen fest, um Audiopegel auszugleichen.",
     "settingPageLanguageTitle": "Seitensprache:",
-    "settingPageLanguageDesc": "Wählen Sie die Sprache des Dashboard-Textes. Die Auswahl befindet sich oben auf der Seite. Diese Auswahl ändert die Stimme oder die Ankündigungen nicht."
+    "settingPageLanguageDesc": "Wählen Sie die Sprache des Dashboard-Textes. Die Auswahl befindet sich oben auf der Seite. Diese Auswahl ändert die Stimme oder die Ankündigungen nicht.",
+    "settingSoundTagsTitle": "Sound-Tags:",
+    "settingSoundTagsDesc": "Schalte einzelne Sound-Tags wie <span class=\"inline-code\">&lt;scream&gt;</span> aus oder ein.",
+    "voiceDefaultsTitle": "Standard-Stimmeinstellungen",
+    "voiceDefaultsIntro": "Die Standard-Stimmeinstellungen gelten für jede Nachricht eines Zuschauers ohne persönliche Einstellungen. Nutze die Stimmvorschau, um das Ergebnis zu hören, bevor du live gehst.",
+    "voiceDefaultsVoice": "Um eine Stimme zu finden, durchsuche die Beschreibungen oder filtere nach Sprache, Geschlecht und Tonhöhe. Die <a href=\"tts-voices.html#voices\" class=\"default-link-style\">Stimmenliste</a> in dieser Dokumentation enthält dieselben Stimmen.",
+    "voiceDefaultsStyle": "Ein Stil ist freier Text, der der Stimme sagt, wie sie sprechen soll, zum Beispiel \"flüsternd\". Er hat maximal 120 Zeichen, und die Stimme liest ihn nicht laut vor.",
+    "voiceDefaultsEmotion": "Eine Emotion ist ein voreingestellter Stil, wie <span class=\"inline-code\">happy</span> oder <span class=\"inline-code\">calm</span>. Eine Emotion und ein Stil funktionieren nicht zusammen. Wenn du eines festlegst, entfernt der Bot das andere.",
+    "voiceDefaultsSpeedPitch": "Geschwindigkeit und Tonhöhe haben jeweils fünf Stufen. Das Ergebnis ist ungefähr, weil der Bot der Stimme in Worten sagt, wie sie sprechen soll.",
+    "voiceDefaultsVolume": "Die Lautstärke ist exakt, weil der Bot sie auf das Audio anwendet, nachdem die Stimme gesprochen hat.",
+    "voiceDefaultsLanguage": "Die Sprache ist ein Hinweis für kurzen oder unklaren Text, wie eine Zahl. Siehe <a href=\"tts-voices.html#language-boost\" class=\"default-link-style\">Sprache</a>.",
+    "obsRefreshTip": "Eine Browser-Quelle aus der Zeit vor dem Wechsel zu den Gemini-Stimmen funktioniert weiterhin. Wenn du die Browser-Quelle einmal aktualisierst, startet das Audio schneller."
   },
   "troubleshooting": {
     "title": "Fehlerbehebung",
@@ -602,14 +699,26 @@
     "a1": "Stelle sicher, dass der Bot Moderator in deinem Kanal ist. Tippe <span class=\"inline-code\">/mod WildcatTTS</span> in deinen Twitch-Chat. Der Bot benötigt Moderatorrechte, um Nachrichten zu lesen und Antworten zu senden.",
     "q2": "Bot spricht nicht?",
     "a2": "Stelle sicher, dass TTS mit <span class=\"inline-code\">!tts on</span> im Chat aktiviert ist. Prüfe auch den aktiven Modus mit <span class=\"inline-code\">!tts mode</span> und die Berechtigungen mit <span class=\"inline-code\">!tts permission</span>.",
-    "q3": "Bot spricht nicht in einer bestimmten Sprache oder liest Zahlen auf Chinesisch?",
-    "a3": "Stelle Sprachunterstützung mit <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> (oder <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> für den Kanal) auf deine Sprache ein. Zeige die aktive Einstellung mit <span class=\"inline-code\">!tts defaultlanguage</span> an.",
+    "q3": "Zahlen oder kurze Nachrichten in der falschen Sprache?",
+    "a3": "Die Stimme erkennt die Sprache anhand des Textes jeder Nachricht. Eine Zahl oder eine sehr kurze Nachricht bietet zu wenig Text. Stelle die Sprache mit <span class=\"inline-code\">!tts language &lt;language_name&gt;</span> ein (oder <span class=\"inline-code\">!tts defaultlanguage &lt;language_name&gt;</span> für den Kanal). Verwende <span class=\"inline-code\">!tts defaultlanguage</span>, um die aktive Einstellung zu sehen.",
     "q4": "TTS-Generierung dauert zu lange oder schlägt fehl?",
-    "a4": "Der Bot verwendet 302.ai mit automatischem Fallback auf Wavespeed AI. Bei Audioverzögerungen nutze <span class=\"inline-code\">!tts stop</span>, um hängende Generierungen abzubrechen. Der Bot wiederholt fehlgeschlagene Anfragen automatisch.",
+    "a4": "Das Audio startet normalerweise etwa eine halbe Sekunde, nachdem der Bot die Nachricht erhält. Wenn das Sprachmodell fehlschlägt, versucht es der Bot automatisch erneut. Wenn eine Nachricht in der Warteschlange bleibt und nicht abgespielt wird, brich sie mit <span class=\"inline-code\">!tts stop</span> ab.",
     "q5": "Emotion funktioniert nicht?",
-    "a5": "Die Auto-Emotion wird nicht unterstützt. Verwende stattdessen <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span> oder <span class=\"inline-code\">surprised</span>.",
+    "a5": "Verwende <span class=\"inline-code\">neutral</span>, <span class=\"inline-code\">happy</span>, <span class=\"inline-code\">sad</span>, <span class=\"inline-code\">angry</span>, <span class=\"inline-code\">fearful</span>, <span class=\"inline-code\">disgusted</span>, <span class=\"inline-code\">surprised</span>, <span class=\"inline-code\">calm</span> oder <span class=\"inline-code\">fluent</span>. Ein eigener Stil ersetzt die Emotion. Um die Emotion wieder zu verwenden, entferne den Stil mit <span class=\"inline-code\">!tts style off</span> (oder <span class=\"inline-code\">!tts defaultstyle off</span> für den Kanal).",
     "q6": "Benötigst du Hilfe?",
-    "a6": "Kontaktiere den Entwickler über das <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Kontaktformular</a> auf Henrys Portfolio-Website."
+    "a6": "Kontaktiere den Entwickler über das <a href=\"https://parfaitfair.com/#contact\" class=\"default-link-style\" target=\"_blank\" rel=\"noopener noreferrer\">Kontaktformular</a> auf Henrys Portfolio-Website.",
+    "qVoiceChanged": "Klingt die Stimme anders als zuvor?",
+    "aVoiceChanged": "WildcatTTS hat seine früheren Stimmen durch Gemini-Stimmen ersetzt. Der Bot hat jede gespeicherte Stimme auf die ähnlichste neue Stimme geändert, daher klingt die Stimme nicht gleich. Um eine andere Stimme auszuwählen, durchsuche die <a href=\"tts-voices.html#voices\" class=\"default-link-style\">Stimmenliste</a>.",
+    "qExpressive": "Die Stimme lacht, seufzt oder klingt von Nachricht zu Nachricht anders?",
+    "aExpressive": "Dieses Verhalten ist normal. Die neuen Stimmen lesen den Chat eher wie ein Mensch. Die Stimme kann „lol“ oder „lmao“ in ein echtes Lachen umwandeln und fügt manchmal ein kleines Lachen oder einen Seufzer hinzu. Dieselbe Stimme ändert sich auch ein wenig von Nachricht zu Nachricht. Die Stimme kann eine Nachricht, die nur „?“ ist, als „Was?“ vorlesen.",
+    "qSoundTags": "Die Stimme schreit, hustet oder macht andere Geräusche?",
+    "aSoundTags": "Ein Zuschauer hat einen Sound-Tag wie <span class=\"inline-code\">&lt;scream&gt;</span> eingegeben. Moderatoren können einen Tag mit <span class=\"inline-code\">!tts tags off &lt;tag&gt;</span> ausschalten. Siehe <a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">Sound-Tags</a>.",
+    "qApproximate": "Geschwindigkeit oder Tonhöhe nicht genau?",
+    "aApproximate": "Geschwindigkeit und Tonhöhe haben jeweils fünf Stufen. Das Ergebnis ist ungefähr, da der Bot der Stimme in Worten sagt, wie sie sprechen soll. Die Lautstärke ist genau.",
+    "qSkipped": "Eine Nachricht ohne Grund übersprungen?",
+    "aSkipped": "Das Sprachmodell von Google hat einen Inhaltsfilter. Wenn der Inhaltsfilter eine Nachricht ablehnt, überspringt der Bot diese Nachricht und gibt keinen Fehler aus. Der Bot überspringt auch eine Nachricht, die ein verbotenes Wort enthält, sowie Nachrichten von ignorierten Nutzern.",
+    "qObsRefresh": "Ist eine Aktualisierung der OBS-Browser-Quelle nötig?",
+    "aObsRefresh": "Nein. Eine Browser-Quelle aus der Zeit vor dem Wechsel zu den Gemini-Stimmen funktioniert weiterhin. Wenn du die Browser-Quelle einmal aktualisierst, startet das Audio schneller."
   },
   "pronunciation": {
     "title": "Aussprache-Wörterbuch",
@@ -626,9 +735,18 @@
     "custom3": "Ein Kanal kann maximal 100 Einträge haben.",
     "switchTitle": "Deaktivieren des Wörterbuchs",
     "switchText": "Das Wörterbuch ist standardmäßig für alle Kanäle aktiv. Um es zu deaktivieren, schalte 'Chat-Akronyme erweitern' im Web-Dashboard aus. TTS spricht Abkürzungen dann Buchstabe für Buchstabe aus.",
-    "lolTip": "TTS spricht <span class=\"inline-code\">lol</span> bereits als 'el oh el' aus. Das ist Standardverhalten und erfordert keinen Wörterbucheintrag.",
+    "lolTip": "Das Wörterbuch hat keinen Eintrag für <span class=\"inline-code\">lol</span>, <span class=\"inline-code\">lmao</span> oder <span class=\"inline-code\">rofl</span>. Die Stimme wandelt diese Kurzformen in ein echtes Lachen um.",
     "rule5": "Einige Einträge funktionieren nur in bestimmten Sprachen. Zum Beispiel ändert das Wörterbuch <span class=\"inline-code\">ty</span> auf Englisch zu „thank you“. Auf Polnisch, Tschechisch und Slowakisch ist <span class=\"inline-code\">ty</span> ein häufiges Wort, daher behält das Wörterbuch es bei.",
     "custom4": "Ein eigener neuer Eintrag funktioniert in allen Sprachen. Ein Eintrag, der einen integrierten Eintrag ersetzt, behält die Sprachen dieses integrierten Eintrags."
+  },
+  "soundTags": {
+    "title": "Sound-Tags",
+    "introText": "Ein Sound-Tag ist ein Wort in spitzen Klammern, das die Stimme in ein Geräusch umwandelt. Zuschauer können Sound-Tags in ihre Chat-Nachrichten eingeben. Zum Beispiel schnappt die Stimme nach Luft und lacht dann in dieser Nachricht: <span class=\"inline-code\">Wait… &lt;gasp&gt; no way! &lt;laugh&gt;</span>. Die Stimme liest einen Tag nicht als Wort vor.",
+    "listTitle": "Verfügbare Tags",
+    "listIntro": "Die Stimme kennt diese Tags:",
+    "parenText": "Die ältere Schreibweise in Klammern funktioniert ebenfalls, zum Beispiel <span class=\"inline-code\">(laughs)</span>. Ein Tag ist eine Anforderung an die Stimme, und das Geräusch kann jedes Mal anders sein.",
+    "offTitle": "So schaltest du Tags aus",
+    "offText": "Alle Tags sind standardmäßig eingeschaltet. Moderatoren können einen Tag mit <span class=\"inline-code\">!tts tags off &lt;tag&gt;</span> ausschalten oder alle Tags mit <span class=\"inline-code\">!tts tags off all</span> ausschalten. Du kannst die Tags auch im Web Dashboard ändern. Wenn ein Tag ausgeschaltet ist, entfernt der Bot ihn aus der Nachricht, und die Stimme liest die anderen Wörter vor. Siehe den Befehl <a href=\"tts-commands.html#dd-commands-ttsTags\" class=\"default-link-style\">!tts tags</a> für alle Optionen."
   },
   "profanityFilter": {
     "title": "Profanitätsfilter",
@@ -641,8 +759,8 @@
     "behavior3": "Der Filter gilt auch für Abkürzungen aus dem Aussprache-Wörterbuch. Wenn der Filter an ist, spricht TTS <span class=\"inline-code\">lfg</span> als 'let's freaking go'.",
     "behavior4": "Wörter müssen vollständig übereinstimmen. Der Filter verändert keine Wörter wie 'class'.",
     "languageTitle": "Sprachen",
-    "languageText": "Der Filter enthält Wortlisten für alle 40 Sprachen, die Language Boost unterstützt. Der Bot verwendet die Wortliste für deine Kanalsprache. Wählt ein Zuschauer eine persönliche Sprache, verwendet der Filter beide Listen. Die englische Liste ist immer aktiv, da das Aussprache-Wörterbuch auf Englisch ist.",
-    "languageAutoText": "Wenn Language Boost auf 'auto' steht, verwendet der Filter die englische Liste. Der Bot kann nicht die Sprache jeder Nachricht erkennen.",
+    "languageText": "Der Filter hat Wortlisten für alle 40 Sprachen der Spracheinstellung. Der Filter verwendet die Liste für deine Kanalsprache. Wenn ein Zuschauer eine andere Sprache für seine eigenen Nachrichten auswählt, verwendet der Filter beide Listen. Der Filter enthält immer die englische Liste, da das Aussprachewörterbuch auf Englisch ist.",
+    "languageAutoText": "Wenn die Kanalsprache <span class=\"inline-code\">auto</span> ist, verwendet der Filter die englische Liste. Das Sprachmodell erkennt die Sprache jeder Nachricht, aber der Filter läuft vor dem Sprachmodell.",
     "languageCoverageText": "Die englische Wortliste ist am umfangreichsten. Listen für andere Sprachen sind kleiner. Schimpfwörter existieren nur in der englischen Liste.",
     "bannedWordsTip": "Der Profanitätsfilter unterscheidet sich von Verbotenen Wörtern. Verbotene Wörter überspringen die gesamte Nachricht. Der Profanitätsfilter spricht die Nachricht mit milderen Wörtern vor."
   },
