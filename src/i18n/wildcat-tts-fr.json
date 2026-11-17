@@ -757,7 +757,7 @@
     "behavior1": "Le filtre remplace les mots grossiers par des mots plus doux. Le bot ne supprime pas le message et ne joue pas de bip.",
     "behavior2": "Le filtre remplace les insultes graves par le mot 'slur' pour supprimer le contenu offensant de l'audio.",
     "behavior3": "Le filtre s'applique également aux abréviations du dictionnaire de prononciation. Lorsque le filtre est actif, le TTS lit <span class=\"inline-code\">lfg</span> comme 'let's freaking go'.",
-    "behavior4": "Un mot doit correspondre entièrement. Le filtre ne modifie pas le mot « class ». Le filtre trouve aussi la plupart des mots grossiers qui contiennent un seul espace. Par exemple, TTS prononce <span class=\"inline-code\">bi tch</span> comme « biscuit ».",
+    "behavior4": "Un mot doit correspondre entièrement. Le filtre ne modifie pas le mot « class ». Le filtre trouve aussi la plupart des gros mots anglais qui contiennent un espace. Par exemple, TTS prononce <span class=\"inline-code\">bi tch</span> comme « biscuit ».",
     "languageTitle": "Langues",
     "languageText": "Le filtre dispose de listes de mots pour les 40 langues du paramètre Langue. Le filtre utilise la liste correspondant à la langue de votre chaîne. Si un spectateur sélectionne une autre langue pour ses propres messages, le filtre utilise les deux listes. Le filtre inclut toujours la liste anglaise, car le dictionnaire de prononciation est en anglais.",
     "languageAutoText": "Si la langue de la chaîne est <span class=\"inline-code\">auto</span>, le filtre utilise la liste anglaise. Le modèle vocal détecte la langue de chaque message, mais le filtre s'exécute avant le modèle vocal.",

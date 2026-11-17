@@ -757,7 +757,7 @@
     "behavior1": "Il filtro sostituisce i termini scurrili con parole più miti. Il bot non cancella il messaggio né emette bip.",
     "behavior2": "Il filtro sostituisce gli insulti gravi con la parola 'slur' per rimuovere contenuti offensivi dall'audio.",
     "behavior3": "Il filtro si applica anche alle abbreviazioni del dizionario di pronuncia. Con il filtro attivo, il TTS legge <span class=\"inline-code\">lfg</span> come 'let's freaking go'.",
-    "behavior4": "Una parola deve corrispondere per intero. Il filtro non modifica la parola \"class\". Il filtro trova anche la maggior parte delle parole volgari con uno spazio al loro interno. Ad esempio, TTS pronuncia <span class=\"inline-code\">bi tch</span> come \"biscuit\".",
+    "behavior4": "Una parola deve corrispondere per intero. Il filtro non modifica la parola \"class\". Il filtro trova anche la maggior parte delle parole volgari inglesi che hanno uno spazio al loro interno. Ad esempio, TTS pronuncia <span class=\"inline-code\">bi tch</span> come \"biscuit\".",
     "languageTitle": "Lingue",
     "languageText": "Il filtro ha elenchi di parole per tutte le 40 lingue dell'impostazione Lingua. Il filtro usa l'elenco per la lingua del tuo canale. Se uno spettatore seleziona una lingua diversa per i propri messaggi, il filtro usa entrambi gli elenchi. Il filtro include sempre l'elenco inglese, perché il dizionario di pronuncia è in inglese.",
     "languageAutoText": "Se la lingua del canale è <span class=\"inline-code\">auto</span>, il filtro usa l'elenco inglese. Il modello vocale rileva la lingua di ciascun messaggio, ma il filtro viene eseguito prima del modello vocale.",
