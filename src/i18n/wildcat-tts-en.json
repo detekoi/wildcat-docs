@@ -757,7 +757,7 @@
     "behavior1": "The filter replaces rude words with milder words. The bot does not drop the message or play a bleep sound.",
     "behavior2": "The filter replaces slurs with the word \"slur\" to remove offensive content from the audio.",
     "behavior3": "The filter also applies to short forms from the pronunciation dictionary. When the filter is on, TTS speaks lfg as \"let's freaking go\".",
-    "behavior4": "Words must match fully. The filter does not modify words such as \"class\".",
+    "behavior4": "A word must match fully. The filter does not change the word \"class\". The filter also finds most rude words that have one space inside them. For example, TTS speaks <span class=\"inline-code\">bi tch</span> as \"biscuit\".",
     "languageTitle": "Languages",
     "languageText": "The filter has word lists for all 40 languages of the Language setting. The filter uses the list for your channel language. If a viewer selects a different language for their own messages, the filter uses both lists. The filter always includes the English list, because the pronunciation dictionary is in English.",
     "languageAutoText": "If the channel language is <span class=\"inline-code\">auto</span>, the filter uses the English list. The speech model finds the language of each message, but the filter runs before the speech model.",

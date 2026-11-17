@@ -757,7 +757,7 @@
     "behavior1": "El filtro reemplaza palabras vulgares por términos más suaves. El bot no descarta el mensaje ni reproduce un pitido.",
     "behavior2": "El filtro reemplaza insultos graves con la palabra 'slur' para eliminar contenido ofensivo del audio.",
     "behavior3": "El filtro también se aplica a las abreviaturas del diccionario de pronunciación. Con el filtro activo, TTS lee <span class=\"inline-code\">lfg</span> como 'let's freaking go'.",
-    "behavior4": "Las palabras deben coincidir de forma completa. El filtro no modifica palabras como 'class'.",
+    "behavior4": "Una palabra debe coincidir por completo. El filtro no cambia la palabra \"class\". El filtro también encuentra la mayoría de las palabras groseras que tienen un espacio dentro. Por ejemplo, TTS pronuncia <span class=\"inline-code\">bi tch</span> como \"biscuit\".",
     "languageTitle": "Idiomas",
     "languageText": "El filtro tiene listas de palabras para los 40 idiomas de la configuración de idioma. El filtro usa la lista del idioma de tu canal. Si un espectador selecciona un idioma diferente para sus propios mensajes, el filtro usa ambas listas. El filtro siempre incluye la lista en inglés, porque el diccionario de pronunciación está en inglés.",
     "languageAutoText": "Si el idioma del canal es <span class=\"inline-code\">auto</span>, el filtro usa la lista en inglés. El modelo de voz detecta el idioma de cada mensaje, pero el filtro se ejecuta antes que el modelo de voz.",

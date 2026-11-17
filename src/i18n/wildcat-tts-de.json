@@ -757,7 +757,7 @@
     "behavior1": "Der Filter ersetzt unhöfliche Wörter durch mildere Wörter. Der Bot verwirft die Nachricht nicht und spielt keinen Piepton ab.",
     "behavior2": "Der Filter ersetzt Schimpfwörter mit dem Wort 'slur', um beleidigenden Inhalt aus dem Audio zu entfernen.",
     "behavior3": "Der Filter gilt auch für Abkürzungen aus dem Aussprache-Wörterbuch. Wenn der Filter an ist, spricht TTS <span class=\"inline-code\">lfg</span> als 'let's freaking go'.",
-    "behavior4": "Wörter müssen vollständig übereinstimmen. Der Filter verändert keine Wörter wie 'class'.",
+    "behavior4": "Ein Wort muss vollständig übereinstimmen. Der Filter ändert das Wort „class“ nicht. Der Filter findet auch die meisten Schimpfwörter, die ein Leerzeichen enthalten. Zum Beispiel spricht TTS <span class=\"inline-code\">bi tch</span> als „biscuit“ aus.",
     "languageTitle": "Sprachen",
     "languageText": "Der Filter hat Wortlisten für alle 40 Sprachen der Spracheinstellung. Der Filter verwendet die Liste für deine Kanalsprache. Wenn ein Zuschauer eine andere Sprache für seine eigenen Nachrichten auswählt, verwendet der Filter beide Listen. Der Filter enthält immer die englische Liste, da das Aussprachewörterbuch auf Englisch ist.",
     "languageAutoText": "Wenn die Kanalsprache <span class=\"inline-code\">auto</span> ist, verwendet der Filter die englische Liste. Das Sprachmodell erkennt die Sprache jeder Nachricht, aber der Filter läuft vor dem Sprachmodell.",
