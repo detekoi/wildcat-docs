@@ -260,7 +260,7 @@ extraScripts:
         <tbody class="dropdown-group">
             <tr class="dropdown-summary">
                 <td data-i18n-key="commands.ttsMode.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts mode
-                    [all|command|bits_points_only|highlighted_only]</td>
+                    [all|command|bits_points_only|highlighted_only|spotlight]</td>
                 <td data-i18n-key="commands.ttsMode.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsMode"><span class="description-text">Sets or shows the TTS mode.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
             </tr>
             <tr class="dropdown-details" id="dd-commands-ttsMode" hidden="until-found">
@@ -294,6 +294,10 @@ extraScripts:
                         <span data-i18n="commands.ttsMode.highlightAlias">(Alias for highlighted_only)</span>
                     </div>
                     <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsMode.usage.spotlight">!tts mode spotlight</code>
+                        <span data-i18n="commands.ttsMode.spotlightDesc">(Reads the chat messages that a model picks)</span>
+                    </div>
+                    <div class="usage-line">
                         <code data-i18n-cmd="commands.ttsMode.usage.status">!tts mode</code>
                         <span data-i18n="commands.ttsMode.statusDesc">(Shows current mode)</span>
                     </div>
@@ -302,7 +306,33 @@ extraScripts:
                             <span class="inline-code">all</span> (All Chat Messages): TTS reads all chat messages (except ignored users), based on <span class="inline-code">!tts permission</span>. This includes <span class="inline-code">!tts &lt;message&gt;</span>.<br>
                             <span class="inline-code">command</span> (!tts Messages): TTS reads <span class="inline-code">!tts &lt;message&gt;</span>, based on <span class="inline-code">!tts permission</span>. TTS ignores other chat.<br>
                             <span class="inline-code">bits_points_only</span> (Cheers and Rewards Only): TTS reads no chat messages. TTS ignores regular chat, <span class="inline-code">!tts &lt;message&gt;</span> and highlighted messages. This mode always reads cheer messages, also after <span class="inline-code">!tts bits off</span>.<br>
-                            <span class="inline-code">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch "Highlight My Message" Channel Points reward. <span class="inline-code">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class="inline-code">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class="inline-code">bits_points_only</span>.</span></p>
+                            <span class="inline-code">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch "Highlight My Message" Channel Points reward. <span class="inline-code">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class="inline-code">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class="inline-code">bits_points_only</span>.<br>
+                            <span class="inline-code">spotlight</span> (Spotlight): A model reads chat in short batches and picks the few messages that are worth reading aloud. TTS reads only these messages, and it says "Chat spotlight from" and the name of the viewer before each one. A message must pass the same rules as in <span class="inline-code">all</span> mode, such as <span class="inline-code">!tts permission</span>, ignored users and banned words. TTS never reads a message that starts with "!" in this mode. TTS still reads <span class="inline-code">!tts &lt;message&gt;</span>. This mode needs your OBS browser source to be open. Use <span class="inline-code">!tts spotlight</span> to guide the picks.</span></p>
+                    <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
+                            data-i18n="commands.common.moderator">Moderator</span></p>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="dropdown-group">
+            <tr class="dropdown-summary">
+                <td data-i18n-key="commands.ttsSpotlight.name"><span class="mod-badge mod-badge-leading">Mod</span>!tts spotlight &lt;text|off&gt;</td>
+                <td data-i18n-key="commands.ttsSpotlight.description"><button type="button" class="dropdown-trigger" aria-expanded="false" aria-controls="dd-commands-ttsSpotlight"><span class="description-text">Tells Spotlight mode which chat messages to prefer.</span><span class="dropdown-toggle" aria-hidden="true">&#x25BC;</span></button></td>
+            </tr>
+            <tr class="dropdown-details" id="dd-commands-ttsSpotlight" hidden="until-found">
+                <td colspan="2">
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpotlight.usage.example">!tts spotlight prefer questions about the game</code>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpotlight.usage.off">!tts spotlight off</code>
+                        <span data-i18n="commands.ttsSpotlight.offDesc">(removes the guidance)</span>
+                    </div>
+                    <div class="usage-line">
+                        <code data-i18n-cmd="commands.ttsSpotlight.usage.status">!tts spotlight</code>
+                        <span data-i18n="commands.ttsSpotlight.statusDesc">(shows the current guidance)</span>
+                    </div>
+                    <p><strong data-i18n="commands.common.notes">Notes:</strong> <span
+                            data-i18n="commands.ttsSpotlight.notes">The guidance is text that tells Spotlight mode which messages you like. It has a maximum of 300 characters. The model uses it as a preference. It cannot make the model pick spam, rude messages, self-promotion or personal data. TTS does not read the guidance aloud, and it has no effect in other modes. You can also set the guidance in the Web Dashboard. The dashboard has a switch for a card in the OBS browser source. The card shows the viewer and the message while TTS reads a pick. The dashboard also lists the latest picks. Refresh a browser source that was already open before you turn on the card.</span></p>
                     <p><strong data-i18n="commands.common.permission">Permission:</strong> <span
                             data-i18n="commands.common.moderator">Moderator</span></p>
                 </td>
@@ -420,7 +450,7 @@ extraScripts:
                     </ul>
                     <p><strong data-i18n="commands.channelPointsTTS.ttsModes">TTS Modes:</strong> <span
                             data-i18n="commands.channelPointsTTS.ttsModesText">Works in every TTS mode: All Chat
-                            Messages, !tts Messages, Highlighted Messages, and Cheers and Rewards Only.</span></p>
+                            Messages, !tts Messages, Highlighted Messages, Spotlight, and Cheers and Rewards Only.</span></p>
                     <p><strong data-i18n="commands.channelPointsTTS.requirements">Requirements:</strong> <span
                             data-i18n="commands.channelPointsTTS.requirementsText">Grant <span
                                 class="inline-code">channel:manage:redemptions</span> and <span
@@ -1214,7 +1244,7 @@ extraScripts:
                             StreamElements, use commands that start with "!", such as !lurk or !so. In All Chat
                             Messages mode, TTS reads these commands as chat. Switch this setting off to skip
                             them. The setting does not change !tts: !tts still works. The setting has no effect
-                            in !tts Messages, Highlighted Messages or Cheers and Rewards Only mode, because these modes never read
+                            in !tts Messages, Highlighted Messages, Spotlight or Cheers and Rewards Only mode, because these modes never read
                             these messages. A cheer that starts with "!" is still read, because the viewer paid
                             for it. You can also change this in the Web Dashboard, under Read Chat
                             Commands.</span></p>
