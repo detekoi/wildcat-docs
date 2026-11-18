@@ -116,7 +116,7 @@
       }
     },
     "ttsMode": {
-      "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
+      "name": "!tts mode [all|command|bits_points_only|highlighted_only|spotlight]",
       "description": "Sets or shows the TTS mode.",
       "allDesc": "(Reads all chat messages)",
       "commandDesc": "(Reads !tts messages; default mode)",
@@ -125,8 +125,9 @@
       "pointsAlias": "(Alias for bits_points_only)",
       "highlightedOnlyDesc": "(Reads Twitch \"Highlight My Message\" messages)",
       "highlightAlias": "(Alias for highlighted_only)",
+      "spotlightDesc": "(Reads the chat messages that a model picks)",
       "statusDesc": "(Shows current mode)",
-      "notes": "In every mode, TTS reads cheers (see <span class=\"inline-code\">!tts bits</span>), the TTS Channel Points reward, and enabled reward announcements and events. The mode sets which chat messages TTS also reads. The Web Dashboard name of each mode is in parentheses.<br><span class=\"inline-code\">all</span> (All Chat Messages): TTS reads all chat messages (except ignored users), based on <span class=\"inline-code\">!tts permission</span>. This includes <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (!tts Messages): TTS reads <span class=\"inline-code\">!tts &lt;message&gt;</span>, based on <span class=\"inline-code\">!tts permission</span>. TTS ignores other chat.<br><span class=\"inline-code\">bits_points_only</span> (Cheers and Rewards Only): TTS reads no chat messages. TTS ignores regular chat, <span class=\"inline-code\">!tts &lt;message&gt;</span> and highlighted messages. This mode always reads cheer messages, also after <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch \"Highlight My Message\" Channel Points reward. <span class=\"inline-code\">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class=\"inline-code\">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class=\"inline-code\">bits_points_only</span>.",
+      "notes": "In every mode, TTS reads cheers (see <span class=\"inline-code\">!tts bits</span>), the TTS Channel Points reward, and enabled reward announcements and events. The mode sets which chat messages TTS also reads. The Web Dashboard name of each mode is in parentheses.<br><span class=\"inline-code\">all</span> (All Chat Messages): TTS reads all chat messages (except ignored users), based on <span class=\"inline-code\">!tts permission</span>. This includes <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (!tts Messages): TTS reads <span class=\"inline-code\">!tts &lt;message&gt;</span>, based on <span class=\"inline-code\">!tts permission</span>. TTS ignores other chat.<br><span class=\"inline-code\">bits_points_only</span> (Cheers and Rewards Only): TTS reads no chat messages. TTS ignores regular chat, <span class=\"inline-code\">!tts &lt;message&gt;</span> and highlighted messages. This mode always reads cheer messages, also after <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Highlighted Messages): TTS reads chat messages that a viewer sends with the Twitch \"Highlight My Message\" Channel Points reward. <span class=\"inline-code\">!tts permission</span> does not apply to these messages, because the viewer paid for them. TTS ignores other chat and <span class=\"inline-code\">!tts &lt;message&gt;</span>. On YouTube, this mode works like <span class=\"inline-code\">bits_points_only</span>.<br><span class=\"inline-code\">spotlight</span> (Spotlight): A model reads chat in short batches and picks the few messages that are worth reading aloud. TTS reads only these messages, and it says \"Chat spotlight from\" and the name of the viewer before each one. A message must pass the same rules as in <span class=\"inline-code\">all</span> mode, such as <span class=\"inline-code\">!tts permission</span>, ignored users and banned words. TTS never reads a message that starts with \"!\" in this mode. TTS still reads <span class=\"inline-code\">!tts &lt;message&gt;</span>. This mode needs your OBS browser source to be open. Use <span class=\"inline-code\">!tts spotlight</span> to guide the picks.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,8 +136,21 @@
         "points": "!tts mode points",
         "highlightedOnly": "!tts mode highlighted_only",
         "highlight": "!tts mode highlight",
+        "spotlight": "!tts mode spotlight",
         "status": "!tts mode"
       }
+    },
+    "ttsSpotlight": {
+      "name": "!tts spotlight <text|off>",
+      "description": "Tells Spotlight mode which chat messages to prefer.",
+      "usage": {
+        "example": "!tts spotlight prefer questions about the game",
+        "off": "!tts spotlight off",
+        "status": "!tts spotlight"
+      },
+      "offDesc": "(removes the guidance)",
+      "statusDesc": "(shows the current guidance)",
+      "notes": "The guidance is text that tells Spotlight mode which messages you like. It has a maximum of 300 characters. The model uses it as a preference. It cannot make the model pick spam, rude messages, self-promotion or personal data. TTS does not read the guidance aloud, and it has no effect in other modes. You can also set the guidance in the Web Dashboard. The dashboard has a switch for a card in the OBS browser source. The card shows the viewer and the message while TTS reads a pick. The dashboard also lists the latest picks. Refresh a browser source that was already open before you turn on the card."
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
@@ -185,7 +199,7 @@
       "skipQueueUseCase": "Tip: Turn on for instant playback. Turn off for moderation review before audio plays.",
       "refunds": "Refunds: TTS refunds a redemption that it does not play. These redemptions get a refund: a message that the content policy blocks, a viewer that a moderator muted in your channel, and any redemption while TTS is off.",
       "ttsModes": "TTS Modes:",
-      "ttsModesText": "Works in every TTS mode: All Chat Messages, !tts Messages, Highlighted Messages, and Cheers and Rewards Only.",
+      "ttsModesText": "Works in every TTS mode: All Chat Messages, !tts Messages, Highlighted Messages, Spotlight, and Cheers and Rewards Only.",
       "requirements": "Requirements:",
       "requirementsText": "Grant channel:manage:redemptions and channel:read:redemptions permissions during dashboard sign-in."
     },
@@ -467,7 +481,7 @@
       "offNote": "(skips chat messages that start with \"!\")",
       "onNote": "(reads them again)",
       "statusNote": "(shows the current setting)",
-      "notes": "Other bots, for example Nightbot or StreamElements, use commands that start with \"!\", such as !lurk or !so. In All Chat Messages mode, TTS reads these commands as chat. Switch this setting off to skip them. The setting does not change !tts: !tts still works. The setting has no effect in !tts Messages, Highlighted Messages or Cheers and Rewards Only mode, because these modes never read these messages. A cheer that starts with \"!\" is still read, because the viewer paid for it. You can also change this in the Web Dashboard, under Read Chat Commands."
+      "notes": "Other bots, for example Nightbot or StreamElements, use commands that start with \"!\", such as !lurk or !so. In All Chat Messages mode, TTS reads these commands as chat. Switch this setting off to skip them. The setting does not change !tts: !tts still works. The setting has no effect in !tts Messages, Highlighted Messages, Spotlight or Cheers and Rewards Only mode, because these modes never read these messages. A cheer that starts with \"!\" is still read, because the viewer paid for it. You can also change this in the Web Dashboard, under Read Chat Commands."
     },
     "ttsStyle": {
       "name": "!tts style <text|off>",

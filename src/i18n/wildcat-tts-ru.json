@@ -116,7 +116,7 @@
       }
     },
     "ttsMode": {
-      "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
+      "name": "!tts mode [all|command|bits_points_only|highlighted_only|spotlight]",
       "description": "Устанавливает или показывает режим TTS.",
       "allDesc": "(Озвучивает все сообщения чата)",
       "commandDesc": "(Озвучивает сообщения с !tts; <strong>режим по умолчанию</strong>)",
@@ -126,7 +126,7 @@
       "highlightedOnlyDesc": "(Озвучивает сообщения Twitch «Выделить моё сообщение»)",
       "highlightAlias": "(Псевдоним для highlighted_only)",
       "statusDesc": "(Показывает текущий режим)",
-      "notes": "В любом режиме TTS озвучивает чиры (см. <span class=\"inline-code\">!tts bits</span>), TTS-награду за баллы канала, а также включенные объявления наград и события. Режим определяет, какие еще сообщения чата озвучивает TTS. В скобках указано название каждого режима в Web Dashboard.<br><span class=\"inline-code\">all</span> (Все сообщения чата): TTS озвучивает все сообщения чата (кроме игнорируемых) согласно <span class=\"inline-code\">!tts permission</span>. Сюда входит <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Сообщения с !tts): TTS озвучивает <span class=\"inline-code\">!tts &lt;message&gt;</span> согласно <span class=\"inline-code\">!tts permission</span>. Остальной чат игнорируется.<br><span class=\"inline-code\">bits_points_only</span> (Только Cheers и награды): TTS не озвучивает сообщения чата. Обычный чат, <span class=\"inline-code\">!tts &lt;message&gt;</span> и выделенные сообщения игнорируются. Этот режим всегда озвучивает сообщения чиров, даже после <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Выделенные сообщения): TTS озвучивает сообщения чата, которые зритель отправляет с помощью награды за баллы канала Twitch «Выделить моё сообщение». Эти сообщения не ограничиваются <span class=\"inline-code\">!tts permission</span>, потому что зритель за них заплатил. Остальной чат и <span class=\"inline-code\">!tts &lt;message&gt;</span> игнорируются. На YouTube этот режим работает как <span class=\"inline-code\">bits_points_only</span>.",
+      "notes": "В любом режиме TTS озвучивает чиры (см. <span class=\"inline-code\">!tts bits</span>), TTS-награду за баллы канала, а также включенные объявления наград и события. Режим определяет, какие еще сообщения чата озвучивает TTS. В скобках указано название каждого режима в Web Dashboard.<br><span class=\"inline-code\">all</span> (Все сообщения чата): TTS озвучивает все сообщения чата (кроме игнорируемых) согласно <span class=\"inline-code\">!tts permission</span>. Сюда входит <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Сообщения с !tts): TTS озвучивает <span class=\"inline-code\">!tts &lt;message&gt;</span> согласно <span class=\"inline-code\">!tts permission</span>. Остальной чат игнорируется.<br><span class=\"inline-code\">bits_points_only</span> (Только Cheers и награды): TTS не озвучивает сообщения чата. Обычный чат, <span class=\"inline-code\">!tts &lt;message&gt;</span> и выделенные сообщения игнорируются. Этот режим всегда озвучивает сообщения чиров, даже после <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Выделенные сообщения): TTS озвучивает сообщения чата, которые зритель отправляет с помощью награды за баллы канала Twitch «Выделить моё сообщение». Эти сообщения не ограничиваются <span class=\"inline-code\">!tts permission</span>, потому что зритель за них заплатил. Остальной чат и <span class=\"inline-code\">!tts &lt;message&gt;</span> игнорируются. На YouTube этот режим работает как <span class=\"inline-code\">bits_points_only</span>.<br><span class=\"inline-code\">spotlight</span> (Spotlight): Модель читает чат короткими порциями и выбирает несколько сообщений, которые стоит прочитать вслух. TTS читает только эти сообщения и произносит «В центре внимания чата от» и имя зрителя перед каждым из них. Сообщение должно соответствовать тем же правилам, что и в режиме <span class=\"inline-code\">all</span>, таким как <span class=\"inline-code\">!tts permission</span>, игнорируемые пользователи и запрещённые слова. В этом режиме TTS никогда не читает сообщения, начинающиеся с «!». TTS по-прежнему читает <span class=\"inline-code\">!tts &lt;message&gt;</span>. Для этого режима должен быть открыт источник браузера OBS. Используйте <span class=\"inline-code\">!tts spotlight</span>, чтобы направлять выбор.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,8 +135,10 @@
         "points": "!tts mode points",
         "highlightedOnly": "!tts mode highlighted_only",
         "highlight": "!tts mode highlight",
-        "status": "!tts mode"
-      }
+        "status": "!tts mode",
+        "spotlight": "!tts mode spotlight"
+      },
+      "spotlightDesc": "(Читает сообщения чата, выбранные моделью)"
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
@@ -508,6 +510,18 @@
       "onNote": "(голос снова воспроизводит этот звук)",
       "listNote": "(показывает выключенные теги)",
       "notes": "Звуковой тег — это слово в угловых скобках, которое голос превращает в звук, например <span class=\"inline-code\">&lt;laugh&gt;</span>. По умолчанию все теги включены. Когда тег выключен, бот удаляет его из сообщений. Список тегов смотрите в разделе <a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">Звуковые теги</a>. Вы также можете изменить теги в Web Dashboard."
+    },
+    "ttsSpotlight": {
+      "name": "!tts spotlight <text|off>",
+      "description": "Указывает режиму Spotlight, какие сообщения чата предпочитать.",
+      "usage": {
+        "example": "!tts spotlight prefer questions about the game",
+        "off": "!tts spotlight off",
+        "status": "!tts spotlight"
+      },
+      "offDesc": "(удаляет подсказку)",
+      "statusDesc": "(показывает текущую подсказку)",
+      "notes": "Подсказка — это текст, который сообщает режиму Spotlight, какие сообщения вам нравятся. Максимальная длина — 300 символов. Модель использует её как предпочтение. Она не может заставить модель выбрать спам, грубые сообщения, саморекламу или личные данные. TTS не читает подсказку вслух, и она не действует в других режимах. Вы также можете задать подсказку в веб-панели. На панели есть переключатель для карточки в источнике браузера OBS. Карточка показывает зрителя и сообщение, пока TTS читает выбранное сообщение. На панели также отображаются последние выбранные сообщения. Обновите источник браузера, если он уже был открыт до включения карточки."
     }
   },
   "table": {
