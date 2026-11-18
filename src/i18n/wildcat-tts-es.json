@@ -116,7 +116,7 @@
       }
     },
     "ttsMode": {
-      "name": "!tts mode [all|command|bits_points_only|highlighted_only]",
+      "name": "!tts mode [all|command|bits_points_only|highlighted_only|spotlight]",
       "description": "Establece o muestra el modo de TTS.",
       "allDesc": "(Lee todos los mensajes del chat)",
       "commandDesc": "(Lee los mensajes con !tts; <strong>modo por defecto</strong>)",
@@ -126,7 +126,7 @@
       "highlightedOnlyDesc": "(Lee mensajes de Twitch con \"Destacar mi mensaje\")",
       "highlightAlias": "(Alias para highlighted_only)",
       "statusDesc": "(Muestra el modo actual)",
-      "notes": "En todos los modos, TTS lee los cheers (consulte <span class=\"inline-code\">!tts bits</span>), la recompensa de Puntos de Canal de TTS y los anuncios de recompensas y eventos habilitados. El modo define qué otros mensajes del chat lee TTS. El nombre de cada modo en el Web Dashboard aparece entre paréntesis.<br><span class=\"inline-code\">all</span> (Todos los mensajes del chat): TTS lee todos los mensajes del chat (excepto usuarios ignorados), según <span class=\"inline-code\">!tts permission</span>. Esto incluye <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Mensajes con !tts): TTS lee <span class=\"inline-code\">!tts &lt;message&gt;</span>, según <span class=\"inline-code\">!tts permission</span>. TTS ignora el resto del chat.<br><span class=\"inline-code\">bits_points_only</span> (Solo cheers y recompensas): TTS no lee mensajes del chat. TTS ignora el chat regular, <span class=\"inline-code\">!tts &lt;message&gt;</span> y los mensajes destacados. Este modo siempre lee los mensajes de los cheers, también después de <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Mensajes destacados): TTS lee los mensajes de chat que un espectador envía con la recompensa de Puntos de Canal de Twitch \"Destacar mi mensaje\". Estos mensajes no están limitados por <span class=\"inline-code\">!tts permission</span>, porque el espectador pagó por ellos. TTS ignora el resto del chat y <span class=\"inline-code\">!tts &lt;message&gt;</span>. En YouTube, este modo funciona como <span class=\"inline-code\">bits_points_only</span>.",
+      "notes": "En todos los modos, TTS lee los cheers (consulte <span class=\"inline-code\">!tts bits</span>), la recompensa de Puntos de Canal de TTS y los anuncios de recompensas y eventos habilitados. El modo define qué otros mensajes del chat lee TTS. El nombre de cada modo en el Web Dashboard aparece entre paréntesis.<br><span class=\"inline-code\">all</span> (Todos los mensajes del chat): TTS lee todos los mensajes del chat (excepto usuarios ignorados), según <span class=\"inline-code\">!tts permission</span>. Esto incluye <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Mensajes con !tts): TTS lee <span class=\"inline-code\">!tts &lt;message&gt;</span>, según <span class=\"inline-code\">!tts permission</span>. TTS ignora el resto del chat.<br><span class=\"inline-code\">bits_points_only</span> (Solo cheers y recompensas): TTS no lee mensajes del chat. TTS ignora el chat regular, <span class=\"inline-code\">!tts &lt;message&gt;</span> y los mensajes destacados. Este modo siempre lee los mensajes de los cheers, también después de <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Mensajes destacados): TTS lee los mensajes de chat que un espectador envía con la recompensa de Puntos de Canal de Twitch \"Destacar mi mensaje\". Estos mensajes no están limitados por <span class=\"inline-code\">!tts permission</span>, porque el espectador pagó por ellos. TTS ignora el resto del chat y <span class=\"inline-code\">!tts &lt;message&gt;</span>. En YouTube, este modo funciona como <span class=\"inline-code\">bits_points_only</span>.<br><span class=\"inline-code\">spotlight</span> (Spotlight): Un modelo lee el chat en tandas cortas y elige los pocos mensajes que vale la pena leer en voz alta. TTS solo lee esos mensajes, y dice \"Chat destacado de\" y el nombre del espectador antes de cada uno. Un mensaje debe cumplir las mismas reglas que en el modo <span class=\"inline-code\">all</span>, como <span class=\"inline-code\">!tts permission</span>, usuarios ignorados y palabras prohibidas. En este modo, TTS nunca lee un mensaje que empiece por \"!\". TTS sigue leyendo <span class=\"inline-code\">!tts &lt;message&gt;</span>. Este modo necesita que tu fuente de navegador de OBS esté abierta. Usa <span class=\"inline-code\">!tts spotlight</span> para guiar las elecciones.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,8 +135,10 @@
         "points": "!tts mode points",
         "highlightedOnly": "!tts mode highlighted_only",
         "highlight": "!tts mode highlight",
-        "status": "!tts mode"
-      }
+        "status": "!tts mode",
+        "spotlight": "!tts mode spotlight"
+      },
+      "spotlightDesc": "(Lee los mensajes del chat que elige un modelo)"
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
@@ -508,6 +510,18 @@
       "onNote": "(la voz vuelve a hacer este sonido)",
       "listNote": "(muestra las etiquetas que están desactivadas)",
       "notes": "Una etiqueta de sonido es una palabra entre corchetes angulares que la voz convierte en un sonido, por ejemplo <span class=\"inline-code\">&lt;laugh&gt;</span>. Todas las etiquetas están activadas de forma predeterminada. Cuando una etiqueta está desactivada, el bot la elimina de los mensajes. Consulta <a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">Etiquetas de sonido</a> para ver la lista de etiquetas. También puedes cambiar las etiquetas en el Web Dashboard."
+    },
+    "ttsSpotlight": {
+      "name": "!tts spotlight <text|off>",
+      "description": "Indica al modo Spotlight qué mensajes del chat preferir.",
+      "usage": {
+        "example": "!tts spotlight prefer questions about the game",
+        "off": "!tts spotlight off",
+        "status": "!tts spotlight"
+      },
+      "offDesc": "(elimina la guía)",
+      "statusDesc": "(muestra la guía actual)",
+      "notes": "La guía es un texto que indica al modo Spotlight qué mensajes te gustan. Tiene un máximo de 300 caracteres. El modelo la usa como preferencia. No puede hacer que el modelo elija spam, mensajes groseros, autopromoción ni datos personales. TTS no lee la guía en voz alta y no tiene efecto en otros modos. También puedes configurar la guía en el panel web. El panel tiene un interruptor para mostrar una tarjeta en la fuente de navegador de OBS. La tarjeta muestra al espectador y el mensaje mientras TTS lee una elección. El panel también lista las últimas elecciones. Actualiza la fuente de navegador si ya estaba abierta antes de activar la tarjeta."
     }
   },
   "table": {
