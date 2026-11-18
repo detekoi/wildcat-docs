@@ -150,7 +150,7 @@
       },
       "offDesc": "(removes the guidance)",
       "statusDesc": "(shows the current guidance)",
-      "notes": "The guidance is text that tells Spotlight mode which messages you like. It has a maximum of 300 characters. The model uses it as a preference. It cannot make the model pick spam, rude messages, self-promotion or personal data. TTS does not read the guidance aloud, and it has no effect in other modes. You can also set the guidance in the Web Dashboard. The dashboard has a switch for a card in the OBS browser source. The card shows the viewer and the message while TTS reads a pick. The dashboard also lists the latest picks. Refresh a browser source that was already open before you turn on the card. Set the size and the position of the browser source for the card. See <a href=\"tts-setup.html#web-dashboard-obssetup\">OBS Browser Source Setup</a>."
+      "notes": "The guidance is text that tells Spotlight mode which messages you like. It has a maximum of 300 characters. The text can ask for more kinds of message, and it can rule kinds out. The model never picks sexual or rude messages, personal data or spam. TTS does not read the guidance aloud, and it has no effect in other modes. You can also set the guidance in the Web Dashboard. The dashboard has a switch for a card in the OBS browser source. The card shows the viewer and the message while TTS reads a pick. The dashboard also lists the latest picks. Refresh a browser source that was already open before you turn on the card. Set the size and the position of the browser source for the card. See <a href=\"tts-setup.html#web-dashboard-obssetup\">OBS Browser Source Setup</a>."
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",

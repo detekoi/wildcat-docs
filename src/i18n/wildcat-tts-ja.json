@@ -125,8 +125,9 @@
       "pointsAlias": "(bits_points_onlyのエイリアス)",
       "highlightedOnlyDesc": "（Twitchの「メッセージをハイライト」のメッセージを読み上げます）",
       "highlightAlias": "(highlighted_onlyのエイリアス)",
+      "spotlightDesc": "（モデルが選んだチャットメッセージを読み上げます）",
       "statusDesc": "（現在のモードを表示）",
-      "notes": "どのモードでも、Cheer（<span class=\"inline-code\">!tts bits</span> を参照）、TTSのチャンネルポイント報酬、有効な報酬のアナウンスとイベントを読み上げます。モードは、それ以外にどのチャットメッセージを読み上げるかを決めます。括弧内はWeb Dashboardでの各モードの名前です。<br><span class=\"inline-code\">all</span>（すべてのチャットメッセージ）: <span class=\"inline-code\">!tts permission</span> に基づき、すべてのチャットメッセージ（無視ユーザーを除く）を読み上げます。<span class=\"inline-code\">!tts &lt;message&gt;</span> も含まれます。<br><span class=\"inline-code\">command</span>（!ttsメッセージ）: <span class=\"inline-code\">!tts permission</span> に基づき、<span class=\"inline-code\">!tts &lt;message&gt;</span> を読み上げます。その他のチャットは無視されます。<br><span class=\"inline-code\">bits_points_only</span>（Cheerとリワードのみ）: チャットメッセージは読み上げません。通常のチャット、<span class=\"inline-code\">!tts &lt;message&gt;</span>、ハイライトされたメッセージは無視されます。このモードでは、<span class=\"inline-code\">!tts bits off</span> の後でもCheerのメッセージを常に読み上げます。<br><span class=\"inline-code\">highlighted_only</span>（ハイライトされたメッセージ）: 視聴者がTwitchのチャンネルポイント報酬「メッセージをハイライト」で送ったチャットメッセージを読み上げます。視聴者が支払ったメッセージのため、<span class=\"inline-code\">!tts permission</span> による制限を受けません。その他のチャットと <span class=\"inline-code\">!tts &lt;message&gt;</span> は無視されます。YouTubeでは、このモードは <span class=\"inline-code\">bits_points_only</span> と同じように動作します。<br><span class=\"inline-code\">spotlight</span>（Spotlight）：モデルがチャットを短いまとまりで読み、読み上げる価値のある少数のメッセージを選びます。TTSはそれらのメッセージのみを読み上げ、各メッセージの前に「チャットスポットライト、」と視聴者名を読み上げます。メッセージは <span class=\"inline-code\">!tts permission</span>、無視されたユーザー、禁止ワードなど、<span class=\"inline-code\">all</span> モードと同じルールを満たす必要があります。このモードでは、\"!\" で始まるメッセージは読み上げられません。<span class=\"inline-code\">!tts &lt;message&gt;</span> は引き続き読み上げられます。このモードではOBSブラウザソースを開いておく必要があります。選択の指針を設定するには <span class=\"inline-code\">!tts spotlight</span> を使用してください。",
+      "notes": "すべてのモードで、TTS はチアー（<span class=\"inline-code\">!tts bits</span> を参照）、TTS の Channel Points リワード、および有効なリワード通知とイベントを読み上げます。モードによって、TTS が追加で読み上げるチャットメッセージが決まります。各モードの Web Dashboard 上の名前は括弧内に示しています。<br><span class=\"inline-code\">all</span>（すべてのチャットメッセージ）: TTS は <span class=\"inline-code\">!tts permission</span> に基づき、すべてのチャットメッセージ（無視されたユーザーを除く）を読み上げます。これには <span class=\"inline-code\">!tts &lt;message&gt;</span> も含まれます。<br><span class=\"inline-code\">command</span>（!tts メッセージ）: TTS は <span class=\"inline-code\">!tts permission</span> に基づき、<span class=\"inline-code\">!tts &lt;message&gt;</span> を読み上げます。TTS は他のチャットを無視します。<br><span class=\"inline-code\">bits_points_only</span>（チアーとリワードのみ）: TTS はチャットメッセージを読み上げません。TTS は通常のチャット、<span class=\"inline-code\">!tts &lt;message&gt;</span>、ハイライトメッセージを無視します。このモードでは、<span class=\"inline-code\">!tts bits off</span> の後でもチアーメッセージを常に読み上げます。<br><span class=\"inline-code\">highlighted_only</span>（ハイライトメッセージ）: TTS は、視聴者が Twitch の \"Highlight My Message\" Channel Points リワードで送信したチャットメッセージを読み上げます。視聴者がポイントを支払っているため、これらのメッセージには <span class=\"inline-code\">!tts permission</span> が適用されません。TTS は他のチャットや <span class=\"inline-code\">!tts &lt;message&gt;</span> を無視します。YouTube では、このモードは <span class=\"inline-code\">bits_points_only</span> と同様に動作します。<br><span class=\"inline-code\">spotlight</span>（スポットライト）: モデルがチャットを短いバッチ単位で読み込み、読み上げる価値のある少数のメッセージを選びます。TTS はこれらのメッセージのみを読み上げ、それぞれの前に \"Chat spotlight from\" と視聴者の名前を読み上げます。メッセージは、<span class=\"inline-code\">!tts permission</span>、無視されたユーザー、禁止ワードなど、<span class=\"inline-code\">all</span> モードと同じルールを満たす必要があります。このモードでは、TTS は \"!\" で始まるメッセージを読み上げません。ただし <span class=\"inline-code\">!tts &lt;message&gt;</span> は読み上げます。このモードを使用するには、OBS ブラウザソースを開いている必要があります。選択の方向性を指定するには、<span class=\"inline-code\">!tts spotlight</span> を使用します。",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,10 +136,21 @@
         "points": "!tts mode points",
         "highlightedOnly": "!tts mode highlighted_only",
         "highlight": "!tts mode highlight",
-        "status": "!tts mode",
-        "spotlight": "!tts mode spotlight"
+        "spotlight": "!tts mode spotlight",
+        "status": "!tts mode"
+      }
+    },
+    "ttsSpotlight": {
+      "name": "!tts spotlight <text|off>",
+      "description": "スポットライトモードで優先するチャットメッセージを指定します。",
+      "usage": {
+        "example": "!tts spotlight prefer questions about the game",
+        "off": "!tts spotlight off",
+        "status": "!tts spotlight"
       },
-      "spotlightDesc": "（モデルが選んだチャットメッセージを読み上げます）"
+      "offDesc": "（指示を削除します）",
+      "statusDesc": "（現在の指示を表示します）",
+      "notes": "指示は、スポットライトモードに好みのメッセージを伝えるテキストです。最大 300 文字です。モデルはこれを優先基準として使用します。スパム、失礼なメッセージ、自己宣伝、個人情報をモデルに選ばせることはできません。TTS は指示を読み上げず、他のモードには影響しません。Web Dashboard でも指示を設定できます。ダッシュボードには、OBS ブラウザソースにカードを表示するスイッチがあります。TTS が選ばれたメッセージを読み上げている間、カードに視聴者とメッセージが表示されます。ダッシュボードには最新の選択結果も一覧表示されます。カードをオンにする前から開いていたブラウザソースは、再読み込みしてください。カード用にブラウザソースのサイズと位置を設定してください。<a href=\"tts-setup.html#web-dashboard-obssetup\">OBS ブラウザソースのセットアップ</a>を参照してください。"
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
@@ -187,7 +199,7 @@
       "skipQueueUseCase": "<strong>ヒント:</strong> 即時再生は有効、事前モデレーションは無効にします。",
       "refunds": "<strong>払い戻し:</strong> TTSは再生しない引き換えを払い戻します。払い戻しの対象は、コンテンツポリシーでブロックされたメッセージ、チャンネルでモデレーターにミュートされた視聴者、TTSがオフの間のすべての引き換えです。",
       "ttsModes": "TTSモード:",
-      "ttsModesText": "すべてのTTSモード（すべてのチャットメッセージ、!ttsメッセージ、ハイライトされたメッセージ、Cheerとリワードのみ）で動作します。",
+      "ttsModesText": "すべての TTS モード（すべてのチャットメッセージ、!tts メッセージ、ハイライトメッセージ、スポットライト、チアーとリワードのみ）で動作します。",
       "requirements": "要件:",
       "requirementsText": "ダッシュボード初回ログイン時に <span class=\"inline-code\">channel:manage:redemptions</span> と <span class=\"inline-code\">channel:read:redemptions</span> の権限を付与してください。"
     },
@@ -469,7 +481,7 @@
       "offNote": "（「!」で始まるチャットメッセージをスキップします）",
       "onNote": "（再び読み上げます）",
       "statusNote": "（現在の設定を表示します）",
-      "notes": "NightbotやStreamElementsなどの他のボットは、!lurkや!soなど「!」で始まるコマンドを使用します。「すべてのチャットメッセージ」モードでは、TTSはこれらのコマンドをチャットとして読み上げます。スキップするにはこの設定をオフにしてください。この設定は!ttsを変更しません。!ttsは引き続き機能します。「!ttsメッセージ」モード、「ハイライトされたメッセージ」モード、「Cheerとリワードのみ」モードではこれらのメッセージを一切読み上げないため、この設定による影響はありません。「!」で始まるCheerは、視聴者が支払ったものであるため引き続き読み上げられます。この設定はWeb Dashboardの「Read Chat Commands」でも変更できます。"
+      "notes": "Nightbot や StreamElements などの他のボットは、!lurk や !so のように \"!\" で始まるコマンドを使用します。すべてのチャットメッセージモードでは、TTS はこれらのコマンドをチャットとして読み上げます。これらをスキップするには、この設定をオフにします。この設定は !tts には影響しません。!tts は引き続き動作します。この設定は、!tts メッセージ、ハイライトメッセージ、スポットライト、チアーとリワードのみのモードには影響しません。これらのモードではこれらのメッセージを読み上げないためです。\"!\" で始まるチアーは、視聴者が対価を支払っているため、引き続き読み上げられます。この設定は、Web Dashboard の「チャットコマンドを読み上げる」からも変更できます。"
     },
     "ttsStyle": {
       "name": "!tts style <テキスト|off>",
@@ -510,18 +522,6 @@
       "onNote": "(音声がこの音を再び出します)",
       "listNote": "(オフになっているタグを表示します)",
       "notes": "サウンドタグとは、音声が音に変換する山括弧で囲まれた単語（例: <span class=\"inline-code\">&lt;laugh&gt;</span>）です。デフォルトではすべてのタグがオンです。タグがオフの場合、ボットはメッセージからそのタグを削除します。タグの一覧については、<a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">サウンドタグ</a>を参照してください。タグは Web Dashboard でも変更できます。"
-    },
-    "ttsSpotlight": {
-      "name": "!tts spotlight <text|off>",
-      "description": "Spotlightモードで優先するチャットメッセージを指定します。",
-      "usage": {
-        "example": "!tts spotlight prefer questions about the game",
-        "off": "!tts spotlight off",
-        "status": "!tts spotlight"
-      },
-      "offDesc": "（指針を削除します）",
-      "statusDesc": "（現在の指針を表示します）",
-      "notes": "指針は、Spotlightモードにどのようなメッセージが好みかを伝えるテキストです。最大300文字まで設定できます。モデルはこれを優先事項として使用します。スパム、無礼なメッセージ、自己宣伝、個人情報をモデルに選ばせることはできません。TTSは指針を読み上げず、他のモードでは効果がありません。Webダッシュボードでも指針を設定できます。ダッシュボードにはOBSブラウザソースにカードを表示するスイッチがあります。カードにはTTSが選択を読み上げている間、視聴者とメッセージが表示されます。ダッシュボードには最新の選択も一覧表示されます。カードをオンにする前にすでに開いていたブラウザソースは更新してください。"
     }
   },
   "table": {
@@ -673,7 +673,7 @@
     "obsConfigUrlTitle": "URL:",
     "obsConfigUrlDesc": "ダッシュボードからコピーした専用OBSブラウザソースURLを貼り付けます",
     "obsConfigSizeTitle": "幅/高さ:",
-    "obsConfigSizeDesc": "300x100（音声専用のためサイズは影響しません）",
+    "obsConfigSizeDesc": "300x100 に設定します。サイズは音声には影響しません。スポットライトカードを使用する場合は、800x600 以上に設定してください（手順 3 を参照）。",
     "obsConfigControl": "<strong>✓ OBS経由で音声を制御する</strong>（必ずチェックを入れてください）",
     "obsConfigShutdown": "音声を安定して再生するため「表示されていないときにソースをシャットダウン」のチェックが外れていることを確認してください",
     "obsStep2Title": "ステップ2: オーディオモニタリングを有効化",
@@ -684,6 +684,13 @@
     "obsMonitorOutputDesc": "- 自分と配信の両方に音声を出力",
     "obsMonitorOnlyTitle": "モニターのみ",
     "obsMonitorOnlyDesc": "- 自分のみに音声を出力（テスト用）",
+    "obsStep3Title": "手順 3: スポットライトカードのサイズと位置を設定する（任意）",
+    "obsStep3Intro": "以下の手順は、ダッシュボードでオンにするスポットライトモードのカード用です。カードはブラウザソースの左下に表示されます。",
+    "obsStep3_1": "ブラウザソースのプロパティで、幅を 800 以上、高さを 600 以上に設定します。ソースがこれより小さいとカードが見切れます。",
+    "obsStep3_2": "OBS のプレビューでソースを移動します。配信画面上でカードを表示したい位置にソースの左下隅を合わせます。",
+    "obsStep3_3": "「ソース」リストで、このソースをゲームやカメラより上に配置します。ソースは透明なため、ゲームやカメラが隠れることはありません。",
+    "obsStep3_4": "ソースをクロップしないでください。ソース全体をキャンバス内に収めてください。",
+    "obsStep3_5": "配信上でカードの文字が小さすぎる場合は、ソースの角をドラッグして大きくしてください。",
     "obsImportantTitle": "重要:",
     "obsImportantDesc": "音声ミキサーでソースがミュートになっておらず、適切な音量に設定されていることを確認してください。",
     "voiceCalibrationTitle": "音声キャリブレーション",

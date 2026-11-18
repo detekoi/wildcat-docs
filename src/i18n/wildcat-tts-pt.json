@@ -125,8 +125,9 @@
       "pointsAlias": "(Apelido para bits_points_only)",
       "highlightedOnlyDesc": "(Lê mensagens da Twitch com \"Destacar minha mensagem\")",
       "highlightAlias": "(Apelido para highlighted_only)",
+      "spotlightDesc": "(Lê as mensagens do chat que um modelo escolhe)",
       "statusDesc": "(Mostra o modo atual)",
-      "notes": "Em todos os modos, o TTS lê os cheers (veja <span class=\"inline-code\">!tts bits</span>), a recompensa de Pontos do Canal do TTS e os anúncios de recompensas e eventos ativados. O modo define quais outras mensagens do chat o TTS lê. O nome de cada modo no Web Dashboard aparece entre parênteses.<br><span class=\"inline-code\">all</span> (Todas as mensagens do chat): O TTS lê todas as mensagens do chat (exceto de usuários ignorados), de acordo com <span class=\"inline-code\">!tts permission</span>. Isso inclui <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Mensagens com !tts): O TTS lê <span class=\"inline-code\">!tts &lt;message&gt;</span>, de acordo com <span class=\"inline-code\">!tts permission</span>. O TTS ignora o restante do chat.<br><span class=\"inline-code\">bits_points_only</span> (Apenas cheers e recompensas): O TTS não lê mensagens do chat. O TTS ignora o chat normal, <span class=\"inline-code\">!tts &lt;message&gt;</span> e as mensagens destacadas. Este modo sempre lê as mensagens dos cheers, mesmo depois de <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Mensagens destacadas): O TTS lê as mensagens do chat que um espectador envia com a recompensa de Pontos do Canal da Twitch \"Destacar minha mensagem\". Estas mensagens não são limitadas por <span class=\"inline-code\">!tts permission</span>, porque o espectador pagou por elas. O TTS ignora o restante do chat e <span class=\"inline-code\">!tts &lt;message&gt;</span>. No YouTube, este modo funciona como <span class=\"inline-code\">bits_points_only</span>.<br><span class=\"inline-code\">spotlight</span> (Spotlight): Um modelo lê o chat em pequenos lotes e escolhe as poucas mensagens que valem a pena ler em voz alta. O TTS lê apenas essas mensagens e diz \"Chat em destaque de\" e o nome do espectador antes de cada uma. Uma mensagem deve seguir as mesmas regras do modo <span class=\"inline-code\">all</span>, como <span class=\"inline-code\">!tts permission</span>, usuários ignorados e palavras proibidas. Neste modo, o TTS nunca lê uma mensagem que comece com \"!\". O TTS ainda lê <span class=\"inline-code\">!tts &lt;message&gt;</span>. Este modo exige que sua fonte de navegador do OBS esteja aberta. Use <span class=\"inline-code\">!tts spotlight</span> para orientar as escolhas.",
+      "notes": "Em todos os modos, o TTS lê cheers (veja <span class=\"inline-code\">!tts bits</span>), a recompensa de Channel Points de TTS e os anúncios de recompensas e eventos ativados. O modo define quais mensagens do chat o TTS também lê. O nome de cada modo no Web Dashboard está entre parênteses.<br><span class=\"inline-code\">all</span> (Todas as mensagens do chat): o TTS lê todas as mensagens do chat (exceto contas ignoradas), com base em <span class=\"inline-code\">!tts permission</span>. Isso inclui <span class=\"inline-code\">!tts &lt;message&gt;</span>.<br><span class=\"inline-code\">command</span> (Mensagens !tts): o TTS lê <span class=\"inline-code\">!tts &lt;message&gt;</span>, com base em <span class=\"inline-code\">!tts permission</span>. O TTS ignora as outras mensagens do chat.<br><span class=\"inline-code\">bits_points_only</span> (Apenas cheers e recompensas): o TTS não lê nenhuma mensagem do chat. O TTS ignora o chat comum, <span class=\"inline-code\">!tts &lt;message&gt;</span> e mensagens destacadas. Este modo sempre lê mensagens de cheer, mesmo após <span class=\"inline-code\">!tts bits off</span>.<br><span class=\"inline-code\">highlighted_only</span> (Mensagens destacadas): o TTS lê mensagens do chat enviadas por quem assiste com a recompensa de Channel Points \"Highlight My Message\" da Twitch. <span class=\"inline-code\">!tts permission</span> não se aplica a essas mensagens, porque quem enviou pagou por elas. O TTS ignora as outras mensagens do chat e <span class=\"inline-code\">!tts &lt;message&gt;</span>. No YouTube, este modo funciona como <span class=\"inline-code\">bits_points_only</span>.<br><span class=\"inline-code\">spotlight</span> (Spotlight): um modelo lê o chat em lotes curtos e escolhe as poucas mensagens que vale a pena ler em voz alta. O TTS lê apenas essas mensagens e diz \"Chat spotlight from\" e o nome de quem enviou antes de cada uma. Uma mensagem deve passar pelas mesmas regras do modo <span class=\"inline-code\">all</span>, como <span class=\"inline-code\">!tts permission</span>, contas ignoradas e palavras banidas. O TTS nunca lê uma mensagem que começa com \"!\" neste modo. O TTS ainda lê <span class=\"inline-code\">!tts &lt;message&gt;</span>. Este modo precisa que a sua fonte de navegador do OBS esteja aberta. Use <span class=\"inline-code\">!tts spotlight</span> para orientar as escolhas.",
       "usage": {
         "all": "!tts mode all",
         "command": "!tts mode command",
@@ -135,10 +136,21 @@
         "points": "!tts mode points",
         "highlightedOnly": "!tts mode highlighted_only",
         "highlight": "!tts mode highlight",
-        "status": "!tts mode",
-        "spotlight": "!tts mode spotlight"
+        "spotlight": "!tts mode spotlight",
+        "status": "!tts mode"
+      }
+    },
+    "ttsSpotlight": {
+      "name": "!tts spotlight <text|off>",
+      "description": "Informa ao modo Spotlight quais mensagens do chat preferir.",
+      "usage": {
+        "example": "!tts spotlight prefira perguntas sobre o jogo",
+        "off": "!tts spotlight off",
+        "status": "!tts spotlight"
       },
-      "spotlightDesc": "(Lê as mensagens do chat que um modelo escolhe)"
+      "offDesc": "(remove a orientação)",
+      "statusDesc": "(mostra a orientação atual)",
+      "notes": "A orientação é um texto que informa ao modo Spotlight de quais mensagens você gosta. Ela tem no máximo 300 caracteres. O modelo a usa como preferência. Ela não pode fazer o modelo escolher spam, mensagens rudes, autopromoção ou dados pessoais. O TTS não lê a orientação em voz alta, e ela não tem efeito em outros modos. Você também pode definir a orientação no Web Dashboard. O painel tem uma opção para um cartão na fonte de navegador do OBS. O cartão mostra quem enviou e a mensagem enquanto o TTS lê uma escolha. O painel também lista as últimas escolhas. Atualize uma fonte de navegador que já estava aberta antes de ativar o cartão. Defina o tamanho e a posição da fonte de navegador para o cartão. Veja <a href=\"tts-setup.html#web-dashboard-obssetup\">Configuração da fonte de navegador do OBS</a>."
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
@@ -187,7 +199,7 @@
       "skipQueueUseCase": "<strong>Dica:</strong> Ative para reprodução instantânea. Desative para moderação antes do áudio.",
       "refunds": "<strong>Reembolsos:</strong> O TTS reembolsa um resgate que ele não reproduz. Estes resgates são reembolsados: uma mensagem que a política de conteúdo bloqueia, um espectador que um moderador silenciou no seu canal e qualquer resgate enquanto o TTS está desligado.",
       "ttsModes": "Modos de TTS:",
-      "ttsModesText": "Funciona em todos os modos de TTS: Todas as mensagens do chat, Mensagens com !tts, Mensagens destacadas e Apenas cheers e recompensas.",
+      "ttsModesText": "Funciona em todos os modos de TTS: Todas as mensagens do chat, Mensagens !tts, Mensagens destacadas, Spotlight e Apenas cheers e recompensas.",
       "requirements": "Requisitos:",
       "requirementsText": "Conceda as permissões <span class=\"inline-code\">channel:manage:redemptions</span> e <span class=\"inline-code\">channel:read:redemptions</span> durante o login no painel."
     },
@@ -469,7 +481,7 @@
       "offNote": "(ignora mensagens de chat que começam com \"!\")",
       "onNote": "(lê-as novamente)",
       "statusNote": "(mostra a configuração atual)",
-      "notes": "Outros bots, por exemplo Nightbot ou StreamElements, usam comandos que começam com \"!\", tais como !lurk ou !so. No modo Todas as mensagens do chat, o TTS lê estes comandos como chat. Desative esta configuração para os ignorar. A configuração não altera o !tts: o !tts continua a funcionar. A configuração não tem efeito no modo Mensagens com !tts, no modo Mensagens destacadas ou no modo Apenas cheers e recompensas, porque estes modos nunca leem estas mensagens. Um cheer que comece com \"!\" ainda é lido, porque o espetador pagou por ele. Também pode alterar isto no Web Dashboard, em Read Chat Commands."
+      "notes": "Outros bots, por exemplo Nightbot ou StreamElements, usam comandos que começam com \"!\", como !lurk ou !so. No modo Todas as mensagens do chat, o TTS lê esses comandos como chat. Desative esta configuração para ignorá-los. A configuração não altera !tts: !tts continua funcionando. A configuração não tem efeito nos modos Mensagens !tts, Mensagens destacadas, Spotlight ou Apenas cheers e recompensas, porque esses modos nunca leem essas mensagens. Um cheer que começa com \"!\" ainda é lido, porque quem enviou pagou por ele. Você também pode alterar isso no Web Dashboard, em Ler comandos do chat."
     },
     "ttsStyle": {
       "name": "!tts style <texto|off>",
@@ -510,18 +522,6 @@
       "onNote": "(a voz volta a fazer este som)",
       "listNote": "(mostra as tags que estão desativadas)",
       "notes": "Uma tag de som é uma palavra entre colchetes angulares que a voz transforma em um som, por exemplo <span class=\"inline-code\">&lt;laugh&gt;</span>. Todas as tags vêm ativadas por padrão. Quando uma tag está desativada, o bot a remove das mensagens. Veja <a href=\"tts-filtering.html#sound-tags\" class=\"default-link-style\">Tags de som</a> para a lista de tags. Você também pode alterar as tags no Web Dashboard."
-    },
-    "ttsSpotlight": {
-      "name": "!tts spotlight <text|off>",
-      "description": "Diz ao modo Spotlight quais mensagens do chat preferir.",
-      "usage": {
-        "example": "!tts spotlight prefer questions about the game",
-        "off": "!tts spotlight off",
-        "status": "!tts spotlight"
-      },
-      "offDesc": "(remove a orientação)",
-      "statusDesc": "(mostra a orientação atual)",
-      "notes": "A orientação é um texto que diz ao modo Spotlight de quais mensagens você gosta. Ela tem no máximo 300 caracteres. O modelo a usa como preferência. Ela não pode fazer o modelo escolher spam, mensagens rudes, autopromoção ou dados pessoais. O TTS não lê a orientação em voz alta e ela não tem efeito em outros modos. Você também pode definir a orientação no Painel Web. O painel tem um botão para mostrar um cartão na fonte de navegador do OBS. O cartão mostra o espectador e a mensagem enquanto o TTS lê uma escolha. O painel também lista as últimas escolhas. Atualize a fonte de navegador se ela já estava aberta antes de ativar o cartão."
     }
   },
   "table": {
@@ -673,7 +673,7 @@
     "obsConfigUrlTitle": "URL:",
     "obsConfigUrlDesc": "Cole a URL da fonte de navegador do OBS que você copiou do painel",
     "obsConfigSizeTitle": "Largura/Altura:",
-    "obsConfigSizeDesc": "Defina 300x100 (o tamanho não afeta o áudio)",
+    "obsConfigSizeDesc": "Defina 300x100. O tamanho não afeta o áudio. Para o cartão Spotlight, defina 800x600 ou maior (veja a Etapa 3).",
     "obsConfigControl": "<strong>✓ Controlar áudio via OBS</strong> (deve estar marcado)",
     "obsConfigShutdown": "Certifique-se de desmarcar 'Desativar fonte quando invisível' para garantir áudio contínuo",
     "obsStep2Title": "Passo 2: Ativar Monitoramento de Áudio",
@@ -684,6 +684,13 @@
     "obsMonitorOutputDesc": "- Você e sua transmissão ouvem o áudio",
     "obsMonitorOnlyTitle": "Apenas Monitorar",
     "obsMonitorOnlyDesc": "- Apenas você ouve o áudio (para testes)",
+    "obsStep3Title": "Etapa 3: definir o tamanho e a posição do cartão Spotlight (opcional)",
+    "obsStep3Intro": "Estas etapas são para o cartão do modo Spotlight, que você ativa no painel. O cartão aparece no canto inferior esquerdo da fonte de navegador.",
+    "obsStep3_1": "Nas propriedades da fonte de navegador, defina Largura como 800 e Altura como 600, ou maior. Uma fonte menor corta o cartão.",
+    "obsStep3_2": "Na prévia do OBS, mova a fonte. Coloque o canto inferior esquerdo dela onde você quer o cartão na sua transmissão.",
+    "obsStep3_3": "Na lista Fontes, coloque a fonte acima do seu jogo e da sua câmera. A fonte é transparente, então ela não os oculta.",
+    "obsStep3_4": "Não corte a fonte. Mantenha a fonte inteira dentro da tela.",
+    "obsStep3_5": "Se o texto do cartão estiver muito pequeno na sua transmissão, arraste um canto da fonte para aumentá-la.",
     "obsImportantTitle": "Importante:",
     "obsImportantDesc": "Certifique-se de que a fonte não esteja silenciada no seu mixer de áudio e que o volume esteja ajustado corretamente.",
     "voiceCalibrationTitle": "Calibração de voz",
