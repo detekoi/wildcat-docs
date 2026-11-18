@@ -15,9 +15,19 @@ function minifyCss(css) {
     ).replace(/;\}/g, "}").trim();
 }
 
+function stripHtmlComments(html) {
+    // One pass can join the halves of a nested comment into a new one,
+    // so repeat until nothing changes.
+    let previous;
+    do {
+        previous = html;
+        html = html.replace(/<!--[\s\S]*?-->/g, "");
+    } while (html !== previous);
+    return html;
+}
+
 function safeMinifyHtml(html) {
-    return html
-        .replace(/<!--[\s\S]*?-->/g, "")
+    return stripHtmlComments(html)
         .replace(/^\s+/gm, "")
         .replace(/\n+/g, "\n")
         .trim();
