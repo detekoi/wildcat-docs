@@ -150,7 +150,7 @@
       },
       "offDesc": "(removes the guidance)",
       "statusDesc": "(shows the current guidance)",
-      "notes": "The guidance is text that tells Spotlight mode which messages you like. It has a maximum of 300 characters. The model uses it as a preference. It cannot make the model pick spam, rude messages, self-promotion or personal data. TTS does not read the guidance aloud, and it has no effect in other modes. You can also set the guidance in the Web Dashboard. The dashboard has a switch for a card in the OBS browser source. The card shows the viewer and the message while TTS reads a pick. The dashboard also lists the latest picks. Refresh a browser source that was already open before you turn on the card."
+      "notes": "The guidance is text that tells Spotlight mode which messages you like. It has a maximum of 300 characters. The model uses it as a preference. It cannot make the model pick spam, rude messages, self-promotion or personal data. TTS does not read the guidance aloud, and it has no effect in other modes. You can also set the guidance in the Web Dashboard. The dashboard has a switch for a card in the OBS browser source. The card shows the viewer and the message while TTS reads a pick. The dashboard also lists the latest picks. Refresh a browser source that was already open before you turn on the card. Set the size and the position of the browser source for the card. See <a href=\"tts-setup.html#web-dashboard-obssetup\">OBS Browser Source Setup</a>."
     },
     "ttsPermission": {
       "name": "!tts permission [everyone|all|subs|vip|mods]",
@@ -673,7 +673,7 @@
     "obsConfigUrlTitle": "URL:",
     "obsConfigUrlDesc": "Paste your copied OBS Browser Source URL from the dashboard",
     "obsConfigSizeTitle": "Width/Height:",
-    "obsConfigSizeDesc": "Set 300x100 (size does not affect audio)",
+    "obsConfigSizeDesc": "Set 300x100. The size does not affect audio. For the Spotlight card, set 800x600 or larger (see Step 3).",
     "obsConfigControl": "✓ Control audio via OBS (must be checked)",
     "obsConfigShutdown": "Make sure that \"Shutdown source when not visible\" is unchecked so audio plays consistently",
     "obsStep2Title": "Step 2: Enable Audio Monitoring",
@@ -684,6 +684,13 @@
     "obsMonitorOutputDesc": "- You and your stream hear the audio",
     "obsMonitorOnlyTitle": "Monitor Only",
     "obsMonitorOnlyDesc": "- Only you hear the audio (for testing)",
+    "obsStep3Title": "Step 3: Set the Size and Position for the Spotlight Card (Optional)",
+    "obsStep3Intro": "These steps are for the card of Spotlight mode, which you turn on in the dashboard. The card shows in the bottom left corner of the browser source.",
+    "obsStep3_1": "In the properties of the browser source, set Width to 800 and Height to 600, or larger. A smaller source cuts off the card.",
+    "obsStep3_2": "In the OBS preview, move the source. Put its bottom left corner where you want the card on your stream.",
+    "obsStep3_3": "In the Sources list, put the source above your game and your camera. The source is transparent, so it does not hide them.",
+    "obsStep3_4": "Do not crop the source. Keep the full source inside the canvas.",
+    "obsStep3_5": "If the card text is too small on your stream, drag a corner of the source to make it larger.",
     "obsImportantTitle": "Important:",
     "obsImportantDesc": "Make sure that the source is unmuted in your audio mixer and the volume is set appropriately.",
     "voiceCalibrationTitle": "Voice Calibration",
